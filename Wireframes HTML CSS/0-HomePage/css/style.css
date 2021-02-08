@@ -133,10 +133,10 @@ nav a:link {
 
 /* search part */
 
-.divColumnLeftWithSearchBar {
+main {
     display: flex;
     background-color: #F7F7F7;
-    width: 15%;                      /* wireframe 290px/1920px=0.1510  , 15.10% */
+    width: 15%;                      /* wireframe 290px/1920px=0.1510 */
 }
 
 .asideSearchBar {
@@ -180,7 +180,7 @@ form {
 
 /* part content */
 
-main {
+section {
     width: 800px;           /*  800px/1920px= 0.4166 => 41.66% */
     height: 920px;          /* 1080px-160px= 920px => 920px/1080px=0.85185 => 85.19% */
 }
