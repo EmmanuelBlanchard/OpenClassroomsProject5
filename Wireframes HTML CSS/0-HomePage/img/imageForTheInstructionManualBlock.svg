@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 565 291" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,0.9715,0.610277)">
+        <g id="Bloc-Infographie-Bibliothèque" serif:id="Bloc Infographie Bibliothèque" transform="matrix(1,0,0,1,-800.886,-438.156)">
+            <g id="Bloc-Orange" serif:id="Bloc Orange">
+                <g id="Icone-Orange---Bulle-Jean" serif:id="Icone Orange + Bulle Jean" transform="matrix(1,0,0,1,1.08445,20.4454)">
+                    <g id="Gabriel-Bulle-Info-Nombre-de-Livres-dans-Bibliothèque" serif:id="Gabriel Bulle Info Nombre de Livres dans Bibliothèque" transform="matrix(1,0,0,1,175.889,58.4993)">
+                        <g transform="matrix(1.14724,0,0,1,-39.6829,36.2079)">
+                            <path d="M934.923,570.72C934.923,563.196 929.599,557.088 923.041,557.088L807.937,557.088C801.379,557.088 796.055,563.196 796.055,570.72L796.055,597.982C796.055,605.505 801.379,611.613 807.937,611.613L923.041,611.613C929.599,611.613 934.923,605.505 934.923,597.982L934.923,570.72Z" style="fill:rgb(247,247,247);stroke:black;stroke-width:1.86px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-6.02514,-4.29091)">
+                            <g transform="matrix(1.08079,0,0,1,-71.7942,0)">
+                                <text x="888.639px" y="618.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:15.699px;fill:rgb(205,65,9);">Jean</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-74.8892,0)">
+                                <text x="926.948px" y="618.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">a</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-71.4382,0)">
+                                <text x="890.466px" y="630.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">32 livres dans</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-71.4382,0)">
+                                <text x="896.701px" y="642.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">sa bibliothèque</text>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Icone-Bonhomme-ORANGE" serif:id="Icone Bonhomme ORANGE" transform="matrix(1,0,0,1,246.939,-49.5563)">
+                        <circle cx="932.508" cy="702.519" r="37.597" style="fill:rgb(205,65,9);"/>
+                        <clipPath id="_clip1">
+                            <circle cx="932.508" cy="702.519" r="37.597"/>
+                        </clipPath>
+                        <g clip-path="url(#_clip1)">
+                            <g id="Creation-Corps-et-Tete" serif:id="Creation Corps et Tete">
+                                <g id="Creation-Corps" serif:id="Creation Corps" transform="matrix(1.31452,0,0,1.13643,-219.965,-121.113)">
+                                    <ellipse cx="877.031" cy="746.079" rx="21.691" ry="16.63" style="fill:white;stroke:black;stroke-width:1.63px;"/>
+                                </g>
+                                <g id="Creation-Tete" serif:id="Creation Tete">
+                                    <g transform="matrix(1.15234,0,0,1.15234,-43.8455,-56.0152)">
+                                        <circle cx="847.319" cy="652.821" r="13.802" style="fill:white;"/>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,97.4544,83.8357)">
+                                        <path d="M844.152,624.941C848.357,621.996 850.861,617.186 850.861,612.053C850.861,603.37 843.811,596.32 835.128,596.32C826.444,596.32 819.395,603.37 819.395,612.053C819.395,617.186 821.899,621.996 826.104,624.941C821.899,621.996 819.395,617.186 819.395,612.053C819.395,603.37 826.444,596.32 835.128,596.32C843.811,596.32 850.861,603.37 850.861,612.053C850.861,617.186 848.357,621.996 844.152,624.941Z" style="fill:white;stroke:black;stroke-width:2px;"/>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Creation-Corps-et-Tete1" serif:id="Creation Corps et Tete" transform="matrix(1,0,0,1,121.454,9.56913)">
+                                <g id="Creation-Corps1" serif:id="Creation Corps" transform="matrix(1.31452,0,0,1.13643,-219.965,-121.113)">
+                                    <ellipse cx="877.031" cy="746.079" rx="21.691" ry="16.63" style="fill:white;stroke:black;stroke-width:1.63px;"/>
+                                </g>
+                                <g id="Creation-Tete1" serif:id="Creation Tete">
+                                    <g transform="matrix(1.15234,0,0,1.15234,-43.8455,-56.0152)">
+                                        <circle cx="847.319" cy="652.821" r="13.802" style="fill:white;"/>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,97.4544,83.8357)">
+                                        <path d="M844.152,624.941C848.357,621.996 850.861,617.186 850.861,612.053C850.861,603.37 843.811,596.32 835.128,596.32C826.444,596.32 819.395,603.37 819.395,612.053C819.395,617.186 821.899,621.996 826.104,624.941C821.899,621.996 819.395,617.186 819.395,612.053C819.395,603.37 826.444,596.32 835.128,596.32C843.811,596.32 850.861,603.37 850.861,612.053C850.861,617.186 848.357,621.996 844.152,624.941Z" style="fill:white;stroke:black;stroke-width:2px;"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <circle cx="932.508" cy="702.519" r="37.597" style="fill:none;stroke:black;stroke-width:2px;"/>
+                    </g>
+                </g>
+                <g id="Biblio-Livres-ORANGES" serif:id="Biblio Livres ORANGES" transform="matrix(1,0,0,1,15.324,28.8452)">
+                    <g id="Essai-Livre-ORANGE" serif:id="Essai Livre ORANGE" transform="matrix(0.984729,0.174092,-0.174092,0.984729,125.806,-176.081)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE1" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,10.4226,-0.171113)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE2" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,17.4272,-0.175035)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE3" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,24.4821,-0.181027)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE4" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,31.5133,-0.17127)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE5" serif:id="Essai Livre ORANGE" transform="matrix(0.984891,-0.173174,0.173174,0.984891,-51.1899,192.989)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                </g>
+                <g id="Croix-Plus--" serif:id="Croix Plus +" transform="matrix(1,0,0,1,125.406,78.3443)">
+                    <g transform="matrix(0.999915,-0.0130608,0.0130608,0.999915,-6.90385,12.9764)">
+                        <path d="M990.067,530.014L989.93,540" style="fill:none;stroke:rgb(205,65,9);stroke-width:2px;"/>
+                    </g>
+                    <g transform="matrix(0.00513954,0.999987,-0.999987,0.00513954,1520.02,-457.815)">
+                        <path d="M990.113,530.116L990.053,540.104" style="fill:none;stroke:rgb(205,65,9);stroke-width:2px;"/>
+                    </g>
+                </g>
+                <g id="Fleche-ORANGE" serif:id="Fleche ORANGE">
+                    <path d="M1100.03,596.292L1100,630.971" style="fill:none;stroke:rgb(205,65,9);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,-6.13285,3.04676)">
+                        <path d="M1106.18,589.381L1112.2,601.41L1100.17,601.41L1106.18,589.381Z" style="fill:rgb(205,65,9);stroke:rgb(205,65,9);stroke-width:0.1px;"/>
+                    </g>
+                </g>
+            </g>
+            <g id="Bloc-Bleu-" serif:id="Bloc Bleu ">
+                <g id="Icone-Bleue---Bulle-Marie" serif:id="Icone Bleue + Bulle Marie" transform="matrix(1,0,0,1,147.708,-186.173)">
+                    <g id="Emma-Bulle-Info-Nombre-de-Livres-dans-Bibliothèque" serif:id="Emma Bulle Info Nombre de Livres dans Bibliothèque" transform="matrix(1,0,0,1,183.253,32.1229)">
+                        <g transform="matrix(1.14724,0,0,1,-39.6829,36.2079)">
+                            <path d="M934.923,570.72C934.923,563.196 929.599,557.088 923.041,557.088L807.937,557.088C801.379,557.088 796.055,563.196 796.055,570.72L796.055,597.982C796.055,605.505 801.379,611.613 807.937,611.613L923.041,611.613C929.599,611.613 934.923,605.505 934.923,597.982L934.923,570.72Z" style="fill:rgb(247,247,247);stroke:black;stroke-width:1.86px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,1,45.8484,-4.29091)">
+                            <g transform="matrix(1.08079,0,0,1,-71.7942,0)">
+                                <text x="888.639px" y="618.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:15.699px;fill:rgb(8,84,162);">Marie</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-75.8256,0)">
+                                <text x="938.538px" y="618.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">a</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-71.4382,0)">
+                                <text x="887.349px" y="630.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">60 livres dans</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-71.4382,0)">
+                                <text x="887.349px" y="642.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">sa bibliothèque</text>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Icone-Bonhomme-BLEUE" serif:id="Icone Bonhomme BLEUE" transform="matrix(1,0,0,1,137.457,-40.2034)">
+                        <circle cx="932.508" cy="702.519" r="37.597" style="fill:rgb(8,84,162);"/>
+                        <clipPath id="_clip2">
+                            <circle cx="932.508" cy="702.519" r="37.597"/>
+                        </clipPath>
+                        <g clip-path="url(#_clip2)">
+                            <g id="Creation-Corps-et-Tete2" serif:id="Creation Corps et Tete">
+                                <g id="Creation-Corps2" serif:id="Creation Corps" transform="matrix(1.31452,0,0,1.13643,-219.965,-121.113)">
+                                    <ellipse cx="877.031" cy="746.079" rx="21.691" ry="16.63" style="fill:white;stroke:black;stroke-width:1.63px;"/>
+                                </g>
+                                <g id="Creation-Tete2" serif:id="Creation Tete">
+                                    <g transform="matrix(1.15234,0,0,1.15234,-43.8455,-56.0152)">
+                                        <circle cx="847.319" cy="652.821" r="13.802" style="fill:white;"/>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,97.4544,83.8357)">
+                                        <path d="M844.152,624.941C848.357,621.996 850.861,617.186 850.861,612.053C850.861,603.37 843.811,596.32 835.128,596.32C826.444,596.32 819.395,603.37 819.395,612.053C819.395,617.186 821.899,621.996 826.104,624.941C821.899,621.996 819.395,617.186 819.395,612.053C819.395,603.37 826.444,596.32 835.128,596.32C843.811,596.32 850.861,603.37 850.861,612.053C850.861,617.186 848.357,621.996 844.152,624.941Z" style="fill:white;stroke:black;stroke-width:2px;"/>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Creation-Corps-et-Tete3" serif:id="Creation Corps et Tete" transform="matrix(1,0,0,1,121.454,9.56913)">
+                                <g id="Creation-Corps3" serif:id="Creation Corps" transform="matrix(1.31452,0,0,1.13643,-219.965,-121.113)">
+                                    <ellipse cx="877.031" cy="746.079" rx="21.691" ry="16.63" style="fill:white;stroke:black;stroke-width:1.63px;"/>
+                                </g>
+                                <g id="Creation-Tete3" serif:id="Creation Tete">
+                                    <g transform="matrix(1.15234,0,0,1.15234,-43.8455,-56.0152)">
+                                        <circle cx="847.319" cy="652.821" r="13.802" style="fill:white;"/>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,97.4544,83.8357)">
+                                        <path d="M844.152,624.941C848.357,621.996 850.861,617.186 850.861,612.053C850.861,603.37 843.811,596.32 835.128,596.32C826.444,596.32 819.395,603.37 819.395,612.053C819.395,617.186 821.899,621.996 826.104,624.941C821.899,621.996 819.395,617.186 819.395,612.053C819.395,603.37 826.444,596.32 835.128,596.32C843.811,596.32 850.861,603.37 850.861,612.053C850.861,617.186 848.357,621.996 844.152,624.941Z" style="fill:white;stroke:black;stroke-width:2px;"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <circle cx="932.508" cy="702.519" r="37.597" style="fill:none;stroke:black;stroke-width:2px;"/>
+                    </g>
+                </g>
+                <g id="Biblio-Livres-BLEUS" serif:id="Biblio Livres BLEUS" transform="matrix(1,0,0,1,203.069,-95.5907)">
+                    <g id="Essai-Livre-ORANGE6" serif:id="Essai Livre ORANGE" transform="matrix(0.984729,0.174092,-0.174092,0.984729,125.806,-176.081)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE7" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,10.4226,-0.171113)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU" serif:id="Livre BLEU" transform="matrix(1,0,0,1,17.4272,-0.175035)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU1" serif:id="Livre BLEU" transform="matrix(1,0,0,1,24.4821,-0.181027)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU2" serif:id="Livre BLEU" transform="matrix(1,0,0,1,31.5133,-0.17127)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU3" serif:id="Livre BLEU" transform="matrix(0.984891,-0.173174,0.173174,0.984891,-51.1899,192.989)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                </g>
+                <g id="Fleche-BLEUE" serif:id="Fleche BLEUE" transform="matrix(-0.322288,-0.946642,0.946642,-0.322288,1016.95,1770.94)">
+                    <path d="M1089.94,550.19L1091.51,563.747L1100,630.971" style="fill:none;stroke:rgb(8,84,162);stroke-width:2px;"/>
+                    <g transform="matrix(0.996704,-0.0811288,0.0811288,0.996704,-60.5976,48.1392)">
+                        <path d="M1106.18,589.381L1112.2,601.41L1100.17,601.41L1106.18,589.381Z" style="fill:rgb(8,84,162);stroke:rgb(8,84,162);stroke-width:0.1px;"/>
+                    </g>
+                </g>
+                <g id="Croix-Plus--1" serif:id="Croix Plus +" transform="matrix(1,0,0,1,207.011,6.41124)">
+                    <g transform="matrix(0.999915,-0.0130608,0.0130608,0.999915,-6.90385,12.9764)">
+                        <path d="M990.067,530.014L989.93,540" style="fill:none;stroke:rgb(8,84,162);stroke-width:2px;"/>
+                    </g>
+                    <g transform="matrix(0.00513954,0.999987,-0.999987,0.00513954,1520.02,-457.815)">
+                        <path d="M990.113,530.116L990.053,540.104" style="fill:none;stroke:rgb(8,84,162);stroke-width:2px;"/>
+                    </g>
+                </g>
+            </g>
+            <g id="Bloc-Vert" serif:id="Bloc Vert">
+                <g id="Icone-Verte---Bulle-Jeanne" serif:id="Icone Verte + Bulle Jeanne">
+                    <g id="Emma-Bulle-Info-Nombre-de-Livres-dans-Bibliothèque1" serif:id="Emma Bulle Info Nombre de Livres dans Bibliothèque" transform="matrix(1,0,0,1,-48.3065,-145.345)">
+                        <g transform="matrix(1.14724,0,0,1,-39.6829,36.2079)">
+                            <path d="M934.923,570.72C934.923,563.196 929.599,557.088 923.041,557.088L807.937,557.088C801.379,557.088 796.055,563.196 796.055,570.72L796.055,597.982C796.055,605.505 801.379,611.613 807.937,611.613L923.041,611.613C929.599,611.613 934.923,605.505 934.923,597.982L934.923,570.72Z" style="fill:rgb(247,247,247);stroke:black;stroke-width:1.86px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,1,43.228,-1.95949)">
+                            <g transform="matrix(1.08079,0,0,1,-71.4382,0)">
+                                <text x="888.31px" y="618.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:15.699px;fill:rgb(25,98,22);">Jeanne</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-76.4996,0)">
+                                <text x="946.881px" y="618.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">a</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-71.4382,0)">
+                                <text x="887.349px" y="630.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">15 livres dans</text>
+                            </g>
+                            <g transform="matrix(1.08079,0,0,1,-71.4382,0)">
+                                <text x="887.349px" y="642.003px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:12px;">sa bibliothèque</text>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Icone-Bonhomme-VERTE" serif:id="Icone Bonhomme VERTE" transform="matrix(1,0,0,1,-93.9962,-216.94)">
+                        <circle cx="932.508" cy="702.519" r="37.597" style="fill:rgb(25,98,22);"/>
+                        <clipPath id="_clip3">
+                            <circle cx="932.508" cy="702.519" r="37.597"/>
+                        </clipPath>
+                        <g clip-path="url(#_clip3)">
+                            <g id="Creation-Corps-et-Tete4" serif:id="Creation Corps et Tete">
+                                <g id="Creation-Corps4" serif:id="Creation Corps" transform="matrix(1.31452,0,0,1.13643,-219.965,-121.113)">
+                                    <ellipse cx="877.031" cy="746.079" rx="21.691" ry="16.63" style="fill:white;stroke:black;stroke-width:1.63px;"/>
+                                </g>
+                                <g id="Creation-Tete4" serif:id="Creation Tete">
+                                    <g transform="matrix(1.15234,0,0,1.15234,-43.8455,-56.0152)">
+                                        <circle cx="847.319" cy="652.821" r="13.802" style="fill:white;"/>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,97.4544,83.8357)">
+                                        <path d="M844.152,624.941C848.357,621.996 850.861,617.186 850.861,612.053C850.861,603.37 843.811,596.32 835.128,596.32C826.444,596.32 819.395,603.37 819.395,612.053C819.395,617.186 821.899,621.996 826.104,624.941C821.899,621.996 819.395,617.186 819.395,612.053C819.395,603.37 826.444,596.32 835.128,596.32C843.811,596.32 850.861,603.37 850.861,612.053C850.861,617.186 848.357,621.996 844.152,624.941Z" style="fill:white;stroke:black;stroke-width:2px;"/>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Creation-Corps-et-Tete5" serif:id="Creation Corps et Tete" transform="matrix(1,0,0,1,121.454,9.56913)">
+                                <g id="Creation-Corps5" serif:id="Creation Corps" transform="matrix(1.31452,0,0,1.13643,-219.965,-121.113)">
+                                    <ellipse cx="877.031" cy="746.079" rx="21.691" ry="16.63" style="fill:white;stroke:black;stroke-width:1.63px;"/>
+                                </g>
+                                <g id="Creation-Tete5" serif:id="Creation Tete">
+                                    <g transform="matrix(1.15234,0,0,1.15234,-43.8455,-56.0152)">
+                                        <circle cx="847.319" cy="652.821" r="13.802" style="fill:white;"/>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,97.4544,83.8357)">
+                                        <path d="M844.152,624.941C848.357,621.996 850.861,617.186 850.861,612.053C850.861,603.37 843.811,596.32 835.128,596.32C826.444,596.32 819.395,603.37 819.395,612.053C819.395,617.186 821.899,621.996 826.104,624.941C821.899,621.996 819.395,617.186 819.395,612.053C819.395,603.37 826.444,596.32 835.128,596.32C843.811,596.32 850.861,603.37 850.861,612.053C850.861,617.186 848.357,621.996 844.152,624.941Z" style="fill:white;stroke:black;stroke-width:2px;"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <circle cx="932.508" cy="702.519" r="37.597" style="fill:none;stroke:black;stroke-width:2px;"/>
+                    </g>
+                </g>
+                <g id="Biblio-Livres-VERTS" serif:id="Biblio Livres VERTS" transform="matrix(1,0,0,1,-188.835,-84.6761)">
+                    <g id="Livre-VERT" serif:id="Livre VERT" transform="matrix(0.984729,0.174092,-0.174092,0.984729,125.806,-176.081)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT1" serif:id="Livre VERT" transform="matrix(1,0,0,1,10.4226,-0.171113)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT2" serif:id="Livre VERT" transform="matrix(1,0,0,1,17.4272,-0.175035)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT3" serif:id="Livre VERT" transform="matrix(1,0,0,1,24.4821,-0.181027)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT4" serif:id="Livre VERT" transform="matrix(1,0,0,1,31.5133,-0.17127)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT5" serif:id="Livre VERT" transform="matrix(0.984891,-0.173174,0.173174,0.984891,-51.1899,192.989)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                </g>
+                <g id="Fleche-VERTE" serif:id="Fleche VERTE" transform="matrix(-0.283009,0.959117,-0.959117,-0.283009,1835.66,-344.922)">
+                    <path d="M1100.09,535.695L1100,630.971" style="fill:none;stroke:rgb(25,98,22);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,-5.89506,-57.4584)">
+                        <path d="M1106.18,589.381L1112.2,601.41L1100.17,601.41L1106.18,589.381Z" style="fill:rgb(25,98,22);stroke:rgb(25,98,22);stroke-width:0.1px;"/>
+                    </g>
+                </g>
+                <g id="Croix-Plus--2" serif:id="Croix Plus +" transform="matrix(1,0,0,1,4.42155,6.07963)">
+                    <g transform="matrix(0.999915,-0.0130608,0.0130608,0.999915,-6.90385,12.9764)">
+                        <path d="M990.067,530.014L989.93,540" style="fill:none;stroke:rgb(25,98,22);stroke-width:2px;"/>
+                    </g>
+                    <g transform="matrix(0.00513954,0.999987,-0.999987,0.00513954,1520.02,-457.815)">
+                        <path d="M990.113,530.116L990.053,540.104" style="fill:none;stroke:rgb(25,98,22);stroke-width:2px;"/>
+                    </g>
+                </g>
+            </g>
+            <g id="Bloc-Bibliothèque-Vitruelle" serif:id="Bloc Bibliothèque Vitruelle">
+                <g id="Rectangle-Arrondi-Présentation-Bibliothèqeu-virtuelle" serif:id="Rectangle Arrondi Présentation Bibliothèqeu virtuelle" transform="matrix(0.984234,0,0,0.977273,20.5169,12.2158)">
+                    <path d="M1180.13,551.372C1180.13,543.714 1173.96,537.496 1166.36,537.496L1024.2,537.496C1016.6,537.496 1010.42,543.714 1010.42,551.372L1010.42,579.122C1010.42,586.78 1016.6,592.997 1024.2,592.997L1166.36,592.997C1173.96,592.997 1180.13,586.78 1180.13,579.122L1180.13,551.372Z" style="fill:rgb(247,247,247);stroke:black;stroke-width:0.51px;"/>
+                </g>
+                <g>
+                    <g transform="matrix(1.08079,0,0,1,-83.203,0)">
+                        <text x="1029.85px" y="546.286px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:7.848px;">Bibliothèque virtuelle,</text>
+                    </g>
+                    <g transform="matrix(1.08079,0,0,1,-90.3716,0)">
+                        <text x="1118.58px" y="546.286px" style="font-family:'OpenSans-Bold', 'Open Sans', sans-serif;font-weight:700;font-size:7.848px;">pleins</text>
+                    </g>
+                    <g transform="matrix(1.08079,0,0,1,-83.203,0)">
+                        <text x="1029.85px" y="554.135px" style="font-family:'OpenSans-Regular', 'Open Sans', sans-serif;font-size:7.848px;">de livres disponibles</text>
+                    </g>
+                </g>
+                <g id="Biblio-Livres-BLEUS1" serif:id="Biblio Livres BLEUS" transform="matrix(1,0,0,1,70.3132,-43.477)">
+                    <g id="Essai-Livre-ORANGE8" serif:id="Essai Livre ORANGE" transform="matrix(0.984729,0.174092,-0.174092,0.984729,125.806,-176.081)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE9" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,10.4226,-0.171113)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU4" serif:id="Livre BLEU" transform="matrix(1,0,0,1,17.4272,-0.175035)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU5" serif:id="Livre BLEU" transform="matrix(1,0,0,1,24.4821,-0.181027)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU6" serif:id="Livre BLEU" transform="matrix(1,0,0,1,31.5133,-0.17127)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-BLEU7" serif:id="Livre BLEU" transform="matrix(0.984891,-0.173174,0.173174,0.984891,-51.1899,192.989)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(8,84,162);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(8,84,162);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                </g>
+                <g id="Biblio-Livres-ORANGES1" serif:id="Biblio Livres ORANGES" transform="matrix(1,0,0,1,16.1864,-43.5044)">
+                    <g id="Essai-Livre-ORANGE10" serif:id="Essai Livre ORANGE" transform="matrix(0.984729,0.174092,-0.174092,0.984729,125.806,-176.081)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE11" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,10.4226,-0.171113)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE12" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,17.4272,-0.175035)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE13" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,24.4821,-0.181027)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE14" serif:id="Essai Livre ORANGE" transform="matrix(1,0,0,1,31.5133,-0.17127)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Essai-Livre-ORANGE15" serif:id="Essai Livre ORANGE" transform="matrix(0.984891,-0.173174,0.173174,0.984891,-51.1899,192.989)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(205,65,9);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(205,65,9);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                </g>
+                <g id="Biblio-Livres-VERTS1" serif:id="Biblio Livres VERTS" transform="matrix(1,0,0,1,-37.5265,-43.2499)">
+                    <g id="Livre-VERT6" serif:id="Livre VERT" transform="matrix(0.984729,0.174092,-0.174092,0.984729,125.806,-176.081)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT7" serif:id="Livre VERT" transform="matrix(1,0,0,1,10.4226,-0.171113)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT8" serif:id="Livre VERT" transform="matrix(1,0,0,1,17.4272,-0.175035)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT9" serif:id="Livre VERT" transform="matrix(1,0,0,1,24.4821,-0.181027)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT10" serif:id="Livre VERT" transform="matrix(1,0,0,1,31.5133,-0.17127)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                    <g id="Livre-VERT11" serif:id="Livre VERT" transform="matrix(0.984891,-0.173174,0.173174,0.984891,-51.1899,192.989)">
+                        <g transform="matrix(1,0,0,1,-25.1873,23.3117)">
+                            <rect x="1084.85" y="582.39" width="5.861" height="24.618" style="fill:rgb(247,247,247);stroke:rgb(25,98,22);stroke-width:0.3px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.953054,2.92881,28.8635)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952411,1.93001,29.274)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952403,0.9365,29.2803)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.952725,-0.0574639,29.0838)">
+                            <path d="M1061.06,607.049L1061.06,628.901" style="fill:none;stroke:rgb(25,98,22);stroke-width:0.2px;"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
