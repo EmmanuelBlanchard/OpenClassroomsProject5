@@ -17,15 +17,11 @@ html {
     box-sizing: border-box;
   }
 *, *::before, *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 html, body {
     margin:0;
     padding:0;
-}
-
-header {
-    position: relative;
 }
 
 ul {
@@ -38,10 +34,7 @@ div a {
 }
 
 .divNavLogo {
-    margin-left: 400px;           /* 400px/1920px=0.208 => 20.8% */
-    margin-top: 17px;
-    margin-right: 20px;
-    margin-bottom: 20px;          /* 20px/100px= 0.20 => 20% */
+    margin-left: 21%;
 }
 
 .imgLogo {
@@ -49,42 +42,36 @@ div a {
     height: 65px;
 }
 
-/* Dimensions Bloc titre marque width: 336.1px; height: 42.7px; */
 .brandName, .brandName2 {
-    font-size: 33px; /* 4rem 48pt 64px */
+    font-size: 2em;
     font-weight: bold;
 }
-
 .brandName {
     color: #0854A2;
-    margin-left: 3px;
-    margin-top: 25px;
+    margin-left: 1%;
 }
-
 .brandName2 {
     color: #CD4109;
-    margin-left: 7px;
-    margin-top: 25px;
-    margin-right: 160px;
+    margin-left: 0.2%;
+    margin-right: 8.3%;
 }
 
 nav {
     display: flex;
-    width: 100%;                    /* 100%  , 1920px */
-    height: 100px;                 /* 100px/1080px => 0.09259 = 9.25% */
     color: #F7F7F7;
+    align-items: center;
 }
 
 nav ul {
     display: flex;
-    margin-top: 30px;
+    padding-left: 0%;
 }
 
 nav li {
 	list-style-type: none; 		/* Aucun marqueur n'est affiché. */
 }
-nav ul li a {
-    font-size: 25.1px;          /* 25.1px => width 220px  */
+nav ul li a, .menu a {
+    font-size: 1.55em;
 }
 nav a {
     color: #0854A2;
@@ -94,22 +81,15 @@ nav a:link {
 	text-decoration:none; 		/* enlever le surlignement des a */
 }
 
-/* maquette width:311px => 35.5px */
 .linkCreateAccount {
-    margin-right: 100px;
-}
-
-/* maquette width:225px => font size 35.3px */
-.linkConnectMe {
-    left: 1500px;
+    margin-right: 4em;    /* 100px => 4em */
 }
 
 .menu{
     display: flex;
     background-color: #CD4109;
+    align-items: center;
     justify-content: center;
-    height: 60px;           /* 60px/1080px= 0.05555 => 5.55%  */
-    width: 100%;
 }
 
 .menu ul {
@@ -117,104 +97,95 @@ nav a:link {
 }
 
 .liHowItWorks {
-    padding-right: 60px;
+    padding-right: 4em;
 }
 
 .menu a {
     color: #F7F7F7;
-    font-size: 25px;                    /* 25.4pt sur la maquette */
 }
 .menu a:link {
 	text-decoration:none; 		        /* enlever le surlignement des a */
 }
 
-
-/* search part */
-
 main {
     display: flex;
-    background-color: #F7F7F7;
-    width: 15%;                      /* wireframe 290px/1920px=0.1510 */
+    background-color: #FFF;             
 }
 
 .asideSearchBar {
-    background-color: #FFFFFF;
-    border: 2px solid #F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    width: 16%;
+    border: 0.8em solid #F7F7F7;
+    margin-left: 20%;
 }
-
 
 form {
-    color: #FFFFFF;
-
-    border-color: #F7F7F7;
-    border-width: 2pt;
-
-    padding-top: 56px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 30px;
+    padding-top: 20%;
+    padding-left: 7.1%;
+    padding-right: 7.1%;
+    padding-bottom: 11%;
 
 }
-/* input search */
+
 .searchInput {
-    /*margin-top: 57px;      /* margin-top 57px ou padding top 56px de form ? */
-    margin-bottom: 10px;
-    width: 250px;
+    width: 100%;
+    height: 2.7em;
+    margin-bottom: 5%;
     border-color: #CD4109;
-    border-width: 2.3pt;
-    border-radius: 2%;
+    border-width: 0.3em;
+    border-radius: 0.5em;
 }
 
-/* 250px dimensions bouton rechercher */
 .searchButton {
-    width: 250px;
-    height: 40px;
+    width: 100%;
     color: #F7F7F7;
     background-color: #CD4109;
     border-color: #A02804;
-    border-width: 0.7pt;
-    font-size: 24pt;
+    font-size: 1.7em;
+    padding: 3% 0;
 }
 
 /* part content */
 
-section {
-    width: 800px;           /*  800px/1920px= 0.4166 => 41.66% */
-    height: 920px;          /* 1080px-160px= 920px => 920px/1080px=0.85185 => 85.19% */
+.contentBlockSection {
+    width: 42%;           /*  800px/1920px= 0.4166 => 41.66% */
+    height: 85%;          /* 1080px-160px= 920px => 920px/1080px=0.85185 => 85.19% */
 }
 
 .introductoryContent {
-    width: 740px;
+    width: 100%;                   /* 800px */
 }
 
-main div h2 {
+main section h2 {
     color: #000000;
-    font-size: 21px;                /* on wireframes  Update value of 23pt => width => 680px  | begin 800px, 1480px end => 680px */
-    margin-left: 100px;             /* wireframe search bar end : 700px to 800px begin */
-    margin-bottom: 20px;
+    font-size: 1.32em;
+    margin-left: 11.3%;             /* 100px */
+    margin-bottom: 2.3%;            /* 20 */
 }
 
-div.introductoryContent>p {
-    font-size: 13.4px;              /* 13.5pt =>  width 663px | begin:810px, 1473px:end  => 663px */
+section.introductoryContent>p {
+    font-size: 0.83em;             /* 13.4px 13.5pt =>  width 663px | begin:810px, 1473px:end  => 663px */
     font-weight: bold;
     line-height: 20px;
-    margin-left: 110px;             /* wireframe search bar end : 700px to 810px begin */
-    width: 663px;
+    margin-left: 12.4%;             /* 110px wireframe search bar end : 700px to 810px begin */
+    width: 74.7%;                   /*  663px */
 }
 
-main div h3 {
+main section h3 {
     color: #CD4109;
-    font-size: 22.6px;
+    font-size: 1.41em;
     width: 384px;
     margin-left: 150px;             /* wireframe search bar end : 700px to 850px begin */ 
     margin-bottom: 29px;
 }
 
 .instructionsForUse p {
-    font-size: 16.15px;
-    width: 528px;
-    line-height: 20px;
-    margin-left: 170px;             /* wireframe search bar end : 700px to 870px begin */ 
+    font-size: 1.01em;              /* 16.15px */
+    width: 59.5%;                   /* 528px */
+    margin-left: 19.2%;             /* 170px; */
 }
 
 .linkOnHowTheWebsiteWorks {
@@ -224,29 +195,19 @@ main div h3 {
     width: 457px;
     margin-left: 190px;             /* wireframe search bar end : 700px to 890px begin */ 
     margin-top: 20px;
-    /* 457px */
 }
 
-
-/* Part of <h2>Une sélection de livres disponibles à l'échange</h2> */
-/* TO DELELTE  THE DIV
-.divTitleSelectionOfBooks {
-    width: 700px;
-    height: 40px;
-    background-color: #F7F7F7;
-    color: #000000;
-}
-*/
-
-.divTitleSelectionOfBooks h2 {
-    /* wireframe search bar end : 700px to 800px begin */
-    margin-left: 100px;
-    padding-left: 23px;
-    width: 700px;
+.h2TitleSelectionOfBooks {
+    text-align: center;
     background-color: #F7F7F7;
     color: #000000;
 }
 
+.divDisplayBlocksBookInformation {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+}
 /* imageForTheInstructionManualBlock */
 .imageForTheInstructionManualBlock {
     width: 562.9px;
@@ -254,21 +215,20 @@ main div h3 {
     margin-left: 150px;             /* wireframe search bar end : 700px to 850px begin */ 
 }
 
-/* child container dimensions 
-Width 201px Height 280px */
-
 /* Book Part */
 
-.childContainer {
-    width: 25%;            /* wireframe 200px   */
-    height: 25%;              /* wireframe 280px/1080=   */
+.blockOfTheBookInformation {
+    display: flex;
+    flex-direction: column;
+    width: 35%;                         /* 25% wireframe 200px   */
+    height: 25%;                        /* wireframe 280px/1080=   */
     border: 3.73px solid #196216;
     border-radius: 0.5em;
     border-color: #196216;
     padding: 20px;
 }
 
-.childContainer h4 {
+.blockOfTheBookInformation h4 {
     width: 201px;       /* 160*/
     overflow: hidden;
     font-size: 18.66px;    /* 14pt  => 18.66px */
@@ -278,19 +238,18 @@ Width 201px Height 280px */
 
 }
 
-div.line.author > a {
+section.line.author > a {
     font-size: 12pt;
     font-weight: bold;
     color: #000000;
 }
 
-div.childContainer > p.line.category {
+section.blockOfTheBookInformation > p.line.category {
     font-size: 10.5pt;
 
 }
 
-
-div.childContainer > p.line.state, div.childContainer > p.line.owner {
+section.blockOfTheBookInformation > p.line.state, section.blockOfTheBookInformation > p.line.owner {
     font-size: 16px;
     font-weight: bold;
 }
@@ -300,9 +259,13 @@ div.childContainer > p.line.state, div.childContainer > p.line.owner {
     height: 22.7px;
 }
 
-div.line.location > span {
+section.line.location > span {
     font-size: 16px;
     font-weight: bold;
+}
+
+.divExchangeButton {
+    align-self: center;
 }
 
 .exchangeButton {
@@ -313,4 +276,5 @@ div.line.location > span {
     background-color: #196216;
     border-radius: 11px;
     padding: 11px;
+    text-align: center;
 }

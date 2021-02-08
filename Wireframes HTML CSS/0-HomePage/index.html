@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+
     <header>
         <nav>
             <div class="divNavLogo">
@@ -50,8 +51,10 @@
                     <button class="searchButton" type="submit">Rechercher</button>
             </form>
         </aside>
+        
 
-        <section>
+        <section class="contentBlockSection">
+            
             <section class="introductoryContent">
                 <h2>Échangez vos livres contre des nouveaux avec ÉchangeLivres !  </h2>
                 <p>
@@ -59,7 +62,7 @@
                     Inscrivez-vous gratuitement et ajoutez vos livres à notre catalogue composé de milliers d'ouvrages.
                 </p>
             </section>
-    
+            
             <section class="instructionsForUse">
                 <h3>L'échange de livres, mode d'emploi</h3>
                 <p>
@@ -74,53 +77,55 @@
     
             <div class="container">
                 
-                <h2>Une sélection de livres disponibles à l'échange</h2>
-    
-                <section class="childContainer">
-                    <h4>Le cycle de Fondation Tome 1 : Fondation</h4>
-                    <div class="line author">
-                        <a href="">Isaac Asimov</a>
-                    </div>
-                    <p class="line category">Science-fiction</p>
-                    <p class="line publisher">Gallimard</p>
-                    <p class="line language">Langue : Français</p>
-                    <p class="line format">Format : Poche</p>
-                    <p class="line state">État: Bon</p>
-                    <div class="line location">
-                        <img src="./img/locationIcon.svg" class="locationIcon" alt="location Icon" />
-                        <span>Paris</span>
-                    </div>
-                    <p class="line owner">Propriétaire : Jean7504</p>
-                    <div>
-                        <a href="" class="exchangeButton" role="button">Échanger</a>
-                    </div>
-                </section>
-    
-                <section class="childContainer">
-                    <h4>Le cycle de Fondation Tome 2 Fondation et </h4>
-                    <div class="line author">
-                        <a href="">Isaac Asimov</a>
-                    </div>
-                    <p class="line category">Science-fiction</p>
-                    <p class="line publisher">Gallimard</p>
-                    <p class="line language">Langue : Français</p>
-                    <p class="line format">Format : Poche</p>
-                    <p class="line state">État: Excellent</p>
-                    <div class="line location">
-                        <img src="./img/locationIcon.svg" class="locationIcon" alt="location Icon" />
-                        <span>Lyon</span>
-                    </div>
-                    <p class="line owner">Propriétaire :  Jeanne6901</p>
-                    <div>
-                        <a href="" class="exchangeButton" role="button">Échanger</a>
-                    </div>
-                </section>
-    
+                <h2 class="h2TitleSelectionOfBooks">Une sélection de livres disponibles à l'échange</h2>
+
+                <div class="divDisplayBlocksBookInformation">
+                    <section class="blockOfTheBookInformation">
+                        <h4>Le cycle de Fondation Tome 1 : Fondation</h4>
+                        <div class="line author">
+                            <a href="">Isaac Asimov</a>
+                        </div>
+                        <p class="line category">Science-fiction</p>
+                        <p class="line publisher">Gallimard</p>
+                        <p class="line language">Langue : Français</p>
+                        <p class="line format">Format : Poche</p>
+                        <p class="line state">État: Bon</p>
+                        <div class="line location">
+                            <img src="./img/locationIcon.svg" class="locationIcon" alt="location Icon" />
+                            <span>Paris</span>
+                        </div>
+                        <p class="line owner">Propriétaire : Jean7504</p>
+                        <div>
+                            <a href="" class="exchangeButton" role="button">Échanger</a>
+                        </div>
+                    </section>
+        
+                    <section class="blockOfTheBookInformation">
+                        <h4>Le cycle de Fondation Tome 2 Fondation et </h4>
+                        <div class="line author">
+                            <a href="">Isaac Asimov</a>
+                        </div>
+                        <p class="line category">Science-fiction</p>
+                        <p class="line publisher">Gallimard</p>
+                        <p class="line language">Langue : Français</p>
+                        <p class="line format">Format : Poche</p>
+                        <p class="line state">État: Excellent</p>
+                        <div class="line location">
+                            <img src="./img/locationIcon.svg" class="locationIcon" alt="location Icon" />
+                            <span>Lyon</span>
+                        </div>
+                        <p class="line owner">Propriétaire :  Jeanne6901</p>
+                        <div class="divExchangeButton">
+                            <a href="" class="exchangeButton" role="button">Échanger</a>
+                        </div>
+                    </section>
+                </div>
+
             </div>
 
         </section>
-        
-    </main>
     
+    </main>
+
 </body>
 </html>
