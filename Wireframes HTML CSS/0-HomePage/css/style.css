@@ -28,13 +28,6 @@ header {
     position: relative;
 }
 
-header nav div img {
-    width: 47.3px;
-    height: 42.7px;
-    /*width: 94.6px;
-    height: 85.4px;*/
-}
-
 ul {
     list-style-type: none;
 }
@@ -55,11 +48,6 @@ div a {
     width: 65px;
     height: 65px;
 }
-/*
-.divNavLogo img {
-    margin: 20px;
-}
-*/
 
 /* Dimensions Bloc titre marque width: 336.1px; height: 42.7px; */
 .brandName, .brandName2 {
@@ -77,7 +65,7 @@ div a {
     color: #CD4109;
     margin-left: 7px;
     margin-top: 25px;
-    margin-right: 175px;
+    margin-right: 160px;
 }
 
 nav {
@@ -89,15 +77,14 @@ nav {
 
 nav ul {
     display: flex;
-    /*position: absolute;*/
-    left: 1100px;
+    margin-top: 30px;
 }
 
 nav li {
 	list-style-type: none; 		/* Aucun marqueur n'est affiché. */
 }
 nav ul li a {
-    font-size: 35.5px; /* 36pt 48px */
+    font-size: 25.1px;          /* 25.1px => width 220px  */
 }
 nav a {
     color: #0854A2;
@@ -121,6 +108,10 @@ nav a:link {
     display: flex;
     background-color: #CD4109;
     justify-content: center;
+    height: 60px;           /* 60px/1080px= 0.05555 => 5.55%  */
+    width: 100%;            /* 1920px 100% or 
+    width: 1100px;            Update wireframe for begin 400px to 1500px ?
+    margin-left: 400px; */
 }
 
 .menu ul {
@@ -133,10 +124,10 @@ nav a:link {
 
 .menu a {
     color: #F7F7F7;
-    font-size: 25.4pt;          /* 25.4pt sur la maquette */
+    font-size: 25px;                    /* 25.4pt sur la maquette */
 }
 .menu a:link {
-	text-decoration:none; 		/* enlever le surlignement des a */
+	text-decoration:none; 		        /* enlever le surlignement des a */
 }
 
 
@@ -146,9 +137,9 @@ nav a:link {
     display: flex;
     flex-direction: column;
     background-color: #F7F7F7;
-    width: 15.10%;                     /* wireframe 290px/1920px=0.1510  , 15.10% */
+    width: 15.10%;                      /* wireframe 290px/1920px=0.1510  , 15.10% */
     height: 85.27%;                     /* wireframe 921px/1080px=0.8527 , 85.27% */
-    margin-left: 21.35%;               /* wireframe 410px/1920px=0.21354  , 21.35% */
+    margin-left: 21.35%;                /* wireframe 410px/1920px=0.21354  , 21.35% */
 }
 
 .asideSearchBar {
@@ -171,7 +162,7 @@ form {
 }
 /* input search */
 .searchInput {
-    /*margin-top: 57px;   /* margin-top 57px ou padding top 56px de form ? */
+    /*margin-top: 57px;      /* margin-top 57px ou padding top 56px de form ? */
     margin-bottom: 10px;
     width: 250px;
     border-color: #CD4109;
@@ -192,23 +183,25 @@ form {
 
 /* part content */
 
+main {
+    width: 800px;           /*  800px/1920px= 0.4166 => 41.66% */
+    height: 920px;          /* 1080px-160px= 920px => 920px/1080px=0.85185 => 85.19% */
+}
+
 .introductoryContent {
     width: 740px;
 }
 
 main div h2 {
     color: #000000;
-    font-size: 24px;    /* on wireframes  value of 25pt => 33px */
+    font-size: 22.8px;      /* on wireframes  Update value of 23pt => width => 680px */
 }
 
 div.introductoryContent>p {
-    font-size: 14.6px;    /* 14pt => 18.6px */
+    font-size: 14.6px;      /* 13.5pt =>  width 663px */
     font-weight: bold;
+    line-height: 20px;
 }
-/*
-main div h2 p {
-    font-size: 18.6px;
-}*/
 
 main div h3 {
     color: #CD4109;
