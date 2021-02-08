@@ -135,11 +135,8 @@ nav a:link {
 
 .divColumnLeftWithSearchBar {
     display: flex;
-    flex-direction: column;
     background-color: #F7F7F7;
-    width: 15.10%;                      /* wireframe 290px/1920px=0.1510  , 15.10% */
-    height: 85.27%;                     /* wireframe 921px/1080px=0.8527 , 85.27% */
-    margin-left: 21.35%;                /* wireframe 410px/1920px=0.21354  , 21.35% */
+    width: 15%;                      /* wireframe 290px/1920px=0.1510  , 15.10% */
 }
 
 .asideSearchBar {
@@ -194,34 +191,60 @@ main {
 
 main div h2 {
     color: #000000;
-    font-size: 22.8px;      /* on wireframes  Update value of 23pt => width => 680px */
+    font-size: 21px;                /* on wireframes  Update value of 23pt => width => 680px  | begin 800px, 1480px end => 680px */
+    margin-left: 100px;             /* wireframe search bar end : 700px to 800px begin */
+    margin-bottom: 20px;
 }
 
 div.introductoryContent>p {
-    font-size: 14.6px;      /* 13.5pt =>  width 663px */
+    font-size: 13.4px;              /* 13.5pt =>  width 663px | begin:810px, 1473px:end  => 663px */
     font-weight: bold;
     line-height: 20px;
+    margin-left: 110px;             /* wireframe search bar end : 700px to 810px begin */
+    width: 663px;
 }
 
 main div h3 {
     color: #CD4109;
-    font-size: 24pt;
+    font-size: 22.6px;
+    width: 384px;
+    margin-left: 150px;             /* wireframe search bar end : 700px to 850px begin */ 
+    margin-bottom: 29px;
 }
 
-main div h3 p {
-    font-size: 17pt;
+.divInstructionsForUse p {
+    font-size: 16.15px;
+    width: 528px;
+    line-height: 20px;
+    margin-left: 170px;             /* wireframe search bar end : 700px to 870px begin */ 
 }
 
 .linkOnHowTheWebsiteWorks {
+    display: inline-block;
     color: #000000;
     text-decoration: underline;
+    width: 457px;
+    margin-left: 190px;             /* wireframe search bar end : 700px to 890px begin */ 
+    margin-top: 20px;
+    /* 457px */
 }
 
 
 /* Part of <h2>Une sélection de livres disponibles à l'échange</h2> */
+/* TO DELELTE  THE DIV
 .divTitleSelectionOfBooks {
     width: 700px;
     height: 40px;
+    background-color: #F7F7F7;
+    color: #000000;
+}
+*/
+
+.divTitleSelectionOfBooks h2 {
+    /* wireframe search bar end : 700px to 800px begin */
+    margin-left: 100px;
+    padding-left: 23px;
+    width: 700px;
     background-color: #F7F7F7;
     color: #000000;
 }
@@ -230,6 +253,7 @@ main div h3 p {
 .imageForTheInstructionManualBlock {
     width: 562.9px;
     height: 288.2px;
+    margin-left: 150px;             /* wireframe search bar end : 700px to 850px begin */ 
 }
 
 /* child container dimensions 
