@@ -28,11 +28,11 @@ header {
     position: relative;
 }
 
-header nav div img {/*
+header nav div img {
     width: 47.3px;
-    height: 42.7px;*/
-    width: 94.6px;
-    height: 85.4px;
+    height: 42.7px;
+    /*width: 94.6px;
+    height: 85.4px;*/
 }
 
 ul {
@@ -43,43 +43,53 @@ ul {
 div a {
     text-decoration:none;
 }
-/*
+
 .divNavLogo {
-    position: absolute;
-    left: 400px;
+    margin-left: 400px;           /* 400px/1920px=0.208 => 20.8% */
+    margin-top: 17px;
+    margin-right: 20px;
+    margin-bottom: 20px;          /* 20px/100px= 0.20 => 20% */
 }
-*/
+
+.imgLogo {
+    width: 65px;
+    height: 65px;
+}
+/*
 .divNavLogo img {
     margin: 20px;
 }
+*/
 
 /* Dimensions Bloc titre marque width: 336.1px; height: 42.7px; */
 .brandName, .brandName2 {
-    position: absolute;
     font-size: 33px; /* 4rem 48pt 64px */
     font-weight: bold;
 }
 
 .brandName {
-    left: 490px;            /* 490px/1920 =25.52% */
     color: #0854A2;
+    margin-left: 3px;
+    margin-top: 25px;
 }
 
 .brandName2 {
-    left: 689px;
     color: #CD4109;
+    margin-left: 7px;
+    margin-top: 25px;
+    margin-right: 175px;
 }
 
 nav {
     display: flex;
-    width: 100%;  /* 100%  , 1920px */
-    height: 98.5px; /* 98.5px/1080px =>  */
+    width: 100%;                    /* 100%  , 1920px */
+    height: 100px;                 /* 100px/1080px => 0.09259 = 9.25% */
     color: #F7F7F7;
 }
 
 nav ul {
     display: flex;
-    position: absolute;
+    /*position: absolute;*/
     left: 1100px;
 }
 
@@ -99,13 +109,11 @@ nav a:link {
 
 /* maquette width:311px => 35.5px */
 .linkCreateAccount {
-    position: static;
-    left: 1412px;
+    margin-right: 100px;
 }
 
 /* maquette width:225px => font size 35.3px */
 .linkConnectMe {
-    position: static;   
     left: 1500px;
 }
 
@@ -132,7 +140,22 @@ nav a:link {
 }
 
 
-/* Partie recherche */
+/* search part */
+
+.divColumnLeftWithSearchBar {
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F7F7;
+    width: 15.10%;                     /* wireframe 290px/1920px=0.1510  , 15.10% */
+    height: 85.27%;                     /* wireframe 921px/1080px=0.8527 , 85.27% */
+    margin-left: 21.35%;               /* wireframe 410px/1920px=0.21354  , 21.35% */
+}
+
+.asideSearchBar {
+    background-color: #FFFFFF;
+    border: 2px solid #F7F7F7;
+}
+
 
 form {
     color: #FFFFFF;
