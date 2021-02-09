@@ -115,7 +115,6 @@ main {
 .asideSearchBar {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: #FFF;
     width: 16%;
     border: 0.8em solid #F7F7F7;
@@ -163,28 +162,28 @@ main section h2 {
     color: #000000;
     font-size: 1.32em;
     margin-left: 11.3%;             /* 100px */
-    margin-bottom: 2.3%;            /* 20 */
+    margin-bottom: 2.3%;            /* 20px */
 }
 
 section.introductoryContent>p {
-    font-size: 0.83em;             /* 13.4px 13.5pt =>  width 663px | begin:810px, 1473px:end  => 663px */
+    font-size: 0.83em;              /* 13.4px */
     font-weight: bold;
-    line-height: 20px;
-    margin-left: 12.4%;             /* 110px wireframe search bar end : 700px to 810px begin */
-    width: 74.7%;                   /*  663px */
+    line-height: 1.6em;
+    margin-left: 12.4%;             /* 110px */
+    width: 83%;                     /* 663px */
 }
 
 main section h3 {
     color: #CD4109;
     font-size: 1.41em;
-    width: 384px;
-    margin-left: 150px;             /* wireframe search bar end : 700px to 850px begin */ 
-    margin-bottom: 29px;
+    width: 49%;                     /* 384px */
+    margin-left: 18.8%;             /* 150px */
+    margin-bottom: 3.7%;            /* 29px */
 }
 
 .instructionsForUse p {
-    font-size: 1.01em;              /* 16.15px */
-    width: 59.5%;                   /* 528px */
+    font-size: 1.1em;               /* 17.6px */
+    width: 77.5%;                   /* 619px */
     margin-left: 19.2%;             /* 170px; */
 }
 
@@ -192,9 +191,9 @@ main section h3 {
     display: inline-block;
     color: #000000;
     text-decoration: underline;
-    width: 457px;
-    margin-left: 190px;             /* wireframe search bar end : 700px to 890px begin */ 
-    margin-top: 20px;
+    width: 57.2%;                   /* 457px */
+    margin-left: 23.8%;             /* 190px */ 
+    margin-top: 2.5%;               /* 20px */
 }
 
 .h2TitleSelectionOfBooks {
@@ -208,60 +207,59 @@ main section h3 {
     justify-content: space-around;
     margin-bottom: 2%;
 }
-/* imageForTheInstructionManualBlock */
+
 .imageForTheInstructionManualBlock {
-    width: 562.9px;
+    width: 70.4%;                           /* 562.9px */
     height: 288.2px;
-    margin-left: 150px;             /* wireframe search bar end : 700px to 850px begin */ 
+    margin-left: 18.8%;                     /* 150px */ 
 }
 
-/* Book Part */
-
+/* block of books */
 .blockOfTheBookInformation {
     display: flex;
     flex-direction: column;
-    width: 35%;                         /* 25% wireframe 200px   */
-    height: 25%;                        /* wireframe 280px/1080=   */
-    border: 3.73px solid #196216;
+    justify-content: center;
+    width: 35%;                                     /* 35%  */
+    border: 0.2em solid #196216;                  /* 3.73px */
     border-radius: 0.5em;
     border-color: #196216;
-    padding: 20px;
+    padding: 2.51%;                                 /* 20px */
 }
 
 .blockOfTheBookInformation h4 {
-    width: 201px;       /* 160*/
+    width: 95%;                                     /* 201px */ /* 86% */
+    margin-top: 0;
+    margin-bottom: 4.4%;
     overflow: hidden;
-    font-size: 18.66px;    /* 14pt  => 18.66px */
-    font-weight: bold;
-    color: #000000;
-    line-height: 1.26rem;  /* 10pt mais trop court en version html css */
-
+    font-size: 1.3em;                               /* 18.66px */ /* 1.16em */
+    line-height: 1.08em;                            /* 20 px */
 }
 
-section.line.author > a {
-    font-size: 12pt;
-    font-weight: bold;
+.blockOfTheBookInformation h4 ,div.line.author > a {
     color: #000000;
+}
+
+div.line.author > a ,section.blockOfTheBookInformation > p.line.state, div.line.location > span ,section.blockOfTheBookInformation > p.line.owner {
+    font-size: 1.2em;
 }
 
 section.blockOfTheBookInformation > p.line.category {
-    font-size: 10.5pt;
-
+    font-size: 1.17em;
 }
 
-section.blockOfTheBookInformation > p.line.state, section.blockOfTheBookInformation > p.line.owner {
-    font-size: 16px;
+section.blockOfTheBookInformation > p.line.category, section.blockOfTheBookInformation > p.line.publisher, section.blockOfTheBookInformation > p.line.language,
+ section.blockOfTheBookInformation > p.line.format,  section.blockOfTheBookInformation > p.line.state,  section.blockOfTheBookInformation > p.line.owner {
+    margin-top: 4.4%;
+	margin-bottom: 4.4%;
+}
+
+.blockOfTheBookInformation h4, div.line.author > a ,section.blockOfTheBookInformation > p.line.state, section.blockOfTheBookInformation > p.line.owner, div.line.location > span {
     font-weight: bold;
 }
 
 .locationIcon {
-    width: 14.6px; 
-    height: 22.7px;
-}
-
-section.line.location > span {
-    font-size: 16px;
-    font-weight: bold;
+    width: 3em;                                      /* 14.6px */
+    height: 3em;                                     /* 22.7px */
 }
 
 .divExchangeButton {
@@ -269,12 +267,9 @@ section.line.location > span {
 }
 
 .exchangeButton {
-    width: 75px;
-    height: 21.6px;
-    font-size: 11.3pt;
+    font-size: 1.1em;
     color: #FFFFFF;
     background-color: #196216;
-    border-radius: 11px;
-    padding: 11px;
-    text-align: center;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
 }
