@@ -116,7 +116,7 @@ main {
     display: flex;
     justify-content: center;
     background-color: #FFF;
-    width: 16%;
+    /*width: 16%;    */                          /* put in comment to solve the overflow problem */
     border: 0.8em solid #F7F7F7;
     margin-left: 20%;
 }
@@ -133,8 +133,7 @@ form {
     width: 100%;
     height: 2.7em;
     margin-bottom: 5%;
-    border-color: #CD4109;
-    border-width: 0.3em;
+    border: 0.3em solid #CD4109;
     border-radius: 0.5em;
 }
 
@@ -150,17 +149,12 @@ form {
 /* part content */
 
 .contentBlockSection {
-    width: 42%;           /*  800px/1920px= 0.4166 => 41.66% */
-    height: 85%;          /* 1080px-160px= 920px => 920px/1080px=0.85185 => 85.19% */
-}
-
-.introductoryContent {
-    width: 100%;                   /* 800px */
+    width: 42%;                                     /*  800px/1920px= 0.4166 => 41.66% */
 }
 
 main section h2 {
     color: #000000;
-    font-size: 1.32em;
+    font-size: 1.48em;              /* 1.32em  1.41em 1.48em*/
     margin-left: 11.3%;             /* 100px */
     margin-bottom: 2.3%;            /* 20px */
 }
@@ -175,8 +169,8 @@ section.introductoryContent>p {
 
 main section h3 {
     color: #CD4109;
-    font-size: 1.41em;
-    width: 49%;                     /* 384px */
+    font-size: 1.41em;              /* 1.41em  1.32em */
+    width: 48%;                     /* 384px */
     margin-left: 18.8%;             /* 150px */
     margin-bottom: 3.7%;            /* 29px */
 }
@@ -197,9 +191,13 @@ main section h3 {
 }
 
 .h2TitleSelectionOfBooks {
+    width: 90%;                     /* before 85% */
     text-align: center;
     background-color: #F7F7F7;
-    color: #000000;
+}
+
+.container .h2TitleSelectionOfBooks {
+    margin-left: 5.3%;
 }
 
 .divDisplayBlocksBookInformation {
@@ -219,7 +217,7 @@ main section h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 35%;                                     /* 35%  */
+    width: 36%;                                     /* 35%  */
     border: 0.2em solid #196216;                  /* 3.73px */
     border-radius: 0.5em;
     border-color: #196216;
@@ -248,7 +246,7 @@ section.blockOfTheBookInformation > p.line.category {
 }
 
 section.blockOfTheBookInformation > p.line.category, section.blockOfTheBookInformation > p.line.publisher, section.blockOfTheBookInformation > p.line.language,
- section.blockOfTheBookInformation > p.line.format,  section.blockOfTheBookInformation > p.line.state,  section.blockOfTheBookInformation > p.line.owner {
+ section.blockOfTheBookInformation > p.line.format,  section.blockOfTheBookInformation > p.line.state, div.line.location, section.blockOfTheBookInformation > p.line.owner, .divExchangeButton {
     margin-top: 4.4%;
 	margin-bottom: 4.4%;
 }
