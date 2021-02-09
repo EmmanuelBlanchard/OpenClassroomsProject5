@@ -13,7 +13,6 @@ html {
     font-size: 100%;
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 400;
-    color: #2c2e2f;
     box-sizing: border-box;
   }
 *, *::before, *::after {
