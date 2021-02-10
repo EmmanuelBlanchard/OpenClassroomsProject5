@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchangeLivres : Site d'échange de livres d'occasion</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="divNavLogo">
+                <img src="img/logo.svg" class="imgLogo" alt="mains avec livre effectuant un échange">
+            </div>
+
+            <h1 class="brandName">Échange</h1>
+            <h1 class="brandName2">Livres</h1>
+
+            <ul>
+                <li>
+                    <a href="" class="linkCreateAccount">Créer mon compte</a>
+                </li>
+
+                <li>
+                    <a href="" class="linkConnectMe">Me connecter</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menu">
+            <ul>
+                <li class="liHowItWorks">
+                    <a href="">Comment ça marche</a>
+                </li>
+
+                <li>
+                    <a href="">Foire aux questions</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <aside class="asideSearchBar">
+            <form action="">
+                    <input class="searchInput" type="text">
+
+                    <button class="searchButton" type="submit">Rechercher</button>
+            </form>
+        </aside>
+        
+
+        <section class="contentBlockSection">
+            <h2 class="h2CreateAccount">Créer votre compte</h2>
+
+            <p>Créer votre compte en quelques clics sur ÉchangeLivres et échangez dès aujourd'hui vos premiers livres, simplement et rapidement. </p>
+
+            <p>Un service de qualité, des échanges à volonté !</p>
+
+            <form action="" class="formCreateAccount">
+                <div>
+                    <label for="pseudo">Pseudo :</label>
+                    <input type="text" id="pseudo" name="user_pseudo">
+                </div>
+                <div>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="user_password"
+                           minlength="12" required>
+                </div>
+                <div>
+                    <label for="mail">E-mail :</label>
+                    <input type="email" id="mail" name="user_mail">
+                </div>
+                <div>
+                    <label for="postalcode">Code postal :</label>
+                    <input type="text" id="postalcode" name="user_postalcode"  required>
+                </div>
+                <div>
+                    <label for="city">Ville :</label>
+                    <input type="text" id="city" name="user_city">
+                </div>
+                <div class="divCheckbox">
+                    <input type="checkbox" id="gcu_privacypolicy" name="user_gcu_privacypolicy">
+                    <label for="gcu_privacy_policy">Vous acceptez les conditions générales d'utilisation et la politique de confidentialité du site ÉchangeLivres.</label>
+                </div>
+                <div class="divButtonCreateAccount">
+                    <button type="submit" class="buttonCreateAccount">Créer mon compte</button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+</body>
+</html>
