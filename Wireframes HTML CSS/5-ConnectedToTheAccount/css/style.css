@@ -116,10 +116,18 @@ main {
     display: flex;
     background-color: #FFF;             
 }
+/* Add New !! ++ => flex-direction: column;
+    delete => justify-content: center;
+    ++ => align-items: center; 
+    
+    update background-color: #FFF; => F7F7F7 et mettre le fond du form de search bar en blanc #FFF
+    
+    */
 .asideSearchBar {
     display: flex;
-    justify-content: center;
-    background-color: #FFF;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
     margin-left: 20%;
 }
@@ -145,6 +153,36 @@ form {
     font-size: 1.7em;
     padding: 3% 0;
 }
+
+/* Add New !! */
+.informationAboutTheAccountTheLibraryTheExchanges {
+    background-color: #F7F7F7;
+}
+.paragraphOfWelcomeOfPseudo {
+    font-size: 2em;
+    font-weight: bold;
+}
+.divAboutTheAccountTheLibraryTheExchanges {
+    padding-left: 0.65em;
+}
+.divAboutTheAccountTheLibraryTheExchanges > h3 {
+    color: #0854A2;
+}
+.linkManagemyAccount, .linkMail {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.linkMail {
+    padding-top: 0.65em;                                /* 10px */
+}
+.informationAboutTheAccountTheLibraryTheExchanges a {
+    color: #000;
+    text-decoration:none;
+    padding-left: 0.65em;
+}
+/*  New Above  */ 
+
 .contentBlockSection {
     width: 42%;
 }
@@ -153,39 +191,63 @@ main section h2 {
     margin-bottom: 2.3%;
 }
 
-/* Block 3 -Confirm Account Email Address */
-.h2ConfirmAccountEmailAddress {
+/* Block 5 - Connected To The Account */
+.h2ConnectedTotheAccount {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
-    width: 72.5%;                                 /* 580px/800px=0.725 => 72.5% */
-    font-size: 2.2em;                             /* 36px => 48px => 3em */
+    width: 72.5%;
+    font-size: 2.2em;
     background-color: #F7F7F7;
-    border: 0.04em solid #186135;               /* 1pt => 1.33px => 0.04em */
-    margin-bottom: 10%;
+    border: 0.04em solid #186135;
     margin-left: 10%;
+    margin-bottom: 10%;
     padding-top: 4%;
     padding-left: 8.1%;
     padding-bottom: 5%;
     border-radius: 0.2em;
 }
-
-.divConfirmAccountEmailAddress {
+.divConnectedTotheAccount {
     margin: 0 auto;
     width: 75.5%;  
     border: 0.3em solid #186135; 
     border-radius: 0.94em;
     background-color: #F7F7F7;
-    padding: 2% 5%;                                    /* 40px => 5% 30px => 4%  | 16px => 2% */
+    padding: 2% 5%;
 }
-
 .contentBlockSection p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.16em;                                /* 18.66px => 1.16em */
+    font-size: 1.16em;
     color: #000;
 }
-
-.paragraphOfTheEmailDisplay {
-    text-align: center;
+.welcomeMessageParagraph {
     font-weight: bold;
+}
+.formConnectedTotheAccount {
+    margin: 0 auto;
+    width: 62.5%;
+    border: 0.3em solid #186135;
+    border-radius: 0.94em;
+    background-color: #F7F7F7;
+    padding: 2% 5%;
+}
+.formLoginToTheAccount div {
+    margin: 6% 0;
+}
+form.formLoginToTheAccount > div > label {
+    font-size: 1.16em;
+}
+.divButtonConnectedTotheAccount {
+    display: flex;
+    justify-content: center;
+}
+.buttonConnectedTotheAccount {
+    color: #FFF;
+    background-color: #186135;
+    font-family: 'openSansRegular';
+    font-size: 1.16em;
+    font-weight: bold;
+    border: 0 solid #186135;
+    border-radius: 0.6em;
+    padding: 3% 3%;                           
 }
