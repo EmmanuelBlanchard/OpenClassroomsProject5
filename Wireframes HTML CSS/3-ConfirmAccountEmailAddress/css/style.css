@@ -153,8 +153,8 @@ main section h2 {
     margin-bottom: 2.3%;
 }
 
-/* Block 2 -Create Account */
-.h2CreateAccount {
+/* Block 3 -Confirm Account Email Address */
+.h2ConfirmAccountEmailAddress {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
@@ -167,49 +167,22 @@ main section h2 {
     border-radius: 0.2em;
 }
 
+.divConfirmAccountEmailAddress {
+    margin: 0 auto;
+    width: 75.5%;  
+    border: 0.3em solid #186135; 
+    border-radius: 0.94em;
+    background-color: #F7F7F7;
+    padding: 2% 5%;                                    /* 40px => 5% 30px => 4%  | 16px => 2% */
+}
+
 .contentBlockSection p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.1em;
+    font-size: 1.16em;                                /* 18.66px => 1.16em */
     color: #000;
-    margin-left: 11.25%;
 }
 
-
-
-.formCreateAccount {
-    margin: 0 auto;
-    width: 62.5%;                                     /* 500px/800=0.625 => 62.5% */
-    border: 0.3em solid #186135;                    /* 2.8pt 3.73px  0.3em */
-    border-radius: 0.94em;                            /* 15px => 0.94em */
-    background-color: #F7F7F7;
-    padding-top: 2%;                                  /* 30px => 4% */
-    padding-bottom: 2%;                               /* 30px => 4%  | 16px => 2% */
-}
-
-.formCreateAccount div {
-    margin: 6% 0;
-}
-
-form.formCreateAccount > div > label {
-    font-size: 1.16em;
-}
-
-label[for=pseudo] {
-    margin-top:30px;
-}
-
-.divButtonCreateAccount {
-    display: flex;
-    justify-content: center;
-}
-
-.buttonCreateAccount {
-    color: #FFF;
-    background-color: #186135;
-    font-family: 'openSansRegular';
-    font-size: 1.16em;                                  /* 14pt => 18.66px => em */
+.paragraphOfTheEmailDisplay {
+    text-align: center;
     font-weight: bold;
-    border: 0 solid #186135;
-    border-radius: 0.6em;                               /* 0.94em, 0.6em */
-    padding: 3% 3%;                                     /* width 150px , 10px */
 }
