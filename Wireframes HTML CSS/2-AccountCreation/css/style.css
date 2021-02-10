@@ -174,15 +174,15 @@ main section h2 {
     margin-left: 11.25%;
 }
 
+
+
 .formCreateAccount {
-    margin-left: 12.5%;                               /* 100px/800=0.125 => 12.5% */
-    margin-bottom: 20%;
+    margin: 0 auto;
     width: 62.5%;                                     /* 500px/800=0.625 => 62.5% */
     border: 0.3em solid #186135;                    /* 2.8pt 3.73px  0.3em */
     border-radius: 0.94em;                            /* 15px => 0.94em */
-
-    padding-top: 4%;                                  /* 30px => 4% */
-    padding-bottom: 4%;                               /* 30px => 4% */
+    padding-top: 2%;                                  /* 30px => 4% */
+    padding-bottom: 2%;                               /* 30px => 4%  | 16px => 2% */
 }
 
 .formCreateAccount div {
