@@ -153,37 +153,61 @@ main section h2 {
     margin-bottom: 2.3%;
 }
 
-/* Block 3 -Confirm Account Email Address */
-.h2ConfirmAccountEmailAddress {
+/* Block 4 - Login To The Account */
+.h2LoginToTheAccount {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
-    width: 72.5%;                                 /* 580px/800px=0.725 => 72.5% */
-    font-size: 2.2em;                             /* 36px => 48px => 3em */
+    width: 72.5%;
+    font-size: 2.2em;
     background-color: #F7F7F7;
-    border: 0.04em solid #186135;               /* 1pt => 1.33px => 0.04em */
-    margin-bottom: 10%;
+    border: 0.04em solid #186135;
     margin-left: 10%;
+    margin-bottom: 10%;
     padding-left: 8.1%;
     border-radius: 0.2em;
 }
 
-.divConfirmAccountEmailAddress {
-    margin: 0 auto;
-    width: 75.5%;  
-    border: 0.3em solid #186135; 
-    border-radius: 0.94em;
-    background-color: #F7F7F7;
-    padding: 2% 5%;                                    /* 40px => 5% 30px => 4%  | 16px => 2% */
-}
-
 .contentBlockSection p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.16em;                                /* 18.66px => 1.16em */
+    font-size: 1.16em;
     color: #000;
 }
 
-.paragraphOfTheEmailDisplay {
-    text-align: center;
+.formLoginToTheAccount {
+    margin: 0 auto;
+    width: 62.5%;
+    border: 0.3em solid #186135;
+    border-radius: 0.94em;
+    background-color: #F7F7F7;
+    padding: 2% 5%;
+}
+
+
+.formLoginToTheAccount div {
+    margin: 6% 0;
+}
+
+form.formLoginToTheAccount > div > label {
+    font-size: 1.16em;
+}
+
+label[for=mail] {
+    margin-top:30px;
+}
+
+.divButtonLoginToTheAccount {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonLoginToTheAccount {
+    color: #FFF;
+    background-color: #186135;
+    font-family: 'openSansRegular';
+    font-size: 1.16em;
     font-weight: bold;
+    border: 0 solid #186135;
+    border-radius: 0.6em;
+    padding: 3% 3%;                           
 }
