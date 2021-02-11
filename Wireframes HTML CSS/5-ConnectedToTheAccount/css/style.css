@@ -116,13 +116,6 @@ main {
     display: flex;
     background-color: #FFF;             
 }
-/* Add New !! ++ => flex-direction: column;
-    delete => justify-content: center;
-    ++ => align-items: center; 
-    
-    update background-color: #FFF; => F7F7F7 et mettre le fond du form de search bar en blanc #FFF
-    
-    */
 .asideSearchBar {
     display: flex;
     flex-direction: column;
@@ -156,8 +149,6 @@ form {
     font-size: 1.7em;
     padding: 3% 0;
 }
-
-/* Add New !! */
 .informationAboutTheAccountTheLibraryTheExchanges {
     background-color: #F7F7F7;
 }
@@ -177,15 +168,13 @@ form {
     font-weight: bold;
 }
 .linkMail {
-    padding-top: 0.65em;                                /* 10px */
+    padding-top: 0.65em;
 }
 .informationAboutTheAccountTheLibraryTheExchanges a {
     color: #000;
     text-decoration:none;
     padding-left: 0.65em;
 }
-/*  New Above  */ 
-
 .contentBlockSection {
     width: 42%;
 }
