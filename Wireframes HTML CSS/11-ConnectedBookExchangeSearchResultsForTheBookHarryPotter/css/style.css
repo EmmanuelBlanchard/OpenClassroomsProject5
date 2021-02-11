@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'openSansRegular';
+    src: local('openSansRegular'),
+        local('Open Sans Regular'),
+        local('open Sans Regular'),
+        url('../fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MerriweatherRegular';
+    src: local('MerriweatherRegular'),
+        local('Merriweather Regular'),
+        local('merriweather Regular'),
+        url('../fonts/Merriweather-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/Merriweather-Regular-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'RobotoRegular';
+    src: local('RobotoRegular'),
+        local('Roboto Regular'),
+        local('roboto Regular'),
+        url('../fonts/Roboto-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+html {
+    font-size: 100%;
+    font-family: 'openSansRegular', Arial, sans-serif, serif;
+    font-weight: 400;
+    box-sizing: border-box;
+  }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body {
+    margin:0;
+    padding:0;
+}
+ul {
+    list-style-type: none;
+}
+div a {
+    text-decoration:none;
+}
+.divNavLogo {
+    margin-left: 21%;
+}
+.imgLogo {
+    width: 65px;
+    height: 65px;
+}
+.brandName, .brandName2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+.brandName {
+    color: #0854A2;
+    margin-left: 1%;
+}
+.brandName2 {
+    color: #CD4109;
+    margin-left: 0.2%;
+    margin-right: 8.3%;
+}
+nav {
+    display: flex;
+    color: #F7F7F7;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    padding-left: 0%;
+}
+nav li {
+	list-style-type: none; 		/* Aucun marqueur n'est affiché. */
+}
+nav ul li a, .menu a {
+    font-size: 1.55em;
+}
+nav a {
+    color: #0854A2;
+}
+nav a:link {
+	text-decoration:none; 		/* enlever le surlignement des a */
+}
+.linkCreateAccount {
+    margin-right: 4em;    /* 100px => 4em */
+}
+.menu{
+    display: flex;
+    background-color: #CD4109;
+    align-items: center;
+    justify-content: center;
+}
+.menu ul {
+    display: flex;
+}
+.liHowItWorks {
+    padding-right: 4em;
+}
+.menu a {
+    color: #F7F7F7;
+}
+.menu a:link {
+	text-decoration:none; 		        /* enlever le surlignement des a */
+}
+main {
+    display: flex;
+    background-color: #FFF;             
+}
+.asideSearchBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F7F7;
+    border: 0.8em solid #F7F7F7;
+    margin-left: 20%;
+}
+form {
+    padding-top: 20%;
+    padding-left: 7.1%;
+    padding-right: 7.1%;
+    padding-bottom: 11%;
+
+}
+.formSearchBar {
+    background-color: #FFF;
+}
+.formSearchBar input::placeholder {
+    font-size: 1.2em;
+    color: #000;
+    font-weight: bold;
+}
+.searchInput {
+    width: 100%;
+    height: 2.7em;
+    margin-bottom: 5%;
+    border: 0.3em solid #CD4109;
+    border-radius: 0.5em;
+}
+.searchButton {
+    width: 100%;
+    color: #F7F7F7;
+    background-color: #CD4109;
+    border-color: #A02804;
+    font-size: 1.7em;
+    padding: 3% 0;
+}
+.informationAboutTheAccountTheLibraryTheExchanges {
+    background-color: #F7F7F7;
+}
+.paragraphOfWelcomeOfPseudo {
+    font-size: 2em;
+    font-weight: bold;
+}
+.divAboutTheAccountTheLibraryTheExchanges {
+    padding-left: 0.65em;
+}
+.divAboutTheAccountTheLibraryTheExchanges > h3 {
+    color: #0854A2;
+}
+.linkManagemyAccount, .linkMail {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.linkMail {
+    padding-top: 0.65em;
+}
+.informationAboutTheAccountTheLibraryTheExchanges a {
+    color: #000;
+    text-decoration:none;
+    padding-left: 0.65em;
+}
+
+/* Temporary because when clicked the link is in orange does not work for the moment */
+/*
+a.linkStockOfBooks:visited, a.linkBookExchange:visited {
+    color: #CD4109;
+}
+*/
+.contentBlockSection {
+    width: 42%;
+}
+main section h2 {
+    font-size: 1.48em;
+    margin-bottom: 2.3%;
+}
+/* Block 11 Connected Book Exchange Search Results For The Book Harry Potter */
+.divDisplaySearchBarWithSelectBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 90.5%;
+    background-color: #F7F7F7;
+    border-radius: 0.2em;
+    margin-top: 5%;
+    margin-left: 10%;
+    padding-top: 1.54%;
+    padding-left: 2.4%;
+    padding-bottom: 1.54%;
+}
+
+.h3ConnectedBookExchangeSearchResultsForTheBookHarryPotter {
+    font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #186135;
+    margin: 0  0;
+    padding-right: 18%;
+}
+.contentBlockSection p {
+    font-family: 'openSansRegular', Arial, sans-serif, serif;
+    font-size: 1.16em;
+    color: #000;
+}
+/* block of books */
+.divDisplayBlocksBookInformation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;   
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+.blockOfTheBookInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 36%;
+    border: 0.2em solid #196216;
+    border-radius: 0.5em;
+    border-color: #196216;
+    padding: 2.51%;
+    margin-bottom: 2%;
+}
+.blockOfTheBookInformation h4 {
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 4.4%;
+    overflow: hidden;
+    font-size: 1.3em;
+    line-height: 1.08em;
+}
+.blockOfTheBookInformation h4 ,div.line.author > a {
+    color: #000000;
+}
+div.line.author > a ,section.blockOfTheBookInformation > p.line.state, div.line.location > span ,section.blockOfTheBookInformation > p.line.owner {
+    font-size: 1.2em;
+}
+section.blockOfTheBookInformation > p.line.category {
+    font-size: 1.17em;
+}
+section.blockOfTheBookInformation > p.line.category, section.blockOfTheBookInformation > p.line.publisher, section.blockOfTheBookInformation > p.line.language,
+ section.blockOfTheBookInformation > p.line.format,  section.blockOfTheBookInformation > p.line.state, div.line.location, section.blockOfTheBookInformation > p.line.owner, .divExchangeButton {
+    margin-top: 4.4%;
+	margin-bottom: 4.4%;
+}
+.blockOfTheBookInformation h4, div.line.author > a ,section.blockOfTheBookInformation > p.line.state, section.blockOfTheBookInformation > p.line.owner, div.line.location > span {
+    font-weight: bold;
+}
+.locationIcon {
+    width: 3em;
+    height: 3em;
+}
+.divExchangeButton {
+    align-self: center;
+}
+.exchangeButton {
+    font-size: 1.1em;
+    color: #FFFFFF;
+    background-color: #196216;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+}
