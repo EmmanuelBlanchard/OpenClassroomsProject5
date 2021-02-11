@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchangeLivres : Site d'échange de livres d'occasion</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="divNavLogo">
+                <img src="img/logo.svg" class="imgLogo" alt="mains avec livre effectuant un échange">
+            </div>
+
+            <h1 class="brandName">Échange</h1>
+            <h1 class="brandName2">Livres</h1>
+
+            <ul>
+                <li>
+                    <a href="" class="linkCreateAccount">Créer mon compte</a>
+                </li>
+
+                <li>
+                    <a href="" class="linkConnectMe">Me connecter</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menu">
+            <ul>
+                <li class="liHowItWorks">
+                    <a href="">Comment ça marche</a>
+                </li>
+
+                <li>
+                    <a href="">Foire aux questions</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <aside class="asideSearchBar">
+            <form action="" class="formSearchBar">
+                    <input class="searchInput" type="text">
+
+                    <button class="searchButton" type="submit">Rechercher</button>
+            </form>
+
+            <div class="informationAboutTheAccountTheLibraryTheExchanges">
+                <p class="paragraphOfWelcomeOfPseudo">Bienvenu pseudo</p>
+                
+                <div class="divAboutTheAccountTheLibraryTheExchanges">
+                    <h3>Votre compte</h3>
+                        <a href="" class="linkManagemyAccount">Gérer mon compte</a>
+                        <a href="" class="linkMail">Messagerie</a>
+                    <h3>Bibliothèque</h3>
+                        <a href="" class="linkStockOfBooks">Stock de livres</a>
+                    <h3>Échanges</h3>
+                        <a href="" class="linkBookExchange">Échanges de livres</a>
+                </div>
+            </div>
+        </aside>
+        
+        <section class="contentBlockSection">
+            <h2 class="h2ConnectedBookStockBookAdditionForm">Stock de livres</h2>
+
+            <h3 class="h3ConnectedBookStockBookAdditionForm">Votre Stock (0 livre)</h3>
+            
+            <form action="" class="formConnectedBookStockBookAdditionForm">
+                <h4 class="h4ConnectedBookStockBookAdditionForm">Création de la fiche du livre a échanger</h4>
+                <div>
+                    <label for="title">Titre :</label>
+                    <input type="text" id="title" name="book_title" required>
+                </div>
+                <div>
+                    <label for="author">Auteur :</label>
+                    <input type="text" id="author" name="book_author" required>
+                </div>
+
+                <div>
+                    <label for="category-select">Catégorie :</label>
+
+                    <select name="categories" id="category-select" required>
+                        <option value=""></option>
+                        <option value="art_music_and_cinema">Art musique et cinéma</option>
+                        <option value="comics">Bandes dessinées</option>
+                        <option value="kitchen">Cuisine</option>
+                        <option value="personal_development">Développement personnel</option>
+                        <option value="dictionaries_and_languages">Dictionnaires & langues</option>
+                        <option value="law_and_economics">Droit & économie</option>
+                        <option value="tests_and_documents">Essais et documents</option>
+                        <option value="practical_guides">Guides pratiques</option>
+                        <option value="history">Histoire</option>
+                        <option value="humor">Humour</option>
+                        <option value="computers_and_internet">Informatique et internet</option>
+                        <option value="youth">Jeunesse</option>
+                        <option value="literature">Littérature</option>
+                        <option value="sentimental_literature">Littérature sentimentale</option>
+                        <option value="policeman_suspense_thrillers">Policier, suspense, thrillers</option>
+                        <option value="religion_and_spirituality">Religion et spiritualité</option>
+                        <option value="social_sciences">Sciences sociales</option>
+                        <option value="science_technology_medicine">Sciences, techniques & médecine</option>
+                        <option value="school">Scolaire</option>
+                        <option value="sf_fantasy">SF, Fantasy</option>
+                        <option value="sport_leisure_and_practical_life">Sport loisirs et vie pratique</option>
+                        <option value="theater">Théâtre</option>
+                        <option value="tourism_and_travel">Tourisme et voyages</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+                  
+                <div>
+                    <label for="publisher">Éditeur :</label>
+                    <input type="text" id="publisher" name="book_publisher"  required>
+                </div>
+
+                <div>
+                    <label for="language-select">Langue :</label>
+
+                    <select name="book_language" id="language-select" required>
+                        <option value=""></option>
+                        <option value="english">Anglais</option>
+                        <option value="mandarin_chinese">Chinois mandarin</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="spanish">Espagnol</option>
+                        <option value="french">Français</option>
+                        <option value="arabic">Arabe</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="russian">Russe</option>
+                        <option value="portuguese">Portugais</option>
+                        <option value="indonesian">Indonésien</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="format-select">Format :</label>
+
+                    <select name="book_format" id="format-select" required>
+                        <option value=""></option>
+                        <option value="11_17_pocket">11*17 - Poche</option>
+                        <option value="12_18_manga">12*18 - Manga</option>
+                        <option value="11_20_romantic">11*20 - Romantique</option>
+                        <option value="14.8_21_A5">14.8*21 - A5</option>
+                        <option value="16_25_comic_us">16*25 - Comic US</option>
+                        <option value="18_26_MDO">18*26 - MDO</option>
+                        <option value="21_29.7_A4">21*29.7 - A4</option>
+                        <option value="15_15_square">15*15 - Carré</option>
+                        <option value="21_21_large_square">21*21 - Grand Carré</option>
+                        <option value="19_15_panoramic">19*15 - Panoramique</option>
+                        <option value="29.7_21_A4_landscape">29.7*21 - A4 Paysage</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="state-select">État :</label>
+
+                    <select name="book_state" id="state-select" required>
+                        <option value=""></option>
+                        <option value="new">Neuf </option>
+                        <option value="as_new">A l’état neuf/comme neuf</option>
+                        <option value="excellent_condition">Excellent état </option>
+                        <option value="very_good_condition">Très bon état </option>
+                        <option value="good_status">Bon état</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+                
+                <div class="divButtonConnectedBookStockBookAdditionForm">
+                    <button type="submit" class="buttonConnectedBookStockBookAdditionForm">Ajouter un livre</button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+</body>
+</html>
