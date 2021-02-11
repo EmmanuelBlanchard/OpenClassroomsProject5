@@ -138,6 +138,9 @@ form {
     padding-bottom: 11%;
 
 }
+.formSearchBar {
+    background-color: #FFF;
+}
 .searchInput {
     width: 100%;
     height: 2.7em;
