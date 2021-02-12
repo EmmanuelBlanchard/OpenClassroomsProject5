@@ -192,8 +192,8 @@ main section h2 {
     margin-bottom: 2.3%;
 }
 
-/* Block 12 - Connected Book Exchange Confirm Book Exchange */
-.h2ConnectedBookExchangeConfirmBookExchange{
+/* Block 13 - Connected Book Exchange Confirmation Of The Exchange Request */
+.h2ConnectedBookExchangeConfirmationOfTheExchangeRequest{
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
@@ -208,34 +208,19 @@ main section h2 {
     padding-bottom: 5%;
     border-radius: 0.2em;
 }
-.divConnectedBookExchangeConfirmBookExchange {
+.divConnectedBookExchangeConfirmationOfTheExchangeRequest {
     margin: 0 auto;
-    width: 60.5%;  
+    width: 89.5%;  
     border: 0.3em solid #186135; 
     border-radius: 0.94em;
     background-color: #F7F7F7;
     padding: 2% 5%;
-    text-align: center;
 }
-.divConnectedBookExchangeConfirmBookExchange span {
+.divConnectedBookExchangeConfirmationOfTheExchangeRequest span {
     font-weight: bold;
 }
 .contentBlockSection p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     font-size: 1.16em;
     color: #000;
-}
-.divButtonConfirmTheExchange {
-    display: flex;
-    justify-content: center;
-}
-.buttonConfirmTheExchange {
-    color: #FFF;
-    background-color: #186135;
-    font-family: 'openSansRegular';
-    font-size: 1.16em;
-    font-weight: bold;
-    border: 0 solid #186135;
-    border-radius: 0.6em;
-    padding: 3% 3%;                           
 }
