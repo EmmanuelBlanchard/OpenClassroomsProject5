@@ -80,7 +80,7 @@ nav ul {
     padding-left: 0%;
 }
 nav li {
-	list-style-type: none; 		/* Aucun marqueur n'est affiché. */
+	list-style-type: none;
 }
 nav ul li a, .menu a {
     font-size: 1.55em;
@@ -89,12 +89,12 @@ nav a {
     color: #0854A2;
 }
 nav a:link {
-	text-decoration:none; 		/* enlever le surlignement des a */
+	text-decoration:none;
 }
 .linkCreateAccount {
-    margin-right: 4em;    /* 100px => 4em */
+    margin-right: 4em;
 }
-.menu{
+.menu {
     display: flex;
     background-color: #CD4109;
     align-items: center;
@@ -110,7 +110,7 @@ nav a:link {
     color: #F7F7F7;
 }
 .menu a:link {
-	text-decoration:none; 		        /* enlever le surlignement des a */
+	text-decoration:none;
 }
 main {
     display: flex;
@@ -118,8 +118,9 @@ main {
 }
 .asideSearchBar {
     display: flex;
-    justify-content: center;
-    background-color: #FFF;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
     margin-left: 20%;
 }
@@ -128,7 +129,9 @@ form {
     padding-left: 7.1%;
     padding-right: 7.1%;
     padding-bottom: 11%;
-
+}
+.formSearchBar {
+    background-color: #FFF;
 }
 .searchInput {
     width: 100%;
@@ -152,66 +155,56 @@ main section h2 {
     font-size: 1.48em;
     margin-bottom: 2.3%;
 }
-
-/* Block 2 -Create Account */
+/* Wireframe 2 -Create Account */
 .h2CreateAccount {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
-    width: 72.5%;                                 /* 580px/800px=0.725 => 72.5% */
-    font-size: 2.2em;                             /* 36px => 48px => 3em */
+    width: 72.5%;
+    font-size: 2.2em;
     background-color: #F7F7F7;
-    border: 0.04em solid #186135;               /* 1pt => 1.33px => 0.04em */
+    border: 0.04em solid #186135;
     margin-left: 10%;
     padding-top: 4%;
     padding-left: 8.1%;
     padding-bottom: 5%;
     border-radius: 0.2em;
 }
-
 .contentBlockSection p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     font-size: 1.1em;
     color: #000;
     margin-left: 11.25%;
 }
-
-
-
 .formCreateAccount {
     margin: 0 auto;
-    width: 62.5%;                                     /* 500px/800=0.625 => 62.5% */
-    border: 0.3em solid #186135;                    /* 2.8pt 3.73px  0.3em */
-    border-radius: 0.94em;                            /* 15px => 0.94em */
+    width: 62.5%;
+    border: 0.3em solid #186135;
+    border-radius: 0.94em;
     background-color: #F7F7F7;
-    padding-top: 2%;                                  /* 30px => 4% */
-    padding-bottom: 2%;                               /* 30px => 4%  | 16px => 2% */
+    padding-top: 2%;                        
+    padding-bottom: 2%;
 }
-
 .formCreateAccount div {
     margin: 6% 0;
 }
-
 form.formCreateAccount > div > label {
     font-size: 1.16em;
 }
-
 label[for=pseudo] {
     margin-top:30px;
 }
-
 .divButtonCreateAccount {
     display: flex;
     justify-content: center;
 }
-
 .buttonCreateAccount {
     color: #FFF;
     background-color: #186135;
     font-family: 'openSansRegular';
-    font-size: 1.16em;                                  /* 14pt => 18.66px => em */
+    font-size: 1.16em;
     font-weight: bold;
     border: 0 solid #186135;
-    border-radius: 0.6em;                               /* 0.94em, 0.6em */
-    padding: 3% 3%;                                     /* width 150px , 10px */
+    border-radius: 0.6em;
+    padding: 3% 3%;
 }

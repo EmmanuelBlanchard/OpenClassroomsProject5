@@ -110,7 +110,7 @@ nav a:link {
     color: #F7F7F7;
 }
 .menu a:link {
-	text-decoration:none; 		        /* enlever le surlignement des a */
+	text-decoration:none;
 }
 main {
     display: flex;
@@ -118,8 +118,9 @@ main {
 }
 .asideSearchBar {
     display: flex;
-    justify-content: center;
-    background-color: #FFF;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
     margin-left: 20%;
 }
@@ -128,7 +129,9 @@ form {
     padding-left: 7.1%;
     padding-right: 7.1%;
     padding-bottom: 11%;
-
+}
+.formSearchBar {
+    background-color: #FFF;
 }
 .searchInput {
     width: 100%;
@@ -152,16 +155,15 @@ main section h2 {
     font-size: 1.48em;
     margin-bottom: 2.3%;
 }
-
-/* Block 3 -Confirm Account Email Address */
+/* Wireframe 3 -Confirm Account Email Address */
 .h2ConfirmAccountEmailAddress {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
-    width: 72.5%;                                 /* 580px/800px=0.725 => 72.5% */
-    font-size: 2.2em;                             /* 36px => 48px => 3em */
+    width: 72.5%;
+    font-size: 2.2em;
     background-color: #F7F7F7;
-    border: 0.04em solid #186135;               /* 1pt => 1.33px => 0.04em */
+    border: 0.04em solid #186135;
     margin-bottom: 10%;
     margin-left: 10%;
     padding-top: 4%;
@@ -169,22 +171,19 @@ main section h2 {
     padding-bottom: 5%;
     border-radius: 0.2em;
 }
-
 .divConfirmAccountEmailAddress {
     margin: 0 auto;
     width: 75.5%;  
     border: 0.3em solid #186135; 
     border-radius: 0.94em;
     background-color: #F7F7F7;
-    padding: 2% 5%;                                    /* 40px => 5% 30px => 4%  | 16px => 2% */
+    padding: 2% 5%;
 }
-
 .contentBlockSection p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.16em;                                /* 18.66px => 1.16em */
+    font-size: 1.16em;
     color: #000;
 }
-
 .paragraphOfTheEmailDisplay {
     text-align: center;
     font-weight: bold;

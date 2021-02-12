@@ -94,7 +94,7 @@ nav a:link {
 .linkCreateAccount {
     margin-right: 4em;    /* 100px => 4em */
 }
-.menu{
+.menu {
     display: flex;
     background-color: #CD4109;
     align-items: center;
@@ -129,7 +129,6 @@ form {
     padding-left: 7.1%;
     padding-right: 7.1%;
     padding-bottom: 11%;
-
 }
 .formSearchBar {
     background-color: #FFF;
@@ -175,7 +174,6 @@ form {
     text-decoration:none;
     padding-left: 0.65em;
 }
-
 /* Temporary because when clicked the link is in orange does not work for the moment */
 a.linkStockOfBooks {
     color: #CD4109;
@@ -188,12 +186,7 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
 .contentBlockSection {
     width: 42%;
 }
-main section h2 {
-    font-size: 1.48em;
-    margin-bottom: 2.3%;
-}
-
-/* Block 8 Connected Book Stock Book Stocked */
+/* Wireframe 8 Connected Book Stock Book Stocked */
 .h2ConnectedBookStockBookStocked, .h3ConnectedBookStockBookStocked {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
@@ -202,7 +195,6 @@ main section h2 {
     background-color: #F7F7F7;
     border-radius: 0.2em;
     margin-left: 10%;
-
 }
 .h2ConnectedBookStockBookStocked {
     font-size: 2.2em;
@@ -246,20 +238,20 @@ main section h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 36%;                                     /* 35%  */
-    border: 0.2em solid #196216;                  /* 3.73px */
+    width: 36%;
+    border: 0.2em solid #196216;
     border-radius: 0.5em;
     border-color: #196216;
-    padding: 2.51%;                                 /* 20px */
+    padding: 2.51%;
     margin-bottom: 2%;
 }
 .blockOfStoredBookInformation h4 {
-    width: 95%;                                     /* 201px */ /* 86% */
+    width: 95%;
     margin-top: 0;
     margin-bottom: 4.4%;
     overflow: hidden;
-    font-size: 1.3em;                               /* 18.66px */ /* 1.16em */
-    line-height: 1.08em;                            /* 20 px */
+    font-size: 1.3em;
+    line-height: 1.08em;
 }
 .blockOfStoredBookInformation h4 ,div.line.author > a {
     color: #000000;
@@ -287,5 +279,5 @@ section.blockOfStoredBookInformation > p.line.category, section.blockOfStoredBoo
     background-color: #FFF;
     border: 0.01em solid #CCCCCC;
     border-radius: 0.5em;
-    padding: 0.25em 1em;                    /* before 0.5 1em; */
+    padding: 0.25em 1em;
 }

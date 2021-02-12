@@ -80,7 +80,7 @@ nav ul {
     padding-left: 0%;
 }
 nav li {
-	list-style-type: none; 		/* Aucun marqueur n'est affiché. */
+	list-style-type: none;
 }
 nav ul li a, .menu a {
     font-size: 1.55em;
@@ -89,12 +89,12 @@ nav a {
     color: #0854A2;
 }
 nav a:link {
-	text-decoration:none; 		/* enlever le surlignement des a */
+	text-decoration:none;
 }
 .linkCreateAccount {
-    margin-right: 4em;    /* 100px => 4em */
+    margin-right: 4em;
 }
-.menu{
+.menu {
     display: flex;
     background-color: #CD4109;
     align-items: center;
@@ -110,7 +110,7 @@ nav a:link {
     color: #F7F7F7;
 }
 .menu a:link {
-	text-decoration:none; 		        /* enlever le surlignement des a */
+	text-decoration:none;
 }
 main {
     display: flex;
@@ -129,7 +129,6 @@ form {
     padding-left: 7.1%;
     padding-right: 7.1%;
     padding-bottom: 11%;
-
 }
 .formSearchBar {
     background-color: #FFF;
@@ -175,7 +174,6 @@ form {
     text-decoration:none;
     padding-left: 0.65em;
 }
-
 /* Temporary because when clicked the link is in orange does not work for the moment */
 a.linkStockOfBooks {
     color: #CD4109;
@@ -188,12 +186,7 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
 .contentBlockSection {
     width: 42%;
 }
-main section h2 {
-    font-size: 1.48em;
-    margin-bottom: 2.3%;
-}
-
-/* Block 7 Connected - Book Stock - Book Addition Form  */
+/* Wireframe 7 Connected - Book Stock - Book Addition Form  */
 .h2ConnectedBookStockBookAdditionForm, .h3ConnectedBookStockBookAdditionForm {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
@@ -214,18 +207,18 @@ main section h2 {
 }
 .h3ConnectedBookStockBookAdditionForm {
     font-size: 1.3em;
-    padding-top: 1.54%;          /*  12.4px */
-    padding-left: 2.4%;       /*  19.1px */
-    padding-bottom: 1.54%;       /*  12.4px */
+    padding-top: 1.54%;
+    padding-left: 2.4%;
+    padding-bottom: 1.54%;
 }
 .formConnectedBookStockBookAdditionForm {
     margin: 0 auto;
-    width: 62.5%;                                     /* 500px/800=0.625 => 62.5% */
-    border: 0.3em solid #186135;                    /* 2.8pt 3.73px  0.3em */
-    border-radius: 0.94em;                            /* 15px => 0.94em */
+    width: 62.5%;
+    border: 0.3em solid #186135;
+    border-radius: 0.94em;
     background-color: #F7F7F7;
-    padding-top: 2%;                                  /* 30px => 4% */
-    padding-bottom: 2%;                               /* 30px => 4%  | 16px => 2% */
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 .h4ConnectedBookStockBookAdditionForm {
     font-weight: bold;
@@ -254,6 +247,6 @@ form.formConnectedBookStockBookAdditionForm > div > label {
     font-weight: bold;
     border: 0 solid #186135;
     border-radius: 0.6em;
-    padding: 2% 2%;                 /* Before 3% 3% */
-    margin-top: 4%;                 /* 30px */                      
+    padding: 2% 2%;
+    margin-top: 4%;              
 }

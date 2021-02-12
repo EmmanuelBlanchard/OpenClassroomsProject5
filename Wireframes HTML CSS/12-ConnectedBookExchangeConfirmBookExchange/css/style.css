@@ -80,7 +80,7 @@ nav ul {
     padding-left: 0%;
 }
 nav li {
-	list-style-type: none; 		/* Aucun marqueur n'est affiché. */
+	list-style-type: none;
 }
 nav ul li a, .menu a {
     font-size: 1.55em;
@@ -89,12 +89,12 @@ nav a {
     color: #0854A2;
 }
 nav a:link {
-	text-decoration:none; 		/* enlever le surlignement des a */
+	text-decoration:none;
 }
 .linkCreateAccount {
-    margin-right: 4em;    /* 100px => 4em */
+    margin-right: 4em;
 }
-.menu{
+.menu {
     display: flex;
     background-color: #CD4109;
     align-items: center;
@@ -110,7 +110,7 @@ nav a:link {
     color: #F7F7F7;
 }
 .menu a:link {
-	text-decoration:none; 		        /* enlever le surlignement des a */
+	text-decoration:none;
 }
 main {
     display: flex;
@@ -129,7 +129,6 @@ form {
     padding-left: 7.1%;
     padding-right: 7.1%;
     padding-bottom: 11%;
-
 }
 .formSearchBar {
     background-color: #FFF;
@@ -187,13 +186,8 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
 .contentBlockSection {
     width: 42%;
 }
-main section h2 {
-    font-size: 1.48em;
-    margin-bottom: 2.3%;
-}
-
-/* Block 12 - Connected Book Exchange Confirm Book Exchange */
-.h2ConnectedBookExchangeConfirmBookExchange{
+/* Wireframe 12 - Connected Book Exchange Confirm Book Exchange */
+.h2ConnectedBookExchangeConfirmBookExchange {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
@@ -220,7 +214,7 @@ main section h2 {
 .divConnectedBookExchangeConfirmBookExchange span {
     font-weight: bold;
 }
-.contentBlockSection p {
+.divConnectedBookExchangeConfirmBookExchange p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     font-size: 1.16em;
     color: #000;

@@ -80,7 +80,7 @@ nav ul {
     padding-left: 0%;
 }
 nav li {
-	list-style-type: none; 		/* Aucun marqueur n'est affiché. */
+	list-style-type: none;
 }
 nav ul li a, .menu a {
     font-size: 1.55em;
@@ -89,12 +89,12 @@ nav a {
     color: #0854A2;
 }
 nav a:link {
-	text-decoration:none; 		/* enlever le surlignement des a */
+	text-decoration:none;
 }
 .linkCreateAccount {
-    margin-right: 4em;    /* 100px => 4em */
+    margin-right: 4em;
 }
-.menu{
+.menu {
     display: flex;
     background-color: #CD4109;
     align-items: center;
@@ -110,7 +110,7 @@ nav a:link {
     color: #F7F7F7;
 }
 .menu a:link {
-	text-decoration:none; 		        /* enlever le surlignement des a */
+	text-decoration:none;
 }
 main {
     display: flex;
@@ -175,7 +175,6 @@ form {
     text-decoration:none;
     padding-left: 0.65em;
 }
-
 /* Temporary because when clicked the link is in orange does not work for the moment */
 a.linkStockOfBooks {
     color: #CD4109;
@@ -188,12 +187,7 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
 .contentBlockSection {
     width: 42%;
 }
-main section h2 {
-    font-size: 1.48em;
-    margin-bottom: 2.3%;
-}
-
-/* Block 6 - Connected - Book Stock - Add A Book */
+/* Wireframe 6 - Connected - Book Stock - Add A Book */
 .h2ConnectedBookStockAddABook, .h3ConnectedBookStockAddABook {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
@@ -202,7 +196,6 @@ main section h2 {
     background-color: #F7F7F7;
     border-radius: 0.2em;
     margin-left: 10%;
-
 }
 .h2ConnectedBookStockAddABook {
     font-size: 2.2em;
@@ -218,7 +211,7 @@ main section h2 {
     padding-left: 2.4%;       /*  19.1px */
     padding-bottom: 1.54%;       /*  12.4px */
 }
-.contentBlockSection p {
+.divConnectedBookStockAddABook p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     font-size: 1.16em;
     color: #000;
@@ -245,6 +238,6 @@ main section h2 {
     font-weight: bold;
     border: 0 solid #186135;
     border-radius: 0.6em;
-    padding: 2% 2%;                 /* Before 3% 3% */
-    margin-top: 4%;                 /* 30px */                      
+    padding: 2% 2%;
+    margin-top: 4%;         
 }
