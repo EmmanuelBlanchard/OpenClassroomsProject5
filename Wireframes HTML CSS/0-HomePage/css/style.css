@@ -52,23 +52,29 @@ div a {
 }
 .divNavLogo {
     margin-left: 21%;
+    margin-right: 8.3%;
+}
+.aDivNavLogo {
+    display: flex;
+    align-items: center;
 }
 .imgLogo {
-    width: 65px;
-    height: 65px;
+    width: 5.1em;   /* 65px => 4.1em ou 5.1em => 81.6px */
+    height: 5.1em;  /* 65px  => 4.1em ou 5.1em => 81.6px */
 }
-.brandName, .brandName2 {
-    font-size: 2em;
+.brandNameExchange, .brandNameBook {
     font-weight: bold;
 }
-.brandName {
+.brandNameExchange {
+    display: flex;
+    align-items: center;
     color: #0854A2;
     margin-left: 1%;
+    font-size: 2em;
 }
-.brandName2 {
+.brandNameBook {
     color: #CD4109;
     margin-left: 0.2%;
-    margin-right: 8.3%;
 }
 nav {
     display: flex;
@@ -197,7 +203,7 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
 
 /* Bloc part content */
 .contentBlockSection {
-    width: 42%;                                     /*  800px/1920px= 0.4166 => 41.66% */
+    width: 42%;
 }
 /* Wireframe 11 */
 .divDisplaySearchBarWithSelectBox {
@@ -225,9 +231,9 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
 }
 .h2IntroductoryContent {
     color: #000000;
-    font-size: 1.48em;              /* 1.32em  1.41em 1.48em*/
-    margin-left: 11.3%;             /* 100px */
-    margin-bottom: 2.3%;            /* 20px */
+    font-size: 1.48em;
+    margin-left: 11.3%;
+    margin-bottom: 2.3%;
 }
 /* Wireframe 1- How It Works */
 .h2howItWorks {
@@ -242,8 +248,8 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
-    width: 72.5%;                                 /* 580px/800px=0.725 => 72.5% */
-    font-size: 2.2em;                             /* 36px => 48px => 3em */
+    width: 72.5%;
+    font-size: 2.2em;
     background-color: #F7F7F7;
     margin-left: 10%;
     padding-top: 4%;
@@ -260,16 +266,16 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
 }
 .h3ConnectedBookStockAddABook, .h3ConnectedBookStockBookAdditionForm, .h3ConnectedBookStockBookStocked, .h3ConnectedBookExchangeClickOnTheBookExchangeLink, .h3ConnectedBookExchangeSearchForTheBookHarryPotter {
     font-size: 1.3em;
-    padding-top: 1.54%;          /*  12.4px */
-    padding-left: 2.4%;       /*  19.1px */
-    padding-bottom: 1.54%;       /*  12.4px */
+    padding-top: 1.54%;
+    padding-left: 2.4%;
+    padding-bottom: 1.54%;
 }
 section.introductoryContent>p {
-    font-size: 0.83em;              /* 13.4px */
+    font-size: 0.83em;
     font-weight: bold;
     line-height: 1.6em;
-    margin-left: 12.4%;             /* 110px */
-    width: 83%;                     /* 663px */
+    margin-left: 12.4%;
+    width: 83%;
 }
 /* Wireframe 1- How It Works */
 .divParagraphsHowItWorks p {
@@ -278,26 +284,17 @@ section.introductoryContent>p {
     color: #000;
     margin-left: 5%;
 }
-/* Consider replacing with another selector because conflict with the wireframe 11 line 258 takes width: 58% instead of nothing
-main section h3 {
+.h3InstructionsForUse {
     color: #CD4109;
-    font-size: 1.41em;
+    font-size: 1.41em;              
     width: 48%;
     margin-left: 18.8%;
     margin-bottom: 3.7%;
-} ===> .h3InstructionsForUse
-*/
-.h3InstructionsForUse {
-    color: #CD4109;
-    font-size: 1.41em;              /* 1.41em  1.32em */
-    width: 48%;                     /* 384px */
-    margin-left: 18.8%;             /* 150px */
-    margin-bottom: 3.7%;            /* 29px */
 }
 .instructionsForUse p {
-    font-size: 1.1em;               /* 17.6px */
-    width: 77.5%;                   /* 619px */
-    margin-left: 19.2%;             /* 170px; */
+    font-size: 1.1em;
+    width: 77.5%;
+    margin-left: 19.2%;
 }
 /* Wireframe 2 -Create Account */
 .paragraphsOfCreateAccount {
@@ -313,7 +310,7 @@ main section h3 {
     border: 0.3em solid #186135; 
     border-radius: 0.94em;
     background-color: #F7F7F7;
-    padding: 2% 5%;                                    /* 40px => 5% 30px => 4%  | 16px => 2% */
+    padding: 2% 5%;
 }
 /* Wireframe 12 */
 .divConnectedBookExchangeConfirmBookExchange {
