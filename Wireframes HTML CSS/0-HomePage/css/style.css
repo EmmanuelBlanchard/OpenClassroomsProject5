@@ -129,6 +129,7 @@ main {
     background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
     margin-left: 20%;
+    height: 100vh;                      /* to make the color #f7f7f7 go to the bottom of the screen */
 }
 form {
     padding-top: 20%;
@@ -159,6 +160,10 @@ form {
     border-color: #A02804;
     font-size: 1.7em;
     padding: 3% 0;
+    /* added css properties after changing the <button> tag to <a>. */
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
 }
 .informationAboutTheAccountTheLibraryTheExchanges {
     background-color: #F7F7F7;
