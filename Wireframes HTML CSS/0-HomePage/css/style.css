@@ -185,14 +185,16 @@ a.linkStockOfBooks {
     color: #CD4109;
 } 
 */
+/*
 a.linkBookExchange {
     color: #CD4109;
 }
-/*
+*/
+
 a.linkStockOfBooks:visited, a.linkBookExchange:visited {
     color: #CD4109;
 }
-*/
+
 /* Bloc part content */
 .contentBlockSection {
     width: 42%;                                     /*  800px/1920px= 0.4166 => 41.66% */
