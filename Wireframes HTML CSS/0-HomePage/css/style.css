@@ -249,7 +249,7 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
     
 }
 /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
-.h2CreateAccount, .h2ConfirmAccountEmailAddress, .h2LoginToTheAccount, .h2ConnectedTotheAccount, .h2ConnectedBookStockAddABook, .h3ConnectedBookStockAddABook , .h2ConnectedBookStockBookAdditionForm, .h3ConnectedBookStockBookAdditionForm, .h2ConnectedBookStockBookStocked, .h3ConnectedBookStockBookStocked, .h2ConnectedBookExchangeClickOnTheBookExchangeLink, .h3ConnectedBookExchangeClickOnTheBookExchangeLink, .h2ConnectedBookExchangeSearchForTheBookHarryPotter, .h3ConnectedBookExchangeSearchForTheBookHarryPotter, .h2ConnectedBookExchangeConfirmBookExchange, .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest {
+.h2CreateAccount, .h2ConfirmAccountEmailAddress, .h2LoginToTheAccount, .h2ConnectedTotheAccount, .h2ConnectedBookStockAddABook, .h3ConnectedBookStockAddABook , .h2ConnectedBookStockBookAdditionForm, .h3ConnectedBookStockBookAdditionForm, .h2ConnectedBookStockBookStocked, .h3ConnectedBookStockBookStocked, .h2ConnectedBookExchangeClickOnTheBookExchangeLink, .h3ConnectedBookExchangeClickOnTheBookExchangeLink, .h2ConnectedBookExchangeSearchForTheBookHarryPotter, .h3ConnectedBookExchangeSearchForTheBookHarryPotter, .h2ConnectedBookExchangeConfirmBookExchange, .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest, .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
@@ -262,11 +262,11 @@ a.linkStockOfBooks:visited, a.linkBookExchange:visited {
     padding-bottom: 5%;
     border-radius: 0.2em;
 }
-.h2CreateAccount, .h2ConfirmAccountEmailAddress, .h2LoginToTheAccount, .h2ConnectedTotheAccount, .h2ConnectedBookStockAddABook, .h2ConnectedBookStockBookAdditionForm, .h2ConnectedBookStockBookStocked, .h2ConnectedBookExchangeClickOnTheBookExchangeLink, .h2ConnectedBookExchangeSearchForTheBookHarryPotter, .h2ConnectedBookExchangeConfirmBookExchange, .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest { 
+.h2CreateAccount, .h2ConfirmAccountEmailAddress, .h2LoginToTheAccount, .h2ConnectedTotheAccount, .h2ConnectedBookStockAddABook, .h2ConnectedBookStockBookAdditionForm, .h2ConnectedBookStockBookStocked, .h2ConnectedBookExchangeClickOnTheBookExchangeLink, .h2ConnectedBookExchangeSearchForTheBookHarryPotter, .h2ConnectedBookExchangeConfirmBookExchange, .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest, .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn { 
     border: 0.04em solid #186135;
 }
 /* Wireframe 3-4-5-6-7-8-9-10-12-13 */
-.h2ConfirmAccountEmailAddress, .h2LoginToTheAccount, .h2ConnectedTotheAccount, .h2ConnectedBookStockAddABook, .h2ConnectedBookStockBookAdditionForm, .h2ConnectedBookStockBookStocked, .h2ConnectedBookExchangeClickOnTheBookExchangeLink, .h2ConnectedBookExchangeSearchForTheBookHarryPotter, .h2ConnectedBookExchangeConfirmBookExchange, .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest {
+.h2ConfirmAccountEmailAddress, .h2LoginToTheAccount, .h2ConnectedTotheAccount, .h2ConnectedBookStockAddABook, .h2ConnectedBookStockBookAdditionForm, .h2ConnectedBookStockBookStocked, .h2ConnectedBookExchangeClickOnTheBookExchangeLink, .h2ConnectedBookExchangeSearchForTheBookHarryPotter, .h2ConnectedBookExchangeConfirmBookExchange, .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest, .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
     margin-bottom: 10%;
 }
 .h3ConnectedBookStockAddABook, .h3ConnectedBookStockBookAdditionForm, .h3ConnectedBookStockBookStocked, .h3ConnectedBookExchangeClickOnTheBookExchangeLink, .h3ConnectedBookExchangeSearchForTheBookHarryPotter {
@@ -308,8 +308,8 @@ section.introductoryContent>p {
     color: #000;
     margin-left: 11.25%;
 }
-/* Wireframes 3-5-12-13 */
-.divConfirmAccountEmailAddress, .divConnectedTotheAccount, .divConnectedBookExchangeConfirmBookExchange, .divConnectedBookExchangeConfirmationOfTheExchangeRequest {
+/* Wireframes 3-5-12-13-14 */
+.divConfirmAccountEmailAddress, .divConnectedTotheAccount, .divConnectedBookExchangeConfirmBookExchange, .divConnectedBookExchangeConfirmationOfTheExchangeRequest, .divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
     margin: 0 auto;
     width: 75.5%;  
     border: 0.3em solid #186135; 
@@ -325,6 +325,10 @@ section.introductoryContent>p {
 /* Wireframe 13 */
 .divConnectedBookExchangeConfirmationOfTheExchangeRequest {
     width: 89.5%;
+}
+/* Wireframe 14 */
+.divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+    width: 64.5%;
 }
 /* Wireframe 6-8-9-10 */
 .divConnectedBookStockAddABook,.divConnectedBookStockBookStocked, .divConnectedBookExchangeClickOnTheBookExchangeLink, .divConnectedBookExchangeSearchForTheBookHarryPotter {
@@ -344,8 +348,8 @@ section.introductoryContent>p {
     width: 52.8%;
     padding: 2% 2%;
 }
-/* Wireframes 3-5-6-7-8-9-10-11-12-13 */
-.divConfirmAccountEmailAddress p, .divConnectedTotheAccount p, .divConnectedBookStockAddABook p, .divConnectedBookStockBookStocked p, .divConnectedBookExchangeClickOnTheBookExchangeLink p, .divExchangeInstructions p, .divConnectedBookExchangeSearchForTheBookHarryPotter p, .divDisplayBlocksBookInformation p, .divConnectedBookExchangeConfirmBookExchange p, .divConnectedBookExchangeConfirmationOfTheExchangeRequest p {
+/* Wireframes 3-5-6-7-8-9-10-11-12-13-14 */
+.divConfirmAccountEmailAddress p, .divConnectedTotheAccount p, .divConnectedBookStockAddABook p, .divConnectedBookStockBookStocked p, .divConnectedBookExchangeClickOnTheBookExchangeLink p, .divExchangeInstructions p, .divConnectedBookExchangeSearchForTheBookHarryPotter p, .divDisplayBlocksBookInformation p, .divConnectedBookExchangeConfirmBookExchange p, .divConnectedBookExchangeConfirmationOfTheExchangeRequest p, .divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     font-size: 1.16em;
     color: #000;
@@ -426,7 +430,7 @@ section.blockOfTheBookInformation > p.line.category, section.blockOfTheBookInfor
     margin-top: 4.4%;
 	margin-bottom: 4.4%;
 }
-.blockOfTheBookInformation h4, div.line.author > a ,section.blockOfTheBookInformation > p.line.state, section.blockOfTheBookInformation > p.line.owner, div.line.location > span, .blockOfStoredBookInformation h4, div.line.author > a ,section.blockOfStoredBookInformation > p.line.state, .divConnectedBookExchangeConfirmBookExchange span, .divConnectedBookExchangeConfirmationOfTheExchangeRequest span {
+.blockOfTheBookInformation h4, div.line.author > a ,section.blockOfTheBookInformation > p.line.state, section.blockOfTheBookInformation > p.line.owner, div.line.location > span, .blockOfStoredBookInformation h4, div.line.author > a ,section.blockOfStoredBookInformation > p.line.state, .divConnectedBookExchangeConfirmBookExchange span, .divConnectedBookExchangeConfirmationOfTheExchangeRequest span, .divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn span {
     font-weight: bold;
 }
 .locationIcon {
@@ -503,4 +507,10 @@ form.formCreateAccount > div > label, form.formLoginToTheAccount > div > label, 
     border-radius: 0.94em;
     background-color: #186135;
     padding: 2% 5%;
+}
+.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+    text-align: center;
+}
+.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn, .paragraphBeforeTheCreateMyAccountButton {
+    margin-bottom: 8%;
 }
