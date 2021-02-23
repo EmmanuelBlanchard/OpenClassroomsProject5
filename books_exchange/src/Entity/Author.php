@@ -39,9 +39,15 @@ class Author
      */
     private $authors;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Book::class, mappedBy="author")
+     */
+    private $books;
+
     public function __construct()
     {
         $this->authors = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,6 +115,36 @@ class Author
             // set the owning side to null (unless already changed)
             if ($author->getParent() === $this) {
                 $author->setParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            // set the owning side to null (unless already changed)
+            if ($book->getAuthor() === $this) {
+                $book->setAuthor(null);
             }
         }
 
