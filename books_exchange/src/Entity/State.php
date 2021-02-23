@@ -39,9 +39,15 @@ class State
      */
     private $states;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Book::class, mappedBy="state")
+     */
+    private $books;
+
     public function __construct()
     {
         $this->states = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,6 +115,36 @@ class State
             // set the owning side to null (unless already changed)
             if ($state->getParent() === $this) {
                 $state->setParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setState($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            // set the owning side to null (unless already changed)
+            if ($book->getState() === $this) {
+                $book->setState(null);
             }
         }
 

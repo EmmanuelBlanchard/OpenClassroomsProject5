@@ -39,9 +39,15 @@ class Format
      */
     private $formats;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Book::class, mappedBy="format")
+     */
+    private $books;
+
     public function __construct()
     {
         $this->formats = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,6 +115,36 @@ class Format
             // set the owning side to null (unless already changed)
             if ($format->getParent() === $this) {
                 $format->setParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setFormat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            // set the owning side to null (unless already changed)
+            if ($book->getFormat() === $this) {
+                $book->setFormat(null);
             }
         }
 

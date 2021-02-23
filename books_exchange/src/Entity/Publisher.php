@@ -39,9 +39,15 @@ class Publisher
      */
     private $publishers;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Book::class, mappedBy="publisher")
+     */
+    private $books;
+
     public function __construct()
     {
         $this->publishers = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,6 +115,36 @@ class Publisher
             // set the owning side to null (unless already changed)
             if ($publisher->getParent() === $this) {
                 $publisher->setParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setPublisher($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            // set the owning side to null (unless already changed)
+            if ($book->getPublisher() === $this) {
+                $book->setPublisher(null);
             }
         }
 

@@ -39,9 +39,15 @@ class Language
      */
     private $languages;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Book::class, mappedBy="language")
+     */
+    private $books;
+
     public function __construct()
     {
         $this->languages = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,6 +115,36 @@ class Language
             // set the owning side to null (unless already changed)
             if ($language->getParent() === $this) {
                 $language->setParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setLanguage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            // set the owning side to null (unless already changed)
+            if ($book->getLanguage() === $this) {
+                $book->setLanguage(null);
             }
         }
 
