@@ -14,48 +14,41 @@
     </head>
     <body>
         <header>
-            {% block header %}
-                <nav>
-                    {% block nav %}
-                        <div class="divNavLogo">
-                            <a href="{{ path('app_home') }}" class="aDivNavLogo" >
-                                <img src="{{ asset('img/booksExchangeLogo.svg') }}" class="imgLogo" alt="mains avec livre effectuant un échange">
-                                <h1 class="brandNameExchange">Échange <span class="brandNameBook">Livres</span></h1>
-                            </a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="{{ path('app_register') }}" class="linkCreateAccount">Créer mon compte</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('app_login') }}" class="linkConnectMe">Me connecter</a>
-                            </li>
-                        </ul>
-                    {% endblock %}
-                </nav>
-                <div class="menu">
-                    <ul>
-                        <li class="liHowItWorks">
-                            <a href="../1-HowItWorks/howitworks.html">Comment ça marche</a>
-                        </li>
-                        <li>
-                            <a href="">Foire aux questions</a>
-                        </li>
-                    </ul>
+            <nav>
+                <div class="divNavLogo">
+                    <a href="{{ path('app_home') }}" class="aDivNavLogo" >
+                        <img src="{{ asset('img/booksExchangeLogo.svg') }}" class="imgLogo" alt="mains avec livre effectuant un échange">
+                        <h1 class="brandNameExchange">Échange <span class="brandNameBook">Livres</span></h1>
+                    </a>
                 </div>
-            {% endblock %}
+                <ul>
+                    <li>
+                        <a href="{{ path('app_register') }}" class="linkCreateAccount">Créer mon compte</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_login') }}" class="linkConnectMe">Me connecter</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu">
+                <ul>
+                    <li class="liHowItWorks">
+                        <a href="../1-HowItWorks/howitworks.html">Comment ça marche</a>
+                    </li>
+                    <li>
+                        <a href="">Foire aux questions</a>
+                    </li>
+                </ul>
+            </div>
         </header>
         <main>
-            {% block main %}
+            {% block body %}
                 <aside class="asideSearchBar">
-                    {% block aside %}
                         <form action="" class="formSearchBar">
                             <input class="searchInput" type="text">
                             <button class="searchButton" type="submit">Rechercher</button>
                         </form>
-                    {% endblock %}
                 </aside>
-
                 <section class="contentBlockSection">
                     {% block section %}
                     
@@ -63,8 +56,6 @@
                 </section>
             {% endblock %}
         </main>
-        {% block body %}
-        {% endblock %}
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
