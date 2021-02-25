@@ -17,4 +17,14 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
+
+    /**
+     * @Route("/howitworks", name="app_how_it_works")
+     */
+    public function howitworks(): Response
+    {
+        return $this->render('main/howitworks.html.twig', [
+            'controller_name' => 'MainController',
+        ]);
+    }
 }
