@@ -6,15 +6,65 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        {#<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">#}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            {% block header %}
+                <nav>
+                    {% block nav %}
+                        <div class="divNavLogo">
+                            <a href="{{ path('app_home') }}" class="aDivNavLogo" >
+                                <img src="{{ asset('img/booksExchangeLogo.svg') }}" class="imgLogo" alt="mains avec livre effectuant un échange">
+                                <h1 class="brandNameExchange">Échange <span class="brandNameBook">Livres</span></h1>
+                            </a>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="{{ path('app_register') }}" class="linkCreateAccount">Créer mon compte</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('app_login') }}" class="linkConnectMe">Me connecter</a>
+                            </li>
+                        </ul>
+                    {% endblock %}
+                </nav>
+                <div class="menu">
+                    <ul>
+                        <li class="liHowItWorks">
+                            <a href="../1-HowItWorks/howitworks.html">Comment ça marche</a>
+                        </li>
+                        <li>
+                            <a href="">Foire aux questions</a>
+                        </li>
+                    </ul>
+                </div>
+            {% endblock %}
+        </header>
+        <main>
+            {% block main %}
+                <aside class="asideSearchBar">
+                    {% block aside %}
+                        <form action="" class="formSearchBar">
+                            <input class="searchInput" type="text">
+                            <button class="searchButton" type="submit">Rechercher</button>
+                        </form>
+                    {% endblock %}
+                </aside>
 
-
+                <section class="contentBlockSection">
+                    {% block section %}
+                    
+                    {% endblock %}
+                </section>
+            {% endblock %}
+        </main>
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
