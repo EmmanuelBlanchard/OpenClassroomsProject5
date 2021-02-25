@@ -43,17 +43,6 @@
         </header>
         <main>
             {% block body %}
-                <aside class="asideSearchBar">
-                        <form action="" class="formSearchBar">
-                            <input class="searchInput" type="text">
-                            <button class="searchButton" type="submit">Rechercher</button>
-                        </form>
-                </aside>
-                <section class="contentBlockSection">
-                    {% block section %}
-                    
-                    {% endblock %}
-                </section>
             {% endblock %}
         </main>
         {% block javascripts %}
