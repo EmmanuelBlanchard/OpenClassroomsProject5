@@ -456,7 +456,7 @@ section.blockOfTheBookInformation > p.line.category, section.blockOfTheBookInfor
     padding: 0.25em 1em;                    /* before 0.5 1em; */
 }
 /* Wireframe 2-4-5-7 */
-form[name="registration_form"], .formCreateAccount, .formLoginToTheAccount, .formConnectedTotheAccount, .formConnectedBookStockBookAdditionForm {
+form[name="registration_form"], form[name="login_form"], .formCreateAccount, .formLoginToTheAccount, .formConnectedTotheAccount, .formConnectedBookStockBookAdditionForm {
     margin: 0 auto;
     width: 62.5%;
     border: 0.3em solid #186135;
@@ -469,7 +469,7 @@ form[name="registration_form"], .formCreateAccount {
     padding-bottom: 2%;                               /* 30px => 4%  | 16px => 2% */
 }
 /* Wireframe 4-5-7 */
-.formLoginToTheAccount, .formConnectedTotheAccount, .formConnectedBookStockBookAdditionForm {
+form[name="login_form"], .formLoginToTheAccount, .formConnectedTotheAccount, .formConnectedBookStockBookAdditionForm {
     padding: 2% 5%;
 }
 /* Wireframe 7 */
@@ -477,10 +477,10 @@ form[name="registration_form"], .formCreateAccount {
     font-weight: bold;
     text-align: center;
 }
-form[name="registration_form"] div, .formCreateAccount div, .formLoginToTheAccount div, .formConnectedBookStockBookAdditionForm div {
+form[name="registration_form"] div, .formCreateAccount div, form[name="login_form"] div, .formLoginToTheAccount div, .formConnectedBookStockBookAdditionForm div {
     margin: 6% 0;
 }
-form[name="registration_form"] > div > label, form.formCreateAccount > div > label, form.formLoginToTheAccount > div > label, form.formConnectedBookStockBookAdditionForm > div > label {
+form[name="registration_form"] > div > label, form.formCreateAccount > div > label, form[name="login_form"] > div > label, form.formLoginToTheAccount > div > label, form.formConnectedBookStockBookAdditionForm > div > label {
     font-size: 1.16em;
 }
 .divButtonCreateAccount, .divButtonLoginToTheAccount, .divButtonConnectedTotheAccount, .divButtonConnectedBookStockAddABook, .divButtonConnectedBookStockBookAdditionForm, .divButtonConfirmTheExchange {
@@ -508,7 +508,7 @@ form[name="registration_form"] > div > label, form.formCreateAccount > div > lab
     background-color: #186135;
     padding: 2% 5%;
 }
-.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn, .paragraphForgottenPasswordLink {
     text-align: center;
 }
 .paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn, .paragraphBeforeTheCreateMyAccountButton {
