@@ -16,6 +16,7 @@
         
         {% if app.user %}
             <div class="informationAboutTheAccountTheLibraryTheExchanges">
+                {# change the word username to pseudo after adding a pseudo in src/Entity/User.php #}
                 <p class="paragraphOfWelcomeOfPseudo">Bienvenu {{ app.user.username }}</p>
                 <div class="divAboutTheAccountTheLibraryTheExchanges">
                     <h3>Votre compte</h3>
