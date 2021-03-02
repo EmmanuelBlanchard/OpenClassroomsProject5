@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Category;
+use App\Form\CategoryFormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin", name="admin_")
@@ -25,10 +28,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/category/add", name="category_add")
      */
-    public function addCategory(): Response
+    public function addCategory(Request $request): Response
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+        $category = new Category;
+
+        $form = $this->createForm(CategoryFormType::class, $category);
+        
+        return $this->render('admin/category/add.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
