@@ -150,4 +150,14 @@ class AdminController extends AbstractController
             'form' =>  $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/author/add", name="author_add")
+     */
+    public function addAuthor(): Response
+    {
+        return $this->render('admin/index.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
 }
