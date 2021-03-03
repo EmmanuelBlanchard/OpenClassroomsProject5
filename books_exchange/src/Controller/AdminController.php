@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Format;
 use App\Entity\Category;
 use App\Entity\Language;
 use App\Entity\Publisher;
+use App\Form\FormatFormType;
 use App\Form\CategoryFormType;
 use App\Form\LanguageFormType;
 use App\Form\PublisherFormType;
@@ -104,10 +106,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/format/add", name="format_add")
      */
-    public function addFormat(): Response
+    public function addFormat(Request $request): Response
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+        $format = new Format;
+
+        $form = $this->createForm(FormatFormType::class, $format);
+        
+        return $this->render('admin/format/add.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
