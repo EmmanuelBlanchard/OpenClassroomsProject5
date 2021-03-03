@@ -100,4 +100,14 @@ class AdminController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/format/add", name="format_add")
+     */
+    public function addFormat(): Response
+    {
+        return $this->render('admin/index.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
 }
