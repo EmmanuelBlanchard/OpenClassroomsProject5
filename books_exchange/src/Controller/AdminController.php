@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Publisher;
 use App\Form\CategoryFormType;
+use App\Form\PublisherFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -52,10 +54,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/publisher/add", name="publisher_add")
      */
-    public function addPublisher(): Response
+    public function addPublisher(Request $request): Response
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+        $publisher = new Publisher;
+
+        $form = $this->createForm(PublisherFormType::class, $publisher);
+
+        return $this->render('admin/publisher/add.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
