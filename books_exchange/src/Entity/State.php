@@ -74,13 +74,6 @@ class State
         return $this->sulg;
     }
 
-    public function setSulg(string $sulg): self
-    {
-        $this->sulg = $sulg;
-
-        return $this;
-    }
-
     public function getParent(): ?self
     {
         return $this->parent;
