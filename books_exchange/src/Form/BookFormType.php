@@ -13,10 +13,6 @@ class BookFormType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('slug')
-            ->add('createdAt')
-            ->add('active')
-            ->add('user')
             ->add('category')
             ->add('publisher')
             ->add('language')
