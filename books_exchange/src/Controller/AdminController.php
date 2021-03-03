@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\State;
+use App\Entity\Author;
 use App\Entity\Format;
 use App\Entity\Category;
 use App\Entity\Language;
 use App\Entity\Publisher;
 use App\Form\StateFormType;
+use App\Form\AuthorFormType;
 use App\Form\FormatFormType;
 use App\Form\CategoryFormType;
 use App\Form\LanguageFormType;
@@ -156,8 +158,12 @@ class AdminController extends AbstractController
      */
     public function addAuthor(): Response
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+        $author = new Author;
+
+        $form = $this->createForm(AuthorFormType::class, $author);
+
+        return $this->render('admin/author/add.html.twig', [
+            'form' => $form->createview()
         ]);
     }
 }
