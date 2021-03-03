@@ -112,6 +112,14 @@ class AdminController extends AbstractController
 
         $form = $this->createForm(FormatFormType::class, $format);
         
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($format);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_home');
+        }
+
         return $this->render('admin/format/add.html.twig', [
             'form' => $form->createView()
         ]);
