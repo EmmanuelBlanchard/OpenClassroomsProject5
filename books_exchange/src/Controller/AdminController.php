@@ -156,7 +156,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/author/add", name="author_add")
      */
-    public function addAuthor(): Response
+    public function addAuthor(Request $request): Response
     {
         $author = new Author;
 
