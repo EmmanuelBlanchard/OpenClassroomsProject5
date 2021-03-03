@@ -78,10 +78,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/language/add", name="language_add")
      */
-    public function addLanguage(): Response
+    public function addLanguage(Request $request): Response
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+        $language = new Language;
+
+        $form = $this->createForm(LanguageFormType::class, $language);
+
+        return $this->render('admin/language/add.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
