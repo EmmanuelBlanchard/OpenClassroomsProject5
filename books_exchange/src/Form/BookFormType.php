@@ -14,6 +14,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class BookFormType extends AbstractType
 {
@@ -39,6 +40,7 @@ class BookFormType extends AbstractType
             ->add('author', EntityType::class, [
                 'class' => Author::class
             ])
+            ->add('validate', SubmitType::class)
         ;
     }
 
