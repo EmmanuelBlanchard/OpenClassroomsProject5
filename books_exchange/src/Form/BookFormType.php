@@ -15,6 +15,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class BookFormType extends AbstractType
 {
@@ -22,12 +23,16 @@ class BookFormType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
+            ->add('author', EntityType::class, [
+                'class' => Author::class
+            ])
             ->add('category', EntityType::class, [
                 'class' => Category::class
             ])
             ->add('publisher', EntityType::class, [
                 'class' => Publisher::class
             ])
+            ->add('summary', TextareaType::class)
             ->add('language', EntityType::class, [
                 'class' => Language::class
             ])
@@ -36,9 +41,6 @@ class BookFormType extends AbstractType
             ])
             ->add('state', EntityType::class, [
                 'class' => State::class
-            ])
-            ->add('author', EntityType::class, [
-                'class' => Author::class
             ])
             ->add('validate', SubmitType::class)
         ;
