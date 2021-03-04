@@ -116,6 +116,8 @@ class AdminController extends AbstractController
 
         $form = $this->createForm(FormatFormType::class, $format);
         
+        $form->handleRequest($request);
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($format);
