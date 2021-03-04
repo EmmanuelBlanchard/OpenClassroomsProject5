@@ -82,6 +82,11 @@ class Book
      */
     private $author;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $summary;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -201,6 +206,18 @@ class Book
     public function setAuthor(?Author $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getSummary(): ?string
+    {
+        return $this->summary;
+    }
+
+    public function setSummary(string $summary): self
+    {
+        $this->Summary = $summary;
 
         return $this;
     }
