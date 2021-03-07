@@ -8,6 +8,13 @@
 
 {% block body %}
 	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
 		<div class="row col-sm-12">
 			<div class="col-sm-12">
 				<h1>Profil de
