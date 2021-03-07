@@ -77,6 +77,21 @@ class UserController extends AbstractController
      */
     public function editPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+        if($request->isMethod('POST')) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $user = $this->getUser();
+
+            // We check if the 2 passwords are identical
+            if($request->request->get('password') == $request->request->get('password2')){
+                $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
+                $entityManager->flush();
+                $this->addFlash('message', 'Mot de passe mis à jour avec succès');
+                return $this->redirectToRoute('user');
+            } else {
+                $this->addFlash('error', 'Les deux mots de passe ne sont pas identiques');
+            }
+        }
         return $this->render('user/editpassword.html.twig');
     }
 }
