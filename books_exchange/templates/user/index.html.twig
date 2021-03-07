@@ -29,9 +29,9 @@
 					{{ app.user.lastname }}
 				</h1>
 			</div>
-			{% for book in app.user.book %}
+			{% for books in app.user.books %}
 				<div class="col-sm-4">Titre :</div>
-				<div class="col-sm-6">{{ book.title }}</div>
+				<div class="col-sm-6">{{ books.title }}</div>
 			{% endfor %}
 		</div>
 	</div>
