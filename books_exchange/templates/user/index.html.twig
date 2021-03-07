@@ -27,6 +27,7 @@
 				<h1>Livres de
 					{{ app.user.firstname }}
 					{{ app.user.lastname }}
+					({{ app.user.books|length }})
 				</h1>
 			</div>
 			{% for books in app.user.books %}
