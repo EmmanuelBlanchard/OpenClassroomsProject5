@@ -12,12 +12,12 @@
 					{{ app.user.lastname }}
 				</h1>
 			</div>
-			<div class="col-sm-4">Nom :</div>
-			<div class="col-sm-6">{{ app.user.lastname }}</div>
-			<div class="col-sm-4">Prénom :</div>
-			<div class="col-sm-6">{{ app.user.firstname }}</div>
-			<div class="col-sm-4">E-mail :</div>
-			<div class="col-sm-6">{{ app.user.email }}</div>
+			<div class="col-sm-3">Nom :</div>
+			<div class="col-sm-9">{{ app.user.lastname }}</div>
+			<div class="col-sm-3">Prénom :</div>
+			<div class="col-sm-9">{{ app.user.firstname }}</div>
+			<div class="col-sm-3">E-mail :</div>
+			<div class="col-sm-9">{{ app.user.email }}</div>
 			<div class="col-sm-12">
 				<a class="btn btn-primary" href="#" role="button">Modifier le profil</a>
 				<a class="btn btn-primary" href="#" role="button">Modifier le mot de passe</a>
@@ -30,8 +30,22 @@
 				</h1>
 			</div>
 			{% for books in app.user.books %}
-				<div class="col-sm-4">Titre :</div>
-				<div class="col-sm-6">{{ books.title }}</div>
+				<div class="col-sm-3">Titre :</div>
+				<div class="col-sm-9">{{ books.title }}</div>
+				<div class="col-sm-3">Auteur :</div>
+				<div class="col-sm-9">{{ books.author }}</div>
+				<div class="col-sm-3">Catégorie :</div>
+				<div class="col-sm-9">{{ books.category }}</div>
+				<div class="col-sm-3">Éditeur :</div>
+				<div class="col-sm-9">{{ books.publisher }}</div>
+				<div class="col-sm-3">Résumé :</div>
+				<div class="col-sm-9">{{ books.summary }}</div>
+				<div class="col-sm-3">Langue :</div>
+				<div class="col-sm-9">{{ books.language }}</div>
+				<div class="col-sm-3">Format :</div>
+				<div class="col-sm-9">{{ books.format }}</div>
+				<div class="col-sm-3">État du livre :</div>
+				<div class="col-sm-9">{{ books.state }}</div>
 			{% endfor %}
 		</div>
 	</div>
