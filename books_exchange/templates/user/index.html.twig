@@ -1,6 +1,8 @@
 {% extends 'user.html.twig' %}
 
-{% block title %}Hello UserController!
+{% block title %}Profil de
+	{{ app.user.firstname }}
+	{{ app.user.lastname }}
 {% endblock %}
 
 {% block body %}
