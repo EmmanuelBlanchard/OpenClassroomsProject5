@@ -5,19 +5,34 @@
 
 {% block body %}
 	<div class="container">
-		<div class="row col-sm-6">
+		<div class="row col-sm-12">
 			<div class="col-sm-12">
 				<h1>Profil de
 					{{ app.user.firstname }}
 					{{ app.user.lastname }}
 				</h1>
 			</div>
-			<div class="col-sm-2">Nom :</div>
-			<div class="col-sm-10">{{ app.user.lastname }}</div>
-			<div class="col-sm-2">Prénom :</div>
-			<div class="col-sm-10">{{ app.user.firstname }}</div>
-			<div class="col-sm-2">E-mail :</div>
-			<div class="col-sm-10">{{ app.user.email }}</div>
+			<div class="col-sm-4">Nom :</div>
+			<div class="col-sm-6">{{ app.user.lastname }}</div>
+			<div class="col-sm-4">Prénom :</div>
+			<div class="col-sm-6">{{ app.user.firstname }}</div>
+			<div class="col-sm-4">E-mail :</div>
+			<div class="col-sm-6">{{ app.user.email }}</div>
+			<div class="col-sm-12">
+				<a class="btn btn-primary" href="#" role="button">Modifier le profil</a>
+				<a class="btn btn-primary" href="#" role="button">Modifier le mot de passe</a>
+			</div>
+
+			<div class="col-sm-12">
+				<h1>Livres de
+					{{ app.user.firstname }}
+					{{ app.user.lastname }}
+				</h1>
+			</div>
+			{% for book in app.user.book %}
+				<div class="col-sm-4">Titre :</div>
+				<div class="col-sm-6">{{ book.title }}</div>
+			{% endfor %}
 		</div>
 	</div>
 {% endblock %}
