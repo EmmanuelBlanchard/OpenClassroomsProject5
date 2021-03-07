@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractController
 {
@@ -69,5 +70,13 @@ class UserController extends AbstractController
         return $this->render('user/editprofile.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/user/password/edit", name="user_password_edit")
+     */
+    public function editPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
+    {
+        return $this->render('user/editpassword.html.twig');
     }
 }
