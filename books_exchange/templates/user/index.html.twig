@@ -1,4 +1,4 @@
-{% extends 'user.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}
 	Profil de
@@ -7,6 +7,36 @@
 {% endblock %}
 
 {% block body %}
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success" role="alert">{{ message }}</div>
+	{% endfor %}
+
+	<aside class="asideSearchBar">
+		<form action="" class="formSearchBar">
+			<input class="searchInput" type="text">
+			<button class="searchButton" type="submit">Rechercher</button>
+		</form>
+
+		{% if app.user %}
+			<div
+				class="informationAboutTheAccountTheLibraryTheExchanges">
+				{# change the word username to pseudo after adding a pseudo in src/Entity/User.php #}
+				<p class="paragraphOfWelcomeOfPseudo">Bienvenu
+					{{ app.user.username }}</p>
+				<div class="divAboutTheAccountTheLibraryTheExchanges">
+					<h3>Votre compte</h3>
+					<a href="" class="linkManagemyAccount">Gérer mon compte</a>
+					<a href="" class="linkMail">Messagerie</a>
+					<h3>Bibliothèque</h3>
+					<a href="../6-ConnectedBookStockAddABook/connectedbookstockaddabook.html" class="linkStockOfBooks">Stock de livres</a>
+					<h3>Échanges</h3>
+					<a href="../9-ConnectedBookExchangeClickOnTheBookExchangeLink/connectedbookexchangeclickonthebookexchangelink.html" class="linkBookExchange">Échanges de livres</a>
+				</div>
+			</div>
+		{% endif %}
+
+	</aside>
+
 	<div class="container">
 		{% for message in app.flashes('message') %}
 			<div class="col-sm-12">
