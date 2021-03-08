@@ -217,7 +217,7 @@ class Book
 
     public function setSummary(string $summary): self
     {
-        $this->Summary = $summary;
+        $this->summary = $summary;
 
         return $this;
     }
