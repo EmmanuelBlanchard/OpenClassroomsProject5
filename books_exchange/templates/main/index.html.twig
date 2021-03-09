@@ -21,7 +21,7 @@
 					{{ app.user.pseudo }}</p>
 				<div class="divAboutTheAccountTheLibraryTheExchanges">
 					<h3>Votre compte</h3>
-					<a href="" class="linkManagemyAccount">Gérer mon compte</a>
+					<a href="{{ path('user') }}" class="linkManagemyAccount">Gérer mon compte</a>
 					<a href="" class="linkMail">Messagerie</a>
 					<h3>Bibliothèque</h3>
 					<a href="../6-ConnectedBookStockAddABook/connectedbookstockaddabook.html" class="linkStockOfBooks">Stock de livres</a>
@@ -36,13 +36,13 @@
 		<section class="introductoryContent">
 			<h2 class="h2IntroductoryContent">Échangez vos livres contre des nouveaux avec ÉchangeLivres !</h2>
 			<p>Facile et économique, le troc de livres d'occasion vous permet de lire de nouveaux titres toute l'année. 
-												                    Inscrivez-vous gratuitement et ajoutez vos livres à notre catalogue composé de milliers d'ouvrages.</p>
+																                    Inscrivez-vous gratuitement et ajoutez vos livres à notre catalogue composé de milliers d'ouvrages.</p>
 		</section>
 
 		<section class="instructionsForUse">
 			<h3 class="h3InstructionsForUse">L'échange de livres, mode d'emploi</h3>
 			<p>Vous êtes nouveau et souhaitez échanger vos livres sur Internet ? 
-												                Découvrez comment fonctionne l'échange de livres sur ÉchangeLivres.</p>
+																                Découvrez comment fonctionne l'échange de livres sur ÉchangeLivres.</p>
 			<img src="./img/imageForTheInstructionManualBlock.svg" class="imageForTheInstructionManualBlock" alt="image For The Instruction Manual Block"/>
 			<a href="{{ path('app_how_it_works') }}" class="linkOnHowTheWebsiteWorks">Cliquez ici pour voir le fonctionnement de l'échange de livres</a>
 		</section>
