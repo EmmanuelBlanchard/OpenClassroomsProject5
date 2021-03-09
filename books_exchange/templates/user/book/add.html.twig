@@ -4,6 +4,68 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ajouter un livre</h1>
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success" role="alert">{{ message }}</div>
+	{% endfor %}
 
-	{{ form(form) }}{% endblock %}
+	<aside class="asideSearchBar">
+		<form action="" class="formSearchBar">
+			<input class="searchInput" type="text">
+			<button class="searchButton" type="submit">Rechercher</button>
+		</form>
+
+		{% if app.user %}
+			<div class="informationAboutTheAccountTheLibraryTheExchanges">
+				<p class="paragraphOfWelcomeOfPseudo">Salut
+					{{ app.user.pseudo }}</p>
+				<div class="divAboutTheAccountTheLibraryTheExchanges">
+					<h3>Votre compte</h3>
+					<a href="{{ path('user') }}" class="linkManagemyAccount">Gérer mon compte</a>
+					<a href="" class="linkMail">Messagerie</a>
+					<h3>Bibliothèque</h3>
+					<a href="{{ path('user_book') }}" class="linkStockOfBooks">Stock de livres</a>
+					<h3>Échanges</h3>
+					<a href="../9-ConnectedBookExchangeClickOnTheBookExchangeLink/connectedbookexchangeclickonthebookexchangelink.html" class="linkBookExchange">Échanges de livres</a>
+				</div>
+			</div>
+		{% endif %}
+
+	</aside>
+
+	<div class="container">
+		<div class="row col-sm-12">
+			<div class="col-sm-12">
+				<h1>Ajouter un livre</h1>
+				{{ form_start(addbookForm) }}
+				{{ form_row(addbookForm.title, {
+					label: 'Titre : '
+				}) }}
+				{{ form_row(addbookForm.author, {
+					label: 'Auteur : '
+				}) }}
+				{{ form_row(addbookForm.category, {
+					label: 'Catégorie : '
+				}) }}
+				{{ form_row(addbookForm.publisher, {
+					label: 'Éditeur : '
+				}) }}
+				{{ form_row(addbookForm.summary, {
+					label: 'Résumé : '
+				}) }}
+				{{ form_row(addbookForm.language, {
+					label: 'Langue : '
+				}) }}
+				{{ form_row(addbookForm.format, {
+					label: 'Format : '
+				}) }}
+				{{ form_row(addbookForm.state, {
+					label: 'État du livre : '
+				}) }}
+				{{ form_row(addbookForm.validate, {
+					label: 'Valider'
+				}) }}
+				{{ form_end(addbookForm) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

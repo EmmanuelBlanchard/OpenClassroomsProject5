@@ -52,7 +52,7 @@ class UserController extends AbstractController
         }
 
         return $this->render('user/book/add.html.twig', [
-            'form' => $form->createView()
+            'addbookForm' => $form->createView()
         ]);
     }
 
