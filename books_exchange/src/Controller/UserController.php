@@ -35,7 +35,6 @@ class UserController extends AbstractController
     public function addBook(Request $request): Response
     {
         $book = new Book;
-
         $form = $this->createForm(BookFormType::class, $book);
 
         $form->handleRequest($request);
@@ -48,6 +47,7 @@ class UserController extends AbstractController
             $entityManager->persist($book);
             $entityManager->flush();
 
+            $this->addFlash('message', 'Le livre a été ajouté à votre stock !');
             return $this->redirectToRoute('user');
         }
 
@@ -70,11 +70,9 @@ class UserController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-
             $this->addFlash('message', 'Profil mis à jour');
             return $this->redirectToRoute('user');
         }
-
         return $this->render('user/editprofile.html.twig', [
             'editprofileForm' => $form->createView()
         ]);
@@ -87,9 +85,7 @@ class UserController extends AbstractController
     {
         if($request->isMethod('POST')) {
             $entityManager = $this->getDoctrine()->getManager();
-
             $user = $this->getUser();
-
             // We check if the 2 passwords are identical
             if($request->request->get('password') == $request->request->get('password2')){
                 $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
