@@ -6,29 +6,6 @@
 {% endblock %}
 
 {% block body %}
-	<aside class="asideSearchBar">
-		<form action="" class="formSearchBar">
-			<input class="searchInput" type="text">
-			<button class="searchButton" type="submit">Rechercher</button>
-		</form>
-
-		{% if app.user %}
-			<div class="informationAboutTheAccountTheLibraryTheExchanges">
-				<p class="paragraphOfWelcomeOfPseudo">Salut
-					{{ app.user.pseudo }}</p>
-				<div class="divAboutTheAccountTheLibraryTheExchanges">
-					<h3>Votre compte</h3>
-					<a href="{{ path('user') }}" class="linkManagemyAccount">Gérer mon compte</a>
-					<a href="" class="linkMail">Messagerie</a>
-					<h3>Bibliothèque</h3>
-					<a href="{{ path('user_book') }}" class="linkStockOfBooks">Stock de livres</a>
-					<h3>Échanges</h3>
-					<a href="../9-ConnectedBookExchangeClickOnTheBookExchangeLink/connectedbookexchangeclickonthebookexchangelink.html" class="linkBookExchange">Échanges de livres</a>
-				</div>
-			</div>
-		{% endif %}
-	</aside>
-
 	<div class="container">
 		<div class="row col-sm-12">
 			<div class="col-sm-12">
