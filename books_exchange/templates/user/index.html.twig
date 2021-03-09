@@ -52,12 +52,18 @@
 					{{ app.user.lastname }}
 				</h1>
 			</div>
+			<div class="col-sm-3">Pseudo :</div>
+			<div class="col-sm-9">{{ app.user.pseudo }}</div>
 			<div class="col-sm-3">Nom :</div>
 			<div class="col-sm-9">{{ app.user.lastname }}</div>
 			<div class="col-sm-3">Prénom :</div>
 			<div class="col-sm-9">{{ app.user.firstname }}</div>
 			<div class="col-sm-3">E-mail :</div>
 			<div class="col-sm-9">{{ app.user.email }}</div>
+			<div class="col-sm-3">Code postal :</div>
+			<div class="col-sm-9">{{ app.user.zipCode }}</div>
+			<div class="col-sm-3">Ville :</div>
+			<div class="col-sm-9">{{ app.user.city }}</div>
 			<div class="col-sm-12">
 				<a class="btn btn-primary" href="{{ path('user_profile_edit') }}" role="button">Modifier le profil</a>
 				<a class="btn btn-primary" href="{{ path('user_password_edit') }}" role="button">Modifier le mot de passe</a>
