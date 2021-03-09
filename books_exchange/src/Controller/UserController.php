@@ -22,6 +22,14 @@ class UserController extends AbstractController
     }
 
     /**
+    * @Route("/user/book", name="user_book")
+    */
+    public function indexBook(): Response
+    {
+        return $this->render('user/book/index.html.twig');
+    }
+
+    /**
      * @Route("/user/book/add", name="user_book_add")
      */
     public function addBook(Request $request): Response
