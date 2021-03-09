@@ -7,13 +7,6 @@
 	{% for flashError in app.flashes('verify_email_error') %}
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
-
-	<aside class="asideSearchBar">
-		<form action="" class="formSearchBar">
-			<input class="searchInput" type="text">
-			<button class="searchButton" type="submit">Rechercher</button>
-		</form>
-	</aside>
 	<section class="contentBlockSection">
 
 		<h2 class="h2CreateAccount">Créer un nouveau compte</h2>
@@ -53,6 +46,5 @@
                 <button type="submit" class="btn btn-success buttonCreateAccount">S'inscrire</button>
             </div>
         {{ form_end(registrationForm) }}
-
 	</section>
 {% endblock %}
