@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Modification du profil de
+	{{ app.user.lastname }}
+	{{ app.user.firstname }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row col-sm-12">
+			<div class="col-sm-12">
+				<h1>Modification du profil de
+					{{ app.user.firstname }}
+					{{ app.user.lastname }}
+				</h1>
+				{#{{ form(form) }}#}
+				{#Try in UserController.php => 'editprofileForm' #}
+				{{ form_start(editprofileForm) }}
+				{{ form_row(editprofileForm.pseudo, {
+					label: 'Pseudo : '
+				}) }}
+				{{ form_row(editprofileForm.lastname, {
+					label: 'Nom : '
+				}) }}
+				{{ form_row(editprofileForm.firstname, {
+					label: 'Prénom : '
+				}) }}
+				{{ form_row(editprofileForm.email, {
+					label: 'E-mail : '
+				}) }}
+				{{ form_row(editprofileForm.zipCode, {
+					label: 'Code postal : '
+				}) }}
+				{{ form_row(editprofileForm.city, {
+					label:'Ville : '
+				}) }}
+				{{ form_row(editprofileForm.validate, {
+					label:'Valider'
+				}) }}
+				{{ form_end(editprofileForm) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}
