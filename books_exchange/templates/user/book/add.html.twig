@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter un livre
+{% block title %}
+	Stock de livres de
+	{{ app.user.pseudo }}
+	- Ajouter un livre
 {% endblock %}
 
 {% block body %}
