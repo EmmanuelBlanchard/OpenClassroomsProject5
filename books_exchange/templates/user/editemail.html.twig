@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Modification de l'e-mail de
+	{{ app.user.pseudo }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('error') %}
+			<div class="col-sm-12">
+				<div class="alert alert-danger" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		<div class="row col-sm-12">
+			<div class="col-sm-12">
+				<h1>Modification de l'e-mail de
+					{{ app.user.pseudo }}
+				</h1>
+				<form method="post">
+					<div class="mb-3">
+						<label for="email" class="form-label">E-mail</label>
+						<input type="email" class="form-control" id="email" name="email">
+					</div>
+					<div class="mb-3">
+						<label for="email2" class="form-label">Confirmer l'e-mail</label>
+						<input type="email" class="form-control" id="email2" name="email2">
+					</div>
+					<button type="submit" class="btn btn-primary">Valider</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
