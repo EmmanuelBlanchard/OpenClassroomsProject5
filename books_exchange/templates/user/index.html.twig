@@ -49,23 +49,38 @@
 					({{ app.user.books|length }})
 				</h1>
 			</div>
-			{% for books in app.user.books %}
-				<div class="col-sm-3">Titre :</div>
-				<div class="col-sm-9">{{ books.title }}</div>
-				<div class="col-sm-3">Auteur :</div>
-				<div class="col-sm-9">{{ books.author }}</div>
-				<div class="col-sm-3">Catégorie :</div>
-				<div class="col-sm-9">{{ books.category }}</div>
-				<div class="col-sm-3">Éditeur :</div>
-				<div class="col-sm-9">{{ books.publisher }}</div>
-				<div class="col-sm-3">Résumé :</div>
-				<div class="col-sm-9">{{ books.summary }}</div>
-				<div class="col-sm-3">Langue :</div>
-				<div class="col-sm-9">{{ books.language }}</div>
-				<div class="col-sm-3">Format :</div>
-				<div class="col-sm-9">{{ books.format }}</div>
-				<div class="col-sm-3">État du livre :</div>
-				<div class="col-sm-9">{{ books.state }}</div>
+
+			{#{% if app.user.books.active == "true" %}#}
+			{#{% if app.user.books.active == true %}#}
+			{#{% if app.user.books.active !== false %}#}
+			{#{% if app.user.books.active == 1 %}#}
+			{{ dump(app.user.books) }}<p>Afficher les livres en stock car livres avec champ active est true
+			</p>
+				{% for books in app.user.books %}
+				{{ dump(books.active)}}
+					{% if books.active in books %}
+						<div class="container"> <div class="col-sm-3">Titre :</div>
+						<div class="col-sm-9">{{ books.title }}</div>
+						<div class="col-sm-3">Auteur :</div>
+						<div class="col-sm-9">{{ books.author }}</div>
+						<div class="col-sm-3">Catégorie :</div>
+						<div class="col-sm-9">{{ books.category }}</div>
+						<div class="col-sm-3">Éditeur :</div>
+						<div class="col-sm-9">{{ books.publisher }}</div>
+						<div class="col-sm-3">Résumé :</div>
+						<div class="col-sm-9">{{ books.summary }}</div>
+						<div class="col-sm-3">Langue :</div>
+						<div class="col-sm-9">{{ books.language }}</div>
+						<div class="col-sm-3">Format :</div>
+						<div class="col-sm-9">{{ books.format }}</div>
+						<div class="col-sm-3">État du livre :</div>
+						<div class="col-sm-9">{{ books.state }}</div>
+
+						<a href="" role="button">Retirer de mon stock</a>
+						{# When clicking on the button, put on app.user.books.active => false === 0 #}
+					</div>
+				{% endif %}
+				{#{% endif %}#}
 			{% endfor %}
 		</div>
 	</div>
