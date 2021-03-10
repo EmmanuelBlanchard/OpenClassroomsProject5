@@ -19,7 +19,6 @@ class EditProfileFormType extends AbstractType
             ->add('pseudo', TextType::class)
             ->add('lastname', TextType::class)
             ->add('firstname', TextType::class)
-            ->add('email', EmailType::class)
             ->add('zipCode', IntegerType::class)
             ->add('city', TextType::class)
             ->add('validate', SubmitType::class)
