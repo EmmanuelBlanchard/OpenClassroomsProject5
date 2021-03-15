@@ -129,7 +129,7 @@ class UserController extends AbstractController
         $book = $repository->find($id);
         if($book === null) {
             // Make a flash bag message
-            //$this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
             $book->setActive(false);
             $entityManager = $this->getDoctrine()->getManager();
