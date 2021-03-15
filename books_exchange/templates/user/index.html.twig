@@ -53,8 +53,8 @@
 			{#{% if app.user.books.active == "true" %}#}
 			{#{% if app.user.books.active == true %}#}
 			{#{% if app.user.books.active !== false %}#}
-			{#{% if app.user.books.active == 1 %}#}
-			{{ dump(app.user.books) }}<p>Afficher les livres en stock car livres avec champ active est true
+			{#{% if app.user.books.active == 1 %}#}{{ dump(app.user.books) }}<p>
+			Afficher les livres en stock car livres avec champ active est true
 			</p>
 				{% for books in app.user.books %}
 				{{ dump(books.active)}}
@@ -76,7 +76,7 @@
 						<div class="col-sm-3">État du livre :</div>
 						<div class="col-sm-9">{{ books.state }}</div>
 
-						<a href="" role="button">Retirer de mon stock</a>
+						<a href="{{ path('user_book_remove_stock') }}" role="button">Retirer de mon stock</a>
 						{# When clicking on the button, put on app.user.books.active => false === 0 #}
 					</div>
 				{% endif %}

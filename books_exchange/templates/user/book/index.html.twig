@@ -65,6 +65,9 @@
 				<div class="col-sm-9">{{ books.format }}</div>
 				<div class="col-sm-3">État du livre :</div>
 				<div class="col-sm-9">{{ books.state }}</div>
+
+				<a href="{{ path('user_book_remove_stock') }}" role="button">Retirer de mon stock</a>
+				{# When clicking on the button, put on app.user.books.active => false === 0 #}
 			{% endfor %}
 		</div>
 	</div>

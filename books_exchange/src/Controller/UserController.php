@@ -119,4 +119,20 @@ class UserController extends AbstractController
         }
         return $this->render('user/editemail.html.twig');
     }
+
+    /**
+     * @Route("/user/book/remove/stock{#id}", name="user_book_remove_stock")
+     */
+    public function bookRemoveFromStock(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+
+        // look for a single Book by its primary key (usually "id")
+        $book = $repository->find($id);
+
+        $book->setActive(false);
+        
+        $this->addFlash('message', 'Livre retiré du Stock de livres');
+        return $this->render('user/book/index.html.twig');
+    }
 }
