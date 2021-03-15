@@ -121,18 +121,22 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user/book/remove/stock{#id}", name="user_book_remove_stock")
+     * @Route("/user/book/{id}/remove/stock", name="user_book_remove_stock")
      */
     public function bookRemoveFromStock(int $id): Response
     {
         $repository = $this->getDoctrine()->getRepository(Book::class);
-
-        // look for a single Book by its primary key (usually "id")
         $book = $repository->find($id);
-
-        $book->setActive(false);
-        
-        $this->addFlash('message', 'Livre retiré du Stock de livres');
-        return $this->render('user/book/index.html.twig');
+        if($book === null) {
+            // Make a flash bag message
+            //$this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(false);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre retiré du stock de livres');
+        }
+        return $this->redirectToRoute('user_book');
     }
 }

@@ -9,6 +9,10 @@
 	{% for message in app.flashes('success') %}
 		<div class="alert alert-success" role="alert">{{ message }}</div>
 	{% endfor %}
+	{% for message in app.flashes('error') %}
+		<div class="alert alert-danger" role="alert">{{ message }}</div>
+	{% endfor %}
+
 	<div class="container">
 		{% for message in app.flashes('message') %}
 			<div class="col-sm-12">
@@ -66,8 +70,7 @@
 				<div class="col-sm-3">État du livre :</div>
 				<div class="col-sm-9">{{ books.state }}</div>
 
-				<a href="{{ path('user_book_remove_stock') }}" role="button">Retirer de mon stock</a>
-				{# When clicking on the button, put on app.user.books.active => false === 0 #}
+				<a href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
 			{% endfor %}
 		</div>
 	</div>
