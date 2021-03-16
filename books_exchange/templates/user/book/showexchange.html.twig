@@ -24,18 +24,35 @@
 		{% endfor %}
 		<h1>Échange de livres</h1>
 
+		{#}
+		<ul>
+			{% for book in book.title %}
+				<li>{{ book.title }}</li>
+			{% endfor %}
+		</ul>
+		
+		<p>{{ app.book.exchangeRequest }}</p>
+		#}
 		<div class="col-sm-12">
 			<h1>Vos échanges
-				{% if app.books.exchanges|length == "0" %}
+				{#
+				{% if app.book.exchangeRequest === true|length == "0" %}
+				0 livre)
+				{% else %}
+				({{ app.user.books|length }}
+				livres)
+				{% endif %}
+				#}
+				{% if app.user.books|length == "0" %}
 					0 livre)
 				{% else %}
-					({{ app.books.exchanges|length }}
+					({{ app.user.books|length }}
 					livres)
 				{% endif %}
 			</h1>
 		</div>
 
-		{% if app.books.exchanges|length == "0" %}
+		{% if app.user.books|length == "0" %}
 			<p>Vous n'avez aucun échange de livre en cours</p>
 
 			<div class="divConnectedBookExchangeClickTheBookExchangeLink">
