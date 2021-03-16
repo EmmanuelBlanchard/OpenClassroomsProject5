@@ -24,39 +24,20 @@
 		{% endfor %}
 		<h1>Échange de livres</h1>
 
-		{#}
-		<ul>
-			{% for book in book.title %}
-				<li>{{ book.title }}</li>
-			{% endfor %}
-		</ul>
-		
-		<p>{{ app.book.exchangeRequest }}</p>
-		#}
 		<div class="col-sm-12">
 			<h1>Vos échanges
-				{#
-				{% if app.book.exchangeRequest === true|length == "0" %}
-				0 livre)
+				{% if books|length == "0" %}
+					(0 livre)
 				{% else %}
-				({{ app.user.books|length }}
-				livres)
-				{% endif %}
-				#}
-				{% if app.user.books|length == "0" %}
-					0 livre)
-				{% else %}
-					({{ app.user.books|length }}
+					({{ books|length }}
 					livres)
 				{% endif %}
 			</h1>
 		</div>
 
-		{% if app.user.books|length == "0" %}
-			<p>Vous n'avez aucun échange de livre en cours</p>
-
+		{% if books|length == "0" %}
 			<div class="divConnectedBookExchangeClickTheBookExchangeLink">
-				<p>Vous n'avez aucun échange e livre en cours</p>
+				<p>Vous n'avez aucun échange de livre en cours</p>
 			</div>
 
 			<div class="divExchangeInstructions">
@@ -72,8 +53,27 @@
 				<p>l'échange est annulé.</p>
 			</div>
 
-			{% else %}
-
+		{% else %}
+			<div class="row col-sm-12">
+				{% for book in books %}
+					<div class="col-sm-3">Titre:</div>
+					<div class="col-sm-9">{{ book.title }}</div>
+					<div class="col-sm-3">Auteur:</div>
+					<div class="col-sm-9">{{ book.author }}</div>
+					<div class="col-sm-3">État du livre:</div>
+					<div class="col-sm-9">{{ book.state }}</div>
+					<div class="col-sm-3">Propriétaire du livre:</div>
+					<div class="col-sm-9">
+						{{ book.user.pseudo }}</div>
+					<div class="col-sm-3">Localisation du livre:</div>
+					<div class="col-sm-9">
+						{{ book.user.city }}
+						{{ book.user.zipCode }}</div>
+					<div class="col-sm-3">Date de la demande d'échange:</div>
+					<div class="col-sm-9">
+						{{ book.exchangeRequestAt|date('d/m/Y') }}</div>
+				{% endfor %}
+			</div>
 		{% endif %}
 
 	</div>
