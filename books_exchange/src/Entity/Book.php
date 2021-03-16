@@ -87,6 +87,16 @@ class Book
      */
     private $summary;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $exchangeRequest;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $exchangeRequestAt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -218,6 +228,30 @@ class Book
     public function setSummary(string $summary): self
     {
         $this->summary = $summary;
+
+        return $this;
+    }
+
+    public function getExchangeRequest(): ?bool
+    {
+        return $this->exchangeRequest;
+    }
+
+    public function setExchangeRequest(bool $exchangeRequest): self
+    {
+        $this->exchangeRequest = $exchangeRequest;
+
+        return $this;
+    }
+
+    public function getExchangeRequestAt(): ?\DateTimeInterface
+    {
+        return $this->exchangeRequestAt;
+    }
+
+    public function setExchangeRequestAt(\DateTimeInterface $exchangeRequestAt): self
+    {
+        $this->exchangeRequestAt = $exchangeRequestAt;
 
         return $this;
     }
