@@ -58,29 +58,26 @@
 			<p>Afficher les livres en stock car livres avec champ active est true
 			</p>
 			{% for books in app.user.books %}
+				<div class="container">
+					<div class="col-sm-3">Titre :</div>
+					<div class="col-sm-9">{{ books.title }}</div>
+					<div class="col-sm-3">Auteur :</div>
+					<div class="col-sm-9">{{ books.author }}</div>
+					<div class="col-sm-3">Catégorie :</div>
+					<div class="col-sm-9">{{ books.category }}</div>
+					<div class="col-sm-3">Éditeur :</div>
+					<div class="col-sm-9">{{ books.publisher }}</div>
+					<div class="col-sm-3">Résumé :</div>
+					<div class="col-sm-9">{{ books.summary }}</div>
+					<div class="col-sm-3">Langue :</div>
+					<div class="col-sm-9">{{ books.language }}</div>
+					<div class="col-sm-3">Format :</div>
+					<div class="col-sm-9">{{ books.format }}</div>
+					<div class="col-sm-3">État du livre :</div>
+					<div class="col-sm-9">{{ books.state }}</div>
 
-				{% if books.active === "1" in books %}
-					<div class="container">
-						<div class="col-sm-3">Titre :</div>
-						<div class="col-sm-9">{{ books.title }}</div>
-						<div class="col-sm-3">Auteur :</div>
-						<div class="col-sm-9">{{ books.author }}</div>
-						<div class="col-sm-3">Catégorie :</div>
-						<div class="col-sm-9">{{ books.category }}</div>
-						<div class="col-sm-3">Éditeur :</div>
-						<div class="col-sm-9">{{ books.publisher }}</div>
-						<div class="col-sm-3">Résumé :</div>
-						<div class="col-sm-9">{{ books.summary }}</div>
-						<div class="col-sm-3">Langue :</div>
-						<div class="col-sm-9">{{ books.language }}</div>
-						<div class="col-sm-3">Format :</div>
-						<div class="col-sm-9">{{ books.format }}</div>
-						<div class="col-sm-3">État du livre :</div>
-						<div class="col-sm-9">{{ books.state }}</div>
-
-						<a href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
-					</div>
-				{% endif %}
+					<a href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+				</div>
 			{% endfor %}
 		</div>
 	</div>

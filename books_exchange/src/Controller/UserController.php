@@ -30,6 +30,26 @@ class UserController extends AbstractController
     }
 
     /**
+     * @Route("/user/book/{id}/remove/stock", name="user_book_remove_stock")
+     */
+    public function bookRemoveFromStock(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $book = $repository->find($id);
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(false);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre retiré du stock de livres');
+        }
+        return $this->redirectToRoute('user_book');
+    }
+
+    /**
      * @Route("/user/book/add", name="user_book_add")
      */
     public function addBook(Request $request): Response
@@ -54,6 +74,14 @@ class UserController extends AbstractController
         return $this->render('user/book/add.html.twig', [
             'addbookForm' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/user/book/show/exchange", name="user_book_show_exchange")
+     */
+    public function showBooksExchange(): Response
+    {
+        return $this->render('user/book/showexchange.html.twig');
     }
 
     /**
@@ -120,23 +148,4 @@ class UserController extends AbstractController
         return $this->render('user/editemail.html.twig');
     }
 
-    /**
-     * @Route("/user/book/{id}/remove/stock", name="user_book_remove_stock")
-     */
-    public function bookRemoveFromStock(int $id): Response
-    {
-        $repository = $this->getDoctrine()->getRepository(Book::class);
-        $book = $repository->find($id);
-        if($book === null) {
-            // Make a flash bag message
-            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
-        } else {
-            $book->setActive(false);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($book);
-            $entityManager->flush();
-            $this->addFlash('message', 'Livre retiré du stock de livres');
-        }
-        return $this->redirectToRoute('user_book');
-    }
 }
