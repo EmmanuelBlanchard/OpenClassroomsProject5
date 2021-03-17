@@ -87,8 +87,7 @@ class UserController extends AbstractController
             ['exchangeRequest' => true],
             ['exchangeRequestAt' => 'desc']
         );
-        //dd($books);
-
+        
         return $this->render('user/book/showexchange.html.twig', ['books' => $books]);
     }
 
@@ -104,6 +103,29 @@ class UserController extends AbstractController
             $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } else {
             return $this->render('user/book/validationconfirmbookexchange.html.twig', ['book' => $book]);
+        }
+        return $this->redirectToRoute('user_book');
+    }
+
+    /**
+     * @Route("/user/book/{id}/confirm/exchange", name="user_book_confirm_exchange")
+     */
+    public function confirmBookExchange(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $book = $repository->find($id);
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : problème d\'identification du livre');
+        } else {
+            $book->setExchangeRequest(true);
+            $book->setExchangeRequestAt(new \DateTime('now'));
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+
+            return $this->render('user/book/confirmbookexchange.html.twig', ['book' => $book]);
         }
         return $this->redirectToRoute('user_book');
     }

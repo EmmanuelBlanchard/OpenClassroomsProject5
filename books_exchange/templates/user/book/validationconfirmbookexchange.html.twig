@@ -42,7 +42,7 @@
 						{{book.user.zipCode}}</span>
 				</p>
 				<div class="divButtonConfirmTheExchange">
-					<a href="" class="buttonConfirmTheExchange">Confirmer l'échange</a>
+					<a href="{{ path('user_book_confirm_exchange', {'id': book.id }) }}" class="buttonConfirmTheExchange">Confirmer l'échange</a>
 				</div>
 			</div>
 		</section>
