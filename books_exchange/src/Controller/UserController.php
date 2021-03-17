@@ -99,7 +99,7 @@ class UserController extends AbstractController
         $book = $repository->find($id);
         if($book === null) {
             // Make a flash bag message
-            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+            $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } else {
             return $this->render('user/book/validationconfirmbookexchange.html.twig', ['book' => $book]);
         }
