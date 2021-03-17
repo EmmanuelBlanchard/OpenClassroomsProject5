@@ -91,6 +91,22 @@ class UserController extends AbstractController
     }
 
     /**
+     * @Route("/user/book/{id}/validation/confirm/exchange", name="user_book_validation_confirm_exchange")
+     */
+    public function validationConfirmBookExchange(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $book = $repository->find($id);
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            return $this->render('user/book/validationconfirmbookexchange.html.twig', ['book' => $book]);
+        }
+        return $this->redirectToRoute('user_book');
+    }
+
+    /**
      * @Route("/user/profile/edit", name="user_profile_edit")
      */
     public function editProfile(Request $request): Response

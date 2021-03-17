@@ -44,7 +44,7 @@
 							{{ book.user.pseudo }}
 						</p>
 						<div class="divExchangeButton">
-							<a href="../14-HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn/homepageclickexchangebuttonofthebookbutarenotloggedin2.html" class="exchangeButton" role="button">Échanger</a>
+							<a href="{{ path('user_book_validation_confirm_exchange', {'id': book.id}) }}" class="exchangeButton" role="button">Échanger</a>
 						</div>
 					</section>
 				{% endfor %}
