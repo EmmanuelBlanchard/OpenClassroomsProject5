@@ -28,7 +28,7 @@ class MainController extends AbstractController
         // Could not convert PHP value 'DESC' of type 'string' to type 'datetime'. Expected one of the following types: null, DateTime
         
         $books = $this->getDoctrine()->getRepository(Book::class)->findBy(array('active' => true, 'exchangeRequest' => false));
-        dd($books);
+        //dd($books);
 
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController', 'books' => $books

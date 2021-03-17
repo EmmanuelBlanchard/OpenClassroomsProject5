@@ -22,45 +22,32 @@
 		<section class="container">
 			<h2 class="h2TitleSelectionOfBooks">Une sélection de livres disponibles à l'échange</h2>
 			<div class="divDisplayBlocksBookInformation">
-				<section class="blockOfTheBookInformation">
-					<h4>Le cycle de Fondation Tome 1 : Fondation</h4>
-					<div class="line author">
-						<a href="">Isaac Asimov</a>
-					</div>
-					<p class="line category">Science-fiction</p>
-					<p class="line publisher">Gallimard</p>
-					<p class="line language">Langue : Français</p>
-					<p class="line format">Format : Poche</p>
-					<p class="line state">État: Bon</p>
-					<div class="line location">
-						<img src="./img/locationIcon.svg" class="locationIcon" alt="location Icon"/>
-						<span>Paris</span>
-					</div>
-					<p class="line owner">Propriétaire : Jean7504</p>
-					<div class="divExchangeButton">
-						<a href="../14-HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn/homepageclickexchangebuttonofthebookbutarenotloggedin.html" class="exchangeButton" role="button">Échanger</a>
-					</div>
-				</section>
-				<section class="blockOfTheBookInformation">
-					<h4>Le cycle de Fondation Tome 2 Fondation et
-					</h4>
-					<div class="line author">
-						<a href="">Isaac Asimov</a>
-					</div>
-					<p class="line category">Science-fiction</p>
-					<p class="line publisher">Gallimard</p>
-					<p class="line language">Langue : Français</p>
-					<p class="line format">Format : Poche</p>
-					<p class="line state">État: Excellent</p>
-					<div class="line location">
-						<img src="./img/locationIcon.svg" class="locationIcon" alt="location Icon"/>
-						<span>Lyon</span>
-					</div>
-					<p class="line owner">Propriétaire :  Jeanne6901</p>
-					<div class="divExchangeButton">
-						<a href="../14-HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn/homepageclickexchangebuttonofthebookbutarenotloggedin2.html" class="exchangeButton" role="button">Échanger</a>
-					</div>
-				</section>
+				{% for book in books %}
+					<section class="row col-sm-12 blockOfTheBookInformation">
+						<h4 class="col-sm-12">{{ book.title }}</h4>
+						<div class="col-sm-12 line author">
+							<a href="">{{ book.author }}</a>
+						</div>
+						<p class="col-sm-12 line category">{{ book.category }}</p>
+						<p class="col-sm-12 line publisher">{{ book.publisher }}</p>
+						<p class="col-sm-12 line language">Langue:
+							{{ book.language }}</p>
+						<p class="col-sm-12 line format">Format:
+							{{ book.format }}</p>
+						<p class="col-sm-12 line state">État:
+							{{ book.state }}</p>
+						<div class="line location">
+							<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
+							<span>{{ book.user.city }}</span>
+						</div>
+						<p class="col-sm-12 line owner">Propriétaire:
+							{{ book.user.pseudo }}
+						</p>
+						<div class="divExchangeButton">
+							<a href="../14-HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn/homepageclickexchangebuttonofthebookbutarenotloggedin2.html" class="exchangeButton" role="button">Échanger</a>
+						</div>
+					</section>
+				{% endfor %}
 			</div>
 		</section>
 	</section>
