@@ -26,7 +26,7 @@
 		<div class="col-sm-12">
 			<h1>Votre stock
 				{% if app.user.books|length == "0" %}
-					0 livre)
+					(0 livre)
 				{% else %}
 					({{ app.user.books|length }}
 					livres)

@@ -62,6 +62,11 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $book->setUser($this->getUser());
             $book->setActive(false);
+            $book->setExchangeRequest(false);
+            // Do not put the current date when adding a book 
+            //$book->setExchangeRequestAt(new \DateTime('now'));
+            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
