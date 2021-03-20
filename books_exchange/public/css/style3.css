@@ -11,24 +11,27 @@ div a {
     align-items: center;
 }
 
+/*
 .imgLogo {
     width: 5.1em;
-    /* 65px => 4.1em ou 5.1em => 81.6px */
+    // 65px => 4.1em ou 5.1em => 81.6px
     height: 5.1em;
-    /* 65px  => 4.1em ou 5.1em => 81.6px */
+    // 65px  => 4.1em ou 5.1em => 81.6px 
 }
+*/
 
 .brandNameExchange,
 .brandNameBook {
     font-weight: bold;
 }
 
-.brandNameExchange {
+.navbar-brand .brandNameExchange {
     display: flex;
     align-items: center;
     color: #0854A2;
     margin-left: 1%;
-    font-size: 2em;
+    /* bug with span="navbar-toggler-icon"
+    font-size: 2em; */
 }
 
 .brandNameBook {
@@ -103,8 +106,9 @@ main {
     align-items: center;
     background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
+    /* main tag has class="container' delete properties margin-left:20%;
     margin-left: 20%;
-    height: 100vh;
+    height: 100vh;*/
     /* to make the color #f7f7f7 go to the bottom of the screen */
 }
 
