@@ -45,11 +45,12 @@ nav {
     align-items: center;
 }
 
-
+/* Comment for resolve the probleme with nav id="bd-docs-nav"
 nav ul {
     display: flex;
     padding-left: 0%;
 }
+*/
 
 nav li {
     list-style-type: none;
