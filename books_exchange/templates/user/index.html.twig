@@ -30,22 +30,26 @@
 						{{ app.user.lastname }}
 					</h1>
 				</div>
-				<div class="col-sm-3">Pseudo :</div>
-				<div class="col-sm-9">{{ app.user.pseudo }}</div>
-				<div class="col-sm-3">Nom :</div>
-				<div class="col-sm-9">{{ app.user.lastname }}</div>
-				<div class="col-sm-3">Prénom :</div>
-				<div class="col-sm-9">{{ app.user.firstname }}</div>
-				<div class="col-sm-3">E-mail :</div>
-				<div class="col-sm-9">{{ app.user.email }}</div>
-				<div class="col-sm-3">Code postal :</div>
-				<div class="col-sm-9">{{ app.user.zipCode }}</div>
-				<div class="col-sm-3">Ville :</div>
-				<div class="col-sm-9">{{ app.user.city }}</div>
-				<div class="col-sm-12">
-					<a class="btn btn-primary" href="{{ path('user_profile_edit') }}" role="button">Modifier le profil</a>
-					<a class="btn btn-primary" href="{{ path('user_email_edit') }}" role="button">Modifier l'e-mail</a>
-					<a class="btn btn-primary" href="{{ path('user_password_edit') }}" role="button">Modifier le mot de passe</a>
+				<div class="container">
+					<div class="row row-cols-2 gx-4 gy-4">
+						<div class="col-sm-3 p-3 border">Pseudo :</div>
+						<div class="col-sm-9 p-3 border">{{ app.user.pseudo }}</div>
+						<div class="col-sm-3 p-3 border">Nom :</div>
+						<div class="col-sm-9 p-3 border">{{ app.user.lastname }}</div>
+						<div class="col-sm-3 p-3 border">Prénom :</div>
+						<div class="col-sm-9 p-3 border">{{ app.user.firstname }}</div>
+						<div class="col-sm-3 p-3 border">E-mail :</div>
+						<div class="col-sm-9 p-3 border">{{ app.user.email }}</div>
+						<div class="col-sm-3 p-3 border">Code postal :</div>
+						<div class="col-sm-9 p-3 border">{{ app.user.zipCode }}</div>
+						<div class="col-sm-3 p-3 border">Ville :</div>
+						<div class="col-sm-9 p-3 border">{{ app.user.city }}</div>
+						<div class="col-sm-12">
+							<a class="btn btn-primary" href="{{ path('user_profile_edit') }}" role="button">Modifier le profil</a>
+							<a class="btn btn-primary" href="{{ path('user_email_edit') }}" role="button">Modifier l'e-mail</a>
+							<a class="btn btn-primary" href="{{ path('user_password_edit') }}" role="button">Modifier le mot de passe</a>
+						</div>
+					</div>
 				</div>
 
 				<div class="col-sm-12">
@@ -58,23 +62,23 @@
 
 				{% for books in app.user.books %}
 					<div class="container">
-						<div class="row row-cols-2">
-							<div class="col-3 text-center">Titre :</div>
-							<div class="col-9">{{ books.title }}</div>
-							<div class="col-3 text-center">Auteur :</div>
-							<div class="col-9">{{ books.author }}</div>
-							<div class="col-3 text-center">Catégorie :</div>
-							<div class="col-9">{{ books.category }}</div>
-							<div class="col-3 text-center">Éditeur :</div>
-							<div class="col-9">{{ books.publisher }}</div>
-							<div class="col-3 text-center">Résumé :</div>
-							<div class="col-9 text-justify">{{ books.summary }}</div>
-							<div class="col-3 text-center">Langue :</div>
-							<div class="col-9">{{ books.language }}</div>
-							<div class="col-3 text-center">Format :</div>
-							<div class="col-9">{{ books.format }}</div>
-							<div class="col-3 text-center">État du livre :</div>
-							<div class="col-9">{{ books.state }}</div>
+						<div class="row row-cols-2 gx-4 gy-4">
+							<div class="col-3 text-center p-3 border">Titre :</div>
+							<div class="col-9 p-3 border">{{ books.title }}</div>
+							<div class="col-3 text-center p-3 border">Auteur :</div>
+							<div class="col-9 p-3 border">{{ books.author }}</div>
+							<div class="col-3 text-center p-3 border">Catégorie :</div>
+							<div class="col-9 p-3 border">{{ books.category }}</div>
+							<div class="col-3 text-center p-3 border">Éditeur :</div>
+							<div class="col-9 p-3 border">{{ books.publisher }}</div>
+							<div class="col-3 text-center p-3 border">Résumé :</div>
+							<div class="col-9 text-justify p-3 border">{{ books.summary }}</div>
+							<div class="col-3 text-center p-3 border">Langue :</div>
+							<div class="col-9 p-3 border">{{ books.language }}</div>
+							<div class="col-3 text-center p-3 border">Format :</div>
+							<div class="col-9 p-3 border">{{ books.format }}</div>
+							<div class="col-3 text-center p-3 border">État du livre :</div>
+							<div class="col-9 p-3 border">{{ books.state }}</div>
 
 							<a class="btn btn-primary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
 						</div>
