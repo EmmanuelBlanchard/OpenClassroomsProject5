@@ -21,64 +21,67 @@
 				</div>
 			</div>
 		{% endfor %}
-		<div class="row col-sm-12">
-			<div class="col-sm-12">
-				<h1>Profil de
-					{{ app.user.firstname }}
-					{{ app.user.lastname }}
-				</h1>
-			</div>
-			<div class="col-sm-3">Pseudo :</div>
-			<div class="col-sm-9">{{ app.user.pseudo }}</div>
-			<div class="col-sm-3">Nom :</div>
-			<div class="col-sm-9">{{ app.user.lastname }}</div>
-			<div class="col-sm-3">Prénom :</div>
-			<div class="col-sm-9">{{ app.user.firstname }}</div>
-			<div class="col-sm-3">E-mail :</div>
-			<div class="col-sm-9">{{ app.user.email }}</div>
-			<div class="col-sm-3">Code postal :</div>
-			<div class="col-sm-9">{{ app.user.zipCode }}</div>
-			<div class="col-sm-3">Ville :</div>
-			<div class="col-sm-9">{{ app.user.city }}</div>
-			<div class="col-sm-12">
-				<a class="btn btn-primary" href="{{ path('user_profile_edit') }}" role="button">Modifier le profil</a>
-				<a class="btn btn-primary" href="{{ path('user_email_edit') }}" role="button">Modifier l'e-mail</a>
-				<a class="btn btn-primary" href="{{ path('user_password_edit') }}" role="button">Modifier le mot de passe</a>
-			</div>
 
-			<div class="col-sm-12">
-				<h1>Livres de
-					{{ app.user.firstname }}
-					{{ app.user.lastname }}
-					({{ app.user.books|length }})
-				</h1>
-			</div>
-
-
-			<p>Afficher les livres en stock car livres avec champ active est true
-			</p>
-			{% for books in app.user.books %}
-				<div class="container">
-					<div class="col-sm-3">Titre :</div>
-					<div class="col-sm-9">{{ books.title }}</div>
-					<div class="col-sm-3">Auteur :</div>
-					<div class="col-sm-9">{{ books.author }}</div>
-					<div class="col-sm-3">Catégorie :</div>
-					<div class="col-sm-9">{{ books.category }}</div>
-					<div class="col-sm-3">Éditeur :</div>
-					<div class="col-sm-9">{{ books.publisher }}</div>
-					<div class="col-sm-3">Résumé :</div>
-					<div class="col-sm-9">{{ books.summary }}</div>
-					<div class="col-sm-3">Langue :</div>
-					<div class="col-sm-9">{{ books.language }}</div>
-					<div class="col-sm-3">Format :</div>
-					<div class="col-sm-9">{{ books.format }}</div>
-					<div class="col-sm-3">État du livre :</div>
-					<div class="col-sm-9">{{ books.state }}</div>
-
-					<a href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+		<div class="my-3 p-3 bg-body rounded bg-white shadow-sm">
+			<div class="row col-sm-12">
+				<div class="col-sm-12">
+					<h1>Profil de
+						{{ app.user.firstname }}
+						{{ app.user.lastname }}
+					</h1>
 				</div>
-			{% endfor %}
+				<div class="col-sm-3">Pseudo :</div>
+				<div class="col-sm-9">{{ app.user.pseudo }}</div>
+				<div class="col-sm-3">Nom :</div>
+				<div class="col-sm-9">{{ app.user.lastname }}</div>
+				<div class="col-sm-3">Prénom :</div>
+				<div class="col-sm-9">{{ app.user.firstname }}</div>
+				<div class="col-sm-3">E-mail :</div>
+				<div class="col-sm-9">{{ app.user.email }}</div>
+				<div class="col-sm-3">Code postal :</div>
+				<div class="col-sm-9">{{ app.user.zipCode }}</div>
+				<div class="col-sm-3">Ville :</div>
+				<div class="col-sm-9">{{ app.user.city }}</div>
+				<div class="col-sm-12">
+					<a class="btn btn-primary" href="{{ path('user_profile_edit') }}" role="button">Modifier le profil</a>
+					<a class="btn btn-primary" href="{{ path('user_email_edit') }}" role="button">Modifier l'e-mail</a>
+					<a class="btn btn-primary" href="{{ path('user_password_edit') }}" role="button">Modifier le mot de passe</a>
+				</div>
+
+				<div class="col-sm-12">
+					<h1>Livres de
+						{{ app.user.firstname }}
+						{{ app.user.lastname }}
+						({{ app.user.books|length }})
+					</h1>
+				</div>
+
+				{% for books in app.user.books %}
+					<div class="container">
+						<div class="row row-cols-2">
+							<div class="col-3 text-center">Titre :</div>
+							<div class="col-9">{{ books.title }}</div>
+							<div class="col-3 text-center">Auteur :</div>
+							<div class="col-9">{{ books.author }}</div>
+							<div class="col-3 text-center">Catégorie :</div>
+							<div class="col-9">{{ books.category }}</div>
+							<div class="col-3 text-center">Éditeur :</div>
+							<div class="col-9">{{ books.publisher }}</div>
+							<div class="col-3 text-center">Résumé :</div>
+							<div class="col-9 text-justify">{{ books.summary }}</div>
+							<div class="col-3 text-center">Langue :</div>
+							<div class="col-9">{{ books.language }}</div>
+							<div class="col-3 text-center">Format :</div>
+							<div class="col-9">{{ books.format }}</div>
+							<div class="col-3 text-center">État du livre :</div>
+							<div class="col-9">{{ books.state }}</div>
+
+							<a class="btn btn-primary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
+
 	</div>
 {% endblock %}
