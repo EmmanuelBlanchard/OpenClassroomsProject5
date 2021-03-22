@@ -52,6 +52,10 @@ nav ul {
 }
 */
 
+nav#bd-docs-nav.bd-links.collapse>h2 {
+    color: black;
+}
+
 nav li {
     list-style-type: none;
 }
