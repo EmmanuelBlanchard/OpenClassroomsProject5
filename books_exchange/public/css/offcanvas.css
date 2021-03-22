@@ -22,7 +22,9 @@ body {
     padding-left: 1rem;
     overflow-y: auto;
     visibility: hidden;
-    background-color: #343a40;
+    background-color: #f6f9fc;
+    /* #FCFDFD;*/
+    /* #343a40; change because background color is white */
     transition: transform .3s ease-in-out, visibility .3s ease-in-out;
   }
 

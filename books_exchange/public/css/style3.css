@@ -130,6 +130,17 @@ form {
     background-color: #FFF;
 }
 
+.btn.btn-outline-orange {
+    color: #fd7e14;
+    border-color: #fd7e14;
+}
+
+.btn.btn-outline-orange:hover {
+    color: #fff;
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+}
+
 .searchInput {
     width: 100%;
     height: 2.7em;
