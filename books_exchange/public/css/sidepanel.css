@@ -338,7 +338,8 @@
 .bd-links a:hover,
 .bd-links a:focus {
     color: rgba(0, 0, 0, 0.85);
-    background-color: rgba(121, 82, 179, 0.1)
+    background-color: rgba(8, 84, 162, 0.1)
+        /* rgba(121, 82, 179, 0.1) */
 }
 
 .bd-links .btn {
@@ -352,11 +353,13 @@
 .bd-links .btn:hover,
 .bd-links .btn:focus {
     color: rgba(0, 0, 0, 0.85);
-    background-color: rgba(121, 82, 179, 0.1)
+    background-color: rgba(8, 84, 162, 0.1)
+        /* rgba(121, 82, 179, 0.1) */
 }
 
 .bd-links .btn:focus {
-    box-shadow: 0 0 0 1px rgba(121, 82, 179, 0.7)
+    box-shadow: 0 0 0 1px rgba(8, 84, 162, 0.7)
+        /* rgba(121, 82, 179, 0.7) */
 }
 
 .bd-links .btn::before {
