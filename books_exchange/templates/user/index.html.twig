@@ -60,32 +60,43 @@
 					</h1>
 				</div>
 
-				{% for books in app.user.books %}
-					<div class="container">
-						<div class="row row-cols-2 gx-4 gy-4">
-							<div class="col-3 text-center p-3 border">Titre :</div>
-							<div class="col-9 p-3 border">{{ books.title }}</div>
-							<div class="col-3 text-center p-3 border">Auteur :</div>
-							<div class="col-9 p-3 border">{{ books.author }}</div>
-							<div class="col-3 text-center p-3 border">Catégorie :</div>
-							<div class="col-9 p-3 border">{{ books.category }}</div>
-							<div class="col-3 text-center p-3 border">Éditeur :</div>
-							<div class="col-9 p-3 border">{{ books.publisher }}</div>
-							<div class="col-3 text-center p-3 border">Résumé :</div>
-							<div class="col-9 text-justify p-3 border">{{ books.summary }}</div>
-							<div class="col-3 text-center p-3 border">Langue :</div>
-							<div class="col-9 p-3 border">{{ books.language }}</div>
-							<div class="col-3 text-center p-3 border">Format :</div>
-							<div class="col-9 p-3 border">{{ books.format }}</div>
-							<div class="col-3 text-center p-3 border">État du livre :</div>
-							<div class="col-9 p-3 border">{{ books.state }}</div>
 
-							<a class="btn btn-primary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
-						</div>
-					</div>
-				{% endfor %}
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Titre</th>
+							<th scope="col">Auteur</th>
+							<th scope="col">Catégorie</th>
+							<th scope="col">Éditeur</th>
+							<th scope="col">Résumé</th>
+							<th scope="col">Langue</th>
+							<th scope="col">Format</th>
+							<th scope="col">État</th>
+							<th scope="col">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for books in app.user.books %}
+							<tr>
+
+								<th scope="row">{{ books.id }}</th>
+								<td>{{ books.title }}</td>
+								<td>{{ books.author }}</td>
+								<td>{{ books.category }}</td>
+								<td>{{ books.publisher }}</td>
+								<td>{{ books.summary }}</td>
+								<td>{{ books.language }}</td>
+								<td>{{ books.format }}</td>
+								<td>{{ books.state }}</td>
+								<td>
+									<a class="btn btn-primary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
 			</div>
 		</div>
-
 	</div>
 {% endblock %}
