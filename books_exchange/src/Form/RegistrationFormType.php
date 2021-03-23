@@ -14,13 +14,31 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('pseudo', TextType::class)
+            ->add('pseudo', TextType::class, [
+                'required' => true,
+                'constraints' => [
+                    new NotBlank([
+                        'allowNull' => false,
+                        'message' => 'Veuillez saisir un pseudo',
+                    ]), 
+                    new NotNull([
+                        'message' => 'La valeur du pseudo ne doit pas être nulle',
+                    ]), 
+                    new Length([
+                        'min' => 7,
+                        'minMessage' => 'Votre pseudo doit comporter au moins {{ limit }} caractères',
+                        'max' => 15,
+                        'maxMessage' => 'Votre pseudo ne peut pas comporter plus de {{ limit }} caractères',
+                    ]),
+                ]
+            ])
             ->add('lastname', TextType::class)
             ->add('firstname', TextType::class)
             ->add('email', EmailType::class)
