@@ -16,15 +16,28 @@
 		<p class="paragraphsOfCreateAccount">Un service de qualité, des échanges à volonté !</p>
 
 		{{ form_start(registrationForm) }}
-		{{ form_row(registrationForm.pseudo, {
-                label: 'Pseudo : '
-            }) }}
-		{{ form_row(registrationForm.lastname, {
-                label: 'Nom : '
-            }) }}
-		{{ form_row(registrationForm.firstname, {
-                label: 'Prenom : '
-            }) }}
+
+		<div>
+			<label for="registration_form_pseudo" class="required">Pseudo :
+			</label>
+			<input type="text" id="registration_form_pseudo" name="registration_form[pseudo]" required="required">
+			<span id="missing_pseudo"></span><br>
+		</div>
+
+		<div>
+			<label for="registration_form_lastname" class="required">Nom :
+			</label>
+			<input type="text" id="registration_form_lastname" name="registration_form[lastname]" required="required">
+			<span id="missing_lastname"></span><br>
+		</div>
+
+		<div>
+			<label for="registration_form_firstname" class="required">Prenom :
+			</label>
+			<input type="text" id="registration_form_firstname" name="registration_form[firstname]" required="required">
+			<span id="missing_firstname"></span><br>
+		</div>
+
 		{{ form_row(registrationForm.email, {
                 label: 'E-mail : '
             }) }}
@@ -43,8 +56,12 @@
             }) }}
 
             <div class="divButtonCreateAccount">
-                <button type="submit" class="btn btn-success buttonCreateAccount">S'inscrire</button>
+                <button type="submit" class="btn btn-success buttonCreateAccount" id="submitRegistrationFormButton">S'inscrire</button>
             </div>
         {{ form_end(registrationForm) }}
 	</section>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/validationregistrationform.js') }}"></script>
 {% endblock %}
