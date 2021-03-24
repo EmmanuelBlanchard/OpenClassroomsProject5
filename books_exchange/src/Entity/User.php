@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -60,6 +61,19 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=16)
+     * @Assert\NotBlank(
+     *      allowNull = true,
+     *      message = 'Veuillez saisir un pseudo',
+     * )
+     * @Assert\NotNull(
+     *      message => 'La valeur du pseudo ne doit pas être nulle',
+     * )
+     * @Assert\Length(
+     *      min = 7,
+     *      max = 15,
+     *      minMessage = "Votre pseudo doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Votre pseudo ne peut pas comporter plus de {{ limit }} caractères"
+     * )
      */
     private $pseudo;
 
