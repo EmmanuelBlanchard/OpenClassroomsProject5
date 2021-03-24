@@ -25,6 +25,14 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(
+     *      message = "Veuillez saisir un e-mail",
+     * )
+     * @Assert\Email(
+     *     message = "L'e-mail '{{ value }}' n'est pas un e-mail valide.",
+     *     mode = "strict",
+     *     normalizer = "trim"
+     * )
      */
     private $email;
 
@@ -37,17 +45,13 @@ class User implements UserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank(
-     *      allowNull = true,
      *      message = "Veuillez saisir un mot de passe",
-     * )
-     * @Assert\NotNull(
-     *      message = "La valeur du mot de passe ne doit pas être nulle",
      * )
      * @Assert\Length(
      *      min = 12,
      *      max = 4096,
      *      minMessage = "Votre mot de passe doit comporter au moins {{ limit }} caractères",
-     *      maxMessage = "Votre mot de passe ne peut pas comporter plus de {{ limit }} caractères"
+     *      maxMessage = "Votre mot de passe ne peut pas comporter plus de {{ limit }} caractères",
      * )
      */
     private $password;
@@ -75,11 +79,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=16)
      * @Assert\NotBlank(
-     *      allowNull = true,
      *      message = "Veuillez saisir un pseudo",
-     * )
-     * @Assert\NotNull(
-     *      message = "La valeur du pseudo ne doit pas être nulle",
      * )
      * @Assert\Length(
      *      min = 7,
@@ -92,11 +92,30 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank(
+     *      message = "Veuillez saisir un code postal",
+     * )
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 5,
+     *      minMessage = "Votre code postal doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Votre code postal ne peut pas comporter plus de {{ limit }} caractères",
+     *      exactMessage = "Votre code postal doit comporter exactement {{ limit }} caractères.",
+     * )
      */
     private $zipCode;
 
     /**
      * @ORM\Column(type="string", length=170)
+     * @Assert\NotBlank(
+     *      message = "Veuillez saisir une ville",
+     * )
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 50,
+     *      minMessage = "Votre ville doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Votre ville ne peut pas comporter plus de {{ limit }} caractères"
+     * )
      */
     private $city;
 
