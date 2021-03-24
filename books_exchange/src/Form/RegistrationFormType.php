@@ -21,24 +21,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('pseudo', TextType::class, [
-                'required' => true,
-                'constraints' => [
-                    new NotBlank([
-                        'allowNull' => false,
-                        'message' => 'Veuillez saisir un pseudo',
-                    ]), 
-                    new NotNull([
-                        'message' => 'La valeur du pseudo ne doit pas être nulle',
-                    ]), 
-                    new Length([
-                        'min' => 7,
-                        'minMessage' => 'Votre pseudo doit comporter au moins {{ limit }} caractères',
-                        'max' => 15,
-                        'maxMessage' => 'Votre pseudo ne peut pas comporter plus de {{ limit }} caractères',
-                    ]),
-                ]
-            ])
+            ->add('pseudo', TextType::class)
             ->add('lastname', TextType::class)
             ->add('firstname', TextType::class)
             ->add('email', EmailType::class)
@@ -56,17 +39,6 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
-                ],
             ])
         ;
     }

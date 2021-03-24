@@ -36,6 +36,19 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(
+     *      allowNull = true,
+     *      message = "Veuillez saisir un mot de passe",
+     * )
+     * @Assert\NotNull(
+     *      message = "La valeur du mot de passe ne doit pas être nulle",
+     * )
+     * @Assert\Length(
+     *      min = 12,
+     *      max = 4096,
+     *      minMessage = "Votre mot de passe doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Votre mot de passe ne peut pas comporter plus de {{ limit }} caractères"
+     * )
      */
     private $password;
 
@@ -63,10 +76,10 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=16)
      * @Assert\NotBlank(
      *      allowNull = true,
-     *      message = 'Veuillez saisir un pseudo',
+     *      message = "Veuillez saisir un pseudo",
      * )
      * @Assert\NotNull(
-     *      message => 'La valeur du pseudo ne doit pas être nulle',
+     *      message = "La valeur du pseudo ne doit pas être nulle",
      * )
      * @Assert\Length(
      *      min = 7,
