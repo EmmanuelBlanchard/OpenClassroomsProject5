@@ -66,8 +66,8 @@ class User implements UserInterface
      *     message="Votre nom ne peut pas contenir un nombre"
      * )
      * @Assert\Regex(
-     *     pattern="/^[^a-zéèàêâùïüë!^?+*¤$£%§{}&~@_\t\n\r\\\#\(\)\[\]0-9-]{1}[a-zA-Za-zéèàêâùïüëçÂ, Ê, Î, Ô, Û, Ä, Ë, Ï, Ö, Ü, À, Æ, æ, Ç, É, È, Œ, œ, Ù]+[\s]?",
-     *     match=true,
+     *     pattern="/^[A-ZÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]'?[- a-zA-ZéèàêâùïüëçÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]+$/",
+     *      match=true,
      *     message="Votre nom doit contenir une lettre majuscule en première lettre"
      * )
      */
