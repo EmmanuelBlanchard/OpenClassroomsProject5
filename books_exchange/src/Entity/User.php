@@ -13,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"email"}, message="Il existe déjà un compte avec cette adresse e-mail")
+ * @UniqueEntity(fields={"pseudo"}, message="Il existe déjà un compte avec ce pseudo")
  */
 class User implements UserInterface
 {
@@ -65,7 +66,7 @@ class User implements UserInterface
      *     message="Votre nom ne peut pas contenir un nombre"
      * )
      * @Assert\Regex(
-     *     pattern="/[^a-z0-9]/",
+     *     pattern="/[^a-zéèàêâùïüë?+*{}&~#@0-9]/",
      *     match=true,
      *     message="Votre nom doit contenir une lettre majuscule en première lettre"
      * )
@@ -83,7 +84,7 @@ class User implements UserInterface
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length=16, unique=true)
      * @Assert\NotBlank(
      *      message = "Veuillez saisir un pseudo",
      * )
