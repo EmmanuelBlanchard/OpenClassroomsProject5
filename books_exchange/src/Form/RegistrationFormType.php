@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RegistrationFormType extends AbstractType
 {
@@ -49,6 +50,11 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                         'maxMessage' => 'Votre mot de passe ne peut pas comporter plus de {{ limit }} caractères',
                     ]),
+                    new Regex([
+                        'pattern' => '^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-?+!*$@%_&~`\\^\|\#{}()\[\]])([-?+!*$@%_&~`\\\|\#{}()\[\]\w]{12,})$',
+                        'match' => true,
+                        'message' => 'Votre mot de passe doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun',
+                    ])
                 ],
             ])
         ;
