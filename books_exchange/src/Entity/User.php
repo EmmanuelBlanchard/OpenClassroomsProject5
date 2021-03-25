@@ -59,11 +59,26 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Votre nom ne peut pas contenir un nombre"
+     * )
+     * @Assert\Regex(
+     *     pattern="/[^a-z0-9]/",
+     *     match=true,
+     *     message="Votre nom doit contenir une lettre majuscule en première lettre"
+     * )
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Votre prénom ne peut pas contenir un nombre"
+     * )
      */
     private $firstname;
 
@@ -93,6 +108,11 @@ class User implements UserInterface
      *      maxMessage = "Votre code postal ne peut pas comporter plus de {{ limit }} caractères",
      *      exactMessage = "Votre code postal doit comporter exactement {{ limit }} caractères.",
      * )
+     * @Assert\Regex(
+     *     pattern="/^[0-9]{5}$/",
+     *     match=true,
+     *     message="Votre code postal doit contenir cinq chiffres"
+     * )
      */
     private $zipCode;
 
@@ -106,6 +126,11 @@ class User implements UserInterface
      *      max = 50,
      *      minMessage = "Votre ville doit comporter au moins {{ limit }} caractères",
      *      maxMessage = "Votre ville ne peut pas comporter plus de {{ limit }} caractères"
+     * )
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Votre ville ne peux pas contenir un nombre"
      * )
      */
     private $city;
