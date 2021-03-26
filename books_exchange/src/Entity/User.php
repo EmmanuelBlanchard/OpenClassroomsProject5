@@ -134,9 +134,9 @@ class User implements UserInterface
      *      maxMessage = "Votre ville ne peut pas comporter plus de {{ limit }} caractères"
      * )
      * @Assert\Regex(
-     *     pattern="/\d/",
-     *     match=false,
-     *     message="Votre ville ne peux pas contenir un nombre"
+     *     pattern="/^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/",
+     *     match=true,
+     *     message="Votre ville ne doit contenir que des caractères minuscules, majuscules et tirets"
      * )
      */
     private $city;
