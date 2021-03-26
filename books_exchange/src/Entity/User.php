@@ -76,9 +76,9 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Regex(
-     *     pattern="/\d/",
-     *     match=false,
-     *     message="Votre prénom ne peut pas contenir un nombre"
+     *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/",
+     *     match=true,
+     *     message="Votre prénom doit contenir une lettre majuscule pour le premier caractère puis des lettres minuscules (les caractères espace, apostrophe, tiret sont autorisés entre deux prénoms)"
      * )
      */
     private $firstname;
