@@ -17,8 +17,34 @@ function checkPassword(){
     let length = document.querySelector("#length");
 
     // We check that we have a tiny
-    let valid = /[a-z]/.test(password);
-    console.log(valid);
+    if(/[a-z]/.test(password)){
+        tiny.classList.replace("invalid", "valid");
+    } else {
+        tiny.classList.replace("valid", "invalid");
+    }
+    // We check that we have a uppercase
+    if(/[A-Z]/.test(password)){
+        uppercase.classList.replace("invalid", "valid");
+    } else {
+        uppercase.classList.replace("valid", "invalid");
+    }
+    // We check that we have a number
+    if(/[0-9]/.test(password)){
+        number.classList.replace("invalid", "valid");
+    } else {
+        number.classList.replace("valid", "invalid");
+    }
+    // We check that we have a special character
+    /* ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸ àáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰  */
+    if(/[-_$@!/\\%*#&£~ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/.test(password)){
+        special.classList.replace("invalid", "valid");
+    } else {
+        special.classList.replace("valid", "invalid");
+    }
+    // We check that we have the length of the password
+    if(password.length >= 12){
+        length.classList.replace("invalid", "valid");
+    } else {
+        length.classList.replace("valid", "invalid");
+    }
 }
-
-console.log("Entre dans le fichier js validationregistrationform.js !");

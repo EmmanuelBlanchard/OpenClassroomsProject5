@@ -195,3 +195,12 @@ a.linkStockOfBooks:visited,
 a.linkBookExchange:visited {
     color: #CD4109;
 }
+
+/* classes for validation form */
+.valid {
+    color: #0f5132;
+}
+
+.invalid {
+    color: #842029;
+}

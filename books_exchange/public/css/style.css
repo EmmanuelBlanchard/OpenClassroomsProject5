@@ -790,3 +790,12 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     background-color: #f8d7da;
     border-color: #f5c2c7;
 }
+
+/* classes for validation form */
+.valid {
+    color: #0f5132;
+}
+
+.invalid {
+    color: #842029;
+}
