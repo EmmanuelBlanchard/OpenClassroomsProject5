@@ -1,3 +1,6 @@
+
+
+/*
 let validationRegistrationForm = document.getElementById('submitRegistrationFormButton');
 let pseudo = document.getElementById('registration_form_pseudo');
 let misssingPseudo = document.getElementById('missing_pseudo');
@@ -16,3 +19,4 @@ function validation(event) {
         misssingPseudo.style.color ='red';
     }
 }
+*/
