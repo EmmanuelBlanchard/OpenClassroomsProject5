@@ -3,12 +3,13 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class ChangePasswordFormType extends AbstractType
 {
@@ -23,10 +24,16 @@ class ChangePasswordFormType extends AbstractType
                             'message' => 'Veuillez entrer un mot de passe',
                         ]),
                         new Length([
-                            'min' => 6,
+                            'min' => 12,
                             'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
                             // max length allowed by Symfony for security reasons
                             'max' => 4096,
+                            'maxMessage' => 'Votre mot de passe ne peut pas comporter plus de {{ limit }} caractères',
+                        ]),
+                        new Regex([
+                            'pattern' => '/^(?=.+[A-Z])(?=.+[a-z])(?=.+\d)(?=.+[-?+!*$@%_&~`\\^\|\#{}()\[\]])([-?+!*$@%_&~`\\\|\#{}()\[\]\w]{12,})$/',
+                            'match' => true,
+                            'message' => 'Votre mot de passe doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun',
                         ]),
                     ],
                     'label' => 'Nouveau mot de passe',
