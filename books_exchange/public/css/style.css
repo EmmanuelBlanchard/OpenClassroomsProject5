@@ -799,3 +799,7 @@ form.formConnectedBookStockBookAdditionForm>div>label {
 .invalid {
     color: #842029;
 }
+
+#submitRegistrationFormButton {
+    display: none;
+}

@@ -204,3 +204,7 @@ a.linkBookExchange:visited {
 .invalid {
     color: #842029;
 }
+
+#submitRegistrationFormButton {
+    display: none;
+}
