@@ -10,11 +10,11 @@ function checkPassword(){
     let password = this.value;
 
     // We get the elements we need
-    let tiny = docmuent.querySelector("#tiny");
-    let uppercase = docmuent.querySelector("#uppercase");
-    let number = docmuent.querySelector("#number");
-    let special = docmuent.querySelector("#special");
-    let length = docmuent.querySelector("#length");
+    let tiny = document.querySelector("#tiny");
+    let uppercase = document.querySelector("#uppercase");
+    let number = document.querySelector("#number");
+    let special = document.querySelector("#special");
+    let length = document.querySelector("#length");
 
     // We check that we have a tiny
     let valid = /[a-z]/.test(password);
