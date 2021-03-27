@@ -1,22 +1,24 @@
-
-
-/*
-let validationRegistrationForm = document.getElementById('submitRegistrationFormButton');
-let pseudo = document.getElementById('registration_form_pseudo');
-let misssingPseudo = document.getElementById('missing_pseudo');
-let lastname = document.getElementById('registration_form_lastname');
-let misssingLastname = document.getElementById('missing_lastname');
-let firstName = document.getElementById('registration_form_firstname');
-let misssingFirstName = document.getElementById('missing_firstname');
-
-validationRegistrationForm.addEventListener('click', validation);
-
-function validation(event) {
-    // If the field is empty
-    if (pseudo.validity.valueMissing) {
-        event.preventDefault();
-        misssingPseudo.textContent = "Pseudo manquant";
-        misssingPseudo.style.color ='red';
-    }
+window.onload = () => {
+    document.querySelector("#registration_form_plainPassword").addEventListener('input', checkPassword);
 }
-*/
+
+/**
+ * This function checks the password
+ */
+function checkPassword(){
+    // We recover what has been entered
+    let password = this.value;
+
+    // We get the elements we need
+    let tiny = docmuent.querySelector("#tiny");
+    let uppercase = docmuent.querySelector("#uppercase");
+    let number = docmuent.querySelector("#number");
+    let special = docmuent.querySelector("#special");
+    let length = docmuent.querySelector("#length");
+
+    // We check that we have a tiny
+    let valid = /[a-z]/.test(password);
+    console.log(valid);
+}
+
+console.log("Entre dans le fichier js validationregistrationform.js !");
