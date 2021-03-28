@@ -2,6 +2,29 @@ window.onload = () => {
     document.querySelector("#registration_form_plainPassword").addEventListener('input', checkPassword);
 }
 
+let form = document.querySelector('#registration_form');
+let email = document.querySelector("#registration_form_email");
+
+// Listen to the email modification
+email.addEventListener('change', function() {
+    validEmail(this);
+});
+
+const validEmail = function(inputEmail) {
+    let emailRegExp = new RegExp(
+        '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g'
+        );
+
+    let testEmail = emailRegExp.test(inputEmail.value);
+    let small = inputEmail.nextElementSibling;
+    //let small = document.querySelector("#registration_form_email_small");
+    if(testEmail) {
+        small.innerHTML = 'L\'adresse e-mail est valide';
+    } else {
+        small.innerHTML = 'L\'adresse e-mail est non valide';
+    }
+};
+
 /**
  * This function checks the password
  */

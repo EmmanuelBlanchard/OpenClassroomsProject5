@@ -15,7 +15,7 @@
 		</p>
 		<p class="paragraphsOfCreateAccount">Un service de qualité, des échanges à volonté !</p>
 
-		{{ form_start(registrationForm) }}
+		{{ form_start(registrationForm, {'attr': {'id': 'registration_form'}}) }}
 
 		{{ form_row(registrationForm.pseudo, {
             label: 'Pseudo: '
@@ -29,6 +29,14 @@
 		{{ form_row(registrationForm.email, {
                 label: 'E-mail: '
         }) }}
+		{{ form_errors(registrationForm.email) }}
+		{{ form_help(registrationForm.email) }}
+		<div>
+			<label for="registration_form_email" class="required">E-mail</label>
+			<input type="email" id="registration_form_email" name="registration_form[email]" required="required">
+			<small id="registration_form_email_small"></small>
+		</div>
+
 		{{ form_row(registrationForm.plainPassword, {
                 label: 'Mot de passe: '
         }) }}
