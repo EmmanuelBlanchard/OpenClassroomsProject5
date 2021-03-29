@@ -14,9 +14,9 @@
 		<link rel="icon" type="image/x-icon" href="{{ asset('icons/favicon.ico') }}"/>
 	</head>
 
-	<body class="bg-light">
+	<body class="bg-light container">
 		<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" aria-label="Main navigation">
-			<div class="container-fluid">
+			<div class="container">
 				<a class="navbar-brand aDivNavLogo" href="{{ path('app_home') }}">
 					<img src="{{ asset('img/booksExchangeLogo.svg') }}" class="imgLogo" widht="64" height="64" alt="mains avec livre effectuant un échange">
 					<h1 class="brandNameExchange">Échange
@@ -32,12 +32,6 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('app_how_it_works') }}">Comment ça marche</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Foire aux questions</a>
-						</li>
 						{% if app.user %}
 							<li class="nav-item">
 								<a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
@@ -51,63 +45,64 @@
 							</li>
 						{% endif %}
 					</ul>
-					<form class="d-flex">
-						<input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-						<button class="btn btn-outline-orange" type="submit">Rechercher</button>
-					</form>
 				</div>
 			</div>
 		</nav>
 		<div class="nav-scroller bg--body shadow-sm">
 			<nav class="nav nav-underline" aria-label="Secondary navigation">
-				<a class="nav-link active" aria-current="page" href="#">Dashboard</a>
 				<a class="nav-link" href="{{ path('app_how_it_works') }}">Comment ça marche</a>
 				<a class="nav-link" href="#">Foire aux questions</a>
 			</nav>
 		</div>
 
 		<main class="container-xxl my-md-4 bd-layout">
-			{% if app.user %}
-				<aside class="bd-sidebar">
-					<nav id="bd-docs-nav" class="bd-links collapse" aria-label="">
-						<h2>Salut
-							{{ app.user.pseudo }}
-						</h2>
-						<ul class="list-unstyled md-0 py-3 pt-md-1">
-							<li class="mb-1">
-								<button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#your-account-collapse" aria-expanded="true" aria-current="true">Votre compte</button>
-								<div id="your-account-collapse" class="collapse show">
-									<ul class="list-unstyled fw-normal pb-1 small">
-										<li>
-											<a class="d-inline-flex align-items-center rounded active" href="{{ path('user') }}" aria-current="page">Gérer mon compte</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="mb-1">
-								<button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#library-collapse" aria-expanded="false">Bibliothèque</button>
-								<div id="library-collapse" class="collapse">
-									<ul class="list-unstyled fw-normal pb-1 small">
-										<li>
-											<a class="d-inline-flex align-items-center rounded" href="{{ path('user_book') }}">Stock de livres</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="mb-1">
-								<button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#exchanges-collapse" aria-expanded="false">Échanges</button>
-								<div id="exchanges-collapse" class="collapse">
-									<ul class="list-unstyled fw-normal pb-1 small">
-										<li>
-											<a class="d-inline-flex align-items-center rounded" href="{{ path('user_book_show_exchange') }}">Échange de livres</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</nav>
-				</aside>
-			{% endif %}
+			<aside>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
+					<button class="btn btn-outline-orange" type="submit">Rechercher</button>
+				</form>
+				{% if app.user %}
+					<aside class="bd-sidebar">
+						<nav id="bd-docs-nav" class="bd-links collapse" aria-label="">
+							<h2>Salut
+								{{ app.user.pseudo }}
+							</h2>
+							<ul class="list-unstyled md-0 py-3 pt-md-1">
+								<li class="mb-1">
+									<button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#your-account-collapse" aria-expanded="true" aria-current="true">Votre compte</button>
+									<div id="your-account-collapse" class="collapse show">
+										<ul class="list-unstyled fw-normal pb-1 small">
+											<li>
+												<a class="d-inline-flex align-items-center rounded active" href="{{ path('user') }}" aria-current="page">Gérer mon compte</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="mb-1">
+									<button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#library-collapse" aria-expanded="false">Bibliothèque</button>
+									<div id="library-collapse" class="collapse">
+										<ul class="list-unstyled fw-normal pb-1 small">
+											<li>
+												<a class="d-inline-flex align-items-center rounded" href="{{ path('user_book') }}">Stock de livres</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="mb-1">
+									<button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#exchanges-collapse" aria-expanded="false">Échanges</button>
+									<div id="exchanges-collapse" class="collapse">
+										<ul class="list-unstyled fw-normal pb-1 small">
+											<li>
+												<a class="d-inline-flex align-items-center rounded" href="{{ path('user_book_show_exchange') }}">Échange de livres</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</aside>
+				{% endif %}
+			</aside>
 			{% block body %}{% endblock %}
 
 		</main>
