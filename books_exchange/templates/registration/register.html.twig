@@ -21,110 +21,111 @@
 
 		{{ form_start(registrationForm, {'attr': {'id': 'registration_form'}}) }}
 
-		{{ form_row(registrationForm.pseudo, {
-            label: 'Pseudo: '
-        }) }}
-
 		<div class="form-control">
-			<label class="required" for="registration_form_pseudo">Pseudo</label>
-			<input id="registration_form_pseudo" type="text" placeholder="pseudo001" name="registration_form[pseudo]" required="required"/>
-
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			<small>Error message</small>
-		</div>
+			{{ form_label(registrationForm.pseudo) }}
+			{{ form_widget(registrationForm.pseudo) }}
 
-		{{ form_row(registrationForm.lastname, {
-            label: 'Nom: '
-        }) }}
+			<small>{{ form_help(registrationForm.pseudo) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.pseudo) }}
+			</div>
+		</div>
 
 		<div class="form-control">
-			<label class="required" for="registration_form_lastname">Nom</label>
-			<input id="registration_form_lastname" type="text" placeholder="" name="registration_form[lastname]" required="required"/>
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			<small>Error message</small>
-		</div>
+			{{ form_label(registrationForm.lastname) }}
+			{{ form_widget(registrationForm.lastname) }}
 
-		{{ form_row(registrationForm.firstname, {
-            label: 'Prénom: '
-        }) }}
+			<small>{{ form_help(registrationForm.lastname) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.lastname) }}
+			</div>
+		</div>
 
 		<div class="form-control">
-			<label class="required" for="registration_form_firstname">Prénom</label>
-			<input id="registration_form_firstname" type="text" placeholder="" name="registration_form[firstname]" required="required"/>
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			<small>Error message</small>
-		</div>
+			{{ form_label(registrationForm.firstname) }}
+			{{ form_widget(registrationForm.firstname) }}
 
-		{{ form_row(registrationForm.email, {
-                label: 'E-mail: '
-        }) }}
+			<small>{{ form_help(registrationForm.firstname) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.firstname) }}
+			</div>
+		</div>
 
 		<div class="form-control">
-			<label class="required" for="registration_form_email">E-mail</label>
-			<input id="registration_form_email" type="email" placeholder="" name="registration_form[email]" required="required">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			<small>Error message</small>
-		</div>
+			{{ form_label(registrationForm.email) }}
+			{{ form_widget(registrationForm.email) }}
 
-		{{ form_row(registrationForm.plainPassword, {
-                label: 'Mot de passe: '
-        }) }}
+			<small>{{ form_help(registrationForm.email) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.email) }}
+			</div>
+		</div>
 
 		<div class="form-control">
-			<label class="required" for="registration_form_plainPassword">Mot de passe</label>
-			<input id="registration_form_plainPassword" type="password" placeholder="" name="registration_form[plainPassword]" required="required">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			<small>Error message</small>
+			{{ form_label(registrationForm.plainPassword) }}
+			{{ form_widget(registrationForm.plainPassword) }}
+
+			<small>{{ form_help(registrationForm.plainPassword) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.plainPassword) }}
+			</div>
 		</div>
-
-		<p>Votre mot de passe doit contenir au moins
-			<span id="tiny" class="invalid">une minuscule</span>
-			<span id="uppercase" class="invalid">une majuscule</span>
-			<span id="number" class="invalid">un chiffre</span>
-			<span id="special" class="invalid">un caractère spécial</span>
-			<span id="length" class="invalid">et faire au moins 12 caractères</span>
-		</p>
-
-		{{ form_row(registrationForm.zipCode, {
-                label: 'Code postal: '
-        }) }}
 
 		<div class="form-control">
-			<label class="required" for="registration_form_zipCode">Code postal</label>
-			<input id="registration_form_zipCode" type="number" placeholder="" name="registration_form[zipCode]" required="required"/>
-
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			<small>Error message</small>
-		</div>
+			{{ form_label(registrationForm.zipCode) }}
+			{{ form_widget(registrationForm.zipCode) }}
 
-		{{ form_row(registrationForm.city, {
-                label: 'Ville: '
-        }) }}
+			<small>{{ form_help(registrationForm.zipCode) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.zipCode) }}
+			</div>
+		</div>
 
 		<div class="form-control">
-			<label class="required" for="registration_form_city">Ville</label>
-			<input id="registration_form_city" type="text" placeholder="" name="registration_form[city]" required="required"/>
-
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			<small>Error message</small>
+			{{ form_label(registrationForm.city) }}
+			{{ form_widget(registrationForm.city) }}
+
+			<small>{{ form_help(registrationForm.city) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.city) }}
+			</div>
 		</div>
 
-		{{ form_row(registrationForm.agreeTerms, {
-                label: 'Vous acceptez les conditions générales d\'utilisation
-                et la politique de confidentialité du site ÉchangeLivres.'
-        }) }}
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(registrationForm.agreeTerms) }}
+			{{ form_widget(registrationForm.agreeTerms) }}
 
-            <div class="divButtonCreateAccount">
-                <button type="submit" class="btn btn-success buttonCreateAccount" id="submitRegistrationFormButton">S'inscrire</button>
-            </div>
-        {{ form_end(registrationForm) }}
+			<small>{{ form_help(registrationForm.agreeTerms) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(registrationForm.agreeTerms) }}
+			</div>
+		</div>
+
+		{{ form_end(registrationForm) }}
 	</section>
 {% endblock %}
 

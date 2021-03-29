@@ -95,7 +95,7 @@ class User implements UserInterface
      *      maxMessage = "Votre pseudo ne peut pas comporter plus de {{ limit }} caractères"
      * )
      * @Assert\Regex(
-     *     pattern="/^([-_\w]{7,16})$/",
+     *     pattern="/^([-\S\w]{7,15})$/",
      *     match=true,
      *     message="Votre pseudo doit contenir entre 7 et 15 caractères (les caractères - et _ sont autorisés, pas pas le caractère espace)"
      * )

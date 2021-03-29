@@ -5,28 +5,41 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Validator\Constraints\Regex;
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('pseudo', TextType::class)
-            ->add('lastname', TextType::class)
-            ->add('firstname', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('zipCode', IntegerType::class)
-            ->add('city', TextType::class)
+            ->add('pseudo', TextType::class, [
+                'label'=>'Pseudo',
+            ])
+            ->add('lastname', TextType::class, [
+                'label' => 'Nom',
+            ])
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom',
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'E-mail',
+            ])
+            ->add('zipCode', IntegerType::class, [
+                'label' => 'Code Postal',
+            ])
+            ->add('city', TextType::class, [
+                'label' => 'Ville',
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
@@ -34,6 +47,8 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Vous devez accepter nos conditions.',
                     ]),
                 ],
+                'label' => 'Vous acceptez les conditions générales d\'utilisation
+                et la politique de confidentialité du site ÉchangeLivres.',
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -56,7 +71,12 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Votre mot de passe doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun',
                     ])
                 ],
+                'label' => 'Mot de passe',
             ])
+            ->add('save', SubmitType::class, [
+                'attr' => ['class' => 'btn btn-success btn-lg'],
+                'label' => 'S\'inscrire',
+                ])
         ;
     }
 
