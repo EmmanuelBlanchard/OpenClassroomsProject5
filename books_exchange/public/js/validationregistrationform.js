@@ -51,22 +51,18 @@ function checkInputs(){
 		setErrorFor(lastname, 'Le nom ne peut pas être vide');
 	} else if (isLastNameNumber(lastname)) {
         setErrorFor(lastname, 'Le nom ne peut pas contenir un nombre');
-    }
-    else if (isLastNameFirstLetter(lastname)) {
-        setErrorFor(lastname, 'La première lettre doit être en majuscule');
-    }
-    else if (!isLastName(lastnameValue)) {
-		setErrorFor(lastname, 'Le nom n\'est pas valide');
+    } else if (!isLastName(lastnameValue)) {
+		setErrorFor(lastname, 'La première lettre du nom doit être en majuscule');
 	} else {
 		setSuccessFor(lastname);
 	}
 
     if(firstnameValue === '') {
 		setErrorFor(firstname, 'Le prénom ne peut pas être vide');
-	} else if (!isFirstNameNumber(firstname)) {
+	} else if (isFirstNameNumber(firstname)) {
         setErrorFor(firstname, 'Le prénom ne peut pas contenir un nombre ');
     } else if (!isFirstName(firstnameValue)) {
-		setErrorFor(firstname, 'Le prénom n\'est pas valide');
+		setErrorFor(firstname, 'La première lettre du prénom doit être en majuscule');
 	} else {
 		setSuccessFor(firstname);
 	}
@@ -151,12 +147,11 @@ function isLastNameNumber(lastname) {
 	return /\d/.test(lastname);
 }
 
-function isLastNameFirstLetter(lastname) {
-    return /^[A-Z]/.test(lastname);
-}
-
 function isLastName(lastname) {
-	return /^[A-ZÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]'?[- a-zA-ZéèàêâùïüëçÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]+$/.test(lastname);
+	//return /^[A-ZÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]'?[- a-zA-ZéèàêâùïüëçÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]+$/.test(lastname);
+
+	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ])*[-'’\s]{0,1}[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*$/.test(lastname);
+	
 }
 
 function isFirstNameNumber(lastname) {
