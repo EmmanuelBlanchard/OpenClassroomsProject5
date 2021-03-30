@@ -5,7 +5,8 @@ window.onload = () => {
     email.addEventListener('input', checkInputEmail);
     password.addEventListener('input', checkInputPassword);
     zipcode.addEventListener('input', checkInputZipCode);
-    city.addEventListener('input', checkInputs);
+    city.addEventListener('input', checkInputCity);
+	agreeterms.addEventListener('input', checkInputAgreeTerms);
 }
 
 let form = document.querySelector('#registration_form');
@@ -16,6 +17,7 @@ const email = document.querySelector('#registration_form_email');
 const password = document.querySelector('#registration_form_plainPassword');
 const zipcode = document.querySelector('#registration_form_zipCode');
 const city = document.querySelector('#registration_form_city');
+const agreeterms = document.querySelector('#registration_form_agreeTerms');
 
 function checkInputPseudo(){
 	// trim to remove the whitespaces
@@ -47,7 +49,6 @@ function checkInputLastName(){
 		setSuccessFor(lastname);
 	}
 }
-
 function checkInputFirstName(){
 	// trim to remove the whitespaces
 	const firstnameValue = firstname.value.trim();
@@ -62,7 +63,6 @@ function checkInputFirstName(){
 		setSuccessFor(firstname);
 	}
 }
-
 function checkInputEmail(){
 	// trim to remove the whitespaces
 	const emailValue = email.value.trim();
@@ -107,7 +107,7 @@ function checkInputZipCode(){
 	if(zipcodeValue === '') {
 		setErrorFor(zipcode, 'Le code postal ne peut pas être vide');
 	} else if (!isZipCode(zipcodeValue)) {
-		setErrorFor(zipcode, 'Le code postal n\'est pas valide');
+		setErrorFor(zipcode, 'Le code postal doit comporter 5 chiffres');
 	} else {
 		setSuccessFor(zipcode);
 	}
@@ -118,17 +118,31 @@ function checkInputCity(){
 
 	if(cityValue === '') {
 		setErrorFor(city, 'Le nom de la ville ne peut pas être vide');
-	} else if (!isCityLength(cityValue)) {
-        setErrorFor(city, 'Le nom de la ville doit comporter entre 1 et 50 caractères');
-    } else if (!isCity(cityValue)) {
+	} else if (isCityNumber(cityValue)) {
+		setErrorFor(city, 'Le nom de la ville ne peut pas comporter des chiffres');
+	} else if (!isCityLengthMin(cityValue)) {
+        setErrorFor(city, 'Le nom de la ville doit comporter au minimun 1 caractère');
+    } else if (!isCityLengthMax(cityValue)) {
+        setErrorFor(city, 'Le nom de la ville doit comporter au maximun 50 caractères');
+	} else if (!isCity(cityValue)) {
 		setErrorFor(city, 'Le nom de la ville n\'est pas valide');
 	} else {
 		setSuccessFor(city);
 	}
 }
 
+function checkInputAgreeTerms(){
+	const agreetermsValue = agreeterms.checked;
+	if(agreetermsValue === false) {
+		console.log('CGU Désactivés !');
+		setErrorFor(agreeterms, 'La case doit être coché pour s\'inscrire.');
+	} else {
+		setSuccessFor(agreeterms);
+	}
+}
+
 form.addEventListener('submit', e => {
-	e.preventDefault();
+	//e.preventDefault();
 	console.log('submit');
 	checkInputs();
 });
@@ -142,8 +156,12 @@ function checkInputs(){
 	const passwordValue = password.value.trim();
     const zipcodeValue = zipcode.value.trim();
     const cityValue = city.value.trim();
+	const agreetermsValue = agreeterms.checked;
     
-    console.log(pseudoValue);
+    //console.log(pseudoValue);
+
+	// We initialize the score
+	let score = 0;
 
 	if(pseudoValue === '') {
 		setErrorFor(pseudo, 'Le pseudo ne peut pas être vide');
@@ -154,6 +172,7 @@ function checkInputs(){
     } else if (!isPseudoNoSpace(pseudoValue)) {
 		setErrorFor(pseudo, 'Le pseudo ne peut pas contenir le caractère espace (les caractères - et _ sont autorisés)');
     } else {
+		score++;
 		setSuccessFor(pseudo);
 	}
 	
@@ -164,6 +183,7 @@ function checkInputs(){
     } else if (!isLastName(lastnameValue)) {
 		setErrorFor(lastname, 'La première lettre du nom doit être en majuscule');
 	} else {
+		score++;
 		setSuccessFor(lastname);
 	}
 
@@ -174,6 +194,7 @@ function checkInputs(){
     } else if (!isFirstName(firstnameValue)) {
 		setErrorFor(firstname, 'La première lettre du prénom doit être en majuscule');
 	} else {
+		score++;
 		setSuccessFor(firstname);
 	}
 
@@ -182,6 +203,7 @@ function checkInputs(){
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'L\'adresse e-mail n\'est pas valide');
 	} else {
+		score++;
 		setSuccessFor(email);
 	}
 	
@@ -200,25 +222,56 @@ function checkInputs(){
     } else if (!isPassword(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
     } else {
+		score++;
 		setSuccessFor(password);
 	}
 	
     if(zipcodeValue === '') {
 		setErrorFor(zipcode, 'Le code postal ne peut pas être vide');
 	} else if (!isZipCode(zipcodeValue)) {
-		setErrorFor(zipcode, 'Le code postal n\'est pas valide');
+		setErrorFor(zipcode, 'Le code postal doit comporter 5 chiffres');
 	} else {
+		score++;
 		setSuccessFor(zipcode);
 	}
     
     if(cityValue === '') {
 		setErrorFor(city, 'Le nom de la ville ne peut pas être vide');
-	} else if (!isCityLength(cityValue)) {
-        setErrorFor(city, 'Le nom de la ville doit comporter entre 1 et 50 caractères');
-    } else if (!isCity(cityValue)) {
+	} else if (isCityNumber(cityValue)) {
+		setErrorFor(city, 'Le nom de la ville ne peut pas comporter des chiffres');
+	} else if (!isCityLengthMin(cityValue)) {
+        setErrorFor(city, 'Le nom de la ville doit comporter au minimun 1 caractère');
+    } else if (!isCityLengthMax(cityValue)) {
+        setErrorFor(city, 'Le nom de la ville doit comporter au maximun 50 caractères');
+	} else if (!isCity(cityValue)) {
 		setErrorFor(city, 'Le nom de la ville n\'est pas valide');
 	} else {
+		score++;
 		setSuccessFor(city);
+	}
+
+	// Add registration_form_agreeTerms
+	// Add below the verification if checked or not for the score
+	//document.getElementById("registration_form_agreeTerms").checked;
+	if(agreetermsValue === false) {
+		console.log('CGU Désactivés !');
+		setErrorFor(agreeterms, 'La case doit être coché pour s\'inscrire.');
+	} else {
+		score++;
+		setSuccessFor(agreeterms);
+	}
+
+	if(score === 8) {
+		console.log(score);
+		//document.querySelector('[type="submit"]').style.display = "initial";
+		document.querySelector('#registration_form_save').style.display = "initial";
+		return true;
+	} else {
+		console.log(score);
+		//document.querySelector('[type="submit"]').style.display = "none";
+		document.querySelector('#registration_form_save').style.display = "none";
+		console.log('Faux Champ(s) avec erreur !');
+		return false;
 	}
 }
 
@@ -308,8 +361,12 @@ function isPasswordUppercase(password) {
     return /[A-Z]/.test(password);
 }
 
+function isPasswordNumber(password) {
+	return /\d/.test(password);
+}
+
 function isPasswordSpecial(password) {
-    return /[-_$@!/\\%*#&£~ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/.test(password);
+    return /[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/.test(password);
 }
 
 function isPasswordLength(password) {
@@ -321,18 +378,30 @@ function isPasswordLength(password) {
 }
 
 function isPassword(password) {
-    return /^(?=.+[A-Z])(?=.+[a-z])(?=.+\d)(?=.+[-?+!*$@%_&~`\\^\|\#{}()\[\]])([-?+!*$@%_&~`\\\|\#{}()\[\]\w]{12,})$/.test(password);
+    return /^(?=.+[A-Z])(?=.+[a-z])(?=.+\d)(?=.+[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰])([-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰\w]{12,})$/.test(password);
 }
 
 function isZipCode(zipcode) {
     return /^[0-9]{5}$/.test(zipcode);
 }
 
-function isCityLength(city)  {
-    if(city.length < 1 && city.length > 50) {
-        return false;
+function isCityLengthMin(city)  {
+    if(city.length >= 1) {
+        return true;
     }
 }
+
+function isCityLengthMax(city)  {
+    if(city.length <= 50) {
+        return true;
+    }
+}
+
+function isCityNumber(city) {
+    return /^[0-9]$/.test(city);
+}
+
 function isCity(city) {
-    return /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/.test(city);
+    return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœðó]+(?:[-'\s][a-zàâäçéèêëîïôöùûüÿæœðóA-ZZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]+)*$/.test(city);
+	// L'Abergement-Clémenciat | L'Abergement-de-Varey | Saint-Denis-lès-Bourg | Saint-Étienne-sur-Reyssouze | Boyeux-Saint-Jérôme | Cormoranche-sur-Saône | Cruzilles-lès-Mépillat
 }

@@ -800,11 +800,10 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     color: #842029;
 }
 
-/*
-#submitRegistrationFormButton {
+#registration_form_save {
     display: none;
 }
-*/
+
 /* Style CSS For Validation FORM BOOTSTRAP */
 /*
 * {
