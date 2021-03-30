@@ -820,7 +820,7 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-*/
+
 .container {
     background-color: #fff;
     border-radius: 5px;
@@ -829,7 +829,7 @@ body {
     width: 400px;
     max-width: 100%;
 }
-
+*/
 .form {
     padding: 30px 40px;
 }
