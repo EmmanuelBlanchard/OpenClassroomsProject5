@@ -184,7 +184,9 @@ function isFirstNameNumber(lastname) {
 }
 
 function isFirstName(firstname) {
-    return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/.test(firstname);
+    //return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/.test(firstname);
+	// update of the pattern for compound firstnames 
+	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*[^-\s]$/.test(firstname);
 }
 
 function isEmail(email) {
