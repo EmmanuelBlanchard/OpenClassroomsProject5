@@ -149,9 +149,33 @@ function isLastNameNumber(lastname) {
 
 function isLastName(lastname) {
 	//return /^[A-ZÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]'?[- a-zA-ZéèàêâùïüëçÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]+$/.test(lastname);
-
-	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ])*[-'’\s]{0,1}[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*$/.test(lastname);
-	
+	//return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ])*[-'’\s]{0,1}[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*$/.test(lastname);
+	//return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*[^\s]$/.test(lastname);
+	// no space or dash character at the end of the Name
+	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*[^-\s]$/.test(lastname);
+	/*
+	1) John Smith 
+	2) John D’Largy 
+	3) John Doe-Smith 
+	4) John Doe Smith 
+	5) Hector Sausage-Hausen 
+	6) Mathias d’Arras 
+	7) Martin Luther King  | Martin Luther King jr.
+	8) Ai Wong 
+	9) Chao Chang 
+	10) Alzbeta Bara
+	11) O'Brien-O'Malley
+	12) Van der Humpton | Downtown-James Brown | Jozef-Schmozev Hiemdel | George De FunkMaster
+	13) Jérémie O'Co-nor | O'Hara | McNamara | McIntosh | Kurtis B-Ball Basketball | Ahmad el Jeffe | Mike O'Neal
+	14) John D’Largy O'Brien-O'Malley
+	15) Van der Humpton John D’Largy O'Brien-O'Malley
+	16) Balaÿ, Baÿ, Boulennoÿ, Croÿ, Delannoÿ, Demenÿ, Du Faÿ, Faÿ, Fuÿe, Ghÿs, Lannoÿe, Linÿer, Nicolaÿ, Nouÿ, Ysaÿe
+	17) John Mc'Kenzie | John-Doe Jane-Doe
+	18) Randrianampoinimeria | Andrianirinaharivelo | Nadjar Ben Embarek Ben Chagra
+	19) Tram Vihn Tan Tan Gapregassam | Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
+	20) Keihanaikukauakahihuliheekahaunaele
+	21) Guðmundsdóttir | Michael Jordan O'Reilly Jr. | Österreicher 
+	*/
 }
 
 function isFirstNameNumber(lastname) {
