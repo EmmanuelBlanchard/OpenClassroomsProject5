@@ -1,11 +1,11 @@
 window.onload = () => {
-    document.querySelector("#registration_form_pseudo").addEventListener('input', checkInputs);
-    document.querySelector("#registration_form_lastname").addEventListener('input', checkInputs);
-    document.querySelector("#registration_form_firstname").addEventListener('input', checkInputs);
-    document.querySelector("#registration_form_email").addEventListener('input', checkInputs);
-    document.querySelector("#registration_form_plainPassword").addEventListener('input', checkInputs);
-    document.querySelector("#registration_form_zipCode").addEventListener('input', checkInputs);
-    document.querySelector("#registration_form_city").addEventListener('input', checkInputs);
+	pseudo.addEventListener('input', checkInputPseudo);
+	lastname.addEventListener('input', checkInputLastName);
+    firstname.addEventListener('input', checkInputFirstName);
+    email.addEventListener('input', checkInputEmail);
+    password.addEventListener('input', checkInputPassword);
+    zipcode.addEventListener('input', checkInputZipCode);
+    city.addEventListener('input', checkInputs);
 }
 
 let form = document.querySelector('#registration_form');
@@ -17,9 +17,119 @@ const password = document.querySelector('#registration_form_plainPassword');
 const zipcode = document.querySelector('#registration_form_zipCode');
 const city = document.querySelector('#registration_form_city');
 
+function checkInputPseudo(){
+	// trim to remove the whitespaces
+	const pseudoValue = pseudo.value.trim();
+
+	if(pseudoValue === '') {
+		setErrorFor(pseudo, 'Le pseudo ne peut pas être vide');
+	} else if (!isPseudoNumberMin(pseudoValue)) {
+        setErrorFor(pseudo, 'Le pseudo doit comporter au moins 7 caractères');
+    } else if (isPseudoNumberMax(pseudoValue)) {
+        setErrorFor(pseudo, 'Le pseudo ne peut pas comporter plus de 15 caractères');
+    } else if (!isPseudoNoSpace(pseudoValue)) {
+		setErrorFor(pseudo, 'Le pseudo ne peut pas contenir le caractère espace (les caractères - et _ sont autorisés)');
+    } else {
+		setSuccessFor(pseudo);
+	}
+}
+function checkInputLastName(){
+	// trim to remove the whitespaces
+	const lastnameValue = lastname.value.trim();
+
+	if(lastnameValue === '') {
+		setErrorFor(lastname, 'Le nom ne peut pas être vide');
+	} else if (isLastNameNumber(lastnameValue)) {
+        setErrorFor(lastname, 'Le nom ne peut pas contenir un nombre');
+    } else if (!isLastName(lastnameValue)) {
+		setErrorFor(lastname, 'La première lettre du nom doit être en majuscule');
+	} else {
+		setSuccessFor(lastname);
+	}
+}
+
+function checkInputFirstName(){
+	// trim to remove the whitespaces
+	const firstnameValue = firstname.value.trim();
+
+	if(firstnameValue === '') {
+		setErrorFor(firstname, 'Le prénom ne peut pas être vide');
+	} else if (isFirstNameNumber(firstnameValue)) {
+        setErrorFor(firstname, 'Le prénom ne peut pas contenir un nombre ');
+    } else if (!isFirstName(firstnameValue)) {
+		setErrorFor(firstname, 'La première lettre du prénom doit être en majuscule');
+	} else {
+		setSuccessFor(firstname);
+	}
+}
+
+function checkInputEmail(){
+	// trim to remove the whitespaces
+	const emailValue = email.value.trim();
+
+	if(emailValue === '') {
+		setErrorFor(email, 'L\'adresse e-mail ne peut pas être vide');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'L\'adresse e-mail n\'est pas valide');
+	} else {
+		setSuccessFor(email);
+	}
+}
+function checkInputPassword(){
+	// trim to remove the whitespaces
+	const passwordValue = password.value.trim();
+
+	if(passwordValue === '') {
+		setErrorFor(password, 'Le mot de passe ne peut pas être vide');
+	} else if (!isPasswordTiny(passwordValue)) {
+		setErrorFor(password, 'Le mot de passe doit comporter au moins une lettre minuscule');
+    } else if (!isPasswordUppercase(passwordValue)) {
+		setErrorFor(password, 'Le mot de passe doit comporter au moins une une lettre majuscule');
+    }
+    else if (!isPasswordNumber(passwordValue)) {
+		setErrorFor(password, 'Le mot de passe doit comporter au moins un chiffre');
+    }
+    else if (!isPasswordSpecial(passwordValue)) {
+		setErrorFor(password, 'Le mot de passe doit comporter au moins un caractère spécial');
+    }
+    else if (!isPasswordLength(passwordValue)) {
+		setErrorFor(password, 'Le mot de passe doit comporter au moins 12 caractères');
+    } else if (!isPassword(passwordValue)) {
+		setErrorFor(password, 'Le mot de passe n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
+    } else {
+		setSuccessFor(password);
+	}
+}
+function checkInputZipCode(){
+	// trim to remove the whitespaces
+	const zipcodeValue = zipcode.value.trim();
+
+	if(zipcodeValue === '') {
+		setErrorFor(zipcode, 'Le code postal ne peut pas être vide');
+	} else if (!isZipCode(zipcodeValue)) {
+		setErrorFor(zipcode, 'Le code postal n\'est pas valide');
+	} else {
+		setSuccessFor(zipcode);
+	}
+}
+function checkInputCity(){
+	// trim to remove the whitespaces
+	const cityValue = city.value.trim();
+
+	if(cityValue === '') {
+		setErrorFor(city, 'Le nom de la ville ne peut pas être vide');
+	} else if (!isCityLength(cityValue)) {
+        setErrorFor(city, 'Le nom de la ville doit comporter entre 1 et 50 caractères');
+    } else if (!isCity(cityValue)) {
+		setErrorFor(city, 'Le nom de la ville n\'est pas valide');
+	} else {
+		setSuccessFor(city);
+	}
+}
+
 form.addEventListener('submit', e => {
 	e.preventDefault();
-	//console.log('submit');
+	console.log('submit');
 	checkInputs();
 });
 
@@ -33,7 +143,7 @@ function checkInputs(){
     const zipcodeValue = zipcode.value.trim();
     const cityValue = city.value.trim();
     
-    //console.log(pseudoValue);
+    console.log(pseudoValue);
 
 	if(pseudoValue === '') {
 		setErrorFor(pseudo, 'Le pseudo ne peut pas être vide');
@@ -49,7 +159,7 @@ function checkInputs(){
 	
     if(lastnameValue === '') {
 		setErrorFor(lastname, 'Le nom ne peut pas être vide');
-	} else if (isLastNameNumber(lastname)) {
+	} else if (isLastNameNumber(lastnameValue)) {
         setErrorFor(lastname, 'Le nom ne peut pas contenir un nombre');
     } else if (!isLastName(lastnameValue)) {
 		setErrorFor(lastname, 'La première lettre du nom doit être en majuscule');
@@ -59,7 +169,7 @@ function checkInputs(){
 
     if(firstnameValue === '') {
 		setErrorFor(firstname, 'Le prénom ne peut pas être vide');
-	} else if (isFirstNameNumber(firstname)) {
+	} else if (isFirstNameNumber(firstnameValue)) {
         setErrorFor(firstname, 'Le prénom ne peut pas contenir un nombre ');
     } else if (!isFirstName(firstnameValue)) {
 		setErrorFor(firstname, 'La première lettre du prénom doit être en majuscule');
@@ -81,14 +191,11 @@ function checkInputs(){
 		setErrorFor(password, 'Le mot de passe doit comporter au moins une lettre minuscule');
     } else if (!isPasswordUppercase(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins une une lettre majuscule');
-    }
-    else if (!isPasswordNumber(passwordValue)) {
+    } else if (!isPasswordNumber(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins un chiffre');
-    }
-    else if (!isPasswordSpecial(passwordValue)) {
+    } else if (!isPasswordSpecial(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins un caractère spécial');
-    }
-    else if (!isPasswordLength(passwordValue)) {
+    } else if (!isPasswordLength(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins 12 caractères');
     } else if (!isPassword(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
@@ -150,9 +257,9 @@ function isLastNameNumber(lastname) {
 function isLastName(lastname) {
 	//return /^[A-ZÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]'?[- a-zA-ZéèàêâùïüëçÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]+$/.test(lastname);
 	//return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ])*[-'’\s]{0,1}[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*$/.test(lastname);
-	//return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*[^\s]$/.test(lastname);
-	// no space or dash character at the end of the Name
-	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*[^-\s]$/.test(lastname);
+	// no space or dash character at the end of the Name - Problem with the name O
+	//return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*[^-\s]$/.test(lastname);
+	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/.test(lastname);
 	/*
 	1) John Smith 
 	2) John D’Largy 
@@ -186,7 +293,7 @@ function isFirstNameNumber(lastname) {
 function isFirstName(firstname) {
     //return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/.test(firstname);
 	// update of the pattern for compound firstnames 
-	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*[^-\s]$/.test(firstname);
+	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/.test(firstname);
 }
 
 function isEmail(email) {
