@@ -174,7 +174,8 @@ function isLastName(lastname) {
 	18) Randrianampoinimeria | Andrianirinaharivelo | Nadjar Ben Embarek Ben Chagra
 	19) Tram Vihn Tan Tan Gapregassam | Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
 	20) Keihanaikukauakahihuliheekahaunaele
-	21) Guðmundsdóttir | Michael Jordan O'Reilly Jr. | Österreicher 
+	21) Michael Jordan O'Reilly Jr. | Österreicher 
+	22) No match for the name => Guðmundsdóttir
 	*/
 }
 
