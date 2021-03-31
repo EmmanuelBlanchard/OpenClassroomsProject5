@@ -66,7 +66,7 @@ class User implements UserInterface
      *     message="Votre nom ne peut pas contenir un nombre"
      * )
      * @Assert\Regex(
-     *     pattern="/^[A-ZÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]'?[- a-zA-ZéèàêâùïüëçÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]+$/",
+     *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/",
      *      match=true,
      *     message="Votre nom doit contenir une lettre majuscule en première lettre"
      * )
@@ -76,7 +76,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Regex(
-     *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/",
+     *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/",
      *     match=true,
      *     message="Votre prénom doit contenir une lettre majuscule pour le premier caractère puis des lettres minuscules (les caractères espace, apostrophe, tiret sont autorisés entre deux prénoms)"
      * )
@@ -134,7 +134,7 @@ class User implements UserInterface
      *      maxMessage = "Votre ville ne peut pas comporter plus de {{ limit }} caractères"
      * )
      * @Assert\Regex(
-     *     pattern="/^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/",
+     *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœðó]+(?:[-'\s][a-zàâäçéèêëîïôöùûüÿæœðóA-ZZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]+)*$/",
      *     match=true,
      *     message="Votre ville ne doit contenir que des caractères minuscules, majuscules et tirets"
      * )
