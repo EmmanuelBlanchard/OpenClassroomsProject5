@@ -46,6 +46,10 @@ class ChangePasswordFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
             ])
+            ->add('validate', SubmitType::class, [
+                'attr' => ['class' => 'btn btn-success btn-lg'],
+                'label' => 'Valider',
+                ])
         ;
     }
 
