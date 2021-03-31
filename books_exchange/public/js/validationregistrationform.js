@@ -134,20 +134,19 @@ function checkInputCity(){
 function checkInputAgreeTerms(){
 	const agreetermsValue = agreeterms.checked;
 	if(agreetermsValue === false) {
-		console.log('CGU Désactivés !');
 		setErrorFor(agreeterms, 'La case doit être coché pour s\'inscrire.');
 	} else {
 		setSuccessFor(agreeterms);
 	}
 }
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', event => {
 	//e.preventDefault();
-	console.log('submit');
-	checkInputs();
+	//console.log('submit');
+	checkInputs(event);
 });
 
-function checkInputs(){
+function checkInputs(event){
 	// trim to remove the whitespaces
 	const pseudoValue = pseudo.value.trim();
     const lastnameValue = lastname.value.trim();
@@ -158,7 +157,7 @@ function checkInputs(){
     const cityValue = city.value.trim();
 	const agreetermsValue = agreeterms.checked;
     
-    //console.log(pseudoValue);
+    //console.log(pseudoValue, lastnameValue, firstnameValue, emailValue, passwordValue, zipcodeValue, cityValue, agreetermsValue);
 
 	// We initialize the score
 	let score = 0;
@@ -250,11 +249,7 @@ function checkInputs(){
 		setSuccessFor(city);
 	}
 
-	// Add registration_form_agreeTerms
-	// Add below the verification if checked or not for the score
-	//document.getElementById("registration_form_agreeTerms").checked;
 	if(agreetermsValue === false) {
-		console.log('CGU Désactivés !');
 		setErrorFor(agreeterms, 'La case doit être coché pour s\'inscrire.');
 	} else {
 		score++;
@@ -262,15 +257,11 @@ function checkInputs(){
 	}
 
 	if(score === 8) {
-		console.log(score);
-		//document.querySelector('[type="submit"]').style.display = "initial";
-		document.querySelector('#registration_form_save').style.display = "initial";
+		//document.querySelector('#registration_form_save').style.display = "initial";
 		return true;
 	} else {
-		console.log(score);
-		//document.querySelector('[type="submit"]').style.display = "none";
-		document.querySelector('#registration_form_save').style.display = "none";
-		console.log('Faux Champ(s) avec erreur !');
+		//document.querySelector('#registration_form_save').style.display = "none";
+		event.preventDefault();
 		return false;
 	}
 }
@@ -314,29 +305,13 @@ function isLastName(lastname) {
 	//return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*[^-\s]$/.test(lastname);
 	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/.test(lastname);
 	/*
-	1) John Smith 
-	2) John D’Largy 
-	3) John Doe-Smith 
-	4) John Doe Smith 
-	5) Hector Sausage-Hausen 
-	6) Mathias d’Arras 
-	7) Martin Luther King  | Martin Luther King jr.
-	8) Ai Wong 
-	9) Chao Chang 
-	10) Alzbeta Bara
-	11) O'Brien-O'Malley
-	12) Van der Humpton | Downtown-James Brown | Jozef-Schmozev Hiemdel | George De FunkMaster
-	13) Jérémie O'Co-nor | O'Hara | McNamara | McIntosh | Kurtis B-Ball Basketball | Ahmad el Jeffe | Mike O'Neal
-	14) John D’Largy O'Brien-O'Malley
-	15) Van der Humpton John D’Largy O'Brien-O'Malley
-	16) Balaÿ, Baÿ, Boulennoÿ, Croÿ, Delannoÿ, Demenÿ, Du Faÿ, Faÿ, Fuÿe, Ghÿs, Lannoÿe, Linÿer, Nicolaÿ, Nouÿ, Ysaÿe
-	17) John Mc'Kenzie | John-Doe Jane-Doe
-	18) Randrianampoinimeria | Andrianirinaharivelo | Nadjar Ben Embarek Ben Chagra
-	19) Tram Vihn Tan Tan Gapregassam | Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
-	20) Keihanaikukauakahihuliheekahaunaele
-	21) Michael Jordan O'Reilly Jr. | Österreicher 
-	22) No match for the name => Guðmundsdóttir
-	*/
+	1) John Smith | John D’Largy | John Doe-Smith | John Doe Smith | Hector Sausage-Hausen | Mathias d’Arras | Martin Luther King  | Martin Luther King jr.| Ai Wong | Chao Chang | Alzbeta Bara
+	2) O'Brien-O'Malley | Van der Humpton | Downtown-James Brown | Jozef-Schmozev Hiemdel | George De FunkMaster | John D’Largy O'Brien-O'Malley
+	3) Jérémie O'Co-nor | O'Hara | McNamara | McIntosh | Kurtis B-Ball Basketball | Ahmad el Jeffe | Mike O'Neal
+	4) Van der Humpton John D’Largy O'Brien-O'Malley | Balaÿ, Baÿ, Boulennoÿ, Croÿ, Delannoÿ, Demenÿ, Du Faÿ, Faÿ, Fuÿe, Ghÿs, Lannoÿe, Linÿer, Nicolaÿ, Nouÿ, Ysaÿe
+	5) John Mc'Kenzie | John-Doe Jane-Doe | Randrianampoinimeria | Andrianirinaharivelo | Nadjar Ben Embarek Ben Chagra | Tram Vihn Tan Tan Gapregassam | Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
+	6) Keihanaikukauakahihuliheekahaunaele | Michael Jordan O'Reilly Jr. | Österreicher 
+	7) No match for the name => Guðmundsdóttir */
 }
 
 function isFirstNameNumber(lastname) {
