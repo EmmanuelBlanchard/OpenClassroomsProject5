@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Form\BookFormType;
+use App\Form\ChangePasswordFormType;
 use App\Form\EditProfileFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -157,20 +158,28 @@ class UserController extends AbstractController
      */
     public function editPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
-        if($request->isMethod('POST')) {
+        $user = $this->getUser();
+        $form = $this->createForm(ChangePasswordFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the plain password
+            $user->setPassword(
+                $passwordEncoder->encodePassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+            );
+            
             $entityManager = $this->getDoctrine()->getManager();
-            $user = $this->getUser();
-            // We check if the 2 passwords are identical
-            if($request->request->get('password') == $request->request->get('password2')){
-                $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
-                $entityManager->flush();
-                $this->addFlash('message', 'Mot de passe mis à jour avec succès');
-                return $this->redirectToRoute('user');
-            } else {
-                $this->addFlash('error', 'Les deux mots de passe ne sont pas identiques');
-            }
+            $entityManager->persist($user);
+            $entityManager->flush();
+            $this->addFlash('message', 'Mot de passe mis à jour avec succès');
+            return $this->redirectToRoute('user');
         }
-        return $this->render('user/editpassword.html.twig');
+        return $this->render('user/editpassword.html.twig', [
+            'editpasswordForm' => $form->createView()
+        ]);
     }
 
     /**
@@ -182,7 +191,7 @@ class UserController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $user = $this->getUser();
             // We check if the 2 e-mails are identical
-            if($request->request->get('email') == $request->request->get('email2')){
+            if($request->request->get('email') === $request->request->get('email2')){
                 $user->setEmail($request->request->get('email'));
                 $entityManager->flush();
                 $this->addFlash('message', 'E-mail mis à jour avec succès');
