@@ -23,17 +23,23 @@
 				<h1>Modification de l'e-mail de
 					{{ app.user.pseudo }}
 				</h1>
-				<form method="post">
-					<div class="mb-3">
-						<label for="email" class="form-label">E-mail</label>
-						<input type="email" class="form-control" id="email" name="email">
+
+				{{ form_start(editemailForm, {'attr': {'id': 'editemail_form'}}) }}
+
+				<div class="form-control">
+					<i class="bi bi-check-circle"></i>
+					<i class="bi bi-exclamation-circle"></i>
+					{{ form_label(editemailForm.email) }}
+					{{ form_widget(editemailForm.email) }}
+
+					<small>{{ form_help(editemailForm.email) }}</small>
+
+					<div class="form-error">
+						{{ form_errors(editemailForm.email) }}
 					</div>
-					<div class="mb-3">
-						<label for="email2" class="form-label">Confirmer l'e-mail</label>
-						<input type="email" class="form-control" id="email2" name="email2">
-					</div>
-					<button type="submit" class="btn btn-primary">Valider</button>
-				</form>
+				</div>
+
+				{{ form_end(editemailForm) }}
 			</div>
 		</div>
 	</div>

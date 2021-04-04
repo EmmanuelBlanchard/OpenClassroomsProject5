@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Book;
 use App\Form\BookFormType;
 use App\Form\ChangePasswordFormType;
+use App\Form\EditEmailFormType;
 use App\Form\EditProfileFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -187,6 +188,27 @@ class UserController extends AbstractController
      */
     public function editEmail(Request $request): Response
     {
+        $user = $this->getUser();
+        $form = $this->createForm(EditEmailFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the plain password
+            $user->setEmail (
+                $form->get('email')->getData()
+            );
+            
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+            $this->addFlash('message', 'L\'adresse e-mail a été mise à jour avec succès');
+            return $this->redirectToRoute('user');
+        }
+        return $this->render('user/editemail.html.twig', [
+            'editemailForm' => $form->createView()
+        ]);
+
+        /*
         if($request->isMethod('POST')) {
             $entityManager = $this->getDoctrine()->getManager();
             $user = $this->getUser();
@@ -201,6 +223,7 @@ class UserController extends AbstractController
             }
         }
         return $this->render('user/editemail.html.twig');
+        */
     }
 
 }
