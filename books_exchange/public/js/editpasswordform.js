@@ -120,90 +120,38 @@ function checkInputs(event){
 }
 
 function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	//const small = formControl.querySelector('small');
-    //const small = document.querySelector('#editpassword_form>div.form-control>small');
-	formControl.className = 'form-control error';
-	//small.innerText = message;
+  const formControl = input.parentElement;
+  formControl.className = 'form-control error';
 
-    // Test | Add <ul> tag and <li> tag after <label> tag then add message in <li> tag  
-    const inputLabel = document.querySelector('label[for="change_password_form_plainPassword_first"]');
-    const inputLabel2 = document.querySelector('label[for="change_password_form_plainPassword_second"]');
-    
-    //console.log(input);
-
-    const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-    
-    if (inputLi !== null) {
-        inputLi.innerTexT = message;
-        //inputLi.textContent = message;
-    } else if (input === password) {
-        let newUL = document.createElement('ul');
-        inputLabel.insertAdjacentElement('afterend', newUL);
-        
-        const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
-        let newLi = document.createElement('li');
-        inputUl.insertAdjacentElement('afterbegin', newLi);
-        const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-        inputLi.innerTexT = message;
-        //inputLi.textContent = message;
+  const inputLabel = document.querySelector('label[for="change_password_form_plainPassword_first"]');
+  const inputLabel2 = document.querySelector('label[for="change_password_form_plainPassword_second"]');
+  const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
+  
+  if(input === password) {
+    if (inputLi === null) {
+      let newUL = document.createElement('ul');
+      inputLabel.insertAdjacentElement('afterend', newUL);
+      const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
+      let newLi = document.createElement('li');
+      inputUl.insertAdjacentElement('afterbegin', newLi);
+      const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
+      inputLi.textContent = message;
     } else {
-        let newUL = document.createElement('ul');
-        inputLabel2.insertAdjacentElement('afterend', newUL);
-        const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
-        let newLi = document.createElement('li');
-        inputUl.insertAdjacentElement('afterbegin', newLi);
-        const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-        inputLi.innerTexT = message;
-        //inputLi.textContent = message;
+      inputLi.textContent = message;
     }
-
-    /*
-    if (input === password) {
-        let newUL = document.createElement('ul');
-        inputLabel.insertAdjacentElement('afterend', newUL);
-        
-        const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
-        let newLi = document.createElement('li');
-        inputUl.insertAdjacentElement('afterbegin', newLi);
-        const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-        inputLi.innerTexT = message;
-        //inputLi.textContent = message;
+  } else {
+    if (inputLi === null) {
+      let newUL = document.createElement('ul');
+      inputLabel2.insertAdjacentElement('afterend', newUL);
+      const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
+      let newLi = document.createElement('li');
+      inputUl.insertAdjacentElement('afterbegin', newLi);
+      const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
+      inputLi.textContent = message;
     } else {
-        let newUL = document.createElement('ul');
-        inputLabel2.insertAdjacentElement('afterend', newUL);
-        const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
-        let newLi = document.createElement('li');
-        inputUl.insertAdjacentElement('afterbegin', newLi);
-        const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-        inputLi.innerTexT = message;
-        //inputLi.textContent = message;
+      inputLi.textContent = message;
     }
-    */
-
-    /*
-    const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-
-    if (inputLi !== null) {
-        inputLi.innerTexT = message;
-        //inputLi.textContent = message;
-    } else {
-        let newUL = document.createElement('ul');
-        inputLabel.insertAdjacentElement('afterend', newUL);
-        
-        const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
-        let newLi = document.createElement('li');
-        inputUl.insertAdjacentElement('afterbegin', newLi);
-        const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-        inputLi.innerTexT = message;
-        //inputLi.textContent = message;
-    }
-    */
-
-    /*
-    After delete required and put none in plainPassword field , this display > 
-    <ul><li>Veuillez entrer un mot de passe</li></ul>
-    */
+  }
 }
 
 function setSuccessFor(input) {
