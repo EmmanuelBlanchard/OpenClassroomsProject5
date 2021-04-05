@@ -1,11 +1,11 @@
 window.onload = () => {
 	pseudo.addEventListener('input', checkInputPseudo);
 	lastname.addEventListener('input', checkInputLastName);
-    firstname.addEventListener('input', checkInputFirstName);
-    email.addEventListener('input', checkInputEmail);
-    password.addEventListener('input', checkInputPassword);
-    zipcode.addEventListener('input', checkInputZipCode);
-    city.addEventListener('input', checkInputCity);
+	firstname.addEventListener('input', checkInputFirstName);
+	email.addEventListener('input', checkInputEmail);
+	password.addEventListener('input', checkInputPassword);
+	zipcode.addEventListener('input', checkInputZipCode);
+	city.addEventListener('input', checkInputCity);
 	agreeterms.addEventListener('input', checkInputAgreeTerms);
 }
 
@@ -19,55 +19,55 @@ const zipcode = document.querySelector('#registration_form_zipCode');
 const city = document.querySelector('#registration_form_city');
 const agreeterms = document.querySelector('#registration_form_agreeTerms');
 
-function checkInputPseudo(){
+function checkInputPseudo() {
 	// trim to remove the whitespaces
 	const pseudoValue = pseudo.value.trim();
 
-	if(pseudoValue === '') {
+	if (pseudoValue === '') {
 		setErrorFor(pseudo, 'Le pseudo ne peut pas être vide');
 	} else if (!isPseudoNumberMin(pseudoValue)) {
-        setErrorFor(pseudo, 'Le pseudo doit comporter au moins 7 caractères');
-    } else if (isPseudoNumberMax(pseudoValue)) {
-        setErrorFor(pseudo, 'Le pseudo ne peut pas comporter plus de 15 caractères');
-    } else if (!isPseudoNoSpace(pseudoValue)) {
+		setErrorFor(pseudo, 'Le pseudo doit comporter au moins 7 caractères');
+	} else if (isPseudoNumberMax(pseudoValue)) {
+		setErrorFor(pseudo, 'Le pseudo ne peut pas comporter plus de 15 caractères');
+	} else if (!isPseudoNoSpace(pseudoValue)) {
 		setErrorFor(pseudo, 'Le pseudo ne peut pas contenir le caractère espace (les caractères - et _ sont autorisés)');
-    } else {
+	} else {
 		setSuccessFor(pseudo);
 	}
 }
-function checkInputLastName(){
+function checkInputLastName() {
 	// trim to remove the whitespaces
 	const lastnameValue = lastname.value.trim();
 
-	if(lastnameValue === '') {
+	if (lastnameValue === '') {
 		setErrorFor(lastname, 'Le nom ne peut pas être vide');
 	} else if (isLastNameNumber(lastnameValue)) {
-        setErrorFor(lastname, 'Le nom ne peut pas contenir un nombre');
-    } else if (!isLastName(lastnameValue)) {
+		setErrorFor(lastname, 'Le nom ne peut pas contenir un nombre');
+	} else if (!isLastName(lastnameValue)) {
 		setErrorFor(lastname, 'La première lettre du nom doit être en majuscule');
 	} else {
 		setSuccessFor(lastname);
 	}
 }
-function checkInputFirstName(){
+function checkInputFirstName() {
 	// trim to remove the whitespaces
 	const firstnameValue = firstname.value.trim();
 
-	if(firstnameValue === '') {
+	if (firstnameValue === '') {
 		setErrorFor(firstname, 'Le prénom ne peut pas être vide');
 	} else if (isFirstNameNumber(firstnameValue)) {
-        setErrorFor(firstname, 'Le prénom ne peut pas contenir un nombre ');
-    } else if (!isFirstName(firstnameValue)) {
+		setErrorFor(firstname, 'Le prénom ne peut pas contenir un nombre ');
+	} else if (!isFirstName(firstnameValue)) {
 		setErrorFor(firstname, 'La première lettre du prénom doit être en majuscule');
 	} else {
 		setSuccessFor(firstname);
 	}
 }
-function checkInputEmail(){
+function checkInputEmail() {
 	// trim to remove the whitespaces
 	const emailValue = email.value.trim();
 
-	if(emailValue === '') {
+	if (emailValue === '') {
 		setErrorFor(email, 'L\'adresse e-mail ne peut pas être vide');
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'L\'adresse e-mail n\'est pas valide');
@@ -75,36 +75,33 @@ function checkInputEmail(){
 		setSuccessFor(email);
 	}
 }
-function checkInputPassword(){
+function checkInputPassword() {
 	// trim to remove the whitespaces
 	const passwordValue = password.value.trim();
 
-	if(passwordValue === '') {
+	if (passwordValue === '') {
 		setErrorFor(password, 'Le mot de passe ne peut pas être vide');
 	} else if (!isPasswordTiny(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins une lettre minuscule');
-    } else if (!isPasswordUppercase(passwordValue)) {
+	} else if (!isPasswordUppercase(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins une une lettre majuscule');
-    }
-    else if (!isPasswordNumber(passwordValue)) {
+	} else if (!isPasswordNumber(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins un chiffre');
-    }
-    else if (!isPasswordSpecial(passwordValue)) {
+	} else if (!isPasswordSpecial(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins un caractère spécial');
-    }
-    else if (!isPasswordLength(passwordValue)) {
+	} else if (!isPasswordLength(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins 12 caractères');
-    } else if (!isPassword(passwordValue)) {
+	} else if (!isPassword(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
-    } else {
+	} else {
 		setSuccessFor(password);
 	}
 }
-function checkInputZipCode(){
+function checkInputZipCode() {
 	// trim to remove the whitespaces
 	const zipcodeValue = zipcode.value.trim();
 
-	if(zipcodeValue === '') {
+	if (zipcodeValue === '') {
 		setErrorFor(zipcode, 'Le code postal ne peut pas être vide');
 	} else if (!isZipCode(zipcodeValue)) {
 		setErrorFor(zipcode, 'Le code postal doit comporter 5 chiffres');
@@ -112,18 +109,18 @@ function checkInputZipCode(){
 		setSuccessFor(zipcode);
 	}
 }
-function checkInputCity(){
+function checkInputCity() {
 	// trim to remove the whitespaces
 	const cityValue = city.value.trim();
 
-	if(cityValue === '') {
+	if (cityValue === '') {
 		setErrorFor(city, 'Le nom de la ville ne peut pas être vide');
 	} else if (isCityNumber(cityValue)) {
 		setErrorFor(city, 'Le nom de la ville ne peut pas comporter des chiffres');
 	} else if (!isCityLengthMin(cityValue)) {
-        setErrorFor(city, 'Le nom de la ville doit comporter au minimun 1 caractère');
-    } else if (!isCityLengthMax(cityValue)) {
-        setErrorFor(city, 'Le nom de la ville doit comporter au maximun 50 caractères');
+		setErrorFor(city, 'Le nom de la ville doit comporter au minimun 1 caractère');
+	} else if (!isCityLengthMax(cityValue)) {
+		setErrorFor(city, 'Le nom de la ville doit comporter au maximun 50 caractères');
 	} else if (!isCity(cityValue)) {
 		setErrorFor(city, 'Le nom de la ville n\'est pas valide');
 	} else {
@@ -131,9 +128,9 @@ function checkInputCity(){
 	}
 }
 
-function checkInputAgreeTerms(){
+function checkInputAgreeTerms() {
 	const agreetermsValue = agreeterms.checked;
-	if(agreetermsValue === false) {
+	if (agreetermsValue === false) {
 		setErrorFor(agreeterms, 'La case doit être coché pour s\'inscrire.');
 	} else {
 		setSuccessFor(agreeterms);
@@ -146,58 +143,58 @@ form.addEventListener('submit', event => {
 	checkInputs(event);
 });
 
-function checkInputs(event){
+function checkInputs(event) {
 	// trim to remove the whitespaces
 	const pseudoValue = pseudo.value.trim();
-    const lastnameValue = lastname.value.trim();
-    const firstnameValue = firstname.value.trim();
+	const lastnameValue = lastname.value.trim();
+	const firstnameValue = firstname.value.trim();
 	const emailValue = email.value.trim();
 	const passwordValue = password.value.trim();
-    const zipcodeValue = zipcode.value.trim();
-    const cityValue = city.value.trim();
+	const zipcodeValue = zipcode.value.trim();
+	const cityValue = city.value.trim();
 	const agreetermsValue = agreeterms.checked;
-    
-    //console.log(pseudoValue, lastnameValue, firstnameValue, emailValue, passwordValue, zipcodeValue, cityValue, agreetermsValue);
+
+	//console.log(pseudoValue, lastnameValue, firstnameValue, emailValue, passwordValue, zipcodeValue, cityValue, agreetermsValue);
 
 	// We initialize the score
 	let score = 0;
 
-	if(pseudoValue === '') {
+	if (pseudoValue === '') {
 		setErrorFor(pseudo, 'Le pseudo ne peut pas être vide');
 	} else if (!isPseudoNumberMin(pseudoValue)) {
-        setErrorFor(pseudo, 'Le pseudo doit comporter au moins 7 caractères');
-    } else if (isPseudoNumberMax(pseudoValue)) {
-        setErrorFor(pseudo, 'Le pseudo ne peut pas comporter plus de 15 caractères');
-    } else if (!isPseudoNoSpace(pseudoValue)) {
+		setErrorFor(pseudo, 'Le pseudo doit comporter au moins 7 caractères');
+	} else if (isPseudoNumberMax(pseudoValue)) {
+		setErrorFor(pseudo, 'Le pseudo ne peut pas comporter plus de 15 caractères');
+	} else if (!isPseudoNoSpace(pseudoValue)) {
 		setErrorFor(pseudo, 'Le pseudo ne peut pas contenir le caractère espace (les caractères - et _ sont autorisés)');
-    } else {
+	} else {
 		score++;
 		setSuccessFor(pseudo);
 	}
-	
-    if(lastnameValue === '') {
+
+	if (lastnameValue === '') {
 		setErrorFor(lastname, 'Le nom ne peut pas être vide');
 	} else if (isLastNameNumber(lastnameValue)) {
-        setErrorFor(lastname, 'Le nom ne peut pas contenir un nombre');
-    } else if (!isLastName(lastnameValue)) {
+		setErrorFor(lastname, 'Le nom ne peut pas contenir un nombre');
+	} else if (!isLastName(lastnameValue)) {
 		setErrorFor(lastname, 'La première lettre du nom doit être en majuscule');
 	} else {
 		score++;
 		setSuccessFor(lastname);
 	}
 
-    if(firstnameValue === '') {
+	if (firstnameValue === '') {
 		setErrorFor(firstname, 'Le prénom ne peut pas être vide');
 	} else if (isFirstNameNumber(firstnameValue)) {
-        setErrorFor(firstname, 'Le prénom ne peut pas contenir un nombre ');
-    } else if (!isFirstName(firstnameValue)) {
+		setErrorFor(firstname, 'Le prénom ne peut pas contenir un nombre ');
+	} else if (!isFirstName(firstnameValue)) {
 		setErrorFor(firstname, 'La première lettre du prénom doit être en majuscule');
 	} else {
 		score++;
 		setSuccessFor(firstname);
 	}
 
-	if(emailValue === '') {
+	if (emailValue === '') {
 		setErrorFor(email, 'L\'adresse e-mail ne peut pas être vide');
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'L\'adresse e-mail n\'est pas valide');
@@ -205,27 +202,27 @@ function checkInputs(event){
 		score++;
 		setSuccessFor(email);
 	}
-	
-	if(passwordValue === '') {
+
+	if (passwordValue === '') {
 		setErrorFor(password, 'Le mot de passe ne peut pas être vide');
 	} else if (!isPasswordTiny(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins une lettre minuscule');
-    } else if (!isPasswordUppercase(passwordValue)) {
+	} else if (!isPasswordUppercase(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins une une lettre majuscule');
-    } else if (!isPasswordNumber(passwordValue)) {
+	} else if (!isPasswordNumber(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins un chiffre');
-    } else if (!isPasswordSpecial(passwordValue)) {
+	} else if (!isPasswordSpecial(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins un caractère spécial');
-    } else if (!isPasswordLength(passwordValue)) {
+	} else if (!isPasswordLength(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe doit comporter au moins 12 caractères');
-    } else if (!isPassword(passwordValue)) {
+	} else if (!isPassword(passwordValue)) {
 		setErrorFor(password, 'Le mot de passe n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
-    } else {
+	} else {
 		score++;
 		setSuccessFor(password);
 	}
-	
-    if(zipcodeValue === '') {
+
+	if (zipcodeValue === '') {
 		setErrorFor(zipcode, 'Le code postal ne peut pas être vide');
 	} else if (!isZipCode(zipcodeValue)) {
 		setErrorFor(zipcode, 'Le code postal doit comporter 5 chiffres');
@@ -233,15 +230,15 @@ function checkInputs(event){
 		score++;
 		setSuccessFor(zipcode);
 	}
-    
-    if(cityValue === '') {
+
+	if (cityValue === '') {
 		setErrorFor(city, 'Le nom de la ville ne peut pas être vide');
 	} else if (isCityNumber(cityValue)) {
 		setErrorFor(city, 'Le nom de la ville ne peut pas comporter des chiffres');
 	} else if (!isCityLengthMin(cityValue)) {
-        setErrorFor(city, 'Le nom de la ville doit comporter au minimun 1 caractère');
-    } else if (!isCityLengthMax(cityValue)) {
-        setErrorFor(city, 'Le nom de la ville doit comporter au maximun 50 caractères');
+		setErrorFor(city, 'Le nom de la ville doit comporter au minimun 1 caractère');
+	} else if (!isCityLengthMax(cityValue)) {
+		setErrorFor(city, 'Le nom de la ville doit comporter au maximun 50 caractères');
 	} else if (!isCity(cityValue)) {
 		setErrorFor(city, 'Le nom de la ville n\'est pas valide');
 	} else {
@@ -249,18 +246,16 @@ function checkInputs(event){
 		setSuccessFor(city);
 	}
 
-	if(agreetermsValue === false) {
+	if (agreetermsValue === false) {
 		setErrorFor(agreeterms, 'La case doit être coché pour s\'inscrire.');
 	} else {
 		score++;
 		setSuccessFor(agreeterms);
 	}
 
-	if(score === 8) {
-		//document.querySelector('#registration_form_save').style.display = "initial";
+	if (score === 8) {
 		return true;
 	} else {
-		//document.querySelector('#registration_form_save').style.display = "none";
 		event.preventDefault();
 		return false;
 	}
@@ -279,19 +274,19 @@ function setSuccessFor(input) {
 }
 
 function isPseudoNumberMin(pseudo) {
-    if(pseudo.length > 6) {
-        return true;
-    }
+	if (pseudo.length > 6) {
+		return true;
+	}
 }
 
 function isPseudoNumberMax(pseudo) {
-    if(pseudo.length > 15) {
-        return true;
-    }
+	if (pseudo.length > 15) {
+		return true;
+	}
 }
 
 function isPseudoNoSpace(pseudo) {
-    return /^([-\S\w]{7,15})$/.test(pseudo);
+	return /^([-\S\w]{7,15})$/.test(pseudo);
 }
 
 function isLastNameNumber(lastname) {
@@ -319,7 +314,7 @@ function isFirstNameNumber(lastname) {
 }
 
 function isFirstName(firstname) {
-    //return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/.test(firstname);
+	//return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/.test(firstname);
 	// update of the pattern for compound firstnames 
 	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/.test(firstname);
 }
@@ -329,11 +324,11 @@ function isEmail(email) {
 }
 
 function isPasswordTiny(password) {
-    return /[a-z]/.test(password);
+	return /[a-z]/.test(password);
 }
 
 function isPasswordUppercase(password) {
-    return /[A-Z]/.test(password);
+	return /[A-Z]/.test(password);
 }
 
 function isPasswordNumber(password) {
@@ -341,42 +336,42 @@ function isPasswordNumber(password) {
 }
 
 function isPasswordSpecial(password) {
-    return /[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/.test(password);
+	return /[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/.test(password);
 }
 
 function isPasswordLength(password) {
-    if(password.length >= 12) {
-        return true;
-    } else {
-        return false;
-    }
+	if (password.length >= 12) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 function isPassword(password) {
-    return /^(?=.+[A-Z])(?=.+[a-z])(?=.+\d)(?=.+[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰])([-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰\w]{12,})$/.test(password);
+	return /^(?=.+[A-Z])(?=.+[a-z])(?=.+\d)(?=.+[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰])([-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰\w]{12,})$/.test(password);
 }
 
 function isZipCode(zipcode) {
-    return /^[0-9]{5}$/.test(zipcode);
+	return /^[0-9]{5}$/.test(zipcode);
 }
 
-function isCityLengthMin(city)  {
-    if(city.length >= 1) {
-        return true;
-    }
+function isCityLengthMin(city) {
+	if (city.length >= 1) {
+		return true;
+	}
 }
 
-function isCityLengthMax(city)  {
-    if(city.length <= 50) {
-        return true;
-    }
+function isCityLengthMax(city) {
+	if (city.length <= 50) {
+		return true;
+	}
 }
 
 function isCityNumber(city) {
-    return /^[0-9]$/.test(city);
+	return /^[0-9]$/.test(city);
 }
 
 function isCity(city) {
-    return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœðó]+(?:[-'\s][a-zàâäçéèêëîïôöùûüÿæœðóA-ZZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]+)*$/.test(city);
+	return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœðó]+(?:[-'\s][a-zàâäçéèêëîïôöùûüÿæœðóA-ZZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]+)*$/.test(city);
 	// L'Abergement-Clémenciat | L'Abergement-de-Varey | Saint-Denis-lès-Bourg | Saint-Étienne-sur-Reyssouze | Boyeux-Saint-Jérôme | Cormoranche-sur-Saône | Cruzilles-lès-Mépillat
 }
