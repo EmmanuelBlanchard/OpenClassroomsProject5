@@ -37,18 +37,6 @@ function checkInputPassword2() {
 
   if (password2Value === '') {
     setErrorFor(password2, 'Le mot de passe répété ne peut pas être vide');
-  } else if (!isPasswordTiny(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins une lettre minuscule');
-  } else if (!isPasswordUppercase(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins une une lettre majuscule');
-  } else if (!isPasswordNumber(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins un chiffre');
-  } else if (!isPasswordSpecial(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins un caractère spécial');
-  } else if (!isPasswordLength(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins 12 caractères');
-  } else if (!isPassword(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
   } else if (passwordValue !== password2Value) {
     setErrorFor(password2, 'Les mots de passe ne correspondent pas');
   } else {
@@ -89,18 +77,6 @@ function checkInputs(event) {
 
   if (password2Value === '') {
     setErrorFor(password2, 'Le mot de passe répété ne peut pas être vide');
-  } else if (!isPasswordTiny(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins une lettre minuscule');
-  } else if (!isPasswordUppercase(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins une une lettre majuscule');
-  } else if (!isPasswordNumber(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins un chiffre');
-  } else if (!isPasswordSpecial(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins un caractère spécial');
-  } else if (!isPasswordLength(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété doit comporter au moins 12 caractères');
-  } else if (!isPassword(password2Value)) {
-    setErrorFor(password2, 'Le mot de passe répété n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
   } else if (passwordValue !== password2Value) {
     setErrorFor(password2, 'Les mots de passe ne correspondent pas');
   } else {
