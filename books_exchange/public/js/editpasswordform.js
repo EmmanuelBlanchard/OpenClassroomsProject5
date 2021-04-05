@@ -95,34 +95,28 @@ function checkInputs(event) {
 function setErrorFor(input, message) {
   const formControl = input.parentElement;
   formControl.className = 'form-control error';
-
   const inputLabel = document.querySelector('label[for="change_password_form_plainPassword_first"]');
   const inputLabel2 = document.querySelector('label[for="change_password_form_plainPassword_second"]');
-  const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-
+  const inputUlConfirm = document.getElementById('error-confirmation');
+  const inputUlConfirm2 = document.getElementById('error-confirmation2');
   if (input === password) {
-    if (inputLi === null) {
+    if (inputUlConfirm === null) {
       let newUL = document.createElement('ul');
+      newUL.setAttribute('id', 'error-confirmation');
       inputLabel.insertAdjacentElement('afterend', newUL);
-      const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
-      let newLi = document.createElement('li');
-      inputUl.insertAdjacentElement('afterbegin', newLi);
-      const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-      inputLi.textContent = message;
+      newUL.textContent = message;
     } else {
-      inputLi.textContent = message;
+      inputUlConfirm.textContent = message;
     }
   } else {
-    if (inputLi === null) {
+    if (inputUlConfirm2 === null) {
       let newUL = document.createElement('ul');
+      newUL.setAttribute('id', 'error-confirmation2');
       inputLabel2.insertAdjacentElement('afterend', newUL);
-      const inputUl = document.querySelector('div#change_password_form_plainPassword>div>ul');
-      let newLi = document.createElement('li');
-      inputUl.insertAdjacentElement('afterbegin', newLi);
-      const inputLi = document.querySelector('div#change_password_form_plainPassword>div>ul>li');
-      inputLi.textContent = message;
-    } else {
-      inputLi.textContent = message;
+      newUL.textContent = message;
+    }
+    else {
+      inputUlConfirm2.textContent = message;
     }
   }
 }
@@ -130,6 +124,14 @@ function setErrorFor(input, message) {
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = 'form-control success';
+  const inputUlConfirm = document.getElementById('error-confirmation');
+  const inputUlConfirm2 = document.getElementById('error-confirmation2');
+  if (inputUlConfirm !== null) {
+    inputUlConfirm.textContent = '';
+  }
+  if (inputUlConfirm2 !== null) {
+    inputUlConfirm2.textContent = '';
+  }
 }
 
 function isPasswordTiny(password) {
