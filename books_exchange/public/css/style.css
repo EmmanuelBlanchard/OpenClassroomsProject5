@@ -526,7 +526,7 @@ section.introductoryContent>p {
     background-color: #F7F7F7;
 }
 
-.container .h2TitleSelectionOfBooks {
+.sectionOfBookSelection .h2TitleSelectionOfBooks {
     margin-left: 5.3%;
 }
 
@@ -800,37 +800,41 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     color: #842029;
 }
 
-/*
-#registration_form_save {
-    display: none;
-}
-*/
-
 /* Style CSS For Validation FORM BOOTSTRAP */
 /*
-* {
-    box-sizing: border-box;
-}
-
 body {
-    background-color: #9b59b6;
-    font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
 }
-
-.container {
+*/
+#formContainer {
     background-color: #fff;
+    font-family: sans-serif, 'openSansRegular';
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     width: 400px;
     max-width: 100%;
+    padding: inherit;
 }
-*/
+
+#formContainer .form-control {
+    border: none;
+}
+
+.formHeader {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+}
+
+.formHeader h2 {
+    margin: 0;
+}
+
 .form {
     padding: 30px 40px;
 }

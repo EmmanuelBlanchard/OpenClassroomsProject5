@@ -10,85 +10,81 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<div class="row col-sm-12">
-			<div class="col-sm-12">
-				<h1>Modification du profil de
-					{{ app.user.pseudo }}
-				</h1>
-				{{ form_start(editprofileForm, {'attr': {'id': 'edit_profile_form'}}) }}
+	<div class="my-4 mx-auto pb-4" id="formContainer">
+		<div class="formHeader">
+			<h2>Modification du profil de
+				{{ app.user.pseudo }}
+			</h2>
+		</div>
 
-				<div class="form-control">
-					<i class="bi bi-check-circle"></i>
-					<i class="bi bi-exclamation-circle"></i>
-					{{ form_label(editprofileForm.pseudo) }}
-					{{ form_widget(editprofileForm.pseudo) }}
+		{{ form_start(editprofileForm, {'attr': {'id': 'edit_profile_form', 'class': 'form'}}) }}
 
-					<small>{{ form_help(editprofileForm.pseudo) }}</small>
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editprofileForm.pseudo) }}
+			{{ form_widget(editprofileForm.pseudo) }}
 
-					<div class="form-error">
-						{{ form_errors(editprofileForm.pseudo) }}
-					</div>
-				</div>
+			<small>{{ form_help(editprofileForm.pseudo) }}</small>
 
-				<div class="form-control">
-					<i class="bi bi-check-circle"></i>
-					<i class="bi bi-exclamation-circle"></i>
-					{{ form_label(editprofileForm.lastname) }}
-					{{ form_widget(editprofileForm.lastname) }}
-
-					<small>{{ form_help(editprofileForm.lastname) }}</small>
-
-					<div class="form-error">
-						{{ form_errors(editprofileForm.lastname) }}
-					</div>
-				</div>
-
-				<div class="form-control">
-					<i class="bi bi-check-circle"></i>
-					<i class="bi bi-exclamation-circle"></i>
-					{{ form_label(editprofileForm.firstname) }}
-					{{ form_widget(editprofileForm.firstname) }}
-
-					<small>{{ form_help(editprofileForm.firstname) }}</small>
-
-					<div class="form-error">
-						{{ form_errors(editprofileForm.firstname) }}
-					</div>
-				</div>
-
-				<div class="form-control">
-					<i class="bi bi-check-circle"></i>
-					<i class="bi bi-exclamation-circle"></i>
-					{{ form_label(editprofileForm.zipCode) }}
-					{{ form_widget(editprofileForm.zipCode) }}
-
-					<small>{{ form_help(editprofileForm.zipCode) }}</small>
-
-					<div class="form-error">
-						{{ form_errors(editprofileForm.zipCode) }}
-					</div>
-				</div>
-
-				<div class="form-control">
-					<i class="bi bi-check-circle"></i>
-					<i class="bi bi-exclamation-circle"></i>
-					{{ form_label(editprofileForm.city) }}
-					{{ form_widget(editprofileForm.city) }}
-
-					<small>{{ form_help(editprofileForm.city) }}</small>
-
-					<div class="form-error">
-						{{ form_errors(editprofileForm.city) }}
-					</div>
-				</div>
-
-				{{ form_end(editprofileForm) }}
+			<div class="form-error">
+				{{ form_errors(editprofileForm.pseudo) }}
 			</div>
 		</div>
-	</div>
-{% endblock %}
 
-{% block javascripts %}
-	<script src="{{ asset('js/editprofileform.js') }}"></script>
-{% endblock %}
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editprofileForm.lastname) }}
+			{{ form_widget(editprofileForm.lastname) }}
+
+			<small>{{ form_help(editprofileForm.lastname) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editprofileForm.lastname) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editprofileForm.firstname) }}
+			{{ form_widget(editprofileForm.firstname) }}
+
+			<small>{{ form_help(editprofileForm.firstname) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editprofileForm.firstname) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editprofileForm.zipCode) }}
+			{{ form_widget(editprofileForm.zipCode) }}
+
+			<small>{{ form_help(editprofileForm.zipCode) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editprofileForm.zipCode) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editprofileForm.city) }}
+			{{ form_widget(editprofileForm.city) }}
+
+			<small>{{ form_help(editprofileForm.city) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editprofileForm.city) }}
+			</div>
+		</div>
+
+		{{ form_end(editprofileForm) }}
+	</div>
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('js/editprofileform.js') }}"></script>{% endblock %}
