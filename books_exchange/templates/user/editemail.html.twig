@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="my-4 mx-auto pb-4" id="formContainer">
 		{% for message in app.flashes('error') %}
 			<div class="col-sm-12">
 				<div class="alert alert-danger" role="alert">
@@ -18,30 +18,27 @@
 				</div>
 			</div>
 		{% endfor %}
-		<div class="row col-sm-12">
-			<div class="col-sm-12">
-				<h1>Modification de l'e-mail de
-					{{ app.user.pseudo }}
-				</h1>
+		<div class="formHeader">
+			<h2>Modification de l'e-mail de
+				{{ app.user.pseudo }}
+			</h2>
+		</div>
+		{{ form_start(editemailForm, {'attr': {'id': 'editemail_form', 'class': 'form'}}) }}
 
-				{{ form_start(editemailForm, {'attr': {'id': 'editemail_form'}}) }}
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editemailForm.email) }}
+			{{ form_widget(editemailForm.email) }}
 
-				<div class="form-control">
-					<i class="bi bi-check-circle"></i>
-					<i class="bi bi-exclamation-circle"></i>
-					{{ form_label(editemailForm.email) }}
-					{{ form_widget(editemailForm.email) }}
+			<small>{{ form_help(editemailForm.email) }}</small>
 
-					<small>{{ form_help(editemailForm.email) }}</small>
-
-					<div class="form-error">
-						{{ form_errors(editemailForm.email) }}
-					</div>
-				</div>
-
-				{{ form_end(editemailForm) }}
+			<div class="form-error">
+				{{ form_errors(editemailForm.email) }}
 			</div>
 		</div>
+
+		{{ form_end(editemailForm) }}
 	</div>
 {% endblock %}
 

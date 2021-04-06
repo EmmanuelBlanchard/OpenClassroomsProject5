@@ -819,6 +819,7 @@ body {
     width: 400px;
     max-width: 100%;
     padding: inherit;
+    height: min-content;
 }
 
 #formContainer .form-control {
