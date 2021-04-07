@@ -28,13 +28,26 @@
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editemailForm.email) }}
-			{{ form_widget(editemailForm.email) }}
+			{{ form_label(editemailForm.email.first) }}
+			{{ form_widget(editemailForm.email.first) }}
 
-			<small>{{ form_help(editemailForm.email) }}</small>
+			<small>{{ form_help(editemailForm.email.first) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editemailForm.email) }}
+				{{ form_errors(editemailForm.email.first) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editemailForm.email.second) }}
+			{{ form_widget(editemailForm.email.second) }}
+
+			<small>{{ form_help(editemailForm.email.second) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editemailForm.email.second) }}
 			</div>
 		</div>
 

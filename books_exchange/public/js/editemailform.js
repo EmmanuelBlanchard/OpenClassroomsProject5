@@ -74,44 +74,14 @@ function checkInputs(event) {
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement;
+  const small = formControl.querySelector('small');
   formControl.className = 'form-control error';
-  const inputLabel = document.querySelector('label[for="edit_email_form_email_first"]');
-  const inputLabel2 = document.querySelector('label[for="edit_email_form_email_second"]');
-  const inputUlConfirm = document.getElementById('error-confirmation');
-  const inputUlConfirm2 = document.getElementById('error-confirmation2');
-  if (input === email) {
-    if (inputUlConfirm === null) {
-      let newUL = document.createElement('ul');
-      newUL.setAttribute('id', 'error-confirmation');
-      inputLabel.insertAdjacentElement('afterend', newUL);
-      newUL.textContent = message;
-    } else {
-      inputUlConfirm.textContent = message;
-    }
-  } else {
-    if (inputUlConfirm2 === null) {
-      let newUL = document.createElement('ul');
-      newUL.setAttribute('id', 'error-confirmation2');
-      inputLabel2.insertAdjacentElement('afterend', newUL);
-      newUL.textContent = message;
-    }
-    else {
-      inputUlConfirm2.textContent = message;
-    }
-  }
+  small.innerText = message;
 }
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = 'form-control success';
-  const inputUlConfirm = document.getElementById('error-confirmation');
-  const inputUlConfirm2 = document.getElementById('error-confirmation2');
-  if (inputUlConfirm !== null) {
-    inputUlConfirm.textContent = '';
-  }
-  if (inputUlConfirm2 !== null) {
-    inputUlConfirm2.textContent = '';
-  }
 }
 
 function isEmail(email) {
