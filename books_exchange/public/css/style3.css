@@ -106,9 +106,10 @@ main {
 }
 
 .asideSearchBar {
-    display: flex;
+
+    /*display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;*/
     background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
     /* main tag has class="container' delete properties margin-left:20%;
@@ -127,6 +128,8 @@ form {
 */
 
 .formSearchBar {
+    display: block;
+    width: 100%;
     background-color: #FFF;
 }
 
@@ -161,8 +164,7 @@ form {
     background-color: #F7F7F7;
 }
 
-.paragraphOfWelcomeOfPseudo {
-    font-size: 2em;
+.h2OfWelcomeOfPseudo {
     font-weight: bold;
 }
 

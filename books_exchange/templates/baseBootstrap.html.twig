@@ -56,51 +56,25 @@
 		</div>
 
 		<main class="container-xxl my-md-4 bd-layout">
-			<aside>
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-					<button class="btn btn-outline-orange" type="submit">Rechercher</button>
+			<aside class="asideSearchBar  col-sm-3 col-md-12 hidden-print">
+				<form action="" class="formSearchBar px-3 py-5 col-12">
+					<input class="form-control me-2 searchInput" type="search" placeholder="Rechercher" aria-label="Rechercher">
+					<button class="btn btn-outline-orange searchButton" type="submit">Rechercher</button>
 				</form>
 				{% if app.user %}
-					<aside class="bd-sidebar">
-						<nav id="bd-docs-nav" class="bd-links collapse" aria-label="">
-							<h2>Salut
-								{{ app.user.pseudo }}
-							</h2>
-							<ul class="list-unstyled md-0 py-3 pt-md-1">
-								<li class="mb-1">
-									<button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#your-account-collapse" aria-expanded="true" aria-current="true">Votre compte</button>
-									<div id="your-account-collapse" class="collapse show">
-										<ul class="list-unstyled fw-normal pb-1 small">
-											<li>
-												<a class="d-inline-flex align-items-center rounded active" href="{{ path('user') }}" aria-current="page">Gérer mon compte</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li class="mb-1">
-									<button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#library-collapse" aria-expanded="false">Bibliothèque</button>
-									<div id="library-collapse" class="collapse">
-										<ul class="list-unstyled fw-normal pb-1 small">
-											<li>
-												<a class="d-inline-flex align-items-center rounded" href="{{ path('user_book') }}">Stock de livres</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li class="mb-1">
-									<button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#exchanges-collapse" aria-expanded="false">Échanges</button>
-									<div id="exchanges-collapse" class="collapse">
-										<ul class="list-unstyled fw-normal pb-1 small">
-											<li>
-												<a class="d-inline-flex align-items-center rounded" href="{{ path('user_book_show_exchange') }}">Échange de livres</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</aside>
+					<div class="informationAboutTheAccountTheLibraryTheExchanges">
+						<h2 class="h2OfWelcomeOfPseudo">Salut
+							{{ app.user.pseudo }}
+						</h2>
+						<div class="divAboutTheAccountTheLibraryTheExchanges">
+							<h3>Votre compte</h3>
+							<a href="{{ path('user') }}" class="linkManageMyAccount">Gérer mon compte</a>
+							<h3>Bibliothèque</h3>
+							<a href="{{ path('user_book') }}" class="linkStockOfBooks">Stock de livres</a>
+							<h3>Échanges</h3>
+							<a href="{{ path('user_book_show_exchange') }}" class="linkBookExchange">Échange de livres</a>
+						</div>
+					</div>
 				{% endif %}
 			</aside>
 			{% block body %}{% endblock %}
