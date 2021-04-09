@@ -1,3 +1,7 @@
+.bg-gray97 {
+    background-color: #F7F7F7;
+}
+
 ul {
     list-style-type: none;
 }
@@ -51,6 +55,11 @@ nav ul {
     padding-left: 0%;
 }
 */
+
+nav.nav.nav-underline {
+    display: flex;
+    justify-content: center;
+}
 
 nav#bd-docs-nav.bd-links.collapse>h2 {
     color: black;
