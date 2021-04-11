@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\State;
 use App\Entity\Author;
@@ -21,7 +21,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin", name="admin_")
- * @package App\Controller
+ * @package App\Controller\Admin
  */
 class AdminController extends AbstractController
 {
