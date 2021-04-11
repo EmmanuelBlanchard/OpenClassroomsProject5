@@ -61,6 +61,28 @@ class CategoryController extends AbstractController
     }
 
     /**
+     * @Route("/update/{id}", name="update")
+     */
+    public function updateCategory(Category $category, Request $request): Response
+    {
+        $form = $this->createForm(CategoryFormType::class, $category);
+        
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($category);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_category_home');
+        }
+
+        return $this->render('admin/category/update.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
      * @Route("/publisher/add", name="publisher_add")
      */
     public function addPublisher(Request $request): Response

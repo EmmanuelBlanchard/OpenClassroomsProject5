@@ -23,7 +23,9 @@
 					<th scope="row">{{item.id}}</th>
 					<td>{{item.name}}</td>
 					<td>{{item.parent}}</td>
-					<td class="text-center"></td>
+					<td class="text-center">
+						<a class="btn btn-primary" href="{{ path("admin_category_update", {id: item.id}) }}" role="button">Modifier</a>
+					</td>
 				</tr>
 			{% endfor %}
 		</tbody>
