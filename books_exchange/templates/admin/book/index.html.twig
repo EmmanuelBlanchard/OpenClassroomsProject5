@@ -1,0 +1,54 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}Gérer les livres
+{% endblock %}
+
+{% block body %}
+	<h1>Gérer les livres</h1>
+
+	<a class="btn btn-primary" href="{{ path("admin_book_add") }}" role="button">Ajouter un livre</a>
+
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Titre</th>
+				<th scope="col">Date</th>
+				<th scope="col">Active</th>
+				<th scope="col">Auteur</th>
+				<th scope="col">Catégorie</th>
+				<th scope="col">Éditeur</th>
+				<th scope="col">Résumé</th>
+				<th scope="col">Langue</th>
+				<th scope="col">Format</th>
+				<th scope="col">État du livre</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in book %}
+				<tr>
+					<th scope="row">{{item.id}}</th>
+					<td>{{item.title}}</td>
+					<td>{{item.createdAt|date('d/m/Y')}}</td>
+					<td>{{item.active}}
+						<div class="form-check form-switch">
+							<input class="form-check-input" id="flexSwitchCheckDefault" type="checkbox" {{ (item.active) ? 'checked' : ''}}>
+							<label class="form-check-label" for="flexSwitchCheckDefault"></label>
+						</div>
+					</td>
+					<td>{{item.author}}</td>
+					<td>{{item.category}}</td>
+					<td>{{item.publisher}}</td>
+					<td>{{item.summary}}</td>
+					<td>{{item.language}}</td>
+					<td>{{item.format}}</td>
+					<td>{{item.state}}</td>
+					<td class="text-center">
+						<a class="btn btn-primary" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

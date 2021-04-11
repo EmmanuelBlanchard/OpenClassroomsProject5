@@ -22,27 +22,37 @@ class BookFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class)
+            ->add('title', TextType::class, [
+                'label'=>'Titre',
+            ])
             ->add('author', EntityType::class, [
-                'class' => Author::class
+                'class' => Author::class,
+                'label' => 'Auteur',
             ])
             ->add('category', EntityType::class, [
-                'class' => Category::class
+                'class' => Category::class,
+                'label' => 'Catégorie',
             ])
             ->add('publisher', EntityType::class, [
-                'class' => Publisher::class
+                'class' => Publisher::class,
+                'label' => 'Éditeur',
             ])
             ->add('summary', TextareaType::class)
             ->add('language', EntityType::class, [
-                'class' => Language::class
+                'class' => Language::class,
+                'label' => 'Language',
             ])
             ->add('format', EntityType::class, [
-                'class' => Format::class
+                'class' => Format::class,
+                'label' => 'Format',
             ])
             ->add('state', EntityType::class, [
-                'class' => State::class
+                'class' => State::class,
+                'label' => 'État',
             ])
-            ->add('validate', SubmitType::class)
+            ->add('validate', SubmitType::class, [
+                'label'=>'Valider',
+            ])
         ;
     }
 
