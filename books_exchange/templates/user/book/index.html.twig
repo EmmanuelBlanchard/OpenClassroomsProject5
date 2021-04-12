@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
 {% block title %}
 	Stock de livres de
@@ -21,17 +21,17 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h1>Stock de livres</h1>
+		<h2 class="h2ConnectedBookStockAddABook my-3">Stock de livres</h2>
 
 		<div class="col-sm-12">
-			<h1>Votre stock
+			<h3 class="h3ConnectedBookStockAddABook">Votre stock
 				{% if app.user.books|length == "0" %}
 					(0 livre)
 				{% else %}
 					({{ app.user.books|length }}
 					livres)
 				{% endif %}
-			</h1>
+			</h3>
 		</div>
 
 		{% if app.user.books|length == "0" %}
@@ -42,7 +42,7 @@
 
 		{% endif %}
 
-		<a href="{{ path('user_book_add') }}">Ajouter un livre</a>
+		<a class="btn btn-success" href="{{ path('user_book_add') }}" role="button">Ajouter un livre</a>
 
 		<div class="row col-sm-12">
 			<div class="col-sm-12">
