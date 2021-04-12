@@ -585,13 +585,11 @@ section.blockOfStoredBookInformation>p.line.state,
     /* 22.7px */
 }
 
-.divExchangeButton,
-.divRemoveFromBookStockButton {
+.divExchangeButton {
     align-self: center;
 }
 
-.exchangeButton,
-.removeFromBookStockButton {
+.exchangeButton {
     font-size: 1.1em;
     border-radius: 0.5em;
 }
@@ -600,14 +598,6 @@ section.blockOfStoredBookInformation>p.line.state,
     color: #FFF;
     background-color: #196216;
     padding: 0.5em 1em;
-}
-
-.removeFromBookStockButton {
-    color: #000;
-    background-color: #FFF;
-    border: 0.01em solid #CCCCCC;
-    padding: 0.25em 1em;
-    /* before 0.5 1em; */
 }
 
 /* Wireframe 2-4-5-7 */

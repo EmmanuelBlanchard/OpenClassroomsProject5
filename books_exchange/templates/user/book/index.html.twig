@@ -70,7 +70,10 @@
 				<div class="col-sm-3">État du livre :</div>
 				<div class="col-sm-9">{{ books.state }}</div>
 
-				<a href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+				<div class="col-sm-3">
+					<a class="btn btn-outline-secondary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+				</div>
+
 			{% endfor %}
 		</div>
 	</div>
