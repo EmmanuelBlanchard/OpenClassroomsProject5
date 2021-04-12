@@ -96,4 +96,17 @@ class BookController extends AbstractController
         return new Response("true");
 
     }
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function deleteBook(Book $book): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($book);
+        $entityManager->flush();
+
+        $this->addFlash('message', 'Livre supprimé avec succès');
+        return $this->redirectToRoute('admin_book_home');
+    }
 }
