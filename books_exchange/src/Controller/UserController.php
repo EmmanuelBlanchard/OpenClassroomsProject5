@@ -133,6 +133,28 @@ class UserController extends AbstractController
     }
 
     /**
+     * @Route("/user/book/{id}/cancel/exchange", name="user_book_cancel_exchange")
+     */
+    public function bookCancelExchange(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $book = $repository->find($id);
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(false);
+            $book->setExchangeRequest(true);
+            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre retiré de l\'échange de livres');
+        }
+        return $this->redirectToRoute('user_book');
+    }
+
+    /**
      * @Route("/user/profile/edit", name="user_profile_edit")
      */
     public function editProfile(Request $request): Response
