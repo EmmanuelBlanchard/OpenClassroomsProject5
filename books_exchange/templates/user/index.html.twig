@@ -44,10 +44,10 @@
 						<div class="col-sm-9 p-3 border">{{ app.user.zipCode }}</div>
 						<div class="col-sm-3 p-3 border">Ville :</div>
 						<div class="col-sm-9 p-3 border">{{ app.user.city }}</div>
-						<div class="col-sm-12">
-							<a class="btn btn-primary" href="{{ path('user_profile_edit') }}" role="button">Modifier le profil</a>
-							<a class="btn btn-primary" href="{{ path('user_email_edit') }}" role="button">Modifier l'e-mail</a>
-							<a class="btn btn-primary" href="{{ path('user_password_edit') }}" role="button">Modifier le mot de passe</a>
+						<div class="col-sm-12 py-4 px-4">
+							<a class="btn btn-primary mx-4" href="{{ path('user_profile_edit') }}" role="button">Modifier le profil</a>
+							<a class="btn btn-primary mx-4" href="{{ path('user_email_edit') }}" role="button">Modifier l'e-mail</a>
+							<a class="btn btn-primary mx-4" href="{{ path('user_password_edit') }}" role="button">Modifier le mot de passe</a>
 						</div>
 					</div>
 				</div>
@@ -69,7 +69,6 @@
 							<th scope="col">Auteur</th>
 							<th scope="col">Catégorie</th>
 							<th scope="col">Éditeur</th>
-							<th scope="col">Résumé</th>
 							<th scope="col">Langue</th>
 							<th scope="col">Format</th>
 							<th scope="col">État</th>
@@ -85,7 +84,6 @@
 								<td>{{ books.author }}</td>
 								<td>{{ books.category }}</td>
 								<td>{{ books.publisher }}</td>
-								<td>{{ books.summary }}</td>
 								<td>{{ books.language }}</td>
 								<td>{{ books.format }}</td>
 								<td>{{ books.state }}</td>
