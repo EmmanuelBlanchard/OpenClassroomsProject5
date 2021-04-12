@@ -115,26 +115,9 @@ main {
 }
 
 .asideSearchBar {
-
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;*/
     background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
-    /* main tag has class="container' delete properties margin-left:20%;
-    margin-left: 20%;
-    height: 100vh;*/
-    /* to make the color #f7f7f7 go to the bottom of the screen */
 }
-
-/*
-form {
-    padding-top: 20%;
-    padding-left: 7.1%;
-    padding-right: 7.1%;
-    padding-bottom: 11%;
-}
-*/
 
 .formSearchBar {
     display: block;
@@ -143,14 +126,14 @@ form {
 }
 
 .btn.btn-outline-orange {
-    color: #fd7e14;
-    border-color: #fd7e14;
+    color: #CD4109;
+    border-color: #CD4109;
 }
 
 .btn.btn-outline-orange:hover {
     color: #fff;
-    background-color: #fd7e14;
-    border-color: #fd7e14;
+    background-color: #CD4109;
+    border-color: #CD4109;
 }
 
 .searchInput {
