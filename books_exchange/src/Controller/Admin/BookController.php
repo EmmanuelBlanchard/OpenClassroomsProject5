@@ -82,4 +82,18 @@ class BookController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/activate/{id}", name="activate")
+     */
+    public function activateBook(Book $book): Response
+    {
+        $book->setActive(($book->getActive())?false:true);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($book);
+        $entityManager->flush();
+
+        return new Response("true");
+
+    }
 }
