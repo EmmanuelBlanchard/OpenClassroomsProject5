@@ -798,6 +798,7 @@ body {
 .form-control label {
     display: inline-block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .form-control input {
