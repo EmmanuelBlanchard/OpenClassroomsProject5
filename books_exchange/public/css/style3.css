@@ -310,6 +310,12 @@ a.linkBookExchange:visited {
     margin-bottom: 10%;
 }
 
+.h2ConnectedBookExchangeClickOnTheBookExchangeLink {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
 .h3ConnectedBookStockAddABook,
 .h3ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookStocked,
