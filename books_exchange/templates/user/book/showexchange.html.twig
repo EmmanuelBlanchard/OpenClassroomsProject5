@@ -22,17 +22,17 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h1>Échange de livres</h1>
+		<h2 class="h2ConnectedBookExchangeClickOnTheBookExchangeLink my-3">Échange de livres</h2>
 
 		<div class="col-sm-12">
-			<h1>Vos échanges
+			<h3 class="h3ConnectedBookExchangeClickOnTheBookExchangeLink">Vos échanges
 				{% if books|length == "0" %}
 					(0 livre)
 				{% else %}
 					({{ books|length }}
 					livres)
 				{% endif %}
-			</h1>
+			</h3>
 		</div>
 
 		{% if books|length == "0" %}
