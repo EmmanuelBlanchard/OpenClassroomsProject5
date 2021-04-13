@@ -74,8 +74,12 @@ nav ul li a,
     font-size: 1.55em;
 }
 
-nav a {
-    color: #0854A2;
+li.nav-item>a.nav-link.nav-blue {
+    color: rgb(8, 84, 162);
+}
+
+li.nav-item>a.nav-link.nav-blue:hover {
+    color: rgb(3, 36, 69);
 }
 
 nav a:link {
@@ -136,14 +140,6 @@ main {
     color: #fff;
     background-color: #CD4109;
     border-color: #CD4109;
-}
-
-.searchInput {
-    width: 100%;
-    height: 2.7em;
-    margin-bottom: 5%;
-    border: 0.3em solid #CD4109;
-    border-radius: 0.5em;
 }
 
 .searchButton {
