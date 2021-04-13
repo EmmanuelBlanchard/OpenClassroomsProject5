@@ -144,7 +144,7 @@ class UserController extends AbstractController
             $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
             $book->setActive(false);
-            $book->setExchangeRequest(true);
+            $book->setExchangeRequest(false);
             $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
