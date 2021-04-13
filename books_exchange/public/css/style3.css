@@ -394,10 +394,10 @@ section.introductoryContent>p {
 .divConnectedBookStockBookStocked,
 .divConnectedBookExchangeClickOnTheBookExchangeLink,
 .divConnectedBookExchangeSearchForTheBookHarryPotter {
-    margin: 0 auto;
+    margin: 1.5rem auto;
     border-radius: 0.6em;
     background-color: #0854A2;
-    padding: 2% 5%;
+    padding: 1rem;
 }
 
 .divConnectedBookStockAddABook {
@@ -412,7 +412,7 @@ section.introductoryContent>p {
 .divConnectedBookExchangeClickOnTheBookExchangeLink,
 .divConnectedBookExchangeSearchForTheBookHarryPotter {
     width: 52.8%;
-    padding: 2% 2%;
+    padding: 1rem;
 }
 
 /* Wireframes 3-5-6-7-8-9-10-11-12-13-14 */
@@ -689,11 +689,9 @@ form.formConnectedBookStockBookAdditionForm>div>label {
 }
 
 .divExchangeInstructions {
-    margin: 3.8% auto;
     width: 69.5%;
     border-radius: 0.94em;
     background-color: #186135;
-    padding: 2% 5%;
 }
 
 .paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
