@@ -442,6 +442,10 @@ section.introductoryContent>p {
     color: #FFF;
 }
 
+.divConnectedBookExchangeClickOnTheBookExchangeLink p {
+    margin: .5rem auto;
+}
+
 /* Wireframe 3 */
 .paragraphOfTheEmailDisplay {
     text-align: center;
