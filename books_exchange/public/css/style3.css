@@ -781,6 +781,8 @@ body {
 
 .formHeader h2 {
     margin: 0;
+    color: #186135;
+    font-weight: 700;
 }
 
 .form {
