@@ -123,6 +123,7 @@ main {
     display: block;
     width: 100%;
     background-color: #FFF;
+    border-radius: 0.5rem;
 }
 
 .btn.btn-outline-orange {
