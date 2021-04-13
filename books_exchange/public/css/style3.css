@@ -154,8 +154,10 @@ main {
 
 
 .informationAboutTheAccountTheLibraryTheExchanges {
-    background-color: #F7F7F7;
-    padding: 1.5rem 1rem;
+    background-color: #FFF;
+    padding: 1.5rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
 }
 
 .h2OfWelcomeOfPseudo {
