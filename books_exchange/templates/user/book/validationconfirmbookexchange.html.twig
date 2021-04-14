@@ -1,10 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
 {% block title %}
 	Échange de livres de
 	{{ app.user.pseudo }}
 {% endblock %}
-
 
 {% block body %}
 	<div class="container">
@@ -31,13 +30,13 @@
 						{{ book.title }}</span>
 					avec
 				</p>
-				<p>État:
+				<p class="paragraphDisplayingInformationBookRequestedExchange">État:
 					<span>{{book.state}}</span>
 				</p>
-				<p>Propriétaire:
+				<p class="paragraphDisplayingInformationBookRequestedExchange">Propriétaire:
 					<span>{{book.user.pseudo}}</span>
 				</p>
-				<p>Localisation:
+				<p class="paragraphDisplayingInformationBookRequestedExchange">Localisation:
 					<span>{{book.user.city}}
 						{{book.user.zipCode}}</span>
 				</p>
