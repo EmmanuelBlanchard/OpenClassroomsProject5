@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
 {% block title %}
 	Stock de livres de
@@ -10,40 +10,118 @@
 	{% for message in app.flashes('success') %}
 		<div class="alert alert-success" role="alert">{{ message }}</div>
 	{% endfor %}
-	<div class="container">
-		<div class="row col-sm-12">
-			<div class="col-sm-12">
-				<h1>Ajouter un livre</h1>
-				{{ form_start(addbookForm) }}
-				{{ form_row(addbookForm.title, {
-					label: 'Titre : '
-				}) }}
-				{{ form_row(addbookForm.author, {
-					label: 'Auteur : '
-				}) }}
-				{{ form_row(addbookForm.category, {
-					label: 'Catégorie : '
-				}) }}
-				{{ form_row(addbookForm.publisher, {
-					label: 'Éditeur : '
-				}) }}
-				{{ form_row(addbookForm.summary, {
-					label: 'Résumé : '
-				}) }}
-				{{ form_row(addbookForm.language, {
-					label: 'Langue : '
-				}) }}
-				{{ form_row(addbookForm.format, {
-					label: 'Format : '
-				}) }}
-				{{ form_row(addbookForm.state, {
-					label: 'État du livre : '
-				}) }}
-				{{ form_row(addbookForm.validate, {
-					label: 'Valider'
-				}) }}
-				{{ form_end(addbookForm) }}
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Ajouter un livre</h2>
+		</div>
+
+		{{ form_start(addbookForm, {'attr': {'id': 'add_book_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.title) }}
+			{{ form_widget(addbookForm.title) }}
+
+			<small>{{ form_help(addbookForm.title) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.title) }}
 			</div>
 		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.author) }}
+			{{ form_widget(addbookForm.author) }}
+
+			<small>{{ form_help(addbookForm.author) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.author) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.category) }}
+			{{ form_widget(addbookForm.category) }}
+
+			<small>{{ form_help(addbookForm.category) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.category) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.publisher) }}
+			{{ form_widget(addbookForm.publisher) }}
+
+			<small>{{ form_help(addbookForm.publisher) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.publisher) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.summary) }}
+			{{ form_widget(addbookForm.summary) }}
+
+			<small>{{ form_help(addbookForm.summary) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.summary) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.language) }}
+			{{ form_widget(addbookForm.language) }}
+
+			<small>{{ form_help(addbookForm.language) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.language) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.format) }}
+			{{ form_widget(addbookForm.format) }}
+
+			<small>{{ form_help(addbookForm.format) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.format) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addbookForm.state) }}
+			{{ form_widget(addbookForm.state) }}
+
+			<small>{{ form_help(addbookForm.state) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addbookForm.state) }}
+			</div>
+		</div>
+
+		{{ form_end(addbookForm) }}
+
 	</div>
 {% endblock %}

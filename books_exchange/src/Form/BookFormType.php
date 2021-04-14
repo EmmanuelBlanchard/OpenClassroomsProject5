@@ -37,10 +37,12 @@ class BookFormType extends AbstractType
                 'class' => Publisher::class,
                 'label' => 'Éditeur',
             ])
-            ->add('summary', TextareaType::class)
+            ->add('summary', TextareaType::class, [
+                'label'=>'Résumé',
+            ])
             ->add('language', EntityType::class, [
                 'class' => Language::class,
-                'label' => 'Language',
+                'label' => 'Langage',
             ])
             ->add('format', EntityType::class, [
                 'class' => Format::class,
