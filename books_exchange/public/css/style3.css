@@ -272,7 +272,7 @@ a.linkBookExchange:visited {
     font-weight: 700;
     color: #186135;
     width: 72.5%;
-    font-size: 2.2em;
+    /*font-size: 2.2em;*/
     background-color: #F7F7F7;
     margin-left: 10%;
     padding-top: 4%;
@@ -281,7 +281,8 @@ a.linkBookExchange:visited {
     border-radius: 0.5rem;
 }
 
-.h2ConnectedBookExchangeConfirmBookExchange {
+.h2ConnectedBookExchangeConfirmBookExchange,
+.h2ConnectedBookExchangeConfirmationOfTheExchangeRequest {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
@@ -324,7 +325,8 @@ a.linkBookExchange:visited {
     margin-bottom: 1rem;
 }
 
-.h2ConnectedBookExchangeConfirmBookExchange {
+.h2ConnectedBookExchangeConfirmBookExchange,
+.h2ConnectedBookExchangeConfirmationOfTheExchangeRequest {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 }
@@ -387,22 +389,16 @@ section.introductoryContent>p {
     margin: 0 auto;
     width: 75.5%;
     border: 0.1em solid #186135;
-    border-radius: 0.94em;
-    background-color: #F7F7F7;
-    padding: 2% 5%;
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #F7F7F7;
+    padding: 20px 40px;
 }
 
 /* Wireframe 12 */
 .divConnectedBookExchangeConfirmBookExchange {
     width: 60.5%;
     text-align: center;
-}
-
-/* Wireframe 13 */
-.divConnectedBookExchangeConfirmationOfTheExchangeRequest {
-    width: 89.5%;
 }
 
 /* Wireframe 14 */
