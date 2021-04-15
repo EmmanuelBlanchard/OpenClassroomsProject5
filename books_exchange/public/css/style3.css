@@ -601,9 +601,7 @@ section.blockOfStoredBookInformation>p.line.state,
 }
 
 /* Wireframe 2-4-5-7 */
-form[name="registration_form"],
 form[name="login_form"],
-.formCreateAccount,
 .formLoginToTheAccount,
 .formConnectedTotheAccount,
 .formConnectedBookStockBookAdditionForm {
@@ -612,15 +610,6 @@ form[name="login_form"],
     border: 0.3em solid #186135;
     border-radius: 0.94em;
     background-color: #F7F7F7;
-}
-
-/* Wireframe 2 */
-form[name="registration_form"],
-.formCreateAccount {
-    padding-top: 2%;
-    /* 30px => 4% */
-    padding-bottom: 2%;
-    /* 30px => 4%  | 16px => 2% */
 }
 
 /* Wireframe 4-5-7 */
@@ -637,16 +626,12 @@ form[name="login_form"],
     text-align: center;
 }
 
-form[name="registration_form"] div,
-.formCreateAccount div,
 form[name="login_form"] div,
 .formLoginToTheAccount div,
 .formConnectedBookStockBookAdditionForm div {
     margin: 6% 0;
 }
 
-form[name="registration_form"]>div>label,
-form.formCreateAccount>div>label,
 form[name="login_form"]>div>label,
 form.formLoginToTheAccount>div>label,
 form.formConnectedBookStockBookAdditionForm>div>label {
