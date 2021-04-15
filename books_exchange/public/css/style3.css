@@ -350,14 +350,6 @@ section.introductoryContent>p {
     margin-left: 19.2%;
 }
 
-/* Wireframe 2 -Create Account */
-.paragraphsOfCreateAccount {
-    font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.1em;
-    color: #000;
-    margin-left: 11.25%;
-}
-
 /* Wireframes 3-5-12-13-14 */
 .divConfirmAccountEmailAddress,
 .divConnectedTotheAccount,
