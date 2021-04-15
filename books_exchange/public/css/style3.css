@@ -15,14 +15,10 @@ div a {
     align-items: center;
 }
 
-/*
 .imgLogo {
-    width: 5.1em;
-    // 65px => 4.1em ou 5.1em => 81.6px
-    height: 5.1em;
-    // 65px  => 4.1em ou 5.1em => 81.6px 
+    width: 64px;
+    height: 64px;
 }
-*/
 
 .brandNameExchange,
 .brandNameBook {
