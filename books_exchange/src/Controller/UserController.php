@@ -229,23 +229,6 @@ class UserController extends AbstractController
         return $this->render('user/editemail.html.twig', [
             'editemailForm' => $form->createView()
         ]);
-
-        /*
-        if($request->isMethod('POST')) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $user = $this->getUser();
-            // We check if the 2 e-mails are identical
-            if($request->request->get('email') === $request->request->get('email2')){
-                $user->setEmail($request->request->get('email'));
-                $entityManager->flush();
-                $this->addFlash('message', 'E-mail mis à jour avec succès');
-                return $this->redirectToRoute('user');
-            } else {
-                $this->addFlash('error', 'Les deux e-mail ne sont pas identiques');
-            }
-        }
-        return $this->render('user/editemail.html.twig');
-        */
     }
 
 }

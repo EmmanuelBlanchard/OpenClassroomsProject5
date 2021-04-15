@@ -254,7 +254,6 @@ a.linkBookExchange:visited {
 /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
 .h2CreateAccount,
 .h2ConfirmAccountEmailAddress,
-.h2LoginToTheAccount,
 .h2ConnectedTotheAccount,
 .h2ConnectedBookStockAddABook,
 .h3ConnectedBookStockAddABook,
@@ -282,7 +281,6 @@ a.linkBookExchange:visited {
 
 .h2CreateAccount,
 .h2ConfirmAccountEmailAddress,
-.h2LoginToTheAccount,
 .h2ConnectedTotheAccount,
 .h2ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
@@ -297,7 +295,6 @@ a.linkBookExchange:visited {
 
 /* Wireframe 3-4-5-6-7-8-9-10-12-13 */
 .h2ConfirmAccountEmailAddress,
-.h2LoginToTheAccount,
 .h2ConnectedTotheAccount,
 .h2ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
@@ -601,8 +598,6 @@ section.blockOfStoredBookInformation>p.line.state,
 }
 
 /* Wireframe 2-4-5-7 */
-form[name="login_form"],
-.formLoginToTheAccount,
 .formConnectedTotheAccount,
 .formConnectedBookStockBookAdditionForm {
     margin: 0 auto;
@@ -613,8 +608,6 @@ form[name="login_form"],
 }
 
 /* Wireframe 4-5-7 */
-form[name="login_form"],
-.formLoginToTheAccount,
 .formConnectedTotheAccount,
 .formConnectedBookStockBookAdditionForm {
     padding: 2% 5%;
@@ -626,20 +619,14 @@ form[name="login_form"],
     text-align: center;
 }
 
-form[name="login_form"] div,
-.formLoginToTheAccount div,
 .formConnectedBookStockBookAdditionForm div {
     margin: 6% 0;
 }
 
-form[name="login_form"]>div>label,
-form.formLoginToTheAccount>div>label,
 form.formConnectedBookStockBookAdditionForm>div>label {
     font-size: 1.16em;
 }
 
-.divButtonCreateAccount,
-.divButtonLoginToTheAccount,
 .divButtonConnectedTotheAccount,
 .divButtonConnectedBookStockAddABook,
 .divButtonConnectedBookStockBookAdditionForm,
@@ -648,8 +635,6 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     justify-content: center;
 }
 
-.buttonCreateAccount,
-.buttonLoginToTheAccount,
 .buttonConnectedTotheAccount,
 .buttonConnectedBookStockAddABook,
 .buttonConnectedBookStockBookAdditionForm,
@@ -658,13 +643,10 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     background-color: #186135;
     font-family: 'openSansRegular';
     font-size: 1.16em;
-    /* 14pt => 18.66px => em */
     font-weight: bold;
     border: 0 solid #186135;
     border-radius: 0.6em;
-    /* 0.94em, 0.6em */
     padding: 3% 3%;
-    /* width 150px , 10px */
 }
 
 .buttonConfirmTheExchange {
@@ -694,8 +676,7 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     background-color: #186135;
 }
 
-.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-.paragraphForgottenPasswordLink {
+.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
     text-align: center;
 }
 
@@ -759,7 +740,6 @@ body {
     padding: inherit;
     height: min-content;
     margin: 2.5rem auto;
-    padding-bottom: 1.5rem;
 }
 
 #formContainer .form-control {
@@ -864,4 +844,11 @@ body {
     padding: 10px;
     margin-top: 20px;
     width: 100%;
+}
+
+.formFooter {
+    border-top: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    text-align: center;
 }
