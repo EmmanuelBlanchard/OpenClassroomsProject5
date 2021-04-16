@@ -25,10 +25,10 @@
 		<div class="my-3 p-3 bg-body rounded shadow-sm">
 			<div class="row col-sm-12">
 				<div class="col-sm-12">
-					<h1>Profil de
+					<h2 class="h2ConnectedProfile">Profil de
 						{{ app.user.firstname }}
 						{{ app.user.lastname }}
-					</h1>
+					</h2>
 				</div>
 				<div class="container">
 					<div class="row row-cols-2 gx-4 gy-4">
@@ -53,13 +53,12 @@
 				</div>
 
 				<div class="col-sm-12">
-					<h1>Livres de
+					<h3 class="h3ConnectedUserBook">Livres de
 						{{ app.user.firstname }}
 						{{ app.user.lastname }}
 						({{ app.user.books|length }})
-					</h1>
+					</h3>
 				</div>
-
 
 				<table class="table">
 					<thead>
@@ -78,7 +77,6 @@
 					<tbody>
 						{% for books in app.user.books %}
 							<tr>
-
 								<th scope="row">{{ books.id }}</th>
 								<td>{{ books.title }}</td>
 								<td>{{ books.author }}</td>

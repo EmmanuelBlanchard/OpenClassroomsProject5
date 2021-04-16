@@ -305,6 +305,8 @@ a.linkBookExchange:visited {
 /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
 .h2ConfirmAccountEmailAddress,
 .h2ConnectedTotheAccount,
+.h2ConnectedProfile,
+.h3ConnectedUserBook,
 .h2ConnectedBookStockAddABook,
 .h3ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
@@ -331,6 +333,7 @@ a.linkBookExchange:visited {
 
 .h2ConfirmAccountEmailAddress,
 .h2ConnectedTotheAccount,
+.h2ConnectedProfile,
 .h2ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
@@ -345,6 +348,7 @@ a.linkBookExchange:visited {
 /* Wireframe 3-4-5-6-7-8-9-10-12-13 */
 .h2ConfirmAccountEmailAddress,
 .h2ConnectedTotheAccount,
+.h2ConnectedProfile,
 .h2ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
@@ -357,15 +361,13 @@ a.linkBookExchange:visited {
     margin-bottom: 2.5rem;
 }
 
+.h3ConnectedUserBook,
 .h3ConnectedBookStockAddABook,
 .h3ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookStocked,
 .h3ConnectedBookExchangeClickOnTheBookExchangeLink,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter {
-    font-size: 1.3em;
-    padding-top: 1.54%;
-    padding-left: 2.4%;
-    padding-bottom: 1.54%;
+    padding: 10px 20px;
 }
 
 section.introductoryContent>p {
