@@ -1,3 +1,58 @@
+@font-face {
+    font-family: 'openSansRegular';
+    src: local('openSansRegular'),
+        local('Open Sans Regular'),
+        local('open Sans Regular'),
+        url('../fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MerriweatherRegular';
+    src: local('MerriweatherRegular'),
+        local('Merriweather Regular'),
+        local('merriweather Regular'),
+        url('../fonts/Merriweather-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/Merriweather-Regular-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RobotoRegular';
+    src: local('RobotoRegular'),
+        local('Roboto Regular'),
+        local('roboto Regular'),
+        url('../fonts/Roboto-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'openSansRegular', Arial, sans-serif, serif;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .bg-gray97 {
     background-color: #F7F7F7;
 }
