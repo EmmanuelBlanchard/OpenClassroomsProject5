@@ -732,6 +732,11 @@ body {
     border: none;
 }
 
+.divAlert.col-sm-12 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
 .formHeader {
     border-bottom: 1px solid #f0f0f0;
     background-color: #f7f7f7;
