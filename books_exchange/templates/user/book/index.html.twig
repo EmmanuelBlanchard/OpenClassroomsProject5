@@ -40,45 +40,46 @@
 				<p>Complétez-là avec les livres que vous possèdez</p>
 				<p>et que vous souhaitez échanger.</p>
 			</div>
-			{% else %}
 
-		{% endif %}
-
-		<div class="divButtonConnectedBookStockAddABook">
-			<a class="btn btn-success" href="{{ path('user_book_add') }}" role="button">Ajouter un livre</a>
-		</div>
-
-		<div class="row col-sm-12">
-			<div class="col-sm-12">
-				<h1>Bibliothèque de
-					{{ app.user.firstname }}
-					{{ app.user.lastname }}
-				</h1>
+			<div class="divButtonConnectedBookStockAddABook">
+				<a class="btn btn-success" href="{{ path('user_book_add') }}" role="button">Ajouter un livre</a>
+			</div>
+		{% else %}
+			<div class="divButtonConnectedBookStockAddABook">
+				<a class="btn btn-success" href="{{ path('user_book_add') }}" role="button">Ajouter un livre</a>
 			</div>
 
-			{% for books in app.user.books %}
-				<div class="col-sm-3">Titre :</div>
-				<div class="col-sm-9">{{ books.title }}</div>
-				<div class="col-sm-3">Auteur :</div>
-				<div class="col-sm-9">{{ books.author }}</div>
-				<div class="col-sm-3">Catégorie :</div>
-				<div class="col-sm-9">{{ books.category }}</div>
-				<div class="col-sm-3">Éditeur :</div>
-				<div class="col-sm-9">{{ books.publisher }}</div>
-				<div class="col-sm-3">Résumé :</div>
-				<div class="col-sm-9">{{ books.summary }}</div>
-				<div class="col-sm-3">Langue :</div>
-				<div class="col-sm-9">{{ books.language }}</div>
-				<div class="col-sm-3">Format :</div>
-				<div class="col-sm-9">{{ books.format }}</div>
-				<div class="col-sm-3">État du livre :</div>
-				<div class="col-sm-9">{{ books.state }}</div>
-
-				<div class="col-sm-3">
-					<a class="btn btn-outline-secondary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+			<div class="row col-sm-12">
+				<div class="col-sm-12">
+					<h1>Bibliothèque de
+						{{ app.user.firstname }}
+						{{ app.user.lastname }}
+					</h1>
 				</div>
 
-			{% endfor %}
-		</div>
+				{% for books in app.user.books %}
+					<div class="col-sm-3">Titre :</div>
+					<div class="col-sm-9">{{ books.title }}</div>
+					<div class="col-sm-3">Auteur :</div>
+					<div class="col-sm-9">{{ books.author }}</div>
+					<div class="col-sm-3">Catégorie :</div>
+					<div class="col-sm-9">{{ books.category }}</div>
+					<div class="col-sm-3">Éditeur :</div>
+					<div class="col-sm-9">{{ books.publisher }}</div>
+					<div class="col-sm-3">Résumé :</div>
+					<div class="col-sm-9">{{ books.summary }}</div>
+					<div class="col-sm-3">Langue :</div>
+					<div class="col-sm-9">{{ books.language }}</div>
+					<div class="col-sm-3">Format :</div>
+					<div class="col-sm-9">{{ books.format }}</div>
+					<div class="col-sm-3">État du livre :</div>
+					<div class="col-sm-9">{{ books.state }}</div>
+
+					<div class="col-sm-3">
+						<a class="btn btn-outline-secondary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
 	</div>
 {% endblock %}

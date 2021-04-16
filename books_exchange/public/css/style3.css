@@ -295,7 +295,6 @@ a.linkBookExchange:visited {
 
 /* Wireframe 1- How It Works */
 .h2howItWorks {
-    font-size: 1.48em;
     color: #0854A2;
     text-align: center;
     margin-top: 2.5rem;
@@ -381,7 +380,6 @@ section.introductoryContent>p {
 /* Wireframe 1- How It Works */
 .divParagraphsHowItWorks p {
     font-family: 'MerriweatherRegular', 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.1em;
     color: #000;
     margin-left: 5%;
 }
@@ -729,6 +727,22 @@ form.formConnectedBookStockBookAdditionForm>div>label {
 
 .paragraphDisplayingInformationBookRequestedExchange {
     text-align: left;
+}
+
+div.col-sm-12.divButtonsEdit {
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.divButtonConnectedBookStockAddABook {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.table.manageMyAccountBooks {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Styles css Bootstrap */
