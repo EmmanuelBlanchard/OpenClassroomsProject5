@@ -35,9 +35,11 @@
 		</div>
 
 		{% if app.user.books|length == "0" %}
-			<p>Votre bibliothèque est vide.</p>
-			<p>Complétez-là avec les livres que vous possèdez</p>
-			<p>et que vous souhaitez échanger.</p>
+			<div class="divConnectedBookStockAddABook">
+				<p>Votre bibliothèque est vide.</p>
+				<p>Complétez-là avec les livres que vous possèdez</p>
+				<p>et que vous souhaitez échanger.</p>
+			</div>
 			{% else %}
 
 		{% endif %}
