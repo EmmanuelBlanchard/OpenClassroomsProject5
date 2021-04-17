@@ -11,52 +11,34 @@
 
 		<form id="login_form" class="form" name="login_form" method="post">
 			{% if error %}
-				<div class="divAlert col-sm-12">
+				<div class="divAlert col-sm-12">
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 				</div>
 			{% endif %}
 
 			{% if app.user %}
 				<div class="mb-3">
-					Vous êtes connecté en tant que
+					Vous êtes connecté en tant que
 					{{ app.user.username }},
 					<a href="{{ path('app_logout') }}">Déconnexion</a>
 				</div>
 			{% endif %}
 
-			<div class="form-control">
-				<i class="bi bi-check-circle"></i>
-				<i class="bi bi-exclamation-circle"></i>
-				<label for="login_form_email" class="required">E-mail</label>
-				<input type="email" value="{{ last_username }}" id="login_form_email" name="login_form[email]" required="required">
-
-				<small></small>
-
-				<div class="form-error"></div>
-			</div>
-
-			<div class="form-control">
-				<i class="bi bi-check-circle"></i>
-				<i class="bi bi-exclamation-circle"></i>
-				<label for="login_form_plainPassword" class="required">Mot de passe</label>
-				<input type="password" id="login_form_plainPassword" name="login_form[plainPassword]" required="required">
-
-				<small></small>
-
-				<div class="form-error"></div>
-			</div>
-
-			<div>
-				<button type="submit" id="login_form_save" name="login_form[save]" class="btn btn-success btn-lg">Se connecter</button>
-			</div>
+			<h1 class="h3 mb-3 font-weight-normal"></h1>
+			<label for="inputEmail">E-mail</label>
+			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+			<label for="inputPassword">Mot de passe</label>
+			<input type="password" name="password" id="inputPassword" class="form-control" required>
 
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
+			<button class="btn btn-lg btn-primary" type="submit">
+				Se connecter
+			</button>
 		</form>
 
 		<div class="formFooter">
-			<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
+			<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
 		</div>
-
 	</div>
 {% endblock %}
