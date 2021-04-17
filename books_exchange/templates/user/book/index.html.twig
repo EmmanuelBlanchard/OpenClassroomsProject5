@@ -24,7 +24,9 @@
 		<h2 class="h2ConnectedBookStockAddABook">Stock de livres</h2>
 
 		<div class="col-sm-12">
-			<h3 class="h3ConnectedBookStockAddABook">Votre stock
+			<h3 class="h3ConnectedBookStockAddABook">Bibliothèque de
+				{{ app.user.firstname }}
+				{{ app.user.lastname }}
 				{% if app.user.books|length == "0" %}
 					(0 livre)
 				{% else %}
@@ -50,33 +52,23 @@
 			</div>
 
 			<div class="row col-sm-12">
-				<div class="col-sm-12">
-					<h1>Bibliothèque de
-						{{ app.user.firstname }}
-						{{ app.user.lastname }}
-					</h1>
-				</div>
-
 				{% for books in app.user.books %}
-					<div class="col-sm-3">Titre :</div>
-					<div class="col-sm-9">{{ books.title }}</div>
-					<div class="col-sm-3">Auteur :</div>
-					<div class="col-sm-9">{{ books.author }}</div>
-					<div class="col-sm-3">Catégorie :</div>
-					<div class="col-sm-9">{{ books.category }}</div>
-					<div class="col-sm-3">Éditeur :</div>
-					<div class="col-sm-9">{{ books.publisher }}</div>
-					<div class="col-sm-3">Résumé :</div>
-					<div class="col-sm-9">{{ books.summary }}</div>
-					<div class="col-sm-3">Langue :</div>
-					<div class="col-sm-9">{{ books.language }}</div>
-					<div class="col-sm-3">Format :</div>
-					<div class="col-sm-9">{{ books.format }}</div>
-					<div class="col-sm-3">État du livre :</div>
-					<div class="col-sm-9">{{ books.state }}</div>
+					<div class="bookCard col-sm-4">
 
-					<div class="col-sm-3">
-						<a class="btn btn-outline-secondary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+						<div class="titleBook">{{ books.title }}</div>
+						<div class="authorBook">
+							<a href="">{{ books.author }}</a>
+						</div>
+						<div class="categoryBook">{{ books.category }}</div>
+						<div class="publisherBook">{{ books.publisher }}</div>
+						<div class="languageBook">{{ books.language }}</div>
+						<div class="formatBook">{{ books.format }}</div>
+						<div class="stateBook">{{ books.state }}</div>
+
+						<div class="align-self-center">
+							<a class="btn btn-outline-secondary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Retirer de mon stock</a>
+						</div>
+
 					</div>
 				{% endfor %}
 			</div>

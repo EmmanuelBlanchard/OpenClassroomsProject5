@@ -25,14 +25,34 @@
 			{% endif %}
 
 			<h1 class="h3 mb-3 font-weight-normal"></h1>
-			<label for="inputEmail">E-mail</label>
-			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-			<label for="inputPassword">Mot de passe</label>
-			<input type="password" name="password" id="inputPassword" class="form-control" required>
+
+			<div class="form-control">
+				<i class="bi bi-check-circle"></i>
+				<i class="bi bi-exclamation-circle"></i>
+
+				<label for="inputEmail">E-mail</label>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+
+				<small></small>
+
+				<div class="form-error"></div>
+			</div>
+
+			<div class="form-control">
+				<i class="bi bi-check-circle"></i>
+				<i class="bi bi-exclamation-circle"></i>
+
+				<label for="inputPassword">Mot de passe</label>
+				<input type="password" name="password" id="inputPassword" class="form-control" required>
+
+				<small></small>
+
+				<div class="form-error"></div>
+			</div>
 
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-			<button class="btn btn-lg btn-primary" type="submit">
+			<button class="btn btn-success btn-lg" type="submit">
 				Se connecter
 			</button>
 		</form>

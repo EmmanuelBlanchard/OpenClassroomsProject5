@@ -748,6 +748,63 @@ div.col-sm-12.divButtonsEdit {
     margin-bottom: 1.5rem;
 }
 
+.h2LibraryBooks {
+    color: #186135;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.bookCard.col-sm-4 {
+    font-family: sans-serif, 'openSansRegular';
+    background-color: #F7F7F7;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    height: min-content;
+    margin: 2.5rem auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.1em solid #196216;
+    border-color: #196216;
+    padding: 2.51%;
+    margin-bottom: 2%;
+
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: calc(var(--bs-gutter-x)/ 2);
+}
+
+div.titleBook,
+div.authorBook>a,
+.stateBook {
+    font-weight: bold;
+    color: #000;
+}
+
+div.titleBook {
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+
+.categoryBook,
+.publisherBook,
+.languageBook,
+.formatBook,
+.stateBook {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+div.authorBook>a,
+.stateBook {
+    font-size: 1.2rem;
+}
+
 .table.manageMyAccountBooks {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -856,6 +913,15 @@ body {
     width: 100%;
 }
 
+/* Problem form login have 
+.form-control:focus {
+	color: #212529;
+	background-color: #fff;
+	border-color: #86b7fe;
+	outline: 0;
+	box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+}
+*/
 .form-control input:focus {
     outline: 0;
     border-color: #777;
