@@ -1,22 +1,41 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
-{% block title %}Réinitialisation du mot de passe{% endblock %}
+{% block title %}Réinitialisation du mot de passe
+{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
-    <h1>Réinitialiser votre mot de passe</h1>
+	{% for flashError in app.flashes('reset_password_error') %}
+		<div class="divAlert col-sm-12">
+			<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+		</div>
+	{% endfor %}
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Réinitialiser votre mot de passe</h2>
+		</div>
 
-    {{ form_start(requestForm) }}
-        {{ form_row(requestForm.email) }}
-        <div>
-            <small>
-                Entrez votre adresse e-mail et nous vous enverrons un 
-                lien pour réinitialiser votre mot de passe.
-            </small>
-        </div>
+		{{ form_start(requestForm, {'attr': {'id': 'request_form', 'class': 'form'}}) }}
 
-        <button class="btn btn-success">Réinitialisation votre mot de passe</button>
-    {{ form_end(requestForm) }}
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(requestForm.email) }}
+			{{ form_widget(requestForm.email) }}
+
+			<small>{{ form_help(requestForm.email) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(requestForm.email) }}
+			</div>
+		</div>
+
+		<button type="submit" id="request_form_save" name="request_form[save]" class="btn btn-success">Réinitialisation votre mot de passe</button>
+
+		{{ form_end(requestForm) }}
+
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/validationrequestform.js') }}"></script>
 {% endblock %}

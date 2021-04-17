@@ -318,7 +318,8 @@ a.linkBookExchange:visited {
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+.h2ConnectedConnectedResetPasswordCheckEmail {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
@@ -340,7 +341,8 @@ a.linkBookExchange:visited {
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+.h2ConnectedConnectedResetPasswordCheckEmail {
     border: 0.04em solid #186135;
 }
 
@@ -355,7 +357,8 @@ a.linkBookExchange:visited {
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+.h2ConnectedConnectedResetPasswordCheckEmail {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 }
@@ -429,14 +432,20 @@ section.introductoryContent>p {
 .divConnectedBookStockAddABook,
 .divConnectedBookStockBookStocked,
 .divConnectedBookExchangeClickOnTheBookExchangeLink,
-.divConnectedBookExchangeSearchForTheBookHarryPotter {
+.divConnectedBookExchangeSearchForTheBookHarryPotter,
+.divConnectedResetPasswordCheckEmail {
     margin: 1.5rem auto;
     border-radius: 0.5rem;
     background-color: #0854A2;
     padding: 1rem;
 }
 
-.divConnectedBookStockAddABook {
+.divConnectedResetPasswordCheckEmail {
+    background-color: #F7F7F7;
+}
+
+.divConnectedBookStockAddABook,
+.divConnectedResetPasswordCheckEmail {
     width: 63.8%;
 }
 
@@ -463,7 +472,6 @@ section.introductoryContent>p {
 .divConnectedBookExchangeConfirmationOfTheExchangeRequest p,
 .divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.16em;
     color: #000;
 }
 

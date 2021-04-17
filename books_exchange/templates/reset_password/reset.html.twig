@@ -1,12 +1,56 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
-{% block title %}Réinitialiser votre mot de passe{% endblock %}
+{% block title %}Réinitialiser votre mot de passe
+{% endblock %}
 
 {% block body %}
-    <h1>Réinitialiser votre mot de passe</h1>
+	{% for message in app.flashes('error') %}
+		<div class="divAlert col-sm-12">
+			<div class="alert alert-danger" role="alert">
+				{{message}}
+			</div>
+		</div>
+	{% endfor %}
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Réinitialiser votre mot de passe</h2>
+		</div>
 
-    {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class="btn btn-success">Réinitialisation du mot de passe</button>
-    {{ form_end(resetForm) }}
+		{{ form_start(resetForm, {'attr': {'id': 'reset_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(resetForm.plainPassword.first) }}
+			{{ form_widget(resetForm.plainPassword.first) }}
+
+			<small>{{ form_help(resetForm.plainPassword.first) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(resetForm.plainPassword.first) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(resetForm.plainPassword.second) }}
+			{{ form_widget(resetForm.plainPassword.second) }}
+
+			<small>{{ form_help(resetForm.plainPassword.second) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(resetForm.plainPassword.second) }}
+			</div>
+		</div>
+
+		<!--<button class="btn btn-success">Réinitialisation du mot de passe</button>-->
+		<!--<button type="submit" id="reset_form_save" name="reset_form[save]" class="btn btn-success">Réinitialisation du mot de passe</button>-->
+
+		{{ form_end(resetForm) }}
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/validationresetform.js') }}"></script>
 {% endblock %}

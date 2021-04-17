@@ -9,7 +9,7 @@
 			<h2>Connexion</h2>
 		</div>
 
-		<form name="login_form" method="post" id="login_form" class="form">
+		<form id="login_form" class="form" name="login_form" method="post">
 			{% if error %}
 				<div class="divAlert col-sm-12">
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -50,7 +50,7 @@
 				<button type="submit" id="login_form_save" name="login_form[save]" class="btn btn-success btn-lg">Se connecter</button>
 			</div>
 
-			<input type="hidden" id="login_form__token" name="login_form[_token]" value="{{ csrf_token('authenticate') }}">
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 		</form>
 
