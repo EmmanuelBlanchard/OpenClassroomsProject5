@@ -578,26 +578,17 @@ div.line.author>a {
 }
 
 div.line.author>a,
-section.blockOfTheBookInformation>p.line.state,
 div.line.location>span,
-section.blockOfTheBookInformation>p.line.owner,
 div.line.author>a,
 section.blockOfStoredBookInformation>p.line.state {
     font-size: 1.2em;
 }
 
-section.blockOfTheBookInformation>p.line.category,
 section.blockOfStoredBookInformation>p.line.category {
     font-size: 1.17em;
 }
 
-section.blockOfTheBookInformation>p.line.category,
-section.blockOfTheBookInformation>p.line.publisher,
-section.blockOfTheBookInformation>p.line.language,
-section.blockOfTheBookInformation>p.line.format,
-section.blockOfTheBookInformation>p.line.state,
 div.line.location,
-section.blockOfTheBookInformation>p.line.owner,
 .divExchangeButton,
 section.blockOfStoredBookInformation>p.line.category,
 section.blockOfStoredBookInformation>p.line.publisher,
@@ -611,8 +602,6 @@ section.blockOfStoredBookInformation>p.line.state,
 
 .blockOfTheBookInformation h4,
 div.line.author>a,
-section.blockOfTheBookInformation>p.line.state,
-section.blockOfTheBookInformation>p.line.owner,
 div.line.location>span,
 .blockOfStoredBookInformation h4,
 div.line.author>a,
@@ -624,25 +613,19 @@ section.blockOfStoredBookInformation>p.line.state,
 }
 
 .locationIcon {
-    width: 3em;
-    /* 14.6px */
-    height: 3em;
-    /* 22.7px */
+    width: 3rem;
+    height: 3rem;
 }
 
-.divExchangeButton {
-    align-self: center;
+.btn-outline-success.exchangeButton {
+    color: #196216;
+    border-color: #196216;
 }
 
-.exchangeButton {
-    font-size: 1.1em;
-    border-radius: 0.5em;
-}
-
-.exchangeButton {
-    color: #FFF;
+.btn-outline-success.exchangeButton:hover {
+    color: #fff;
     background-color: #196216;
-    padding: 0.5em 1em;
+    border-color: #196216;
 }
 
 /* Wireframe 2-4-5-7 */
@@ -755,30 +738,28 @@ div.col-sm-12.divButtonsEdit {
 }
 
 .bookCard.col-sm-4 {
-    font-family: sans-serif, 'openSansRegular';
-    background-color: #F7F7F7;
-    border-radius: .25rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    height: min-content;
-    margin: 2.5rem auto;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: 0.1em solid #196216;
     border-color: #196216;
-    padding: 2.51%;
-    margin-bottom: 2%;
-
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    height: min-content;
+    padding: 1.5rem;
+    margin: 2.5rem 2.5rem;
+    font-family: sans-serif, 'openSansRegular';
+    background-color: #F7F7F7;
     max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x)/ 2);
-    padding-left: calc(var(--bs-gutter-x)/ 2);
 }
 
+section h4.titleBook,
 div.titleBook,
 div.authorBook>a,
-.stateBook {
+.stateBook,
+.locationBook,
+.ownerBook {
     font-weight: bold;
     color: #000;
 }
@@ -795,13 +776,17 @@ div.titleBook {
 .publisherBook,
 .languageBook,
 .formatBook,
-.stateBook {
+.stateBook,
+.locationBook,
+.ownerBook {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
 div.authorBook>a,
-.stateBook {
+.stateBook,
+.locationBook,
+.ownerBook {
     font-size: 1.2rem;
 }
 

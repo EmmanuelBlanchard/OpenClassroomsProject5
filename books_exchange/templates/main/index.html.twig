@@ -26,30 +26,30 @@
 			</section>
 			<section class="sectionOfBookSelection">
 				<h2 class="h2TitleSelectionOfBooks">Une sélection de livres disponibles à l'échange</h2>
-				<div class="divDisplayBlocksBookInformation">
+				<div class="row col-sm-12">
 					{% for book in books %}
-						<section class="row col-sm-12 blockOfTheBookInformation">
-							<h4 class="col-sm-12">{{ book.title }}</h4>
-							<div class="col-sm-12 line author">
+						<section class="bookCard col-sm-4">
+							<h4 class="titleBook">{{ book.title }}</h4>
+							<div class="authorBook">
 								<a href="">{{ book.author }}</a>
 							</div>
-							<p class="col-sm-12 line category">{{ book.category }}</p>
-							<p class="col-sm-12 line publisher">{{ book.publisher }}</p>
-							<p class="col-sm-12 line language">Langue:
-								{{ book.language }}</p>
-							<p class="col-sm-12 line format">Format:
-								{{ book.format }}</p>
-							<p class="col-sm-12 line state">État:
-								{{ book.state }}</p>
-							<div class="line location">
+							<div class="categoryBook">{{ book.category }}</div>
+							<div class="publisherBook">{{ book.publisher }}</div>
+							<div class="languageBook">Langue:
+								{{ book.language }}</div>
+							<div class="formatBook">Format:
+								{{ book.format }}</div>
+							<div class="stateBook">État:
+								{{ book.state }}</div>
+							<div class="locationBook">
 								<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
 								<span>{{ book.user.city }}</span>
 							</div>
-							<p class="col-sm-12 line owner">Propriétaire:
+							<p class="ownerBook">Propriétaire:
 								{{ book.user.pseudo }}
 							</p>
-							<div class="divExchangeButton">
-								<a href="{{ path('user_book_validation_confirm_exchange', {'id': book.id}) }}" class="exchangeButton" role="button">Échanger</a>
+							<div class="align-self-center">
+								<a class="btn btn-outline-success exchangeButton" href="{{ path('user_book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
 							</div>
 						</section>
 					{% endfor %}
