@@ -731,12 +731,6 @@ div.col-sm-12.divButtonsEdit {
     margin-bottom: 1.5rem;
 }
 
-.h2LibraryBooks {
-    color: #186135;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
 .bookCard.col-sm-4 {
     display: flex;
     flex-direction: column;
