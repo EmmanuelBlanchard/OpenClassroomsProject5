@@ -85,11 +85,12 @@ class UserController extends AbstractController
      */
     public function showBooksExchange(): Response
     {
+        $user = $this->getUser();
         $books = $this->getDoctrine()->getRepository(Book::class)->findBy(
-            ['exchangeRequest' => true],
+            ['exchangeRequest' => true, 'user' => $user],
             ['exchangeRequestAt' => 'desc']
         );
-        
+
         return $this->render('user/book/showexchange.html.twig', ['books' => $books]);
     }
 
