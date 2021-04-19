@@ -97,6 +97,11 @@ class Book
      */
     private $exchangeRequestAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class)
+     */
+    private $userexchange;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -252,6 +257,18 @@ class Book
     public function setExchangeRequestAt(\DateTimeInterface $exchangeRequestAt): self
     {
         $this->exchangeRequestAt = $exchangeRequestAt;
+
+        return $this;
+    }
+
+    public function getUserexchange(): ?User
+    {
+        return $this->userexchange;
+    }
+
+    public function setUserexchange(?User $userexchange): self
+    {
+        $this->userexchange = $userexchange;
 
         return $this;
     }
