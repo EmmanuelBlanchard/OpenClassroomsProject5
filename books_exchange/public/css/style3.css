@@ -512,9 +512,10 @@ section.introductoryContent>p {
 
 .h2TitleSelectionOfBooks {
     width: 90%;
-    /* before 85% */
     text-align: center;
     background-color: #F7F7F7;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
 }
 
 .sectionOfBookSelection .h2TitleSelectionOfBooks {
