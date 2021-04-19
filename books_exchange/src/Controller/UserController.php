@@ -32,26 +32,6 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user/book/{id}/remove/stock", name="user_book_remove_stock")
-     */
-    public function bookRemoveFromStock(int $id): Response
-    {
-        $repository = $this->getDoctrine()->getRepository(Book::class);
-        $book = $repository->find($id);
-        if($book === null) {
-            // Make a flash bag message
-            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
-        } else {
-            $book->setActive(false);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($book);
-            $entityManager->flush();
-            $this->addFlash('message', 'Livre retiré du stock de livres');
-        }
-        return $this->redirectToRoute('user_book');
-    }
-
-    /**
      * @Route("/user/book/add", name="user_book_add")
      */
     public function addBook(Request $request): Response
@@ -80,6 +60,65 @@ class UserController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/user/book/{id}/remove/stock", name="user_book_remove_stock")
+     */
+    public function bookRemoveFromStock(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $book = $repository->find($id);
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre supprimé du stock de livres');
+        }
+        return $this->redirectToRoute('user_book');
+    }
+
+    /**
+     * @Route("/user/book/{id}/add/exchanges", name="user_book_add_exchanges")
+     */
+    public function bookAddFromExchanges(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $book = $repository->find($id);
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre ajouté aux échanges');
+        }
+        return $this->redirectToRoute('user_book');
+    }
+
+    /**
+     * @Route("/user/book/{id}/remove/exchanges", name="user_book_remove_exchanges")
+     */
+    public function bookRemovedFromExchanges(int $id): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $book = $repository->find($id);
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(false);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre retiré des échanges');
+        }
+        return $this->redirectToRoute('user_book');
+    }
+    
     /**
      * @Route("/user/book/show/exchange", name="user_book_show_exchange")
      */

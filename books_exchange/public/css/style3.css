@@ -669,8 +669,7 @@ form.formConnectedBookStockBookAdditionForm>div>label {
 
 .buttonConnectedTotheAccount,
 .buttonConnectedBookStockAddABook,
-.buttonConnectedBookStockBookAdditionForm,
-.buttonConfirmTheExchange {
+.buttonConnectedBookStockBookAdditionForm {
     color: #FFF;
     background-color: #186135;
     font-family: 'openSansRegular';
@@ -681,17 +680,17 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     padding: 3% 3%;
 }
 
-.buttonConfirmTheExchange {
-    background-color: #186135;
-    border: 2px solid #186135;
-    border-radius: 0.25rem;
+a.btn-success.buttonConfirmTheExchange {
+    font-family: 'openSansRegular';
     color: #fff;
-    display: block;
-    font-family: inherit;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 20px;
-    /*width: 100%;*/
+    background-color: #196216;
+    border-color: #196216;
+}
+
+a.btn-success.buttonConfirmTheExchange:hover {
+    color: #fff;
+    background-color: #186135;
+    border-color: #15572F;
 }
 
 .buttonConnectedBookStockAddABook,
