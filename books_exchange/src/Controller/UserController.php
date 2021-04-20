@@ -111,6 +111,9 @@ class UserController extends AbstractController
             $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
             $book->setActive(false);
+            $book->setExchangeRequest(false);
+            $book->setUserexchange(null);
+            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
             $entityManager->flush();
@@ -118,7 +121,7 @@ class UserController extends AbstractController
         }
         return $this->redirectToRoute('user_book');
     }
-    
+
     /**
      * @Route("/user/book/show/exchange", name="user_book_show_exchange")
      */
@@ -126,7 +129,7 @@ class UserController extends AbstractController
     {
         $user = $this->getUser();
         $books = $this->getDoctrine()->getRepository(Book::class)->findBy(
-            ['exchangeRequest' => true, 'user' => $user],
+            ['exchangeRequest' => true, 'userexchange' => $user],
             ['exchangeRequestAt' => 'desc']
         );
 
@@ -154,6 +157,7 @@ class UserController extends AbstractController
      */
     public function confirmBookExchange(int $id): Response
     {
+        $user = $this->getUser();
         $repository = $this->getDoctrine()->getRepository(Book::class);
         $book = $repository->find($id);
         if($book === null) {
@@ -162,6 +166,7 @@ class UserController extends AbstractController
         } else {
             $book->setExchangeRequest(true);
             $book->setExchangeRequestAt(new \DateTime('now'));
+            $book->setUserexchange($user);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
@@ -185,6 +190,7 @@ class UserController extends AbstractController
         } else {
             $book->setActive(false);
             $book->setExchangeRequest(false);
+            $book->setUserexchange(null);
             $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
