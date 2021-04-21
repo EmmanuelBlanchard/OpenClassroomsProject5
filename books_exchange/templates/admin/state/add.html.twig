@@ -1,9 +1,43 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
 {% block title %}Ajouter un état du livre
 {% endblock %}
 
 {% block body %}
-	<h1>Ajouter un état du livre</h1>
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Ajouter un état du livre</h2>
+		</div>
 
-	{{ form(form) }}{% endblock %}
+		{{ form_start(addStateForm, {'attr': {'id': 'add_state_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addStateForm.name) }}
+			{{ form_widget(addStateForm.name) }}
+
+			<small>{{ form_help(addStateForm.name) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addStateForm.name) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addStateForm.parent) }}
+			{{ form_widget(addStateForm.parent) }}
+
+			<small>{{ form_help(addStateForm.parent) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addStateForm.parent) }}
+			</div>
+		</div>
+
+		{{ form_end(addStateForm) }}
+
+	</div>
+{% endblock %}
