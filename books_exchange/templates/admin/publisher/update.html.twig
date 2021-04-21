@@ -1,0 +1,43 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}Modifier un éditeur
+{% endblock %}
+
+{% block body %}
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Modifier un éditeur</h2>
+		</div>
+
+		{{ form_start(updatePublisherForm, {'attr': {'id': 'update_publisher_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updatePublisherForm.name) }}
+			{{ form_widget(updatePublisherForm.name) }}
+
+			<small>{{ form_help(updatePublisherForm.name) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updatePublisherForm.name) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updatePublisherForm.parent) }}
+			{{ form_widget(updatePublisherForm.parent) }}
+
+			<small>{{ form_help(updatePublisherForm.parent) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updatePublisherForm.parent) }}
+			</div>
+		</div>
+
+		{{ form_end(updatePublisherForm) }}
+
+	</div>
+{% endblock %}
