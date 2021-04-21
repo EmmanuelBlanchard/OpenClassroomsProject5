@@ -1,9 +1,43 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
 {% block title %}Modifier une catégorie
 {% endblock %}
 
 {% block body %}
-	<h1>Modifier une catégorie</h1>
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Modifier une catégorie</h2>
+		</div>
 
-	{{ form(form) }}{% endblock %}
+		{{ form_start(updateCategoryForm, {'attr': {'id': 'update_category_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateCategoryForm.name) }}
+			{{ form_widget(updateCategoryForm.name) }}
+
+			<small>{{ form_help(updateCategoryForm.name) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateCategoryForm.name) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateCategoryForm.parent) }}
+			{{ form_widget(updateCategoryForm.parent) }}
+
+			<small>{{ form_help(updateCategoryForm.parent) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateCategoryForm.parent) }}
+			</div>
+		</div>
+
+		{{ form_end(updateCategoryForm) }}
+
+	</div>
+{% endblock %}
