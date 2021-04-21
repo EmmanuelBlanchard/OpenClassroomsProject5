@@ -1,9 +1,43 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
 {% block title %}Ajouter un auteur
 {% endblock %}
 
 {% block body %}
-	<h1>Ajouter un auteur</h1>
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Ajouter un auteur</h2>
+		</div>
 
-	{{ form(form) }}{% endblock %}
+		{{ form_start(addAuthorForm, {'attr': {'id': 'add_author_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addAuthorForm.name) }}
+			{{ form_widget(addAuthorForm.name) }}
+
+			<small>{{ form_help(addAuthorForm.name) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addAuthorForm.name) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addAuthorForm.parent) }}
+			{{ form_widget(addAuthorForm.parent) }}
+
+			<small>{{ form_help(addAuthorForm.parent) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addAuthorForm.parent) }}
+			</div>
+		</div>
+
+		{{ form_end(addAuthorForm) }}
+
+	</div>
+{% endblock %}
