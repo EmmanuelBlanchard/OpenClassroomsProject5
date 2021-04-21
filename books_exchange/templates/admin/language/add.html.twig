@@ -1,9 +1,43 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseBootstrap.html.twig' %}
 
 {% block title %}Ajouter une langue
 {% endblock %}
 
 {% block body %}
-	<h1>Ajouter une langue</h1>
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Ajouter une langue</h2>
+		</div>
 
-	{{ form(form) }}{% endblock %}
+		{{ form_start(addLanguageForm, {'attr': {'id': 'add_language_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addLanguageForm.name) }}
+			{{ form_widget(addLanguageForm.name) }}
+
+			<small>{{ form_help(addLanguageForm.name) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addLanguageForm.name) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addLanguageForm.parent) }}
+			{{ form_widget(addLanguageForm.parent) }}
+
+			<small>{{ form_help(addLanguageForm.parent) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addLanguageForm.parent) }}
+			</div>
+		</div>
+
+		{{ form_end(addLanguageForm) }}
+
+	</div>
+{% endblock %}

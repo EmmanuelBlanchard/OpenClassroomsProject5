@@ -1,0 +1,43 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}Modifier une langue
+{% endblock %}
+
+{% block body %}
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Modifier une langue</h2>
+		</div>
+
+		{{ form_start(updateLanguageForm, {'attr': {'id': 'update_language_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateLanguageForm.name) }}
+			{{ form_widget(updateLanguageForm.name) }}
+
+			<small>{{ form_help(updateLanguageForm.name) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateLanguageForm.name) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateLanguageForm.parent) }}
+			{{ form_widget(updateLanguageForm.parent) }}
+
+			<small>{{ form_help(updateLanguageForm.parent) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateLanguageForm.parent) }}
+			</div>
+		</div>
+
+		{{ form_end(updateLanguageForm) }}
+
+	</div>
+{% endblock %}
