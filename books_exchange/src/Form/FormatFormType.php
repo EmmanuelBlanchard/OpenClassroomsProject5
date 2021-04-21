@@ -14,9 +14,13 @@ class FormatFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class)
-            //->add('parent')
-            ->add('validate', SubmitType::class)
+            ->add('name', TextType::class, [
+                'label'=>'Nom',
+            ])
+            ->add('parent')
+            ->add('validate', SubmitType::class, [
+                'label'=>'Valider',
+            ])
         ;
     }
 

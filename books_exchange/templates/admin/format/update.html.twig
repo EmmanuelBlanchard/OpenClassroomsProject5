@@ -1,0 +1,43 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}Modifier un format
+{% endblock %}
+
+{% block body %}
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Modifier un format</h2>
+		</div>
+
+		{{ form_start(updateFormatForm, {'attr': {'id': 'update_language_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateFormatForm.name) }}
+			{{ form_widget(updateFormatForm.name) }}
+
+			<small>{{ form_help(updateFormatForm.name) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateFormatForm.name) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateFormatForm.parent) }}
+			{{ form_widget(updateFormatForm.parent) }}
+
+			<small>{{ form_help(updateFormatForm.parent) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateFormatForm.parent) }}
+			</div>
+		</div>
+
+		{{ form_end(updateFormatForm) }}
+
+	</div>
+{% endblock %}
