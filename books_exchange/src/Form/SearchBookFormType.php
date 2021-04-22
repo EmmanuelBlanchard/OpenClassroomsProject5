@@ -17,7 +17,8 @@ class SearchBookFormType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control me-2',
-                    'placeholder' => 'Rechercher'
+                    'placeholder' => 'Rechercher',
+                    'aria-label' => 'Rechercher',
                 ]
             ])
             ->add('search', SubmitType::class, [
