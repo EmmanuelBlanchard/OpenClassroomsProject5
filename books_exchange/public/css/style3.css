@@ -193,13 +193,9 @@ main {
     border-color: #CD4109;
 }
 
-.searchButton {
+form#search_book_form.formSearchBar.px-3.py-5.col-12>div>button#search_book_form_search.btn.btn-outline-orange {
     width: 100%;
-    color: #F7F7F7;
-    background-color: #CD4109;
-    border-color: #A02804;
 }
-
 
 .informationAboutTheAccountTheLibraryTheExchanges {
     background-color: #FFF;
