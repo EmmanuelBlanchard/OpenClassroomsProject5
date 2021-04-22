@@ -23,7 +23,7 @@ class BookRepository extends ServiceEntityRepository
      * Search for books according to the form
      * @return void
      */
-    public function search($words) 
+    public function search($words = null, $category = null) 
     {
         $query = $this->createQueryBuilder('book');
         $query->where('book.active = 1');
@@ -34,7 +34,12 @@ class BookRepository extends ServiceEntityRepository
             (:words boolean)>0')
                 ->setParameter('words', $words);
         }
-        
+        if($category != null) {
+            $query->leftJoin('book.category', 'c');
+            $query->andWhere('c.id = :id')
+                ->setParameter('id', $category);
+        }
+
         return $query->getQuery()->getResult();
     }
 

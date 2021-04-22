@@ -25,7 +25,10 @@ class MainController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
             // we search for the books corresponding to the key words 
-            $books = $bookRepo->search($search->get('words')->getData());
+            $books = $bookRepo->search(
+                $search->get('words')->getData(),
+                $search->get('category')->getData()
+            );
         }
 
         return $this->render('main/index.html.twig', [
