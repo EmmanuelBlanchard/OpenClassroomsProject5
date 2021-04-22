@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Book;
+use App\Repository\BookRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,12 +12,10 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="app_home")
      */
-    public function index(): Response
+    public function index(BookRepository $bookRepo): Response
     {
-        $books = $this->getDoctrine()->getRepository(Book::class)->findBy(['active' => true, 'exchangeRequest' => false]);
-        
         return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController', 'books' => $books
+            'books' => $bookRepo->findBy(['active' => true, 'exchangeRequest' => false], ['createdAt' => 'desc'], 10),
         ]);
 
     }
