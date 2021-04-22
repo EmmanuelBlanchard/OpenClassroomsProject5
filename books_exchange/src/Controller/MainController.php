@@ -16,16 +16,22 @@ class MainController extends AbstractController
      */
     public function index(BookRepository $bookRepo, Request $request): Response
     {
+        $books = $bookRepo->findBy(['active' => true, 'exchangeRequest' => false],
+        ['createdAt' => 'desc'], 10);
+
         $form = $this->createForm(SearchBookFormType::class);
 
         $search = $form->handleRequest($request);
 
+        if($form->isSubmitted() && $form->isValid()) {
+            // we search for the books corresponding to the key words 
+            $books = $bookRepo->search($search->get('words')->getData());
+        }
+
         return $this->render('main/index.html.twig', [
-            'books' => $bookRepo->findBy(['active' => true, 'exchangeRequest' => false],
-            ['createdAt' => 'desc'], 10),
+            'books' => $books,
             'searchBookForm' => $form->createView()
         ]);
-
     }
 
     /**

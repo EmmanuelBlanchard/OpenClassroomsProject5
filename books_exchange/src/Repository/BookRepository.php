@@ -19,6 +19,25 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+    /**
+     * Search for books according to the form
+     * @return void
+     */
+    public function search($words) 
+    {
+        $query = $this->createQueryBuilder('book');
+        $query->where('book.active = 1');
+        $query->andWhere('book.exchangeRequest = 0');
+
+        if($words != null){
+            $query->andWhere('MATCH_AGAINST(book.title, book.summary) AGAINST
+            (:words boolean)>0')
+                ->setParameter('words', $words);
+        }
+        
+        return $query->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
