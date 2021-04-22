@@ -1,77 +1,78 @@
-{% extends 'baseBootstrap.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Gérer les livres
 {% endblock %}
 
 {% block body %}
-	<h1>Gérer les livres</h1>
+	<div class="container">
+		<h1>Gérer les livres</h1>
 
-	<table class="table table-striped table-hover">
-		<thead>
-			<tr>
-				<th scope="col">ID</th>
-				<th scope="col">Titre</th>
-				<th scope="col">Date</th>
-				<th scope="col">Active</th>
-				<th scope="col">Auteur</th>
-				<th scope="col">Catégorie</th>
-				<th scope="col">Éditeur</th>
-				<th scope="col">Résumé</th>
-				<th scope="col">Langue</th>
-				<th scope="col">Format</th>
-				<th scope="col">État du livre</th>
-				<th scope="col">Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for item in book %}
+		<table class="table table-striped table-hover">
+			<thead>
 				<tr>
-					<th scope="row">{{item.id}}</th>
-					<td>{{item.title}}</td>
-					<td>{{item.createdAt|date('d/m/Y')}}</td>
-					<td>
-						<div class="form-check form-switch">
-							<input class="form-check-input" id="flexSwitchCheckDefault" type="checkbox" {{ (item.active) ? 'checked' : ''}} data-id="{{item.id}}">
-							<label class="form-check-label" for="flexSwitchCheckDefault"></label>
-						</div>
-					</td>
-					<td>{{item.author}}</td>
-					<td>{{item.category}}</td>
-					<td>{{item.publisher}}</td>
-					<td>{{item.summary}}</td>
-					<td>{{item.language}}</td>
-					<td>{{item.format}}</td>
-					<td>{{item.state}}</td>
-					<td class="text-center">
-						<a class="btn btn-primary" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
-
-						<a class="btn btn-primary modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" role="button">
-							Supprimer
-						</a>
-					</td>
+					<th scope="col">ID</th>
+					<th scope="col">Titre</th>
+					<th scope="col">Date</th>
+					<th scope="col">Active</th>
+					<th scope="col">Auteur</th>
+					<th scope="col">Catégorie</th>
+					<th scope="col">Éditeur</th>
+					<th scope="col">Résumé</th>
+					<th scope="col">Langue</th>
+					<th scope="col">Format</th>
+					<th scope="col">État du livre</th>
+					<th scope="col">Actions</th>
 				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				{% for item in book %}
+					<tr>
+						<th scope="row">{{item.id}}</th>
+						<td>{{item.title}}</td>
+						<td>{{item.createdAt|date('d/m/Y')}}</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" id="flexSwitchCheckDefault" type="checkbox" {{ (item.active) ? 'checked' : ''}} data-id="{{item.id}}">
+								<label class="form-check-label" for="flexSwitchCheckDefault"></label>
+							</div>
+						</td>
+						<td>{{item.author}}</td>
+						<td>{{item.category}}</td>
+						<td>{{item.publisher}}</td>
+						<td>{{item.summary}}</td>
+						<td>{{item.language}}</td>
+						<td>{{item.format}}</td>
+						<td>{{item.state}}</td>
+						<td class="text-center">
+							<a class="btn btn-primary" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
 
-	<!-- Modal -->
-	<div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Supprimer le livre</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body"></div>
-				<div class="modal-footer">
-					<a href="" class="btn btn-danger">Valider</a>
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+							<a class="btn btn-primary modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" role="button">
+								Supprimer
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<!-- Modal -->
+		<div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Supprimer le livre</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<a href="" class="btn btn-danger">Valider</a>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 {% endblock %}
 
 {% block javascripts %}

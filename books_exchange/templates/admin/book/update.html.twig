@@ -4,6 +4,118 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Modifier un livre</h1>
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Modifier un livre</h2>
+		</div>
 
-	{{ form(form) }}{% endblock %}
+		{{ form_start(updateBookForm, {'attr': {'id': 'update_book_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.title) }}
+			{{ form_widget(updateBookForm.title) }}
+
+			<small>{{ form_help(updateBookForm.title) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.title) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.author) }}
+			{{ form_widget(updateBookForm.author) }}
+
+			<small>{{ form_help(updateBookForm.author) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.author) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.category) }}
+			{{ form_widget(updateBookForm.category) }}
+
+			<small>{{ form_help(updateBookForm.category) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.category) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.publisher) }}
+			{{ form_widget(updateBookForm.publisher) }}
+
+			<small>{{ form_help(updateBookForm.publisher) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.publisher) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.summary) }}
+			{{ form_widget(updateBookForm.summary) }}
+
+			<small>{{ form_help(updateBookForm.summary) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.summary) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.language) }}
+			{{ form_widget(updateBookForm.language) }}
+
+			<small>{{ form_help(updateBookForm.language) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.language) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.format) }}
+			{{ form_widget(updateBookForm.format) }}
+
+			<small>{{ form_help(updateBookForm.format) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.format) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(updateBookForm.state) }}
+			{{ form_widget(updateBookForm.state) }}
+
+			<small>{{ form_help(updateBookForm.state) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(updateBookForm.state) }}
+			</div>
+		</div>
+
+		{{ form_end(updateBookForm) }}
+
+	</div>
+{% endblock %}
