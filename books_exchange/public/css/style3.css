@@ -85,8 +85,6 @@ div a {
     align-items: center;
     color: #0854A2;
     margin-left: 1%;
-    /* bug with span="navbar-toggler-icon"
-    font-size: 2em; */
 }
 
 .brandNameBook {
@@ -94,18 +92,12 @@ div a {
     margin-left: 0.2%;
 }
 
+
 nav {
     display: flex;
     color: #F7F7F7;
     align-items: center;
 }
-
-/* Comment for resolve the probleme with nav id="bd-docs-nav"
-nav ul {
-    display: flex;
-    padding-left: 0%;
-}
-*/
 
 nav.nav.nav-underline {
     display: flex;
@@ -136,6 +128,16 @@ li.nav-item>a.nav-link.nav-blue:hover {
 nav a:link {
     text-decoration: none;
 }
+
+ul.navbar-nav.me-auto.mb-2.mb-lg-0>li.nav-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+div#navbarsExampleDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+    align-items: center;
+}
+
 
 .linkCreateAccount {
     margin-right: 4em;
