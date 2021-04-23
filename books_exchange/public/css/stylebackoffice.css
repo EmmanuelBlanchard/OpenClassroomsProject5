@@ -1,0 +1,297 @@
+body {
+    font-size: .875rem;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+/*
+* Sidebar
+*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 48px 0 0;
+    /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+td {
+    text-align: center;
+}
+
+@media (max-width: 960px) {
+    #sidebarMenu {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .sidebar {
+        padding: 0 !important;
+    }
+
+    .sidebar-sticky {
+        height: auto ! important;
+    }
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 18px;
+        color: #333333;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 32% !important;
+        white-space: normal;
+        text-align: center;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Label the data */
+    td:before {
+        content: attr(data-title);
+    }
+}
+
+@media (max-width: 846px) {
+    td {
+        padding-left: 22% !important;
+    }
+}
+
+@media (max-width: 834px) {
+    td {
+        padding-left: 25% !important;
+    }
+}
+
+@media (max-width: 731px) {
+    td {
+        padding-left: 24% !important;
+    }
+}
+
+@media (max-width: 640px) {
+    td {
+        padding-left: 24% !important;
+    }
+}
+
+@media (max-width: 540px) {
+    td {
+        padding-left: 28% !important;
+    }
+}
+
+@media (max-width: 460px) {
+    td {
+        padding-left: 30% !important;
+    }
+}
+
+@media (max-width: 414px) {
+    td {
+        padding-left: 32% !important;
+    }
+}
+
+@media (max-width: 411px) {
+    td {
+        padding-left: 32% !important;
+    }
+}
+
+@media (max-width: 360px) {
+    td {
+        padding-left: 35% !important;
+    }
+}
+
+@media (max-width: 320px) {
+    td {
+        padding-left: 42% !important;
+    }
+}
+
+@media (max-width: 300px) {
+    td {
+        padding-left: 47% !important;
+    }
+}
+
+@media (max-width: 270px) {
+    .navbar-brand {
+        font-size: 0.9rem !important;
+    }
+
+    td {
+        padding-left: 54% !important;
+    }
+
+    .btn-primary {
+        font-size: 0.625rem;
+    }
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+/*
+* Navbar
+*/
+
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+    top: .25rem;
+    right: 1rem;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+/*
+* Form
+*/
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group input,
+.form-label-group label {
+    height: 3.125rem;
+    padding: .75rem;
+}
+
+.form-label-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #495057;
+    pointer-events: none;
+    cursor: text;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+
+.form-label-group input,
+.form-label-group label {
+    height: 3.125rem;
+    padding: .75rem;
+}
