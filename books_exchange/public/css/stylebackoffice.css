@@ -295,3 +295,183 @@ td {
     height: 3.125rem;
     padding: .75rem;
 }
+
+/* to sort out the useful or not useful selections and store them better if possible */
+
+/* Styles css Bootstrap */
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+/* classes for validation form */
+.valid {
+    color: #0f5132;
+}
+
+.invalid {
+    color: #842029;
+}
+
+/* Style CSS For Validation FORM BOOTSTRAP */
+/*
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+*/
+#formContainer {
+    background-color: #fff;
+    font-family: sans-serif, 'openSansRegular';
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+    padding: 0;
+    height: min-content;
+    margin: 2.5rem auto;
+}
+
+#formContainer .form-control {
+    border: none;
+}
+
+.divAlert.col-sm-12 {
+    margin-top: 2.5rem;
+}
+
+.formHeader {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.formHeader h2 {
+    margin: 0;
+    color: #186135;
+    font-weight: 700;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+    border: 2px solid #f0f0f0;
+    border-radius: 0.25rem;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Problem form login have 
+.form-control:focus {
+	color: #212529;
+	background-color: #fff;
+	border-color: #86b7fe;
+	outline: 0;
+	box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+}
+*/
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 45px;
+    right: 50px;
+    /* before 20px but problem with the display of icons on the input with the type="number" */
+}
+
+.form-control.success i.bi-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.bi-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: initial;
+}
+
+.form-control.error small {
+    display: initial;
+}
+
+.form-control.success small {
+    display: none;
+}
+
+.form button {
+    background-color: #186135;
+    border: 2px solid #186135;
+    border-radius: 0.25rem;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.formFooter {
+    border-top: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    text-align: center;
+}
