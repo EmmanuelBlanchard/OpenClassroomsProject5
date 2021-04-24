@@ -94,7 +94,20 @@ class BookController extends AbstractController
         $entityManager->flush();
 
         return new Response("true");
+    }
 
+    /**
+     * @Route("/exchange/request/{id}", name="exchange_request")
+     */
+    public function exchangeRequest(Book $book): Response
+    {
+        $book->setExchangeRequest(($book->getExchangeRequest())?false:true);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($book);
+        $entityManager->flush();
+
+        return new Response("true");
     }
 
     /**

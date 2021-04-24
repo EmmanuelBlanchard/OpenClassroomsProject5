@@ -21,6 +21,8 @@
 					<th scope="col">Langue</th>
 					<th scope="col">Format</th>
 					<th scope="col">État du livre</th>
+					<th scope="col">Demande d'échange</th>
+					<th scope="col">Date de la demande d'échange</th>
 					<th scope="col">Actions</th>
 				</tr>
 			</thead>
@@ -43,10 +45,17 @@
 						<td>{{item.language}}</td>
 						<td>{{item.format}}</td>
 						<td>{{item.state}}</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" id="flexSwitchCheckDefault" type="checkbox" {{ (item.exchangeRequest) ? 'checked' : ''}} data-id="{{item.id}}">
+								<label class="form-check-label" for="flexSwitchCheckDefault"></label>
+							</div>
+						</td>
+						<td>{{item.exchangeRequestAt|date('d/m/Y')}}</td>
 						<td class="text-center">
-							<a class="btn btn-primary" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
-
-							<a class="btn btn-primary modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" role="button">
+							<a class="btn btn-primary m-2" href="{{ path('admin_book_add') }}" role="button">Ajouter</a>
+							<a class="btn btn-primary m-2" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
+							<a class="btn btn-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" role="button">
 								Supprimer
 							</a>
 						</td>
