@@ -208,6 +208,10 @@ td {
     color: #007bff;
 }
 
+.sidebar .nav-link:hover {
+    color: #0a58ca;
+}
+
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
     color: inherit;
@@ -296,7 +300,7 @@ td {
     padding: .75rem;
 }
 
-/* to sort out the useful or not useful selections and store them better if possible */
+/* Sort out the useful or not useful selections  */
 
 /* Styles css Bootstrap */
 .alert {
@@ -329,15 +333,6 @@ td {
 }
 
 /* Style CSS For Validation FORM BOOTSTRAP */
-/*
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-}
-*/
 #formContainer {
     background-color: #fff;
     font-family: sans-serif, 'openSansRegular';
@@ -368,7 +363,7 @@ body {
 
 .formHeader h2 {
     margin: 0;
-    color: #186135;
+    color: #004B9B;
     font-weight: 700;
 }
 
@@ -400,15 +395,6 @@ body {
     width: 100%;
 }
 
-/* Problem form login have 
-.form-control:focus {
-	color: #212529;
-	background-color: #fff;
-	border-color: #86b7fe;
-	outline: 0;
-	box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
-}
-*/
 .form-control input:focus {
     outline: 0;
     border-color: #777;
@@ -427,7 +413,6 @@ body {
     position: absolute;
     top: 45px;
     right: 50px;
-    /* before 20px but problem with the display of icons on the input with the type="number" */
 }
 
 .form-control.success i.bi-check-circle {
@@ -457,8 +442,8 @@ body {
 }
 
 .form button {
-    background-color: #186135;
-    border: 2px solid #186135;
+    background-color: #004B9B;
+    border: 2px solid #004B9B;
     border-radius: 0.25rem;
     color: #fff;
     display: block;
@@ -467,6 +452,16 @@ body {
     padding: 10px;
     margin-top: 20px;
     width: 100%;
+}
+
+.form button:hover {
+    background-color: #003c7c;
+    border-color: #003063;
+}
+
+.form button:active {
+    background-color: #0a58ca;
+    border-color: #0a53be;
 }
 
 .formFooter {
