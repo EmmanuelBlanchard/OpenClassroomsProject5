@@ -60,7 +60,7 @@ class BookController extends AbstractController
      */
     public function updateBook(Book $book, Request $request): Response
     {
-        $form = $this->createForm(BookRepository::class, $book);
+        $form = $this->createForm(BookFormType::class, $book);
         
         $form->handleRequest($request);
 
