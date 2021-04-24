@@ -53,7 +53,7 @@ class AuthorController extends AbstractController
     /**
      * @Route("/update/{id}", name="update")
      */
-    public function updateFormat(Author $author, Request $request): Response
+    public function updateAuthor(Author $author, Request $request): Response
     {
         $form = $this->createForm(AuthorFormType::class, $author);
         
@@ -70,5 +70,18 @@ class AuthorController extends AbstractController
         return $this->render('admin/author/update.html.twig', [
             'updateAuthorForm' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function deleteAuthor(Author $author): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($author);
+        $entityManager->flush();
+
+        $this->addFlash('message', 'Auteur supprimé avec succès');
+        return $this->redirectToRoute('admin_author_home');
     }
 }
