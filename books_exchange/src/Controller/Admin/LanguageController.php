@@ -72,4 +72,16 @@ class LanguageController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function deleteLanguage(Language $language): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($language);
+        $entityManager->flush();
+
+        $this->addFlash('message', 'Langage supprimée avec succès');
+        return $this->redirectToRoute('admin_Language_home');
+    }
 }
