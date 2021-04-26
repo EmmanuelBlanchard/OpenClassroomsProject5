@@ -60,6 +60,10 @@
 					</h3>
 				</div>
 
+				<div>
+					<a class="btn btn-primary m-2" href="{{ path('user_book_add') }}" role="button">Ajouter un livre</a>
+				</div>
+
 				<table class="table manageMyAccountBooks">
 					<thead>
 						<tr>
@@ -86,9 +90,11 @@
 								<td>{{ books.format }}</td>
 								<td>{{ books.state }}</td>
 								<td>
-									<a class="btn btn-primary m-2" href="{{ path('user_book_add') }}" role="button">Ajouter un livre</a>
-									<a class="btn btn-primary m-2" href="{{ path('user_book_add_exchanges', {'id': books.id }) }}" role="button">Ajouter aux échanges</a>
-									<a class="btn btn-primary m-2" href="{{ path('user_book_remove_exchanges', {'id': books.id }) }}" role="button">Retirer des échanges</a>
+									{% if books.active %}
+										<a class="btn btn-primary m-2" href="{{ path('user_book_remove_exchanges', {'id': books.id }) }}" role="button">Retirer des échanges</a>
+									{% else %}
+										<a class="btn btn-primary m-2" href="{{ path('user_book_add_exchanges', {'id': books.id }) }}" role="button">Ajouter aux échanges</a>
+									{% endif %}
 									<a class="btn btn-primary m-2" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Supprimer</a>
 								</td>
 							</tr>

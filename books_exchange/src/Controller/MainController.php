@@ -16,8 +16,8 @@ class MainController extends AbstractController
      */
     public function index(BookRepository $bookRepo, Request $request): Response
     {
-        $books = $bookRepo->findBy(['active' => true, 'exchangeRequest' => false],
-        ['createdAt' => 'desc'], 10);
+        $user = $this->getUser();
+        $books = $bookRepo->findBooksActiveNoExchangeRequestAndBooksNoUser($user);
 
         $form = $this->createForm(SearchBookFormType::class);
 
