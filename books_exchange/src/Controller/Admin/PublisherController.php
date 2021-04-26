@@ -71,4 +71,17 @@ class PublisherController extends AbstractController
             'updatePublisherForm' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function deleteLanguage(Publisher $publisher): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($publisher);
+        $entityManager->flush();
+
+        $this->addFlash('message', 'Éditeur supprimé avec succès');
+        return $this->redirectToRoute('admin_publisher_home');
+    }
 }
