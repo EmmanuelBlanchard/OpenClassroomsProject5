@@ -17,7 +17,7 @@ class MainController extends AbstractController
     public function index(BookRepository $bookRepo, Request $request): Response
     {
         $user = $this->getUser();
-        $books = $bookRepo->findBooksActiveNoExchangeRequestAndBooksNoUser($user);
+        $books = $bookRepo->findBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
 
         $form = $this->createForm(SearchBookFormType::class);
 

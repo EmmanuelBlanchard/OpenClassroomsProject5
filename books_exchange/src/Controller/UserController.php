@@ -129,10 +129,8 @@ class UserController extends AbstractController
     public function showBooksExchange(BookRepository $bookRepo): Response
     {
         $user = $this->getUser();
-        $theBooksIRequestedToExchange = $this->getDoctrine()->getRepository(Book::class)->findBy(
-            ['exchangeRequest' => true, 'userexchange' => $user],
-            ['exchangeRequestAt' => 'desc']
-        );
+
+        $theBooksIRequestedToExchange = $bookRepo->findBooksActiveWithExchangeRequestRequestedByUser($user);
 
         $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
 
