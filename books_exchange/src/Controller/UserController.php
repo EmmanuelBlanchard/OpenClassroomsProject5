@@ -126,15 +126,17 @@ class UserController extends AbstractController
     /**
      * @Route("/user/book/show/exchange", name="user_book_show_exchange")
      */
-    public function showBooksExchange(): Response
+    public function showBooksExchange(BookRepository $bookRepo): Response
     {
         $user = $this->getUser();
-        $books = $this->getDoctrine()->getRepository(Book::class)->findBy(
+        $theBooksIRequestedToExchange = $this->getDoctrine()->getRepository(Book::class)->findBy(
             ['exchangeRequest' => true, 'userexchange' => $user],
             ['exchangeRequestAt' => 'desc']
         );
 
-        return $this->render('user/book/showexchange.html.twig', ['books' => $books]);
+        $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
+
+        return $this->render('user/book/showexchange.html.twig', ['theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,'myBooksRequestedForExchange' => $myBooksRequestedForExchange]);
     }
 
     /**
@@ -199,18 +201,6 @@ class UserController extends AbstractController
             $this->addFlash('message', 'Livre retiré de l\'échange de livres');
         }
         return $this->redirectToRoute('user_book');
-    }
-
-    /**
-     * @Route("/user/book/show/exchange", name="user_book_requested_exchange")
-     */
-    public function showMyBooksRequestedForExchange(BookRepository $bookRepo): Response
-    {
-        $user = $this->getUser();
-
-        $books = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
-        
-        return $this->render('user/book/showexchange.html.twig', ['BooksRequestedForExchange' => $books]);
     }
 
     /**

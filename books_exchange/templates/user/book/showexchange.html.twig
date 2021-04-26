@@ -25,17 +25,17 @@
 		<h2 class="h2ConnectedBookExchangeClickOnTheBookExchangeLink">Échange de livres</h2>
 
 		<div class="col-sm-12">
-			<h3 class="h3ConnectedBookExchangeClickOnTheBookExchangeLink">Vos échanges
-				{% if books|length == "0" %}
+			<h3 class="h3ConnectedBookExchangeClickOnTheBookExchangeLink">Mes demandes d'échanges de livres
+				{% if theBooksIRequestedToExchange|length == "0" %}
 					(0 livre)
 				{% else %}
-					({{ books|length }}
+					({{ theBooksIRequestedToExchange|length }}
 					livres)
 				{% endif %}
 			</h3>
 		</div>
 
-		{% if books|length == "0" %}
+		{% if theBooksIRequestedToExchange|length == "0" %}
 			<div class="divConnectedBookExchangeClickOnTheBookExchangeLink">
 				<p>Vous n'avez aucun échange de livre en cours</p>
 			</div>
@@ -67,7 +67,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					{% for book in books %}
+					{% for book in theBooksIRequestedToExchange %}
 						<tr>
 							<th scope="row">{{book.title}}</th>
 							<td>{{book.author}}</td>
@@ -85,7 +85,18 @@
 			</table>
 		{% endif %}
 
-		{% if BooksRequestedForExchange|length == "0" %}
+		<div class="col-sm-12">
+			<h3 class="h3ConnectedBookExchangeClickOnTheBookExchangeLink">Les demandes d'échanges de livres
+				{% if myBooksRequestedForExchange|length == "0" %}
+					(0 livre)
+				{% else %}
+					({{ myBooksRequestedForExchange|length }}
+					livres)
+				{% endif %}
+			</h3>
+		</div>
+
+		{% if myBooksRequestedForExchange|length == "0" %}
 			<div class="divConnectedBookExchangeClickOnTheBookExchangeLink">
 				<p>Vous n'avez aucun demande d'échange de vos livres en cours</p>
 			</div>
@@ -104,7 +115,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					{% for book in BooksRequestedForExchange %}
+					{% for book in myBooksRequestedForExchange %}
 						<tr>
 							<th scope="row">{{book.title}}</th>
 							<td>{{book.author}}</td>
