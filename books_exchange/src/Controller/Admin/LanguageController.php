@@ -82,6 +82,6 @@ class LanguageController extends AbstractController
         $entityManager->flush();
 
         $this->addFlash('message', 'Langage supprimée avec succès');
-        return $this->redirectToRoute('admin_Language_home');
+        return $this->redirectToRoute('admin_language_home');
     }
 }
