@@ -72,4 +72,17 @@ class FormatController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function deleteFormat(Format $format): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($format);
+        $entityManager->flush();
+
+        $this->addFlash('message', 'Format supprimé avec succès');
+        return $this->redirectToRoute('admin_format_home');
+    }
+
 }
