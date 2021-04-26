@@ -79,23 +79,23 @@
 						</tr>
 					</thead>
 					<tbody>
-						{% for books in app.user.books %}
+						{% for book in app.user.books %}
 							<tr>
-								<th scope="row">{{ books.id }}</th>
-								<td>{{ books.title }}</td>
-								<td>{{ books.author }}</td>
-								<td>{{ books.category }}</td>
-								<td>{{ books.publisher }}</td>
-								<td>{{ books.language }}</td>
-								<td>{{ books.format }}</td>
-								<td>{{ books.state }}</td>
+								<th scope="row">{{ book.id }}</th>
+								<td>{{ book.title }}</td>
+								<td>{{ book.author }}</td>
+								<td>{{ book.category }}</td>
+								<td>{{ book.publisher }}</td>
+								<td>{{ book.language }}</td>
+								<td>{{ book.format }}</td>
+								<td>{{ book.state }}</td>
 								<td>
-									{% if books.active %}
-										<a class="btn btn-primary m-2" href="{{ path('user_book_remove_exchanges', {'id': books.id }) }}" role="button">Retirer des échanges</a>
+									{% if book.active %}
+										<a class="btn btn-primary m-2" href="{{ path('user_book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
 									{% else %}
-										<a class="btn btn-primary m-2" href="{{ path('user_book_add_exchanges', {'id': books.id }) }}" role="button">Ajouter aux échanges</a>
+										<a class="btn btn-primary m-2" href="{{ path('user_book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
 									{% endif %}
-									<a class="btn btn-primary m-2" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Supprimer</a>
+									<a class="btn btn-primary m-2" href="{{ path('user_book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
 								</td>
 							</tr>
 						{% endfor %}
