@@ -71,5 +71,17 @@ class StateController extends AbstractController
             'updateStateForm' => $form->createView()
         ]);
     }
-    
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function deleteLanguage(State $state): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($state);
+        $entityManager->flush();
+
+        $this->addFlash('message', 'État supprimé avec succès');
+        return $this->redirectToRoute('admin_state_home');
+    }
 }
