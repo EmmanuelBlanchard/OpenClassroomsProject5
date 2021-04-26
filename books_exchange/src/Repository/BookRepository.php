@@ -22,21 +22,39 @@ class BookRepository extends ServiceEntityRepository
     /**
     * @return Book[] Returns an array of Book objects
     */
-    public function findBooksActiveNoExchangeRequestAndBooksNoUser($user)
+    public function findBooksActiveWithoutExchangeRequestNotOwnedByUser($user)
     {
-        return $this->createQueryBuilder('b')
-            ->where('b.active = :active')
+        return $this->createQueryBuilder('book')
+            ->where('book.active = :active')
             ->setParameter('active', 1)
-            ->andWhere('b.exchangeRequest = :exchangeRequest')
+            ->andWhere('book.exchangeRequest = :exchangeRequest')
             ->setParameter('exchangeRequest', 0)
-            ->andWhere('b.user <> :user')
+            ->andWhere('book.user <> :user')
             ->setParameter('user', $user)
-            ->orderBy('b.id', 'ASC')
+            ->orderBy('book.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
+    }
 
+    /**
+    * @return Book[] Returns an array of Book objects
+    */
+    public function findBooksActiveWithExchangeRequestOwnedByUser($user)
+    {
+        return $this->createQueryBuilder('book')
+            ->where('book.active = :active')
+            ->setParameter('active', 1)
+            ->andWhere('book.exchangeRequest = :exchangeRequest')
+            ->setParameter('exchangeRequest', 1)
+            ->andWhere('book.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('book.exchangeRequestAt', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
     }
 
     /**

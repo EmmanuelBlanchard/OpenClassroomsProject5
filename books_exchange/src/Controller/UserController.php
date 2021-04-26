@@ -4,9 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Form\BookFormType;
-use App\Form\ChangePasswordFormType;
 use App\Form\EditEmailFormType;
 use App\Form\EditProfileFormType;
+use App\Repository\BookRepository;
+use App\Form\ChangePasswordFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -198,6 +199,18 @@ class UserController extends AbstractController
             $this->addFlash('message', 'Livre retiré de l\'échange de livres');
         }
         return $this->redirectToRoute('user_book');
+    }
+
+    /**
+     * @Route("/user/book/show/exchange", name="user_book_requested_exchange")
+     */
+    public function showMyBooksRequestedForExchange(BookRepository $bookRepo): Response
+    {
+        $user = $this->getUser();
+
+        $books = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
+        
+        return $this->render('user/book/showexchange.html.twig', ['BooksRequestedForExchange' => $books]);
     }
 
     /**
