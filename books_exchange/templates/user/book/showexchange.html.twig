@@ -25,7 +25,7 @@
 		<h2 class="h2ConnectedBookExchangeClickOnTheBookExchangeLink">Échange de livres</h2>
 
 		<div class="col-sm-12">
-			<h3 class="h3TheBooksIRequestedToExchange">Mes demandes d'échanges de livres
+			<h3 class="h3TheBooksIRequestedToExchange">Mes demandes d'échange de livres
 				{% if theBooksIRequestedToExchange|length == "0" %}
 					(0 livre)
 				{% else %}
@@ -37,7 +37,7 @@
 
 		{% if theBooksIRequestedToExchange|length == "0" %}
 			<div class="divTheBooksIRequestedToExchange">
-				<p>Vous n'avez aucun échange de livre en cours</p>
+				<p>Vous n'avez effectué aucune demande d'échange de livres actuellement</p>
 			</div>
 
 			<div class="divExchangeInstructions">
@@ -86,7 +86,7 @@
 		{% endif %}
 
 		<div class="col-sm-12">
-			<h3 class="h3MyBooksRequestedForExchange">Les demandes d'échanges de livres
+			<h3 class="h3MyBooksRequestedForExchange">Les demandes d'échanges de mes livres
 				{% if myBooksRequestedForExchange|length == "0" %}
 					(0 livre)
 				{% else %}
@@ -98,7 +98,7 @@
 
 		{% if myBooksRequestedForExchange|length == "0" %}
 			<div class="divMyBooksRequestedForExchange">
-				<p>Vous n'avez aucun demande d'échange de vos livres en cours</p>
+				<p>Vous n'avez aucune demande d'échange de vos livres actuellement</p>
 			</div>
 
 		{% else %}
