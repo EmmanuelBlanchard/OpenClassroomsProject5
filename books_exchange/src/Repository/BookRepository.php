@@ -31,7 +31,7 @@ class BookRepository extends ServiceEntityRepository
             ->setParameter('exchangeRequest', 0)
             ->andWhere('book.user <> :user')
             ->setParameter('user', $user)
-            ->orderBy('book.id', 'ASC')
+            ->orderBy('book.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
