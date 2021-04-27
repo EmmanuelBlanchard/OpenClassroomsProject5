@@ -311,7 +311,8 @@ a.linkBookExchange:visited {
 .h2ConnectedBookStockBookStocked,
 .h3ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
-.h3ConnectedBookExchangeClickOnTheBookExchangeLink,
+.h3TheBooksIRequestedToExchange,
+.h3MyBooksRequestedForExchange,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
@@ -365,7 +366,8 @@ a.linkBookExchange:visited {
 .h3ConnectedBookStockAddABook,
 .h3ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookStocked,
-.h3ConnectedBookExchangeClickOnTheBookExchangeLink,
+.h3TheBooksIRequestedToExchange,
+.h3MyBooksRequestedForExchange,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter {
     padding: 10px 20px;
 }
@@ -429,7 +431,8 @@ section.introductoryContent>p {
 /* Wireframe 6-8-9-10 */
 .divConnectedBookStockAddABook,
 .divConnectedBookStockBookStocked,
-.divConnectedBookExchangeClickOnTheBookExchangeLink,
+.divTheBooksIRequestedToExchange,
+.divMyBooksRequestedForExchange,
 .divConnectedBookExchangeSearchForTheBookHarryPotter,
 .divConnectedResetPasswordCheckEmail {
     margin: 1.5rem auto;
@@ -452,7 +455,8 @@ section.introductoryContent>p {
     padding: 2% 2%;
 }
 
-.divConnectedBookExchangeClickOnTheBookExchangeLink,
+.divTheBooksIRequestedToExchange,
+.divMyBooksRequestedForExchange,
 .divConnectedBookExchangeSearchForTheBookHarryPotter {
     width: 52.8%;
 }
@@ -462,7 +466,8 @@ section.introductoryContent>p {
 .divConnectedTotheAccount p,
 .divConnectedBookStockAddABook p,
 .divConnectedBookStockBookStocked p,
-.divConnectedBookExchangeClickOnTheBookExchangeLink p,
+.divTheBooksIRequestedToExchange p,
+.divMyBooksRequestedForExchange p,
 .divExchangeInstructions p,
 .divConnectedBookExchangeSearchForTheBookHarryPotter p,
 .divDisplayBlocksBookInformation p,
@@ -476,14 +481,16 @@ section.introductoryContent>p {
 /* Wireframes 6-8-9-10 */
 .divConnectedBookStockAddABook p,
 .divConnectedBookStockBookStocked p,
-.divConnectedBookExchangeClickOnTheBookExchangeLink p,
+.divTheBooksIRequestedToExchange p,
+.divMyBooksRequestedForExchange p,
 .divExchangeInstructions p,
 .divConnectedBookExchangeSearchForTheBookHarryPotter p,
 .divExchangeInstructions p {
     color: #FFF;
 }
 
-.divConnectedBookExchangeClickOnTheBookExchangeLink p {
+.divTheBooksIRequestedToExchange p,
+.divMyBooksRequestedForExchange p {
     margin: .5rem auto;
 }
 
