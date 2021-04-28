@@ -83,6 +83,7 @@
 				{% endfor %}
 			</tbody>
 		</table>
+
 		<!-- Modal -->
 		<div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -95,15 +96,14 @@
 					<div class="modal-footer">
 						<a href="" class="btn btn-danger">Valider</a>
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-						<button type="button" class="btn btn-primary">Enregistrer les changements</button>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
 {% endblock %}
 
 {% block javascripts %}
-	<script src="{{ asset('js/activatebook.js') }}"></script>
 	<script src="{{ asset('js/modalbook.js')}}"></script>
 {% endblock %}

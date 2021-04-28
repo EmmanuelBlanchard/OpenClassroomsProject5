@@ -161,4 +161,12 @@ class BookController extends AbstractController
         $this->addFlash('message', 'Livre supprimé avec succès');
         return $this->redirectToRoute('admin_book_home');
     }
+
+    /**
+     * @Route("/modal/", name="modal")
+     */
+    public function modalBook(): Response
+    {
+        return $this->render('admin/book/testaccessiblemodal.html.twig');
+    }
 }
