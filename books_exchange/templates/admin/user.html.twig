@@ -1,0 +1,139 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Liste des utilisateurs
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-danger" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<div class="col-sm-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+			<h1>Liste des utilisateurs</h1>
+		</div>
+
+		<table class="table table-responsive table-hover">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">E-mail</th>
+					<th scope="col">Rôles</th>
+					<th scope="col">Livres</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in user %}
+					<tr>
+						<th scope="row">{{ item.id }}</th>
+						<td>{{ item.email }}</td>
+						<td>
+							{% for role in item.roles %}
+								{% if role == "ROLE_USER" %}
+									Utilisateur
+								{% elseif role == "ROLE_EDITOR" %}
+									Éditeur
+								{% elseif role == "ROLE_ADMIN" %}
+									Administrateur
+								{% endif %}
+							{% endfor %}
+						</td>
+						<td>{{ item.books|length }}</td>
+						<td>
+							<a href="{{ path('admin_user_edit', {'id': item.id}) }}" class="btn btn-warning">Modifier</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="5">Il n'y a pas d'utilisateur inscrit</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<table class="table table-responsive table-hover">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">E-mail</th>
+					<th scope="col">Rôles</th>
+					<th scope="col">Est vérifié</th>
+					<th scope="col">Livres</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Pseudo</th>
+					<th scope="col">Code Postal</th>
+					<th scope="col">Ville</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in user %}
+					<tr>
+						<th scope="row">{{item.id}}</th>
+						<td>{{item.email}}</td>
+						<td>
+							{% for role in item.roles %}
+								{% if role == "ROLE_USER" %}
+									Utilisateur
+								{% elseif role == "ROLE_EDITOR" %}
+									Éditeur
+								{% elseif role == "ROLE_ADMIN" %}
+									Administrateur
+								{% endif %}
+							{% endfor %}
+						</td>
+						<td>
+							{% if item.isVerified %}
+								Oui
+							{% else %}
+								Non
+							{% endif %}
+						</td>
+						<td>{{item.books|length}}</td>
+						<td>{{item.lastname}}</td>
+						<td>{{item.firstname}}</td>
+						<td>{{item.pseudo}}</td>
+						<td>{{item.zipCode}}</td>
+						<td>{{item.city}}</td>
+						<td class="text-center"></td>
+						<td>
+							<a href="{{ path('admin_user_edit', {'id': item.id}) }}" class="btn btn-warning m-2" role="button">Modifier</a>
+							<a class="btn btn btn-danger m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
+								Supprimer
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<!-- Modal -->
+		<div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="dialog-title" aria-hidden="true">
+			<div role="document" class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="dialog-title">Supprimer l'utilisateur</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale"></button>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<a href="" class="btn btn-danger" aria-label="Valider" title="Valider la suppression de l'utilisateur" aria-controls="dialog" role="button">Valider</a>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}

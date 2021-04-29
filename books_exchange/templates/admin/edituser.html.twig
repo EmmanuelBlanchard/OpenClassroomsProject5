@@ -1,0 +1,121 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Modifier l'utilisateur
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-danger" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<div class="col-sm-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+			<h1>Modifier l'utilisateur</h1>
+		</div>
+
+		{{ form_start(editUserForm, {'attr': {'id': 'edit_user_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editUserForm.email) }}
+			{{ form_widget(editUserForm.email) }}
+
+			<small>{{ form_help(editUserForm.email) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editUserForm.email) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editUserForm.roles) }}
+			{{ form_widget(editUserForm.roles) }}
+
+			<small>{{ form_help(editUserForm.roles) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editUserForm.roles) }}
+			</div>
+		</div>
+
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editUserForm.lastname) }}
+			{{ form_widget(editUserForm.lastname) }}
+
+			<small>{{ form_help(editUserForm.lastname) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editUserForm.lastname) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editUserForm.firstname) }}
+			{{ form_widget(editUserForm.firstname) }}
+
+			<small>{{ form_help(editUserForm.firstname) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editUserForm.firstname) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editUserForm.pseudo) }}
+			{{ form_widget(editUserForm.pseudo) }}
+
+			<small>{{ form_help(editUserForm.pseudo) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editUserForm.pseudo) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editUserForm.zipCode) }}
+			{{ form_widget(editUserForm.zipCode) }}
+
+			<small>{{ form_help(editUserForm.zipCode) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editUserForm.zipCode) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(editUserForm.city) }}
+			{{ form_widget(editUserForm.city) }}
+
+			<small>{{ form_help(editUserForm.city) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(editUserForm.city) }}
+			</div>
+		</div>
+		{{ form_end(editUserForm) }}
+	</div>
+{% endblock %}
