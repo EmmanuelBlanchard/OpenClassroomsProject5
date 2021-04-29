@@ -1,7 +1,10 @@
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
-
+        
+        # Important: be sure that this parameters exists and its value is set to true
+        # to fix the deprecation warning!
+        override_url: true
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
         #server_version: '13'
