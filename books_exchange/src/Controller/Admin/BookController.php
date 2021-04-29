@@ -83,20 +83,6 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/activate/{id}", name="activate")
-     */
-    public function activateBook(Book $book): Response
-    {
-        $book->setActive(($book->getActive())?false:true);
-
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($book);
-        $entityManager->flush();
-
-        return new Response("true");
-    }
-
-    /**
      * @Route("/add/exchange/{id}/", name="add_exchange")
      */
     public function addExchange(Book $book): Response
@@ -133,20 +119,6 @@ class BookController extends AbstractController
             $this->addFlash('message', 'Livre retiré des échanges');
         }
         return $this->redirectToRoute('admin_book_home');
-    }
-
-    /**
-     * @Route("/exchange/request/{id}", name="exchange_request")
-     */
-    public function exchangeRequest(Book $book): Response
-    {
-        $book->setExchangeRequest(($book->getExchangeRequest())?false:true);
-
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($book);
-        $entityManager->flush();
-
-        return new Response("true");
     }
 
     /**
