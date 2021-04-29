@@ -75,7 +75,7 @@
 								<a class="btn btn-primary m-2" href="{{ path('admin_book_add_exchange', {'id': item.id }) }}" role="button">Ajouter aux échanges</a>
 							{% endif %}
 							<a class="btn btn-primary m-2" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
-							<a class="btn btn-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" role="button">
+							<a class="btn btn-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" data-author="{{item.author}}" data-publisher="{{item.publisher}}" data-format="{{item.format}}" data-state="{{item.state}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
 								Supprimer
 							</a>
 						</td>
@@ -85,17 +85,17 @@
 		</table>
 
 		<!-- Modal -->
-		<div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
+		<div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="dialog-title" aria-hidden="true">
+			<div role="document" class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Supprimer le livre</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<h5 class="modal-title" id="dialog-title">Supprimer le livre</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale"></button>
 					</div>
 					<div class="modal-body"></div>
 					<div class="modal-footer">
-						<a href="" class="btn btn-danger">Valider</a>
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+						<a href="" class="btn btn-danger" aria-label="Valider" title="Valider la suppression du livre" aria-controls="dialog" role="button">Valider</a>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
 					</div>
 				</div>
 			</div>
