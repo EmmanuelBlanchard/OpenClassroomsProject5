@@ -19,38 +19,38 @@
 				{{ app.user.pseudo }}
 			</h2>
 		</div>
-		{{ form_start(editemailForm, {'attr': {'id': 'editemail_form', 'class': 'form'}}) }}
+		{{ form_start(updateEmailForm, {'attr': {'id': 'update_email_form', 'class': 'form'}}) }}
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editemailForm.email.first) }}
-			{{ form_widget(editemailForm.email.first) }}
+			{{ form_label(updateEmailForm.email.first) }}
+			{{ form_widget(updateEmailForm.email.first) }}
 
-			<small>{{ form_help(editemailForm.email.first) }}</small>
+			<small>{{ form_help(updateEmailForm.email.first) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editemailForm.email.first) }}
+				{{ form_errors(updateEmailForm.email.first) }}
 			</div>
 		</div>
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editemailForm.email.second) }}
-			{{ form_widget(editemailForm.email.second) }}
+			{{ form_label(updateEmailForm.email.second) }}
+			{{ form_widget(updateEmailForm.email.second) }}
 
-			<small>{{ form_help(editemailForm.email.second) }}</small>
+			<small>{{ form_help(updateEmailForm.email.second) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editemailForm.email.second) }}
+				{{ form_errors(updateEmailForm.email.second) }}
 			</div>
 		</div>
 
-		{{ form_end(editemailForm) }}
+		{{ form_end(updateEmailForm) }}
 	</div>
 {% endblock %}
 
 {% block javascripts %}
-	<script src="{{ asset('js/editemailform.js') }}"></script>
+	<script src="{{ asset('js/updateEmailForm.js') }}"></script>
 {% endblock %}

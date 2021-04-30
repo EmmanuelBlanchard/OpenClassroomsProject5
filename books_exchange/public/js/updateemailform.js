@@ -3,9 +3,9 @@ window.onload = () => {
   email2.addEventListener('input', checkInputEmail2);
 }
 
-let form = document.querySelector('#editemail_form');
-const email = document.querySelector('#edit_email_form_email_first');
-const email2 = document.querySelector('#edit_email_form_email_second');
+let form = document.querySelector('#update_email_form');
+const email = document.querySelector('#update_email_form_email_first');
+const email2 = document.querySelector('#update_email_form_email_second');
 
 function checkInputEmail() {
   // trim to remove the whitespaces

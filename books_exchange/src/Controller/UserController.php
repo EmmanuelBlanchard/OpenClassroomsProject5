@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Form\BookFormType;
-use App\Form\EditEmailFormType;
+use App\Form\UpdateEmailFormType;
 use App\Repository\BookRepository;
 use App\Form\UpdateProfileFormType;
 use App\Form\UpdatePasswordFormType;
@@ -253,12 +253,12 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user/email/edit", name="user_email_edit")
+     * @Route("/user/email/update", name="user_email_update")
      */
-    public function editEmail(Request $request): Response
+    public function updateEmail(Request $request): Response
     {
         $user = $this->getUser();
-        $form = $this->createForm(EditEmailFormType::class, $user);
+        $form = $this->createForm(UpdateEmailFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -273,8 +273,8 @@ class UserController extends AbstractController
             $this->addFlash('message', 'L\'adresse e-mail a été mise à jour avec succès');
             return $this->redirectToRoute('user');
         }
-        return $this->render('user/editemail.html.twig', [
-            'editemailForm' => $form->createView()
+        return $this->render('user/updateemail.html.twig', [
+            'updateEmailForm' => $form->createView()
         ]);
     }
 

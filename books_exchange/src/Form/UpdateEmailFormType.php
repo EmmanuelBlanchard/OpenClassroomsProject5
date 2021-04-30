@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
-class EditEmailFormType extends AbstractType
+class UpdateEmailFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
