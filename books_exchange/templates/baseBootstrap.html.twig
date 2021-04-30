@@ -36,10 +36,6 @@
 							<li class="nav-item">
 								<a class="nav-link nav-blue" href="{{ path('admin_home') }}">Tableau de bord</a>
 							</li>
-						{% else %}
-							<li class="nav-item">
-								<a class="nav-link nav-blue" href="{{ path('app_login') }}">Connexion</a>
-							</li>
 						{% endif %}
 						{% if is_granted('ROLE_USER') %}
 							<li class="nav-item">
