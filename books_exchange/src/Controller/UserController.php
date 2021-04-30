@@ -7,7 +7,7 @@ use App\Form\BookFormType;
 use App\Form\EditEmailFormType;
 use App\Repository\BookRepository;
 use App\Form\UpdateProfileFormType;
-use App\Form\ChangePasswordFormType;
+use App\Form\UpdatePasswordFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -224,12 +224,12 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user/password/edit", name="user_password_edit")
+     * @Route("/user/password/update", name="user_password_update")
      */
-    public function editPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function updatePassword(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = $this->getUser();
-        $form = $this->createForm(ChangePasswordFormType::class, $user);
+        $form = $this->createForm(UpdatePasswordFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -247,8 +247,8 @@ class UserController extends AbstractController
             $this->addFlash('message', 'Mot de passe mis à jour avec succès');
             return $this->redirectToRoute('user');
         }
-        return $this->render('user/editpassword.html.twig', [
-            'editpasswordForm' => $form->createView()
+        return $this->render('user/updatepassword.html.twig', [
+            'updatePasswordForm' => $form->createView()
         ]);
     }
 

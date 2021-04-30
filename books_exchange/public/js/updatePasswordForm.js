@@ -3,9 +3,9 @@ window.onload = () => {
   password2.addEventListener('input', checkInputPassword2);
 }
 
-let form = document.querySelector('#editpassword_form');
-const password = document.querySelector('#change_password_form_plainPassword_first');
-const password2 = document.querySelector('#change_password_form_plainPassword_second');
+let form = document.querySelector('#update_password_form');
+const password = document.querySelector('#update_password_form_plainPassword_first');
+const password2 = document.querySelector('#update_password_form_plainPassword_second');
 
 function checkInputPassword() {
   // trim to remove the whitespaces
