@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\User;
 use App\Entity\State;
 use App\Entity\Author;
 use App\Entity\Format;
@@ -13,10 +12,8 @@ use App\Form\StateFormType;
 use App\Form\AuthorFormType;
 use App\Form\FormatFormType;
 use App\Form\CategoryFormType;
-use App\Form\EditUserFormType;
 use App\Form\LanguageFormType;
 use App\Form\PublisherFormType;
-use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,55 +33,6 @@ class AdminController extends AbstractController
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
         ]);
-    }
-
-    /**
-     * Lists the users of the site 
-     *
-     * @Route("/user", name="user")
-     */
-    public function usersList(UserRepository $userRepo) {
-        return $this->render("admin/user.html.twig", [
-            'user' => $userRepo->findAll()
-        ]);
-    }
-
-    /**
-     * Edit a user
-     *
-     * @Route("/user/edit/{id}", name="user_edit")
-     */
-    public function editUser(User $user, Request $request) {
-        $form = $this->createForm(EditUserFormType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            $this->addFlash('message', 'Utilisateur modifié avec succès');
-            return $this->redirectToRoute('admin_user');
-        }
-
-        return $this->render('admin/edituser.html.twig', [
-            'editUserForm' => $form->createView()
-        ]);
-    }
-
-    /**
-     * Delete a user
-     *
-     * @Route("/user/delete/{id}", name="user_delete")
-     */
-    public function deleteUser(User $user): Response
-    {
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($user);
-        $entityManager->flush();
-
-        $this->addFlash('message', 'Utilisateur supprimé avec succès');
-        return $this->redirectToRoute('admin_user');
     }
 
     /**

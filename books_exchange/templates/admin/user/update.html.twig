@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div id="formContainer">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-sm-12">
 				<div class="alert alert-success" role="alert">
@@ -19,35 +19,35 @@
 				</div>
 			</div>
 		{% endfor %}
-		<div class="col-sm-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
-			<h1>Modifier l'utilisateur</h1>
+		<div class="formHeader">
+			<h2>Modifier l'utilisateur</h2>
 		</div>
 
-		{{ form_start(editUserForm, {'attr': {'id': 'edit_user_form', 'class': 'form'}}) }}
+		{{ form_start(updateUserForm, {'attr': {'id': 'update_user_form', 'class': 'form'}}) }}
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editUserForm.email) }}
-			{{ form_widget(editUserForm.email) }}
+			{{ form_label(updateUserForm.email) }}
+			{{ form_widget(updateUserForm.email) }}
 
-			<small>{{ form_help(editUserForm.email) }}</small>
+			<small>{{ form_help(updateUserForm.email) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editUserForm.email) }}
+				{{ form_errors(updateUserForm.email) }}
 			</div>
 		</div>
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editUserForm.roles) }}
-			{{ form_widget(editUserForm.roles) }}
+			{{ form_label(updateUserForm.roles) }}
+			{{ form_widget(updateUserForm.roles) }}
 
-			<small>{{ form_help(editUserForm.roles) }}</small>
+			<small>{{ form_help(updateUserForm.roles) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editUserForm.roles) }}
+				{{ form_errors(updateUserForm.roles) }}
 			</div>
 		</div>
 
@@ -55,67 +55,67 @@
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editUserForm.lastname) }}
-			{{ form_widget(editUserForm.lastname) }}
+			{{ form_label(updateUserForm.lastname) }}
+			{{ form_widget(updateUserForm.lastname) }}
 
-			<small>{{ form_help(editUserForm.lastname) }}</small>
+			<small>{{ form_help(updateUserForm.lastname) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editUserForm.lastname) }}
+				{{ form_errors(updateUserForm.lastname) }}
 			</div>
 		</div>
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editUserForm.firstname) }}
-			{{ form_widget(editUserForm.firstname) }}
+			{{ form_label(updateUserForm.firstname) }}
+			{{ form_widget(updateUserForm.firstname) }}
 
-			<small>{{ form_help(editUserForm.firstname) }}</small>
+			<small>{{ form_help(updateUserForm.firstname) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editUserForm.firstname) }}
+				{{ form_errors(updateUserForm.firstname) }}
 			</div>
 		</div>
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editUserForm.pseudo) }}
-			{{ form_widget(editUserForm.pseudo) }}
+			{{ form_label(updateUserForm.pseudo) }}
+			{{ form_widget(updateUserForm.pseudo) }}
 
-			<small>{{ form_help(editUserForm.pseudo) }}</small>
+			<small>{{ form_help(updateUserForm.pseudo) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editUserForm.pseudo) }}
+				{{ form_errors(updateUserForm.pseudo) }}
 			</div>
 		</div>
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editUserForm.zipCode) }}
-			{{ form_widget(editUserForm.zipCode) }}
+			{{ form_label(updateUserForm.zipCode) }}
+			{{ form_widget(updateUserForm.zipCode) }}
 
-			<small>{{ form_help(editUserForm.zipCode) }}</small>
+			<small>{{ form_help(updateUserForm.zipCode) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editUserForm.zipCode) }}
+				{{ form_errors(updateUserForm.zipCode) }}
 			</div>
 		</div>
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(editUserForm.city) }}
-			{{ form_widget(editUserForm.city) }}
+			{{ form_label(updateUserForm.city) }}
+			{{ form_widget(updateUserForm.city) }}
 
-			<small>{{ form_help(editUserForm.city) }}</small>
+			<small>{{ form_help(updateUserForm.city) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(editUserForm.city) }}
+				{{ form_errors(updateUserForm.city) }}
 			</div>
 		</div>
-		{{ form_end(editUserForm) }}
+		{{ form_end(updateUserForm) }}
 	</div>
 {% endblock %}
