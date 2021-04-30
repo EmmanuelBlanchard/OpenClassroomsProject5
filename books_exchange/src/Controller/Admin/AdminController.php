@@ -73,6 +73,21 @@ class AdminController extends AbstractController
     }
 
     /**
+     * Delete a user
+     *
+     * @Route("/user/delete/{id}", name="user_delete")
+     */
+    public function deleteUser(User $user): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        $this->addFlash('message', 'Utilisateur supprimé avec succès');
+        return $this->redirectToRoute('admin_user');
+    }
+
+    /**
      * @Route("/category/add", name="category_add")
      */
     public function addCategory(Request $request): Response
