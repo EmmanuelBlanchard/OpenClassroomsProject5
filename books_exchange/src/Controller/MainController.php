@@ -42,8 +42,6 @@ class MainController extends AbstractController
      */
     public function howitworks(): Response
     {
-        return $this->render('main/howitworks.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/howitworks.html.twig');
     }
 }
