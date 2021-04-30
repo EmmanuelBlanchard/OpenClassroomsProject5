@@ -65,6 +65,11 @@ div a {
     text-decoration: none;
 }
 
+a:focus {
+    outline: 2px solid;
+    outline-offset: .15em;
+}
+
 .aDivNavLogo {
     display: flex;
     align-items: center;
@@ -91,7 +96,6 @@ div a {
     color: #CD4109;
     margin-left: 0.2%;
 }
-
 
 nav {
     display: flex;
@@ -240,6 +244,14 @@ a.linkBookExchange:visited {
     color: #CD4109;
 }
 
+th,
+td,
+thead,
+tbody>tr>th,
+tbody>tr>td {
+    text-align: center;
+}
+
 /* classes for validation form */
 .valid {
     color: #0f5132;
@@ -252,10 +264,6 @@ a.linkBookExchange:visited {
 #submitRegistrationFormButton {
     display: none;
 }
-
-/************************************************************************************************/
-
-/* Added some css rules from public/css/style.css (line 263 -922): adapt and delete useless css properties rules */
 
 /* Wireframe 11 */
 .divDisplaySearchBarWithSelectBox {
@@ -538,10 +546,8 @@ section.introductoryContent>p {
 
 .imageForTheInstructionManualBlock {
     width: 70.4%;
-    /* 562.9px */
     height: 288.2px;
     margin-left: 18.8%;
-    /* 150px */
 }
 
 /* block of books */
@@ -551,29 +557,21 @@ section.introductoryContent>p {
     flex-direction: column;
     justify-content: center;
     width: 36%;
-    /* 35%  */
     border: 0.2em solid #196216;
-    /* 3.73px */
     border-radius: 0.5em;
     border-color: #196216;
     padding: 2.51%;
-    /* 20px */
     margin-bottom: 2%;
 }
 
 .blockOfTheBookInformation h4,
 .blockOfStoredBookInformation h4 {
     width: 95%;
-    /* 201px */
-    /* 86% */
     margin-top: 0;
     margin-bottom: 4.4%;
     overflow: hidden;
     font-size: 1.3em;
-    /* 18.66px */
-    /* 1.16em */
     line-height: 1.08em;
-    /* 20 px */
 }
 
 .blockOfTheBookInformation h4,
@@ -825,15 +823,6 @@ div.authorBook>a,
 }
 
 /* Style CSS For Validation FORM BOOTSTRAP */
-/*
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-}
-*/
 #formContainer {
     background-color: #fff;
     font-family: sans-serif, 'openSansRegular';
@@ -847,7 +836,7 @@ body {
     margin: 2.5rem auto;
 }
 
-#formContainer .form-control {
+div.form-control {
     border: none;
 }
 
@@ -896,18 +885,22 @@ body {
     width: 100%;
 }
 
-/* Problem form login have 
-.form-control:focus {
-	color: #212529;
-	background-color: #fff;
-	border-color: #86b7fe;
-	outline: 0;
-	box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+.form-control:focus,
+.form-control input:focus,
+div.form-control:focus,
+div.form-control>input#inputEmail.form-control:focus,
+div.form-control>input#inputPassword.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    outline: 2px solid;
+    outline-offset: .15em;
+    box-shadow: 0 0 0 .25rem rgba(119, 119, 119, .25);
 }
-*/
-.form-control input:focus {
-    outline: 0;
-    border-color: #777;
+
+.btn-check:focus+.btn-success,
+.btn-success:focus {
+    outline: 2px solid;
+    outline-offset: .15em;
 }
 
 .form-control.success input {

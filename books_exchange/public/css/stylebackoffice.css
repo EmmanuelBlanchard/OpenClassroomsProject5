@@ -26,7 +26,9 @@ body {
 
 th,
 td,
-thead {
+thead,
+tbody>tr>th,
+tbody>tr>td {
     text-align: center;
 }
 
