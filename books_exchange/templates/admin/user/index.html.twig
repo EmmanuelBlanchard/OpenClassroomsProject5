@@ -19,7 +19,7 @@
 				</div>
 			</div>
 		{% endfor %}
-		<div class="col-sm-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+		<div class="col-sm-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
 			<h1>Liste des utilisateurs</h1>
 		</div>
 
@@ -69,8 +69,8 @@
 						<td>{{item.zipCode}}</td>
 						<td>{{item.city}}</td>
 						<td>
-							<a href="{{ path('admin_user_update', {'id': item.id}) }}" class="btn btn-warning m-2" role="button">Modifier</a>
-							<a class="btn btn btn-danger m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-lastname="{{item.lastname}}" data-firstname="{{item.firstname}}" data-pseudo="{{item.pseudo}}" data-email="{{item.email}}" data-zipcode="{{item.zipCode}}" data-city="{{item.city}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
+							<a class="btn btn-warning m-2" href="{{ path('admin_user_update', {'id': item.id}) }}" role="button">Modifier</a>
+							<a class="btn btn-danger m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-lastname="{{item.lastname}}" data-firstname="{{item.firstname}}" data-pseudo="{{item.pseudo}}" data-email="{{item.email}}" data-zipcode="{{item.zipCode}}" data-city="{{item.city}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
 								Supprimer
 							</a>
 						</td>
@@ -99,7 +99,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 {% endblock %}
 

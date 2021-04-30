@@ -19,7 +19,7 @@
 				</div>
 			</div>
 		{% endfor %}
-		<div class="col-sm-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+		<div class="col-sm-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
 			<h1>Gérer les livres</h1>
 			<a class="btn btn-primary m-2" href="{{ path('admin_book_add') }}" role="button">Ajouter un livre</a>
 		</div>
@@ -71,14 +71,14 @@
 							{% endif %}
 						</td>
 						<td>{{item.exchangeRequestAt|date('d/m/Y')}}</td>
-						<td class="text-center">
+						<td>
 							{% if item.active %}
 								<a class="btn btn-primary m-2" href="{{ path('admin_book_remove_exchange', {'id': item.id }) }}" role="button">Retirer des échanges</a>
 							{% else %}
 								<a class="btn btn-primary m-2" href="{{ path('admin_book_add_exchange', {'id': item.id }) }}" role="button">Ajouter aux échanges</a>
 							{% endif %}
-							<a class="btn btn-primary m-2" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
-							<a class="btn btn-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" data-author="{{item.author}}" data-publisher="{{item.publisher}}" data-format="{{item.format}}" data-state="{{item.state}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
+							<a class="btn btn-warning m-2" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
+							<a class="btn btn-danger m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" data-author="{{item.author}}" data-publisher="{{item.publisher}}" data-format="{{item.format}}" data-state="{{item.state}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
 								Supprimer
 							</a>
 						</td>
@@ -103,7 +103,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 {% endblock %}
 
