@@ -5,8 +5,8 @@ namespace App\Controller;
 use App\Entity\Book;
 use App\Form\BookFormType;
 use App\Form\EditEmailFormType;
-use App\Form\EditProfileFormType;
 use App\Repository\BookRepository;
+use App\Form\UpdateProfileFormType;
 use App\Form\ChangePasswordFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -202,12 +202,12 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user/profile/edit", name="user_profile_edit")
+     * @Route("/user/profile/update", name="user_profile_update")
      */
-    public function editProfile(Request $request): Response
+    public function updateProfile(Request $request): Response
     {
         $user = $this->getUser();
-        $form = $this->createForm(EditProfileFormType::class, $user);
+        $form = $this->createForm(UpdateProfileFormType::class, $user);
 
         $form->handleRequest($request);
 
@@ -218,8 +218,8 @@ class UserController extends AbstractController
             $this->addFlash('message', 'Profil mis à jour');
             return $this->redirectToRoute('user');
         }
-        return $this->render('user/editprofile.html.twig', [
-            'editprofileForm' => $form->createView()
+        return $this->render('user/updateprofile.html.twig', [
+            'updateProfileForm' => $form->createView()
         ]);
     }
 

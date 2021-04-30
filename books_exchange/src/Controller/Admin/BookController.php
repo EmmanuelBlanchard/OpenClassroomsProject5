@@ -74,6 +74,7 @@ class BookController extends AbstractController
             $entityManager->persist($book);
             $entityManager->flush();
 
+            $this->addFlash('message', 'Livre mis à jour');
             return $this->redirectToRoute('admin_book_home');
         }
 
