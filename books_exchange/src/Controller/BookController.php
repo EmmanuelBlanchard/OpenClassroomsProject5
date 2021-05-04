@@ -70,4 +70,24 @@ class BookController extends AbstractController
 
         return $this->render('book/show.html.twig', compact('book'));
     }
+
+    /**
+     * @Route("/remove/stock/{id}", name="remove_stock")
+     */
+    public function removeStock(Book $book): Response
+    {
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre supprimé du stock de livres');
+        }
+        return $this->redirectToRoute('book_home');
+    }
+
+
+
 }
