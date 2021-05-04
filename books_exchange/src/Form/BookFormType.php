@@ -10,12 +10,12 @@ use App\Entity\Category;
 use App\Entity\Language;
 use App\Entity\Publisher;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class BookFormType extends AbstractType
 {
@@ -37,8 +37,11 @@ class BookFormType extends AbstractType
                 'class' => Publisher::class,
                 'label' => 'Éditeur',
             ])
-            ->add('summary', TextareaType::class, [
-                'label'=>'Résumé',
+            ->add('summary', CKEditorType::class, [
+                'label'=>'Résumé',    
+                'config' => [
+                'language' => 'fr',
+                ],
             ])
             ->add('language', EntityType::class, [
                 'class' => Language::class,
