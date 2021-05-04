@@ -15,6 +15,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class BookController extends AbstractController
 {
     /**
+    * @Route("/", name="home")
+    */
+    public function index(BookRepository $bookRepo): Response
+    {
+        $user = $this->getUser();
+        $books = $bookRepo->findBooksActiveOwnedByUserWithOrderCreatedAtDesc($user);
+        return $this->render('book/index.html.twig', [
+            'books' => $books]);
+    }
+
+    /**
      * @Route("/show/{slug}", name="show")
      */
     public function show($slug, BookRepository $bookRepo): Response

@@ -22,6 +22,23 @@ class BookRepository extends ServiceEntityRepository
     /**
     * @return Book[] Returns an array of Book objects
     */
+    public function findBooksActiveOwnedByUserWithOrderCreatedAtDesc($user)
+    {
+        return $this->createQueryBuilder('book')
+            ->where('book.active = :active')
+            ->setParameter('active', 1)
+            ->andWhere('book.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('book.createdAt', 'DESC')
+            ->setMaxResults(50)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    /**
+    * @return Book[] Returns an array of Book objects
+    */
     public function findBooksActiveWithoutExchangeRequestNotOwnedByUser($user)
     {
         return $this->createQueryBuilder('book')
