@@ -53,7 +53,7 @@ class UserController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('message', 'Le livre a été ajouté à votre stock !');
-            return $this->redirectToRoute('user');
+            return $this->redirectToRoute('user_book');
         }
 
         return $this->render('user/book/add.html.twig', [

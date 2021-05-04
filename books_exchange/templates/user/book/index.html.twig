@@ -55,7 +55,7 @@
 				{% for books in app.user.books %}
 					<div class="bookCard col-sm-4">
 
-						<div class="titleBook">{{ books.title }}</div>
+						<div class="titleBook">{{ books.title|u.truncate(24, '...') }}</div>
 						<div class="authorBook">
 							<a href="">{{ books.author }}</a>
 						</div>
