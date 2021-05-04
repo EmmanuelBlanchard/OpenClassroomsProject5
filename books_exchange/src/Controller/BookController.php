@@ -127,4 +127,18 @@ class BookController extends AbstractController
         return $this->redirectToRoute('user');
     }
 
+    /**
+     * @Route("/exchanges", name="exchanges")
+     */
+    public function exchanges(BookRepository $bookRepo): Response
+    {
+        $user = $this->getUser();
+
+        $theBooksIRequestedToExchange = $bookRepo->findBooksActiveWithExchangeRequestRequestedByUser($user);
+
+        $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
+
+        return $this->render('book/exchanges.html.twig', ['theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,'myBooksRequestedForExchange' => $myBooksRequestedForExchange]);
+    }
+
 }
