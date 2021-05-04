@@ -1,0 +1,129 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}
+	Stock de livres de
+	{{ app.user.pseudo }}
+	- Ajouter un livre
+{% endblock %}
+
+{% block body %}
+	{% for message in app.flashes('success') %}
+		<div class="divAlert col-sm-12">
+			<div class="alert alert-success" role="alert">{{ message }}</div>
+		</div>
+	{% endfor %}
+	<div id="formContainer">
+		<div class="formHeader">
+			<h2>Ajouter un livre</h2>
+		</div>
+
+		{{ form_start(addBookForm, {'attr': {'id': 'add_book_form', 'class': 'form'}}) }}
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.title) }}
+			{{ form_widget(addBookForm.title) }}
+
+			<small>{{ form_help(addBookForm.title) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.title) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.author) }}
+			{{ form_widget(addBookForm.author) }}
+
+			<small>{{ form_help(addBookForm.author) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.author) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.category) }}
+			{{ form_widget(addBookForm.category) }}
+
+			<small>{{ form_help(addBookForm.category) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.category) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.publisher) }}
+			{{ form_widget(addBookForm.publisher) }}
+
+			<small>{{ form_help(addBookForm.publisher) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.publisher) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.summary) }}
+			{{ form_widget(addBookForm.summary) }}
+
+			<small>{{ form_help(addBookForm.summary) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.summary) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.language) }}
+			{{ form_widget(addBookForm.language) }}
+
+			<small>{{ form_help(addBookForm.language) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.language) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.format) }}
+			{{ form_widget(addBookForm.format) }}
+
+			<small>{{ form_help(addBookForm.format) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.format) }}
+			</div>
+		</div>
+
+		<div class="form-control">
+			<i class="bi bi-check-circle"></i>
+			<i class="bi bi-exclamation-circle"></i>
+			{{ form_label(addBookForm.state) }}
+			{{ form_widget(addBookForm.state) }}
+
+			<small>{{ form_help(addBookForm.state) }}</small>
+
+			<div class="form-error">
+				{{ form_errors(addBookForm.state) }}
+			</div>
+		</div>
+
+		{{ form_end(addBookForm) }}
+
+	</div>
+{% endblock %}

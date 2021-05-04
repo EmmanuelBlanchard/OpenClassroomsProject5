@@ -2,11 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
+use App\Form\BookFormType;
 use App\Repository\BookRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * @Route("/book", name="book_")
@@ -23,6 +26,35 @@ class BookController extends AbstractController
         $books = $bookRepo->findBooksActiveOwnedByUserWithOrderCreatedAtDesc($user);
         return $this->render('book/index.html.twig', [
             'books' => $books]);
+    }
+
+    /**
+     * @Route("/add", name="add")
+     */
+    public function add(Request $request): Response
+    {
+        $book = new Book;
+        $form = $this->createForm(BookFormType::class, $book);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $book->setUser($this->getUser());
+            $book->setActive(true);
+            $book->setExchangeRequest(false);
+            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+
+            $this->addFlash('message', 'Le livre a été ajouté à votre stock !');
+            return $this->redirectToRoute('book_home');
+        }
+
+        return $this->render('book/add.html.twig', [
+            'addBookForm' => $form->createView()
+        ]);
     }
 
     /**
