@@ -52,21 +52,21 @@
 			</div>
 
 			<div class="row col-sm-12">
-				{% for books in app.user.books %}
+				{% for book in app.user.books %}
 					<div class="bookCard col-sm-4">
 
-						<div class="titleBook">{{ books.title|u.truncate(24, '...') }}</div>
+						<div class="titleBook">{{ book.title|u.truncate(24, '...') }}</div>
 						<div class="authorBook">
-							<a href="">{{ books.author }}</a>
+							<a href="">{{ book.author }}</a>
 						</div>
-						<div class="categoryBook">{{ books.category }}</div>
-						<div class="publisherBook">{{ books.publisher }}</div>
-						<div class="languageBook">{{ books.language }}</div>
-						<div class="formatBook">{{ books.format }}</div>
-						<div class="stateBook">{{ books.state }}</div>
+						<div class="categoryBook">{{ book.category }}</div>
+						<div class="publisherBook">{{ book.publisher }}</div>
+						<div class="languageBook">{{ book.language }}</div>
+						<div class="formatBook">{{ book.format }}</div>
+						<div class="stateBook">{{ book.state }}</div>
 
 						<div class="align-self-center">
-							<a class="btn btn-outline-secondary" href="{{ path('user_book_remove_stock', {'id': books.id }) }}" role="button">Supprimer</a>
+							<a class="btn btn-outline-secondary" href="{{ path('user_book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
 						</div>
 
 					</div>

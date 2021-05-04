@@ -29,7 +29,9 @@
 				<div class="row col-sm-12">
 					{% for book in books %}
 						<section class="bookCard col-sm-4">
-							<h4 class="titleBook">{{ book.title }}</h4>
+							<h4 class="titleBook">
+								<a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
+							</h4>
 							<div class="authorBook">
 								<a href="">{{ book.author }}</a>
 							</div>

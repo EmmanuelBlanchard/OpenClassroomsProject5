@@ -1,0 +1,45 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}Détails du livre
+	{{ book.title }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('success') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<div class="row col-sm-12">
+			<section class="bookCard col-sm-11">
+				<h4 class="titleBook">{{ book.title|u.truncate(60, '...') }}</h4>
+				<div class="authorBook">
+					<a href="">{{ book.author }}</a>
+				</div>
+				<div class="categoryBook">{{ book.category }}</div>
+				<div class="publisherBook">{{ book.publisher }}</div>
+				<div class="summaryBook">Résumé:
+					{{ book.summary|striptags }}</div>
+				<div class="languageBook">Langue:
+					{{ book.language }}</div>
+				<div class="formatBook">Format:
+					{{ book.format }}</div>
+				<div class="stateBook">État:
+					{{ book.state }}</div>
+				<div class="locationBook">
+					<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
+					<span>{{ book.user.city }}</span>
+				</div>
+				<p class="ownerBook">Propriétaire:
+					{{ book.user.pseudo }}
+				</p>
+				<div class="align-self-center">
+					<a class="btn btn-outline-success exchangeButton" href="{{ path('user_book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
+				</div>
+			</section>
+		</div>
+	</div>
+{% endblock %}
