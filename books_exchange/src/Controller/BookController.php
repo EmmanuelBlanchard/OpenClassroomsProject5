@@ -29,8 +29,8 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/add", name="add")
-     */
+    * @Route("/add", name="add")
+    */
     public function add(Request $request): Response
     {
         $book = new Book;
@@ -58,8 +58,8 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/show/{slug}", name="show")
-     */
+    * @Route("/show/{slug}", name="show")
+    */
     public function show($slug, BookRepository $bookRepo): Response
     {
         $book = $bookRepo->findOneBy(['slug' => $slug]);
@@ -72,8 +72,8 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/remove/stock/{id}", name="remove_stock")
-     */
+    * @Route("/remove/stock/{id}", name="remove_stock")
+    */
     public function removeStock(Book $book): Response
     {
         if($book === null) {
@@ -89,8 +89,8 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/add/exchanges/{id}", name="add_exchanges")
-     */
+    * @Route("/add/exchanges/{id}", name="add_exchanges")
+    */
     public function addExchanges(Book $book): Response
     {
         if($book === null) {
@@ -107,8 +107,8 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/remove/exchanges/{id}", name="remove_exchanges")
-     */
+    * @Route("/remove/exchanges/{id}", name="remove_exchanges")
+    */
     public function removeExchanges(Book $book): Response
     {
         if($book === null) {
@@ -128,8 +128,8 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/exchanges", name="exchanges")
-     */
+    * @Route("/exchanges", name="exchanges")
+    */
     public function exchanges(BookRepository $bookRepo): Response
     {
         $user = $this->getUser();
@@ -139,6 +139,65 @@ class BookController extends AbstractController
         $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
 
         return $this->render('book/exchanges.html.twig', ['theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,'myBooksRequestedForExchange' => $myBooksRequestedForExchange]);
+    }
+
+    /**
+    * @Route("/cancel/exchange/{id}", name="cancel_exchange")
+    */
+    public function cancelExchange(Book $book): Response
+    {
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(false);
+            $book->setExchangeRequest(false);
+            $book->setUserexchange(null);
+            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre retiré de l\'échange de livres');
+        }
+        return $this->redirectToRoute('app_home');
+    }
+
+    /**
+    * @Route("/validation/confirm/exchange/{id}", name="validation_confirm_exchange")
+    */
+    public function validationConfirmExchange(Book $book): Response
+    {
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : problème d\'identification du livre');
+        } else {
+            return $this->render('book/validation_confirm_exchange.html.twig', ['book' => $book]);
+        }
+        return $this->redirectToRoute('app_home');
+    }
+
+    /**
+    * @Route("/confirm/exchange/{id}", name="confirm_exchange")
+    */
+    public function confirmExchange(Book $book): Response
+    {
+        $user = $this->getUser();
+
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : problème d\'identification du livre');
+        } else {
+            $book->setExchangeRequest(true);
+            $book->setExchangeRequestAt(new \DateTime('now'));
+            $book->setUserexchange($user);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+
+            return $this->render('book/confirm_exchange.html.twig', ['book' => $book]);
+        }
+        return $this->redirectToRoute('app_home');
     }
 
 }

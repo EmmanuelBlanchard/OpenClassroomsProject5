@@ -77,7 +77,7 @@
 								{{ book.user.zipCode }}</td>
 							<td>{{book.exchangeRequestAt|date('d/m/Y')}}</td>
 							<td class="text-center">
-								<a class="btn btn-primary" href="{{ path("user_book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
+								<a class="btn btn-primary" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
 							</td>
 						</tr>
 					{% endfor %}
@@ -125,7 +125,7 @@
 								{{ book.user.zipCode }}</td>
 							<td>{{book.exchangeRequestAt|date('d/m/Y')}}</td>
 							<td class="text-center">
-								<a class="btn btn-primary" href="{{ path("user_book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
+								<a class="btn btn-primary" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
 							</td>
 						</tr>
 					{% endfor %}

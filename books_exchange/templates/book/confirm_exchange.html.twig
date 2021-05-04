@@ -1,0 +1,42 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}
+	Échange de livres de
+	{{ app.user.pseudo }}
+{% endblock %}
+
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-danger" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+
+		<section class="contentBlockSection">
+			<h2 class="h2ConnectedBookExchangeConfirmationOfTheExchangeRequest">Échange de livres</h2>
+			<div class="divConnectedBookExchangeConfirmationOfTheExchangeRequest">
+				<p>
+					La demande d'échange du livre
+					<span>{{ book.title }}</span>
+				</p>
+				<p>est
+					<span>confirmée !</span>
+				</p>
+				<p>Si non réponse de
+					<span>{{book.user.pseudo}}</span>
+					d'ici quatre jours dans votre messagerie, l'échange est annulé.</p>
+			</div>
+		</section>
+	</div>
+{% endblock %}
