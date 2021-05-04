@@ -88,6 +88,43 @@ class BookController extends AbstractController
         return $this->redirectToRoute('book_home');
     }
 
+    /**
+     * @Route("/add/exchanges/{id}", name="add_exchanges")
+     */
+    public function addExchanges(Book $book): Response
+    {
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre ajouté aux échanges');
+        }
+        return $this->redirectToRoute('user');
+    }
 
+    /**
+     * @Route("/remove/exchanges/{id}", name="remove_exchanges")
+     */
+    public function removeExchanges(Book $book): Response
+    {
+        if($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(false);
+            $book->setExchangeRequest(false);
+            $book->setUserexchange(null);
+            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre retiré des échanges');
+        }
+        return $this->redirectToRoute('user');
+    }
 
 }

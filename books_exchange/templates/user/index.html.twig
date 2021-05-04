@@ -91,11 +91,11 @@
 								<td>{{ book.state }}</td>
 								<td>
 									{% if book.active %}
-										<a class="btn btn-primary m-2" href="{{ path('user_book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
+										<a class="btn btn-primary m-2" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
 									{% else %}
-										<a class="btn btn-primary m-2" href="{{ path('user_book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
+										<a class="btn btn-primary m-2" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
 									{% endif %}
-									<a class="btn btn-primary m-2" href="{{ path('user_book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
+									<a class="btn btn-primary m-2" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
 								</td>
 							</tr>
 						{% endfor %}
