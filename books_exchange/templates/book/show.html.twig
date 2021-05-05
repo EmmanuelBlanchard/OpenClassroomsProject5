@@ -56,17 +56,17 @@
 					<h5 class="modal-title" id="dialog-title">Contacter le demandeur du livre</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale"></button>
 				</div>
+				{{ form_start(contactBookForm) }}
 				<div class="modal-body">
-					{{ form_start(contactBookForm) }}
 					{{ form_widget(contactBookForm.title) }}
 					{{ form_row(contactBookForm.email) }}
 					{{ form_row(contactBookForm.message) }}
-					{{ form_end(contactBookForm) }}
 				</div>
 				<div class="modal-footer">
-					<a href="" class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au demandeur du livre" aria-controls="dialog" role="button">Envoyer</a>
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
+					<button class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au demandeur du livre" aria-controls="dialog">Envoyer</button>
+					<button type="button" class="btn btn-secondary modal-trigger" data-bs-target="#modal-contact" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
 				</div>
+				{{ form_end(contactBookForm) }}
 			</div>
 		</div>
 	</div>

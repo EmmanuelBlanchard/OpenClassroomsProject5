@@ -81,7 +81,9 @@ class BookController extends AbstractController
                 ->from($contact->get('email')->getData())
                 ->to($book->getUser()->getEmail())
                 ->subject('Contact au sujet de votre livre "' . $book->getTitle() . '"')
+                // path of the Twig template to render
                 ->htmlTemplate('emails/contact_book.html.twig')
+                // pass variables (name => value) to the template
                 ->context([
                     'book' => $book,
                     'mail' => $contact->get('email')->getData(),
@@ -93,7 +95,7 @@ class BookController extends AbstractController
             // We confirm and we redirect
             $this->addFlash('message', 'Votre e-mail a bien été envoyé');
             return $this->redirectToRoute('book_show', ['slug' => $book->getSlug()]);
-            }
+        }
 
         return $this->render('book/show.html.twig', [
             'book' => $book,

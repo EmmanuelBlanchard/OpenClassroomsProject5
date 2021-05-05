@@ -15,7 +15,6 @@ class BookContactFormType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre',
                 'disabled' => true,
                 'attr' => [
                     'class' => 'form-control'
@@ -28,7 +27,10 @@ class BookContactFormType extends AbstractType
                 ]
             ])
             ->add('message', CKEditorType::class, [
-                'label' => 'Votre message'
+                'label' => 'Votre message',
+                'config' => [
+                'language' => 'fr',
+                ],
             ])
         ;
     }
