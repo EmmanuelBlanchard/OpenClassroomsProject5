@@ -175,7 +175,7 @@ class BookController extends AbstractController
         $form = $this->createForm(BookContactFormType::class);
 
         $contact = $form->handleRequest($request);
-
+        /*
         if($form->isSubmitted() && $form->isValid()) {
             $email = (new TemplatedEmail())
                 ->from($contact->get('email')->getData())
@@ -194,7 +194,7 @@ class BookController extends AbstractController
             $this->addFlash('message', 'Votre e-mail a bien été envoyé');
             return $this->redirectToRoute('book_exchanges');
             }
-
+        */
         return $this->render('book/exchanges.html.twig', [
             'theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,
             'myBooksRequestedForExchange' => $myBooksRequestedForExchange, 
