@@ -4,12 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Form\BookFormType;
+use App\Form\BookContactFormType;
 use App\Repository\BookRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Mailer\MailerInterface;
 
 /**
  * @Route("/book", name="book_")
@@ -60,7 +63,7 @@ class BookController extends AbstractController
     /**
     * @Route("/show/{slug}", name="show")
     */
-    public function show($slug, BookRepository $bookRepo): Response
+    public function show($slug, BookRepository $bookRepo, Request $request, MailerInterface $mailer): Response
     {
         $book = $bookRepo->findOneBy(['slug' => $slug]);
 
@@ -68,7 +71,34 @@ class BookController extends AbstractController
             throw new NotFoundHttpException('Pas de livre trouvé');
         }
 
-        return $this->render('book/show.html.twig', compact('book'));
+        $form = $this->createForm(BookContactFormType::class);
+
+        $contact = $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            // We create the mail
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to($book->getUser()->getEmail())
+                ->subject('Contact au sujet de votre livre "' . $book->getTitle() . '"')
+                ->htmlTemplate('emails/contact_book.html.twig')
+                ->context([
+                    'book' => $book,
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            // We send the mail
+            $mailer->send($email);
+
+            // We confirm and we redirect
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+            return $this->redirectToRoute('book_show', ['slug' => $book->getSlug()]);
+            }
+
+        return $this->render('book/show.html.twig', [
+            'book' => $book,
+            'contactBookForm' => $form->createView()
+        ]);
     }
 
     /**
@@ -130,7 +160,7 @@ class BookController extends AbstractController
     /**
     * @Route("/exchanges", name="exchanges")
     */
-    public function exchanges(BookRepository $bookRepo): Response
+    public function exchanges(BookRepository $bookRepo, Request $request, MailerInterface $mailer): Response
     {
         $user = $this->getUser();
 
@@ -138,7 +168,38 @@ class BookController extends AbstractController
 
         $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
 
-        return $this->render('book/exchanges.html.twig', ['theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,'myBooksRequestedForExchange' => $myBooksRequestedForExchange]);
+        if(!$myBooksRequestedForExchange) {
+            throw new NotFoundHttpException("Aucun de mes livres demandés");
+        }
+        
+        $form = $this->createForm(BookContactFormType::class);
+
+        $contact = $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to($myBooksRequestedForExchange->getUser()->getEmail())
+                ->subject('Contact au sujet de votre livre "' . $myBooksRequestedForExchange->getTitle() . '"')
+                ->htmlTemplate('emails/contact_book.html.twig')
+                ->context([
+                    'book' => $$myBooksRequestedForExchange,
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            // We send the mail
+            $mailer->send($email);
+
+            // We confirm and we redirect
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+            return $this->redirectToRoute('book_exchanges');
+            }
+
+        return $this->render('book/exchanges.html.twig', [
+            'theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,
+            'myBooksRequestedForExchange' => $myBooksRequestedForExchange, 
+            'contactBookForm' => $form->createView()
+        ]);
     }
 
     /**
