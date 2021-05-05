@@ -93,7 +93,7 @@ class BookController extends AbstractController
             $mailer->send($email);
 
             // We confirm and we redirect
-            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+            $this->addFlash('success', 'Votre e-mail a bien été envoyé');
             return $this->redirectToRoute('book_show', ['slug' => $book->getSlug()]);
         }
 
@@ -179,13 +179,16 @@ class BookController extends AbstractController
         $contact = $form->handleRequest($request);
         /*
         if($form->isSubmitted() && $form->isValid()) {
+            // We create the mail
             $email = (new TemplatedEmail())
                 ->from($contact->get('email')->getData())
-                ->to($myBooksRequestedForExchange->getUser()->getEmail())
-                ->subject('Contact au sujet de votre livre "' . $myBooksRequestedForExchange->getTitle() . '"')
+                ->to($book->getUser()->getEmail())
+                ->subject('Contact au sujet de votre livre "' . $book->getTitle() . '"')
+                // path of the Twig template to render
                 ->htmlTemplate('emails/contact_book.html.twig')
+                // pass variables (name => value) to the template
                 ->context([
-                    'book' => $$myBooksRequestedForExchange,
+                    'book' => $book,
                     'mail' => $contact->get('email')->getData(),
                     'message' => $contact->get('message')->getData()
                 ]);
@@ -193,7 +196,7 @@ class BookController extends AbstractController
             $mailer->send($email);
 
             // We confirm and we redirect
-            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+            $this->addFlash('success', 'Votre e-mail a bien été envoyé');
             return $this->redirectToRoute('book_exchanges');
             }
         */
