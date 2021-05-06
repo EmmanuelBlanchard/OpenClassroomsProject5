@@ -1,0 +1,19 @@
+{% extends 'baseBootstrap.html.twig' %}
+
+{% block title %}Site d'ÉchangeLivres en maintenance
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('success') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<div class="col-sm-12">
+			<h1>Site en maintenance</h1>
+		</div>
+	</div>
+{% endblock %}
