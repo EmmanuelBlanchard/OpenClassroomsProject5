@@ -724,6 +724,7 @@ a.btn-success.buttonConfirmTheExchange:hover {
 }
 
 div.col-sm-12.divButtonsEdit {
+    display: flex;
     padding-bottom: 1.5rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;

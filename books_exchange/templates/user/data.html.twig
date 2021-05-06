@@ -1,7 +1,6 @@
 {% extends 'baseBootstrap.html.twig' %}
 
-{% block title %}
-	Profil de
+{% block title %}Données personnelles de
 	{{ app.user.firstname }}
 	{{ app.user.lastname }}
 {% endblock %}
@@ -25,12 +24,15 @@
 
 		<div class="my-3 p-3 bg-body rounded shadow-sm">
 			<div class="row col-sm-12">
-				<div class="col-sm-12">
-					<h2 class="h2ConnectedProfile">Profil de
+				<div class="col-12">
+					<h2 class="h2ConnectedProfile">Données personnelles de
 						{{ app.user.firstname }}
 						{{ app.user.lastname }}
 					</h2>
 				</div>
+
+				<a class="btn btn-primary m-4 col-4" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
+
 				<div class="container">
 					<div class="row row-cols-2 gx-4 gy-4">
 						<div class="col-sm-3 p-3 border">Pseudo :</div>
@@ -45,16 +47,10 @@
 						<div class="col-sm-9 p-3 border">{{ app.user.zipCode }}</div>
 						<div class="col-sm-3 p-3 border">Ville :</div>
 						<div class="col-sm-9 p-3 border">{{ app.user.city }}</div>
-						<div class="col-sm-12 divButtonsEdit">
-							<a class="btn btn-primary mx-4" href="{{ path('user_profile_update') }}" role="button">Modifier le profil</a>
-							<a class="btn btn-primary mx-4" href="{{ path('user_email_update') }}" role="button">Modifier l'e-mail</a>
-							<a class="btn btn-primary mx-4" href="{{ path('user_password_update') }}" role="button">Modifier le mot de passe</a>
-							<a class="btn btn-secondary mx-4" href="{{ path('user_data') }}" role="button">Voir mes données personelles (RGPD)</a>
-						</div>
 					</div>
 				</div>
 
-				<div class="col-sm-12">
+				<div class="col-12 my-4">
 					<h3 class="h3ConnectedUserBook">Livres de
 						{{ app.user.firstname }}
 						{{ app.user.lastname }}
@@ -62,11 +58,7 @@
 					</h3>
 				</div>
 
-				<div>
-					<a class="btn btn-primary m-2" href="{{ path('user_book_add') }}" role="button">Ajouter un livre</a>
-				</div>
-
-				<table class="table manageMyAccountBooks">
+				<table class="table table-responsive table-hover manageMyAccountBooks">
 					<thead>
 						<tr>
 							<th scope="col">#</th>
@@ -74,10 +66,10 @@
 							<th scope="col">Auteur</th>
 							<th scope="col">Catégorie</th>
 							<th scope="col">Éditeur</th>
+							<th scope="col">Résumé</th>
 							<th scope="col">Langue</th>
 							<th scope="col">Format</th>
 							<th scope="col">État</th>
-							<th scope="col">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -88,17 +80,10 @@
 								<td>{{ book.author }}</td>
 								<td>{{ book.category }}</td>
 								<td>{{ book.publisher }}</td>
+								<td>{{ book.summary|striptags }}</td>
 								<td>{{ book.language }}</td>
 								<td>{{ book.format }}</td>
 								<td>{{ book.state }}</td>
-								<td>
-									{% if book.active %}
-										<a class="btn btn-primary m-2" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
-									{% else %}
-										<a class="btn btn-primary m-2" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
-									{% endif %}
-									<a class="btn btn-primary m-2" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
-								</td>
 							</tr>
 						{% endfor %}
 					</tbody>
