@@ -88,7 +88,7 @@ class BookController extends AbstractController
      */
     public function addExchange(Book $book): Response
     {
-        if($book === null) {
+        if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
@@ -106,7 +106,7 @@ class BookController extends AbstractController
      */
     public function removeExchange(Book $book): Response
     {
-        if($book === null) {
+        if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
@@ -133,13 +133,5 @@ class BookController extends AbstractController
 
         $this->addFlash('message', 'Livre supprimé avec succès');
         return $this->redirectToRoute('admin_book_home');
-    }
-
-    /**
-     * @Route("/modal/", name="modal")
-     */
-    public function modalBook(): Response
-    {
-        return $this->render('admin/book/testaccessiblemodal.html.twig');
     }
 }
