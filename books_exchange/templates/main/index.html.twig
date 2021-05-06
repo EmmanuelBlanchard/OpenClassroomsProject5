@@ -51,7 +51,7 @@
 								{{ book.user.pseudo }}
 							</p>
 							<div class="align-self-center">
-								<a class="btn btn-outline-success exchangeButton" href="{{ path('user_book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
+								<a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
 							</div>
 						</section>
 					{% endfor %}

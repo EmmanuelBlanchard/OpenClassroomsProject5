@@ -53,6 +53,10 @@ body {
     padding: 0;
 }
 
+.bg-gray97 {
+    background-color: #F7F7F7;
+}
+
 ul {
     list-style-type: none;
 }
@@ -61,9 +65,9 @@ div a {
     text-decoration: none;
 }
 
-.divNavLogo {
-    margin-left: 21%;
-    margin-right: 8.3%;
+a:focus {
+    outline: 2px solid;
+    outline-offset: .15em;
 }
 
 .aDivNavLogo {
@@ -72,10 +76,8 @@ div a {
 }
 
 .imgLogo {
-    width: 4em;
-    /* 64px => 4em ou 5.1em => 81.6px */
-    height: 4em;
-    /* 64px  => 4em ou 5.1em => 81.6px */
+    width: 64px;
+    height: 64px;
 }
 
 .brandNameExchange,
@@ -83,12 +85,11 @@ div a {
     font-weight: bold;
 }
 
-.brandNameExchange {
+.navbar-brand .brandNameExchange {
     display: flex;
     align-items: center;
     color: #0854A2;
     margin-left: 1%;
-    font-size: 2em;
 }
 
 .brandNameBook {
@@ -102,9 +103,13 @@ nav {
     align-items: center;
 }
 
-nav ul {
+nav.nav.nav-underline {
     display: flex;
-    padding-left: 0%;
+    justify-content: center;
+}
+
+nav#bd-docs-nav.bd-links.collapse>h2 {
+    color: black;
 }
 
 nav li {
@@ -116,16 +121,25 @@ nav ul li a,
     font-size: 1.55em;
 }
 
-nav a {
-    color: #0854A2;
+li.nav-item>a.nav-link.nav-blue {
+    color: rgb(8, 84, 162);
+}
+
+li.nav-item>a.nav-link.nav-blue:hover {
+    color: rgb(3, 36, 69);
 }
 
 nav a:link {
     text-decoration: none;
 }
 
-.linkCreateAccount {
-    margin-right: 4em;
+ul.navbar-nav.me-auto.mb-2.mb-lg-0>li.nav-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+div#navbarsExampleDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+    align-items: center;
 }
 
 .menu {
@@ -139,10 +153,6 @@ nav a:link {
     display: flex;
 }
 
-.liHowItWorks {
-    padding-right: 4em;
-}
-
 .menu a {
     color: #F7F7F7;
 }
@@ -154,64 +164,44 @@ nav a:link {
 main {
     display: flex;
     background-color: #FFF;
+    border-radius: 0.5rem;
 }
 
-.asideSearchBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+main>aside {
     background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
-    margin-left: 20%;
-    height: 100vh;
-    /* to make the color #f7f7f7 go to the bottom of the screen */
-}
-
-form {
-    padding-top: 20%;
-    padding-left: 7.1%;
-    padding-right: 7.1%;
-    padding-bottom: 11%;
 }
 
 .formSearchBar {
+    display: block;
+    width: 100%;
     background-color: #FFF;
+    border-radius: 0.5rem;
 }
 
-/* ADD CODE FOR THE MODEL 10 : when the user has typed harry potter in the search bar */
-.formSearchBar input::placeholder {
-    font-size: 1.2em;
-    color: #000;
-    font-weight: bold;
+.btn.btn-outline-orange {
+    color: #CD4109;
+    border-color: #CD4109;
 }
 
-.searchInput {
-    width: 100%;
-    height: 2.7em;
-    margin-bottom: 5%;
-    border: 0.3em solid #CD4109;
-    border-radius: 0.5em;
-}
-
-.searchButton {
-    width: 100%;
-    color: #F7F7F7;
+.btn.btn-outline-orange:hover {
+    color: #fff;
     background-color: #CD4109;
-    border-color: #A02804;
-    font-size: 1.7em;
-    padding: 3% 0;
-    /* added css properties after changing the <button> tag to <a>. */
-    display: inline-flex;
-    justify-content: center;
-    text-decoration: none;
+    border-color: #CD4109;
+}
+
+form#search_book_form.formSearchBar.px-3.py-5.col-12>div>button#search_book_form_search.btn.btn-outline-orange {
+    width: 100%;
 }
 
 .informationAboutTheAccountTheLibraryTheExchanges {
-    background-color: #F7F7F7;
+    background-color: #FFF;
+    padding: 1.5rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
 }
 
-.paragraphOfWelcomeOfPseudo {
-    font-size: 2em;
+.h2OfWelcomeOfPseudo {
     font-weight: bold;
 }
 
@@ -240,25 +230,30 @@ form {
     padding-left: 0.65em;
 }
 
-/* Temporary because when clicked the link is in orange does not work for the moment
-a.linkStockOfBooks {
-    color: #CD4109;
-} 
-*/
-/*
-a.linkBookExchange {
-    color: #CD4109;
-}
-*/
-
 a.linkStockOfBooks:visited,
 a.linkBookExchange:visited {
     color: #CD4109;
 }
 
-/* Bloc part content */
-.contentBlockSection {
-    width: 42%;
+th,
+td,
+thead,
+tbody>tr>th,
+tbody>tr>td {
+    text-align: center;
+}
+
+/* classes for validation form */
+.valid {
+    color: #0f5132;
+}
+
+.invalid {
+    color: #842029;
+}
+
+#submitRegistrationFormButton {
+    display: none;
 }
 
 /* Wireframe 11 */
@@ -291,23 +286,23 @@ a.linkBookExchange:visited {
     color: #000000;
     font-size: 1.48em;
     margin-left: 11.3%;
-    margin-bottom: 2.3%;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 /* Wireframe 1- How It Works */
 .h2howItWorks {
-    font-size: 1.48em;
     color: #0854A2;
     text-align: center;
-    margin-bottom: 2.3%;
-
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
-.h2CreateAccount,
 .h2ConfirmAccountEmailAddress,
-.h2LoginToTheAccount,
 .h2ConnectedTotheAccount,
+.h2ConnectedProfile,
+.h3ConnectedUserBook,
 .h2ConnectedBookStockAddABook,
 .h3ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
@@ -315,29 +310,28 @@ a.linkBookExchange:visited {
 .h2ConnectedBookStockBookStocked,
 .h3ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
-.h3ConnectedBookExchangeClickOnTheBookExchangeLink,
+.h3TheBooksIRequestedToExchange,
+.h3MyBooksRequestedForExchange,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+.h2ConnectedConnectedResetPasswordCheckEmail {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
     width: 72.5%;
-    font-size: 2.2em;
     background-color: #F7F7F7;
-    margin-left: 10%;
-    padding-top: 4%;
-    padding-left: 8.1%;
-    padding-bottom: 5%;
-    border-radius: 0.2em;
+    margin-left: 5rem;
+    padding: 20px 40px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.h2CreateAccount,
 .h2ConfirmAccountEmailAddress,
-.h2LoginToTheAccount,
 .h2ConnectedTotheAccount,
+.h2ConnectedProfile,
 .h2ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
@@ -345,14 +339,15 @@ a.linkBookExchange:visited {
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+.h2ConnectedConnectedResetPasswordCheckEmail {
     border: 0.04em solid #186135;
 }
 
 /* Wireframe 3-4-5-6-7-8-9-10-12-13 */
 .h2ConfirmAccountEmailAddress,
-.h2LoginToTheAccount,
 .h2ConnectedTotheAccount,
+.h2ConnectedProfile,
 .h2ConnectedBookStockAddABook,
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
@@ -360,19 +355,20 @@ a.linkBookExchange:visited {
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
-    margin-bottom: 10%;
+.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+.h2ConnectedConnectedResetPasswordCheckEmail {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
+.h3ConnectedUserBook,
 .h3ConnectedBookStockAddABook,
 .h3ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookStocked,
-.h3ConnectedBookExchangeClickOnTheBookExchangeLink,
+.h3TheBooksIRequestedToExchange,
+.h3MyBooksRequestedForExchange,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter {
-    font-size: 1.3em;
-    padding-top: 1.54%;
-    padding-left: 2.4%;
-    padding-bottom: 1.54%;
+    padding: 10px 20px;
 }
 
 section.introductoryContent>p {
@@ -386,7 +382,6 @@ section.introductoryContent>p {
 /* Wireframe 1- How It Works */
 .divParagraphsHowItWorks p {
     font-family: 'MerriweatherRegular', 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.1em;
     color: #000;
     margin-left: 5%;
 }
@@ -396,21 +391,14 @@ section.introductoryContent>p {
     font-size: 1.41em;
     width: 48%;
     margin-left: 18.8%;
-    margin-bottom: 3.7%;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .instructionsForUse p {
     font-size: 1.1em;
     width: 77.5%;
     margin-left: 19.2%;
-}
-
-/* Wireframe 2 -Create Account */
-.paragraphsOfCreateAccount {
-    font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.1em;
-    color: #000;
-    margin-left: 11.25%;
 }
 
 /* Wireframes 3-5-12-13-14 */
@@ -421,21 +409,17 @@ section.introductoryContent>p {
 .divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
     margin: 0 auto;
     width: 75.5%;
-    border: 0.3em solid #186135;
-    border-radius: 0.94em;
+    border: 0.1em solid #186135;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     background-color: #F7F7F7;
-    padding: 2% 5%;
+    padding: 20px 40px;
 }
 
 /* Wireframe 12 */
 .divConnectedBookExchangeConfirmBookExchange {
     width: 60.5%;
     text-align: center;
-}
-
-/* Wireframe 13 */
-.divConnectedBookExchangeConfirmationOfTheExchangeRequest {
-    width: 89.5%;
 }
 
 /* Wireframe 14 */
@@ -446,15 +430,22 @@ section.introductoryContent>p {
 /* Wireframe 6-8-9-10 */
 .divConnectedBookStockAddABook,
 .divConnectedBookStockBookStocked,
-.divConnectedBookExchangeClickOnTheBookExchangeLink,
-.divConnectedBookExchangeSearchForTheBookHarryPotter {
-    margin: 0 auto;
-    border-radius: 0.6em;
+.divTheBooksIRequestedToExchange,
+.divMyBooksRequestedForExchange,
+.divConnectedBookExchangeSearchForTheBookHarryPotter,
+.divConnectedResetPasswordCheckEmail {
+    margin: 1.5rem auto;
+    border-radius: 0.5rem;
     background-color: #0854A2;
-    padding: 2% 5%;
+    padding: 1rem;
 }
 
-.divConnectedBookStockAddABook {
+.divConnectedResetPasswordCheckEmail {
+    background-color: #F7F7F7;
+}
+
+.divConnectedBookStockAddABook,
+.divConnectedResetPasswordCheckEmail {
     width: 63.8%;
 }
 
@@ -463,10 +454,10 @@ section.introductoryContent>p {
     padding: 2% 2%;
 }
 
-.divConnectedBookExchangeClickOnTheBookExchangeLink,
+.divTheBooksIRequestedToExchange,
+.divMyBooksRequestedForExchange,
 .divConnectedBookExchangeSearchForTheBookHarryPotter {
     width: 52.8%;
-    padding: 2% 2%;
 }
 
 /* Wireframes 3-5-6-7-8-9-10-11-12-13-14 */
@@ -474,7 +465,8 @@ section.introductoryContent>p {
 .divConnectedTotheAccount p,
 .divConnectedBookStockAddABook p,
 .divConnectedBookStockBookStocked p,
-.divConnectedBookExchangeClickOnTheBookExchangeLink p,
+.divTheBooksIRequestedToExchange p,
+.divMyBooksRequestedForExchange p,
 .divExchangeInstructions p,
 .divConnectedBookExchangeSearchForTheBookHarryPotter p,
 .divDisplayBlocksBookInformation p,
@@ -482,18 +474,23 @@ section.introductoryContent>p {
 .divConnectedBookExchangeConfirmationOfTheExchangeRequest p,
 .divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.16em;
     color: #000;
 }
 
 /* Wireframes 6-8-9-10 */
 .divConnectedBookStockAddABook p,
 .divConnectedBookStockBookStocked p,
-.divConnectedBookExchangeClickOnTheBookExchangeLink p,
+.divTheBooksIRequestedToExchange p,
+.divMyBooksRequestedForExchange p,
 .divExchangeInstructions p,
 .divConnectedBookExchangeSearchForTheBookHarryPotter p,
 .divExchangeInstructions p {
     color: #FFF;
+}
+
+.divTheBooksIRequestedToExchange p,
+.divMyBooksRequestedForExchange p {
+    margin: .5rem auto;
 }
 
 /* Wireframe 3 */
@@ -512,18 +509,17 @@ section.introductoryContent>p {
     color: #000000;
     text-decoration: underline;
     width: 57.2%;
-    /* 457px */
     margin-left: 23.8%;
-    /* 190px */
-    margin-top: 2.5%;
-    /* 20px */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .h2TitleSelectionOfBooks {
     width: 90%;
-    /* before 85% */
     text-align: center;
     background-color: #F7F7F7;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
 }
 
 .sectionOfBookSelection .h2TitleSelectionOfBooks {
@@ -541,10 +537,8 @@ section.introductoryContent>p {
 
 .imageForTheInstructionManualBlock {
     width: 70.4%;
-    /* 562.9px */
     height: 288.2px;
     margin-left: 18.8%;
-    /* 150px */
 }
 
 /* block of books */
@@ -554,29 +548,21 @@ section.introductoryContent>p {
     flex-direction: column;
     justify-content: center;
     width: 36%;
-    /* 35%  */
     border: 0.2em solid #196216;
-    /* 3.73px */
     border-radius: 0.5em;
     border-color: #196216;
     padding: 2.51%;
-    /* 20px */
     margin-bottom: 2%;
 }
 
 .blockOfTheBookInformation h4,
 .blockOfStoredBookInformation h4 {
     width: 95%;
-    /* 201px */
-    /* 86% */
     margin-top: 0;
     margin-bottom: 4.4%;
     overflow: hidden;
     font-size: 1.3em;
-    /* 18.66px */
-    /* 1.16em */
     line-height: 1.08em;
-    /* 20 px */
 }
 
 .blockOfTheBookInformation h4,
@@ -587,26 +573,17 @@ div.line.author>a {
 }
 
 div.line.author>a,
-section.blockOfTheBookInformation>p.line.state,
 div.line.location>span,
-section.blockOfTheBookInformation>p.line.owner,
 div.line.author>a,
 section.blockOfStoredBookInformation>p.line.state {
     font-size: 1.2em;
 }
 
-section.blockOfTheBookInformation>p.line.category,
 section.blockOfStoredBookInformation>p.line.category {
     font-size: 1.17em;
 }
 
-section.blockOfTheBookInformation>p.line.category,
-section.blockOfTheBookInformation>p.line.publisher,
-section.blockOfTheBookInformation>p.line.language,
-section.blockOfTheBookInformation>p.line.format,
-section.blockOfTheBookInformation>p.line.state,
 div.line.location,
-section.blockOfTheBookInformation>p.line.owner,
 .divExchangeButton,
 section.blockOfStoredBookInformation>p.line.category,
 section.blockOfStoredBookInformation>p.line.publisher,
@@ -620,8 +597,6 @@ section.blockOfStoredBookInformation>p.line.state,
 
 .blockOfTheBookInformation h4,
 div.line.author>a,
-section.blockOfTheBookInformation>p.line.state,
-section.blockOfTheBookInformation>p.line.owner,
 div.line.location>span,
 .blockOfStoredBookInformation h4,
 div.line.author>a,
@@ -633,42 +608,22 @@ section.blockOfStoredBookInformation>p.line.state,
 }
 
 .locationIcon {
-    width: 3em;
-    /* 14.6px */
-    height: 3em;
-    /* 22.7px */
+    width: 3rem;
+    height: 3rem;
 }
 
-.divExchangeButton,
-.divRemoveFromBookStockButton {
-    align-self: center;
+.btn-outline-success.exchangeButton {
+    color: #196216;
+    border-color: #196216;
 }
 
-.exchangeButton,
-.removeFromBookStockButton {
-    font-size: 1.1em;
-    border-radius: 0.5em;
-}
-
-.exchangeButton {
-    color: #FFF;
+.btn-outline-success.exchangeButton:hover {
+    color: #fff;
     background-color: #196216;
-    padding: 0.5em 1em;
-}
-
-.removeFromBookStockButton {
-    color: #000;
-    background-color: #FFF;
-    border: 0.01em solid #CCCCCC;
-    padding: 0.25em 1em;
-    /* before 0.5 1em; */
+    border-color: #196216;
 }
 
 /* Wireframe 2-4-5-7 */
-form[name="registration_form"],
-form[name="login_form"],
-.formCreateAccount,
-.formLoginToTheAccount,
 .formConnectedTotheAccount,
 .formConnectedBookStockBookAdditionForm {
     margin: 0 auto;
@@ -678,18 +633,7 @@ form[name="login_form"],
     background-color: #F7F7F7;
 }
 
-/* Wireframe 2 */
-form[name="registration_form"],
-.formCreateAccount {
-    padding-top: 2%;
-    /* 30px => 4% */
-    padding-bottom: 2%;
-    /* 30px => 4%  | 16px => 2% */
-}
-
 /* Wireframe 4-5-7 */
-form[name="login_form"],
-.formLoginToTheAccount,
 .formConnectedTotheAccount,
 .formConnectedBookStockBookAdditionForm {
     padding: 2% 5%;
@@ -701,24 +645,14 @@ form[name="login_form"],
     text-align: center;
 }
 
-form[name="registration_form"] div,
-.formCreateAccount div,
-form[name="login_form"] div,
-.formLoginToTheAccount div,
 .formConnectedBookStockBookAdditionForm div {
     margin: 6% 0;
 }
 
-form[name="registration_form"]>div>label,
-form.formCreateAccount>div>label,
-form[name="login_form"]>div>label,
-form.formLoginToTheAccount>div>label,
 form.formConnectedBookStockBookAdditionForm>div>label {
     font-size: 1.16em;
 }
 
-.divButtonCreateAccount,
-.divButtonLoginToTheAccount,
 .divButtonConnectedTotheAccount,
 .divButtonConnectedBookStockAddABook,
 .divButtonConnectedBookStockBookAdditionForm,
@@ -727,23 +661,30 @@ form.formConnectedBookStockBookAdditionForm>div>label {
     justify-content: center;
 }
 
-.buttonCreateAccount,
-.buttonLoginToTheAccount,
 .buttonConnectedTotheAccount,
 .buttonConnectedBookStockAddABook,
-.buttonConnectedBookStockBookAdditionForm,
-.buttonConfirmTheExchange {
+.buttonConnectedBookStockBookAdditionForm {
     color: #FFF;
     background-color: #186135;
     font-family: 'openSansRegular';
     font-size: 1.16em;
-    /* 14pt => 18.66px => em */
     font-weight: bold;
     border: 0 solid #186135;
     border-radius: 0.6em;
-    /* 0.94em, 0.6em */
     padding: 3% 3%;
-    /* width 150px , 10px */
+}
+
+a.btn-success.buttonConfirmTheExchange {
+    font-family: 'openSansRegular';
+    color: #fff;
+    background-color: #196216;
+    border-color: #196216;
+}
+
+a.btn-success.buttonConfirmTheExchange:hover {
+    color: #fff;
+    background-color: #186135;
+    border-color: #15572F;
 }
 
 .buttonConnectedBookStockAddABook,
@@ -753,21 +694,96 @@ form.formConnectedBookStockBookAdditionForm>div>label {
 }
 
 .divExchangeInstructions {
-    margin: 3.8% auto;
+    margin: 1.5rem auto;
+    padding: 1rem 1.5rem;
     width: 69.5%;
-    border-radius: 0.94em;
+    border-radius: 0.5rem;
     background-color: #186135;
-    padding: 2% 5%;
 }
 
-.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-.paragraphForgottenPasswordLink {
+.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
     text-align: center;
 }
 
 .paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
 .paragraphBeforeTheCreateMyAccountButton {
     margin-bottom: 8%;
+}
+
+.paragraphDisplayingInformationBookRequestedExchange {
+    text-align: left;
+}
+
+div.col-sm-12.divButtonsEdit {
+    display: flex;
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.divButtonConnectedBookStockAddABook {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bookCard.col-sm-4,
+.bookCard.col-sm-11 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.1em solid #196216;
+    border-color: #196216;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    height: min-content;
+    padding: 1.5rem;
+    margin: 2.5rem 2.5rem;
+    font-family: sans-serif, 'openSansRegular';
+    background-color: #F7F7F7;
+    max-width: 100%;
+}
+
+section h4.titleBook a,
+div.titleBook,
+div.authorBook>a,
+.stateBook,
+.locationBook,
+.ownerBook {
+    font-weight: bold;
+    color: #000;
+}
+
+div.titleBook {
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+
+.categoryBook,
+.publisherBook,
+.summaryBook,
+.languageBook,
+.formatBook,
+.stateBook,
+.locationBook,
+.ownerBook {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+div.authorBook>a,
+.stateBook,
+.locationBook,
+.ownerBook {
+    font-size: 1.2rem;
+}
+
+.table.manageMyAccountBooks {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Styles css Bootstrap */
@@ -801,39 +817,38 @@ form.formConnectedBookStockBookAdditionForm>div>label {
 }
 
 /* Style CSS For Validation FORM BOOTSTRAP */
-/*
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-}
-*/
 #formContainer {
     background-color: #fff;
     font-family: sans-serif, 'openSansRegular';
-    border-radius: 5px;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     width: 400px;
     max-width: 100%;
-    padding: inherit;
+    padding: 0;
     height: min-content;
+    margin: 2.5rem auto;
 }
 
-#formContainer .form-control {
+div.form-control {
     border: none;
+}
+
+.divAlert.col-sm-12 {
+    margin-top: 2.5rem;
 }
 
 .formHeader {
     border-bottom: 1px solid #f0f0f0;
     background-color: #f7f7f7;
     padding: 20px 40px;
+    text-align: center;
 }
 
 .formHeader h2 {
     margin: 0;
+    color: #186135;
+    font-weight: 700;
 }
 
 .form {
@@ -864,9 +879,22 @@ body {
     width: 100%;
 }
 
-.form-control input:focus {
-    outline: 0;
-    border-color: #777;
+.form-control:focus,
+.form-control input:focus,
+div.form-control:focus,
+div.form-control>input#inputEmail.form-control:focus,
+div.form-control>input#inputPassword.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    outline: 2px solid;
+    outline-offset: .15em;
+    box-shadow: 0 0 0 .25rem rgba(119, 119, 119, .25);
+}
+
+.btn-check:focus+.btn-success,
+.btn-success:focus {
+    outline: 2px solid;
+    outline-offset: .15em;
 }
 
 .form-control.success input {
@@ -914,7 +942,7 @@ body {
 .form button {
     background-color: #186135;
     border: 2px solid #186135;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     color: #fff;
     display: block;
     font-family: inherit;
@@ -922,4 +950,11 @@ body {
     padding: 10px;
     margin-top: 20px;
     width: 100%;
+}
+
+.formFooter {
+    border-top: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    text-align: center;
 }

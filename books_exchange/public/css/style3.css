@@ -142,11 +142,6 @@ div#navbarsExampleDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.
     align-items: center;
 }
 
-
-.linkCreateAccount {
-    margin-right: 4em;
-}
-
 .menu {
     display: flex;
     background-color: #CD4109;
@@ -156,10 +151,6 @@ div#navbarsExampleDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.
 
 .menu ul {
     display: flex;
-}
-
-.liHowItWorks {
-    padding-right: 4em;
 }
 
 .menu a {
@@ -176,7 +167,7 @@ main {
     border-radius: 0.5rem;
 }
 
-.asideSearchBar {
+main>aside {
     background-color: #F7F7F7;
     border: 0.8em solid #F7F7F7;
 }
