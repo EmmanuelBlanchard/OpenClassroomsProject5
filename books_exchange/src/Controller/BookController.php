@@ -21,6 +21,25 @@ use Symfony\Component\Mailer\MailerInterface;
 class BookController extends AbstractController
 {
     /**
+     * @Route("/", name="home")
+     */
+    public function index(BookRepository $bookRepo, Request $request): Response
+    {
+        // We get the information of the connected user
+        $user = $this->getUser();
+        // We define the number of elements per page
+        $limit = 10;
+        // We get the page number
+        $page = (int)$request->query->get("page", 1);
+        // We recover the books of the page
+        $books = $bookRepo->getPaginatedBooks($page, $limit, $user);
+        // We get the total number of books
+        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
+
+        return $this->render('book/index.html.twig', compact('books', 'limit', 'page', 'total'));
+    }
+    
+    /**
     * @Route("/stock", name="stock")
     */
     public function stock(BookRepository $bookRepo): Response
