@@ -56,18 +56,32 @@ class BookRepository extends ServiceEntityRepository
     /**
     * @return Book[] Returns an array of Book objects
     */
-    public function findBooksActiveOwnedByUserWithOrderCreatedAtDesc($user)
+    public function findBooksActiveOwnedByUserWithOrderCreatedAtDesc($page, $limit, $user)
     {
-        return $this->createQueryBuilder('book')
-            ->where('book.active = :active')
-            ->setParameter('active', 1)
-            ->andWhere('book.user = :user')
+        $query = $this->createQueryBuilder('b')
+            ->where('b.active = 1')
+            ->andWhere('b.user = :user')
             ->setParameter('user', $user)
-            ->orderBy('book.createdAt', 'DESC')
-            ->setMaxResults(50)
-            ->getQuery()
-            ->getResult()
+            ->orderBy('b.createdAt', 'DESC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
         ;
+        return $query->getQuery()->getResult();
+    }
+    
+    /**
+     * Returns number of books active owned by user with order created at desc
+     * @return void
+     */
+    public function getTotalBooksActiveOwnedByUserWithOrderCreatedAtDesc($user)
+    {
+        $query = $this->createQueryBuilder('b')
+            ->select('COUNT(b)')
+            ->where('b.active = 1')
+            ->andWhere('b.user = :user')
+            ->setParameter('user', $user)
+        ;
+        return $query->getQuery()->getSingleScalarResult();
     }
 
     /**
@@ -75,14 +89,12 @@ class BookRepository extends ServiceEntityRepository
     */
     public function findBooksActiveWithoutExchangeRequestNotOwnedByUser($user)
     {
-        return $this->createQueryBuilder('book')
-            ->where('book.active = :active')
-            ->setParameter('active', 1)
-            ->andWhere('book.exchangeRequest = :exchangeRequest')
-            ->setParameter('exchangeRequest', 0)
-            ->andWhere('book.user <> :user')
+        return $this->createQueryBuilder('b')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 0')
+            ->andWhere('b.user <> :user')
             ->setParameter('user', $user)
-            ->orderBy('book.createdAt', 'DESC')
+            ->orderBy('b.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -95,10 +107,8 @@ class BookRepository extends ServiceEntityRepository
     public function findBooksActiveWithExchangeRequestRequestedByUser($user)
     {
         return $this->createQueryBuilder('book')
-            ->where('book.active = :active')
-            ->setParameter('active', 1)
-            ->andWhere('book.exchangeRequest = :exchangeRequest')
-            ->setParameter('exchangeRequest', 1)
+            ->where('book.active = 1')
+            ->andWhere('book.exchangeRequest = 1')
             ->andWhere('book.userexchange = :user')
             ->setParameter('user', $user)
             ->orderBy('book.exchangeRequestAt', 'DESC')
@@ -114,10 +124,8 @@ class BookRepository extends ServiceEntityRepository
     public function findBooksActiveWithExchangeRequestOwnedByUser($user)
     {
         return $this->createQueryBuilder('book')
-            ->where('book.active = :active')
-            ->setParameter('active', 1)
-            ->andWhere('book.exchangeRequest = :exchangeRequest')
-            ->setParameter('exchangeRequest', 1)
+            ->where('book.active = 1')
+            ->andWhere('book.exchangeRequest = 1')
             ->andWhere('book.user = :user')
             ->setParameter('user', $user)
             ->orderBy('book.exchangeRequestAt', 'DESC')
