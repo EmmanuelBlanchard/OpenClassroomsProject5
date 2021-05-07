@@ -21,13 +21,13 @@ use Symfony\Component\Mailer\MailerInterface;
 class BookController extends AbstractController
 {
     /**
-    * @Route("/", name="home")
+    * @Route("/stock", name="stock")
     */
-    public function index(BookRepository $bookRepo): Response
+    public function stock(BookRepository $bookRepo): Response
     {
         $user = $this->getUser();
         $books = $bookRepo->findBooksActiveOwnedByUserWithOrderCreatedAtDesc($user);
-        return $this->render('book/index.html.twig', [
+        return $this->render('book/stock.html.twig', [
             'books' => $books]);
     }
 
@@ -67,7 +67,7 @@ class BookController extends AbstractController
     {
         $book = $bookRepo->findOneBy(['slug' => $slug]);
 
-        if(!$book) {
+        if (!$book) {
             throw new NotFoundHttpException('Pas de livre trouvé');
         }
 
@@ -75,7 +75,7 @@ class BookController extends AbstractController
 
         $contact = $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             // We create the mail
             $email = (new TemplatedEmail())
                 ->from($contact->get('email')->getData())
@@ -108,7 +108,7 @@ class BookController extends AbstractController
     */
     public function removeStock(Book $book): Response
     {
-        if($book === null) {
+        if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
@@ -118,45 +118,6 @@ class BookController extends AbstractController
             $this->addFlash('message', 'Livre supprimé du stock de livres');
         }
         return $this->redirectToRoute('book_home');
-    }
-
-    /**
-    * @Route("/add/exchanges/{id}", name="add_exchanges")
-    */
-    public function addExchanges(Book $book): Response
-    {
-        if($book === null) {
-            // Make a flash bag message
-            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
-        } else {
-            $book->setActive(true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($book);
-            $entityManager->flush();
-            $this->addFlash('message', 'Livre ajouté aux échanges');
-        }
-        return $this->redirectToRoute('user');
-    }
-
-    /**
-    * @Route("/remove/exchanges/{id}", name="remove_exchanges")
-    */
-    public function removeExchanges(Book $book): Response
-    {
-        if($book === null) {
-            // Make a flash bag message
-            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
-        } else {
-            $book->setActive(false);
-            $book->setExchangeRequest(false);
-            $book->setUserexchange(null);
-            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($book);
-            $entityManager->flush();
-            $this->addFlash('message', 'Livre retiré des échanges');
-        }
-        return $this->redirectToRoute('user');
     }
 
     /**
@@ -170,7 +131,7 @@ class BookController extends AbstractController
 
         $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
 
-        if(!$myBooksRequestedForExchange) {
+        if (!$myBooksRequestedForExchange) {
             throw new NotFoundHttpException("Aucun de mes livres demandés");
         }
         
@@ -202,9 +163,48 @@ class BookController extends AbstractController
         */
         return $this->render('book/exchanges.html.twig', [
             'theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,
-            'myBooksRequestedForExchange' => $myBooksRequestedForExchange, 
+            'myBooksRequestedForExchange' => $myBooksRequestedForExchange,
             'contactBookForm' => $form->createView()
         ]);
+    }
+    
+    /**
+    * @Route("/add/exchanges/{id}", name="add_exchanges")
+    */
+    public function addExchanges(Book $book): Response
+    {
+        if ($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre ajouté aux échanges');
+        }
+        return $this->redirectToRoute('user');
+    }
+
+    /**
+    * @Route("/remove/exchanges/{id}", name="remove_exchanges")
+    */
+    public function removeExchanges(Book $book): Response
+    {
+        if ($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $book->setActive(false);
+            $book->setExchangeRequest(false);
+            $book->setUserexchange(null);
+            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre retiré des échanges');
+        }
+        return $this->redirectToRoute('user');
     }
 
     /**
@@ -212,7 +212,7 @@ class BookController extends AbstractController
     */
     public function cancelExchange(Book $book): Response
     {
-        if($book === null) {
+        if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
@@ -233,7 +233,7 @@ class BookController extends AbstractController
     */
     public function validationConfirmExchange(Book $book): Response
     {
-        if($book === null) {
+        if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } else {
@@ -249,7 +249,7 @@ class BookController extends AbstractController
     {
         $user = $this->getUser();
 
-        if($book === null) {
+        if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } else {
@@ -265,5 +265,4 @@ class BookController extends AbstractController
         }
         return $this->redirectToRoute('app_home');
     }
-
 }

@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Stock de livres de
+	{{ app.user.pseudo }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-danger" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<h2 class="h2ConnectedBookStockAddABook">Stock de livres</h2>
+
+		<div class="col-sm-12">
+			<h3 class="h3ConnectedBookStockAddABook">Bibliothèque de
+				{{ app.user.firstname }}
+				{{ app.user.lastname }}
+				{% if books|length == "0" %}
+					(0 livre)
+				{% else %}
+					({{ books|length }}
+					livres)
+				{% endif %}
+			</h3>
+		</div>
+
+		{% if books|length == "0" %}
+			<div class="divConnectedBookStockAddABook">
+				<p>Votre bibliothèque est vide.</p>
+				<p>Complétez-là avec les livres que vous possèdez</p>
+				<p>et que vous souhaitez échanger.</p>
+			</div>
+
+			<div class="divButtonConnectedBookStockAddABook">
+				<a class="btn btn-success" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
+			</div>
+		{% else %}
+			<div class="divButtonConnectedBookStockAddABook">
+				<a class="btn btn-success" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
+			</div>
+
+			<div class="row col-sm-12">
+				{% for book in books %}
+					<div class="bookCard col-sm-4">
+
+						<div class="titleBook">{{ book.title|u.truncate(24, '...') }}</div>
+						<div class="authorBook">
+							<a href="">{{ book.author }}</a>
+						</div>
+						<div class="categoryBook">{{ book.category }}</div>
+						<div class="publisherBook">{{ book.publisher }}</div>
+						<div class="languageBook">{{ book.language }}</div>
+						<div class="formatBook">{{ book.format }}</div>
+						<div class="stateBook">{{ book.state }}</div>
+
+						<div class="align-self-center">
+							<a class="btn btn-outline-secondary" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}
