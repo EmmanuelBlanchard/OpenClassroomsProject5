@@ -23,8 +23,8 @@ class MainController extends AbstractController
 
         $search = $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
-            // we search for the books corresponding to the key words 
+        if ($form->isSubmitted() && $form->isValid()) {
+            // we search for the books corresponding to the key words
             $books = $bookRepo->search(
                 $search->get('words')->getData(),
                 $search->get('category')->getData()
@@ -38,7 +38,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/howitworks", name="app_how_it_works")
+     * @Route("/howitworks", name="how_it_works")
      */
     public function howitworks(): Response
     {
