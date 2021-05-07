@@ -103,6 +103,13 @@ nav {
     align-items: center;
 }
 
+/*main.container-xxl.my-md-4.bd-layout>div.container>nav.page-navigation*/
+div.container>nav.page-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: inherit;
+}
+
 nav.nav.nav-underline {
     display: flex;
     justify-content: center;
