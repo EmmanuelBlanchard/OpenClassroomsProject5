@@ -22,77 +22,25 @@
 		{% endfor %}
 		<h2 class="h2ConnectedBookStockAddABook">Liste de livres</h2>
 
-		<div class="col-sm-12">
-			<h3 class="h3ConnectedBookStockAddABook">Bibliothèque
-				{% if books|length == "0" %}
-					(0 livre)
-				{% else %}
-					({{ books|length }}
-					livres)
-				{% endif %}
-			</h3>
-		</div>
-
-		{% if books|length == "0" %}
-			<div class="divConnectedBookStockAddABook">
-				<p>La bibliothèque est vide.</p>
-			</div>
-
-		{% else %}
-			<div class="row col-sm-12">
-				{% for book in books %}
-					<section class="bookCard col-sm-4">
-						<h4 class="titleBook">
-							<a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
-						</h4>
-						<div class="authorBook">
-							<a href="">{{ book.author }}</a>
-						</div>
-						<div class="categoryBook">{{ book.category }}</div>
-						<div class="publisherBook">{{ book.publisher }}</div>
-						<div class="languageBook">Langue:
-							{{ book.language }}</div>
-						<div class="formatBook">Format:
-							{{ book.format }}</div>
-						<div class="stateBook">État:
-							{{ book.state }}</div>
-						<div class="locationBook">
-							<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
-							<span>{{ book.user.city }}</span>
-						</div>
-						<p class="ownerBook">Propriétaire:
-							{{ book.user.pseudo }}
+		<div class="row">
+			<div class="grid col-2 col-sm-4 g-0 card">
+				<p>Filtrer</p>
+				<form id="filters">
+					{% for item in category %}
+						<p><input type="checkbox" name="category[]" id="category{{item.id}}" value="{{item.id}}">
+							<label for="category{{item.id}}">{{item.name}}</label>
 						</p>
-						<div class="align-self-center">
-							<a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
-						</div>
-					</section>
-				{% endfor %}
+					{% endfor %}
+					<input type="hidden" name="page" value="{{page}}">
+				</form>
 			</div>
-		{% endif %}
-
-		<nav class="page-navigation" aria-label="Page navigation">
-			<ul class="pagination">
-				{% if previous >= 0 %}
-					<li class="page-item">
-						<a class="page-link" href="{{ path('book_home', { offset: previous }) }}" aria-label="Page Précédente">
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-left" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-							</svg>
-						</a>
-					</li>
-				{% endif %}
-				{% if next < books|length %}
-					<li class="page-item">
-						<a class="page-link" href="{{ path('book_home', { offset: next }) }}" aria-label="Page Suivante">
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-							</svg>
-						</a>
-					</li>
-				{% endif %}
-			</ul>
-		</nav>
-
+			<div class="col-5 col-sm-8">
+				{% include "book/_content.html.twig" %}
+			</div>
+		</div>
 	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/filters.js') }}"></script>
 {% endblock %}

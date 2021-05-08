@@ -733,6 +733,7 @@ div.col-sm-12.divButtonsEdit {
     margin-bottom: 1.5rem;
 }
 
+.bookCard,
 .bookCard.col-sm-4,
 .bookCard.col-sm-11 {
     display: flex;

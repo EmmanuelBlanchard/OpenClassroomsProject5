@@ -62,7 +62,7 @@ class BookRepository extends ServiceEntityRepository
 
     /**
      * Returns number of books active without exchange request not owned by user
-     * @return void
+     * @return int
      */
     public function getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user)
     {

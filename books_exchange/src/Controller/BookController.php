@@ -28,17 +28,27 @@ class BookController extends AbstractController
     {
         // We get the information of the connected user
         $user = $this->getUser();
-        
-        $offset = max(0, $request->query->getInt('offset', 0));
-        $paginator = $bookRepo->getBookPaginator($user, $offset);
+        // We define the number of elements per page
+        $limit = 10;
+        // We get the page number
+        $page = (int)$request->query->get("page", 1);
+        // We recover the books of the page
+        $books = $bookRepo->getPaginatedBooks($page, $limit, $user);
+        // We get the total number of books
+        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
 
+        // How many pages will there be
+        $pages = ceil($total / $limit);
         // We recover all categories
         $category = $categoryRepo->findAll();
 
         return $this->render('book/index.html.twig', [
-            'books' => $paginator,
-            'previous' => $offset - BookRepository::PAGINATOR_PER_PAGE,
-            'next' => min(count($paginator), $offset + BookRepository::PAGINATOR_PER_PAGE),
+            'books' => $books,
+            'category' => $category,
+            'limit' => $limit,
+            'page' => $page,
+            'pages' => $pages,
+            'total' => $total,
         ]);
     }
     
