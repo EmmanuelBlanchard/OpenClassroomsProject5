@@ -9,11 +9,11 @@ use App\Repository\BookRepository;
 use App\Repository\CategoryRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Mailer\MailerInterface;
 
 /**
  * @Route("/book", name="book_")
@@ -28,24 +28,17 @@ class BookController extends AbstractController
     {
         // We get the information of the connected user
         $user = $this->getUser();
-        // We define the number of elements per page
-        $limit = 10;
-        // We get the page number
-        $page = (int)$request->query->get("page", 1);
-        // We recover the books of the page
-        $books = $bookRepo->getPaginatedBooks($page, $limit, $user);
-        // We get the total number of books
-        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
+        
+        $offset = max(0, $request->query->getInt('offset', 0));
+        $paginator = $bookRepo->getBookPaginator($user, $offset);
 
         // We recover all categories
         $category = $categoryRepo->findAll();
 
         return $this->render('book/index.html.twig', [
-            'books' => $books,
-            'limit' => $limit,
-            'page' => $page,
-            'total' => $total,
-            'category' => $category
+            'books' => $paginator,
+            'previous' => $offset - BookRepository::PAGINATOR_PER_PAGE,
+            'next' => min(count($paginator), $offset + BookRepository::PAGINATOR_PER_PAGE),
         ]);
     }
     

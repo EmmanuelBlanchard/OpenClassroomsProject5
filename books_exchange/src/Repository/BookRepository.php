@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 /**
  * @method Book|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,9 +15,31 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class BookRepository extends ServiceEntityRepository
 {
+    public const PAGINATOR_PER_PAGE = 10;
+    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Book::class);
+    }
+
+    /**
+     * Returns all books per page
+     * @return void
+     */
+    public function getBookPaginator($user, int $offset): Paginator
+    {
+        $query = $this->createQueryBuilder('b')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 0')
+            ->andWhere('b.user <> :user')
+            ->setParameter('user', $user)
+            ->orderBy('b.createdAt', 'DESC')
+            ->setMaxResults(self::PAGINATOR_PER_PAGE)
+            ->setFirstResult($offset)
+            ->getQuery()
+        ;
+
+        return new Paginator($query);
     }
 
     /**
