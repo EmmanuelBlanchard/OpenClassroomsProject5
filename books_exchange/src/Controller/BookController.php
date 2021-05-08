@@ -6,6 +6,7 @@ use App\Entity\Book;
 use App\Form\BookFormType;
 use App\Form\BookContactFormType;
 use App\Repository\BookRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +24,7 @@ class BookController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(BookRepository $bookRepo, Request $request): Response
+    public function index(BookRepository $bookRepo, CategoryRepository $categoryRepo, Request $request): Response
     {
         // We get the information of the connected user
         $user = $this->getUser();
@@ -36,7 +37,16 @@ class BookController extends AbstractController
         // We get the total number of books
         $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
 
-        return $this->render('book/index.html.twig', compact('books', 'limit', 'page', 'total'));
+        // We recover all categories
+        $category = $categoryRepo->findAll();
+
+        return $this->render('book/index.html.twig', [
+            'books' => $books,
+            'limit' => $limit,
+            'page' => $page,
+            'total' => $total,
+            'category' => $category
+        ]);
     }
     
     /**
