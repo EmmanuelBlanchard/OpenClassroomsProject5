@@ -13,6 +13,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
@@ -32,13 +33,30 @@ class BookController extends AbstractController
         $limit = 10;
         // We get the page number
         $page = (int)$request->query->get("page", 1);
-        // We recover the books of the page
-        $books = $bookRepo->getPaginatedBooks($page, $limit, $user);
-        // We get the total number of books
-        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
 
+        // We recover the filters
+        $filters = $request->get("category");
+        
+        // We get the books of the page according to the filter
+        $books = $bookRepo->getPaginatedBooks($page, $limit, $user, $filters);
+        // We get the total number of books according to the filter
+        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user, $filters);
         // How many pages will there be
         $pages = ceil($total / $limit);
+
+        // We check if we have an ajax request
+        if ($request->get('ajax')) {
+            return new JsonResponse([
+                'content' => $this->renderView('book/_content.html.twig', [
+                    'books' => $books,
+                    'limit' => $limit,
+                    'page' => $page,
+                    'pages' => $pages,
+                    'total' => $total,
+                ])
+            ]);
+        }
+
         // We recover all categories
         $category = $categoryRepo->findAll();
 

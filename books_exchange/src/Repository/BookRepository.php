@@ -46,14 +46,21 @@ class BookRepository extends ServiceEntityRepository
      * Returns all books per page
      * @return void
      */
-    public function getPaginatedBooks($page, $limit, $user)
+    public function getPaginatedBooks($page, $limit, $user, $filters = null)
     {
         $query = $this->createQueryBuilder('b')
             ->where('b.active = 1')
             ->andWhere('b.exchangeRequest = 0')
             ->andWhere('b.user <> :user')
-            ->setParameter('user', $user)
-            ->orderBy('b.createdAt', 'DESC')
+            ->setParameter('user', $user);
+        
+        //On filtre les données
+        if ($filters != null) {
+            $query->andWhere('b.category IN(:category)')
+                ->setParameter('category', array_values($filters));
+        }
+        
+        $query->orderBy('b.createdAt', 'DESC')
             ->setFirstResult(($page * $limit) - $limit)
             ->setMaxResults($limit)
         ;
@@ -64,15 +71,21 @@ class BookRepository extends ServiceEntityRepository
      * Returns number of books active without exchange request not owned by user
      * @return int
      */
-    public function getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user)
+    public function getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user, $filters = null)
     {
         $query = $this->createQueryBuilder('b')
             ->select('COUNT(b)')
             ->where('b.active = 1')
             ->andWhere('b.exchangeRequest = 0')
             ->andWhere('b.user <> :user')
-            ->setParameter('user', $user)
-        ;
+            ->setParameter('user', $user);
+
+        //On filtre les données
+        if ($filters != null) {
+            $query->andWhere('b.category IN(:category)')
+                ->setParameter('category', array_values($filters));
+        }
+
         return $query->getQuery()->getSingleScalarResult();
     }
     
