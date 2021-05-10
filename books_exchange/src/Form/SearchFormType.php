@@ -24,7 +24,7 @@ class SearchFormType extends AbstractType
                     'aria-label' => 'Rechercher',
                 ]
             ])
-            ->add('category', EntityType::class, [
+            ->add('categories', EntityType::class, [
                 'label' => false,
                 'required' => false,
                 'class' => Category::class,

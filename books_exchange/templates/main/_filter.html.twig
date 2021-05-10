@@ -1,4 +1,11 @@
-{{ form_start(searchForm, {'attr': {'class': 'form'}} )}}
+{{ form_start(searchForm, {'attr': {'class': 'form searchForm'}} )}}
 
+{{ form_row(searchForm.q) }}
+
+<h4>Catégories</h4>
+
+{{ form_row(searchForm.categories) }}
+
+<button type="submit" class="btn btn-primary w-100">Filtrer</button>
 
 {{ form_end(searchForm) }}
