@@ -38,6 +38,18 @@ class MainController extends AbstractController
     }
 
     /**
+     * @Route("/search", name="book")
+     */
+    public function indexTest(BookRepository $bookRepo): Response
+    {
+        $books = $bookRepo->findSearch();
+
+        return $this->render('main/search.html.twig', [
+            'books' => $books,
+        ]);
+    }
+
+    /**
      * @Route("/howitworks", name="how_it_works")
      */
     public function howItWorks(): Response

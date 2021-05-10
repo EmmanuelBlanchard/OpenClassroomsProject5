@@ -195,6 +195,16 @@ class BookRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
+    /**
+     * Retrieves books related to a search
+     *
+     * @return Book[] Returns an array of Book objects
+     */
+    public function findSearch(): array
+    {
+        return $this->findAll();
+    }
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */

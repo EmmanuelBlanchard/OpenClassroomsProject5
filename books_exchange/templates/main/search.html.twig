@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous nos livres
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="grid">
+            {% for book in books %}
+                {% include "main/_card.html.twig" with {book : book} only %}
+            {% endfor %}
+        </div>
+	</div>
+{% endblock %}
