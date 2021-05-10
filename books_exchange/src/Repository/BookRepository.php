@@ -3,9 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Book;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Doctrine\ORM\Tools\Pagination\Paginator;
+use Knp\Component\Pager\PaginatorInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Book|null find($id, $lockMode = null, $lockVersion = null)
@@ -15,31 +15,10 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
  */
 class BookRepository extends ServiceEntityRepository
 {
-    public const PAGINATOR_PER_PAGE = 10;
-    
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Book::class);
-    }
-
-    /**
-     * Returns all books per page
-     * @return void
-     */
-    public function getBookPaginator($user, int $offset): Paginator
-    {
-        $query = $this->createQueryBuilder('b')
-            ->where('b.active = 1')
-            ->andWhere('b.exchangeRequest = 0')
-            ->andWhere('b.user <> :user')
-            ->setParameter('user', $user)
-            ->orderBy('b.createdAt', 'DESC')
-            ->setMaxResults(self::PAGINATOR_PER_PAGE)
-            ->setFirstResult($offset)
-            ->getQuery()
-        ;
-
-        return new Paginator($query);
+        $this->paginator = $paginator;
     }
 
     /**
@@ -198,11 +177,31 @@ class BookRepository extends ServiceEntityRepository
     /**
      * Retrieves books related to a search
      *
-     * @return Book[] Returns an array of Book objects
+     * @return PaginatorInterface
      */
-    public function findSearch(): array
+    public function findSearch($words = null, $category = null): PaginatorInterface
     {
-        return $this->findAll();
+        $query = $this->createQueryBuilder('b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
+
+        if ($words != null) {
+            $query->andWhere('MATCH_AGAINST(b.title, b.summary) AGAINST 
+            (:words boolean)>0')
+                ->setParameter('words', $words);
+        }
+        if ($category != null) {
+            $query->leftJoin('b.category', 'c');
+            $query->andWhere('c.id = :id')
+            ->setParameter('id', $category);
+        }
+
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            1,
+            12
+        );
     }
 
     // /**

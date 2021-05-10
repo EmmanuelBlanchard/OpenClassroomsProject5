@@ -43,13 +43,20 @@ class MainController extends AbstractController
      */
     public function indexTest(BookRepository $bookRepo, Request $request): Response
     {
-        $books = $bookRepo->findAll();
-
+        $user = $this->getUser();
+        $books = $bookRepo->findBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
+        
         $form = $this->createForm(SearchFormType::class);
 
         $search = $form->handleRequest($request);
 
-        $books = $bookRepo->findSearch();
+        if ($form->isSubmitted() && $form->isValid()) {
+            // we search for the books corresponding to the key words
+            $books = $bookRepo->findSearch(
+                $search->get('words')->getData(),
+                $search->get('categories')->getData()
+            );
+        }
 
         return $this->render('main/search.html.twig', [
             'books' => $books,
