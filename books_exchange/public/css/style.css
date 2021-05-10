@@ -733,6 +733,23 @@ div.col-sm-12.divButtonsEdit {
     margin-bottom: 1.5rem;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.filter {
+    display: block;
+    position: sticky;
+    top: 150px;
+}
+
 .bookCard,
 .bookCard.col-sm-4,
 .bookCard.col-sm-11 {

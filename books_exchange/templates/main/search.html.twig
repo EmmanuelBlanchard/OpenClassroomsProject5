@@ -5,10 +5,17 @@
 
 {% block body %}
 	<div class="container">
-		<div class="grid">
-            {% for book in books %}
-                {% include "main/_card.html.twig" with {book : book} only %}
-            {% endfor %}
+        <div class="row">
+            <div class="col-md-3">
+                {% include "main/_filter.html.twig" with {searchForm: searchForm} only %}
+            </div>
+            <div class="col-md-9">
+                <div class="grid">
+                    {% for book in books %}
+                        {% include "main/_card.html.twig" with {book : book} only %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
 	</div>
 {% endblock %}

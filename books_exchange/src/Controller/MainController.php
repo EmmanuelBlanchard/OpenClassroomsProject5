@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
+use App\Form\SearchFormType;
 use App\Form\SearchBookFormType;
 use App\Repository\BookRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class MainController extends AbstractController
 {
@@ -40,12 +41,19 @@ class MainController extends AbstractController
     /**
      * @Route("/search", name="book")
      */
-    public function indexTest(BookRepository $bookRepo): Response
+    public function indexTest(BookRepository $bookRepo, Request $request): Response
     {
+        $books = $bookRepo->findAll();
+
+        $form = $this->createForm(SearchFormType::class);
+
+        $search = $form->handleRequest($request);
+
         $books = $bookRepo->findSearch();
 
         return $this->render('main/search.html.twig', [
             'books' => $books,
+            'searchForm' => $form->createView()
         ]);
     }
 
