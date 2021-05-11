@@ -131,7 +131,6 @@ class BookRepository extends ServiceEntityRepository
             ->andWhere('b.user <> :user')
             ->setParameter('user', $user)
             ->orderBy('b.createdAt', 'DESC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
@@ -148,7 +147,6 @@ class BookRepository extends ServiceEntityRepository
             ->andWhere('book.userexchange = :user')
             ->setParameter('user', $user)
             ->orderBy('book.exchangeRequestAt', 'DESC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
@@ -165,7 +163,6 @@ class BookRepository extends ServiceEntityRepository
             ->andWhere('book.user = :user')
             ->setParameter('user', $user)
             ->orderBy('book.exchangeRequestAt', 'DESC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
