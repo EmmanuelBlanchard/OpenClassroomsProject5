@@ -4,9 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
-
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method Book|null find($id, $lockMode = null, $lockVersion = null)
@@ -16,10 +14,9 @@ use Knp\Component\Pager\PaginatorInterface;
  */
 class BookRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Book::class);
-        $this->paginator = $paginator;
     }
 
     /**
@@ -110,14 +107,9 @@ class BookRepository extends ServiceEntityRepository
             ->andWhere('b.exchangeRequest = 0')
             ->andWhere('b.user <> :user')
             ->setParameter('user', $user)
-            ->orderBy('b.createdAt', 'DESC');
-
-        $query = $query->getQuery();
-        return $this->paginator->paginate(
-            $query,
-            1,
-            12
-        );
+            ->orderBy('b.createdAt', 'DESC')
+        ;
+        return $query->getQuery()->getResult();
     }
 
     /**
@@ -179,9 +171,9 @@ class BookRepository extends ServiceEntityRepository
     /**
      * Retrieves books related to a search
      *
-     * @return PaginatorInterface
+     * @return Book[] Returns an array of Book objects
      */
-    public function findSearch($words = null, $category = null): PaginatorInterface
+    public function findSearch($words = null, $category = null)
     {
         $query = $this->createQueryBuilder('b');
         $query->where('b.active = 1');
@@ -198,12 +190,7 @@ class BookRepository extends ServiceEntityRepository
             ->setParameter('id', $category);
         }
 
-        $query = $query->getQuery();
-        return $this->paginator->paginate(
-            $query,
-            1,
-            3
-        );
+        return $query->getQuery()->getResult();
     }
 
     // /**

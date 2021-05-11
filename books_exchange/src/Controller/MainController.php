@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\SearchFormType;
 use App\Form\SearchBookFormType;
 use App\Repository\BookRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,7 +42,7 @@ class MainController extends AbstractController
     /**
      * @Route("/search", name="book")
      */
-    public function indexTest(BookRepository $bookRepo, Request $request): Response
+    public function indexTest(BookRepository $bookRepo, PaginatorInterface $paginator, Request $request)
     {
         $user = $this->getUser();
         $books = $bookRepo->findBooksActiveWithoutExchangeRequestNotOwnedByUser($user);
@@ -58,8 +59,15 @@ class MainController extends AbstractController
             );
         }
 
+        $pagination = $paginator->paginate(
+            $books, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            12 /*limit per page*/
+        );
+    
+        // parameters to template
         return $this->render('main/search.html.twig', [
-            'books' => $books,
+            'books' => $pagination,
             'searchForm' => $form->createView()
         ]);
     }

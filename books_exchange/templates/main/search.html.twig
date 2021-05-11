@@ -15,11 +15,11 @@
 						{% include "main/_card.html.twig" with {book : book} only %}
 					{% endfor %}
 				</div>
-			</div>
-		</div>
 
-		<div>
-			{{ knp_pagination_render(book)}}
+				<div>
+					{{ knp_pagination_render(books)}}
+				</div>
+			</div>
 		</div>
 	</div>
 {% endblock %}
