@@ -51,7 +51,7 @@ class FormatFixtures extends Fixture
                 'name' => '15*15 - Carré'
             ],
             14 => [
-                'name' => '16*23 - '
+                'name' => '16*23'
             ],
             15 => [
                 'name' => '16*24 - Royal'
