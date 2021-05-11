@@ -188,10 +188,6 @@ class BookController extends AbstractController
         $theBooksIRequestedToExchange = $bookRepo->findBooksActiveWithExchangeRequestRequestedByUser($user);
 
         $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
-
-        if (!$myBooksRequestedForExchange) {
-            throw new NotFoundHttpException("Aucun de mes livres demandés");
-        }
         
         $form = $this->createForm(BookContactFormType::class);
 
