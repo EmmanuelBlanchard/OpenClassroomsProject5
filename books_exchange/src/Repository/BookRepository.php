@@ -4,8 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
-use Knp\Component\Pager\PaginatorInterface;
+
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method Book|null find($id, $lockMode = null, $lockVersion = null)
@@ -104,15 +105,19 @@ class BookRepository extends ServiceEntityRepository
     */
     public function findBooksActiveWithoutExchangeRequestNotOwnedByUser($user)
     {
-        return $this->createQueryBuilder('b')
+        $query = $this->createQueryBuilder('b')
             ->where('b.active = 1')
             ->andWhere('b.exchangeRequest = 0')
             ->andWhere('b.user <> :user')
             ->setParameter('user', $user)
-            ->orderBy('b.createdAt', 'DESC')
-            ->getQuery()
-            ->getResult()
-        ;
+            ->orderBy('b.createdAt', 'DESC');
+
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            1,
+            12
+        );
     }
 
     /**
