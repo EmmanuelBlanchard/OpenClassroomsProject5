@@ -215,9 +215,42 @@ class PublisherFixtures extends Fixture
             68 => [
                 'name' => 'le Monde'
             ],
+            69 => [
+                'name' => 'Harper-Collins'
+            ],
+            70 => [
+                'name' => 'Le Livre de Poche'
+            ],
+            71 => [
+                'name' => 'Pocket'
+            ],
+            72 => [
+                'name' => 'L` Iconoclaste'
+            ],
+            73 => [
+                'name' => 'Les Editions du Rocher'
+            ],
+            74 => [
+                'name' => 'Cyplog'
+            ],
+            75 => [
+                'name' => 'Fleuve Editions'
+            ],
+            76 => [
+                'name' => 'Le Cherche midi'
+            ],
+            77 => [
+                'name' => 'Bamboo Edition'
+            ],
+            78 => [
+                'name' => 'Charleston'
+            ],
+            79 => [
+                'name' => 'Finitude'
+            ],
         ];
 
-        foreach($publisher as $key => $value) {
+        foreach ($publisher as $key => $value) {
             $publisher = new Publisher();
             $publisher->setName($value['name']);
             $manager->persist($publisher);
