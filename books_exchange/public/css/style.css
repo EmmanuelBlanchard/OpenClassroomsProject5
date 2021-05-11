@@ -789,6 +789,12 @@ select {
     text-transform: none;
 }
 
+.paginationKnpRender {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
 .bookCard,
 .bookCard.col-sm-4,
 .bookCard.col-sm-11 {
