@@ -27,7 +27,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\NotBlank(
-     *      message = "Veuillez saisir un e-mail",
+     *     message = "Veuillez saisir un e-mail",
      * )
      * @Assert\Email(
      *     message = "L'e-mail '{{ value }}' n'est pas un e-mail valide.",
@@ -59,6 +59,9 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     *     message = "Votre nom ne peut pas être vide",
+     * )
      * @Assert\Regex(
      *     pattern="/\d/",
      *     match=false,
@@ -66,7 +69,7 @@ class User implements UserInterface
      * )
      * @Assert\Regex(
      *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/",
-     *      match=true,
+     *     match=true,
      *     message="Votre nom doit contenir une lettre majuscule en première lettre"
      * )
      */
@@ -74,6 +77,14 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     *     message = "Votre prénom ne peut pas être vide",
+     * )
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Votre prénom ne peut pas contenir un nombre"
+     * )
      * @Assert\Regex(
      *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/",
      *     match=true,
@@ -96,7 +107,7 @@ class User implements UserInterface
      * @Assert\Regex(
      *     pattern="/^([-\S\w]{7,15})$/",
      *     match=true,
-     *     message="Votre pseudo doit contenir entre 7 et 15 caractères (les caractères - et _ sont autorisés, pas pas le caractère espace)"
+     *     message="Votre pseudo ne peut pas contenir le caractère espace (les caractères - et _ sont autorisés)"
      * )
      */
     private $pseudo;
@@ -131,6 +142,11 @@ class User implements UserInterface
      *      max = 50,
      *      minMessage = "Votre ville doit comporter au moins {{ limit }} caractères",
      *      maxMessage = "Votre ville ne peut pas comporter plus de {{ limit }} caractères"
+     * )
+     *  @Assert\Regex(
+     *     pattern="/^[0-9]$/",
+     *     match=true,
+     *     message="Votre nom de la ville ne peut pas comporter des chiffres"
      * )
      * @Assert\Regex(
      *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœðó]+(?:[-'\s][a-zàâäçéèêëîïôöùûüÿæœðóA-ZZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]+)*$/",

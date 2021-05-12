@@ -153,9 +153,6 @@ function checkInputs(event) {
     const zipcodeValue = zipcode.value.trim();
     const cityValue = city.value.trim();
     const agreetermsValue = agreeterms.checked;
-
-    //console.log(pseudoValue, lastnameValue, firstnameValue, emailValue, passwordValue, zipcodeValue, cityValue, agreetermsValue);
-
     // We initialize the score
     let score = 0;
 
@@ -294,19 +291,7 @@ function isLastNameNumber(lastname) {
 }
 
 function isLastName(lastname) {
-    //return /^[A-ZÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]'?[- a-zA-ZéèàêâùïüëçÂÊÎÔÛÄËÏÖÜÀÆæÇÉÈŒœÙ]+$/.test(lastname);
-    //return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ])*[-'’\s]{0,1}[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}(([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœ]*)[-'’\s]{0,1})*$/.test(lastname);
-    // no space or dash character at the end of the Name - Problem with the name O
-    //return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*[^-\s]$/.test(lastname);
     return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/.test(lastname);
-    /*
-    1) John Smith | John D’Largy | John Doe-Smith | John Doe Smith | Hector Sausage-Hausen | Mathias d’Arras | Martin Luther King  | Martin Luther King jr.| Ai Wong | Chao Chang | Alzbeta Bara
-    2) O'Brien-O'Malley | Van der Humpton | Downtown-James Brown | Jozef-Schmozev Hiemdel | George De FunkMaster | John D’Largy O'Brien-O'Malley
-    3) Jérémie O'Co-nor | O'Hara | McNamara | McIntosh | Kurtis B-Ball Basketball | Ahmad el Jeffe | Mike O'Neal
-    4) Van der Humpton John D’Largy O'Brien-O'Malley | Balaÿ, Baÿ, Boulennoÿ, Croÿ, Delannoÿ, Demenÿ, Du Faÿ, Faÿ, Fuÿe, Ghÿs, Lannoÿe, Linÿer, Nicolaÿ, Nouÿ, Ysaÿe
-    5) John Mc'Kenzie | John-Doe Jane-Doe | Randrianampoinimeria | Andrianirinaharivelo | Nadjar Ben Embarek Ben Chagra | Tram Vihn Tan Tan Gapregassam | Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
-    6) Keihanaikukauakahihuliheekahaunaele | Michael Jordan O'Reilly Jr. | Österreicher 
-    7) No match for the name => Guðmundsdóttir */
 }
 
 function isFirstNameNumber(lastname) {
@@ -314,8 +299,6 @@ function isFirstNameNumber(lastname) {
 }
 
 function isFirstName(firstname) {
-    //return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœ])*[-'\s]{0,1}(([a-zàâäçéèêëîïôöùûüÿæœ]+)[-'\s]{0,1})*$/.test(firstname);
-    // update of the pattern for compound firstnames 
     return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/.test(firstname);
 }
 
