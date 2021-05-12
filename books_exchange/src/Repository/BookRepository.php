@@ -31,7 +31,7 @@ class BookRepository extends ServiceEntityRepository
             ->andWhere('b.user <> :user')
             ->setParameter('user', $user);
         
-        //On filtre les données
+        //We filter the data
         if ($filters != null) {
             $query->andWhere('b.category IN(:category)')
                 ->setParameter('category', array_values($filters));
@@ -57,7 +57,7 @@ class BookRepository extends ServiceEntityRepository
             ->andWhere('b.user <> :user')
             ->setParameter('user', $user);
 
-        //On filtre les données
+        //We filter the data
         if ($filters != null) {
             $query->andWhere('b.category IN(:category)')
                 ->setParameter('category', array_values($filters));
