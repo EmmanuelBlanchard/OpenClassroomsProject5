@@ -795,6 +795,12 @@ select {
     margin-top: 4rem;
 }
 
+div.form-control:disabled,
+div.form-control:read-only {
+    background-color: inherit;
+    opacity: 1;
+}
+
 .bookCard,
 .bookCard.col-sm-4,
 .bookCard.col-sm-11 {
