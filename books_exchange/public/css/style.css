@@ -783,6 +783,12 @@ div.form-control:read-only {
     opacity: 1;
 }
 
+.card-title>a,
+.card-header>a {
+    font-weight: bold;
+    color: #000;
+}
+
 /* Above template main/search.html.twig */
 
 .bookCard,
