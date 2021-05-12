@@ -2,7 +2,7 @@
 	<img src="http://picsum.photos/id/{{ random(400, 800) }}/290/180" alt="" class="card-img-top">
 	<div class="card-body">
 		<h4 class="card-title">
-			<a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
+			<a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(25, '...') }}</a>
 		</h4>
 		<div class="card-header">
 			<a href="">{{ book.author }}</a>

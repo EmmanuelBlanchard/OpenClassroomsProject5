@@ -66,6 +66,7 @@
 					<input class="searchInput" type="text">
 					<button class="searchButton" type="submit">Rechercher</button>
 				</form>
+				{% include "main/_filter.html.twig" with {searchForm: searchForm} only %}
 				{% if app.user %}
 					<div class="informationAboutTheAccountTheLibraryTheExchanges">
 						<h2 class="h2OfWelcomeOfPseudo">Salut
