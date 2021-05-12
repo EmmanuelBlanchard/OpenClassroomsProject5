@@ -60,10 +60,10 @@
 				<a class="nav-link" href="#">Foire aux questions</a>
 			</nav>
 		</div>
-		<main class="container-xxl my-md-4 bd-layout">
-			<aside class="col-sm-3 col-md-12 hidden-print">
-				<form action="" class="formSearchBar">
-					<input class="searchInput" type="text">
+		<main class="container">
+			<aside class="col-3 hidden-print">
+				<form action="{{ path('app_search') }}" class="formSearchBar">
+					<input class="searchInput" type="text" name="q">
 					<button class="searchButton" type="submit">Rechercher</button>
 				</form>
 				{% if app.user %}
