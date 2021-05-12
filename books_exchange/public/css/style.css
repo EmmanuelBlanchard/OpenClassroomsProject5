@@ -842,6 +842,12 @@ div.form-control {
     border: none;
 }
 
+div.form-control:disabled,
+div.form-control:read-only {
+    background-color: inherit;
+    opacity: 1;
+}
+
 .divAlert.col-sm-12 {
     margin-top: 2.5rem;
 }
