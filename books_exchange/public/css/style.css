@@ -923,8 +923,7 @@ div.form-control>input#inputPassword.form-control:focus {
     visibility: hidden;
     position: absolute;
     top: 45px;
-    right: 50px;
-    /* before 20px but problem with the display of icons on the input with the type="number" */
+    right: -15px;
 }
 
 .form-control.success i.bi-check-circle {
