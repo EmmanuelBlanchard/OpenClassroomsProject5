@@ -53,56 +53,6 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="col-sm-12">
-					<h3 class="h3ConnectedUserBook">Livres de
-						{{ app.user.firstname }}
-						{{ app.user.lastname }}
-						({{ app.user.books|length }})
-					</h3>
-				</div>
-
-				<div>
-					<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
-				</div>
-
-				<table class="table manageMyAccountBooks">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Titre</th>
-							<th scope="col">Auteur</th>
-							<th scope="col">Catégorie</th>
-							<th scope="col">Éditeur</th>
-							<th scope="col">Langue</th>
-							<th scope="col">Format</th>
-							<th scope="col">État</th>
-							<th scope="col">Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for book in app.user.books %}
-							<tr>
-								<th scope="row">{{ book.id }}</th>
-								<td>{{ book.title }}</td>
-								<td>{{ book.author }}</td>
-								<td>{{ book.category }}</td>
-								<td>{{ book.publisher }}</td>
-								<td>{{ book.language }}</td>
-								<td>{{ book.format }}</td>
-								<td>{{ book.state }}</td>
-								<td>
-									{% if book.active %}
-										<a class="btn btn-primary m-2" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
-									{% else %}
-										<a class="btn btn-primary m-2" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
-									{% endif %}
-									<a class="btn btn-primary m-2" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
-								</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Stock de livres de
+	Livres de
 	{{ app.user.pseudo }}
 {% endblock %}
 
@@ -21,56 +21,73 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2ConnectedBookStockAddABook">Stock de livres</h2>
-
-		<div class="col-sm-12">
-			<h3 class="h3ConnectedBookStockAddABook">Bibliothèque de
-				{{ app.user.firstname }}
-				{{ app.user.lastname }}
-				{% if books|length == "0" %}
-					(0 livre)
-				{% else %}
-					({{ books|length }}
-					livres)
-				{% endif %}
-			</h3>
-		</div>
-
-		{% if books|length == "0" %}
-			<div class="divConnectedBookStockAddABook">
-				<p>Votre bibliothèque est vide.</p>
-				<p>Complétez-là avec les livres que vous possèdez</p>
-				<p>et que vous souhaitez échanger.</p>
+		<h2 class="h2MyBooks">Mes livres</h2>
+		<div>
+			<div class="col-sm-12">
+				<h3 class="h3MyBooks">Livres de
+					{{ app.user.firstname }}
+					{{ app.user.lastname }}
+					{% if books|length == "0" %}
+						(0 livre)
+					{% else %}
+						({{ books|length }}
+						livres)
+					{% endif %}
+				</h3>
 			</div>
 
-			<div class="divButtonConnectedBookStockAddABook">
-				<a class="btn btn-success" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
-			</div>
-		{% else %}
-			<div class="divButtonConnectedBookStockAddABook">
-				<a class="btn btn-success" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
-			</div>
+			{% if books|length > "0" %}
+				<div>
+					<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
+				</div>
+				<table class="table manageMyAccountBooks">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Titre</th>
+							<th scope="col">Auteur</th>
+							<th scope="col">Catégorie</th>
+							<th scope="col">Éditeur</th>
+							<th scope="col">Langue</th>
+							<th scope="col">Format</th>
+							<th scope="col">État</th>
+							<th scope="col">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for book in app.user.books %}
+							<tr>
+								<th scope="row">{{ book.id }}</th>
+								<td>{{ book.title }}</td>
+								<td>{{ book.author }}</td>
+								<td>{{ book.category }}</td>
+								<td>{{ book.publisher }}</td>
+								<td>{{ book.language }}</td>
+								<td>{{ book.format }}</td>
+								<td>{{ book.state }}</td>
+								<td>
+									{% if book.active %}
+										<a class="btn btn-primary m-2" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
+									{% else %}
+										<a class="btn btn-primary m-2" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
+									{% endif %}
+									<a class="btn btn-primary m-2" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
 
-			<div class="row col-sm-12">
-				{% for book in books %}
-					<div class="bookCard col-sm-4">
+			{% else %}
+				<div class="divEmptyLibrary">
+					<p>Votre bibliothèque est vide.</p>
+					<p>Complétez-là avec les livres que vous possédez</p>
+					<p>et que vous souhaitez échanger.</p>
+				</div>
 
-						<div class="titleBook">{{ book.title|u.truncate(24, '...') }}</div>
-						<div class="authorBook">
-							<a href="">{{ book.author }}</a>
-						</div>
-						<div class="categoryBook">{{ book.category }}</div>
-						<div class="publisherBook">{{ book.publisher }}</div>
-						<div class="languageBook">{{ book.language }}</div>
-						<div class="formatBook">{{ book.format }}</div>
-						<div class="stateBook">{{ book.state }}</div>
-
-						<div class="align-self-center">
-							<a class="btn btn-outline-secondary" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
-						</div>
-
-					</div>
-				{% endfor %}
+				<div class="divButtonConnectedBookMyBooks">
+					<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
+				</div>
 			</div>
 		{% endif %}
 
@@ -78,7 +95,7 @@
 			<ul class="pagination">
 				<li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
 					<a class="page-link" href="?page=1" aria-label="Première Page">
-						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-left" viewbox="0 0 16 16">
 							<path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
 							<path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
 						</svg>
@@ -86,8 +103,8 @@
 				</li>
 				<li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
 					<a class="page-link" href="{{ (page > 1) ? '?page=' ~ (page - 1) : '' }}" aria-label="Page Précédente">
-						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-  							<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-left" viewbox="0 0 16 16">
+							<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
 						</svg>
 					</a>
 				</li>
@@ -98,22 +115,22 @@
 					</li>
 				{% endfor %}
 				<li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
-					<a class="page-link" href="{{ (page < pages) ? '?page=' ~ (page +1) : '' }}" aria-label="Page Suivante">
-						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-  							<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+					<a class="page-link" href="{{ (page == pages) ? '?page=' ~ (page +1) : '' }}" aria-label="Page Suivante">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
+							<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 						</svg>
 					</a>
 				</li>
 				<li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
 					<a class="page-link" href="{{ pages }}" aria-label="Dernière Page">
-						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-  							<path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
-  							<path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewbox="0 0 16 16">
+							<path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+							<path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
 						</svg>
 					</a>
 				</li>
 			</ul>
 		</nav>
-		
+
 	</div>
 {% endblock %}

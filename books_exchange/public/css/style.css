@@ -310,8 +310,8 @@ tbody>tr>td {
 .h2ConnectedTotheAccount,
 .h2ConnectedProfile,
 .h3ConnectedUserBook,
-.h2ConnectedBookStockAddABook,
-.h3ConnectedBookStockAddABook,
+.h2MyBooks,
+.h3MyBooks,
 .h2ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
@@ -339,7 +339,7 @@ tbody>tr>td {
 .h2ConfirmAccountEmailAddress,
 .h2ConnectedTotheAccount,
 .h2ConnectedProfile,
-.h2ConnectedBookStockAddABook,
+.h2MyBooks,
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
@@ -355,7 +355,7 @@ tbody>tr>td {
 .h2ConfirmAccountEmailAddress,
 .h2ConnectedTotheAccount,
 .h2ConnectedProfile,
-.h2ConnectedBookStockAddABook,
+.h2MyBooks,
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
@@ -369,7 +369,7 @@ tbody>tr>td {
 }
 
 .h3ConnectedUserBook,
-.h3ConnectedBookStockAddABook,
+.h3MyBooks,
 .h3ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookStocked,
 .h3TheBooksIRequestedToExchange,
@@ -435,7 +435,7 @@ section.introductoryContent>p {
 }
 
 /* Wireframe 6-8-9-10 */
-.divConnectedBookStockAddABook,
+.divEmptyLibrary,
 .divConnectedBookStockBookStocked,
 .divTheBooksIRequestedToExchange,
 .divMyBooksRequestedForExchange,
@@ -451,7 +451,7 @@ section.introductoryContent>p {
     background-color: #F7F7F7;
 }
 
-.divConnectedBookStockAddABook,
+.divEmptyLibrary,
 .divConnectedResetPasswordCheckEmail {
     width: 63.8%;
 }
@@ -470,7 +470,7 @@ section.introductoryContent>p {
 /* Wireframes 3-5-6-7-8-9-10-11-12-13-14 */
 .divConfirmAccountEmailAddress p,
 .divConnectedTotheAccount p,
-.divConnectedBookStockAddABook p,
+.divEmptyLibrary p,
 .divConnectedBookStockBookStocked p,
 .divTheBooksIRequestedToExchange p,
 .divMyBooksRequestedForExchange p,
@@ -485,7 +485,7 @@ section.introductoryContent>p {
 }
 
 /* Wireframes 6-8-9-10 */
-.divConnectedBookStockAddABook p,
+.divEmptyLibrary p,
 .divConnectedBookStockBookStocked p,
 .divTheBooksIRequestedToExchange p,
 .divMyBooksRequestedForExchange p,
@@ -663,7 +663,8 @@ form.formConnectedBookStockBookAdditionForm>div>label {
 .divButtonConnectedTotheAccount,
 .divButtonConnectedBookStockAddABook,
 .divButtonConnectedBookStockBookAdditionForm,
-.divButtonConfirmTheExchange {
+.divButtonConfirmTheExchange,
+.divButtonConnectedBookMyBooks {
     display: flex;
     justify-content: center;
 }
