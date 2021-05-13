@@ -220,26 +220,16 @@ form#search_book_form.formSearchBar.px-3.py-5.col-12>div>button#search_book_form
     color: #0854A2;
 }
 
-.linkManageMyAccount,
-.linkMail {
+.linkManageMyAccount {
     display: flex;
     flex-direction: column;
     font-weight: bold;
-}
-
-.linkMail {
-    padding-top: 0.65em;
 }
 
 .informationAboutTheAccountTheLibraryTheExchanges a {
     color: #000;
     text-decoration: none;
     padding-left: 0.65em;
-}
-
-a.linkStockOfBooks:visited,
-a.linkBookExchange:visited {
-    color: #CD4109;
 }
 
 th,
