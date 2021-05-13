@@ -16,6 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -50,48 +51,56 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Vous acceptez les conditions générales d\'utilisation
                 et la politique de confidentialité du site ÉchangeLivres.',
             ])
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
+            ->add('plainPassword', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'first_options' => [
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Veuillez entrer un mot de passe',
+                        ]),
+                        new Length([
+                            'min' => 12,
+                            'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
+                            // max length allowed by Symfony for security reasons
+                            'max' => 4096,
+                            'maxMessage' => 'Votre mot de passe ne peut pas comporter plus de {{ limit }} caractères',
+                        ]),
+                        new Regex([
+                            'pattern' => '/[a-z]/',
+                            'match' => true,
+                            'message' => 'Votre mot de passe doit comporter au moins une lettre minuscule',
+                        ]),
+                        new Regex([
+                            'pattern' => '/[A-Z]/',
+                            'match' => true,
+                            'message' => 'Votre mot de passe doit comporter au moins une une lettre majuscule',
+                        ]),
+                        new Regex([
+                            'pattern' => '/\d/',
+                            'match' => true,
+                            'message' => 'Votre mot de passe doit comporter au moins un chiffre',
+                        ]),
+                        new Regex([
+                            'pattern' => '/[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/',
+                            'match' => true,
+                            'message' => 'Votre mot de passe doit comporter au moins un caractère spécial',
+                        ]),
+                        new Regex([
+                            'pattern' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰])[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰\w]{12,4096}$/',
+                            'match' => true,
+                            'message' => 'Votre mot de passe doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun',
+                        ]),
+                    ],
+                    'label' => 'Mot de passe',
+                ],
+                'second_options' => [
+                    'label' => 'Répéter le mot de passe',
+                ],
+                'invalid_message' => 'Les champs du mot de passe doivent correspondre.',
+                // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 12,
-                        'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                        'maxMessage' => 'Votre mot de passe ne peut pas comporter plus de {{ limit }} caractères',
-                    ]),
-                    new Regex([
-                        'pattern' => '/[a-z]/',
-                        'match' => true,
-                        'message' => 'Votre mot de passe doit comporter au moins une lettre minuscule',
-                    ]),
-                    new Regex([
-                        'pattern' => '/[A-Z]/',
-                        'match' => true,
-                        'message' => 'Votre mot de passe doit comporter au moins une une lettre majuscule',
-                    ]),
-                    new Regex([
-                        'pattern' => '/\d/',
-                        'match' => true,
-                        'message' => 'Votre mot de passe doit comporter au moins un chiffre',
-                    ]),
-                    new Regex([
-                        'pattern' => '/[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/',
-                        'match' => true,
-                        'message' => 'Votre mot de passe doit comporter au moins un caractère spécial',
-                    ]),
-                    new Regex([
-                        'pattern' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰])[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰\w]{12,4096}$/',
-                        'match' => true,
-                        'message' => 'Votre mot de passe doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun',
-                    ])
-                ],
-                'label' => 'Mot de passe',
+                'label' => false,
             ])
             ->add('save', SubmitType::class, [
                 'attr' => ['class' => 'btn btn-success btn-lg'],

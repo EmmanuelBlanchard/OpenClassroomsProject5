@@ -4,6 +4,7 @@ window.onload = () => {
     firstname.addEventListener('input', checkInputFirstName);
     email.addEventListener('input', checkInputEmail);
     password.addEventListener('input', checkInputPassword);
+    password2.addEventListener('input', checkInputPassword2);
     zipcode.addEventListener('input', checkInputZipCode);
     city.addEventListener('input', checkInputCity);
     agreeterms.addEventListener('input', checkInputAgreeTerms);
@@ -14,7 +15,8 @@ const pseudo = document.querySelector('#registration_form_pseudo');
 const lastname = document.querySelector('#registration_form_lastname');
 const firstname = document.querySelector('#registration_form_firstname');
 const email = document.querySelector('#registration_form_email');
-const password = document.querySelector('#registration_form_plainPassword');
+const password = document.querySelector('#registration_form_plainPassword_first');
+const password2 = document.querySelector('#registration_form_plainPassword_second');
 const zipcode = document.querySelector('#registration_form_zipCode');
 const city = document.querySelector('#registration_form_city');
 const agreeterms = document.querySelector('#registration_form_agreeTerms');
@@ -99,6 +101,19 @@ function checkInputPassword() {
         setSuccessFor(password);
     }
 }
+function checkInputPassword2() {
+    // trim to remove the whitespaces
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+
+    if (password2Value === '') {
+        setErrorFor(password2, 'Le mot de passe répété ne peut pas être vide');
+    } else if (passwordValue !== password2Value) {
+        setErrorFor(password2, 'Les mots de passe ne correspondent pas');
+    } else {
+        setSuccessFor(password2);
+    }
+}
 function checkInputZipCode() {
     // trim to remove the whitespaces
     const zipcodeValue = zipcode.value.trim();
@@ -152,6 +167,7 @@ function checkInputs(event) {
     const firstnameValue = firstname.value.trim();
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
     const zipcodeValue = zipcode.value.trim();
     const cityValue = city.value.trim();
     const agreetermsValue = agreeterms.checked;
@@ -223,6 +239,15 @@ function checkInputs(event) {
         setSuccessFor(password);
     }
 
+    if (password2Value === '') {
+        setErrorFor(password2, 'Le mot de passe répété ne peut pas être vide');
+    } else if (passwordValue !== password2Value) {
+        setErrorFor(password2, 'Les mots de passe ne correspondent pas');
+    } else {
+        score++;
+        setSuccessFor(password2);
+    }
+
     if (zipcodeValue === '') {
         setErrorFor(zipcode, 'Le code postal ne peut pas être vide');
     } else if (!isZipCode(zipcodeValue)) {
@@ -254,7 +279,7 @@ function checkInputs(event) {
         setSuccessFor(agreeterms);
     }
 
-    if (score === 8) {
+    if (score === 9) {
         return true;
     } else {
         event.preventDefault();
@@ -364,5 +389,4 @@ function isCityNumber(city) {
 
 function isCity(city) {
     return /^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒa-zàâäçéèêëîïôöùûüÿæœðó]+(?:[-'\s][a-zàâäçéèêëîïôöùûüÿæœðóA-ZZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]+)*$/.test(city);
-    // L'Abergement-Clémenciat | L'Abergement-de-Varey | Saint-Denis-lès-Bourg | Saint-Étienne-sur-Reyssouze | Boyeux-Saint-Jérôme | Cormoranche-sur-Saône | Cruzilles-lès-Mépillat
 }
