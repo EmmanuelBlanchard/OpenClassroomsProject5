@@ -89,8 +89,10 @@ function checkInputPassword() {
         setErrorFor(password, 'Le mot de passe doit comporter au moins un chiffre');
     } else if (!isPasswordSpecial(passwordValue)) {
         setErrorFor(password, 'Le mot de passe doit comporter au moins un caractère spécial');
-    } else if (!isPasswordLength(passwordValue)) {
+    } else if (!isPasswordLengthMin(passwordValue)) {
         setErrorFor(password, 'Le mot de passe doit comporter au moins 12 caractères');
+    } else if (!isPasswordLengthMax(passwordValue)) {
+        setErrorFor(password, 'Le mot de passe ne peut pas comporter plus de 4096 caractères');
     } else if (!isPassword(passwordValue)) {
         setErrorFor(password, 'Le mot de passe n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
     } else {
@@ -210,8 +212,10 @@ function checkInputs(event) {
         setErrorFor(password, 'Le mot de passe doit comporter au moins un chiffre');
     } else if (!isPasswordSpecial(passwordValue)) {
         setErrorFor(password, 'Le mot de passe doit comporter au moins un caractère spécial');
-    } else if (!isPasswordLength(passwordValue)) {
+    } else if (!isPasswordLengthMin(passwordValue)) {
         setErrorFor(password, 'Le mot de passe doit comporter au moins 12 caractères');
+    } else if (!isPasswordLengthMax(passwordValue)) {
+        setErrorFor(password, 'Le mot de passe ne peut pas comporter plus de 4096 caractères');
     } else if (!isPassword(passwordValue)) {
         setErrorFor(password, 'Le mot de passe n\'est pas valide, il doit comporter au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et 12 caractères minimun');
     } else {
@@ -322,11 +326,15 @@ function isPasswordSpecial(password) {
     return /[-_?+!*$@%_&~`\/\\^\|\#{}()\[\]#£ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/.test(password);
 }
 
-function isPasswordLength(password) {
+function isPasswordLengthMin(password) {
     if (password.length >= 12) {
         return true;
-    } else {
-        return false;
+    }
+}
+
+function isPasswordLengthMax(password) {
+    if (password.length <= 4096) {
+        return true;
     }
 }
 
