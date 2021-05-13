@@ -145,7 +145,7 @@ class User implements UserInterface
      * )
      *  @Assert\Regex(
      *     pattern="/^[0-9]$/",
-     *     match=true,
+     *     match=false,
      *     message="Votre nom de la ville ne peut pas comporter des chiffres"
      * )
      * @Assert\Regex(
