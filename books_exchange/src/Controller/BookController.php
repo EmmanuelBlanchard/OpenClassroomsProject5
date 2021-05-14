@@ -223,6 +223,14 @@ class BookController extends AbstractController
     }
     
     /**
+    * @Route("/howmakeexchange", name="how_make_exchange")
+    */
+    public function howMakeExchange(): Response
+    {
+        return $this->render('book/how_make_exchange.html.twig');
+    }
+
+    /**
     * @Route("/add/exchanges/{id}", name="add_exchanges")
     */
     public function addExchanges(Book $book): Response

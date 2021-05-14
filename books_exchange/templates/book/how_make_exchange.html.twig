@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Comment faire un échange
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-danger" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<h2 class="h2HowMakeExchange">Comment faire un échange</h2>
+
+		<div class="divExchangeInstructions">
+			<p>I - Pour échanger un livre, utilisez la barre de recherche</p>
+			<p>II - Chercher le titre du livre ou l'auteur du livre.</p>
+			<p>III - Cliquez sur le bouton Échanger du livre voulu.</p>
+			<p>IV - Le propriétaire du livre, reçoit par courriel, votre demande</p>
+			<p>d'échange de livre et regarde dans votre stock de livres</p>
+			<p>quel livre voudrait t'il de votre stock de livres.</p>
+			<p>V - Il doit y avoir au minimun cinq livres disponibles</p>
+			<p>dans votre stock.</p>
+			<p>VI - Si non réponse dans votre messagerie d'ici 4 jours,</p>
+			<p>l'échange est annulé.</p>
+		</div>
+	</div>
+{% endblock %}

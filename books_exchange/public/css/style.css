@@ -307,6 +307,7 @@ tbody>tr>td {
 .h2ConnectedBookStockBookStocked,
 .h3ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
+.h2HowMakeExchange,
 .h3TheBooksIRequestedToExchange,
 .h3MyBooksRequestedForExchange,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
@@ -333,6 +334,7 @@ tbody>tr>td {
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
+.h2HowMakeExchange,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
@@ -349,6 +351,7 @@ tbody>tr>td {
 .h2ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
+.h2HowMakeExchange,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
@@ -480,8 +483,7 @@ section.introductoryContent>p {
 .divTheBooksIRequestedToExchange p,
 .divMyBooksRequestedForExchange p,
 .divExchangeInstructions p,
-.divConnectedBookExchangeSearchForTheBookHarryPotter p,
-.divExchangeInstructions p {
+.divConnectedBookExchangeSearchForTheBookHarryPotter p {
     color: #FFF;
 }
 
@@ -692,9 +694,11 @@ a.btn-success.buttonConfirmTheExchange:hover {
 }
 
 .divExchangeInstructions {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
     margin: 1.5rem auto;
     padding: 1rem 1.5rem;
-    width: 69.5%;
     border-radius: 0.5rem;
     background-color: #186135;
 }
