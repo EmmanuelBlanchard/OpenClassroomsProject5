@@ -15,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @Route("/book", name="book_")
@@ -228,6 +229,30 @@ class BookController extends AbstractController
     public function howMakeExchange(): Response
     {
         return $this->render('book/how_make_exchange.html.twig');
+    }
+
+    /**
+    * @Route("/myexchangewishes", name="my_exchange_wishes")
+    */
+    public function myExchangeWishes(BookRepository $bookRepo, UserInterface $user): Response
+    {
+        $theBooksIRequestedToExchange = $bookRepo->findBooksActiveWithExchangeRequestRequestedByUser($user);
+
+        return $this->render('book/my_exchange_wishes.html.twig', [
+            'theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,
+        ]);
+    }
+
+    /**
+    * @Route("/myexchangerequests", name="my_exchange_requests")
+    */
+    public function myExchangeRequests(BookRepository $bookRepo, UserInterface $user): Response
+    {
+        $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
+
+        return $this->render('book/my_exchange_requests.html.twig', [
+            'myBooksRequestedForExchange' => $myBooksRequestedForExchange,
+        ]);
     }
 
     /**

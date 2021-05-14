@@ -308,8 +308,8 @@ tbody>tr>td {
 .h3ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
 .h2HowMakeExchange,
-.h3TheBooksIRequestedToExchange,
-.h3MyBooksRequestedForExchange,
+.h2MyExchangeWishes,
+.h2MyExchangeRequests,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
@@ -335,6 +335,8 @@ tbody>tr>td {
 .h2ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
 .h2HowMakeExchange,
+.h2MyExchangeWishes,
+.h2MyExchangeRequests,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
@@ -352,6 +354,8 @@ tbody>tr>td {
 .h2ConnectedBookStockBookStocked,
 .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
 .h2HowMakeExchange,
+.h2MyExchangeWishes,
+.h2MyExchangeRequests,
 .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ConnectedBookExchangeConfirmBookExchange,
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
@@ -365,8 +369,6 @@ tbody>tr>td {
 .h3MyBooks,
 .h3ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookStocked,
-.h3TheBooksIRequestedToExchange,
-.h3MyBooksRequestedForExchange,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter {
     padding: 10px 20px;
 }

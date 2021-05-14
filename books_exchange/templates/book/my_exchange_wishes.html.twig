@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mes souhaits d'échange
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+			<div class="divAlert col-sm-12">
+				<div class="alert alert-danger" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<h2 class="h2MyExchangeWishes">Mes souhaits d'échange
+			{% if theBooksIRequestedToExchange|length == "0" %}
+				(0 livre)
+			{% else %}
+				({{ theBooksIRequestedToExchange|length }}
+				livres)
+			{% endif %}
+		</h2>
+		{% if theBooksIRequestedToExchange|length == "0" %}
+			<div class="divTheBooksIRequestedToExchange">
+				<p>Vous n'avez effectué aucune demande d'échange de livres actuellement</p>
+			</div>
+		{% else %}
+			<table class="table table-responsive table-hover">
+				<thead>
+					<tr>
+						<th scope="col">Titre</th>
+						<th scope="col">Auteur</th>
+						<th scope="col">État du livre</th>
+						<th scope="col">Propriétaire du livre</th>
+						<th scope="col">Localisation du livre</th>
+						<th scope="col">Date de la demande d'échange</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for book in theBooksIRequestedToExchange %}
+						<tr>
+							<th scope="row">{{book.title}}</th>
+							<td>{{book.author}}</td>
+							<td>{{book.state}}</td>
+							<td>{{book.user.pseudo}}</td>
+							<td>{{book.user.city}}
+								{{ book.user.zipCode }}</td>
+							<td>{{book.exchangeRequestAt|date('d/m/Y')}}</td>
+							<td class="text-center">
+								<a class="btn btn-primary" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
+	</div>
+{% endblock %}
