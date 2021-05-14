@@ -272,6 +272,14 @@ tbody>tr>td {
     padding-bottom: 1.54%;
 }
 
+.divUserProfile {
+    margin: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
 /* Wireframe 11 */
 .h3ConnectedBookExchangeSearchResultsForTheBookHarryPotter {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
@@ -304,7 +312,6 @@ tbody>tr>td {
 .h2ConnectedProfile,
 .h3ConnectedUserBook,
 .h2MyBooks,
-.h3MyBooks,
 .h2ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookAdditionForm,
 .h2ConnectedBookStockBookStocked,
@@ -369,7 +376,6 @@ tbody>tr>td {
 }
 
 .h3ConnectedUserBook,
-.h3MyBooks,
 .h3ConnectedBookStockBookAdditionForm,
 .h3ConnectedBookStockBookStocked,
 .h3ConnectedBookExchangeSearchForTheBookHarryPotter {
@@ -721,7 +727,7 @@ a.btn-success.buttonConfirmTheExchange:hover {
     text-align: left;
 }
 
-div.col-sm-12.divButtonsEdit {
+div.col-12.divButtonsEdit {
     display: flex;
     padding-bottom: 1.5rem;
     padding-right: 1.5rem;

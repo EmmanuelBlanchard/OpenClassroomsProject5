@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="col-9">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-sm-12">
 				<div class="alert alert-success" role="alert">
@@ -23,35 +23,29 @@
 			</div>
 		{% endfor %}
 
-		<div class="my-3 p-3 bg-body rounded shadow-sm">
-			<div class="row col-sm-12">
-				<div class="col-sm-12">
-					<h2 class="h2ConnectedProfile">Profil de
-						{{ app.user.firstname }}
-						{{ app.user.lastname }}
-					</h2>
-				</div>
-				<div class="container">
-					<div class="row row-cols-2 gx-4 gy-4">
-						<div class="col-sm-3 p-3 border">Pseudo :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.pseudo }}</div>
-						<div class="col-sm-3 p-3 border">Nom :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.lastname }}</div>
-						<div class="col-sm-3 p-3 border">Prénom :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.firstname }}</div>
-						<div class="col-sm-3 p-3 border">E-mail :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.email }}</div>
-						<div class="col-sm-3 p-3 border">Code postal :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.zipCode }}</div>
-						<div class="col-sm-3 p-3 border">Ville :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.city }}</div>
-						<div class="col-sm-12 divButtonsEdit">
-							<a class="btn btn-primary mx-4" href="{{ path('user_profile_update') }}" role="button">Modifier le profil</a>
-							<a class="btn btn-primary mx-4" href="{{ path('user_email_update') }}" role="button">Modifier l'e-mail</a>
-							<a class="btn btn-primary mx-4" href="{{ path('user_password_update') }}" role="button">Modifier le mot de passe</a>
-							<a class="btn btn-secondary mx-4" href="{{ path('user_data') }}" role="button">Voir mes données personelles (RGPD)</a>
-						</div>
-					</div>
+		<div class="divUserProfile">
+			<h2 class="h2ConnectedProfile">Profil de
+				{{ app.user.firstname }}
+				{{ app.user.lastname }}
+			</h2>
+			<div class="row row-cols-2 g-4">
+				<div class="col-2 ms-5 p-3 border">Pseudo :</div>
+				<div class="col-7 ml-4 p-3 border">{{ app.user.pseudo }}</div>
+				<div class="col-2 ms-5 p-3 border">Nom :</div>
+				<div class="col-7 ml-4 p-3 border">{{ app.user.lastname }}</div>
+				<div class="col-2 ms-5 p-3 border">Prénom :</div>
+				<div class="col-7 ml-4 p-3 border">{{ app.user.firstname }}</div>
+				<div class="col-2 ms-5 p-3 border">E-mail :</div>
+				<div class="col-7 ml-4 p-3 border">{{ app.user.email }}</div>
+				<div class="col-2 ms-5 p-3 border">Code postal :</div>
+				<div class="col-7 ml-4 p-3 border">{{ app.user.zipCode }}</div>
+				<div class="col-2 ms-5 p-3 border">Ville :</div>
+				<div class="col-7 ml-4 p-3 border">{{ app.user.city }}</div>
+				<div class="col-12 divButtonsEdit">
+					<a class="btn btn-primary mx-4" href="{{ path('user_profile_update') }}" role="button">Modifier le profil</a>
+					<a class="btn btn-primary mx-4" href="{{ path('user_email_update') }}" role="button">Modifier l'e-mail</a>
+					<a class="btn btn-primary mx-4" href="{{ path('user_password_update') }}" role="button">Modifier le mot de passe</a>
+					<a class="btn btn-secondary mx-4" href="{{ path('user_data') }}" role="button">Voir mes données personelles (RGPD)</a>
 				</div>
 			</div>
 		</div>
