@@ -213,6 +213,8 @@ form#search_book_form.formSearchBar.px-3.py-5.col-12>div>button#search_book_form
 }
 
 .divAboutTheAccountTheLibraryTheExchanges {
+    display: flex;
+    flex-direction: column;
     padding-left: 0.65em;
 }
 
@@ -230,6 +232,7 @@ form#search_book_form.formSearchBar.px-3.py-5.col-12>div>button#search_book_form
     color: #000;
     text-decoration: none;
     padding-left: 0.65em;
+    padding-bottom: 0.65em;
 }
 
 th,
