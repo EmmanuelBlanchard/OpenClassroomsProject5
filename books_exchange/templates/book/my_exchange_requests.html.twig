@@ -58,10 +58,9 @@
 								{{book.userexchange.zipCode}}</td>
 							<td>{{book.exchangeRequestAt|date('d/m/Y')}}</td>
 							<td class="text-center">
-								<a class="btn btn-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-contact" data-id="{{book.id}}" data-requester="{{book.user.pseudo}}" data-requester-email="{{book.user.email}}" data-title="{{book.title}}" data-author="{{book.author}}" data-publisher="{{book.publisher}}" data-format="{{book.format}}" data-state="{{book.state}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
-									Contacter
-								</a>
-								<a class="btn btn-primary" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
+								<a class="btn btn-primary m-2" href="{{ path("book_show", {slug: book.slug}) }}" role="button">Voir</a>
+
+								<a class="btn btn-primary m-2" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
 							</td>
 						</tr>
 					{% endfor %}
