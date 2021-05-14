@@ -2,7 +2,8 @@
 
 {% block title %}
 	Livres de
-	{{ app.user.pseudo }}
+	{{ app.user.firstname }}
+	{{ app.user.lastname }}
 {% endblock %}
 
 {% block body %}
@@ -21,21 +22,15 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2MyBooks">Mes livres</h2>
+		<h2 class="h2MyBooks">Mes livres
+			{% if books|length == "0" %}
+				(0 livre)
+			{% else %}
+				({{ books|length }}
+				livres)
+			{% endif %}
+		</h2>
 		<div>
-			<div class="col-sm-12">
-				<h3 class="h3MyBooks">Livres de
-					{{ app.user.firstname }}
-					{{ app.user.lastname }}
-					{% if books|length == "0" %}
-						(0 livre)
-					{% else %}
-						({{ books|length }}
-						livres)
-					{% endif %}
-				</h3>
-			</div>
-
 			{% if books|length > "0" %}
 				<div>
 					<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
