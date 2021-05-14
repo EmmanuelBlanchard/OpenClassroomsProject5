@@ -178,50 +178,6 @@ class BookController extends AbstractController
         }
         return $this->redirectToRoute('book_home');
     }
-
-    /**
-    * @Route("/exchanges", name="exchanges")
-    */
-    public function exchanges(BookRepository $bookRepo, Request $request, MailerInterface $mailer): Response
-    {
-        $user = $this->getUser();
-
-        $theBooksIRequestedToExchange = $bookRepo->findBooksActiveWithExchangeRequestRequestedByUser($user);
-
-        $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
-        
-        $form = $this->createForm(BookContactFormType::class);
-
-        $contact = $form->handleRequest($request);
-        /*
-        if($form->isSubmitted() && $form->isValid()) {
-            // We create the mail
-            $email = (new TemplatedEmail())
-                ->from($contact->get('email')->getData())
-                ->to($book->getUser()->getEmail())
-                ->subject('Contact au sujet de votre livre "' . $book->getTitle() . '"')
-                // path of the Twig template to render
-                ->htmlTemplate('emails/contact_book.html.twig')
-                // pass variables (name => value) to the template
-                ->context([
-                    'book' => $book,
-                    'mail' => $contact->get('email')->getData(),
-                    'message' => $contact->get('message')->getData()
-                ]);
-            // We send the mail
-            $mailer->send($email);
-
-            // We confirm and we redirect
-            $this->addFlash('success', 'Votre e-mail a bien été envoyé');
-            return $this->redirectToRoute('book_exchanges');
-            }
-        */
-        return $this->render('book/exchanges.html.twig', [
-            'theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,
-            'myBooksRequestedForExchange' => $myBooksRequestedForExchange,
-            'contactBookForm' => $form->createView()
-        ]);
-    }
     
     /**
     * @Route("/howmakeexchange", name="how_make_exchange")
