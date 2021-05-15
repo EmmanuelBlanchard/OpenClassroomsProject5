@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="col-12 col-md-9">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-sm-12">
 				<div class="alert alert-success" role="alert">
@@ -21,74 +21,67 @@
 				</div>
 			</div>
 		{% endfor %}
+		<h2 class="h2ConnectedProfile">Données personnelles de
+			{{ app.user.firstname }}
+			{{ app.user.lastname }}
+		</h2>
 
-		<div class="my-3 p-3 bg-body rounded shadow-sm">
-			<div class="row col-sm-12">
-				<div class="col-12">
-					<h2 class="h2ConnectedProfile">Données personnelles de
-						{{ app.user.firstname }}
-						{{ app.user.lastname }}
-					</h2>
-				</div>
+		<a class="btn btn-primary m-4 col-4" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
 
-				<a class="btn btn-primary m-4 col-4" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
-
-				<div class="container">
-					<div class="row row-cols-2 gx-4 gy-4">
-						<div class="col-sm-3 p-3 border">Pseudo :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.pseudo }}</div>
-						<div class="col-sm-3 p-3 border">Nom :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.lastname }}</div>
-						<div class="col-sm-3 p-3 border">Prénom :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.firstname }}</div>
-						<div class="col-sm-3 p-3 border">E-mail :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.email }}</div>
-						<div class="col-sm-3 p-3 border">Code postal :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.zipCode }}</div>
-						<div class="col-sm-3 p-3 border">Ville :</div>
-						<div class="col-sm-9 p-3 border">{{ app.user.city }}</div>
-					</div>
-				</div>
-
-				<div class="col-12 my-4">
-					<h3 class="h3ConnectedUserBook">Livres de
-						{{ app.user.firstname }}
-						{{ app.user.lastname }}
-						({{ app.user.books|length }})
-					</h3>
-				</div>
-
-				<table class="table table-responsive table-hover manageMyAccountBooks">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Titre</th>
-							<th scope="col">Auteur</th>
-							<th scope="col">Catégorie</th>
-							<th scope="col">Éditeur</th>
-							<th scope="col">Résumé</th>
-							<th scope="col">Langue</th>
-							<th scope="col">Format</th>
-							<th scope="col">État</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for book in app.user.books %}
-							<tr>
-								<th scope="row">{{ book.id }}</th>
-								<td>{{ book.title }}</td>
-								<td>{{ book.author }}</td>
-								<td>{{ book.category }}</td>
-								<td>{{ book.publisher }}</td>
-								<td>{{ book.summary|striptags }}</td>
-								<td>{{ book.language }}</td>
-								<td>{{ book.format }}</td>
-								<td>{{ book.state }}</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
+		<div class="container">
+			<div class="row row-cols-2 gx-4 gy-4">
+				<div class="col-3 ms-4 p-3 border">Pseudo :</div>
+				<div class="col-8 ml-4 p-3 border">{{ app.user.pseudo }}</div>
+				<div class="col-3 ms-4 p-3 border">Nom :</div>
+				<div class="col-8 ml-4 p-3 border">{{ app.user.lastname }}</div>
+				<div class="col-3 ms-4 p-3 border">Prénom :</div>
+				<div class="col-8 ml-4 p-3 border">{{ app.user.firstname }}</div>
+				<div class="col-3 ms-4 p-3 border">E-mail :</div>
+				<div class="col-8 ml-4 p-3 border">{{ app.user.email }}</div>
+				<div class="col-3 ms-4 p-3 border">Code postal :</div>
+				<div class="col-8 ml-4 p-3 border">{{ app.user.zipCode }}</div>
+				<div class="col-3 ms-4 p-3 border">Ville :</div>
+				<div class="col-8 ml-4 p-3 border">{{ app.user.city }}</div>
 			</div>
 		</div>
+
+		<div class="my-4">
+			<h3 class="h3ConnectedUserBook">Livres de
+				{{ app.user.firstname }}
+				{{ app.user.lastname }}
+				({{ app.user.books|length }})
+			</h3>
+		</div>
+
+		<table class="table table-responsive table-hover manageMyAccountBooks">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Titre</th>
+					<th scope="col">Auteur</th>
+					<th scope="col">Catégorie</th>
+					<th scope="col">Éditeur</th>
+					<th scope="col">Résumé</th>
+					<th scope="col">Langue</th>
+					<th scope="col">Format</th>
+					<th scope="col">État</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for book in app.user.books %}
+					<tr>
+						<th scope="row">{{ book.id }}</th>
+						<td>{{ book.title }}</td>
+						<td>{{ book.author }}</td>
+						<td>{{ book.category }}</td>
+						<td>{{ book.publisher }}</td>
+						<td>{{ book.summary|striptags }}</td>
+						<td>{{ book.language }}</td>
+						<td>{{ book.format }}</td>
+						<td>{{ book.state }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 	</div>
 {% endblock %}

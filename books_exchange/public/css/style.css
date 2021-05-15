@@ -855,8 +855,13 @@ div.form-control:read-only {
 }
 
 
-
-#login_form {
+/* Put the form id with #formContainer */
+#registration_form,
+#login_form,
+#update_profile_form,
+#update_email_form,
+#update_password_form,
+#add_book_form {
     padding: 30px 40px;
 }
 
@@ -944,6 +949,22 @@ div.form-control>input#inputPassword.form-control:focus {
 }
 
 .form button.btn.btn-success.btn-lg {
+    background-color: #186135;
+    border: 2px solid #186135;
+    border-radius: 0.25rem;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#update_profile_form_validate,
+#update_email_form_validate,
+#update_password_form_validate,
+#book_form_validate {
     background-color: #186135;
     border: 2px solid #186135;
     border-radius: 0.25rem;

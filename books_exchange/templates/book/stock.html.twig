@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="col-12 col-md-9">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-sm-12">
 				<div class="alert alert-success" role="alert">
@@ -30,61 +30,61 @@
 				livres)
 			{% endif %}
 		</h2>
-		<div>
-			{% if books|length > "0" %}
-				<div>
-					<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
-				</div>
-				<table class="table manageMyAccountBooks">
-					<thead>
+		{% if books|length > "0" %}
+
+			<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
+
+			<table class="table manageMyAccountBooks">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Titre</th>
+						<th scope="col">Auteur</th>
+						<th scope="col">Catégorie</th>
+						<th scope="col">Éditeur</th>
+						<th scope="col">Langue</th>
+						<th scope="col">Format</th>
+						<th scope="col">État</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for book in app.user.books %}
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Titre</th>
-							<th scope="col">Auteur</th>
-							<th scope="col">Catégorie</th>
-							<th scope="col">Éditeur</th>
-							<th scope="col">Langue</th>
-							<th scope="col">Format</th>
-							<th scope="col">État</th>
-							<th scope="col">Actions</th>
+							<th scope="row">{{ book.id }}</th>
+							<td>{{ book.title }}</td>
+							<td>{{ book.author }}</td>
+							<td>{{ book.category }}</td>
+							<td>{{ book.publisher }}</td>
+							<td>{{ book.language }}</td>
+							<td>{{ book.format }}</td>
+							<td>{{ book.state }}</td>
+							<td>
+								{% if book.active %}
+									<a class="btn btn-primary m-2" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
+								{% else %}
+									<a class="btn btn-primary m-2" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
+								{% endif %}
+								<a class="btn btn-primary m-2" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
+							</td>
 						</tr>
-					</thead>
-					<tbody>
-						{% for book in app.user.books %}
-							<tr>
-								<th scope="row">{{ book.id }}</th>
-								<td>{{ book.title }}</td>
-								<td>{{ book.author }}</td>
-								<td>{{ book.category }}</td>
-								<td>{{ book.publisher }}</td>
-								<td>{{ book.language }}</td>
-								<td>{{ book.format }}</td>
-								<td>{{ book.state }}</td>
-								<td>
-									{% if book.active %}
-										<a class="btn btn-primary m-2" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
-									{% else %}
-										<a class="btn btn-primary m-2" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
-									{% endif %}
-									<a class="btn btn-primary m-2" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
-								</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
+					{% endfor %}
+				</tbody>
+			</table>
 
-			{% else %}
-				<div class="divEmptyLibrary">
-					<p>Votre bibliothèque est vide.</p>
-					<p>Complétez-là avec les livres que vous possédez</p>
-					<p>et que vous souhaitez échanger.</p>
-				</div>
-
-				<div class="divButtonConnectedBookMyBooks">
-					<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
-				</div>
+		{% else %}
+			<div class="divEmptyLibrary">
+				<p>Votre bibliothèque est vide.</p>
+				<p>Complétez-là avec les livres que vous possédez</p>
+				<p>et que vous souhaitez échanger.</p>
 			</div>
+
+			<div class="divButtonConnectedBookMyBooks">
+				<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
+			</div>
+
 		{% endif %}
+
 
 		<nav class="page-navigation" aria-label="Page navigation">
 			<ul class="pagination">
@@ -126,6 +126,5 @@
 				</li>
 			</ul>
 		</nav>
-
 	</div>
 {% endblock %}
