@@ -256,38 +256,12 @@ tbody>tr>td {
     display: none;
 }
 
-/* Wireframe 11 */
-.divDisplaySearchBarWithSelectBox {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    width: 90.5%;
-    background-color: #F7F7F7;
-    border-radius: 0.2em;
-    margin-top: 5%;
-    margin-left: 10%;
-    padding-top: 1.54%;
-    padding-left: 2.4%;
-    padding-bottom: 1.54%;
-}
-
 .divUserProfile {
     margin: 1.5rem;
     padding: 1rem;
     background-color: #fff;
     border-radius: .25rem;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-}
-
-/* Wireframe 11 */
-.h3ConnectedBookExchangeSearchResultsForTheBookHarryPotter {
-    font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #186135;
-    margin: 0 0;
-    padding-right: 18%;
 }
 
 .h2IntroductoryContent {
