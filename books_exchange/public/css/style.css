@@ -179,26 +179,35 @@ main>aside {
     border: 0.8em solid #F7F7F7;
 }
 
-.formSearchBar {
-    display: block;
-    width: 100%;
+#search_form {
     background-color: #FFF;
     border-radius: 0.5rem;
+    padding: 20px;
 }
 
-.btn.btn-outline-orange {
+#search_form button {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
     color: #CD4109;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
     border-color: #CD4109;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    width: 100%;
 }
 
-.btn.btn-outline-orange:hover {
+#search_form button:hover {
     color: #fff;
     background-color: #CD4109;
     border-color: #CD4109;
-}
-
-form#search_book_form.formSearchBar.px-3.py-5.col-12>div>button#search_book_form_search.btn.btn-outline-orange {
-    width: 100%;
 }
 
 .informationAboutTheAccountTheLibraryTheExchanges {
@@ -845,7 +854,9 @@ div.form-control:read-only {
     font-weight: 700;
 }
 
-.form {
+
+
+#login_form {
     padding: 30px 40px;
 }
 
@@ -932,7 +943,7 @@ div.form-control>input#inputPassword.form-control:focus {
     display: none;
 }
 
-.form button {
+.form button.btn.btn-success.btn-lg {
     background-color: #186135;
     border: 2px solid #186135;
     border-radius: 0.25rem;

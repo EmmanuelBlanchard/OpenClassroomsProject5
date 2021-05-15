@@ -62,9 +62,9 @@
 		</div>
 		<main class="container">
 			<aside class="col-3 hidden-print">
-				<form action="{{ path('app_search') }}" class="formSearchBar">
-					<input class="searchInput" type="text" name="q">
-					<button class="searchButton" type="submit">Rechercher</button>
+				<form action="{{ path('app_search') }}" id="search_form">
+					<input class="form-control" type="text" name="q">
+					<button type="submit">Rechercher</button>
 				</form>
 				{% if app.user %}
 					<div class="informationAboutTheAccountTheLibraryTheExchanges">
