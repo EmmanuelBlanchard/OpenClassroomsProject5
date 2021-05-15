@@ -837,7 +837,7 @@ div.form-control:read-only {
     opacity: 1;
 }
 
-.divAlert.col-sm-12 {
+.divAlert.col-12 {
     margin-top: 2.5rem;
 }
 

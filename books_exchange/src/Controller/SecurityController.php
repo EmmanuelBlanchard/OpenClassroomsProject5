@@ -18,6 +18,12 @@ class SecurityController extends AbstractController
         //     return $this->redirectToRoute('target_path');
         // }
 
+        if ($this->isGranted('ROLE_USER')) {
+            //throw $this->createAccessDeniedException();
+            $this->addFlash('error', 'Accès à la page de connexion refusé. Déconnectez-vous pour avoir accès à la page de connexion.');
+            return $this->redirectToRoute('app_home');
+        }
+
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
