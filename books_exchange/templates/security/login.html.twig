@@ -11,7 +11,7 @@
 
 		<form id="login_form" class="form" name="login_form" method="post">
 			{% if error %}
-				<div class="divAlert col-sm-12">
+				<div class="divAlert col-12">
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 				</div>
 			{% endif %}
