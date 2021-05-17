@@ -40,7 +40,7 @@ class UserController extends AbstractController
             $this->addFlash('message', 'Profil mis à jour');
             return $this->redirectToRoute('user');
         }
-        return $this->render('user/updateprofile.html.twig', [
+        return $this->render('user/update_profile.html.twig', [
             'updateProfileForm' => $form->createView()
         ]);
     }
@@ -69,7 +69,7 @@ class UserController extends AbstractController
             $this->addFlash('message', 'Mot de passe mis à jour avec succès');
             return $this->redirectToRoute('user');
         }
-        return $this->render('user/updatepassword.html.twig', [
+        return $this->render('user/update_password.html.twig', [
             'updatePasswordForm' => $form->createView()
         ]);
     }
@@ -95,7 +95,7 @@ class UserController extends AbstractController
             $this->addFlash('message', 'L\'adresse e-mail a été mise à jour avec succès');
             return $this->redirectToRoute('user');
         }
-        return $this->render('user/updateemail.html.twig', [
+        return $this->render('user/update_email.html.twig', [
             'updateEmailForm' => $form->createView()
         ]);
     }
