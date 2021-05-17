@@ -10,24 +10,16 @@
 		</div>
 
 		<form id="login_form" class="form" name="login_form" method="post">
-			{% for message in app.flashes('success') %}
-				<div class="divAlert col-12">
-					<div class="alert alert-success" role="alert">{{ message }}</div>
-				</div>
-			{% endfor %}
 			{% if error %}
 				<div class="divAlert col-12">
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 				</div>
 			{% endif %}
-
-			{% if app.user %}
-				<div class="mb-3">
-					Vous êtes connecté en tant que
-					{{ app.user.username }},
-					<a href="{{ path('app_logout') }}">Déconnexion</a>
+			{% for message in app.flashes('success') %}
+				<div class="divAlert col-12">
+					<div class="alert alert-success" role="alert">{{ message }}</div>
 				</div>
-			{% endif %}
+			{% endfor %}
 
 			<div class="form-control">
 				<i class="bi bi-check-circle"></i>
