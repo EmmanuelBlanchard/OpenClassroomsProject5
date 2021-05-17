@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use App\Entity\Image;
 use App\Form\BookFormType;
 use App\Form\BookContactFormType;
 use App\Repository\BookRepository;
@@ -12,10 +13,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * @Route("/book", name="book_")
@@ -101,6 +102,23 @@ class BookController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // We recover the transmitted images
+            $images = $form->get('image')->getData();
+            // We loop on the images
+            foreach ($images as $image) {
+                // We generate a new file name
+                $file = md5(uniqid()) . '.' . $image->guessExtension();
+                // We copy the file in the uploads folder
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $file
+                );
+                // We store the image in the database (its name)
+                $img = new Image();
+                $img->setName($file);
+                $book->addImage($img);
+            }
+            
             $book->setUser($this->getUser());
             $book->setActive(true);
             $book->setExchangeRequest(false);
