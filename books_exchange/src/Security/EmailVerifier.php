@@ -7,12 +7,10 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
-use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
 
-class EmailVerifier extends AbstractController
+class EmailVerifier
 {
     private $verifyEmailHelper;
     private $mailer;
@@ -30,7 +28,8 @@ class EmailVerifier extends AbstractController
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
             $user->getId(),
-            $user->getEmail()
+            $user->getEmail(),
+            ['id' => $user->getId()]
         );
 
         $context = $email->getContext();
@@ -40,14 +39,7 @@ class EmailVerifier extends AbstractController
 
         $email->context($context);
 
-        //$this->mailer->send($email);
-        try {
-            $this->mailer->send($email);
-        } catch (TransportExceptionInterface $exception) {
-            // some error prevented the email sending; display an
-            // error message or try to resend the message
-            $this->addFlash('error', 'Erreur d\'envoi d\'e-mail !');
-        }
+        $this->mailer->send($email);
     }
 
     /**
