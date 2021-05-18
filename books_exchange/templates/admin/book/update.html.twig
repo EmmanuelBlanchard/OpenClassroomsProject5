@@ -76,6 +76,13 @@
 			</div>
 		</div>
 
+		{% for item in updateBookForm.image %}
+			<div class="form-control">
+				<img src="{{ asset('/uploads/' ~ item.name) }}" alt="Image" width="150">
+				<a href="{{ path('annonces_delete_image', {id: item.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ item.id) }}">Supprimer</a>
+			</div>
+		{% endfor %}
+
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>

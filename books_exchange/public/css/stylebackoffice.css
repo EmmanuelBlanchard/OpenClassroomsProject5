@@ -520,4 +520,11 @@ li.list-group-item>img.locationIcon {
     flex-direction: column;
 }
 
+/* For better design input file */
+input#book_form_image.form-control {
+    padding: .375rem .75rem;
+    border: 2px solid #f0f0f0;
+    /*border: 1px solid #ced4da;*/
+}
+
 /* Above template admin/book/show.html.twig */
