@@ -478,13 +478,20 @@ tbody>tr>td {
 /* Test Bootstrap Card */
 /* In template admin/book/show.html.twig */
 .card {
-    margin: 3rem !important;
+    margin: 3rem;
 }
 
 div.card>div.row.g-0>div.col-md-4 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+div.card>div.row.g-0>div.col-md-4>img {
+    width: 260px;
+    height: 300px;
+    border-radius: .25rem;
 }
 
 .card-title {
