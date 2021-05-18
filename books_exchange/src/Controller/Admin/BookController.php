@@ -82,6 +82,23 @@ class BookController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // We recover the transmitted images
+            $images = $form->get('image')->getData();
+            // We loop on the images
+            foreach ($images as $image) {
+                // We generate a new file name
+                $file = md5(uniqid()) . '.' . $image->guessExtension();
+                // We copy the file in the uploads folder
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $file
+                );
+                // We store the image in the database (its name)
+                $img = new Image();
+                $img->setName($file);
+                $book->addImage($img);
+            }
+            
             $book->setUser($this->getUser());
             $book->setActive(false);
             $book->setExchangeRequest(false);
