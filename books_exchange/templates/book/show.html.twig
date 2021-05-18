@@ -22,7 +22,7 @@
 				<div class="categoryBook">{{ book.category }}</div>
 				<div class="publisherBook">{{ book.publisher }}</div>
 				<div class="summaryBook">Résumé:
-					{{ book.summary|striptags }}</div>
+					{{ book.summary|striptags|raw }}</div>
 				<div class="languageBook">Langue:
 					{{ book.language }}</div>
 				<div class="formatBook">Format:

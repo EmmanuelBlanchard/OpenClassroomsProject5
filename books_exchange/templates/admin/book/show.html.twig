@@ -29,7 +29,7 @@
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">{{ book.category }}</li>
 							<li class="list-group-item">{{ book.publisher }}</li>
-							<li class="list-group-item">{{ book.summary|striptags }}</li>
+							<li class="list-group-item">{{ book.summary|striptags|raw }}</li>
 						</ul>
 					</div>
 					<ul class="list-group list-group-flush">
