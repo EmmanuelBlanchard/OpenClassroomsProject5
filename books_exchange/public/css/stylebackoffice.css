@@ -474,3 +474,50 @@ tbody>tr>td {
     padding: 20px 40px;
     text-align: center;
 }
+
+/* Test Bootstrap Card */
+/* In template admin/book/show.html.twig */
+.card {
+    margin: 3rem !important;
+}
+
+div.card>div.row.g-0>div.col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card-title>a,
+.card-header>a,
+.stateBook,
+.locationBook,
+.ownerBook {
+    font-weight: bold;
+    color: #000;
+}
+
+.card-title>a,
+.card-header>a {
+    text-decoration: none;
+}
+
+.card-header>a {
+    font-size: 1.2rem;
+}
+
+li.list-group-item>img.locationIcon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.divButtonsFlexCenter {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Above template admin/book/show.html.twig */

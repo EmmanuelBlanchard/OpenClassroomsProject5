@@ -72,6 +72,7 @@
 						</td>
 						<td>{{item.exchangeRequestAt|date('d/m/Y')}}</td>
 						<td>
+							<a class="btn btn-primary m-2" href="{{ path("admin_book_show", {slug: item.slug}) }}" role="button">Voir</a>
 							{% if item.active %}
 								<a class="btn btn-primary m-2" href="{{ path('admin_book_remove_exchange', {'id': item.id }) }}" role="button">Retirer des échanges</a>
 							{% else %}

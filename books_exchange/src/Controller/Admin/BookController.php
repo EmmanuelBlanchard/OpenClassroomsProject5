@@ -5,12 +5,16 @@ namespace App\Controller\Admin;
 use App\Entity\Book;
 use App\Entity\Image;
 use App\Form\BookFormType;
+use App\Form\BookContactFormType;
 use App\Repository\BookRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * @Route("/admin/book", name="admin_book_")
@@ -73,6 +77,49 @@ class BookController extends AbstractController
         ]);
     }
 
+    /**
+    * @Route("/show/{slug}", name="show")
+    */
+    public function show($slug, BookRepository $bookRepo, Request $request, MailerInterface $mailer): Response
+    {
+        $book = $bookRepo->findOneBy(['slug' => $slug]);
+
+        if (!$book) {
+            throw new NotFoundHttpException('Pas de livre trouvé');
+        }
+
+        $form = $this->createForm(BookContactFormType::class);
+
+        $contact = $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // We create the mail
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to($book->getUser()->getEmail())
+                ->subject('Contact au sujet de votre livre "' . $book->getTitle() . '"')
+                // path of the Twig template to render
+                ->htmlTemplate('emails/contact_book.html.twig')
+                // pass variables (name => value) to the template
+                ->context([
+                    'book' => $book,
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            // We send the mail
+            $mailer->send($email);
+
+            // We confirm and we redirect
+            $this->addFlash('success', 'Votre e-mail a bien été envoyé');
+            return $this->redirectToRoute('admin_book_show', ['slug' => $book->getSlug()]);
+        }
+
+        return $this->render('admin/book/show.html.twig', [
+            'book' => $book,
+            'contactBookForm' => $form->createView()
+        ]);
+    }
+    
     /**
      * @Route("/update/{id}", name="update")
      */
