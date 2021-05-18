@@ -48,7 +48,7 @@ class BookFormType extends AbstractType
                 'label' => 'Images',
                 'multiple' => true,
                 'mapped' => false,
-                'required' => true,
+                'required' => false,
             ])
             ->add('language', EntityType::class, [
                 'class' => Language::class,
