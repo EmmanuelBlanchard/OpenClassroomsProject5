@@ -45,7 +45,7 @@ class BookFormType extends AbstractType
                 ],
             ])
             ->add('image', FileType::class, [
-                'label' => 'Images',
+                'label' => false,
                 'multiple' => true,
                 'mapped' => false,
                 'required' => false,
