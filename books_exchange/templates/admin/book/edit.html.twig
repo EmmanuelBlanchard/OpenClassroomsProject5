@@ -1,0 +1,15 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Modifier un livre
+{% endblock %}
+
+{% block body %}
+	<h2>Modifier un livre</h2>
+
+	{{ include('admin/book/_form.html.twig', {'button_label': 'Éditer'}) }}
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/images.js') }}"></script>
+{% endblock %}

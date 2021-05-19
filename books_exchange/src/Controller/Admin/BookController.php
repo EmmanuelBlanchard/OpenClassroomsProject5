@@ -159,8 +159,9 @@ class BookController extends AbstractController
             return $this->redirectToRoute('admin_book_home');
         }
 
-        return $this->render('admin/book/update.html.twig', [
-            'updateBookForm' => $form->createView()
+        return $this->render('admin/book/edit.html.twig', [
+            'book' => $book,
+            'form' => $form->createView()
         ]);
     }
 
