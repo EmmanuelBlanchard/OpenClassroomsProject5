@@ -30,23 +30,20 @@
 							<li class="list-group-item">{{ book.category }}</li>
 							<li class="list-group-item">{{ book.publisher }}</li>
 							<li class="list-group-item">{{ book.summary|striptags|raw }}</li>
+							<li class="list-group-item">Langue:
+								{{ book.language }}</li>
+							<li class="list-group-item">Format:
+								{{ book.format }}</li>
+							<li class="list-group-item stateBook">État:
+								{{ book.state }}</li>
+							<li class="list-group-item locationBook">
+								<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
+								<span>{{ book.user.city }}</span>
+							</li>
+							<li class="list-group-item ownerBook">Propriétaire:
+								{{ book.user.pseudo }}</li>
 						</ul>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Langue:
-							{{ book.language }}</li>
-						<li class="list-group-item">Format:
-							{{ book.format }}</li>
-						<li class="list-group-item stateBook">État:
-							{{ book.state }}</li>
-						<li class="list-group-item locationBook">
-							<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
-							<span>{{ book.user.city }}</span>
-						</li>
-						<li class="list-group-item ownerBook">Propriétaire:
-							{{ book.user.pseudo }}</li>
-					</ul>
-
 					<div class="divButtonsFlexCenter ">
 						<div class="align-self-center">
 							<a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
