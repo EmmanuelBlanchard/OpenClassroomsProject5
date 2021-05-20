@@ -229,7 +229,7 @@ class BookController extends AbstractController
             // We retrieve the name of the image
             $name = $image->getName();
             // We delete the file
-            unlink($this->getParameter('image_directory').'/'.$name);
+            unlink($this->getParameter('images_directory').'/'.$name);
 
             // Delete the entry from the database
             $entityManager = $this->getDoctrine()->getManager();
