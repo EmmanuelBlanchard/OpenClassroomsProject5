@@ -3,9 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Book;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use InvalidArgumentException;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Book|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,13 +23,29 @@ class BookRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Book::class);
     }
-
+    
     /**
      * Returns all books per page
-     * @return void
+     * @return Paginator
      */
-    public function getBookPaginator($user, int $offset): Paginator
+    public function getBookPaginator($user, int $page, int $nbMaxPerPage, int $offset): Paginator
     {
+        if (!is_numeric($page)) {
+            throw new InvalidArgumentException(
+                'La valeur de l\'argument $page est incorrecte (valeur : ' . $page . ').'
+            );
+        }
+
+        if ($page < 1) {
+            throw new NotFoundHttpException('La page demandée n\'existe pas');
+        }
+
+        if (!is_numeric($nbMaxPerPage)) {
+            throw new InvalidArgumentException(
+                'La valeur de l\'argument $nbMaxPerPage est incorrecte (valeur : ' . $nbMaxPerPage . ').'
+            );
+        }
+
         $query = $this->createQueryBuilder('b')
             ->where('b.active = 1')
             ->andWhere('b.exchangeRequest = 0')
@@ -44,7 +62,7 @@ class BookRepository extends ServiceEntityRepository
 
     /**
      * Returns all books per page
-     * @return void
+     * @return Book[] Returns an array of Book objects
      */
     public function getPaginatedBooks($page, $limit, $user, $filters = null)
     {

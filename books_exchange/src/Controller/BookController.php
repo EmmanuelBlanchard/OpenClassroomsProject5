@@ -31,7 +31,7 @@ class BookController extends AbstractController
     {
         // We get the information of the connected user
         $user = $this->getUser();
-        // We define the number of elements per page
+        // We define the number of books per page
         $limit = 10;
         // We get the page number
         $page = (int)$request->query->get("page", 1);
@@ -73,13 +73,13 @@ class BookController extends AbstractController
     }
     
     /**
-    * @Route("/stock", name="stock")
+    * @Route("/mybooks", name="my_books")
     */
-    public function stock(BookRepository $bookRepo, Request $request): Response
+    public function myBooks(BookRepository $bookRepo, Request $request): Response
     {
         // We get the information of the connected user
         $user = $this->getUser();
-        // We define the number of elements per page
+        // We define the number of books per page
         $limit = 10;
         // We get the page number
         $page = (int)$request->query->get("page", 1);
@@ -87,10 +87,12 @@ class BookController extends AbstractController
         $books = $bookRepo->findBooksActiveOwnedByUserWithOrderCreatedAtDesc($page, $limit, $user);
         // We get the total number of books
         $total = $bookRepo->getTotalBooksActiveOwnedByUserWithOrderCreatedAtDesc($user);
+        // How many pages will there be
+        $pages = ceil(count($books) / $limit);
 
-        return $this->render('book/stock.html.twig', compact('books', 'limit', 'page', 'total'));
+        return $this->render('book/stock.html.twig', compact('books', 'limit', 'page', 'pages', 'total'));
     }
-
+    
     /**
     * @Route("/add", name="add")
     */

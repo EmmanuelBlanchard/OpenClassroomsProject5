@@ -37,7 +37,7 @@
 {% set queryParams = app.request.query.all %}
 {% set queryString = queryParams|filter((v, k) => k != "page" and k != "ajax")|url_encode %}
 
-{# Line 59 ... Bug the < and <= it is crash, cut the bloc code and the > == no ... with href="{{ (page < pages) when saving the file, the code  disappears ... #}
+
 {% set pages = (total / limit)|round(0, 'ceil') %}
 
 <nav class="page-navigation" aria-label="Page navigation">
@@ -60,7 +60,7 @@
 			</li>
 		{% endfor %}
 		<li class="page-item {{ (page == pages) ? 'disabled' : ''}}">
-			<a class="page-link" href="{{ (page == pages) ? '?page=' ~ (page + 1) : '' }}&{{queryString}}">
+			<a class="page-link" href="{{ (page < pages) ? '?page=' ~ (page + 1) : '' }}&{{queryString}}">
 				<i class="bi bi-chevron-right"></i>
 			</a>
 		</li>
