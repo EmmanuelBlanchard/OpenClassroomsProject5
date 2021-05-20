@@ -2,7 +2,7 @@ window.onload = () => {
     email.addEventListener('input', checkInputEmail);
 }
 
-let form = document.querySelector('#request_form');
+let form = document.querySelector('#reset_password_request_form');
 const email = document.querySelector('#reset_password_request_form_email');
 
 function checkInputEmail() {

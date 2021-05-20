@@ -14,28 +14,28 @@
 			<h2>Réinitialiser votre mot de passe</h2>
 		</div>
 
-		{{ form_start(requestForm, {'attr': {'id': 'request_form', 'class': 'form'}}) }}
+		{{ form_start(resetPasswordRequestForm, {'attr': {'id': 'reset_password_request_form', 'class': 'form'}}) }}
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(requestForm.email) }}
-			{{ form_widget(requestForm.email) }}
+			{{ form_label(resetPasswordRequestForm.email) }}
+			{{ form_widget(resetPasswordRequestForm.email) }}
 
-			<small>{{ form_help(requestForm.email) }}</small>
+			<small>{{ form_help(resetPasswordRequestForm.email) }}</small>
 
 			<div class="form-error">
-				{{ form_errors(requestForm.email) }}
+				{{ form_errors(resetPasswordRequestForm.email) }}
 			</div>
 		</div>
 
-		<button type="submit" id="request_form_save" name="request_form[save]" class="btn btn-success">Réinitialisation votre mot de passe</button>
+		<button type="submit" id="reset_password_request_form_validate" name="request_form[validate]" class="btn btn-success">Réinitialisation votre mot de passe</button>
 
-		{{ form_end(requestForm) }}
+		{{ form_end(resetPasswordRequestForm) }}
 
 	</div>
 {% endblock %}
 
 {% block javascripts %}
-	<script src="{{ asset('js/validationrequestform.js') }}"></script>
+	<script src="{{ asset('js/resetPasswordRequestForm.js') }}"></script>
 {% endblock %}

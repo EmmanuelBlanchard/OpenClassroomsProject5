@@ -861,6 +861,8 @@ div.form-control:read-only {
 #update_profile_form,
 #update_email_form,
 #update_password_form,
+#reset_password_request_form,
+#reset_password_form,
 #add_book_form {
     padding: 30px 40px;
 }
@@ -964,6 +966,7 @@ div.form-control>input#inputPassword.form-control:focus {
 #update_profile_form_validate,
 #update_email_form_validate,
 #update_password_form_validate,
+#reset_password_request_form_validate,
 #book_form_validate {
     background-color: #186135;
     border: 2px solid #186135;
