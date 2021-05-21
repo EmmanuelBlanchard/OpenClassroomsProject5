@@ -193,7 +193,7 @@ class BookController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($book);
             $entityManager->flush();
-            $this->addFlash('message', 'Livre supprimé');
+            $this->addFlash('message', 'Livre supprimé avec succès');
         }
         return $this->redirectToRoute('book_home');
     }

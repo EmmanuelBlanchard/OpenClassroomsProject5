@@ -206,13 +206,17 @@ class BookController extends AbstractController
     /**
      * @Route("/delete/{id}", name="delete")
      */
-    public function deleteBook(Book $book): Response
+    public function delete(Book $book): Response
     {
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($book);
-        $entityManager->flush();
-
-        $this->addFlash('message', 'Livre supprimé avec succès');
+        if ($book === null) {
+            // Make a flash bag message
+            $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
+        } else {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($book);
+            $entityManager->flush();
+            $this->addFlash('message', 'Livre supprimé avec succès');
+        }
         return $this->redirectToRoute('admin_book_home');
     }
 
