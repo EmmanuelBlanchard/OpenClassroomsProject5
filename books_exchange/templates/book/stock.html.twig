@@ -65,7 +65,7 @@
 								{% else %}
 									<a class="btn btn-primary m-2" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
 								{% endif %}
-								<a class="btn btn-primary m-2" href="{{ path('book_remove_stock', {'id': book.id }) }}" role="button">Supprimer</a>
+								<a class="btn btn-primary m-2" href="{{ path('book_remove', {'id': book.id }) }}" role="button">Supprimer</a>
 							</td>
 						</tr>
 					{% endfor %}

@@ -182,9 +182,9 @@ class BookController extends AbstractController
     }
 
     /**
-    * @Route("/remove/stock/{id}", name="remove_stock")
+    * @Route("/remove/{id}", name="remove")
     */
-    public function removeStock(Book $book): Response
+    public function remove(Book $book): Response
     {
         if ($book === null) {
             // Make a flash bag message
@@ -193,7 +193,7 @@ class BookController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($book);
             $entityManager->flush();
-            $this->addFlash('message', 'Livre supprimé du stock de livres');
+            $this->addFlash('message', 'Livre supprimé');
         }
         return $this->redirectToRoute('book_home');
     }
