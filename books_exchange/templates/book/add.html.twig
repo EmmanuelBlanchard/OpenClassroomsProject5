@@ -83,6 +83,14 @@
 				{{ form_errors(addBookForm.summary) }}
 			</div>
 		</div>
+	
+		<div class="form-control input-file-container">
+			<input class="input-file" id="my-file" type="file">
+			<label for="my-file" class="input-file-trigger" tabindex="0">
+				Parcourir...
+			</label>
+		</div>
+		<p class="file-return"></p>
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
@@ -126,4 +134,8 @@
 		{{ form_end(addBookForm) }}
 
 	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/uploadFile.js') }}"></script>
 {% endblock %}
