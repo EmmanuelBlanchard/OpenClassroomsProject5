@@ -601,8 +601,8 @@ section.blockOfStoredBookInformation>p.line.state,
 }
 
 .locationIcon {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .btn-outline-success.exchangeButton {
@@ -771,13 +771,14 @@ div.titleBook {
     margin-bottom: 0.5rem;
 }
 
+/*
 div.authorBook>a,
 .stateBook,
 .locationBook,
 .ownerBook {
     font-size: 1.2rem;
 }
-
+*/
 .table.manageMyAccountBooks {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1061,4 +1062,38 @@ div.form-control>input#inputPassword.form-control:focus {
     content: "Fichier sélectionné: ";
     font-style: normal;
     font-weight: normal;
+}
+
+/* Test temporary templates main/search_book_test.html.twig */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 1.5rem;
+}
+
+.card-picture {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem;
+}
+
+div.row.g-0>div.card-picture {
+    padding: 0.7rem;
+}
+
+h5.card-title a,
+div.card-header a,
+.stateBook,
+.locationBook,
+.ownerBook {
+    font-weight: bold;
+    color: #000;
+    font-size: 1rem;
+}
+
+.divButtonsFlexCenter {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
 }
