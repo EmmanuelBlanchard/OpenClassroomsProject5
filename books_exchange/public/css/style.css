@@ -1064,8 +1064,8 @@ div.form-control>input#inputPassword.form-control:focus {
     margin: 1.5rem;
 }
 
-.card {
-    margin: 3rem;
+.card.show {
+    margin: 2rem;
 }
 
 .card-picture {
@@ -1087,11 +1087,15 @@ div.card-header a,
     color: #000;
 }
 
+.divButtonExchangeCenter,
 .divButtonsFlexCenter {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     padding-bottom: 1rem;
+}
+
+.divButtonsFlexCenter {
+    flex-direction: column;
 }
 
 div.card-body {
