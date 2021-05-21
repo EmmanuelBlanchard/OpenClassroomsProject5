@@ -90,7 +90,7 @@ class BookController extends AbstractController
         // How many pages will there be
         $pages = ceil(count($books) / $limit);
 
-        return $this->render('book/stock.html.twig', compact('books', 'limit', 'page', 'pages', 'total'));
+        return $this->render('book/my_books.html.twig', compact('books', 'limit', 'page', 'pages', 'total'));
     }
     
     /**
