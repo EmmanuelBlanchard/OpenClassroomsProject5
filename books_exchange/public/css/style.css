@@ -771,14 +771,6 @@ div.titleBook {
     margin-bottom: 0.5rem;
 }
 
-/*
-div.authorBook>a,
-.stateBook,
-.locationBook,
-.ownerBook {
-    font-size: 1.2rem;
-}
-*/
 .table.manageMyAccountBooks {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1072,16 +1064,20 @@ div.form-control>input#inputPassword.form-control:focus {
     margin: 1.5rem;
 }
 
+.card {
+    margin: 3rem;
+}
+
 .card-picture {
     display: flex;
     align-items: center;
-    padding: 0.7rem;
 }
 
 div.row.g-0>div.card-picture {
     padding: 0.7rem;
 }
 
+h5.card-title,
 h5.card-title a,
 div.card-header a,
 .stateBook,
@@ -1089,11 +1085,15 @@ div.card-header a,
 .ownerBook {
     font-weight: bold;
     color: #000;
-    font-size: 1rem;
 }
 
 .divButtonsFlexCenter {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding-bottom: 1rem;
+}
+
+div.card-body {
+    padding-bottom: 0;
 }
