@@ -35,7 +35,7 @@ class BookController extends AbstractController
     /**
      * @Route("/add", name="add")
      */
-    public function addBook(Request $request): Response
+    public function add(Request $request): Response
     {
         $book = new Book;
 
@@ -123,7 +123,7 @@ class BookController extends AbstractController
     /**
      * @Route("/update/{id}", name="update")
      */
-    public function updateBook(Book $book, Request $request): Response
+    public function update(Book $book, Request $request): Response
     {
         $form = $this->createForm(BookFormType::class, $book);
         
