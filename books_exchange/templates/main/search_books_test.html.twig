@@ -1,15 +1,42 @@
 {% extends 'base.html.twig' %}
 
+{# We create custom variables #}
+{% set queryParams = app.request.query.all %}
+
 {% block title %}Resultats de la recherche
 {% endblock %}
 
 {% block body %}
     <div class="container">
-
         <div class="grid">
-            {% for book in books %}
-                {% include 'main/_card.html.twig' with {book : book} only %}
-            {% endfor %}
+            <div class="col-2">
+                <form id="filtersOfCategories">
+                        {% for item in category %}
+                            {# We check if the category is in the parameters #}
+                            {% if queryParams is not empty and queryParams.category is defined %}
+                                {% set checked = (item.id in queryParams.category) ? "checked" : "" %}
+                            {% else %}
+                                {% set checked = "" %}
+                            {% endif %}
+                            <p><input type="checkbox" name="category[]" id="category{{item.id}}" value="{{item.id}}" {{checked}}>
+                                <label for="category{{item.id}}">{{item.name}}</label>
+                            </p>
+                        {% endfor %}
+                        <input type="hidden" name="page" value="{{page}}">
+                    </form>
+            </div>
+            {# 
+                {% for book in books %}
+                    {% include 'main/_card.html.twig' with {book : book} only %}
+                {% endfor %}
+            #}
+            <div id="content">
+                    {% include "main/_content.html.twig" %}
+            </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/filtersOfCategories.js') }}"></script>
 {% endblock %}
