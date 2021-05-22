@@ -51,7 +51,7 @@ class MainController extends AbstractController
             // We recover all categories
             $category = $categoryRepo->findAll();
 
-            return $this->render('main/search_books_test.html.twig', [
+            return $this->render('main/index.html.twig', [
                 'books' => $books,
                 'category' => $category,
                 'limit' => $limit,
@@ -61,7 +61,7 @@ class MainController extends AbstractController
             ]);
         }
 
-        
+
 
         return $this->render('main/index.html.twig', [
             'books' => $books,

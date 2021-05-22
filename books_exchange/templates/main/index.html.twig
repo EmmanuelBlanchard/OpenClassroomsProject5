@@ -17,6 +17,7 @@
 				<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 			</div>
 		{% endfor %}
+
 		<section class="contentBlockSection">
 			<section class="introductoryContent">
 				<h2 class="h2IntroductoryContent">Échangez vos livres contre des nouveaux avec ÉchangeLivres !</h2>
@@ -31,37 +32,15 @@
 			</section>
 			<section class="sectionOfBookSelection">
 				<h2 class="h2TitleSelectionOfBooks">Une sélection de livres disponibles à l'échange</h2>
-				<div class="row col-12">
-					{% for book in books %}
-						<section class="bookCard col-sm-4">
-							<h4 class="titleBook">
-								<a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
-							</h4>
-							<div class="authorBook">
-								<a href="">{{ book.author }}</a>
-							</div>
-							<div class="categoryBook">{{ book.category }}</div>
-							<div class="publisherBook">{{ book.publisher }}</div>
-							<div class="languageBook">Langue:
-								{{ book.language }}</div>
-							<div class="formatBook">Format:
-								{{ book.format }}</div>
-							<div class="stateBook">État:
-								{{ book.state }}</div>
-							<div class="locationBook">
-								<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
-								<span>{{ book.user.city }}</span>
-							</div>
-							<p class="ownerBook">Propriétaire:
-								{{ book.user.pseudo }}
-							</p>
-							<div class="align-self-center">
-								<a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
-							</div>
-						</section>
-					{% endfor %}
-				</div>
 			</section>
-		</section>
+			<div class="row blockCard" id="content">
+					{% include "main/_content_flex.html.twig" %}
+			</div>
+				{#
+					<div class="grid" id="content">
+						{% include "main/_content.html.twig" %}
+					</div>
+				#}
+		</section>		
 	</div>
 {% endblock %}

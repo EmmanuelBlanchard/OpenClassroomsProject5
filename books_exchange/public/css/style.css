@@ -741,6 +741,12 @@ div.col-12.divButtonsEdit {
     max-width: 100%;
 }
 
+div#content.row.blockCard {
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 section h4.titleBook a,
 div.titleBook,
 div.authorBook>a,

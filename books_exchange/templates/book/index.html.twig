@@ -36,8 +36,8 @@
 						{% else %}
 							{% set checked = "" %}
 						{% endif %}
-
-						<p><input type="checkbox" name="category[]" id="category{{item.id}}" value="{{item.id}}" {{checked}}>
+						<p>
+							<input type="checkbox" name="category[]" id="category{{item.id}}" value="{{item.id}}" {{checked}}>
 							<label for="category{{item.id}}">{{item.name}}</label>
 						</p>
 					{% endfor %}
