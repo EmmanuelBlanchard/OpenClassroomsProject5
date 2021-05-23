@@ -233,7 +233,7 @@ class BookRepository extends ServiceEntityRepository
      * Search for books according to the form
      * @return void
      */
-    public function search($words = null, $category = null)
+    public function search($page, $limit, $words = null, $category = null)
     {
         $query = $this->createQueryBuilder('book');
         $query->where('book.active = 1');
@@ -250,7 +250,37 @@ class BookRepository extends ServiceEntityRepository
                 ->setParameter('id', $category);
         }
 
+        $query->orderBy('book.createdAt', 'DESC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
+        ;
+
         return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Returns the number of books retrieved by the full text search
+     * @return int
+     */
+    public function getTotalNumberBooksInSearch($words = null, $category = null)
+    {
+        $query = $this->createQueryBuilder('b')
+            ->select('COUNT(b)')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 0');
+
+        if ($words != null) {
+            $query->andWhere('MATCH_AGAINST(b.title, b.summary) AGAINST
+            (:words boolean)>0')
+                ->setParameter('words', $words);
+        }
+        if ($category != null) {
+            $query->leftJoin('b.category', 'c');
+            $query->andWhere('c.id = :id')
+                ->setParameter('id', $category);
+        }
+
+        return $query->getQuery()->getSingleScalarResult();
     }
 
     // /**

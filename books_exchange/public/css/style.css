@@ -1107,3 +1107,8 @@ div.card-header a,
 div.card-body {
     padding-bottom: 0;
 }
+
+.page-navigation {
+    display: grid;
+    justify-content: center;
+}
