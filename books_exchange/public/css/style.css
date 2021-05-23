@@ -1077,10 +1077,7 @@ div.form-control>input#inputPassword.form-control:focus {
 .card-picture {
     display: flex;
     align-items: center;
-}
-
-div.row.g-0>div.card-picture {
-    padding: 0.7rem;
+    justify-content: center;
 }
 
 h5.card-title,
