@@ -18,8 +18,6 @@ class SearchController extends AbstractController
      */
     public function index(Request $request, BookRepository $bookRepo, CategoryRepository $categoryRepo): Response
     {
-        // We get the information of the connected user
-        $user = $this->getUser();
         // We define the number of books per page
         $limit = 10;
         // We get the page number
@@ -27,9 +25,9 @@ class SearchController extends AbstractController
         // We recover the filters
         $filters = $request->get("category");
         // We get the books of the page according to the filter
-        $books = $bookRepo->getPaginatedBooks($page, $limit, $user, $filters);
+        $books = $bookRepo->getPaginatedBooksNoUser($page, $limit, $filters);
         // We get the total number of books according to the filter
-        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user, $filters);
+        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequest($filters);
         // How many pages will there be
         $pages = ceil($total / $limit);
 
@@ -63,7 +61,49 @@ class SearchController extends AbstractController
                 ])
             ]);
         }
-        
+
+        if ($this->getUser()) {
+            // We get the information of the connected user
+            $user = $this->getUser();
+            // We define the number of books per page
+            $limit = 10;
+            // We get the page number
+            $page = (int)$request->query->get("page", 1);
+            // We recover the filters
+            $filters = $request->get("category");
+            // We get the books of the page according to the filter
+            $books = $bookRepo->getPaginatedBooks($page, $limit, $user, $filters);
+            // We get the total number of books according to the filter
+            $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUser($user, $filters);
+            // How many pages will there be
+            $pages = ceil($total / $limit);
+
+            // We check if we have an ajax request
+            if ($request->get('ajax')) {
+                return new JsonResponse([
+                'content' => $this->renderView('main/_content.html.twig', [
+                    'books' => $books,
+                    'limit' => $limit,
+                    'page' => $page,
+                    'pages' => $pages,
+                    'total' => $total,
+                ])
+            ]);
+            }
+
+            // We recover all categories
+            $category = $categoryRepo->findAll();
+
+            return $this->render('main/search_books_test.html.twig', [
+                'books' => $books,
+                'category' => $category,
+                'limit' => $limit,
+                'page' => $page,
+                'pages' => $pages,
+                'total' => $total,
+            ]);
+        }
+                
         // We recover all categories
         $category = $categoryRepo->findAll();
 
