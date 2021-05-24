@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Book;
 use App\Repository\BookRepository;
 use App\Repository\CategoryRepository;
+use App\Form\AdvancedSearchBookFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -168,6 +169,69 @@ class SearchController extends AbstractController
             'page' => $page,
             'pages' => $pages,
             'total' => $total,
+        ]);
+    }
+
+    /**
+     * @Route("/search/books", name="app_search_books")
+     */
+    public function searchBook(Request $request, BookRepository $bookRepo): Response
+    {
+        $searchBookForm = $this->createForm(AdvancedSearchBookFormType::class);
+
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $books = $repository->findAll();
+        //dd($books);
+        $searchBookForm->handleRequest($request);
+
+        if ($searchBookForm->isSubmitted() && $searchBookForm->isValid()) {
+            // Returns a array
+            $author = $searchBookForm->getData("author");
+            // Returns null when select a field
+            //$author = $request->query->get('category');
+            //dd($author);
+            
+            $category = $searchBookForm->getData('category');
+            $format = $searchBookForm->getData('format');
+            $language = $searchBookForm->getData('language');
+            $publisher = $searchBookForm->getData('publisher');
+            $state = $searchBookForm->getData('state');
+            //$zipCode = $searchBookForm->getData('zipCode');
+            //$city = $searchBookForm->getData('city');
+            
+            $criteria = $searchBookForm->getData();
+            //dd($criteria);
+            
+            /*
+            $books = $bookRepo->searchBook(
+                $author,
+                $category,
+                $format,
+                $language,
+                $publisher,
+                $state
+            );
+            */
+            
+            $books = $bookRepo->searchBook(
+                $author = $request->query->get("author"),
+                $category = $request->query->get("category"),
+                $format = $request->query->get("format"),
+                $language = $request->query->get("language"),
+                $publisher = $request->query->get("publisher"),
+                $state = $request->query->get("state"),
+            );
+            
+            dd($books);
+            return $this->render('search/book.html.twig', [
+                'advanced_search_form' => $searchBookForm->createView(),
+                'books' => $books
+            ]);
+        }
+       
+        return $this->render('search/book.html.twig', [
+            'advanced_search_form' => $searchBookForm->createView(),
+            'books' => $books
         ]);
     }
 }

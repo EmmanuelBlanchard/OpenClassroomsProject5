@@ -283,6 +283,55 @@ class BookRepository extends ServiceEntityRepository
         return $query->getQuery()->getSingleScalarResult();
     }
 
+    /**
+     * Advanced search for books according to the form
+     * @return void
+     */
+    public function searchBook($author = null, $category = null, $format = null, $language = null, $publisher = null, $state = null)
+    {
+        $query = $this->createQueryBuilder('b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
+
+        if ($author != null) {
+            $query->leftJoin('b.author', 'a');
+            $query->andWhere('a.id = :id')
+                ->setParameter('id', $author);
+        }
+
+        if ($category != null) {
+            $query->leftJoin('b.category', 'c');
+            $query->andWhere('c.id = :id')
+                ->setParameter('id', $category);
+        }
+
+        if ($format != null) {
+            $query->leftJoin('b.format', 'f');
+            $query->andWhere('f.id = :id')
+                ->setParameter('id', $format);
+        }
+
+        if ($language != null) {
+            $query->leftJoin('b.language', 'l');
+            $query->andWhere('l.id = :id')
+                ->setParameter('id', $language);
+        }
+
+        if ($publisher != null) {
+            $query->leftJoin('b.publisher', 'p');
+            $query->andWhere('p.id = :id')
+                ->setParameter('id', $publisher);
+        }
+
+        if ($state != null) {
+            $query->leftJoin('b.state', 's');
+            $query->andWhere('s.id = :id')
+                ->setParameter('id', $state);
+        }
+
+        return $query->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */

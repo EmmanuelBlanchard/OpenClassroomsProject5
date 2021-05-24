@@ -66,6 +66,9 @@
 					<input class="form-control" type="text" name="q">
 					<button type="submit">Rechercher</button>
 				</form>
+
+				<a href="{{ path('app_search_books') }}" class="btn btn-primary btn-lg">Recherche avancée</a>
+
 				{% if app.user %}
 					<div class="informationAboutTheAccountTheLibraryTheExchanges">
 						<h2 class="h2OfWelcomeOfPseudo">Salut
