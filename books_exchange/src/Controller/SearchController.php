@@ -35,7 +35,7 @@ class SearchController extends AbstractController
         // We check if we have an ajax request
         if ($request->get('ajax')) {
             return new JsonResponse([
-                'content' => $this->renderView('main/_content.html.twig', [
+                'content' => $this->renderView('main/_content_flex.html.twig', [
                     'books' => $books,
                     'limit' => $limit,
                     'page' => $page,
@@ -100,7 +100,7 @@ class SearchController extends AbstractController
             // We check if we have an ajax request
             if ($request->get('ajax')) {
                 return new JsonResponse([
-                    'content' => $this->renderView('main/_content.html.twig', [
+                    'content' => $this->renderView('main/_content_flex.html.twig', [
                         'books' => $books,
                         'limit' => $limit,
                         'page' => $page,

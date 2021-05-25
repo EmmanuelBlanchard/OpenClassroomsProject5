@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div>
-            <form id="filtersOfCategories">
+    <div class="container d-flex col-9">
+        <div class="col-md-3">
+            <form id="filtersOfCategories" class="filter">
                 {% for item in category %}
                     {# We check if the category is in the parameters #}
                     {% if queryParams is not empty and queryParams.category is defined %}
@@ -30,9 +30,11 @@
                     {% include "main/_content.html.twig" %}
         </div>
         #}
-        <div class="row blockCard" id="content">
-			{% include "main/_content_flex.html.twig" %}
-		</div>
+        <div class="col-md-9">
+            <div class="row blockCard" id="content">
+			    {% include "main/_content_flex.html.twig" %}
+		    </div>
+        </div>
     </div>
 {% endblock %}
 
