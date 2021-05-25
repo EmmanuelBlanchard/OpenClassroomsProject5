@@ -16,7 +16,7 @@
 		<div class="card">
 			<div class="row g-0">
 				<div class="col-md-4">
-					<img src="{{ asset('/uploads/book_image/' ~ book.imageFilename) }}" alt="Couverture du livre '{{ book.title }}'">
+					<img src="{{ asset('/uploads/book_image/' ~ book.imageFilename)imagine_filter('book') }}" alt="Couverture du livre {{book.title}}.">
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
