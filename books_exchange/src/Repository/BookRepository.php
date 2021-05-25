@@ -320,6 +320,56 @@ class BookRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
+    /**
+     * Retrieves books related to a search
+     * @return Book[]
+     */
+    public function findSearch($search): array
+    {
+        $query = $this->createQueryBuilder('b');
+        $query->select('c', 'b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
+        $query->join('b.category', 'c');
+       
+        if (!empty($search->q)) {
+            $query = $query->andWhere('b.title LIKE :q');
+            $query->setParameter('q', '%{$search->q%}');
+        }
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Search for books according to the form
+     * @return void|array
+     */
+    public function searchTest($page, $limit, $words = null, $category = null)
+    {
+        //dd($words, $category);
+
+        $query = $this->createQueryBuilder('b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
+
+        if ($words != null) {
+            $query->andWhere('MATCH_AGAINST(b.title, b.summary) AGAINST
+            (:words boolean)>0')
+                ->setParameter('words', $words);
+        }
+        if ($category != null) {
+            $query->leftJoin('b.category', 'c');
+            $query->andWhere('c.id = :id')
+                ->setParameter('id', $category);
+        }
+
+        $query->orderBy('b.createdAt', 'DESC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */

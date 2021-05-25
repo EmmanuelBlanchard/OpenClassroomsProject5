@@ -26,7 +26,7 @@ class SearchBookFormType extends AbstractType
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'label' => false,
+                'label' => 'Catégorie',
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Toutes les catégories',
@@ -37,7 +37,7 @@ class SearchBookFormType extends AbstractType
             ->add('search', SubmitType::class, [
                 'label' => 'Rechercher',
                 'attr' => [
-                    'class' => 'btn btn-outline-orange',
+                    'class' => 'btn btn-outline-primary',
                 ]
             ])
         ;

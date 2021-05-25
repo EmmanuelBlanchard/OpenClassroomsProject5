@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use App\Entity\Category;
+use App\Form\SearchBookFormType;
 use App\Repository\BookRepository;
 use App\Repository\CategoryRepository;
 use App\Form\AdvancedSearchBookFormType;
@@ -70,6 +72,7 @@ class SearchController extends AbstractController
             $pages = ceil($total / $limit);
             // We recover all categories
             $category = $categoryRepo->findAll();
+
             return $this->render('main/search_books_test.html.twig', [
             'books' => $books,
             'category' => $category,
@@ -198,6 +201,64 @@ class SearchController extends AbstractController
         return $this->render('search/book.html.twig', [
             'advanced_search_form' => $searchBookForm->createView(),
             'books' => $books
+        ]);
+    }
+
+    /**
+     * @Route("/advanced/search/books", name="app_advanced_search_books")
+     */
+    public function advancedSearchBooks(Request $request, BookRepository $bookRepo): Response
+    {
+        // We define the number of books per page
+        $limit = 10;
+        // We get the page number
+        $page = (int)$request->query->get("page", 1);
+
+        $form = $this->createForm(SearchBookFormType::class);
+        
+        /* Full text search part */
+        $search = $request->query->get('words');
+        $search = trim($search);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            //$criteria = $form->getData();
+            //$books = $bookRepo->advancedSearchBook($criteria);
+
+            $books = $bookRepo->searchTest(
+                $page,
+                $limit,
+                $search = $request->query->get('words'),
+                $search = $request->query->get('category')
+            );
+            // We get the total number of books retrieved by the full text search
+            $total = $bookRepo->getTotalNumberBooksInSearch(
+                $search = $request->query->get('words'),
+                $search = $request->query->get('category')
+            );
+            // How many pages will there be
+            $pages = ceil($total / $limit);
+            // We recover all categories
+            $categoryRepo = $this->getDoctrine()->getRepository(Category::class);
+            $category = $categoryRepo->findAll();
+            
+            return $this->render('search/advanced_search_book.html.twig', [
+                'form' => $form->createView(),
+                'books' => $books,
+                'limit' => $limit,
+                'page' => $page,
+                'pages' => $pages,
+                'total' => $total,
+            ]);
+        }
+       
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $books = $repository->findAll();
+
+        return $this->render('search/advanced_search_book.html.twig', [
+            'form' => $form->createView(),
+            'books' => $books,
         ]);
     }
 }
