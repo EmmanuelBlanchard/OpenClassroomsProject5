@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Book;
 use App\Entity\Image;
 use App\Form\BookFormType;
+use App\Service\UploaderHelper;
 use App\Form\BookContactFormType;
 use Gedmo\Sluggable\Util\Urlizer;
 use App\Repository\BookRepository;
@@ -125,7 +126,7 @@ class BookController extends AbstractController
     /**
      * @Route("/update/{id}", name="update")
      */
-    public function update(Book $book, Request $request): Response
+    public function update(Book $book, Request $request, UploaderHelper $uploaderHelper): Response
     {
         $form = $this->createForm(BookFormType::class, $book);
         
@@ -135,16 +136,10 @@ class BookController extends AbstractController
             /** @var UploadedFile $uploadedFile */
             $uploadedFile = $form['imageFile']->getData();
             if ($uploadedFile) {
-                $destination = $this->getParameter('kernel.project_dir').'/public/uploads/book_image';
-                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$uploadedFile->guessExtension();
-                $uploadedFile->move(
-                    $destination,
-                    $newFilename
-                );
+                $newFilename = $uploaderHelper->uploadBookImage($uploadedFile);
                 $book->setImageFilename($newFilename);
             }
-
+            
             $book->setUser($this->getUser());
             $book->setActive(false);
             $book->setExchangeRequest(false);
