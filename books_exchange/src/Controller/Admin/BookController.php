@@ -7,7 +7,6 @@ use App\Entity\Image;
 use App\Form\BookFormType;
 use App\Service\UploaderHelper;
 use App\Form\BookContactFormType;
-use Gedmo\Sluggable\Util\Urlizer;
 use App\Repository\BookRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
@@ -38,7 +37,7 @@ class BookController extends AbstractController
     /**
      * @Route("/add", name="add")
      */
-    public function add(Request $request): Response
+    public function add(Request $request, UploaderHelper $uploaderHelper): Response
     {
         $book = new Book;
 
@@ -47,21 +46,11 @@ class BookController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // We recover the transmitted images
-            $images = $form->get('image')->getData();
-            // We loop on the images
-            foreach ($images as $image) {
-                // We generate a new file name
-                $file = md5(uniqid()) . '.' . $image->guessExtension();
-                // We copy the file in the uploads folder
-                $image->move(
-                    $this->getParameter('images_directory'),
-                    $file
-                );
-                // We store the image in the database (its name)
-                $img = new Image();
-                $img->setName($file);
-                $book->addImage($img);
+            /** @var UploadedFile $uploadedFile */
+            $uploadedFile = $form['imageFile']->getData();
+            if ($uploadedFile) {
+                $newFilename = $uploaderHelper->uploadBookImage($uploadedFile);
+                $book->setImageFilename($newFilename);
             }
             
             $book->setUser($this->getUser());
@@ -139,7 +128,7 @@ class BookController extends AbstractController
                 $newFilename = $uploaderHelper->uploadBookImage($uploadedFile);
                 $book->setImageFilename($newFilename);
             }
-            
+
             $book->setUser($this->getUser());
             $book->setActive(false);
             $book->setExchangeRequest(false);

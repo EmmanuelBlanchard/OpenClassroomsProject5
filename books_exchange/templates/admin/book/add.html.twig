@@ -76,18 +76,7 @@
 			</div>
 		</div>
 
-		<div class="form-control">
-			<i class="bi bi-check-circle"></i>
-			<i class="bi bi-exclamation-circle"></i>
-			{{ form_label(addBookForm.image) }}
-			{{ form_widget(addBookForm.image, {'attr': {'class': 'form-control'}}) }}
-
-			<small>{{ form_help(addBookForm.image) }}</small>
-
-			<div class="form-error">
-				{{ form_errors(addBookForm.image) }}
-			</div>
-		</div>
+		{{ form_row(addBookForm.imageFile) }}
 
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>

@@ -13,8 +13,9 @@ use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -48,6 +49,9 @@ class BookFormType extends AbstractType
                 'label' => false,
                 'mapped' => false,
                 'required' => false,
+                'constraints' => [
+                    new Image()
+                ]
             ])
             ->add('language', EntityType::class, [
                 'class' => Language::class,
