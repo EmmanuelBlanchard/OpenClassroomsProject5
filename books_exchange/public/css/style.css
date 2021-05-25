@@ -273,6 +273,42 @@ tbody>tr>td {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
+/* Template: search/book.html.twig */
+.advancedSearchBookH1 {
+    color: #0854A2;
+    margin-bottom: 1rem;
+}
+
+.noResultAdvancedSearchBookH2 {
+    color: #0854A2;
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+h2.resultAdvancedSearchBookH2 {
+    color: #0854A2;
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+div.row>.advancedSearchBookDiv {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* form of Template: search/book.html.twig */
+#advanced_search_book_form {
+    margin-left: 1.5rem;
+}
+
+div#advanced_search_book_form>div>select,
+div#advanced_search_book_form>div>button {
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+
 .h2IntroductoryContent {
     color: #000000;
     font-size: 1.48em;

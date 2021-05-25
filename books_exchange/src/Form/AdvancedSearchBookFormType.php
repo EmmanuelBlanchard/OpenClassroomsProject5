@@ -25,7 +25,7 @@ class AdvancedSearchBookFormType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Auteur',
                 'attr' => [
-                    'class' => 'form-control mt-2',
+                    'class' => 'form-control',
                 ],
                 'required' => false
             ])
@@ -34,7 +34,7 @@ class AdvancedSearchBookFormType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Catégorie',
                 'attr' => [
-                    'class' => 'form-control mt-2',
+                    'class' => 'form-control',
                 ],
                 'required' => false
             ])
@@ -43,7 +43,7 @@ class AdvancedSearchBookFormType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Format',
                 'attr' => [
-                    'class' => 'form-control mt-2',
+                    'class' => 'form-control',
                 ],
                 'required' => false
             ])
@@ -52,7 +52,7 @@ class AdvancedSearchBookFormType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Langue',
                 'attr' => [
-                    'class' => 'form-control mt-2',
+                    'class' => 'form-control',
                 ],
                 'required' => false
             ])
@@ -61,7 +61,7 @@ class AdvancedSearchBookFormType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Éditeur',
                 'attr' => [
-                    'class' => 'form-control mt-2',
+                    'class' => 'form-control',
                 ],
                 'required' => false
             ])
@@ -70,7 +70,7 @@ class AdvancedSearchBookFormType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'État',
                 'attr' => [
-                    'class' => 'form-control mt-2',
+                    'class' => 'form-control',
                 ],
                 'required' => false
             ])

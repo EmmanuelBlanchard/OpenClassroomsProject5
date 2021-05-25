@@ -185,44 +185,12 @@ class SearchController extends AbstractController
         $searchBookForm->handleRequest($request);
 
         if ($searchBookForm->isSubmitted() && $searchBookForm->isValid()) {
-            // Returns a array
-            $author = $searchBookForm->getData("author");
-            // Returns null when select a field
-            //$author = $request->query->get('category');
-            //dd($author);
-            
-            $category = $searchBookForm->getData('category');
-            $format = $searchBookForm->getData('format');
-            $language = $searchBookForm->getData('language');
-            $publisher = $searchBookForm->getData('publisher');
-            $state = $searchBookForm->getData('state');
-            //$zipCode = $searchBookForm->getData('zipCode');
-            //$city = $searchBookForm->getData('city');
-            
             $criteria = $searchBookForm->getData();
             //dd($criteria);
             
-            /*
-            $books = $bookRepo->searchBook(
-                $author,
-                $category,
-                $format,
-                $language,
-                $publisher,
-                $state
-            );
-            */
+            $books = $bookRepo->advancedSearchBook($criteria);
             
-            $books = $bookRepo->searchBook(
-                $author = $request->query->get("author"),
-                $category = $request->query->get("category"),
-                $format = $request->query->get("format"),
-                $language = $request->query->get("language"),
-                $publisher = $request->query->get("publisher"),
-                $state = $request->query->get("state"),
-            );
-            
-            dd($books);
+            //dd($books);
             return $this->render('search/book.html.twig', [
                 'advanced_search_form' => $searchBookForm->createView(),
                 'books' => $books

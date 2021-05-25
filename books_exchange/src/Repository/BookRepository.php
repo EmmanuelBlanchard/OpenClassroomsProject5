@@ -287,47 +287,35 @@ class BookRepository extends ServiceEntityRepository
      * Advanced search for books according to the form
      * @return void
      */
-    public function searchBook($author = null, $category = null, $format = null, $language = null, $publisher = null, $state = null)
+    public function advancedSearchBook($criteria)
     {
         $query = $this->createQueryBuilder('b');
         $query->where('b.active = 1');
         $query->andWhere('b.exchangeRequest = 0');
 
-        if ($author != null) {
-            $query->leftJoin('b.author', 'a');
-            $query->andWhere('a.id = :id')
-                ->setParameter('id', $author);
-        }
+        $query->leftJoin('b.author', 'a');
+        $query->andWhere('a.name = :authorName')
+            ->setParameter('authorName', $criteria['author']->getName());
 
-        if ($category != null) {
-            $query->leftJoin('b.category', 'c');
-            $query->andWhere('c.id = :id')
-                ->setParameter('id', $category);
-        }
+        $query->leftJoin('b.category', 'c');
+        $query->andWhere('c.name = :categoryName')
+            ->setParameter('categoryName', $criteria['category']->getName());
 
-        if ($format != null) {
-            $query->leftJoin('b.format', 'f');
-            $query->andWhere('f.id = :id')
-                ->setParameter('id', $format);
-        }
+        $query->leftJoin('b.format', 'f');
+        $query->andWhere('f.name = :formatName')
+            ->setParameter('formatName', $criteria['format']->getName());
 
-        if ($language != null) {
-            $query->leftJoin('b.language', 'l');
-            $query->andWhere('l.id = :id')
-                ->setParameter('id', $language);
-        }
+        $query->leftJoin('b.language', 'l');
+        $query->andWhere('l.name = :languageName')
+            ->setParameter('languageName', $criteria['language']->getName());
 
-        if ($publisher != null) {
-            $query->leftJoin('b.publisher', 'p');
-            $query->andWhere('p.id = :id')
-                ->setParameter('id', $publisher);
-        }
-
-        if ($state != null) {
-            $query->leftJoin('b.state', 's');
-            $query->andWhere('s.id = :id')
-                ->setParameter('id', $state);
-        }
+        $query->leftJoin('b.publisher', 'p');
+        $query->andWhere('p.name = :publisherName')
+            ->setParameter('publisherName', $criteria['publisher']->getName());
+       
+        $query->leftJoin('b.state', 's');
+        $query->andWhere('s.name = :stateName')
+            ->setParameter('stateName', $criteria['state']->getName());
 
         return $query->getQuery()->getResult();
     }
