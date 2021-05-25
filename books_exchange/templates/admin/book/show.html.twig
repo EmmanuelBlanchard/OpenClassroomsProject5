@@ -16,9 +16,7 @@
 		<div class="card">
 			<div class="row g-0">
 				<div class="col-md-4">
-					{% for image in book.images %}
-						<img src="{{ asset('/uploads/' ~ image.name) }}" alt="Image">
-					{% endfor %}
+					<img src="{{ asset('/uploads/book_image/' ~ book.imageFilename) }}" alt="Image">
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">

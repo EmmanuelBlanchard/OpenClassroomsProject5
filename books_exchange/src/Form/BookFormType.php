@@ -45,14 +45,6 @@ class BookFormType extends AbstractType
                 'language' => 'fr',
                 ],
             ])
-            ->add('imageFile', FileType::class, [
-                'label' => false,
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new Image()
-                ]
-            ])
             ->add('language', EntityType::class, [
                 'class' => Language::class,
                 'label' => 'Langage',
@@ -67,6 +59,20 @@ class BookFormType extends AbstractType
             ])
             ->add('validate', SubmitType::class, [
                 'label'=>'Valider',
+            ])
+        ;
+
+        $imageConstraints = [
+            new Image([
+                'maxSize' => '5M'
+            ])
+        ];
+        $builder
+            ->add('imageFile', FileType::class, [
+                'label' => false,
+                'mapped' => false,
+                'required' => false,
+                'constraints' => $imageConstraints
             ])
         ;
     }
