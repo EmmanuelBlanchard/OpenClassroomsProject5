@@ -6,6 +6,7 @@ use App\Entity\Book;
 use App\Entity\Image;
 use App\Form\BookFormType;
 use App\Form\BookContactFormType;
+use Gedmo\Sluggable\Util\Urlizer;
 use App\Repository\BookRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +14,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -130,21 +132,17 @@ class BookController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // We recover the transmitted images
-            $images = $form->get('image')->getData();
-            // We loop on the images
-            foreach ($images as $image) {
-                // We generate a new file name
-                $file = md5(uniqid()) . '.' . $image->guessExtension();
-                // We copy the file in the uploads folder
-                $image->move(
-                    $this->getParameter('images_directory'),
-                    $file
+            /** @var UploadedFile $uploadedFile */
+            $uploadedFile = $form['imageFile']->getData();
+            if ($uploadedFile) {
+                $destination = $this->getParameter('kernel.project_dir').'/public/uploads/book_image';
+                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$uploadedFile->guessExtension();
+                $uploadedFile->move(
+                    $destination,
+                    $newFilename
                 );
-                // We store the image in the database (its name)
-                $img = new Image();
-                $img->setName($file);
-                $book->addImage($img);
+                $book->setImageFilename($newFilename);
             }
 
             $book->setUser($this->getUser());

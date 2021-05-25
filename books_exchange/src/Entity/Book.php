@@ -117,6 +117,11 @@ class Book
      */
     private $images;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imageFilename;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -319,6 +324,18 @@ class Book
                 $image->setBook(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImageFilename(): ?string
+    {
+        return $this->imageFilename;
+    }
+
+    public function setImageFilename(string $imageFilename): self
+    {
+        $this->imageFilename = $imageFilename;
 
         return $this;
     }
