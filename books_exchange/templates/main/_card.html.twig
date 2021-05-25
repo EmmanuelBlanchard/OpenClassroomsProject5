@@ -1,9 +1,7 @@
 <div class="card">
     <div class="row g-0">
         <div class="card-picture col-md-5">
-            {% for image in book.images %}
-                <img src="{{ asset('/uploads/' ~ image.name) }}" alt="Image" class="card-img">
-            {% endfor %}
+            <img src="{{ asset('/uploads/book_image/' ~ book.imageFilename)imagine_filter('books') }}" alt="Couverture du livre {{book.title}}." class="card-img">
         </div>
         <div class="col-md-7">
             <div class="card-body">
