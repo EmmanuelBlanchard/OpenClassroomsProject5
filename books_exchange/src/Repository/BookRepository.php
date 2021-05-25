@@ -370,6 +370,109 @@ class BookRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
+    /**
+     * Search for books by title a To z
+     * @return void|array
+     */
+    public function searchBooksByTitleAToZ($page, $limit, $words = null)
+    {
+        $query = $this->createQueryBuilder('book');
+        $query->where('book.active = 1');
+        $query->andWhere('book.exchangeRequest = 0');
+
+        if ($words != null) {
+            $query->andWhere('book.title = :title')
+                ->setParameter('title', $words);
+        }
+
+        $query->orderBy('b.createdAt', 'ASC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Search for books by title z To a
+     * @return void|array
+     */
+    public function searchBooksByTitleZToA($page, $limit, $words = null)
+    {
+        $query = $this->createQueryBuilder('book');
+        $query->where('book.active = 1');
+        $query->andWhere('book.exchangeRequest = 0');
+
+        if ($words != null) {
+            $query->andWhere('book.title = :title')
+                ->setParameter('title', $words);
+        }
+
+        $query->orderBy('b.createdAt', 'DESC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Search for books by author a To z
+     * @return void|array
+     */
+    public function searchBooksByAuthorAToZ($page, $limit, $words = null, $author = null)
+    {
+        $query = $this->createQueryBuilder('book');
+        $query->where('book.active = 1');
+        $query->andWhere('book.exchangeRequest = 0');
+
+        if ($words != null) {
+            $query->andWhere('book.title = :title')
+                ->setParameter('title', $words);
+        }
+        if ($author != null) {
+            $query->leftJoin('b.author', 'a');
+            $query->andWhere('a.id = :id')
+                ->setParameter('id', $author);
+        }
+
+        $query->orderBy('b.createdAt', 'ASC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Search for books by author z To a
+     * @return void|array
+     */
+    public function searchBooksByAuthorZToA($page, $limit, $words = null, $author = null)
+    {
+        $query = $this->createQueryBuilder('book');
+        $query->where('book.active = 1');
+        $query->andWhere('book.exchangeRequest = 0');
+
+        if ($words != null) {
+            $query->andWhere('book.title = :title')
+                ->setParameter('title', $words);
+        }
+        if ($author != null) {
+            $query->leftJoin('b.author', 'a');
+            $query->andWhere('a.id = :id')
+                ->setParameter('id', $author);
+        }
+
+        $query->orderBy('b.createdAt', 'DESC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+    
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
