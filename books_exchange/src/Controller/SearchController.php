@@ -181,16 +181,14 @@ class SearchController extends AbstractController
 
         $repository = $this->getDoctrine()->getRepository(Book::class);
         $books = $repository->findAll();
-        //dd($books);
+
         $searchBookForm->handleRequest($request);
 
         if ($searchBookForm->isSubmitted() && $searchBookForm->isValid()) {
             $criteria = $searchBookForm->getData();
-            //dd($criteria);
-            
+        
             $books = $bookRepo->advancedSearchBook($criteria);
             
-            //dd($books);
             return $this->render('search/book.html.twig', [
                 'advanced_search_form' => $searchBookForm->createView(),
                 'books' => $books
