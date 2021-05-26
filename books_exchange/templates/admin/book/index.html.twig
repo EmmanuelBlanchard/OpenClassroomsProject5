@@ -44,42 +44,42 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for item in book %}
+				{% for book in books %}
 					<tr>
-						<th scope="row">{{item.id}}</th>
-						<td>{{item.title}}</td>
-						<td>{{item.createdAt|date('d/m/Y')}}</td>
+						<th scope="row">{{book.id}}</th>
+						<td>{{book.title}}</td>
+						<td>{{book.createdAt|date('d/m/Y')}}</td>
 						<td>
-							{% if item.active %}
+							{% if book.active %}
 								Oui
 							{% else %}
 								Non
 							{% endif %}
 						</td>
-						<td>{{item.author}}</td>
-						<td>{{item.category}}</td>
-						<td>{{item.publisher}}</td>
-						<td>{{item.summary|striptags|raw}}</td>
-						<td>{{item.language}}</td>
-						<td>{{item.format}}</td>
-						<td>{{item.state}}</td>
+						<td>{{book.author}}</td>
+						<td>{{book.category}}</td>
+						<td>{{book.publisher}}</td>
+						<td>{{book.summary|striptags|raw}}</td>
+						<td>{{book.language}}</td>
+						<td>{{book.format}}</td>
+						<td>{{book.state}}</td>
 						<td>
-							{% if item.exchangeRequest %}
+							{% if book.exchangeRequest %}
 								Oui
 							{% else %}
 								Non
 							{% endif %}
 						</td>
-						<td>{{item.exchangeRequestAt|date('d/m/Y')}}</td>
+						<td>{{book.exchangeRequestAt|date('d/m/Y')}}</td>
 						<td>
-							<a class="btn btn-primary m-2" href="{{ path("admin_book_show", {slug: item.slug}) }}" role="button">Voir</a>
-							{% if item.active %}
-								<a class="btn btn-primary m-2" href="{{ path('admin_book_remove_exchange', {'id': item.id }) }}" role="button">Retirer des échanges</a>
+							<a class="btn btn-primary m-2" href="{{ path("admin_book_show", {slug: book.slug}) }}" role="button">Voir</a>
+							{% if book.active %}
+								<a class="btn btn-primary m-2" href="{{ path('admin_book_remove_exchange', {'id': book.id }) }}" role="button">Retirer des échanges</a>
 							{% else %}
-								<a class="btn btn-primary m-2" href="{{ path('admin_book_add_exchange', {'id': item.id }) }}" role="button">Ajouter aux échanges</a>
+								<a class="btn btn-primary m-2" href="{{ path('admin_book_add_exchange', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
 							{% endif %}
-							<a class="btn btn-warning m-2" href="{{ path("admin_book_update", {id: item.id}) }}" role="button">Modifier</a>
-							<a class="btn btn-danger m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{item.id}}" data-title="{{item.title}}" data-author="{{item.author}}" data-publisher="{{item.publisher}}" data-format="{{item.format}}" data-state="{{item.state}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
+							<a class="btn btn-warning m-2" href="{{ path("admin_book_update", {id: book.id}) }}" role="button">Modifier</a>
+							<a class="btn btn-danger m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete" data-id="{{book.id}}" data-title="{{book.title}}" data-author="{{book.author}}" data-publisher="{{book.publisher}}" data-format="{{book.format}}" data-state="{{book.state}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
 								Supprimer
 							</a>
 						</td>

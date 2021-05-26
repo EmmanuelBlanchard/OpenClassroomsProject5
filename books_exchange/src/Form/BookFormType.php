@@ -57,9 +57,6 @@ class BookFormType extends AbstractType
                 'class' => State::class,
                 'label' => 'État',
             ])
-            ->add('validate', SubmitType::class, [
-                'label'=>'Valider',
-            ])
         ;
 
         $imageConstraints = [

@@ -30,7 +30,7 @@ class BookController extends AbstractController
     public function index(BookRepository $bookRepo): Response
     {
         return $this->render('admin/book/index.html.twig', [
-            'book' => $bookRepo->findAll()
+            'books' => $bookRepo->findAll()
         ]);
     }
 
@@ -65,7 +65,7 @@ class BookController extends AbstractController
         }
 
         return $this->render('admin/book/add.html.twig', [
-            'addBookForm' => $form->createView()
+            'bookForm' => $form->createView()
         ]);
     }
 
@@ -142,7 +142,7 @@ class BookController extends AbstractController
         }
 
         return $this->render('admin/book/update.html.twig', [
-            'updateBookForm' => $form->createView()
+            'bookForm' => $form->createView()
         ]);
     }
 
