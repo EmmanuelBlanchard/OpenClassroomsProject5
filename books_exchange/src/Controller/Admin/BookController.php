@@ -3,7 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Book;
-use App\Entity\Image;
 use App\Form\BookFormType;
 use App\Service\UploaderHelper;
 use App\Form\BookContactFormType;
@@ -13,7 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -200,31 +198,5 @@ class BookController extends AbstractController
             $this->addFlash('message', 'Livre supprimé avec succès');
         }
         return $this->redirectToRoute('admin_book_home');
-    }
-
-    /**
-     * @Route("/delete/image/{id}", name="delete_image", methods={"DELETE"})
-     */
-    public function deleteImage(Image $image, Request $request)
-    {
-        $data = json_decode($request->getContent(), true);
-
-        // We check if the token is valid
-        if ($this->isCsrfTokenValid('delete'.$image->getId(), $data['_token'])) {
-            // We retrieve the name of the image
-            $name = $image->getName();
-            // We delete the file
-            unlink($this->getParameter('images_directory').'/'.$name);
-
-            // Delete the entry from the database
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($image);
-            $entityManager->flush();
-
-            // We respond in json
-            return new JsonResponse(['success' => 1]);
-        } else {
-            return new JsonResponse(['error' => 'Token Invalide'], 400);
-        }
     }
 }
