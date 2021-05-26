@@ -39,6 +39,8 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var User $user */
+            $user = $form->getData();
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
@@ -46,6 +48,10 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            // be absolutely sure they agree
+            if (true === $form['agreeTerms']->getData()) {
+                $user->agreeTerms();
+            }
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
