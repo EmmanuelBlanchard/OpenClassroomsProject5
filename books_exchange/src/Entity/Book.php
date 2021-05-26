@@ -2,9 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\BookRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -24,9 +21,8 @@ class Book
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(
-     *      message = "Veuillez saisir un titre",
-     * )
+     * @Assert\NotBlank(message="Veuillez saisir un titre de livre")
+     * @Assert\NotNull(message="Veuillez définir le titre du livre")
      */
     private $title;
 
@@ -50,50 +46,63 @@ class Book
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Veuillez saisir le proprietaire du livre")
+     * @Assert\NotNull(message="Veuillez définir le proprietaire du livre")
      */
     private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Veuillez saisir la catégorie du livre")
+     * @Assert\NotNull(message="Veuillez définir la catégorie du livre")
      */
     private $category;
 
     /**
      * @ORM\ManyToOne(targetEntity=Publisher::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Veuillez saisir l'éditeur du livre")
+     * @Assert\NotNull(message="Veuillez définir l'éditeur du livre")
      */
     private $publisher;
 
     /**
      * @ORM\ManyToOne(targetEntity=Language::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Veuillez saisir la langue du livre")
+     * @Assert\NotNull(message="Veuillez définir la langue du livre")
      */
     private $language;
 
     /**
      * @ORM\ManyToOne(targetEntity=Format::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Veuillez saisir un format de livre")
+     * @Assert\NotNull(message="Veuillez définir un format de livre")
      */
     private $format;
 
     /**
      * @ORM\ManyToOne(targetEntity=State::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Veuillez saisir l'état du livre")
+     * @Assert\NotNull(message="Veuillez définir l'état du livre")
      */
     private $state;
 
     /**
      * @ORM\ManyToOne(targetEntity=Author::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Veuillez saisir un auteur")
+     * @Assert\NotNull(message="Veuillez définir un auteur")
      */
     private $author;
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank(
-     *     message = "Veuillez saisir un résumé",
-     * )
+     * @Assert\NotBlank(message="Veuillez saisir un résumé")
+     * @Assert\NotNull(message="Veuillez définir un résumé")
      */
     private $summary;
 
@@ -116,11 +125,6 @@ class Book
      * @ORM\Column(type="string", length=255)
      */
     private $imageFilename;
-
-    public function __construct()
-    {
-        $this->images = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
