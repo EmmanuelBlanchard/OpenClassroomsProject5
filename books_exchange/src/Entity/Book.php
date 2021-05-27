@@ -309,7 +309,7 @@ class Book
         return $this;
     }
 
-    public function getImagePath()
+    public function getImagePath(): ?string
     {
         return UploaderHelper::BOOK_IMAGE.'/'.$this->getImageFilename();
     }
