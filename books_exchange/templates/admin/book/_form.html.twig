@@ -1,117 +1,124 @@
 {{ form_start(bookForm, {'attr': {'class': 'form'}}) }}
 
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.title) }}
-    {{ form_widget(bookForm.title) }}
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.title) }}
+        {{ form_widget(bookForm.title) }}
 
-    <small>{{ form_help(bookForm.title) }}</small>
+        <small>{{ form_help(bookForm.title) }}</small>
 
-    <div class="form-error">
-        {{ form_errors(bookForm.title) }}
+        <div class="form-error">
+            {{ form_errors(bookForm.title) }}
+        </div>
     </div>
-</div>
 
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.author) }}
-    {{ form_widget(bookForm.author) }}
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.author) }}
+        {{ form_widget(bookForm.author) }}
 
-    <small>{{ form_help(bookForm.author) }}</small>
+        <small>{{ form_help(bookForm.author) }}</small>
 
-    <div class="form-error">
-        {{ form_errors(bookForm.author) }}
+        <div class="form-error">
+            {{ form_errors(bookForm.author) }}
+        </div>
     </div>
-</div>
 
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.category) }}
-    {{ form_widget(bookForm.category) }}
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.category) }}
+        {{ form_widget(bookForm.category) }}
 
-    <small>{{ form_help(bookForm.category) }}</small>
+        <small>{{ form_help(bookForm.category) }}</small>
 
-    <div class="form-error">
-        {{ form_errors(bookForm.category) }}
+        <div class="form-error">
+            {{ form_errors(bookForm.category) }}
+        </div>
     </div>
-</div>
 
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.publisher) }}
-    {{ form_widget(bookForm.publisher) }}
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.publisher) }}
+        {{ form_widget(bookForm.publisher) }}
 
-    <small>{{ form_help(bookForm.publisher) }}</small>
+        <small>{{ form_help(bookForm.publisher) }}</small>
 
-    <div class="form-error">
-        {{ form_errors(bookForm.publisher) }}
+        <div class="form-error">
+            {{ form_errors(bookForm.publisher) }}
+        </div>
     </div>
-</div>
 
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.summary) }}
-    {{ form_widget(bookForm.summary) }}
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.summary) }}
+        {{ form_widget(bookForm.summary) }}
 
-    <small>{{ form_help(bookForm.summary) }}</small>
+        <small>{{ form_help(bookForm.summary) }}</small>
 
-    <div class="form-error">
-        {{ form_errors(bookForm.summary) }}
+        <div class="form-error">
+            {{ form_errors(bookForm.summary) }}
+        </div>
     </div>
-</div>
 
-{{ form_row(bookForm.imageFile, {
-        attr: {
-            'placeholder': 'Choisissez une image de couverture du livre'
-        }
-    })
-}}
-
-
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.language) }}
-    {{ form_widget(bookForm.language) }}
-
-    <small>{{ form_help(bookForm.language) }}</small>
-
-    <div class="form-error">
-        {{ form_errors(bookForm.language) }}
+    <div class="row">
+        <div class="col-7">
+            {{ form_row(bookForm.imageFile, {
+                attr: {
+                    'placeholder': 'Choisissez une image de couverture du livre'
+                }
+            }) }}
+        </div>
+        <div class="col-4">
+            {% if bookForm.vars.data.imageFilename %}
+                <img src="{{ uploaded_asset(bookForm.vars.data.imagePath)|imagine_filter('squared_thumbnail_small') }}" height="100">
+            {% endif %}
+        </div>
     </div>
-</div>
 
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.format) }}
-    {{ form_widget(bookForm.format) }}
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.language) }}
+        {{ form_widget(bookForm.language) }}
 
-    <small>{{ form_help(bookForm.format) }}</small>
+        <small>{{ form_help(bookForm.language) }}</small>
 
-    <div class="form-error">
-        {{ form_errors(bookForm.format) }}
+        <div class="form-error">
+            {{ form_errors(bookForm.language) }}
+        </div>
     </div>
-</div>
 
-<div class="form-control">
-    <i class="bi bi-check-circle"></i>
-    <i class="bi bi-exclamation-circle"></i>
-    {{ form_label(bookForm.state) }}
-    {{ form_widget(bookForm.state) }}
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.format) }}
+        {{ form_widget(bookForm.format) }}
 
-    <small>{{ form_help(bookForm.state) }}</small>
+        <small>{{ form_help(bookForm.format) }}</small>
 
-    <div class="form-error">
-        {{ form_errors(bookForm.state) }}
+        <div class="form-error">
+            {{ form_errors(bookForm.format) }}
+        </div>
     </div>
-</div>
 
-<button type="submit" class="btn btn-primary">{{ button_text }}</button>
+    <div class="form-control">
+        <i class="bi bi-check-circle"></i>
+        <i class="bi bi-exclamation-circle"></i>
+        {{ form_label(bookForm.state) }}
+        {{ form_widget(bookForm.state) }}
+
+        <small>{{ form_help(bookForm.state) }}</small>
+
+        <div class="form-error">
+            {{ form_errors(bookForm.state) }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ button_text }}</button>
 
 {{ form_end(bookForm) }}
