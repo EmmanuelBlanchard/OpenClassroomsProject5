@@ -65,7 +65,13 @@
     </div>
 </div>
 
-{{ form_row(bookForm.imageFile) }}
+{{ form_row(bookForm.imageFile, {
+        attr: {
+            'placeholder': 'Choisissez une image de couverture du livre'
+        }
+    })
+}}
+
 
 <div class="form-control">
     <i class="bi bi-check-circle"></i>

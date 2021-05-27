@@ -307,4 +307,9 @@ class Book
 
         return $this;
     }
+
+    public function getImagePath()
+    {
+        return 'uploads/book_image/'.$this->getImageFilename();
+    }
 }
