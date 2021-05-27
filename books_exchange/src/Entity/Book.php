@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Service\UploaderHelper;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\BookRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -310,6 +311,6 @@ class Book
 
     public function getImagePath()
     {
-        return 'uploads/book_image/'.$this->getImageFilename();
+        return UploaderHelper::BOOK_IMAGE.'/'.$this->getImageFilename();
     }
 }

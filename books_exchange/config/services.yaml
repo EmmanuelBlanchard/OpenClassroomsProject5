@@ -44,3 +44,5 @@ services:
             - '@twig'
         tags:
             - { name: kernel.event_listener, event: kernel.request }
+    
+    Symfony\Component\Asset\Context\RequestStackContext: '@assets.context'
