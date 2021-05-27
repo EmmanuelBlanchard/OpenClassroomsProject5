@@ -47,8 +47,6 @@ class Book
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="books")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\NotBlank(message="Veuillez saisir le proprietaire du livre")
-     * @Assert\NotNull(message="Veuillez définir le proprietaire du livre")
      */
     private $user;
 

@@ -52,7 +52,7 @@ class BookController extends AbstractController
             }
             
             $book->setUser($this->getUser());
-            $book->setActive(false);
+            $book->setActive(true);
             $book->setExchangeRequest(false);
             
             $entityManager = $this->getDoctrine()->getManager();
@@ -128,7 +128,7 @@ class BookController extends AbstractController
             }
 
             $book->setUser($this->getUser());
-            $book->setActive(false);
+            $book->setActive(true);
             $book->setExchangeRequest(false);
 
             $entityManager = $this->getDoctrine()->getManager();
