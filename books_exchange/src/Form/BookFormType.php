@@ -69,7 +69,7 @@ class BookFormType extends AbstractType
         ];
         $builder
             ->add('imageFile', FileType::class, [
-                'label' => false,
+                'label' => 'Choisissez une image de couverture du livre',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => $imageConstraints
