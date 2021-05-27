@@ -23,6 +23,9 @@ class BookFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $book = $options['data'] ?? null;
+        $isEdit = $book && $book->getId();
+
         $builder
             ->add('title', TextType::class, [
                 'label'=>'Titre',
