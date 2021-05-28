@@ -36,7 +36,7 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
             $book->setState($this->getRandomReference(State::class));
             $book->setAuthor($this->getRandomReference(Author::class));
             $book->setSummary(
-                $this->faker->boolean ? $this->faker->paragraph : $this->faker->sentences(2, true)
+                $this->faker->boolean ? $this->faker->paragraph : $this->faker->sentences(5, true)
             );
             $book->setExchangeRequest(false);
             //$book->setExchangeRequest($this->faker->boolean(70));
