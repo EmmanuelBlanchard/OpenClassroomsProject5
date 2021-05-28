@@ -37,6 +37,28 @@ final class BookFactory extends ModelFactory
     {
         return [
             // TODO add your default values here (https://github.com/zenstruck/foundry#model-factories)
+            'title' => self::faker()->realText(50),
+            'createdAt' => self::faker()->dateTimeBetween('-1 months', '-1 seconds'),
+            'active' => true,
+            'user' => 'Mike Ferengi',
+            'category' => 'Computing',
+            'publisher' => 'Eyrolles',
+            'language' => 'French',
+            'Format' => 'Pocket',
+            'state' => 'Good state',
+            'author' => 'Amy Oort',
+            'summary' => <<<EOF
+            Hi! So... I'm having a *weird* day. Yesterday, I cast a spell
+            to make my dishes wash themselves. But while I was casting it,
+            I slipped a little and I think `I also hit my pants with the spell`.
+            When I woke up this morning, I caught a quick glimpse of my pants
+            opening the front door and walking out! I've been out all afternoon
+            (with no pants mind you) searching for them.
+            Does anyone have a spell to call your pants back?
+            EOF,
+            'exchangeRequest' => false,
+            'userexchange' => null,
+            'imageFilename' => null,
         ];
     }
 
