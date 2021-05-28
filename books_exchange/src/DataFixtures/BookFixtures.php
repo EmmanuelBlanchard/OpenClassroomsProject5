@@ -13,9 +13,8 @@ use App\Entity\Publisher;
 use App\Service\UploaderHelper;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\File\File;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class BookFixtures extends BaseFixture implements DependentFixtureInterface
+class BookFixtures extends BaseFixture
 {
     private static $bookImages = [
         'asteroid.jpeg',
@@ -54,18 +53,5 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
             $book->setImageFilename($imageFilename);
         });
         $manager->flush();
-    }
-
-    public function getDependencies()
-    {
-        return [
-            UserFixtures::class,
-            CategoryFixtures::class,
-            PublisherFixtures::class,
-            LanguageFixtures::class,
-            FormatFixtures::class,
-            StateFixtures::class,
-            AuthorFixtures::class,
-        ];
     }
 }
