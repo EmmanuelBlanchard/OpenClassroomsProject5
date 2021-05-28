@@ -3,43 +3,29 @@
 namespace App\DataFixtures;
 
 use App\Entity\State;
+use App\DataFixtures\BaseFixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 
-class StateFixtures extends Fixture
+class StateFixtures extends BaseFixture
 {
-    public function load(ObjectManager $manager)
-    {
-        $state = [
-            1 => [
-                'name' => 'Neuf'
-            ],
-            2 => [
-                'name' => 'A l’état neuf/comme neuf'
-            ],
-            3 => [
-                'name' => 'Excellent état'
-            ],
-            4 => [
-                'name' => 'Très bon état'
-            ],
-            5 => [
-                'name' => 'Bon état'
-            ],
-            6 => [
-                'name' => 'Acceptable'
-            ],
-            7 => [
-                'name' => 'Autre'
-            ],
-        ];
+    private static $bookState = [
+        'Neuf',
+        'A l’état neuf/comme neuf',
+        'Excellent état',
+        'Très bon état',
+        'Bon état',
+        'Acceptable',
+        'Autre',
+    ];
 
-        foreach($state as $key => $value) {
-            $state = new State();
-            $state->setName($value['name']);
+    public function loadData(ObjectManager $manager)
+    {
+        $this->createMany(State::class, 7, function (State $state, $count) use ($manager) {
+            $state->setName($this->faker->randomElement(self::$bookState));
+            
             $manager->persist($state);
-        }
-        
+        });
+
         $manager->flush();
     }
 }

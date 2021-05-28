@@ -3,121 +3,56 @@
 namespace App\DataFixtures;
 
 use App\Entity\Author;
+use App\DataFixtures\BaseFixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 
-class AuthorFixtures extends Fixture
+class AuthorFixtures extends BaseFixture
 {
-    public function load(ObjectManager $manager)
-    {
-        $author = [
-            1 => [
-                'name' => 'Toto'
-            ],
-            2 => [
-                'name' => 'John Doe'
-            ],
-            3 => [
-                'name' => 'Isaac Asimov'
-            ],
-            4 => [
-                'name' => 'J. K. Rowling'
-            ],
-            5 => [
-                'name' => 'Anne de Kinkelin'
-            ],
-            6 => [
-                'name' => 'Anne-Gaëlle Huon'
-            ],
-            7 => [
-                'name' => 'Valérie Perrin'
-            ],
-            8 => [
-                'name' => 'Marc Dugain'
-            ],
-            9 => [
-                'name' => 'Hervé Le Tellier'
-            ],
-            10 => [
-                'name' => 'Adeline Dieudonné'
-            ],
-            11 => [
-                'name' => 'Emilie Besse'
-            ],
-            12 => [
-                'name' => 'Delphine de Vigan'
-            ],
-            13 => [
-                'name' => 'Agnès Martin-Lugand'
-            ],
-            14 => [
-                'name' => 'Édouard Louis'
-            ],
-            15 => [
-                'name' => 'Adèle Bréau'
-            ],
-            16 => [
-                'name' => 'Adélaïde de Clermont-Tonnerre'
-            ],
-            17 => [
-                'name' => 'Sophie Henrionnet'
-            ],
-            18 => [
-                'name' => 'Katja Lasan'
-            ],
-            19 => [
-                'name' => 'Mélissa Da Costa'
-            ],
-            20 => [
-                'name' => 'Emily Blaine'
-            ],
-            21 => [
-                'name' => 'Franck Thilliez'
-            ],
-            22 => [
-                'name' => 'Antoine Cristau'
-            ],
-            23 => [
-                'name' => 'Rudo'
-            ],
-            24 => [
-                'name' => 'Valentin Musso'
-            ],
-            25 => [
-                'name' => 'Julien Rampin'
-            ],
-            26 => [
-                'name' => 'Magne Hovden'
-            ],
-            27 => [
-                'name' => 'Olivier Bourdeaut'
-            ],
-            28 => [
-                'name' => 'Baptiste Beaulieu'
-            ],
-            29 => [
-                'name' => 'Aurélie Valognes'
-            ],
-            30 => [
-                'name' => 'Elena Ferrante'
-            ],
-            31 => [
-                'name' => 'Gaël Faye'
-            ],
-            32 => [
-                'name' => 'Nicolas Mathieu'
-            ],
-            33 => [
-                'name' => 'Pierre Lemaitre'
-            ],
-        ];
+    private static $bookAuthor = [
+        'Toto',
+        'John Doe',
+        'Isaac Asimov',
+        'J. K. Rowling',
+        'Anne de Kinkelin',
+        'Anne-Gaëlle Huon',
+        'Valérie Perrin',
+        'Marc Dugain',
+        'Hervé Le Tellier',
+        'Adeline Dieudonné',
+        'Emilie Besse',
+        'Delphine de Vigan',
+        'Agnès Martin-Lugand',
+        'Édouard Louis',
+        'Adèle Bréau',
+        'Adélaïde de Clermont-Tonnerre',
+        'Sophie Henrionnet',
+        'Katja Lasan',
+        'Mélissa Da Costa',
+        'Emily Blaine',
+        'Franck Thilliez',
+        'Antoine Cristau',
+        'Rudo',
+        'Valentin Musso',
+        'Julien Rampin',
+        'Magne Hovden',
+        'Olivier Bourdeaut',
+        'Baptiste Beaulieu',
+        'Aurélie Valognes',
+        'Elena Ferrante',
+        'Gaël Faye',
+        'Nicolas Mathieu',
+        'Pierre Lemaitre',
+        'Autre',
+    ];
 
-        foreach ($author as $key => $value) {
-            $author = new Author();
-            $author->setName($value['name']);
+    public function loadData(ObjectManager $manager)
+    {
+        $this->createMany(Author::class, 33, function (Author $author, $count) use ($manager) {
+            $author->setName($this->faker->randomElement(self::$bookAuthor));
+            
             $manager->persist($author);
-        }
-        
+        });
+
         $manager->flush();
     }
 }

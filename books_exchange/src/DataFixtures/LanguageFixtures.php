@@ -3,55 +3,33 @@
 namespace App\DataFixtures;
 
 use App\Entity\Language;
+use App\DataFixtures\BaseFixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 
-class LanguageFixtures extends Fixture
+class LanguageFixtures extends BaseFixture
 {
-    public function load(ObjectManager $manager)
-    {
-        $language = [
-            1 => [
-                'name' => 'Anglais'
-            ],
-            2 => [
-                'name' => 'Chinois mandarin'
-            ],
-            3 => [
-                'name' => 'Hindi'
-            ],
-            4 => [
-                'name' => 'Espagnol'
-            ],
-            5 => [
-                'name' => 'Français'
-            ],
-            6 => [
-                'name' => 'Arabe'
-            ],
-            7 => [
-                'name' => 'Bengali'
-            ],
-            8 => [
-                'name' => 'Russe'
-            ],
-            9 => [
-                'name' => 'Portugais'
-            ],
-            10 => [
-                'name' => 'Indonésien'
-            ],
-            11 => [
-                'name' => 'Autre'
-            ],
-        ];
+    private static $bookLanguage = [
+        'Anglais',
+        'Chinois mandarin',
+        'Hindi',
+        'Espagnol',
+        'Français',
+        'Arabe',
+        'Bengali',
+        'Russe',
+        'Portugais',
+        'Indonésien',
+        'Autre',
+    ];
 
-        foreach($language as $key => $value) {
-            $language = new Language();
-            $language->setName($value['name']);
+    public function loadData(ObjectManager $manager)
+    {
+        $this->createMany(Language::class, 11, function (Language $language, $count) use ($manager) {
+            $language->setName($this->faker->randomElement(self::$bookLanguage));
+            
             $manager->persist($language);
-        }
-        
+        });
+
         $manager->flush();
     }
 }
