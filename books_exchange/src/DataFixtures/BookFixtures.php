@@ -10,9 +10,9 @@ use App\Entity\Format;
 use App\Entity\Category;
 use App\Entity\Language;
 use App\Entity\Publisher;
-use App\DataFixtures\UserFixtures;
-use App\DataFixtures\CategoryFixtures;
+use App\Service\UploaderHelper;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class BookFixtures extends BaseFixture implements DependentFixtureInterface
@@ -22,6 +22,13 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
         'mercury.jpeg',
         'lightspeed.png',
     ];
+
+    private $uploaderHelper;
+    
+    public function __construct(UploaderHelper $uploaderHelper)
+    {
+        $this->uploaderHelper = $uploaderHelper;
+    }
 
     public function loadData(ObjectManager $manager)
     {
@@ -41,7 +48,10 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
             $book->setExchangeRequest(false);
             //$book->setExchangeRequest($this->faker->boolean(70));
             $book->setUserexchange($this->getRandomReference(User::class));
-            $book->setImageFilename($this->faker->randomElement(self::$bookImages));
+            $randomImage = $this->faker->randomElement(self::$bookImages);
+            $imageFilename = $this->uploaderHelper
+                ->uploadBookImage(new File(__DIR__.'/images/'.$randomImage));
+            $book->setImageFilename($imageFilename);
         });
         $manager->flush();
     }
