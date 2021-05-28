@@ -12,6 +12,7 @@ use App\Entity\Language;
 use App\Entity\Publisher;
 use App\Service\UploaderHelper;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\File;
 
 class BookFixtures extends BaseFixture
@@ -48,8 +49,11 @@ class BookFixtures extends BaseFixture
             //$book->setExchangeRequest($this->faker->boolean(70));
             $book->setUserexchange($this->getRandomReference(User::class));
             $randomImage = $this->faker->randomElement(self::$bookImages);
+            $fs = new Filesystem();
+            $targetPath = sys_get_temp_dir().'/'.$randomImage;
+            $fs->copy(__DIR__.'/images/'.$randomImage, $targetPath, true);
             $imageFilename = $this->uploaderHelper
-                ->uploadBookImage(new File(__DIR__.'/images/'.$randomImage));
+                ->uploadBookImage(new File($targetPath));
             $book->setImageFilename($imageFilename);
         });
         $manager->flush();
