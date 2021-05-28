@@ -2,14 +2,12 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Book;
 use App\Factory\BookFactory;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 
-class BookFixtures extends Fixture
+class BookFixtures extends BaseFixture
 {
-    public function load(ObjectManager $manager)
+    public function loadData(ObjectManager $manager)
     {
         BookFactory::new()->create(20);
         
