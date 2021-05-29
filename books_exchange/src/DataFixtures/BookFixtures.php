@@ -56,12 +56,7 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
             $book->setExchangeRequest(false);
             //$book->setExchangeRequest($this->faker->boolean(70));
             $book->setUserexchange($this->getRandomReference(User::class));
-            $randomImage = $this->faker->randomElement(self::$bookImages);
-            $fs = new Filesystem();
-            $targetPath = sys_get_temp_dir().'/'.$randomImage;
-            $fs->copy(__DIR__.'/images/'.$randomImage, $targetPath, true);
-            $imageFilename = $this->uploaderHelper
-                ->uploadBookImage(new File($targetPath));
+            $imageFilename = $this->fakeUploadImage();
             $book->setImageFilename($imageFilename);
         });
         $manager->flush();
@@ -78,5 +73,16 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
             StateFixtures::class,
             AuthorFixtures::class,
         ];
+    }
+
+    private function fakeUploadImage(): string
+    {
+        $randomImage = $this->faker->randomElement(self::$bookImages);
+        $fs = new Filesystem();
+        $targetPath = sys_get_temp_dir().'/'.$randomImage;
+        $fs->copy(__DIR__.'/images/'.$randomImage, $targetPath, true);
+        
+        return $this->uploaderHelper
+            ->uploadBookImage(new File($targetPath));
     }
 }
