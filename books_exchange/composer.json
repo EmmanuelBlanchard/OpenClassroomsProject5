@@ -1,4 +1,6 @@
 {
+    "name": "emmanuelblanchard/book-exchange",
+    "description": "book exchange website - project 5 of the DWJ course of OpenClassrooms",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
