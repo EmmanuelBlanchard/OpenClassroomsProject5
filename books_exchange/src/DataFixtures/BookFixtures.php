@@ -11,6 +11,8 @@ use App\Entity\Category;
 use App\Entity\Language;
 use App\Entity\Publisher;
 use App\Service\UploaderHelper;
+use App\DataFixtures\UserFixtures;
+use App\DataFixtures\CategoryFixtures;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\File;
@@ -22,6 +24,11 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
         'asteroid.jpeg',
         'mercury.jpeg',
         'lightspeed.png',
+        'colorfulgalaxy.jpeg',
+        'milkywaygalaxy.jpg',
+        'snowmountainunderstars.jpeg',
+        'redmoonduringnighttime',
+        'purpleandbluegalaxy.jpeg',
     ];
 
     private $uploaderHelper;
