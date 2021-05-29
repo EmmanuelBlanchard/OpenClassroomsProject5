@@ -25,9 +25,9 @@ class BookFixtures extends BaseFixture implements DependentFixtureInterface
         'mercury.jpeg',
         'lightspeed.png',
         'colorfulgalaxy.jpeg',
-        'milkywaygalaxy.jpg',
+        'milkywaygalaxy.jpeg',
         'snowmountainunderstars.jpeg',
-        'redmoonduringnighttime',
+        'redmoonduringnighttime.jpeg',
         'purpleandbluegalaxy.jpeg',
     ];
 
