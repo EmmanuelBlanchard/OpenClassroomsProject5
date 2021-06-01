@@ -85,6 +85,16 @@
 		</div>
 		
 		<div class="form-control">
+			<div class="col-12">
+				{{ form_row(addBookForm.imageFile, {
+					attr: {
+						'placeholder': 'Choisissez une image de couverture du livre'
+					}
+				}) }}
+			</div>
+		</div>
+
+		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(addBookForm.language) }}
@@ -122,6 +132,8 @@
 				{{ form_errors(addBookForm.state) }}
 			</div>
 		</div>
+
+		<button type="submit" class="btn btn-primary">Valider</button>
 
 		{{ form_end(addBookForm) }}
 

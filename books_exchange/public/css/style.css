@@ -997,6 +997,30 @@ div.form-control>input#inputPassword.form-control:focus {
     display: none;
 }
 
+/* See if no problem with the .form button.btn.btn-success.btn-lg selector */
+.form button {
+    background-color: #004B9B;
+    border: 2px solid #004B9B;
+    border-radius: 0.25rem;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form button:hover {
+    background-color: #003c7c;
+    border-color: #003063;
+}
+
+.form button:active {
+    background-color: #0a58ca;
+    border-color: #0a53be;
+}
+
 .form button.btn.btn-success.btn-lg {
     background-color: #186135;
     border: 2px solid #186135;
