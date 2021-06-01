@@ -997,7 +997,7 @@ div.form-control>input#inputPassword.form-control:focus {
     display: none;
 }
 
-/* See if no problem with the .form button.btn.btn-success.btn-lg selector */
+/* For the 'Valider' button of templates/book/add.html.twig */
 .form button {
     background-color: #004B9B;
     border: 2px solid #004B9B;
