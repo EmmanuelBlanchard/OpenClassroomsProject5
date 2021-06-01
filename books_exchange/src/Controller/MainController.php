@@ -45,10 +45,18 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/howitworks", name="how_it_works")
+     * @Route("/howitworks", name="app_how_it_works")
      */
     public function howItWorks(): Response
     {
-        return $this->render('main/howitworks.html.twig');
+        return $this->render('main/how_it_works.html.twig');
+    }
+
+    /**
+     * @Route("/faq", name="app_faq")
+     */
+    public function frequentlyAskedQuestions(): Response
+    {
+        return $this->render('main/faq.html.twig');
     }
 }
