@@ -61,6 +61,17 @@ ul {
     list-style-type: none;
 }
 
+/* templates/main/faq.html.twig */
+dl>dd>ul {
+    list-style-type: inherit;
+}
+
+/* templates/main/faq.html.twig */
+dt,
+dd {
+    margin-top: 0.5rem;
+}
+
 div a {
     text-decoration: none;
 }
@@ -329,8 +340,10 @@ form#filtersOfCategories.filter {
     margin-bottom: 2.5rem;
 }
 
-/* Wireframe 1- How It Works */
-.h2howItWorks {
+/* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
+.h2howItWorks,
+.h2frequentlyAskedQuestions,
+.h2stateOfBook {
     color: #0854A2;
     text-align: center;
     margin-top: 2.5rem;
@@ -421,11 +434,22 @@ section.introductoryContent>p {
     width: 83%;
 }
 
-/* Wireframe 1- How It Works */
-.divParagraphsHowItWorks p {
+/* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
+.divParagraphsHowItWorks p,
+.divParagraphsFrequentlyAskedQuestions p,
+.divParagraphsFrequentlyAskedQuestions dl,
+.divParagraphsFrequentlyAskedQuestions dd,
+.divParagraphsStateOfBook p,
+.divParagraphsStateOfBook dl,
+.divParagraphsStateOfBook dd {
     font-family: 'MerriweatherRegular', 'openSansRegular', Arial, sans-serif, serif;
     color: #000;
     margin-left: 5%;
+}
+
+.divParagraphsFrequentlyAskedQuestions dd,
+.divParagraphsStateOfBook dd {
+    margin-right: 5%;
 }
 
 .h3InstructionsForUse {

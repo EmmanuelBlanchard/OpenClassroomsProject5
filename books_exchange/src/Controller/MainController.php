@@ -59,4 +59,12 @@ class MainController extends AbstractController
     {
         return $this->render('main/faq.html.twig');
     }
+
+    /**
+     * @Route("/stateofbook", name="app_state_of_book")
+     */
+    public function stateOfBook(): Response
+    {
+        return $this->render('main/state_of_book.html.twig');
+    }
 }
