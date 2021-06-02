@@ -89,7 +89,7 @@ class BookController extends AbstractController
         // We get the total number of books
         $total = $bookRepo->getTotalBooksActiveOwnedByUserWithOrderCreatedAtDesc($user);
         // How many pages will there be
-        $pages = ceil(count($books) / $limit);
+        $pages = (int)ceil($total / $limit);
 
         return $this->render('book/my_books.html.twig', compact('books', 'limit', 'page', 'pages', 'total'));
     }
@@ -200,24 +200,52 @@ class BookController extends AbstractController
     /**
     * @Route("/myexchangewishes", name="my_exchange_wishes")
     */
-    public function myExchangeWishes(BookRepository $bookRepo, UserInterface $user): Response
+    public function myExchangeWishes(BookRepository $bookRepo, UserInterface $user, Request $request): Response
     {
-        $theBooksIRequestedToExchange = $bookRepo->findBooksActiveWithExchangeRequestRequestedByUser($user);
+        // We define the number of books per page
+        $limit = 10;
+        // We get the page number
+        $page = (int)$request->query->get("page", 1);
+        // We recover the books of the page
+        $theBooksIRequestedToExchange = $bookRepo->findBooksActiveWithExchangeRequestRequestedByUser($page, $limit, $user);
+        // We get the total number of books
+        $total = $bookRepo->getTotalBooksActiveWithExchangeRequestRequestedByUser($user);
+        // How many pages will there be
+        $pages = (int)ceil($total / $limit);
 
         return $this->render('book/my_exchange_wishes.html.twig', [
             'theBooksIRequestedToExchange' => $theBooksIRequestedToExchange,
+            'limit' => $limit,
+            'page' => $page,
+            'pages' => $pages,
+            'total' => $total,
         ]);
     }
 
     /**
     * @Route("/myexchangerequests", name="my_exchange_requests")
     */
-    public function myExchangeRequests(BookRepository $bookRepo, UserInterface $user): Response
+    public function myExchangeRequests(BookRepository $bookRepo, UserInterface $user, Request $request): Response
     {
-        $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($user);
+        // We define the number of books per page
+        $limit = 10;
+        // We get the page number
+        $page = (int)$request->query->get("page", 1);
+        // We recover the books of the page
+        $myBooksRequestedForExchange  = $bookRepo->findBooksActiveWithExchangeRequestOwnedByUser($page, $limit, $user);
+        // We get the total number of books
+        $total = $bookRepo->getTotalBooksActiveWithEchangeRequestOwnedByUser($user);
+        // How many pages will there be
+        $pages = (int)ceil($total / $limit);
+
+        dd($limit, $page, $myBooksRequestedForExchange, $total, $pages);
 
         return $this->render('book/my_exchange_requests.html.twig', [
             'myBooksRequestedForExchange' => $myBooksRequestedForExchange,
+            'limit' => $limit,
+            'page' => $page,
+            'pages' => $pages,
+            'total' => $total,
         ]);
     }
 

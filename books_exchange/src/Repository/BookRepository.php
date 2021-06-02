@@ -168,7 +168,7 @@ class BookRepository extends ServiceEntityRepository
     
     /**
      * Returns number of books active owned by user with order created at desc
-     * @return void
+     * @return int
      */
     public function getTotalBooksActiveOwnedByUserWithOrderCreatedAtDesc($user)
     {
@@ -184,49 +184,83 @@ class BookRepository extends ServiceEntityRepository
     /**
     * @return Book[] Returns an array of Book objects
     */
-    public function findBooksActiveWithoutExchangeRequestNotOwnedByUser($user)
+    public function findBooksActiveWithoutExchangeRequestNotOwnedByUser($page, $limit, $user): array
     {
-        return $this->createQueryBuilder('b')
+        $query = $this->createQueryBuilder('b')
             ->where('b.active = 1')
             ->andWhere('b.exchangeRequest = 0')
             ->andWhere('b.user <> :user')
             ->setParameter('user', $user)
             ->orderBy('b.createdAt', 'DESC')
-            ->getQuery()
-            ->getResult()
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
         ;
+        return $query->getQuery()->getResult();
     }
 
     /**
     * @return Book[] Returns an array of Book objects
     */
-    public function findBooksActiveWithExchangeRequestRequestedByUser($user)
+    public function findBooksActiveWithExchangeRequestRequestedByUser($page, $limit, $user): array
     {
-        return $this->createQueryBuilder('book')
-            ->where('book.active = 1')
-            ->andWhere('book.exchangeRequest = 1')
-            ->andWhere('book.userexchange = :user')
+        $query = $this->createQueryBuilder('b')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 1')
+            ->andWhere('b.userexchange = :user')
             ->setParameter('user', $user)
-            ->orderBy('book.exchangeRequestAt', 'DESC')
-            ->getQuery()
-            ->getResult()
+            ->orderBy('b.exchangeRequestAt', 'DESC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
         ;
+        return $query->getQuery()->getResult();
     }
 
+    /**
+     * Returns number of books active with exchange request requested by user
+     * @return int
+     */
+    public function getTotalBooksActiveWithExchangeRequestRequestedByUser($user): int
+    {
+        $query = $this->createQueryBuilder('b')
+            ->select('COUNT(b)')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 1')
+            ->andWhere('b.userexchange = :user')
+            ->setParameter('user', $user)
+        ;
+        return $query->getQuery()->getSingleScalarResult();
+    }
+    
     /**
     * @return Book[] Returns an array of Book objects
     */
     public function findBooksActiveWithExchangeRequestOwnedByUser($user)
     {
-        return $this->createQueryBuilder('book')
-            ->where('book.active = 1')
-            ->andWhere('book.exchangeRequest = 1')
-            ->andWhere('book.user = :user')
+        return $this->createQueryBuilder('b')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 1')
+            ->andWhere('b.user = :user')
             ->setParameter('user', $user)
-            ->orderBy('book.exchangeRequestAt', 'DESC')
+            ->orderBy('b.exchangeRequestAt', 'DESC')
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    /**
+     * Returns number of books active with exchange request owned by user
+     * @return int
+     */
+    public function getTotalBooksActiveWithEchangeRequestOwnedByUser($user)
+    {
+        $query = $this->createQueryBuilder('b')
+            ->select('COUNT(b)')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 1')
+            ->andWhere('b.user = :user')
+            ->setParameter('user', $user)
+        ;
+        return $query->getQuery()->getSingleScalarResult();
     }
 
     /**
