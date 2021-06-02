@@ -121,7 +121,7 @@ class BookController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('message', 'Le livre a été ajouté à votre stock !');
-            return $this->redirectToRoute('book_home');
+            return $this->redirectToRoute('book_my_books');
         }
 
         return $this->render('book/add.html.twig', [
