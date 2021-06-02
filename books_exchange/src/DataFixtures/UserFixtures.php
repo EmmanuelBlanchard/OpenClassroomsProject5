@@ -28,8 +28,7 @@ class UserFixtures extends BaseFixture
             $user->setIsVerified(true);
             $user->setLastname($this->faker->lastName);
             $user->setFirstname($this->faker->firstName);
-            $pseudo = substr($this->faker->unique()->lastName(), 0, 15);
-            $user->setPseudo($pseudo);
+            $user->setPseudo($this->faker->bothify('??????_?????-##'));
             $user->setZipCode($this->faker->randomNumber(5, true));
             $user->setCity($this->faker->city());
             $user->agreeTerms();
