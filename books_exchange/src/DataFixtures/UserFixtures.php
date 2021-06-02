@@ -20,7 +20,7 @@ class UserFixtures extends BaseFixture
     {
         $this->createMany(User::class, 10, function (User $user, $count) use ($manager) {
             $user->setEmail($this->faker->email);
-            $user->setRoles(["ROLE_USER"]);
+            $user->setRoles([$this->faker->randomElement(["ROLE_USER","ROLE_ADMIN"])]);
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
                 'engage'
@@ -28,7 +28,8 @@ class UserFixtures extends BaseFixture
             $user->setIsVerified(true);
             $user->setLastname($this->faker->lastName);
             $user->setFirstname($this->faker->firstName);
-            $user->setPseudo($this->faker->name);
+            $pseudo = substr($this->faker->unique()->lastName(), 0, 15);
+            $user->setPseudo($pseudo);
             $user->setZipCode($this->faker->randomNumber(5, true));
             $user->setCity($this->faker->city());
             $user->agreeTerms();
@@ -37,7 +38,7 @@ class UserFixtures extends BaseFixture
             
             return $user;
         });
-        
+
         $manager->flush();
     }
 }
