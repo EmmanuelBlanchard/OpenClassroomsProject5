@@ -3,11 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Book;
-use App\Entity\Category;
-use App\Form\SearchBookFormType;
 use App\Repository\BookRepository;
 use App\Repository\CategoryRepository;
-use App\Form\AdvancedSearchBookFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
