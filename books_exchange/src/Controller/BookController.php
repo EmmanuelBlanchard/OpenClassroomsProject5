@@ -238,8 +238,6 @@ class BookController extends AbstractController
         // How many pages will there be
         $pages = (int)ceil($total / $limit);
 
-        dd($limit, $page, $myBooksRequestedForExchange, $total, $pages);
-
         return $this->render('book/my_exchange_requests.html.twig', [
             'myBooksRequestedForExchange' => $myBooksRequestedForExchange,
             'limit' => $limit,
