@@ -114,7 +114,7 @@ class Book
     private $author;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", length=65535)
      * @Assert\Type(
      *     type="text",
      *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
