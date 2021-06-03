@@ -310,7 +310,7 @@ class Book
         return $this->exchangeRequestAt;
     }
 
-    public function setExchangeRequestAt(\DateTimeInterface $exchangeRequestAt): self
+    public function setExchangeRequestAt(?\DateTimeInterface $exchangeRequestAt): self
     {
         $this->exchangeRequestAt = $exchangeRequestAt;
 

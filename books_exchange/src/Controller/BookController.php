@@ -262,7 +262,7 @@ class BookController extends AbstractController
             $entityManager->flush();
             $this->addFlash('message', 'Livre ajouté aux échanges');
         }
-        return $this->redirectToRoute('user');
+        return $this->redirectToRoute('book_my_books');
     }
 
     /**
@@ -277,13 +277,13 @@ class BookController extends AbstractController
             $book->setActive(false);
             $book->setExchangeRequest(false);
             $book->setUserexchange(null);
-            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+            $book->setExchangeRequestAt(null);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
             $entityManager->flush();
             $this->addFlash('message', 'Livre retiré des échanges');
         }
-        return $this->redirectToRoute('user');
+        return $this->redirectToRoute('book_my_books');
     }
 
     /**
@@ -295,16 +295,16 @@ class BookController extends AbstractController
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : Aucun livre ne correspond');
         } else {
-            $book->setActive(false);
+            $book->setActive(true);
             $book->setExchangeRequest(false);
             $book->setUserexchange(null);
-            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+            $book->setExchangeRequestAt(null);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
             $entityManager->flush();
             $this->addFlash('message', 'Livre retiré de l\'échange de livres');
         }
-        return $this->redirectToRoute('app_home');
+        return $this->redirectToRoute('book_my_exchange_wishes');
     }
 
     /**
