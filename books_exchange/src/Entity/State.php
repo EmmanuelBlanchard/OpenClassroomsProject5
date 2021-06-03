@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=StateRepository::class)
@@ -22,6 +23,23 @@ class State
 
     /**
      * @ORM\Column(type="string", length=30)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
+     * @Assert\NotBlank(message = "Veuillez saisir le nom de l'état du livre")
+     * @Assert\NotNull(message="Veuillez définir le nom de l'état du livre")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 50,
+     *      minMessage = "Le nom de l'état du livre doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom de l'état du livre ne peut pas comporter plus de {{ limit }} caractères"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[0-9]$/",
+     *     match=false,
+     *     message="Le nom de l'état du livre ne peut pas comporter des chiffres"
+     * )
      */
     private $name;
 

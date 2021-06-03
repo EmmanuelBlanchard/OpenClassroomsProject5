@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
@@ -22,6 +23,28 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
+     * @Assert\NotBlank(message = "Veuillez saisir le nom de la catégorie")
+     * @Assert\NotNull(message="Veuillez définir le nom de la catégorie")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 50,
+     *      minMessage = "Le nom de la catégorie doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom de la catégorie ne peut pas comporter plus de {{ limit }} caractères"
+     * )
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Le nom de la catégorie ne peut pas contenir un nombre"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäçéèêëîïôöùûüÿæœðó])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäçéèêëîïôöùûüÿæœðó]*)[-'’\s]{0,1})*$/",
+     *     match=true,
+     *     message="Le nom de la catégorie doit contenir une lettre majuscule en première lettre"
+     * )
      */
     private $name;
 

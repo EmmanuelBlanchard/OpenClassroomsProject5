@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AuthorRepository::class)
@@ -22,6 +23,28 @@ class Author
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
+     * @Assert\NotBlank(message = "Veuillez saisir un nom d'auteur")
+     * @Assert\NotNull(message="Veuillez définir un nom d'auteur")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 255,
+     *      minMessage = "Le nom de l'auteur doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom de l'auteur ne peut pas comporter plus de {{ limit }} caractères"
+     * )
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Le nom de l'auteur ne peut pas contenir un nombre"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{1}([a-zàâäãçéèêëîïôöùûüÿæœðóø])*[-'’\s]{0,1}([A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸÆŒ]{0,1}([a-zàâäãçéèêëîïôöùûüÿæœðóø]*)[-'’\s]{0,1})*$/",
+     *     match=true,
+     *     message="Le nom de l'auteur doit contenir une lettre majuscule en première lettre"
+     * )
      */
     private $name;
 

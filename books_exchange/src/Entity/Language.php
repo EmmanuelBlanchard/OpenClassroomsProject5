@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=LanguageRepository::class)
@@ -22,6 +23,23 @@ class Language
 
     /**
      * @ORM\Column(type="string", length=30)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
+     * @Assert\NotBlank(message = "Veuillez saisir le nom de la langue")
+     * @Assert\NotNull(message="Veuillez définir le nom de la langue")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 30,
+     *      minMessage = "Le nom de la langue doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom de la langue ne peut pas comporter plus de {{ limit }} caractères"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[0-9]$/",
+     *     match=false,
+     *     message="Le nom de la langue ne peut pas comporter des chiffres"
+     * )
      */
     private $name;
 

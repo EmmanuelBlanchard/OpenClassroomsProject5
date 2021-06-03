@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=FormatRepository::class)
@@ -22,6 +23,18 @@ class Format
 
     /**
      * @ORM\Column(type="string", length=30)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
+     * @Assert\NotBlank(message = "Veuillez saisir le nom du format")
+     * @Assert\NotNull(message="Veuillez définir le nom du format")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 30,
+     *      minMessage = "Le nom du format doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom du format ne peut pas comporter plus de {{ limit }} caractères"
+     * )
      */
     private $name;
 

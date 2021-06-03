@@ -38,17 +38,28 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="json")
+     * @Assert\Json(
+     *     message = "Vous avez saisi un Json invalide."
+     * )
      */
     private $roles = [];
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      */
     private $password;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\Type(
+     *     type="boolean",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      */
     private $isVerified = false;
 
@@ -59,6 +70,10 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      * @Assert\NotBlank(
      *     message = "Votre nom ne peut pas être vide",
      * )
@@ -77,6 +92,10 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      * @Assert\NotBlank(
      *     message = "Votre prénom ne peut pas être vide",
      * )
@@ -94,7 +113,11 @@ class User implements UserInterface
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=16, unique=true)
+     * @ORM\Column(type="string", length=15, unique=true)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      * @Assert\NotBlank(
      *      message = "Veuillez saisir un pseudo",
      * )
@@ -114,6 +137,10 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      * @Assert\NotBlank(
      *      message = "Veuillez saisir un code postal",
      * )
@@ -133,7 +160,11 @@ class User implements UserInterface
     private $zipCode;
 
     /**
-     * @ORM\Column(type="string", length=170)
+     * @ORM\Column(type="string", length=50)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      * @Assert\NotBlank(
      *      message = "Veuillez saisir une ville",
      * )

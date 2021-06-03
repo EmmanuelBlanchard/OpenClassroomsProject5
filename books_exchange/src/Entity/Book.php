@@ -23,8 +23,18 @@ class Book
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      * @Assert\NotBlank(message="Veuillez saisir un titre de livre")
      * @Assert\NotNull(message="Veuillez définir le titre du livre")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 255,
+     *      minMessage = "Votre titre du livre doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Votre titre du livre ne peut pas comporter plus de {{ limit }} caractères"
+     * )
      */
     private $title;
 
@@ -42,6 +52,10 @@ class Book
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\Type(
+     *     type="boolean",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      */
     private $active;
 
@@ -101,6 +115,10 @@ class Book
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Type(
+     *     type="text",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      * @Assert\NotBlank(message="Veuillez saisir un résumé")
      * @Assert\NotNull(message="Veuillez définir un résumé")
      */
@@ -108,6 +126,10 @@ class Book
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\Type(
+     *     type="boolean",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
      */
     private $exchangeRequest;
 
@@ -123,6 +145,16 @@ class Book
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 255,
+     *      minMessage = "Le nom de fichier de l'image doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom de fichier de l'image ne peut pas comporter plus de {{ limit }} caractères"
+     * )
      */
     private $imageFilename;
 

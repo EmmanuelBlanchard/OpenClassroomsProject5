@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PublisherRepository::class)
@@ -22,6 +23,23 @@ class Publisher
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Type(
+     *     type="string",
+     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
+     * )
+     * @Assert\NotBlank(message = "Veuillez saisir un nom d'éditeur")
+     * @Assert\NotNull(message="Veuillez définir un nom d'éditeur")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 50,
+     *      minMessage = "Le nom de l'éditeur doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom de l'éditeur ne peut pas comporter plus de {{ limit }} caractères"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[0-9]$/",
+     *     match=false,
+     *     message="Le nom de l'éditeur ne peut pas comporter des chiffres"
+     * )
      */
     private $name;
 
