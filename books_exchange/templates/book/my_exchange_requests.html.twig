@@ -58,8 +58,6 @@
 								{{book.userexchange.zipCode}}</td>
 							<td>{{book.exchangeRequestAt|date('d/m/Y')}}</td>
 							<td class="text-center">
-								<a class="btn btn-primary m-2" href="{{ path("book_show", {slug: book.slug}) }}" role="button">Voir</a>
-
 								<a class="btn btn-primary m-2" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
 							</td>
 						</tr>
