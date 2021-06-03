@@ -29,6 +29,12 @@ class User implements UserInterface
      * @Assert\NotBlank(
      *     message = "Veuillez saisir un e-mail",
      * )
+     * @Assert\Length(
+     *      min = 6,
+     *      max = 180,
+     *      minMessage = "L'e-mail doit comporter au moins {{ limit }} caractères",
+     *      maxMessage = "L'e-mail ne peut pas comporter plus de {{ limit }} caractères"
+     * )
      * @Assert\Email(
      *     message = "L'e-mail '{{ value }}' n'est pas un e-mail valide.",
      *     mode = "loose",
@@ -136,7 +142,7 @@ class User implements UserInterface
     private $pseudo;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", length=5)
      * @Assert\Type(
      *     type="integer",
      *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
