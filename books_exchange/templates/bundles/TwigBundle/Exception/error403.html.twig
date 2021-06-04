@@ -1,0 +1,15 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès refusé{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Accès refusé</h1>
+        <p>
+            Vous n'êtes pas autorisé à accéder à la page web.
+            
+            <a href="{{ path('app_home') }}">Revenir à la page d'accueil</a>.
+        </p>
+    </div>
+{% endblock %}
