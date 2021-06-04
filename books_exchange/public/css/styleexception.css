@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'openSansRegular';
+    src: local('openSansRegular'),
+        local('Open Sans Regular'),
+        local('open Sans Regular'),
+        url('../fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#errorexception {
+    position: relative;
+    height: 100vh;
+}
+
+#errorexception .errorexception {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.errorexception {
+    max-width: 520px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.errorexception .errorexception-code {
+    position: relative;
+    height: 200px;
+    margin: 0 auto 20px;
+    z-index: -1;
+}
+
+.errorexception .errorexception-code h1 {
+    font-family: 'openSansRegular', sans-serif;
+    font-size: 236px;
+    font-weight: 200;
+    margin: 0;
+    color: #0854A2;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.errorexception .errorexception-code h2 {
+    font-family: 'openSansRegular', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #0854A2;
+    background: #fff;
+    padding: 10px 5px;
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid #0854A2;
+    border-radius: 25px;
+}
+
+.errorexception a {
+    font-family: 'openSansRegular', sans-serif;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 13px 23px;
+    background: #CD4109;
+    font-size: 18px;
+    -webkit-transition: .2s all;
+    transition: .2s all;
+    border: 2px #CD4109 solid;
+    border-radius: 25px;
+}
+
+.errorexception a:hover {
+    color: #CD4109;
+    background-color: #FFF;
+    border: 2px #CD4109 solid;
+    border-radius: 25px;
+}
+
+@media only screen and (max-width:767px) {
+    .errorexception .errorexception-code h1 {
+        font-size: 148px;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .errorexception .errorexception-code {
+        height: 148px;
+        margin: 0 auto 10px;
+    }
+
+    .errorexception .errorexception-code h1 {
+        font-size: 86px;
+    }
+
+    .errorexception .errorexception-code h2 {
+        font-size: 16px;
+    }
+
+    .errorexception a {
+        padding: 7px 15px;
+        font-size: 14px;
+    }
+}

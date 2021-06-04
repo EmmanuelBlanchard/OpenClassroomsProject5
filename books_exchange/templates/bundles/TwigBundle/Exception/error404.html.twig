@@ -1,14 +1,18 @@
 {# templates/bundles/TwigBundle/Exception/error404.html.twig #}
-{% extends 'base.html.twig' %}
+{% extends 'bundles/TwigBundle/Exception/error.html.twig' %}
 
-{% block title %}Page non trouvée{% endblock %}
+{% block title %} Erreur {{ status_code }} : Page non trouvée{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1>Page non trouvée</h1>
-        <p>
-            La page demandée n'a pas pu être localisée. Vérifiez l'absence de toute URL
-            mal orthographiée ou <a href="{{ path('app_home') }}">revenir à la page d'accueil</a>.
-        </p>
+    <div id="errorexception">
+        <div class="errorexception">
+            <div class="errorexception-code">
+                <h1>Oups!</h1>
+                <h2>404 - The Page can't be found</h2>
+                <h2>{{ status_code }} - {{ status_text }}</h2>
+            </div>
+            <a href="{{ path('app_home') }}">Aller à la page d'accueil</a>
+        </div>
+        <img src="{{ asset('img/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg') }}" class="w-100" alt="Background">
     </div>
 {% endblock %}
