@@ -1,0 +1,18 @@
+{# templates/bundles/TwigBundle/Exception/error406.html.twig #}
+{% extends 'bundles/TwigBundle/Exception/error.html.twig' %}
+
+{% block title %} Erreur {{ status_code }} : La ressource demandée n'est pas disponible dans un format qui respecterait les en-têtes « Accept » de la requête.{% endblock %}
+
+{% block body %}
+    <div class="backgroundexception">
+        <div id="errorexception">
+            <div class="errorexception">
+                <div class="errorexception-code">
+                    <h1>Oups!</h1>
+                    <h2>{{ status_code }} - {{ status_text }}</h2>
+                </div>
+                <a href="{{ path('app_home') }}">Aller à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
