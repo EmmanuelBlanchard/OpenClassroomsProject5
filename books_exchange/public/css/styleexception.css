@@ -22,19 +22,15 @@ body {
     padding: 0;
 }
 
-/*
-html {
-    background: url(../img/janko-ferlic-sfL_QOnmy00-unsplash5013-4634.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-*/
-
-img {
-    max-width: 100%;
+.backgroundexception {
     height: 100vh;
+    min-height: 500px;
+    background-image: url(../img/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #1d3557;
 }
 
 #errorexception {
