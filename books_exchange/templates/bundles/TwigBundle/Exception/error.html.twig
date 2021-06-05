@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %} Erreur {{ status_code }} : {% block meaningerrormessage %} {% endblock %} {% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/styleexception.css') }}">
-
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
     <link rel="icon" type="image/x-icon" href="{{ asset('icons/favicon.ico') }}"/>
-
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
+    <div class="backgroundexception">
+        <div id="errorexception">
+            <div class="errorexception">
+                <div class="errorexception-code">
+                    <h1>Oups!</h1>
+                    <h2>{{ status_code }} - {{ status_text }}</h2>
+                </div>
+                <a href="{{ path('app_home') }}">Aller à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
     {% block body %}{% endblock %}
 </body>
 </html>
