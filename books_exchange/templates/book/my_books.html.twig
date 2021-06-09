@@ -34,7 +34,7 @@
 
 			<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
 
-			<table class="table manageMyAccountBooks">
+			<table class="table manageMyAccountBooks responsive-table-line">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -51,15 +51,15 @@
 				<tbody>
 					{% for book in app.user.books %}
 						<tr>
-							<th scope="row">{{ book.id }}</th>
-							<td>{{ book.title }}</td>
-							<td>{{ book.author }}</td>
-							<td>{{ book.category }}</td>
-							<td>{{ book.publisher }}</td>
-							<td>{{ book.language }}</td>
-							<td>{{ book.format }}</td>
-							<td>{{ book.state }}</td>
-							<td>
+							<th data-title="Id" scope="row">{{ book.id }}</th>
+							<td data-title="Titre">{{ book.title }}</td>
+							<td data-title="Auteur">{{ book.author }}</td>
+							<td data-title="Catégorie">{{ book.category }}</td>
+							<td data-title="Éditeur">{{ book.publisher }}</td>
+							<td data-title="Langue">{{ book.language }}</td>
+							<td data-title="Format">{{ book.format }}</td>
+							<td data-title="État">{{ book.state }}</td>
+							<td data-title="Actions">
 								{% if book.active %}
 									<a class="btn btn-primary m-2" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
 								{% else %}
