@@ -1,6 +1,6 @@
 {% if books|length > 0 %}
 	{% for book in books %}
-    <div class="card col-5">
+    <div class="card col-md-5">
         <div class="row g-0">
             <div class="card-picture col-md-5">
                 <img src="{{ uploaded_asset(book.imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="Couverture du livre {{book.title}}." class="card-img">
