@@ -115,10 +115,6 @@ class Book
 
     /**
      * @ORM\Column(type="text", length=65535)
-     * @Assert\Type(
-     *     type="text",
-     *     message="La valeur {{ value }} n'est pas un {{ type }} valide."
-     * )
      * @Assert\NotBlank(message="Veuillez saisir un résumé")
      * @Assert\NotNull(message="Veuillez définir un résumé")
      */
