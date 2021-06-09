@@ -174,7 +174,7 @@ class BookController extends AbstractController
             $book->setActive(false);
             $book->setExchangeRequest(false);
             $book->setUserexchange(null);
-            $book->setExchangeRequestAt(new \DateTime('0000-00-00 00:00:00'));
+            $book->setExchangeRequestAt(null);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($book);
             $entityManager->flush();
