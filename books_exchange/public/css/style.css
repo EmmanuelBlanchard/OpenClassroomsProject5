@@ -1142,6 +1142,12 @@ div.card-body {
     justify-content: center;
 }
 
+/* Test code selectors css : Responsive Mobile */
+nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+    padding: .25rem .35rem;
+    font-size: .875rem;
+}
+
 /* support for screen sizes larger than mobile */
 @media (min-width: 991.98px) {
     body>main.container {
@@ -1222,4 +1228,10 @@ div.card-body {
         flex: 0 0 auto;
         width: 41.6666666667%;
     }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .375rem .75rem;
+        font-size: 1.55em;
+    }
+
 }
