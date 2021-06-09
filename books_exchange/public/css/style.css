@@ -114,20 +114,88 @@ nav {
     align-items: center;
 }
 
-/*main.container-xxl.my-md-4.bd-layout>div.container>nav.page-navigation*/
+/* Test code selectors css : Responsive Mobile */
+body>main.container {
+    display: flex;
+    flex-direction: column;
+}
+
+main.container>aside {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
 div.container>nav.page-navigation {
     display: flex;
     justify-content: center;
     align-items: inherit;
 }
 
+/* Test code selectors css : Responsive Mobile */
 nav.nav.nav-underline {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
-nav#bd-docs-nav.bd-links.collapse>h2 {
-    color: black;
+.nav-underline .nav-link {
+    color: #F7F7F7;
+}
+
+@media (min-width: 991.98px) {
+    body>main.container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main.container>aside {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    nav.nav.nav-underline {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .nav-underline .nav-link {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        font-size: 1.55em;
+        color: #F7F7F7;
+    }
+
+    .h2IntroductoryContent {
+        color: #000000;
+        font-size: 1.48em;
+        margin-left: 11.3%;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    section.introductoryContent>p {
+        font-size: 0.83em;
+        font-weight: bold;
+        line-height: 1.6em;
+        margin-left: 12.4%;
+        width: 83%;
+    }
+
+    .h3InstructionsForUse {
+        color: #CD4109;
+        font-size: 1.41em;
+        width: 48%;
+        margin-left: 18.8%;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .instructionsForUse p {
+        font-size: 1.1em;
+        width: 77.5%;
+        margin-left: 19.2%;
+    }
 }
 
 nav li {
@@ -332,12 +400,12 @@ form#filtersOfCategories.filter {
 
 /* Above is the selectors for the template: main/search_books_test.html.twig */
 
+/* Test code selectors css : Responsive Mobile */
 .h2IntroductoryContent {
     color: #000000;
-    font-size: 1.48em;
-    margin-left: 11.3%;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.3em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
@@ -426,12 +494,11 @@ form#filtersOfCategories.filter {
     padding: 10px 20px;
 }
 
+/* Test code selectors css : Responsive Mobile */
 section.introductoryContent>p {
     font-size: 0.83em;
     font-weight: bold;
     line-height: 1.6em;
-    margin-left: 12.4%;
-    width: 83%;
 }
 
 /* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
@@ -452,19 +519,17 @@ section.introductoryContent>p {
     margin-right: 5%;
 }
 
+/* Test code selectors css : Responsive Mobile */
 .h3InstructionsForUse {
     color: #CD4109;
-    font-size: 1.41em;
-    width: 48%;
-    margin-left: 18.8%;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
+/* Test code selectors css : Responsive Mobile */
 .instructionsForUse p {
-    font-size: 1.1em;
-    width: 77.5%;
-    margin-left: 19.2%;
+    font-size: 1em;
 }
 
 /* Wireframes 3-5-12-13-14 */
