@@ -1,8 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{# We create custom variables #}
-{% set queryParams = app.request.query.all %}
-
 {% block title %}
 	Liste de livres
 {% endblock %}
@@ -23,30 +20,10 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2ConnectedBookStockAddABook">Liste de livres</h2>
+		<h2 class="h2ListOfBooks">Liste de livres</h2>
 
-		<div class="row">
-			<div class="grid col-2 col-sm-4 g-0 card">
-				<p>Filtrer</p>
-				<form id="filters">
-					{% for item in category %}
-						{# We check if the category is in the parameters #}
-						{% if queryParams is not empty and queryParams.category is defined %}
-							{% set checked = (item.id in queryParams.category) ? "checked" : "" %}
-						{% else %}
-							{% set checked = "" %}
-						{% endif %}
-						<p>
-							<input type="checkbox" name="category[]" id="category{{item.id}}" value="{{item.id}}" {{checked}}>
-							<label for="category{{item.id}}">{{item.name}}</label>
-						</p>
-					{% endfor %}
-					<input type="hidden" name="page" value="{{page}}">
-				</form>
-			</div>
-			<div class="col-5 col-sm-8" id="content">
-				{% include "book/_content.html.twig" %}
-			</div>
+		<div class="row blockCard" id="content">
+			{% include "book/_content.html.twig" %}
 		</div>
 	</div>
 {% endblock %}
