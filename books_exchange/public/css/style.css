@@ -1278,6 +1278,10 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 90%;
     }
 
+    .h2OfWelcomeOfPseudo {
+        font-size: calc(1.325rem + .5vw);
+    }
+
     /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
     .h2ConfirmAccountEmailAddress,
     .h2ConnectedTotheAccount,
