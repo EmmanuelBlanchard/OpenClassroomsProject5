@@ -37,7 +37,7 @@
 				<p>Vous n'avez aucune demande d'échange de vos livres actuellement</p>
 			</div>
 		{% else %}
-			<table class="table table-responsive table-hover">
+			<table class="table responsive-table-line table-hover">
 				<thead>
 					<tr>
 						<th scope="col">Titre</th>
@@ -52,14 +52,14 @@
 				<tbody>
 					{% for book in myBooksRequestedForExchange %}
 						<tr>
-							<th scope="row">{{book.title}}</th>
-							<td>{{book.author}}</td>
-							<td>{{book.state}}</td>
-							<td>{{book.userexchange.pseudo}}</td>
-							<td>{{book.userexchange.city}}
+							<th data-label="Titre" scope="row">{{book.title}}</th>
+							<td data-label="Auteur">{{book.author}}</td>
+							<td data-label="État du livre">{{book.state}}</td>
+							<td data-label="Demandeur">{{book.userexchange.pseudo}}</td>
+							<td data-label="Localisation">{{book.userexchange.city}}
 								{{book.userexchange.zipCode}}</td>
-							<td>{{book.exchangeRequestAt|date('d/m/Y')}}</td>
-							<td class="text-center">
+							<td data-label="Date">{{book.exchangeRequestAt|date('d/m/Y')}}</td>
+							<td data-label="Actions" class="text-center">
 								<a class="btn btn-primary m-2" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
 							</td>
 						</tr>
