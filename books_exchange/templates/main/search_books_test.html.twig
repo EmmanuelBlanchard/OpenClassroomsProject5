@@ -7,8 +7,8 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container d-flex col-9">
-        <div class="col-md-3">
+    <div class="container col-md-9">
+        <div class="col-md-4 divfiltersOfCategories">
             <form id="filtersOfCategories" class="filter">
                 {% for item in category %}
                     {# We check if the category is in the parameters #}
@@ -25,14 +25,9 @@
                 <input type="hidden" name="page" value="{{page}}">
             </form>
         </div>
-        {#
-        <div class="grid" id="content">
-                    {% include "main/_content.html.twig" %}
-        </div>
-        #}
-        <div class="col-md-9">
+        <div class="col-md-7">
             <div class="row blockCard" id="content">
-			    {% include "main/_content_flex.html.twig" %}
+			    {% include "main/_content.html.twig" %}
 		    </div>
         </div>
     </div>
