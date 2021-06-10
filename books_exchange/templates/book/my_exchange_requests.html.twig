@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Mes sollicitations d'échange
+	{{ app.user.firstname }}
+	{{ app.user.lastname }}
+	- Mes sollicitations d'échange
 {% endblock %}
 
 

@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Mes souhaits d'échange
+	{{ app.user.firstname }}
+	{{ app.user.lastname }}
+	- Mes souhaits d'échange
 {% endblock %}
 
 {% block body %}
