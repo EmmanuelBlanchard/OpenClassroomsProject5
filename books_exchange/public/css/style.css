@@ -386,10 +386,8 @@ form#filtersOfCategories.filter {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
-    width: 72.5%;
     background-color: #F7F7F7;
-    margin-left: 5rem;
-    padding: 20px 40px;
+    padding: 10px 20px;
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -430,8 +428,8 @@ form#filtersOfCategories.filter {
 .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
 .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
 .h2ConnectedConnectedResetPasswordCheckEmail {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .h3ConnectedUserBook,
@@ -861,11 +859,6 @@ div.titleBook {
     margin-bottom: 0.5rem;
 }
 
-.table.manageMyAccountBooks {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
 /* Styles css Bootstrap */
 .alert {
     position: relative;
@@ -1148,52 +1141,68 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     font-size: .875rem;
 }
 
-/* Test Table responsive */
-.responsive-table-line td:before {
-    content: attr(data-title);
-}
+/* @media only screen and (min-width: 200px) and (max-width: 767px) */
 
-/* Force table to not be like tables anymore */
-.responsive-table-line table,
-.responsive-table-line thead,
-.responsive-table-line tbody,
-.responsive-table-line th,
-.responsive-table-line td,
-.responsive-table-line tr {
-    display: block;
-}
+@media only screen and (min-width: 200px) and (max-width: 1024px) {
 
-/* Hide table headers (but not display: none;, for accessibility) */
-.responsive-table-line thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-}
+    /* Test Table responsive */
+    .responsive-table-line td:before,
+    .responsive-table-line th:before {
+        content: attr(data-label);
+    }
 
-.responsive-table-line td {
-    position: relative;
-    border: 0px solid transparent;
-    padding-left: 50% !important;
-    white-space: normal;
-    text-align: center;
-}
+    /* Force table to not be like tables anymore */
+    .responsive-table-line table,
+    .responsive-table-line thead,
+    .responsive-table-line tbody,
+    .responsive-table-line th,
+    .responsive-table-line td,
+    .responsive-table-line tr {
+        display: block;
+    }
 
-.responsive-table-line td:before {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 45%;
-    padding-right: 15px;
-    height: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 2px;
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .responsive-table-line thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .responsive-table-line tr {
+        border: 1px solid #ccc;
+        border-radius: .25rem;
+        margin-bottom: 1rem;
+    }
+
+    .responsive-table-line td,
+    .responsive-table-line th {
+        position: relative;
+        border: 0px solid transparent;
+        padding-left: 50% !important;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .responsive-table-line td:before,
+    .responsive-table-line th:before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 45%;
+        padding-right: 15px;
+        height: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+        text-align: left;
+        background-color: #f8f8f8;
+        padding: 10px;
+        font-weight: bold;
+    }
 }
 
 /* support for screen sizes larger than mobile */
+/*@media (min-width: 991.98px) { */
 @media (min-width: 991.98px) {
     body>main.container {
         display: flex;
@@ -1269,35 +1278,65 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 90%;
     }
 
+    /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
+    .h2ConfirmAccountEmailAddress,
+    .h2ConnectedTotheAccount,
+    .h2ConnectedProfile,
+    .h3ConnectedUserBook,
+    .h2MyBooks,
+    .h2ConnectedBookStockBookAdditionForm,
+    .h3ConnectedBookStockBookAdditionForm,
+    .h2ConnectedBookStockBookStocked,
+    .h3ConnectedBookStockBookStocked,
+    .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
+    .h2HowMakeExchange,
+    .h2MyExchangeWishes,
+    .h2MyExchangeRequests,
+    .h2ListOfBooks,
+    .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
+    .h3ConnectedBookExchangeSearchForTheBookHarryPotter,
+    .h2ConnectedBookExchangeConfirmBookExchange,
+    .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
+    .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+    .h2ConnectedConnectedResetPasswordCheckEmail {
+        width: 72.5%;
+        margin-left: 5rem;
+        padding: 20px 40px;
+    }
+
+    /* Wireframe 3-4-5-6-7-8-9-10-12-13 */
+    .h2ConfirmAccountEmailAddress,
+    .h2ConnectedTotheAccount,
+    .h2ConnectedProfile,
+    .h2MyBooks,
+    .h2ConnectedBookStockBookAdditionForm,
+    .h2ConnectedBookStockBookStocked,
+    .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
+    .h2HowMakeExchange,
+    .h2MyExchangeWishes,
+    .h2MyExchangeRequests,
+    .h2ListOfBooks,
+    .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
+    .h2ConnectedBookExchangeConfirmBookExchange,
+    .h2ConnectedBookExchangeConfirmationOfTheExchangeRequest,
+    .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
+    .h2ConnectedConnectedResetPasswordCheckEmail {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
     div#content.row.blockCard>div.card {
         flex: 0 0 auto;
         width: 41.6666666667%;
     }
 
+    .table {
+        margin: 1rem;
+    }
+
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .375rem .75rem;
         font-size: 1.55em;
-    }
-
-    /* Test table responsive */
-
-    /* Generic Styling, for Desktops/Laptops */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th {
-        color: #212529;
-        ;
-        font-weight: bold;
-    }
-
-    td,
-    th {
-        padding: 6px;
-        border: 1px solid #ccc;
-        text-align: left;
     }
 
 }
