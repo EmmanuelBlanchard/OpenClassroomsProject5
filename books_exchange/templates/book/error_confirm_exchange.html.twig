@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ app.user.firstname }}
+	{{ app.user.lastname }}
+	- Accès refusé à la demande d'échange du livre
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="divAlert col-12">
+				<div class="alert alert-success" role="alert">
+					{{message}}
+				</div>
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+			<div class="divAlert col-12">
+				<div class="alert alert-danger" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<section>
+			<h2 class="h2ConnectedBookExchangeConfirmBookExchange">Échange de livres</h2>
+			<div class="divForbiddenConfirmExchange">
+			
+				<p class="forbiddenConfirmExchange">Accès refusé à la demande d'échange du livre</p>
+
+				<p>Vous avez déja un compte ?</p>
+
+                <a class="btn btn-primary m-2" href="{{ path('app_login') }}" role="button">Connectez-vous</a>
+				
+                <p>Vous n'avez pas de compte ?</p>
+
+				<a class="btn btn-primary m-2" href="{{ path('app_register') }}" role="button">Créer un compte</a>
+			</div>
+		</section>
+	</div>
+{% endblock %}
