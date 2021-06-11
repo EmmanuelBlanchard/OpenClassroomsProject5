@@ -1219,6 +1219,29 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-weight: bold;
     }
 
+    /* template book/index.html.twig */
+    body>main.container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main.container>aside {
+        flex: 0 0 auto;
+        width: 35%;
+    }
+
+    .h2OfWelcomeOfPseudo {
+        font-weight: bold;
+        font-size: calc(1.325rem + .3vw);
+    }
+
+    main.container>section.container.list-of-books {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+    }
+
     /* template search_books_test.html.twig */
     main.container>div.container {
         display: flex;

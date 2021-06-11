@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<section class="container list-of-books">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -25,5 +25,5 @@
 		<div class="row blockCard" id="content">
 			{% include "book/_content.html.twig" %}
 		</div>
-	</div>
+	</section>
 {% endblock %}
