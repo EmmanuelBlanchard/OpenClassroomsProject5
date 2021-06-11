@@ -433,7 +433,6 @@ section.introductoryContent>p {
 .divConfirmAccountEmailAddress,
 .divConnectedTotheAccount,
 .divConnectedBookExchangeConfirmBookExchange,
-.divForbiddenConfirmExchange,
 .divConnectedBookExchangeConfirmationOfTheExchangeRequest,
 .divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
     margin: 0 auto;
@@ -445,14 +444,8 @@ section.introductoryContent>p {
     padding: 20px 40px;
 }
 
-.divForbiddenConfirmExchange {
-    border: 0.1em solid #dc3545;
-    ;
-}
-
 /* Wireframe 12 */
-.divConnectedBookExchangeConfirmBookExchange,
-.divForbiddenConfirmExchange {
+.divConnectedBookExchangeConfirmBookExchange {
     width: 60.5%;
     text-align: center;
 }
@@ -720,12 +713,6 @@ a.btn-success.buttonConfirmTheExchange:hover {
     color: #fff;
     background-color: #186135;
     border-color: #15572F;
-}
-
-/* template book/error_confirm_exchange.html.twig */
-.forbiddenConfirmExchange {
-    color: #dc3545;
-    font-weight: bold;
 }
 
 .buttonConnectedBookStockAddABook,

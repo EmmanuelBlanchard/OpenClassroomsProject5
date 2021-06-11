@@ -303,23 +303,9 @@ class BookController extends AbstractController
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } elseif ($user === $book->getUser()) {
-            return $this->render('book/error_confirm_exchange.html.twig', ['book' => $book]);
+            throw $this->createAccessDeniedException();
         } elseif ($user) {
             return $this->render('book/validation_confirm_exchange.html.twig', ['book' => $book]);
-        }
-        return $this->redirectToRoute('app_home');
-    }
-
-    /**
-    * @Route("/error/confirm/exchange/{id}", name="app_error_confirm_exchange")
-    */
-    public function errorConfirmExchange(Book $book): Response
-    {
-        if ($book === null) {
-            // Make a flash bag message
-            $this->addFlash('error', 'Erreur : problème d\'identification du livre');
-        } else {
-            return $this->render('book/error_confirm_exchange.html.twig', ['book' => $book]);
         }
         return $this->redirectToRoute('app_home');
     }
@@ -335,7 +321,7 @@ class BookController extends AbstractController
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } elseif ($user === $book->getUser()) {
-            return $this->render('book/error_confirm_exchange.html.twig', ['book' => $book]);
+            throw $this->createAccessDeniedException();
         } elseif ($user) {
             $book->setExchangeRequest(true);
             $book->setExchangeRequestAt(new \DateTime('now'));
