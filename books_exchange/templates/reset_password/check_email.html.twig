@@ -4,16 +4,16 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<section class="container reset-password-check-email">
 
-		<h2 class="h2ConnectedConnectedResetPasswordCheckEmail">Envoi d'un e-mail de réinitialisation du mot de passe</h2>
+		<h2 class="h2ResetPasswordCheckEmail">Envoi d'un e-mail de réinitialisation du mot de passe</h2>
 
-		<div class="divConnectedResetPasswordCheckEmail">
+		<div class="divResetPasswordCheckEmail">
 			<p>Un e-mail a été envoyé qui contient un lien sur lequel vous pouvez cliquer pour réinitialiser votre mot de passe.</p>
 			<p>Ce lien expirera dans
 				{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 			<p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier de courrier indésirable ou
 				<a href="{{ path('app_forgot_password_request') }}">réessayer</a>.</p>
 		</div>
-	</div>
+	</section>
 {% endblock %}

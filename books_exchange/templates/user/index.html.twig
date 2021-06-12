@@ -23,7 +23,7 @@
 			</div>
 		{% endfor %}
 
-		<div class="divUserProfile">
+		<div class="divUserIndex">
 			<h2 class="h2ConnectedProfile">Profil de
 				{{ app.user.firstname }}
 				{{ app.user.lastname }}
@@ -41,7 +41,7 @@
 				<div class="col-7 ml-4 p-3 border">{{ app.user.zipCode }}</div>
 				<div class="col-2 ms-5 p-3 border">Ville :</div>
 				<div class="col-7 ml-4 p-3 border">{{ app.user.city }}</div>
-				<div class="col-12 divButtonsEdit">
+				<div class="col-12 divButtonUserIndex">
 					<a class="btn btn-primary mx-4" href="{{ path('user_profile_update') }}" role="button">Modifier le profil</a>
 					<a class="btn btn-primary mx-4" href="{{ path('user_email_update') }}" role="button">Modifier l'e-mail</a>
 					<a class="btn btn-primary mx-4" href="{{ path('user_password_update') }}" role="button">Modifier le mot de passe</a>

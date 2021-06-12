@@ -284,11 +284,7 @@ tbody>tr>td {
     color: #842029;
 }
 
-#submitRegistrationFormButton {
-    display: none;
-}
-
-.divUserProfile {
+.divUserIndex {
     margin: 1.5rem;
     padding: 1rem;
     background-color: #fff;
@@ -314,27 +310,16 @@ tbody>tr>td {
     margin-bottom: 2.5rem;
 }
 
-/* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
-.h2ConfirmAccountEmailAddress,
-.h2ConnectedTotheAccount,
-.h2ConnectedProfile,
-.h3ConnectedUserBook,
+.h2UserData,
+.h3UserData,
 .h2MyBooks,
-.h2ConnectedBookStockBookAdditionForm,
-.h3ConnectedBookStockBookAdditionForm,
-.h2ConnectedBookStockBookStocked,
-.h3ConnectedBookStockBookStocked,
-.h2ConnectedBookExchangeClickOnTheBookExchangeLink,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
 .h2MyExchangeRequests,
 .h2ListOfBooks,
-.h2ConnectedBookExchangeSearchForTheBookHarryPotter,
-.h3ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ValidationConfirmExchange,
 .h2ConfirmExchange,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-.h2ConnectedConnectedResetPasswordCheckEmail {
+.h2ResetPasswordCheckEmail {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
     color: #186135;
@@ -344,50 +329,32 @@ tbody>tr>td {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.h2ConfirmAccountEmailAddress,
-.h2ConnectedTotheAccount,
-.h2ConnectedProfile,
+.h2UserData,
 .h2MyBooks,
-.h2ConnectedBookStockBookAdditionForm,
-.h2ConnectedBookStockBookStocked,
-.h2ConnectedBookExchangeClickOnTheBookExchangeLink,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
 .h2MyExchangeRequests,
 .h2ListOfBooks,
-.h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ValidationConfirmExchange,
 .h2ConfirmExchange,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-.h2ConnectedConnectedResetPasswordCheckEmail {
+.h2ResetPasswordCheckEmail {
     border: 0.04em solid #186135;
 }
 
-/* Wireframe 3-4-5-6-7-8-9-10-12-13 */
-.h2ConfirmAccountEmailAddress,
-.h2ConnectedTotheAccount,
-.h2ConnectedProfile,
+.h2UserData,
 .h2MyBooks,
-.h2ConnectedBookStockBookAdditionForm,
-.h2ConnectedBookStockBookStocked,
-.h2ConnectedBookExchangeClickOnTheBookExchangeLink,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
 .h2MyExchangeRequests,
 .h2ListOfBooks,
-.h2ConnectedBookExchangeSearchForTheBookHarryPotter,
 .h2ValidationConfirmExchange,
 .h2ConfirmExchange,
-.h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-.h2ConnectedConnectedResetPasswordCheckEmail {
+.h2ResetPasswordCheckEmail {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
-.h3ConnectedUserBook,
-.h3ConnectedBookStockBookAdditionForm,
-.h3ConnectedBookStockBookStocked,
-.h3ConnectedBookExchangeSearchForTheBookHarryPotter {
+.h3UserData {
     padding: 10px 20px;
 }
 
@@ -431,12 +398,8 @@ section.container.main-index>p.pIntroductoryContent {
     margin-left: 2%;
 }
 
-/* Wireframes 3-5-12-13-14 */
-.divConfirmAccountEmailAddress,
-.divConnectedTotheAccount,
 .divValidationConfirmExchange,
-.divConfirmExchange,
-.divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
+.divConfirmExchange {
     margin: 0 auto;
     width: 75.5%;
     border: 0.1em solid #186135;
@@ -446,91 +409,54 @@ section.container.main-index>p.pIntroductoryContent {
     padding: 20px 40px;
 }
 
-/* Wireframe 12 */
 .divValidationConfirmExchange {
     width: 60.5%;
     text-align: center;
 }
 
-/* Wireframe 14 */
-.divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
-    width: 64.5%;
-}
-
-/* Wireframe 6-8-9-10 */
-.divEmptyLibrary,
-.divConnectedBookStockBookStocked,
+.divBookMyBooksEmptyLibrary,
 .divTheBooksIRequestedToExchange,
 .divMyBooksRequestedForExchange,
-.divConnectedBookExchangeSearchForTheBookHarryPotter,
-.divConnectedResetPasswordCheckEmail {
+.divResetPasswordCheckEmail {
     margin: 1.5rem auto;
     border-radius: 0.5rem;
     background-color: #0854A2;
     padding: 1rem;
 }
 
-.divConnectedResetPasswordCheckEmail {
+.divResetPasswordCheckEmail {
     background-color: #F7F7F7;
 }
 
-.divEmptyLibrary,
-.divConnectedResetPasswordCheckEmail {
+.divBookMyBooksEmptyLibrary,
+.divResetPasswordCheckEmail {
     width: 63.8%;
 }
 
-.divConnectedBookStockBookStocked {
-    width: 40.8%;
-    padding: 2% 2%;
-}
-
 .divTheBooksIRequestedToExchange,
-.divMyBooksRequestedForExchange,
-.divConnectedBookExchangeSearchForTheBookHarryPotter {
+.divMyBooksRequestedForExchange {
     width: 52.8%;
 }
 
-/* Wireframes 3-5-6-7-8-9-10-11-12-13-14 */
-.divConfirmAccountEmailAddress p,
-.divConnectedTotheAccount p,
-.divEmptyLibrary p,
-.divConnectedBookStockBookStocked p,
+.divBookMyBooksEmptyLibrary p,
 .divTheBooksIRequestedToExchange p,
 .divMyBooksRequestedForExchange p,
-.divExchangeInstructions p,
-.divConnectedBookExchangeSearchForTheBookHarryPotter p,
-.divDisplayBlocksBookInformation p,
-.divConnectedBookExchangeConfirmBookExchange p,
-.divConfirmExchange p,
-.divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn p {
+.divHowMakeExchange p,
+.divConfirmExchange p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     color: #000;
 }
 
-/* Wireframes 6-8-9-10 */
-.divEmptyLibrary p,
-.divConnectedBookStockBookStocked p,
+.divBookMyBooksEmptyLibrary p,
 .divTheBooksIRequestedToExchange p,
 .divMyBooksRequestedForExchange p,
-.divExchangeInstructions p,
-.divConnectedBookExchangeSearchForTheBookHarryPotter p {
+.divHowMakeExchange p {
     color: #FFF;
 }
 
 .divTheBooksIRequestedToExchange p,
 .divMyBooksRequestedForExchange p {
     margin: .5rem auto;
-}
-
-/* Wireframe 3 */
-.paragraphOfTheEmailDisplay {
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Wireframe 5 */
-.welcomeMessageParagraph {
-    font-weight: bold;
 }
 
 /* Test code selectors css : Responsive Mobile */
@@ -561,78 +487,7 @@ div#content.row.blockCard>div.card {
     width: 80%;
 }
 
-.divDisplayBlocksBookInformation,
-.divDisplayBlockOfStoredBookInformation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 4%;
-    margin-bottom: 2%;
-}
-
-/* block of books */
-.blockOfTheBookInformation,
-.blockOfStoredBookInformation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 36%;
-    border: 0.2em solid #196216;
-    border-radius: 0.5em;
-    border-color: #196216;
-    padding: 2.51%;
-    margin-bottom: 2%;
-}
-
-.blockOfTheBookInformation h4,
-.blockOfStoredBookInformation h4 {
-    width: 95%;
-    margin-top: 0;
-    margin-bottom: 4.4%;
-    overflow: hidden;
-    font-size: 1.3em;
-    line-height: 1.08em;
-}
-
-.blockOfTheBookInformation h4,
-div.line.author>a,
-.blockOfStoredBookInformation h4,
-div.line.author>a {
-    color: #000;
-}
-
-div.line.author>a,
-div.line.location>span,
-div.line.author>a,
-section.blockOfStoredBookInformation>p.line.state {
-    font-size: 1.2em;
-}
-
-section.blockOfStoredBookInformation>p.line.category {
-    font-size: 1.17em;
-}
-
-div.line.location,
-.divExchangeButton,
-section.blockOfStoredBookInformation>p.line.category,
-section.blockOfStoredBookInformation>p.line.publisher,
-section.blockOfStoredBookInformation>p.line.language,
-section.blockOfStoredBookInformation>p.line.format,
-section.blockOfStoredBookInformation>p.line.state,
-.divRemoveFromBookStockButton {
-    margin-top: 4.4%;
-    margin-bottom: 4.4%;
-}
-
-.blockOfTheBookInformation h4,
-div.line.author>a,
-div.line.location>span,
-.blockOfStoredBookInformation h4,
-div.line.author>a,
-section.blockOfStoredBookInformation>p.line.state,
-.divConnectedBookExchangeConfirmBookExchange span,
-.divConfirmExchange span,
-.divHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn span {
+.divConfirmExchange span {
     font-weight: bold;
 }
 
@@ -654,8 +509,8 @@ section.blockOfStoredBookInformation>p.line.state,
 }
 
 /* templates/book/validation_confirm_exchange.html.twig and templates/book/my_books.html.twig */
-.divButtonConfirmTheExchange,
-.divButtonConnectedBookMyBooks {
+.divButtonValidationConfirmExchange,
+.divButtonBookMyBooks {
     display: flex;
     justify-content: center;
 }
@@ -674,7 +529,7 @@ a.btn-success.buttonConfirmTheExchange:hover {
     border-color: #15572F;
 }
 
-.divExchangeInstructions {
+.divHowMakeExchange {
     display: flex;
     flex-direction: column;
     margin: 1.5rem auto;
@@ -683,20 +538,11 @@ a.btn-success.buttonConfirmTheExchange:hover {
     background-color: #186135;
 }
 
-.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn {
-    text-align: center;
-}
-
-.paragraphsCenterOfTheDivHomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-.paragraphBeforeTheCreateMyAccountButton {
-    margin-bottom: 8%;
-}
-
-.paragraphDisplayingInformationBookRequestedExchange {
+.paragraphValidationConfirmExchange {
     text-align: left;
 }
 
-div.col-12.divButtonsEdit {
+div.col-12.divButtonUserIndex {
     display: flex;
     padding-bottom: 1.5rem;
     padding-right: 1.5rem;
@@ -1239,48 +1085,31 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
-    .h2ConfirmAccountEmailAddress,
-    .h2ConnectedTotheAccount,
-    .h2ConnectedProfile,
-    .h3ConnectedUserBook,
+    .h2UserData,
+    .h3UserData,
     .h2MyBooks,
-    .h2ConnectedBookStockBookAdditionForm,
-    .h3ConnectedBookStockBookAdditionForm,
-    .h2ConnectedBookStockBookStocked,
-    .h3ConnectedBookStockBookStocked,
-    .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,
     .h2MyExchangeRequests,
     .h2ListOfBooks,
-    .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
-    .h3ConnectedBookExchangeSearchForTheBookHarryPotter,
     .h2ValidationConfirmExchange,
     .h2ConfirmExchange,
-    .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-    .h2ConnectedConnectedResetPasswordCheckEmail {
+    .h2ResetPasswordCheckEmail {
         width: 72.5%;
         margin-left: 5rem;
         padding: 20px 40px;
     }
 
     /* Wireframe 3-4-5-6-7-8-9-10-12-13 */
-    .h2ConfirmAccountEmailAddress,
-    .h2ConnectedTotheAccount,
-    .h2ConnectedProfile,
+    .h2UserData,
     .h2MyBooks,
-    .h2ConnectedBookStockBookAdditionForm,
-    .h2ConnectedBookStockBookStocked,
-    .h2ConnectedBookExchangeClickOnTheBookExchangeLink,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,
     .h2MyExchangeRequests,
     .h2ListOfBooks,
-    .h2ConnectedBookExchangeSearchForTheBookHarryPotter,
     .h2ValidationConfirmExchange,
     .h2ConfirmExchange,
-    .h2HomePageClickExchangeButtonOfTheBookButAreNotLoggedIn,
-    .h2ConnectedConnectedResetPasswordCheckEmail {
+    .h2ResetPasswordCheckEmail {
         margin-top: 2.5rem;
         margin-bottom: 2.5rem;
     }
