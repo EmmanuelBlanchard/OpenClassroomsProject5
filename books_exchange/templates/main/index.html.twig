@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<section class="container main-index">
 		{% for message in app.flashes('success') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -18,10 +18,8 @@
 			</div>
 		{% endfor %}
 
-		<section class="introductoryContent">
-			<h2 class="h2IntroductoryContent">Échangez vos livres contre des nouveaux avec ÉchangeLivres !</h2>
-			<p>Facile et économique, le troc de livres d'occasion vous permet de lire de nouveaux titres toute l'année. Inscrivez-vous gratuitement et ajoutez vos livres à notre catalogue composé de milliers d'ouvrages.</p>
-		</section>
+		<h2 class="h2IntroductoryContent">Échangez vos livres contre des nouveaux avec ÉchangeLivres !</h2>
+		<p class="pIntroductoryContent">Facile et économique, le troc de livres d'occasion vous permet de lire de nouveaux titres toute l'année. Inscrivez-vous gratuitement et ajoutez vos livres à notre catalogue composé de milliers d'ouvrages.</p>
 
 		<section class="instructionsForUse">
 			<h3 class="h3InstructionsForUse">L'échange de livres, mode d'emploi</h3>
@@ -36,5 +34,5 @@
 			{% include "main/_content.html.twig" %}
 		</div>
 		
-	</div>
+	</section>
 {% endblock %}

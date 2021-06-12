@@ -392,10 +392,11 @@ tbody>tr>td {
 }
 
 /* Test code selectors css : Responsive Mobile */
-section.introductoryContent>p {
+section.container.main-index>p.pIntroductoryContent {
     font-size: 0.83em;
     font-weight: bold;
     line-height: 1.6em;
+    margin-left: 2%;
 }
 
 /* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
@@ -427,6 +428,7 @@ section.introductoryContent>p {
 /* Test code selectors css : Responsive Mobile */
 .instructionsForUse p {
     font-size: 1em;
+    margin-left: 2%;
 }
 
 /* Wireframes 3-5-12-13-14 */
@@ -556,7 +558,7 @@ section.introductoryContent>p {
 /* Test code selectors css : Responsive Mobile */
 div#content.row.blockCard>div.card {
     flex: 0 0 auto;
-    width: 100%;
+    width: 80%;
 }
 
 .divDisplayBlocksBookInformation,
@@ -1228,7 +1230,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
     main.container>aside {
         flex: 0 0 auto;
-        width: 35%;
+        width: 30%;
     }
 
     .h2OfWelcomeOfPseudo {
@@ -1236,10 +1238,11 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-size: calc(1.325rem + .3vw);
     }
 
+    main.container>section.container.main-index,
     main.container>section.container.list-of-books {
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 65%;
     }
 
     /* template search_books_test.html.twig */
@@ -1291,7 +1294,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-bottom: 2.5rem;
     }
 
-    section.introductoryContent>p {
+    section.container.main-index>p.pIntroductoryContent {
         font-size: 0.83em;
         font-weight: bold;
         line-height: 1.6em;
