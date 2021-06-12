@@ -6,9 +6,8 @@
 	- Confirmation de la demande d'échange du livre
 {% endblock %}
 
-
 {% block body %}
-	<div class="container">
+	<section class="container confirm-exchange">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -23,22 +22,18 @@
 				</div>
 			</div>
 		{% endfor %}
-
-		<section class="contentBlockSection">
-			<h2 class="h2ConnectedBookExchangeConfirmationOfTheExchangeRequest">Échange de livres</h2>
-			<div class="divConnectedBookExchangeConfirmationOfTheExchangeRequest">
-				<p>
-					La demande d'échange du livre
-					<span>{{ book.title }}</span>
-				</p>
-				<p>est
-					<span>confirmée !</span>
-				</p>
-				<p>Si non réponse de
-					<span>{{book.user.pseudo}}</span>
-					d'ici quatre jours dans votre messagerie, l'échange est annulé.
-				</p>
-			</div>
-		</section>
-	</div>
+		<h2 class="h2ConfirmExchange">Échange de livres</h2>
+		<div class="divConfirmExchange">
+			<p>La demande d'échange du livre
+				<span>{{ book.title }}</span>
+			</p>
+			<p>est
+				<span>confirmée !</span>
+			</p>
+			<p>Si non réponse de
+				<span>{{book.user.pseudo}}</span>
+				d'ici quatre jours dans votre messagerie, l'échange est annulé.
+			</p>
+		</div>
+	</section>
 {% endblock %}

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<section class="container validation-confirm-exchange">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -22,29 +22,27 @@
 				</div>
 			</div>
 		{% endfor %}
-		<section>
-			<h2 class="h2ConnectedBookExchangeConfirmBookExchange">Échange de livres</h2>
-			<div class="divConnectedBookExchangeConfirmBookExchange">
-				<p>Confirmer la demande d'échange du livre</p>
-				<p>
-					<span>
-						{{ book.title }}</span>
-					avec
-				</p>
-				<p class="paragraphDisplayingInformationBookRequestedExchange">État:
-					<span>{{book.state}}</span>
-				</p>
-				<p class="paragraphDisplayingInformationBookRequestedExchange">Propriétaire:
-					<span>{{book.user.pseudo}}</span>
-				</p>
-				<p class="paragraphDisplayingInformationBookRequestedExchange">Localisation:
-					<span>{{book.user.city}}
-						{{book.user.zipCode}}</span>
-				</p>
-				<div class="divButtonConfirmTheExchange">
-					<a href="{{ path('book_confirm_exchange', {'id': book.id }) }}" class="btn btn-success buttonConfirmTheExchange ">Confirmer l'échange</a>
-				</div>
+		<h2 class="h2ValidationConfirmExchange">Échange de livres</h2>
+		<div class="divValidationConfirmExchange">
+			<p>Confirmer la demande d'échange du livre : </p>
+			<p>
+				<span>
+					{{ book.title }}</span>
+				avec
+			</p>
+			<p class="paragraphDisplayingInformationBookRequestedExchange">État:
+				<span>{{book.state}}</span>
+			</p>
+			<p class="paragraphDisplayingInformationBookRequestedExchange">Propriétaire:
+				<span>{{book.user.pseudo}}</span>
+			</p>
+			<p class="paragraphDisplayingInformationBookRequestedExchange">Localisation:
+				<span>{{book.user.city}}
+					{{book.user.zipCode}}</span>
+			</p>
+			<div class="divButtonConfirmTheExchange">
+				<a href="{{ path('book_confirm_exchange', {'id': book.id }) }}" class="btn btn-success buttonConfirmTheExchange ">Confirmer l'échange</a>
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 {% endblock %}

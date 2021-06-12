@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<section class="container how-make-exchange">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -36,5 +36,5 @@
 			<p>VI - Si non réponse dans votre messagerie d'ici 4 jours,</p>
 			<p>l'échange est annulé.</p>
 		</div>
-	</div>
+	</section>
 {% endblock %}
