@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="col-9">
+	<section class="container user-index">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-sm-12">
 				<div class="alert alert-success" role="alert">
@@ -22,32 +22,29 @@
 				</div>
 			</div>
 		{% endfor %}
-
-		<div class="divUserIndex">
-			<h2 class="h2ConnectedProfile">Profil de
-				{{ app.user.firstname }}
-				{{ app.user.lastname }}
-			</h2>
-			<div class="row row-cols-2 g-4">
-				<div class="col-2 ms-5 p-3 border">Pseudo :</div>
-				<div class="col-7 ml-4 p-3 border">{{ app.user.pseudo }}</div>
-				<div class="col-2 ms-5 p-3 border">Nom :</div>
-				<div class="col-7 ml-4 p-3 border">{{ app.user.lastname }}</div>
-				<div class="col-2 ms-5 p-3 border">Prénom :</div>
-				<div class="col-7 ml-4 p-3 border">{{ app.user.firstname }}</div>
-				<div class="col-2 ms-5 p-3 border">E-mail :</div>
-				<div class="col-7 ml-4 p-3 border">{{ app.user.email }}</div>
-				<div class="col-2 ms-5 p-3 border">Code postal :</div>
-				<div class="col-7 ml-4 p-3 border">{{ app.user.zipCode }}</div>
-				<div class="col-2 ms-5 p-3 border">Ville :</div>
-				<div class="col-7 ml-4 p-3 border">{{ app.user.city }}</div>
-				<div class="col-12 divButtonUserIndex">
-					<a class="btn btn-primary mx-4" href="{{ path('user_profile_update') }}" role="button">Modifier le profil</a>
-					<a class="btn btn-primary mx-4" href="{{ path('user_email_update') }}" role="button">Modifier l'e-mail</a>
-					<a class="btn btn-primary mx-4" href="{{ path('user_password_update') }}" role="button">Modifier le mot de passe</a>
-					<a class="btn btn-secondary mx-4" href="{{ path('user_data') }}" role="button">Voir mes données personelles (RGPD)</a>
-				</div>
+		<h2 class="h2UserIndex">Profil de
+			{{ app.user.firstname }}
+			{{ app.user.lastname }}
+		</h2>
+		<div class="row row-cols-2 g-4">
+			<div class="div-user-index-name">Pseudo :</div>
+			<div class="div-user-index-value">{{ app.user.pseudo }}</div>
+			<div class="div-user-index-name">Nom :</div>
+			<div class="div-user-index-value">{{ app.user.lastname }}</div>
+			<div class="div-user-index-name">Prénom :</div>
+			<div class="div-user-index-value">{{ app.user.firstname }}</div>
+			<div class="div-user-index-name">E-mail :</div>
+			<div class="div-user-index-value">{{ app.user.email }}</div>
+			<div class="div-user-index-name">Code postal :</div>
+			<div class="div-user-index-value">{{ app.user.zipCode }}</div>
+			<div class="div-user-index-name">Ville :</div>
+			<div class="div-user-index-value">{{ app.user.city }}</div>
+			<div class="div-user-index-buttons">
+				<a class="btn btn-primary div-user-index-button" href="{{ path('user_profile_update') }}" role="button">Modifier le profil</a>
+				<a class="btn btn-primary div-user-index-button" href="{{ path('user_email_update') }}" role="button">Modifier l'e-mail</a>
+				<a class="btn btn-primary div-user-index-button" href="{{ path('user_password_update') }}" role="button">Modifier le mot de passe</a>
+				<a class="btn btn-secondary div-user-index-button" href="{{ path('user_data') }}" role="button">Voir mes données personelles (RGPD)</a>
 			</div>
 		</div>
-	</div>
+	</section>
 {% endblock %}

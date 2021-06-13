@@ -312,6 +312,7 @@ tbody>tr>td {
 
 .h2UserData,
 .h3UserData,
+.h2UserIndex,
 .h2MyBooks,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
@@ -331,6 +332,7 @@ tbody>tr>td {
 
 .h2UserData,
 .h2MyBooks,
+.h2UserIndex,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
 .h2MyExchangeRequests,
@@ -343,6 +345,7 @@ tbody>tr>td {
 
 .h2UserData,
 .h2MyBooks,
+.h2UserIndex,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
 .h2MyExchangeRequests,
@@ -542,8 +545,10 @@ a.btn-success.buttonConfirmTheExchange:hover {
     text-align: left;
 }
 
-div.col-12.divButtonUserIndex {
+div.div-user-index-buttons {
     display: flex;
+    flex: 0 0 auto;
+    width: 100%;
     padding-bottom: 1.5rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -775,7 +780,7 @@ div.form-control>input#inputPassword.form-control:focus {
     width: 100%;
 }
 
-.formFooter {
+.formFooterSecurityLogin {
     border-top: 1px solid #f0f0f0;
     background-color: #f7f7f7;
     padding: 20px 40px;
@@ -812,13 +817,13 @@ div.card-header a,
 }
 
 .divButtonExchangeCenter,
-.divButtonsFlexCenter {
+.divButtonsBookShowCenter {
     display: flex;
     justify-content: center;
     padding-bottom: 1rem;
 }
 
-.divButtonsFlexCenter {
+.divButtonsBookShowCenter {
     flex-direction: column;
 }
 
@@ -982,10 +987,37 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
     main.container>section.container.main-index,
     main.container>section.container.list-of-books,
-    main.container>section.container.how-make-exchange {
+    main.container>section.container.how-make-exchange,
+    main.container>section.container.user-index {
         display: flex;
         flex-direction: column;
         width: 65%;
+    }
+
+    main.container>section.container.user-index {
+        display: flex;
+        flex: 0 0 auto;
+        margin-top: 1.5rem;
+    }
+
+    div.row.row-cols-2.g-4>div.div-user-index-name {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+        margin-left: 1.5rem;
+        padding: .5rem;
+        border: 1px solid #dee2e6;
+    }
+
+    div.row.row-cols-2.g-4>div.div-user-index-value {
+        flex: 0 0 auto;
+        width: 41.6666666667%;
+        padding: .5rem;
+        border: 1px solid #dee2e6;
+    }
+
+    div.div-user-index-buttons>a.btn.btn-primary.div-user-index-button {
+        margin-right: .5rem;
+        margin-left: .5rem;
     }
 
     /* template search_books_test.html.twig */
@@ -1084,9 +1116,9 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-size: calc(1.325rem + .5vw);
     }
 
-    /* Wireframe 2-3-4-5-6-7-8-9-10-12-13 */
     .h2UserData,
     .h3UserData,
+    .h2UserIndex,
     .h2MyBooks,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,
@@ -1100,9 +1132,9 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: 20px 40px;
     }
 
-    /* Wireframe 3-4-5-6-7-8-9-10-12-13 */
     .h2UserData,
     .h2MyBooks,
+    .h2UserIndex,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,
     .h2MyExchangeRequests,
