@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="col-12 col-md-9">
+	<section class="container user-data">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-sm-12">
 				<div class="alert alert-success" role="alert">
@@ -26,34 +26,30 @@
 			{{ app.user.lastname }}
 		</h2>
 
-		<a class="btn btn-primary m-4 col-4" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
+		<a class="btn user-data-button" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
 
-		<div class="container">
-			<div class="row row-cols-2 gx-4 gy-4">
-				<div class="col-3 ms-4 p-3 border">Pseudo :</div>
-				<div class="col-8 ml-4 p-3 border">{{ app.user.pseudo }}</div>
-				<div class="col-3 ms-4 p-3 border">Nom :</div>
-				<div class="col-8 ml-4 p-3 border">{{ app.user.lastname }}</div>
-				<div class="col-3 ms-4 p-3 border">Prénom :</div>
-				<div class="col-8 ml-4 p-3 border">{{ app.user.firstname }}</div>
-				<div class="col-3 ms-4 p-3 border">E-mail :</div>
-				<div class="col-8 ml-4 p-3 border">{{ app.user.email }}</div>
-				<div class="col-3 ms-4 p-3 border">Code postal :</div>
-				<div class="col-8 ml-4 p-3 border">{{ app.user.zipCode }}</div>
-				<div class="col-3 ms-4 p-3 border">Ville :</div>
-				<div class="col-8 ml-4 p-3 border">{{ app.user.city }}</div>
-			</div>
+		<div class="row row-cols-2 g-4">
+			<div class="div-user-data-name">Pseudo :</div>
+			<div class="div-user-data-value">{{ app.user.pseudo }}</div>
+			<div class="div-user-data-name">Nom :</div>
+			<div class="div-user-data-value">{{ app.user.lastname }}</div>
+			<div class="div-user-data-name">Prénom :</div>
+			<div class="div-user-data-value">{{ app.user.firstname }}</div>
+			<div class="div-user-data-name">E-mail :</div>
+			<div class="div-user-data-value">{{ app.user.email }}</div>
+			<div class="div-user-data-name">Code postal :</div>
+			<div class="div-user-data-value">{{ app.user.zipCode }}</div>
+			<div class="div-user-data-name">Ville :</div>
+			<div class="div-user-data-value">{{ app.user.city }}</div>
 		</div>
 
-		<div class="my-4">
-			<h3 class="h3UserData">Livres de
-				{{ app.user.firstname }}
-				{{ app.user.lastname }}
-				({{ app.user.books|length }})
-			</h3>
-		</div>
-
-		<table class="table table-responsive table-hover manageMyAccountBooks">
+		<h3 class="h3UserData">Livres de
+			{{ app.user.firstname }}
+			{{ app.user.lastname }}
+			({{ app.user.books|length }})
+		</h3>
+		
+		<table class="table responsive-table-line table-hover">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -70,18 +66,18 @@
 			<tbody>
 				{% for book in app.user.books %}
 					<tr>
-						<th scope="row">{{ book.id }}</th>
-						<td>{{ book.title }}</td>
-						<td>{{ book.author }}</td>
-						<td>{{ book.category }}</td>
-						<td>{{ book.publisher }}</td>
-						<td>{{ book.summary|striptags }}</td>
-						<td>{{ book.language }}</td>
-						<td>{{ book.format }}</td>
-						<td>{{ book.state }}</td>
+						<th data-label="#" scope="row">{{ book.id }}</th>
+						<td data-label="Titre">{{ book.title }}</td>
+						<td data-label="Auteur">{{ book.author }}</td>
+						<td data-label="Catégorie">{{ book.category }}</td>
+						<td data-label="Éditeur">{{ book.publisher }}</td>
+						<td data-label="Résumé">{{ book.summary|striptags }}</td>
+						<td data-label="Langue">{{ book.language }}</td>
+						<td data-label="Format">{{ book.format }}</td>
+						<td data-label="État">{{ book.state }}</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
-	</div>
+	</section>
 {% endblock %}

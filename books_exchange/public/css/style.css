@@ -835,6 +835,40 @@ div.card-body {
     justify-content: center;
 }
 
+/* templates/user/data.html.twig */
+/* templates/book/my_books.html.twig */
+.btn.user-data-button,
+.btn.book-my-books-add-book-button,
+.btn.book-my-books-button {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn.user-data-button,
+.btn.book-my-books-add-book-button {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+    margin: 1.5rem;
+}
+
+.btn.book-my-books-button {
+    margin: .5rem;
+}
+
+.btn.user-data-button:hover,
+.btn.book-my-books-add-book-button:hover,
+.btn.book-my-books-button:hover {
+    color: #fff;
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.h3UserData {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 /* Test code selectors css : Responsive Mobile */
 nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     padding: .25rem .35rem;
@@ -987,7 +1021,9 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>section.container.main-index,
     main.container>section.container.list-of-books,
     main.container>section.container.how-make-exchange,
-    main.container>section.container.user-index {
+    main.container>section.container.user-index,
+    main.container>section.container.user-data,
+    main.container>section.container.book-my-books {
         display: flex;
         flex-direction: column;
         width: 65%;
@@ -999,7 +1035,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-top: 1.5rem;
     }
 
-    div.row.row-cols-2.g-4>div.div-user-index-name {
+    div.row.row-cols-2.g-4>div.div-user-index-name,
+    div.row.row-cols-2.g-4>div.div-user-data-name {
         flex: 0 0 auto;
         width: 33.3333333333%;
         margin-left: 1.5rem;
@@ -1007,7 +1044,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         border: 1px solid #dee2e6;
     }
 
-    div.row.row-cols-2.g-4>div.div-user-index-value {
+    div.row.row-cols-2.g-4>div.div-user-index-value,
+    div.row.row-cols-2.g-4>div.div-user-data-value {
         flex: 0 0 auto;
         width: 41.6666666667%;
         padding: .5rem;
