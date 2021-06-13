@@ -512,21 +512,21 @@ div#content.row.blockCard>div.card {
 }
 
 /* templates/book/validation_confirm_exchange.html.twig and templates/book/my_books.html.twig */
-.divButtonValidationConfirmExchange,
+.div-validation-confirm-exchange-button,
 .divButtonBookMyBooks {
     display: flex;
     justify-content: center;
 }
 
 /* templates/book/validation_confirm_exchange.html.twig */
-a.btn-success.buttonConfirmTheExchange {
+a.btn-success.validation-confirm-exchange-button {
     font-family: 'openSansRegular';
     color: #fff;
     background-color: #196216;
     border-color: #196216;
 }
 
-a.btn-success.buttonConfirmTheExchange:hover {
+a.btn-success.validation-confirm-exchange-button:hover {
     color: #fff;
     background-color: #186135;
     border-color: #15572F;
@@ -766,8 +766,7 @@ div.form-control>input#inputPassword.form-control:focus {
 #update_profile_form_validate,
 #update_email_form_validate,
 #update_password_form_validate,
-#reset_password_request_form_validate,
-#book_form_validate {
+#reset_password_request_form_validate {
     background-color: #186135;
     border: 2px solid #186135;
     border-radius: 0.25rem;
@@ -1015,7 +1014,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         border: 1px solid #dee2e6;
     }
 
-    div.div-user-index-buttons>a.btn.btn-primary.div-user-index-button {
+    div.div-user-index-buttons>a.btn.btn-primary.user-index-button {
         margin-right: .5rem;
         margin-left: .5rem;
     }
