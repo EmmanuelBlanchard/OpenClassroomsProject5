@@ -643,7 +643,7 @@ div.form-control:read-only {
 #reset_password_request_form,
 #reset_password_form,
 #add_book_form {
-    padding: 5px;
+    padding: 10px;
 }
 
 .form-control {
@@ -700,7 +700,7 @@ div.form-control>input#inputPassword.form-control:focus {
     visibility: hidden;
     position: absolute;
     top: 45px;
-    right: -15px;
+    right: -7px;
 }
 
 .form-control.success i.bi-check-circle {
@@ -755,25 +755,13 @@ div.form-control>input#inputPassword.form-control:focus {
 
 /* template/registration/register.html.twig */
 .div-registration-register-button,
-.div-security-login-button {
+.div-security-login-button,
+.div-reset-password-request-button {
     display: flex;
     justify-content: center;
 }
 
-.form button.btn.btn-success.btn-lg {
-    background-color: #186135;
-    border: 2px solid #186135;
-    border-radius: 0.25rem;
-    color: #fff;
-    display: block;
-    font-family: inherit;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 80%;
-}
-
+.form button.btn.btn-success.btn-lg,
 #update_profile_form_validate,
 #update_email_form_validate,
 #update_password_form_validate,
@@ -786,8 +774,9 @@ div.form-control>input#inputPassword.form-control:focus {
     font-family: inherit;
     font-size: 16px;
     padding: 10px;
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
 }
 
 .formFooterSecurityLogin {
