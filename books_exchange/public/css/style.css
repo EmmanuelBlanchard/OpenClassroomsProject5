@@ -233,7 +233,7 @@ main>aside {
 
 .informationAboutTheAccountTheLibraryTheExchanges {
     background-color: #FFF;
-    padding: 1.5rem 1.5rem;
+    padding: .5rem .5rem;
     border-radius: 0.5rem;
     margin-top: 1.5rem;
 }
@@ -245,7 +245,7 @@ main>aside {
 .divAboutTheAccountTheLibraryTheExchanges {
     display: flex;
     flex-direction: column;
-    padding-left: 0.65em;
+    padding-left: 0.32em;
 }
 
 .divAboutTheAccountTheLibraryTheExchanges>h3 {
@@ -294,7 +294,18 @@ tbody>tr>td {
 .h2howItWorks,
 .h2frequentlyAskedQuestions,
 .h2stateOfBook,
-.formHeader h2 {
+.formHeader h2,
+.h2OfWelcomeOfPseudo,
+.h2UserData,
+.h2MyBooks,
+.h2UserIndex,
+.h2HowMakeExchange,
+.h2MyExchangeWishes,
+.h2MyExchangeRequests,
+.h2ListOfBooks,
+.h2ValidationConfirmExchange,
+.h2ConfirmExchange,
+.h2ResetPasswordCheckEmail {
     font-size: 1.1em;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -344,20 +355,6 @@ tbody>tr>td {
 .h2ConfirmExchange,
 .h2ResetPasswordCheckEmail {
     border: 0.04em solid #186135;
-}
-
-.h2UserData,
-.h2MyBooks,
-.h2UserIndex,
-.h2HowMakeExchange,
-.h2MyExchangeWishes,
-.h2MyExchangeRequests,
-.h2ListOfBooks,
-.h2ValidationConfirmExchange,
-.h2ConfirmExchange,
-.h2ResetPasswordCheckEmail {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
 }
 
 .h3UserData {
@@ -550,11 +547,10 @@ a.btn-success.validation-confirm-exchange-button:hover {
 
 div.div-user-index-buttons {
     display: flex;
+    flex-direction: column;
     flex: 0 0 auto;
     width: 100%;
     padding-bottom: 1.5rem;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
 }
 
 div#content.row.blockCard {
@@ -562,6 +558,31 @@ div#content.row.blockCard {
     gap: 2rem;
     margin-top: 2rem;
 }
+
+/* test for section container with min-width:240px */
+main.container>section.container.main-index,
+main.container>section.container.list-of-books,
+main.container>section.container.how-make-exchange,
+main.container>section.container.user-index,
+main.container>section.container.user-data,
+main.container>section.container.book-my-books {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main.container>section.container.user-index {
+    display: flex;
+    flex: 0 0 auto;
+    margin-top: 1.5rem;
+}
+
+/* Above test for section container */
+
+div.div-user-index-buttons>a.btn.btn-primary.user-index-button {
+    margin-bottom: 1.5rem;
+}
+
 
 /* Styles css Bootstrap */
 .alert {
@@ -869,6 +890,26 @@ div.card-body {
     margin-bottom: 1.5rem;
 }
 
+/* Test templates/user/index.html.twig */
+.div-user-index-row {
+    flex: 0 0 auto;
+    width: 100%;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.div-user-index-name {
+    font-weight: bold;
+}
+
+.div-user-index-name,
+.div-user-index-value {
+    margin-bottom: 1rem;
+}
+
 /* Test code selectors css : Responsive Mobile */
 nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     padding: .2rem .12rem;
@@ -880,7 +921,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 /* Mobile menu Nokia 8110 - 240px*320px and DPR=1 */
 @media all and (min-width: 320px) and (min-resolution: 1dppx) {}
-
 
 /* @media only screen and (min-width: 200px) and (max-width: 767px) */
 /* @media only screen and (min-width: 200px) and (max-width: 1024px) */
