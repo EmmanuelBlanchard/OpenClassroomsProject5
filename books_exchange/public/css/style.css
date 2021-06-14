@@ -293,7 +293,8 @@ tbody>tr>td {
 .h2IntroductoryContent,
 .h2howItWorks,
 .h2frequentlyAskedQuestions,
-.h2stateOfBook {
+.h2stateOfBook,
+.formHeader h2 {
     font-size: 1.1em;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -623,7 +624,7 @@ div.form-control:read-only {
 .formHeader {
     border-bottom: 1px solid #f0f0f0;
     background-color: #f7f7f7;
-    padding: 20px 40px;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -642,7 +643,7 @@ div.form-control:read-only {
 #reset_password_request_form,
 #reset_password_form,
 #add_book_form {
-    padding: 30px 40px;
+    padding: 5px;
 }
 
 .form-control {
@@ -752,6 +753,13 @@ div.form-control>input#inputPassword.form-control:focus {
     border-color: #0a53be;
 }
 
+/* template/registration/register.html.twig */
+.div-registration-register-button,
+.div-security-login-button {
+    display: flex;
+    justify-content: center;
+}
+
 .form button.btn.btn-success.btn-lg {
     background-color: #186135;
     border: 2px solid #186135;
@@ -761,8 +769,9 @@ div.form-control>input#inputPassword.form-control:focus {
     font-family: inherit;
     font-size: 16px;
     padding: 10px;
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
 }
 
 #update_profile_form_validate,
@@ -784,7 +793,7 @@ div.form-control>input#inputPassword.form-control:focus {
 .formFooterSecurityLogin {
     border-top: 1px solid #f0f0f0;
     background-color: #f7f7f7;
-    padding: 20px 40px;
+    padding: 10px;
     text-align: center;
 }
 
