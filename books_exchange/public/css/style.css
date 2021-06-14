@@ -87,13 +87,14 @@ a:focus {
 }
 
 .imgLogo {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
 }
 
 .brandNameExchange,
 .brandNameBook {
     font-weight: bold;
+    font-size: calc(1.275rem);
 }
 
 .navbar-brand .brandNameExchange {
@@ -146,11 +147,6 @@ nav li {
     list-style-type: none;
 }
 
-nav ul li a,
-.menu a {
-    font-size: 1.55em;
-}
-
 li.nav-item>a.nav-link.nav-blue {
     color: rgb(8, 84, 162);
 }
@@ -168,8 +164,10 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0>li.nav-item {
     padding-right: 1rem;
 }
 
-div#navbarsExampleDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+div#navbarDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.mb-lg-0 {
     align-items: center;
+    margin-bottom: .5rem;
+    margin-right: auto;
 }
 
 .menu {
@@ -205,7 +203,7 @@ main>aside {
 #search_form {
     background-color: #FFF;
     border-radius: 0.5rem;
-    padding: 20px;
+    padding: 5px;
 }
 
 #search_form button {
@@ -292,12 +290,18 @@ tbody>tr>td {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
+.h2IntroductoryContent,
+.h2howItWorks,
+.h2frequentlyAskedQuestions,
+.h2stateOfBook {
+    font-size: 1.1em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 /* Test code selectors css : Responsive Mobile */
 .h2IntroductoryContent {
     color: #000000;
-    font-size: 1.3em;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
 }
 
 /* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
@@ -306,8 +310,6 @@ tbody>tr>td {
 .h2stateOfBook {
     color: #0854A2;
     text-align: center;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
 }
 
 .h2UserData,
@@ -379,7 +381,6 @@ section.container.main-index>p.pIntroductoryContent {
 .divParagraphsStateOfBook dd {
     font-family: 'MerriweatherRegular', 'openSansRegular', Arial, sans-serif, serif;
     color: #000;
-    margin-left: 5%;
 }
 
 .divParagraphsFrequentlyAskedQuestions dd,
@@ -390,14 +391,14 @@ section.container.main-index>p.pIntroductoryContent {
 /* Test code selectors css : Responsive Mobile */
 .h3InstructionsForUse {
     color: #CD4109;
-    font-size: 1.1em;
+    font-size: 1em;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
 }
 
 /* Test code selectors css : Responsive Mobile */
 .instructionsForUse p {
-    font-size: 1em;
+    font-size: 0.9em;
     margin-left: 2%;
 }
 
@@ -465,7 +466,7 @@ section.container.main-index>p.pIntroductoryContent {
 /* Test code selectors css : Responsive Mobile */
 .imageForTheInstructionManualBlock {
     width: 100%;
-    height: 288.2px;
+    height: 144.1px;
 }
 
 /* Test code selectors css : Responsive Mobile */
@@ -481,13 +482,14 @@ section.container.main-index>p.pIntroductoryContent {
     text-align: center;
     background-color: #F7F7F7;
     border-radius: 0.5rem;
-    padding: 10px 20px;
+    padding: 5px;
+    font-size: 1.1em;
 }
 
 /* Test code selectors css : Responsive Mobile */
 div#content.row.blockCard>div.card {
     flex: 0 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
 .divConfirmExchange span {
@@ -871,9 +873,16 @@ div.card-body {
 
 /* Test code selectors css : Responsive Mobile */
 nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-    padding: .25rem .35rem;
+    padding: .2rem .12rem;
     font-size: .875rem;
 }
+
+/* Mobile menu Nokia 8110 - 240px*320px and DPR=1 */
+@media all and (min-width: 240px) and (min-resolution: 1dppx) {}
+
+/* Mobile menu Nokia 8110 - 240px*320px and DPR=1 */
+@media all and (min-width: 320px) and (min-resolution: 1dppx) {}
+
 
 /* @media only screen and (min-width: 200px) and (max-width: 767px) */
 /* @media only screen and (min-width: 200px) and (max-width: 1024px) */
