@@ -777,7 +777,10 @@ div.form-control>input#inputPassword.form-control:focus {
 /* template/registration/register.html.twig */
 .div-registration-register-button,
 .div-security-login-button,
-.div-reset-password-request-button {
+.div-reset-password-request-button,
+.div-user-update-profile-button,
+.div-user-update-email-button,
+.div-user-update-password-button {
     display: flex;
     justify-content: center;
 }
