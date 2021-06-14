@@ -872,7 +872,6 @@ div.card-body {
 .btn.user-data-button,
 .btn.book-my-books-add-book-button {
     flex: 0 0 auto;
-    width: 33.3333333333%;
     margin: 1.5rem;
 }
 
@@ -893,8 +892,9 @@ div.card-body {
     margin-bottom: 1.5rem;
 }
 
-/* Test templates/user/index.html.twig */
-.div-user-index-row {
+/* Test templates/user/index.html.twig, templates/user/data.html.twig */
+.div-user-index-row,
+.div-user-data-row {
     flex: 0 0 auto;
     width: 100%;
     flex-shrink: 0;
@@ -904,12 +904,15 @@ div.card-body {
     padding-right: 1.5rem;
 }
 
-.div-user-index-name {
+.div-user-index-name,
+.div-user-data-name {
     font-weight: bold;
 }
 
 .div-user-index-name,
-.div-user-index-value {
+.div-user-index-value,
+.div-user-data-name,
+.div-user-data-value {
     margin-bottom: 1rem;
 }
 
