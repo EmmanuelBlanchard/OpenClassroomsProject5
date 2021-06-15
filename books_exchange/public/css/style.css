@@ -1076,7 +1076,9 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>section.container.how-make-exchange,
     main.container>section.container.user-index,
     main.container>section.container.user-data,
-    main.container>section.container.book-my-books {
+    main.container>section.container.book-my-books,
+    main.container>section.container.book-my-exhange-wishes,
+    main.container>section.container.container.book-my-exhange-requests {
         display: flex;
         flex-direction: column;
         width: 65%;

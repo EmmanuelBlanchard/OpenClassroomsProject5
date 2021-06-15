@@ -8,7 +8,7 @@
 
 
 {% block body %}
-	<div class="container">
+	<section class="container book-my-exhange-requests">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -112,5 +112,5 @@
 			</nav>
 		{% endif %}
 		
-	</div>
+	</section>
 {% endblock %}
