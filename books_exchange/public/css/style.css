@@ -916,6 +916,28 @@ div.card-body {
     margin-bottom: 1rem;
 }
 
+/* Test Table responsive with width=240 px */
+.responsive-table-line table,
+.responsive-table-line thead,
+.responsive-table-line tbody,
+.responsive-table-line th,
+.responsive-table-line td,
+.responsive-table-line tr {
+    display: flex;
+    flex-direction: column;
+}
+
+.responsive-table-line thead tr {
+    background-color: #f8f8f8;
+}
+
+.responsive-table-line thead tr,
+.responsive-table-line tr {
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+}
+
 /* Test code selectors css : Responsive Mobile */
 nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     padding: .2rem .12rem;
@@ -930,7 +952,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 /* @media only screen and (min-width: 200px) and (max-width: 767px) */
 /* @media only screen and (min-width: 200px) and (max-width: 1024px) */
-@media only screen and (min-width: 200px) and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
 
     /* Test Table responsive */
     .responsive-table-line td:before,
