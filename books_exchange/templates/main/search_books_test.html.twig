@@ -1,38 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{# We create custom variables #}
-{% set queryParams = app.request.query.all %}
-
 {% block title %}Resultats de la recherche
 {% endblock %}
 
 {% block body %}
-    <div class="container col-md-9">
-        <div class="col-md-4 divfiltersOfCategories">
-            <form id="filtersOfCategories" class="filter">
-                {% for item in category %}
-                    {# We check if the category is in the parameters #}
-                    {% if queryParams is not empty and queryParams.category is defined %}
-                        {% set checked = (item.id in queryParams.category) ? "checked" : "" %}
-                    {% else %}
-                        {% set checked = "" %}
-                    {% endif %}
-                    <p>
-                        <input type="checkbox" name="category[]" id="category{{item.id}}" value="{{item.id}}" {{checked}}>
-                        <label for="category{{item.id}}">{{item.name}}</label>
-                    </p>
-                {% endfor %}
-                <input type="hidden" name="page" value="{{page}}">
-            </form>
-        </div>
-        <div class="col-md-7">
-            <div class="row blockCard" id="content">
-			    {% include "main/_content.html.twig" %}
-		    </div>
-        </div>
-    </div>
-{% endblock %}
+	<section class="container main-search-books-test">
+		<h2 class="h2MainSearchBooksTest">Resultats de la recherche</h2>
 
-{% block javascripts %}
-    <script src="{{ asset('js/filtersOfCategories.js') }}"></script>
+        <div class="row blockCard" id="content">
+            {% include "main/_content.html.twig" %}
+        </div>
+    </section>
 {% endblock %}

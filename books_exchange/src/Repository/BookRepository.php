@@ -266,93 +266,35 @@ class BookRepository extends ServiceEntityRepository
 
     /**
      * Search for books according to the form
-     * @return void
+     * @return null|array
      */
-    public function search($page, $limit, $words = null, $category = null)
+    public function search(string $search, int $limit=5): ?array
     {
-        $query = $this->createQueryBuilder('book');
-        $query->where('book.active = 1');
-        $query->andWhere('book.exchangeRequest = 0');
-
-        if ($words != null) {
-            $query->andWhere('MATCH_AGAINST(book.title, book.summary) AGAINST
-            (:words boolean)>0')
-                ->setParameter('words', $words);
-        }
-        if ($category != null) {
-            $query->leftJoin('book.category', 'c');
-            $query->andWhere('c.id = :id')
-                ->setParameter('id', $category);
-        }
-
-        $query->orderBy('book.createdAt', 'DESC')
-            ->setFirstResult(($page * $limit) - $limit)
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.title LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
             ->setMaxResults($limit)
-        ;
-
-        return $query->getQuery()->getResult();
+            ->getQuery()
+            ->execute();
     }
 
     /**
      * Returns the number of books retrieved by the full text search
      * @return int
      */
-    public function getTotalNumberBooksInSearch($words = null, $category = null)
+    public function getTotalNumberBooksInSearch(string $search = null)
     {
         $query = $this->createQueryBuilder('b')
             ->select('COUNT(b)')
             ->where('b.active = 1')
             ->andWhere('b.exchangeRequest = 0');
 
-        if ($words != null) {
-            $query->andWhere('MATCH_AGAINST(b.title, b.summary) AGAINST
-            (:words boolean)>0')
-                ->setParameter('words', $words);
-        }
-        if ($category != null) {
-            $query->leftJoin('b.category', 'c');
-            $query->andWhere('c.id = :id')
-                ->setParameter('id', $category);
+        if ($search != null) {
+            $query->andWhere('b.title LIKE :search')
+                ->setParameter('search', '%'.$search.'%');
         }
 
         return $query->getQuery()->getSingleScalarResult();
-    }
-
-    /**
-     * Advanced search for books according to the form
-     * @return void
-     */
-    public function advancedSearchBook($criteria)
-    {
-        $query = $this->createQueryBuilder('b');
-        $query->where('b.active = 1');
-        $query->andWhere('b.exchangeRequest = 0');
-
-        $query->leftJoin('b.author', 'a');
-        $query->andWhere('a.name = :authorName')
-            ->setParameter('authorName', $criteria['author']->getName());
-
-        $query->leftJoin('b.category', 'c');
-        $query->andWhere('c.name = :categoryName')
-            ->setParameter('categoryName', $criteria['category']->getName());
-
-        $query->leftJoin('b.format', 'f');
-        $query->andWhere('f.name = :formatName')
-            ->setParameter('formatName', $criteria['format']->getName());
-
-        $query->leftJoin('b.language', 'l');
-        $query->andWhere('l.name = :languageName')
-            ->setParameter('languageName', $criteria['language']->getName());
-
-        $query->leftJoin('b.publisher', 'p');
-        $query->andWhere('p.name = :publisherName')
-            ->setParameter('publisherName', $criteria['publisher']->getName());
-       
-        $query->leftJoin('b.state', 's');
-        $query->andWhere('s.name = :stateName')
-            ->setParameter('stateName', $criteria['state']->getName());
-
-        return $query->getQuery()->getResult();
     }
 
     /**
@@ -371,37 +313,6 @@ class BookRepository extends ServiceEntityRepository
             $query = $query->andWhere('b.title LIKE :q');
             $query->setParameter('q', '%{$search->q%}');
         }
-        return $query->getQuery()->getResult();
-    }
-
-    /**
-     * Search for books according to the form
-     * @return void|array
-     */
-    public function searchTest($page, $limit, $words = null, $category = null)
-    {
-        //dd($words, $category);
-
-        $query = $this->createQueryBuilder('b');
-        $query->where('b.active = 1');
-        $query->andWhere('b.exchangeRequest = 0');
-
-        if ($words != null) {
-            $query->andWhere('MATCH_AGAINST(b.title, b.summary) AGAINST
-            (:words boolean)>0')
-                ->setParameter('words', $words);
-        }
-        if ($category != null) {
-            $query->leftJoin('b.category', 'c');
-            $query->andWhere('c.id = :id')
-                ->setParameter('id', $category);
-        }
-
-        $query->orderBy('b.createdAt', 'DESC')
-            ->setFirstResult(($page * $limit) - $limit)
-            ->setMaxResults($limit)
-        ;
-
         return $query->getQuery()->getResult();
     }
 
@@ -507,7 +418,6 @@ class BookRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
     
-
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
