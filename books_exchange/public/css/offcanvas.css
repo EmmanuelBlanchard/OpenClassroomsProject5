@@ -8,7 +8,7 @@ body {
   padding-top: 86px;
 }
 
-@media (min-width: 240px) {
+@media (min-width: 240px) and (max-width: 991.98px) {
   .offcanvas-collapse {
     position: fixed;
     top: 58px;
@@ -35,28 +35,6 @@ body {
     top: 86px;
   }
 }
-
-@media (min-width: 991.98px) {
-  .offcanvas-collapse {
-    position: fixed;
-    top: 86px;
-    bottom: 0;
-    left: 100%;
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    overflow-y: auto;
-    visibility: visible;
-    background-color: #343a40;
-    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-  }
-
-  .offcanvas-collapse.open {
-    visibility: hidden;
-    transform: translateX(-100%);
-  }
-}
-
 
 .nav-scroller {
   position: relative;

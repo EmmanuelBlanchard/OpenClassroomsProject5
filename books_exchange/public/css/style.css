@@ -815,15 +815,37 @@ div.form-control>input#inputPassword.form-control:focus {
     margin: 1.5rem;
 }
 
-/* Template book/show.html.twig */
+/* template search_books_test.html.twig , templates/book/show.html.twig */
+main.container>div.container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Templates/book/show.html.twig */
 .card.show {
-    margin: 2rem;
+    margin: 0;
 }
 
 .card-picture {
     display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    padding-top: 1rem;
     align-items: center;
     justify-content: center;
+}
+
+div.card-picture {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+div.card-picture>img {
+    width: 95%;
 }
 
 h5.card-title,
@@ -1063,15 +1085,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-weight: bold;
     }
 
-    /* template search_books_test.html.twig */
-    main.container>div.container {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 auto;
-        width: 100%;
-        margin-top: 1.5rem;
-    }
-
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .25rem;
     }
@@ -1186,7 +1199,26 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 }
 
-@media only screen and (min-width: 767px) and (max-width: 1024px) {
+@media all and (min-width: 400px) and (min-resolution: 1dppx) {
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .30rem .40rem;
+        font-size: 1.15em;
+    }
+
+}
+
+@media all and (min-width: 600px) and (min-resolution: 1dppx) {
+
+    /* Templates/book/show.html.twig */
+    main.container>div.container {
+        width: 90%;
+    }
+
+}
+
+
+@media only screen and (min-width: 767px) and (max-width: 960px) {
 
     /* Test Table responsive */
     .responsive-table-line td:before,
@@ -1255,6 +1287,11 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 30%;
     }
 
+    /* Template book/show.html.twig */
+    .card.show {
+        margin: 0.5rem;
+    }
+
     .h2OfWelcomeOfPseudo {
         font-weight: bold;
         font-size: calc(1.225rem);
@@ -1316,6 +1353,37 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 }
 
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+
+    /* template book/show.html.twig */
+    main.container>aside {
+        flex: 0 0 auto;
+        width: 35%;
+    }
+
+    main.container>div.container {
+        display: flex;
+        flex-direction: row;
+        flex: 0 0 auto;
+        width: 65%;
+        margin-top: 1.5rem;
+    }
+
+    .card.show {
+        margin: .5rem;
+    }
+
+    .card-picture {
+        display: flex;
+        flex: 0 0 auto;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
 /* support for screen sizes larger than mobile */
 /*@media (min-width: 991.98px) { */
 @media (min-width: 1025px) {
@@ -1327,6 +1395,17 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>aside {
         flex: 0 0 auto;
         width: 25%;
+    }
+
+    /* Template book/show.html.twig */
+    .card.show {
+        margin: 2rem;
+    }
+
+    main.container>div.container {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
     }
 
     nav.nav.nav-underline {
