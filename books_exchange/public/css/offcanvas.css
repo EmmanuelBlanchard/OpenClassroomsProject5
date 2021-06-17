@@ -11,7 +11,7 @@ body {
 @media (min-width: 240px) and (max-width: 991.98px) {
   .offcanvas-collapse {
     position: fixed;
-    top: 58px;
+    top: 60.4px;
     /* Height of navbar */
     bottom: 0;
     left: 100%;
@@ -31,6 +31,12 @@ body {
 }
 
 @media (min-width: 375px) {
+  .offcanvas-collapse {
+    top: 74px;
+  }
+}
+
+@media (min-width: 991.98px) {
   .offcanvas-collapse {
     top: 86px;
   }

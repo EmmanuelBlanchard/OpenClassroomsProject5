@@ -164,7 +164,8 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0>li.nav-item {
     padding-right: 1rem;
 }
 
-div#navbarDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.mb-lg-0 {
+div#navbarDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.mb-lg-0,
+div#navbarDefault.navbar-collapse.offcanvas-collapse>ul.navbard-nav.mb-lg-0 {
     align-items: center;
     margin-bottom: .5rem;
     margin-right: auto;
@@ -406,17 +407,20 @@ section.container.main-index>p.pIntroductoryContent {
 .divValidationConfirmExchange,
 .divConfirmExchange {
     margin: 0 auto;
-    width: 75.5%;
     border: 0.1em solid #186135;
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     background-color: #F7F7F7;
-    padding: 20px 40px;
+    padding: 10px;
 }
 
 .divValidationConfirmExchange {
-    width: 60.5%;
+    width: 100%;
     text-align: center;
+}
+
+div.divValidationConfirmExchange>p>span {
+    font-weight: bold
 }
 
 .divBookMyBooksEmptyLibrary,
@@ -528,6 +532,7 @@ a.btn-success.validation-confirm-exchange-button {
     color: #fff;
     background-color: #196216;
     border-color: #196216;
+    width: min-content;
 }
 
 a.btn-success.validation-confirm-exchange-button:hover {
@@ -582,7 +587,6 @@ main.container>section.container.book-my-books {
 div.div-user-index-buttons>a.btn.btn-primary.user-index-button {
     margin-bottom: 1.5rem;
 }
-
 
 /* Styles css Bootstrap */
 .alert {
@@ -891,22 +895,23 @@ div.card-body {
     border-color: #0d6efd;
 }
 
-.btn.user-data-button,
-.btn.book-my-books-add-book-button {
-    flex: 0 0 auto;
-    margin: 1.5rem;
-}
-
-.btn.book-my-books-button {
-    margin: .5rem;
-}
-
 .btn.user-data-button:hover,
 .btn.book-my-books-add-book-button:hover,
 .btn.book-my-books-button:hover {
     color: #fff;
     background-color: #0b5ed7;
     border-color: #0a58ca;
+}
+
+.btn.user-data-button,
+.btn.book-my-books-add-book-button {
+    flex: 0 0 auto;
+    margin: 1.5rem;
+    width: max-content;
+}
+
+.btn.book-my-books-button {
+    margin: .5rem;
 }
 
 .h3UserData {
@@ -936,6 +941,12 @@ div.card-body {
 .div-user-data-name,
 .div-user-data-value {
     margin-bottom: 1rem;
+}
+
+/* Template book/validation/confirm/exchange.html.twig */
+main.container>section.container.validation-confirm-exchange,
+main.container>section.container.confirm-exchange {
+    margin-bottom: 1.5rem;
 }
 
 /* Test Table responsive with width=240 px */
@@ -1007,16 +1018,11 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     div#content.row.blockCard>div.card {
-        flex: 0 0 auto;
         width: 90%;
     }
 
-    main.container>section.container.main-index,
-    main.container>section.container.list-of-books,
-    main.container>section.container.how-make-exchange,
     main.container>section.container.user-index,
-    main.container>section.container.user-data,
-    main.container>section.container.book-my-books {
+    main.container>section.container.user-data {
         display: flex;
         flex-wrap: wrap;
     }
@@ -1089,16 +1095,29 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-weight: bold;
     }
 
+    .divValidationConfirmExchange,
+    .divConfirmExchange {
+        padding: 20px;
+    }
+
+    a.btn-success.validation-confirm-exchange-button {
+        width: initial;
+    }
+
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .25rem;
     }
 }
 
-@media all and (min-width: 375px) and (min-resolution: 1dppx) {
+/* iPhone 5 , iPhone SE 
+@media only screen and (min-width: 320px) and (min-resolution: 2dppx) {}
+*/
+
+@media only screen and (min-width: 375px) and (min-resolution: 1dppx) {
 
     .imgLogo {
-        width: 64px;
-        height: 64px;
+        width: 48px;
+        height: 48px;
     }
 
     .brandNameExchange,
@@ -1194,6 +1213,11 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-size: calc(1.325rem + .9vw);
     }
 
+    div#content.row.blockCard>div.card,
+    main.container>div.container {
+        width: 90%;
+    }
+
     div.div-user-index-buttons {
         width: min-content;
     }
@@ -1204,7 +1228,21 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 }
 
-@media all and (min-width: 400px) and (min-resolution: 1dppx) {
+
+/* 	iPhone 6 to X 
+@media only screen and (min-width: 375px) and (min-resolution: 2dppx) {}*/
+
+@media only screen and (min-width: 400px) and (min-resolution: 1dppx) {
+
+    /* Templates/book/show.html.twig */
+    div.card-picture>img {
+        width: 50%;
+    }
+
+    .divValidationConfirmExchange,
+    .divConfirmExchange {
+        padding: 20px 40px;
+    }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .30rem .40rem;
@@ -1213,17 +1251,163 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 }
 
-@media all and (min-width: 600px) and (min-resolution: 1dppx) {
+/* 	iPhone 8 Plus */
+@media only screen and (min-width: 414px) and (min-resolution: 1dppx) {
 
-    /* Templates/book/show.html.twig */
+    /* templates/main/index.html.twig */
+    div#content.row.blockCard>div.card {
+        width: 80%;
+    }
+
+    div#content.row.blockCard>div.card,
     main.container>div.container {
-        width: 90%;
+        width: 80%;
     }
 
 }
 
+@media only screen and (min-width: 568px) and (min-resolution: 1dppx) {
 
-@media only screen and (min-width: 767px) and (max-width: 960px) {
+    /* templates/book/index.html.twig, Templates/book/show.html.twig */
+    div#content.row.blockCard>div.card,
+    main.container>div.container {
+        width: 70%;
+    }
+
+    .divValidationConfirmExchange,
+    .divConfirmExchange {
+        width: 80%;
+    }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .45rem .45rem;
+        font-size: 1.40em;
+    }
+
+}
+
+/* iPhone SE 
+@media only screen and (min-width: 568px) and (min-resolution: 2dppx) {}
+*/
+
+@media only screen and (min-width: 600px) and (min-resolution: 1dppx) {
+
+    /* templates/book/index.html.twig , Templates/book/show.html.twig*/
+    div#content.row.blockCard>div.card,
+    main.container>div.container {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 667px) and (min-resolution: 1dppx) {
+
+    /* templates/book/index.html.twig */
+    div.card-picture>img {
+        width: 60%;
+    }
+
+}
+
+/*	iPhone 6 to 8 
+@media only screen and (min-width: 667px) and (min-resolution: 2dppx) {}
+*/
+
+/*	iPhone 8 Plus 
+@media only screen and (min-width: 736px) and (min-resolution: 2dppx) {}
+*/
+
+/* iPad Air, iPad Mini, iPad Pro 9″ */
+@media only screen and (min-width: 768px) and (min-resolution: 1dppx) {
+
+    /* template book/index.html.twig */
+    body>main.container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main.container>aside {
+        flex: 0 0 auto;
+        width: 33%;
+    }
+
+    .h2OfWelcomeOfPseudo {
+        font-weight: bold;
+        font-size: calc(1.325rem + .1vw);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    main.container>div.container,
+    main.container>section.container,
+    main.container>section.container.main-index,
+    main.container>section.container.list-of-books,
+    main.container>section.container.main-how-it-works,
+    main.container>section.container.main-faq,
+    main.container>section.container.main-state-of-book,
+    main.container>section.container.how-make-exchange,
+    main.container>section.container.user-index,
+    main.container>section.container.user-data,
+    main.container>section.container.book-my-books,
+    main.container>section.container.book-my-exhange-wishes,
+    main.container>section.container.container.book-my-exhange-requests,
+    main.container>section.container.main-search-books-test,
+    main.container>section.container.validation-confirm-exchange,
+    main.container>section.container.confirm-exchange {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+    }
+
+    /* Template book/show.html.twig */
+    .card.show {
+        margin: 0.5rem;
+    }
+
+    div.card-picture>img {
+        width: 100%;
+    }
+
+    /* Template book/show.html.twig */
+    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+        width: 60%;
+    }
+
+    main.container>section.container.user-index {
+        display: flex;
+        flex: 0 0 auto;
+        margin-top: 1.5rem;
+    }
+
+    div.row.row-cols-2.g-4>div.div-user-index-name,
+    div.row.row-cols-2.g-4>div.div-user-data-name {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+        margin-left: 1.5rem;
+        padding: .5rem;
+        border: 1px solid #dee2e6;
+    }
+
+    div.row.row-cols-2.g-4>div.div-user-index-value,
+    div.row.row-cols-2.g-4>div.div-user-data-value {
+        flex: 0 0 auto;
+        width: 41.6666666667%;
+        padding: .5rem;
+        border: 1px solid #dee2e6;
+    }
+
+    div.div-user-index-buttons>a.btn.btn-primary.user-index-button {
+        margin-right: .5rem;
+        margin-left: .5rem;
+    }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .50rem .50rem;
+        font-size: 1.40em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 
     /* Test Table responsive */
     .responsive-table-line td:before,
@@ -1280,135 +1464,55 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-weight: bold;
     }
 
-    /* template book/index.html.twig */
-    body>main.container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+}
 
-    main.container>aside {
-        flex: 0 0 auto;
-        width: 30%;
-    }
+/*	iPhone X */
+@media only screen and (min-width: 812px) and (min-resolution: 3dppx) {
 
-    /* Template book/show.html.twig */
-    .card.show {
-        margin: 0.5rem;
-    }
-
-    .h2OfWelcomeOfPseudo {
-        font-weight: bold;
-        font-size: calc(1.225rem);
-    }
-
-    main.container>section.container.main-index,
-    main.container>section.container.list-of-books,
-    main.container>section.container.how-make-exchange,
-    main.container>section.container.user-index,
-    main.container>section.container.user-data,
-    main.container>section.container.book-my-books,
-    main.container>section.container.book-my-exhange-wishes,
-    main.container>section.container.container.book-my-exhange-requests {
-        display: flex;
-        flex-direction: column;
-        width: 65%;
-    }
-
-    main.container>section.container.user-index {
-        display: flex;
-        flex: 0 0 auto;
-        margin-top: 1.5rem;
-    }
-
-    div.row.row-cols-2.g-4>div.div-user-index-name,
-    div.row.row-cols-2.g-4>div.div-user-data-name {
-        flex: 0 0 auto;
-        width: 33.3333333333%;
-        margin-left: 1.5rem;
-        padding: .5rem;
-        border: 1px solid #dee2e6;
-    }
-
-    div.row.row-cols-2.g-4>div.div-user-index-value,
-    div.row.row-cols-2.g-4>div.div-user-data-value {
-        flex: 0 0 auto;
-        width: 41.6666666667%;
-        padding: .5rem;
-        border: 1px solid #dee2e6;
-    }
-
-    div.div-user-index-buttons>a.btn.btn-primary.user-index-button {
-        margin-right: .5rem;
-        margin-left: .5rem;
-    }
-
-    /* template search_books_test.html.twig */
+    /* Templates/book/show.html.twig */
     main.container>div.container {
-        display: flex;
-        flex-direction: row;
-        flex: 0 0 auto;
-        width: 100%;
-        margin-top: 1.5rem;
+        width: 90%;
     }
 
 }
-
-@media only screen and (min-width: 767px) and (max-width: 1024px) {
-
-    /* template book/show.html.twig */
-    main.container>aside {
-        flex: 0 0 auto;
-        width: 35%;
-    }
-
-    main.container>div.container {
-        display: flex;
-        flex-direction: row;
-        flex: 0 0 auto;
-        width: 65%;
-        margin-top: 1.5rem;
-    }
-
-    .card.show {
-        margin: .5rem;
-    }
-
-    .card-picture {
-        display: flex;
-        flex: 0 0 auto;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-
-}
-
 
 /* support for screen sizes larger than mobile */
-/*@media (min-width: 991.98px) { */
-@media (min-width: 1025px) {
-    body>main.container {
-        display: flex;
-        flex-direction: row;
-    }
+@media only screen and (min-width: 991.98px) and (min-resolution: 1dppx) {
 
-    main.container>aside {
-        flex: 0 0 auto;
-        width: 25%;
+    .imgLogo {
+        width: 64px;
+        height: 64px;
     }
+}
+
+@media only screen and (min-width: 1025px) and (min-resolution: 1dppx) {
 
     /* Template book/show.html.twig */
     .card.show {
         margin: 2rem;
     }
 
+    /* test for section container */
     main.container>div.container,
     main.container>section.container,
-    main.container>section.container.main-search-books-test {
+    main.container>section.container.main-index,
+    main.container>section.container.list-of-books,
+    main.container>section.container.main-how-it-works,
+    main.container>section.container.main-faq,
+    main.container>section.container.main-state-of-book,
+    main.container>section.container.how-make-exchange,
+    main.container>section.container.user-index,
+    main.container>section.container.user-data,
+    main.container>section.container.book-my-books,
+    main.container>section.container.book-my-exhange-wishes,
+    main.container>section.container.container.book-my-exhange-requests,
+    main.container>section.container.main-search-books-test,
+    main.container>section.container.validation-confirm-exchange,
+    main.container>section.container.confirm-exchange {
         display: flex;
         flex-direction: column;
         width: 75%;
+        margin-top: 1.5rem;
     }
 
     nav.nav.nav-underline {
@@ -1476,7 +1580,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     .h2OfWelcomeOfPseudo {
-        font-size: calc(1.325rem + .5vw);
+        font-size: calc(1.325rem + .2vw);
     }
 
     .h2UserData,
@@ -1509,9 +1613,22 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-bottom: 2.5rem;
     }
 
+    .divValidationConfirmExchange,
+    .divConfirmExchange {
+        width: 65%;
+    }
+
     div#content.row.blockCard>div.card {
         flex: 0 0 auto;
         width: 41.6666666667%;
+    }
+
+    div.card-picture>img {
+        width: 100%;
+    }
+
+    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+        width: 100%;
     }
 
     .table {
@@ -1521,6 +1638,15 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .375rem .75rem;
         font-size: 1.55em;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (min-resolution: 1dppx) {
+
+    main.container>aside {
+        flex: 0 0 auto;
+        width: 25%;
     }
 
 }
