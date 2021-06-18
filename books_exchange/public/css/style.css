@@ -961,32 +961,68 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 @media all and (min-width: 240px) and (max-width: 319px) and (min-resolution: 1dppx) {
 
-    /* Test Table responsive with width=240px */
+    /* Table responsive */
+    .responsive-table-line td:before,
+    .responsive-table-line th:before {
+        content: attr(data-label);
+    }
+
+    /* Force table to not be like tables anymore */
     .responsive-table-line table,
     .responsive-table-line thead,
     .responsive-table-line tbody,
     .responsive-table-line th,
     .responsive-table-line td,
     .responsive-table-line tr {
-        display: flex;
-        flex-direction: column;
+        display: block;
     }
 
+    /* Hide table headers (but not display: none;, for accessibility) */
     .responsive-table-line thead tr {
-        background-color: #f8f8f8;
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
     }
 
-    .responsive-table-line thead tr,
     .responsive-table-line tr {
         border: 1px solid #ccc;
         border-radius: .25rem;
         margin-bottom: 1rem;
     }
+
+    .responsive-table-line td,
+    .responsive-table-line th {
+        position: relative;
+        border: 0px solid transparent;
+        padding-left: 50% !important;
+        white-space: normal;
+        overflow: hidden;
+        overflow-x: scroll;
+        text-align: left;
+    }
+
+    .responsive-table-line td:before,
+    .responsive-table-line th:before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 46%;
+        padding-right: 15px;
+        height: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis !important;
+        overflow: hidden;
+        overflow-x: scroll;
+        text-align: left;
+        background-color: #f8f8f8;
+        padding: 10px;
+        font-weight: bold;
+    }
 }
 
 @media all and (min-width: 320px) and (max-width: 3840px) and (min-resolution: 1dppx) {
 
-    /* Test Table responsive */
+    /* Table responsive */
     .responsive-table-line td:before,
     .responsive-table-line th:before {
         content: attr(data-label);
