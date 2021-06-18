@@ -1403,8 +1403,9 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .50rem .50rem;
-        font-size: 1.40em;
+        font-size: 1.2em;
     }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1483,6 +1484,12 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 64px;
         height: 64px;
     }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .50rem .50rem;
+        font-size: 1.40em;
+    }
+
 }
 
 @media only screen and (min-width: 1025px) and (min-resolution: 1dppx) {
