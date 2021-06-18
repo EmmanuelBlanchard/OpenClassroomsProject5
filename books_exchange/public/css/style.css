@@ -328,6 +328,10 @@ tbody>tr>td {
     text-align: center;
 }
 
+p>a.linkHowItWorks {
+    color: #000;
+}
+
 .h2UserData,
 .h3UserData,
 .h2UserIndex,
