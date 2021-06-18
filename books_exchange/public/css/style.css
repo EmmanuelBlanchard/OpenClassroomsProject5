@@ -165,7 +165,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0>li.nav-item {
 }
 
 div#navbarDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.mb-lg-0,
-div#navbarDefault.navbar-collapse.offcanvas-collapse>ul.navbard-nav.mb-lg-0 {
+div#navbarDefault.navbar-collapse.offcanvas-collapse>ul.navbar-nav.mb-lg-0 {
     align-items: center;
     margin-bottom: .5rem;
     margin-right: auto;
@@ -932,7 +932,6 @@ div.card-body {
     width: 100%;
     max-width: 100%;
     margin-top: 1.5rem;
-    padding-right: 1.5rem;
 }
 
 .div-user-index-name,
@@ -953,7 +952,7 @@ main.container>section.container.confirm-exchange {
     margin-bottom: 1.5rem;
 }
 
-/* Test Table responsive with width=240 px */
+/* Test Table responsive with width=240px */
 .responsive-table-line table,
 .responsive-table-line thead,
 .responsive-table-line tbody,
@@ -1232,7 +1231,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 }
 
-
 /* 	iPhone 6 to X 
 @media only screen and (min-width: 375px) and (min-resolution: 2dppx) {}*/
 
@@ -1360,12 +1358,23 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>section.container.confirm-exchange {
         display: flex;
         flex-direction: column;
-        width: 65%;
+        width: 66.6666666667%;
+        margin-top: 1.5rem;
     }
 
     /* Template book/show.html.twig */
     .card.show {
         margin: 0.5rem;
+    }
+
+    /* Template book/index.html.twig */
+    div.card-picture {
+        width: 41.6666666667%;
+    }
+
+    /* Template book/show.html.twig */
+    div.card-picture.show {
+        width: 100%;
     }
 
     div.card-picture>img {
@@ -1381,6 +1390,13 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         display: flex;
         flex: 0 0 auto;
         margin-top: 1.5rem;
+    }
+
+    .divParagraphsHowItWorks,
+    .divParagraphsFrequentlyAskedQuestions,
+    .div-user-index-row,
+    .div-user-data-row {
+        padding-left: 1.5rem;
     }
 
     div.row.row-cols-2.g-4>div.div-user-index-name,
@@ -1489,6 +1505,21 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         height: 64px;
     }
 
+    .nav-item {
+        margin-right: 1rem;
+    }
+
+    .h2OfWelcomeOfPseudo {
+        font-size: calc(1.325rem + .9vw);
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .div-user-index-row,
+    .div-user-data-row {
+        padding-left: 1.5rem;
+    }
+
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .50rem .50rem;
         font-size: 1.40em;
@@ -1501,29 +1532,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     /* Template book/show.html.twig */
     .card.show {
         margin: 2rem;
-    }
-
-    /* test for section container */
-    main.container>div.container,
-    main.container>section.container,
-    main.container>section.container.main-index,
-    main.container>section.container.list-of-books,
-    main.container>section.container.main-how-it-works,
-    main.container>section.container.main-faq,
-    main.container>section.container.main-state-of-book,
-    main.container>section.container.how-make-exchange,
-    main.container>section.container.user-index,
-    main.container>section.container.user-data,
-    main.container>section.container.book-my-books,
-    main.container>section.container.book-my-exhange-wishes,
-    main.container>section.container.container.book-my-exhange-requests,
-    main.container>section.container.main-search-books-test,
-    main.container>section.container.validation-confirm-exchange,
-    main.container>section.container.confirm-exchange {
-        display: flex;
-        flex-direction: column;
-        width: 75%;
-        margin-top: 1.5rem;
     }
 
     nav.nav.nav-underline {
@@ -1629,17 +1637,13 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 65%;
     }
 
-    div#content.row.blockCard>div.card {
-        flex: 0 0 auto;
-        width: 41.6666666667%;
-    }
-
     div.card-picture>img {
         width: 100%;
     }
 
-    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
-        width: 100%;
+    .div-user-index-row,
+    .div-user-data-row {
+        padding-left: 6.5rem;
     }
 
     .table {
@@ -1658,6 +1662,30 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>aside {
         flex: 0 0 auto;
         width: 25%;
+    }
+
+    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+        width: 100%;
+    }
+
+    div.card-picture.show {
+        width: 33.3333333333%;
+    }
+
+}
+
+@media only screen and (min-width: 1366px) and (min-resolution: 1dppx) {
+
+    div#content.row.blockCard>div.card {
+        width: 47%;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) and (min-resolution: 1dppx) {
+
+    div#content.row.blockCard>div.card {
+        width: 41.6666666667%;
     }
 
 }
