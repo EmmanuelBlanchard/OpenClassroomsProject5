@@ -57,9 +57,9 @@ body {
   background-color: #CD4109;
   text-align: center;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
 }
 
 .nav-underline .nav-link:hover {
-  color: #007bff;
+  /*color: #007bff;*/
+  color: #000000;
 }
