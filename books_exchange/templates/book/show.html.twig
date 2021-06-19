@@ -48,7 +48,7 @@
 							<a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
 						</div>
 						<div class="align-self-center">
-							<a class="btn btn-outline-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-contact" data-id="{{book.id}}" data-requester="{{book.user.pseudo}}" data-title="{{book.title}}" data-author="{{book.author}}" data-publisher="{{book.publisher}}" data-format="{{book.format}}" data-state="{{book.state}}" aria-haspopup="dialog" aria-controls="dialog" role="button">
+							<a class="btn btn-outline-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-contact" data-id="{{book.id}}" data-requester="{{book.user.pseudo}}" data-title="{{book.title}}" data-author="{{book.author}}" data-publisher="{{book.publisher}}" data-format="{{book.format}}" data-state="{{book.state}}" aria-haspopup="dialog" role="button">
 								Contacter
 							</a>
 						</div>
@@ -72,7 +72,7 @@
 					{{ form_row(contactBookForm.message) }}
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au demandeur du livre" aria-controls="dialog">Envoyer</button>
+					<button class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au demandeur du livre">Envoyer</button>
 					<button type="button" class="btn btn-secondary modal-trigger" data-bs-target="#modal-contact" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
 				</div>
 				{{ form_end(contactBookForm) }}
