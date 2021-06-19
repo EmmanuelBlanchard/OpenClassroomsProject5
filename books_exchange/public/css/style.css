@@ -500,6 +500,7 @@ div.divValidationConfirmExchange>p>span {
 div#content.row.blockCard>div.card {
     flex: 0 0 auto;
     width: 100%;
+    justify-content: center;
 }
 
 .divConfirmExchange span {
