@@ -44,9 +44,6 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="json")
-     * @Assert\Json(
-     *     message = "Vous avez saisi un Json invalide."
-     * )
      */
     private $roles = [];
 
