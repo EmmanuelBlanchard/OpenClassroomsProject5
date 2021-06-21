@@ -322,12 +322,12 @@ class BookRepository extends ServiceEntityRepository
      */
     public function searchBooksByTitleAToZ($page, $limit, $words = null)
     {
-        $query = $this->createQueryBuilder('book');
-        $query->where('book.active = 1');
-        $query->andWhere('book.exchangeRequest = 0');
+        $query = $this->createQueryBuilder('b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
 
         if ($words != null) {
-            $query->andWhere('book.title = :title')
+            $query->andWhere('b.title = :title')
                 ->setParameter('title', $words);
         }
 
@@ -345,12 +345,12 @@ class BookRepository extends ServiceEntityRepository
      */
     public function searchBooksByTitleZToA($page, $limit, $words = null)
     {
-        $query = $this->createQueryBuilder('book');
-        $query->where('book.active = 1');
-        $query->andWhere('book.exchangeRequest = 0');
+        $query = $this->createQueryBuilder('b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
 
         if ($words != null) {
-            $query->andWhere('book.title = :title')
+            $query->andWhere('b.title = :title')
                 ->setParameter('title', $words);
         }
 
@@ -368,12 +368,12 @@ class BookRepository extends ServiceEntityRepository
      */
     public function searchBooksByAuthorAToZ($page, $limit, $words = null, $author = null)
     {
-        $query = $this->createQueryBuilder('book');
-        $query->where('book.active = 1');
-        $query->andWhere('book.exchangeRequest = 0');
+        $query = $this->createQueryBuilder('b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
 
         if ($words != null) {
-            $query->andWhere('book.title = :title')
+            $query->andWhere('b.title = :title')
                 ->setParameter('title', $words);
         }
         if ($author != null) {
@@ -396,12 +396,12 @@ class BookRepository extends ServiceEntityRepository
      */
     public function searchBooksByAuthorZToA($page, $limit, $words = null, $author = null)
     {
-        $query = $this->createQueryBuilder('book');
-        $query->where('book.active = 1');
-        $query->andWhere('book.exchangeRequest = 0');
+        $query = $this->createQueryBuilder('b');
+        $query->where('b.active = 1');
+        $query->andWhere('b.exchangeRequest = 0');
 
         if ($words != null) {
-            $query->andWhere('book.title = :title')
+            $query->andWhere('b.title = :title')
                 ->setParameter('title', $words);
         }
         if ($author != null) {
