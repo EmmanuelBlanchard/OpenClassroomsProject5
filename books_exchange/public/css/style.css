@@ -240,7 +240,7 @@ main>aside {
     margin-top: 1.5rem;
 }
 
-.h2OfWelcomeOfPseudo {
+.h2OfWelcomeOfFirstName {
     font-weight: bold;
 }
 
@@ -297,7 +297,7 @@ tbody>tr>td {
 .h2frequentlyAskedQuestions,
 .h2stateOfBook,
 .formHeader h2,
-.h2OfWelcomeOfPseudo,
+.h2OfWelcomeOfFirstName,
 .h2UserData,
 .h2MyBooks,
 .h2UserIndex,
@@ -1096,7 +1096,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h2frequentlyAskedQuestions,
     .h2stateOfBook,
     .formHeader h2,
-    .h2OfWelcomeOfPseudo,
+    .h2OfWelcomeOfFirstName,
     .h2UserData,
     .h2MyBooks,
     .h2UserIndex,
@@ -1186,7 +1186,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h2frequentlyAskedQuestions,
     .h2stateOfBook,
     .formHeader h2,
-    .h2OfWelcomeOfPseudo,
+    .h2OfWelcomeOfFirstName,
     .h2UserData,
     .h2MyBooks,
     .h2UserIndex,
@@ -1377,7 +1377,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 33%;
     }
 
-    .h2OfWelcomeOfPseudo {
+    .h2OfWelcomeOfFirstName {
         font-weight: bold;
         font-size: calc(1.325rem + .1vw);
         margin-top: 1rem;
@@ -1494,7 +1494,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-right: 1rem;
     }
 
-    .h2OfWelcomeOfPseudo {
+    .h2OfWelcomeOfFirstName {
         font-size: calc(1.325rem + .9vw);
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
@@ -1583,7 +1583,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 90%;
     }
 
-    .h2OfWelcomeOfPseudo {
+    .h2OfWelcomeOfFirstName {
         font-size: calc(1.325rem + .2vw);
     }
 
