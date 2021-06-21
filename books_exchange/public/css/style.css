@@ -1677,5 +1677,39 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     div#content.row.blockCard>div.card {
         width: 41.6666666667%;
     }
+}
 
+@media only screen and (min-width: 2160px) and (min-resolution: 1dppx) {
+
+    nav ul li a,
+    .menu a {
+        font-size: 2em;
+    }
+
+    .nav-underline .nav-link {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-top: 0.5rem;
+        font-size: 2em;
+    }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .5rem 1rem;
+        font-size: 2em;
+    }
+}
+
+@media only screen and (min-width: 3840px) and (min-resolution: 1dppx) {
+
+    .imgLogo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nav-underline .nav-link {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        margin-top: 2.5rem;
+        font-size: 2em;
+    }
 }
