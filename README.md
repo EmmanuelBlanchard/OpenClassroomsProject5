@@ -24,12 +24,8 @@ OpenClassroomsProject5 - DWJ Course
 * It is a PHP program, you will find it on this link : [Get Composer](https://getcomposer.org)  
 * On the home page of the Composer website, click on the Download button :  
 
-![Composer Home Page](books_exchange\public\img\CaptureComposer.png)  
-
 * On Windows, you can click on the link Composer-Setup.exe to install Composer  
-
-![Composer Download Page](books_exchange\public\img\CaptureDownloadComposer.png)  
-
+ 
 5. Install the [Symfony CLI](https://symfony.com/download)  
 
 6. On the [page](https://github.com/EmmanuelBlanchard/OpenClassroomsProject5), download the code by clicking on the Code button and then click the Download Zip link  
@@ -154,8 +150,6 @@ Warning: probable security risk
 * A gauche, cliquez sur Paramètres système avancés.   
 * Puis dans la nouvelle fenêtre, en bas, cliquez sur Variables d'environnement.  
 
-![variables d'environnement...](books_exchange\public\img\CaptureEnvironmentVariable.png)  
-
 * Dans la nouvelle fenêtre, en haut, les variables d'environnement utilisateur et en bas les variables d'environnement système.  
 * Dans les variables utilisateur, sélectionnez la variable d'environnement PATH puis cliquez sur le bouton Modifier pour ouvrir l'éditeur et ajouter :  
 `C:\wamp64\bin\mysql\mysql8.0.23\bin `  
@@ -165,17 +159,11 @@ Warning: probable security risk
 * C'est un programme PHP, vous le trouverez sur ce lien : [Obtenir Composer](https://getcomposer.org)  
 * Sur la page d'accueil du site de Composer, cliquez sur le bouton [Download](https://getcomposer.org/download/):  
 
-![Page d'accueil de Composer](books_exchange\public\img\CaptureComposer.png)  
-
 * Sous Windows, vous pouvez cliquer sur le lien [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe) pour installer Composer.  
-
-![Page de téléchargement de Composer](books_exchange\public\img\CaptureDownloadComposer.png)  
 
 5. Installer la [CLI Symfony](https://symfony.com/download)  
 
-![Symfony CLI Page](books_exchange\public\img\CaptureSymfonyCLI.png) 
-
-6. Sur la [page](https://github.com/EmmanuelBlanchard/OpenClassroomsProject5), téléchargez le code en cliquant sur le bouton ![Code](books_exchange\public\img\imageOfTheCodeButton.png), puis cliquez sur le lien ![Download Zip](\books_exchange\public\img\ImageOfTheDownloadZipButton.png).  
+6. Sur la [page](https://github.com/EmmanuelBlanchard/OpenClassroomsProject5), téléchargez le code en cliquant sur le bouton Code, puis cliquez sur le lien Download Zip.  
 
 7. Dézippez le dossier téléchargé (avec le logiciel [7-Zip](https://www.7-zip.fr/))  
  
@@ -183,8 +171,6 @@ Warning: probable security risk
 * Ouvrez le dossier téléchargé  
 * Ouvrez le dossier book_exchange, faites un clic droit sur le dossier et cliquez sur le lien :  
 Ouvrir dans le terminal intégré  
-
-![Ouvrir dans le terminal intégré](\books_exchange\public\img\imageOfTheLinkOpenInTheIntegratedTerminal.png)  
 
 9. Vérifiez que Composer est à jour avec:   
 ```
@@ -287,9 +273,7 @@ symfony server:start
 * http://127.0.0.1:8000/  
 
 18. Si le message suivant apparaît : Attention : risque probable de sécurité  
-![Attention : risque probable de sécurité](books_exchange\public\img\CaptureWarning.png)
 
 * Cliquer sur le bouton 'Avancé...'  
 
 * Et ensuite, cliquer sur le bouton 'Accepter le risque et poursuivre'  
-![Attention : risque probable de sécurité (Suite)](books_exchange\public\img\CaptureWarning2.png)  
