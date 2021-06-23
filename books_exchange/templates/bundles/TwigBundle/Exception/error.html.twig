@@ -17,6 +17,7 @@
                 <div class="errorexception-code">
                     <h1>Oups!</h1>
                     <h2>{{ status_code }} - {{ status_text }}</h2>
+                    <h3>{{ status_code }} - {{ exception.message }}</h3>
                 </div>
                 <a href="{{ path('app_home') }}">Aller à la page d'accueil</a>
             </div>

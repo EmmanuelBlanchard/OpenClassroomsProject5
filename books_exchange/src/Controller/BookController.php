@@ -294,16 +294,20 @@ class BookController extends AbstractController
     /**
     * @Route("/validation/confirm/exchange/{id}", name="validation_confirm_exchange")
     */
-    public function validationConfirmExchange(Book $book): Response
+    public function validationConfirmExchange(Book $book, BookRepository $bookRepo): Response
     {
         // We get the information of the connected user
         $user = $this->getUser();
+        // We get the total number of active books owned by the user.
+        $total = $bookRepo->getTotalBooksActiveOwnedByUserWithOrderCreatedAtDesc($user);
 
         if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } elseif ($user === $book->getUser()) {
             throw $this->createAccessDeniedException();
+        } elseif ($total < 5) {
+            throw $this->createAccessDeniedException('Vous n\'avez pas au minimum cinq livres disponibles à l\'échange');
         } elseif ($user) {
             return $this->render('book/validation_confirm_exchange.html.twig', ['book' => $book]);
         }
@@ -313,15 +317,19 @@ class BookController extends AbstractController
     /**
     * @Route("/confirm/exchange/{id}", name="confirm_exchange")
     */
-    public function confirmExchange(Book $book): Response
+    public function confirmExchange(Book $book, BookRepository $bookRepo): Response
     {
         $user = $this->getUser();
+        // We get the total number of active books owned by the user.
+        $total = $bookRepo->getTotalBooksActiveOwnedByUserWithOrderCreatedAtDesc($user);
 
         if ($book === null) {
             // Make a flash bag message
             $this->addFlash('error', 'Erreur : problème d\'identification du livre');
         } elseif ($user === $book->getUser()) {
             throw $this->createAccessDeniedException();
+        } elseif ($total < 5) {
+            throw $this->createAccessDeniedException('Vous n\'avez pas au minimum cinq livres disponibles à l\'échange');
         } elseif ($user) {
             $book->setExchangeRequest(true);
             $book->setExchangeRequestAt(new \DateTime('now'));

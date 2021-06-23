@@ -76,7 +76,8 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.errorexception .errorexception-code h2 {
+.errorexception .errorexception-code h2,
+.errorexception .errorexception-code h3 {
     font-family: 'openSansRegular', sans-serif;
     font-size: 28px;
     font-weight: 400;
@@ -92,6 +93,10 @@ body {
     right: 0;
     border: 2px solid #0854A2;
     border-radius: 25px;
+}
+
+.errorexception .errorexception-code h3 {
+    font-size: 24px;
 }
 
 .errorexception a {
