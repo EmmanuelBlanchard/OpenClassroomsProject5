@@ -27,27 +27,14 @@ class SearchController extends AbstractController
         $search = trim($search);
         if ($search === null || $search === '') {
             return $this->redirectToRoute('app_home');
-        } else {
-            $books = $bookRepo->search(
-                $search =$request->query->get('search')
-            );
-
-            // We get the total number of books retrieved by the full text search
-            $total = $bookRepo->getTotalNumberBooksInSearch(
-                $search = $request->query->get('search')
-            );
-            // How many pages will there be
-            $pages = ceil($total / $limit);
-
-            return $this->render('main/search_books_test.html.twig', [
-            'books' => $books,
-            'limit' => $limit,
-            'page' => $page,
-            'pages' => $pages,
-            'total' => $total,
-            ]);
         }
+        $books = $bookRepo->search($search);
 
+        return $this->render('main/search_books.html.twig', [
+            'books' => $books,
+            'search' => $search
+        ]);
+        
         //dd($search);
     }
 }

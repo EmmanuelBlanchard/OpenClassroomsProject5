@@ -298,25 +298,6 @@ class BookRepository extends ServiceEntityRepository
     }
 
     /**
-     * Retrieves books related to a search
-     * @return Book[]
-     */
-    public function findSearch($search): array
-    {
-        $query = $this->createQueryBuilder('b');
-        $query->select('c', 'b');
-        $query->where('b.active = 1');
-        $query->andWhere('b.exchangeRequest = 0');
-        $query->join('b.category', 'c');
-       
-        if (!empty($search->q)) {
-            $query = $query->andWhere('b.title LIKE :q');
-            $query->setParameter('q', '%{$search->q%}');
-        }
-        return $query->getQuery()->getResult();
-    }
-
-    /**
      * Search for books by title a To z
      * @return void|array
      */

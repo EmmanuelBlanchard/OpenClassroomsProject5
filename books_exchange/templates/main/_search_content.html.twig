@@ -1,0 +1,44 @@
+{% if books|length > 0 %}
+	{% for book in books %}
+    <div class="card col-md-5">
+        <div class="row g-0">
+            <div class="card-picture col-md-5">
+                <img src="{{ uploaded_asset(book.imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="Couverture du livre {{book.title}}." class="card-img">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
+                    </h5>
+                    <div class="card-header">
+                        <a href="">{{ book.author }}</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ book.category }}</li>
+                        <li class="list-group-item">{{ book.publisher }}</li>
+                        <li class="list-group-item">Langue:
+                            {{ book.language }}</li>
+                        <li class="list-group-item">Format:
+                            {{ book.format }}</li>
+                        <li class="list-group-item stateBook">État:
+                            {{ book.state }}</li>
+                        <li class="list-group-item locationBook">
+                            <img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
+                            <span>{{ book.user.city }}</span>
+                        </li>
+                        <li class="list-group-item ownerBook">Propriétaire:
+                            {{ book.user.pseudo }}</li>
+                    </ul>
+                </div>
+                <div class="divButtonExchangeCenter">
+                    <a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	{% endfor %}
+{% else %}
+	<div class="divConnectedBookStockAddABook">
+		<p>Aucun livre n'a été trouvé...</p>
+	</div>
+{% endif %}

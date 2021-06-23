@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Resultats de la recherche
+{% block title %}Resultats de la recherche {{search}}
 {% endblock %}
 
 {% block body %}
 	<section class="container main-search-books-test">
-		<h2 class="h2MainSearchBooksTest">Resultats de la recherche</h2>
+		<h2 class="h2MainSearchBooksTest">Resultats de la recherche : {{search}}</h2>
 
         <div class="row blockCard" id="content">
-            {% include "main/_content.html.twig" %}
+            {% include "main/_search_content.html.twig" %}
         </div>
     </section>
 {% endblock %}

@@ -64,7 +64,14 @@
 		<main class="container">
 			<aside class="hidden-print">
 				<form action="{{ path('app_search') }}" id="search_form">
-					<input class="form-control" type="search" name="search">
+					<input
+						class="form-control"
+						type="search"
+						name="search"
+						{% if search is defined %}
+							value = "{{ search }}"
+						{% endif %}
+					>
 					<button type="submit">Rechercher</button>
 				</form>		
 				{% if app.user %}
