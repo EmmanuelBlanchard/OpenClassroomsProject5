@@ -17,49 +17,11 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
  */
 class BookRepository extends ServiceEntityRepository
 {
-    public const PAGINATOR_PER_PAGE = 10;
-    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Book::class);
     }
     
-    /**
-     * Returns all books per page
-     * @return Paginator
-     */
-    public function getBookPaginator($user, int $page, int $nbMaxPerPage, int $offset): Paginator
-    {
-        if (!is_numeric($page)) {
-            throw new InvalidArgumentException(
-                'La valeur de l\'argument $page est incorrecte (valeur : ' . $page . ').'
-            );
-        }
-
-        if ($page < 1) {
-            throw new NotFoundHttpException('La page demandée n\'existe pas');
-        }
-
-        if (!is_numeric($nbMaxPerPage)) {
-            throw new InvalidArgumentException(
-                'La valeur de l\'argument $nbMaxPerPage est incorrecte (valeur : ' . $nbMaxPerPage . ').'
-            );
-        }
-
-        $query = $this->createQueryBuilder('b')
-            ->where('b.active = 1')
-            ->andWhere('b.exchangeRequest = 0')
-            ->andWhere('b.user <> :user')
-            ->setParameter('user', $user)
-            ->orderBy('b.createdAt', 'DESC')
-            ->setMaxResults(self::PAGINATOR_PER_PAGE)
-            ->setFirstResult($offset)
-            ->getQuery()
-        ;
-
-        return new Paginator($query);
-    }
-
     /**
      * Returns all books per page
      * @return Book[] Returns an array of Book objects
@@ -294,6 +256,43 @@ class BookRepository extends ServiceEntityRepository
                 ->setParameter('search', '%'.$search.'%');
         }
 
+        return $query->getQuery()->getSingleScalarResult();
+    }
+
+    /**
+    * @return Book[] Returns an array of Book objects
+    */
+    public function findBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($page, $limit, $user, $author): array
+    {
+        $query = $this->createQueryBuilder('b')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 0')
+            ->andWhere('b.user <> :user')
+            ->setParameter('user', $user)
+            ->andWhere('b.author = :author')
+            ->setParameter('author', $author)
+            ->orderBy('b.createdAt', 'DESC')
+            ->setFirstResult(($page * $limit) - $limit)
+            ->setMaxResults($limit)
+        ;
+        return $query->getQuery()->getResult();
+    }
+    
+    /**
+     * Returns number of books active owned by user with order created at desc
+     * @return int
+     */
+    public function getTotalBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($user, $author): int
+    {
+        $query = $this->createQueryBuilder('b')
+            ->select('COUNT(b)')
+            ->where('b.active = 1')
+            ->andWhere('b.exchangeRequest = 0')
+            ->andWhere('b.user <> :user')
+            ->setParameter('user', $user)
+            ->andWhere('b.author = :author')
+            ->setParameter('author', $author)
+        ;
         return $query->getQuery()->getSingleScalarResult();
     }
 

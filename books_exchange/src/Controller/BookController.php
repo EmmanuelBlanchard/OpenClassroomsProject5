@@ -157,6 +157,36 @@ class BookController extends AbstractController
     }
 
     /**
+    * @Route("/author/{author}", name="author")
+    */
+    public function author($author, BookRepository $bookRepo, Request $request): Response
+    {
+        // We get the information of the connected user
+        $user = $this->getUser();
+        // We define the number of books per page
+        $limit = 10;
+        // We get the page number
+        $page = (int)$request->query->get("page", 1);
+        // We recover the books of the page
+        $books = $bookRepo->findBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($page, $limit, $user, $author);
+        // We get the total number of books
+        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($user, $author);
+        // How many pages will there be
+        $pages = (int)ceil($total / $limit);
+
+        //dd($author, $books, $bookRepo);
+
+        return $this->render('book/author.html.twig', [
+            'books' => $books,
+            'author' => $author,
+            'limit' => $limit,
+            'page' => $page,
+            'pages' => $pages,
+            'total' => $total,
+        ]);
+    }
+
+    /**
     * @Route("/remove/{id}", name="remove")
     */
     public function remove(Book $book): Response
