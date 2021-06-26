@@ -11,7 +11,7 @@
                         <a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
                     </h5>
                     <div class="card-header">
-                        <a href="">{{ book.author }}</a>
+                        <a href="{{ path('book_author', {author: book.author}) }}">{{ book.author }}</a>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">{{ book.category }}</li>
@@ -38,7 +38,7 @@
     </div>
 	{% endfor %}
 {% else %}
-	<div class="divConnectedBookStockAddABook">
+	<div>
 		<p>Aucun livre n'a été trouvé...</p>
 	</div>
 {% endif %}
