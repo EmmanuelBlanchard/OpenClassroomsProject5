@@ -309,7 +309,7 @@ tbody>tr>td {
 .h2ValidationConfirmExchange,
 .h2ConfirmExchange,
 .h2ResetPasswordCheckEmail,
-.h2MainSearchBooksTest {
+.h2MainSearchBooks {
     font-size: 1.1em;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -324,7 +324,7 @@ tbody>tr>td {
 .h2howItWorks,
 .h2frequentlyAskedQuestions,
 .h2stateOfBook,
-.h2MainSearchBooksTest {
+.h2MainSearchBooks {
     color: #0854A2;
     text-align: center;
 }
@@ -1112,7 +1112,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h2ValidationConfirmExchange,
     .h2ConfirmExchange,
     .h2ResetPasswordCheckEmail,
-    .h2MainSearchBooksTest {
+    .h2MainSearchBooks {
         font-size: 1.325rem;
     }
 
@@ -1204,7 +1204,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h2ValidationConfirmExchange,
     .h2ConfirmExchange,
     .h2ResetPasswordCheckEmail,
-    .h2MainSearchBooksTest {
+    .h2MainSearchBooks {
         font-size: calc(1.325rem + .9vw);
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
@@ -1405,7 +1405,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>section.container.book-my-books,
     main.container>section.container.book-my-exhange-wishes,
     main.container>section.container.container.book-my-exhange-requests,
-    main.container>section.container.main-search-books-test,
+    main.container>section.container.main-search-books,
     main.container>section.container.validation-confirm-exchange,
     main.container>section.container.confirm-exchange {
         display: flex;
