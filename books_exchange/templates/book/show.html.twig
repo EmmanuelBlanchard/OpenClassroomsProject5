@@ -23,7 +23,7 @@
 					<div class="card-body">
 						<h5 class="card-title">{{ book.title|u.truncate(60, '...') }}</h5>
 						<div class="card-header">
-							<a href="">{{ book.author }}</a>
+							<a href="{{ path('book_author', {author: book.author}) }}">{{ book.author }}</a>
 						</div>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">{{ book.category }}</li>
