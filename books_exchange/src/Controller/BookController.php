@@ -7,6 +7,7 @@ use App\Form\BookFormType;
 use App\Service\UploaderHelper;
 use App\Form\BookContactFormType;
 use App\Repository\BookRepository;
+use App\Repository\AuthorRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -159,7 +160,7 @@ class BookController extends AbstractController
     /**
     * @Route("/author/{author}", name="author")
     */
-    public function author($author, BookRepository $bookRepo, Request $request): Response
+    public function author(Request $request, BookRepository $bookRepo, AuthorRepository $authorRepo, $author): Response
     {
         // We get the information of the connected user
         $user = $this->getUser();
@@ -167,14 +168,14 @@ class BookController extends AbstractController
         $limit = 10;
         // We get the page number
         $page = (int)$request->query->get("page", 1);
-        // We recover the books of the page
-        $books = $bookRepo->findBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($page, $limit, $user, $author);
-        // We get the total number of books
-        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($user, $author);
+        
+        $authorName = $authorRepo->findOneBy(['name' => $author]);
+        //  We recover the books according to the name of the author clicked in the link.
+        $books = $bookRepo->findBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($page, $limit, $user, $authorName);
+        // We get the total number of books according to the name of the author clicked in the link.
+        $total = $bookRepo->getTotalBooksActiveWithoutExchangeRequestNotOwnedByUserOfAuthor($user, $authorName);
         // How many pages will there be
         $pages = (int)ceil($total / $limit);
-
-        //dd($author, $books, $bookRepo);
 
         return $this->render('book/author.html.twig', [
             'books' => $books,

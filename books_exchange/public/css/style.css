@@ -300,6 +300,7 @@ tbody>tr>td {
 .h2OfWelcomeOfFirstName,
 .h2UserData,
 .h2MyBooks,
+.h2Author,
 .h2UserIndex,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
@@ -336,6 +337,7 @@ p>a.linkHowItWorks {
 .h3UserData,
 .h2UserIndex,
 .h2MyBooks,
+.h2Author,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
 .h2MyExchangeRequests,
@@ -354,6 +356,7 @@ p>a.linkHowItWorks {
 
 .h2UserData,
 .h2MyBooks,
+.h2Author,
 .h2UserIndex,
 .h2HowMakeExchange,
 .h2MyExchangeWishes,
@@ -579,6 +582,7 @@ main.container>section.container.main-index,
 main.container>section.container.list-of-books,
 main.container>section.container.how-make-exchange,
 main.container>section.container.user-index,
+main.container>section.container.book-author,
 main.container>section.container.user-data,
 main.container>section.container.book-my-books {
     display: flex;
@@ -1099,6 +1103,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h2OfWelcomeOfFirstName,
     .h2UserData,
     .h2MyBooks,
+    .h2Author,
     .h2UserIndex,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,
@@ -1124,6 +1129,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     main.container>section.container.user-index,
+    main.container>section.container.book-author,
     main.container>section.container.user-data {
         display: flex;
         flex-wrap: wrap;
@@ -1189,6 +1195,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h2OfWelcomeOfFirstName,
     .h2UserData,
     .h2MyBooks,
+    .h2Author,
     .h2UserIndex,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,
@@ -1393,6 +1400,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>section.container.main-state-of-book,
     main.container>section.container.how-make-exchange,
     main.container>section.container.user-index,
+    main.container>section.container.book-author,
     main.container>section.container.user-data,
     main.container>section.container.book-my-books,
     main.container>section.container.book-my-exhange-wishes,
@@ -1430,7 +1438,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 60%;
     }
 
-    main.container>section.container.user-index {
+    main.container>section.container.user-index,
+    main.container>section.container.book-author {
         display: flex;
         flex: 0 0 auto;
         margin-top: 1.5rem;
@@ -1591,6 +1600,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h3UserData,
     .h2UserIndex,
     .h2MyBooks,
+    .h2Author,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,
     .h2MyExchangeRequests,
@@ -1605,6 +1615,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
     .h2UserData,
     .h2MyBooks,
+    .h2Author,
     .h2UserIndex,
     .h2HowMakeExchange,
     .h2MyExchangeWishes,

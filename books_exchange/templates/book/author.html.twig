@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2Author h2MyBooks">Livres de {{ author }}
+		<h2 class="h2Author">Livres de {{ author }}
 			{% if books|length == "0" %}
 				(0 livre)
 			{% else %}
@@ -30,93 +30,95 @@
 			{% endif %}
 		</h2>
 
-        {% if books|length > 0 %}
-            {% for book in books %}
-            <div class="card col-md-5">
-                <div class="row g-0">
-                    <div class="card-picture col-md-5">
-                        <img src="{{ uploaded_asset(book.imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="Couverture du livre {{book.title}}." class="card-img">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
-                            </h5>
-                            <div class="card-header">
-                                <a href="{{ path('book_author', {author: book.author}) }}">{{ book.author }}</a>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{ book.category }}</li>
-                                <li class="list-group-item">{{ book.publisher }}</li>
-                                <li class="list-group-item">Langue:
-                                    {{ book.language }}</li>
-                                <li class="list-group-item">Format:
-                                    {{ book.format }}</li>
-                                <li class="list-group-item stateBook">État:
-                                    {{ book.state }}</li>
-                                <li class="list-group-item locationBook">
-                                    <img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
-                                    <span>{{ book.user.city }}</span>
-                                </li>
-                                <li class="list-group-item ownerBook">Propriétaire:
-                                    {{ book.user.pseudo }}</li>
-                            </ul>
-                        </div>
-                        <div class="divButtonExchangeCenter">
-                            <a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        {% else %}
-            <div class="divConnectedBookStockAddABook">
-                <p>Aucun livre de l'auteur {{ author }} n'est disponible...</p>
-            </div>
-        {% endif %}
+		<div class="row blockCard" id="content">
+			{% if books|length > 0 %}
+				{% for book in books %}
+				<div class="card col-md-5">
+					<div class="row g-0">
+						<div class="card-picture col-md-5">
+							<img src="{{ uploaded_asset(book.imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="Couverture du livre {{book.title}}." class="card-img">
+						</div>
+						<div class="col-md-7">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{ path('book_show', {slug: book.slug}) }}">{{ book.title|u.truncate(18, '...') }}</a>
+								</h5>
+								<div class="card-header">
+									<a href="{{ path('book_author', {author: book.author}) }}">{{ book.author }}</a>
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">{{ book.category }}</li>
+									<li class="list-group-item">{{ book.publisher }}</li>
+									<li class="list-group-item">Langue:
+										{{ book.language }}</li>
+									<li class="list-group-item">Format:
+										{{ book.format }}</li>
+									<li class="list-group-item stateBook">État:
+										{{ book.state }}</li>
+									<li class="list-group-item locationBook">
+										<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
+										<span>{{ book.user.city }}</span>
+									</li>
+									<li class="list-group-item ownerBook">Propriétaire:
+										{{ book.user.pseudo }}</li>
+								</ul>
+							</div>
+							<div class="divButtonExchangeCenter">
+								<a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			{% else %}
+				<div class="divConnectedBookStockAddABook">
+					<p>Aucun livre de l'auteur {{ author }} n'est disponible...</p>
+				</div>
+			{% endif %}
 
-		{% if pages > 1 %}
-			<nav class="page-navigation" aria-label="Page navigation">
-				<ul class="pagination">
-					<li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
-						<a class="page-link" href="?page=1" aria-label="Première Page">
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-left" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-								<path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-							</svg>
-						</a>
-					</li>
-					<li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
-						<a class="page-link" href="{{ (page > 1) ? '?page=' ~ (page - 1) : '' }}" aria-label="Page Précédente">
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-left" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-							</svg>
-						</a>
-					</li>
-					
-					{% for item in 1..pages %}
-						<li class="page-item {{ (page == item) ? 'active' : '' }}">
-							<a class="page-link" href="?page={{ item }}">{{ item }}</a>
+			{% if pages > 1 %}
+				<nav class="page-navigation" aria-label="Page navigation">
+					<ul class="pagination">
+						<li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
+							<a class="page-link" href="?page=1" aria-label="Première Page">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-left" viewbox="0 0 16 16">
+									<path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+									<path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+								</svg>
+							</a>
 						</li>
-					{% endfor %}
-					
-					<li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
-						<a class="page-link" href="{{ (page < pages) ? '?page=' ~ (page +1) : '' }}" aria-label="Page Suivante">
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-							</svg>
-						</a>
-					</li>
-					<li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
-						<a class="page-link" href="{{ pages }}" aria-label="Dernière Page">
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
-								<path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
-							</svg>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		{% endif %}
+						<li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
+							<a class="page-link" href="{{ (page > 1) ? '?page=' ~ (page - 1) : '' }}" aria-label="Page Précédente">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-left" viewbox="0 0 16 16">
+									<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+								</svg>
+							</a>
+						</li>
+						
+						{% for item in 1..pages %}
+							<li class="page-item {{ (page == item) ? 'active' : '' }}">
+								<a class="page-link" href="?page={{ item }}">{{ item }}</a>
+							</li>
+						{% endfor %}
+						
+						<li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
+							<a class="page-link" href="{{ (page < pages) ? '?page=' ~ (page +1) : '' }}" aria-label="Page Suivante">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
+									<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+								</svg>
+							</a>
+						</li>
+						<li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
+							<a class="page-link" href="{{ pages }}" aria-label="Dernière Page">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewbox="0 0 16 16">
+									<path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+									<path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			{% endif %}
+		</div>
 	</section>
 {% endblock %}
