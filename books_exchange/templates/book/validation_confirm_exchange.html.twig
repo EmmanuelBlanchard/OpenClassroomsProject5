@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container validation-confirm-exchange">
+	<section class="container bookValidationConfirmExchange">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -22,26 +22,26 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2ValidationConfirmExchange">Échange de livres</h2>
-		<div class="divValidationConfirmExchange">
+		<h2 class="h2BookValidationConfirmExchange">Échange de livres</h2>
+		<div class="divBookValidationConfirmExchange">
 			<p>Confirmer la demande d'échange du livre : </p>
 			<p>
 				<span>
 					{{ book.title }}</span>
 				avec
 			</p>
-			<p class="paragraphValidationConfirmExchange">État:
+			<p class="paragraphBookValidationConfirmExchange">État:
 				<span>{{book.state}}</span>
 			</p>
-			<p class="paragraphValidationConfirmExchange">Propriétaire:
+			<p class="paragraphBookValidationConfirmExchange">Propriétaire:
 				<span>{{book.user.pseudo}}</span>
 			</p>
-			<p class="paragraphValidationConfirmExchange">Localisation:
+			<p class="paragraphBookValidationConfirmExchange">Localisation:
 				<span>{{book.user.zipCode}}
 					{{book.user.city}}</span>
 			</p>
-			<div class="div-validation-confirm-exchange-button">
-				<a href="{{ path('book_confirm_exchange', {'id': book.id }) }}" class="btn btn-success validation-confirm-exchange-button">Confirmer l'échange</a>
+			<div class="divButtonBookValidationConfirmExchange">
+				<a href="{{ path('book_confirm_exchange', {'id': book.id }) }}" class="btn btn-success buttonBookValidationConfirmExchange">Confirmer l'échange</a>
 			</div>
 		</div>
 	</section>

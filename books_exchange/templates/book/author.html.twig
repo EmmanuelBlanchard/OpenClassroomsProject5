@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container book-author">
+	<section class="container bookAuthor">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2Author">Livres de {{ author }}
+		<h2 class="h2BookAuthor">Livres de {{ author }}
 			{% if books|length == "0" %}
 				(0 livre)
 			{% else %}

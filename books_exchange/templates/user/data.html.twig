@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container user-data">
+	<section class="container userData">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-sm-12">
 				<div class="alert alert-success" role="alert">
@@ -26,21 +26,21 @@
 			{{ app.user.lastname }}
 		</h2>
 
-		<a class="btn user-data-button" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
+		<a class="btn buttonUserData" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
 
-		<div class="div-user-data-row"> 
-			<div class="div-user-data-name">Pseudo :</div>
-			<div class="div-user-data-value">{{ app.user.pseudo }}</div>
-			<div class="div-user-data-name">Nom :</div>
-			<div class="div-user-data-value">{{ app.user.lastname }}</div>
-			<div class="div-user-data-name">Prénom :</div>
-			<div class="div-user-data-value">{{ app.user.firstname }}</div>
-			<div class="div-user-data-name">E-mail :</div>
-			<div class="div-user-data-value">{{ app.user.email }}</div>
-			<div class="div-user-data-name">Code postal :</div>
-			<div class="div-user-data-value">{{ app.user.zipCode }}</div>
-			<div class="div-user-data-name">Ville :</div>
-			<div class="div-user-data-value">{{ app.user.city }}</div>
+		<div class="divRowUserData"> 
+			<div class="divNameUserData">Pseudo :</div>
+			<div class="divValueUserData">{{ app.user.pseudo }}</div>
+			<div class="divNameUserData">Nom :</div>
+			<div class="divValueUserData">{{ app.user.lastname }}</div>
+			<div class="divNameUserData">Prénom :</div>
+			<div class="divValueUserData">{{ app.user.firstname }}</div>
+			<div class="divNameUserData">E-mail :</div>
+			<div class="divValueUserData">{{ app.user.email }}</div>
+			<div class="divNameUserData">Code postal :</div>
+			<div class="divValueUserData">{{ app.user.zipCode }}</div>
+			<div class="divNameUserData">Ville :</div>
+			<div class="divValueUserData">{{ app.user.city }}</div>
 		</div>
 
 		<h3 class="h3UserData">Livres de

@@ -293,21 +293,21 @@ tbody>tr>td {
 }
 
 .h2IntroductoryContent,
-.h2howItWorks,
-.h2frequentlyAskedQuestions,
-.h2stateOfBook,
+.h2MainHowItWorks,
+.h2MainFrequentlyAskedQuestions,
+.h2MainStateOfBook,
 .formHeader h2,
 .h2OfWelcomeOfFirstName,
 .h2UserData,
-.h2MyBooks,
-.h2Author,
+.h2BookMyBooks,
+.h2BookAuthor,
 .h2UserIndex,
-.h2HowMakeExchange,
-.h2MyExchangeWishes,
-.h2MyExchangeRequests,
-.h2ListOfBooks,
-.h2ValidationConfirmExchange,
-.h2ConfirmExchange,
+.h2BookHowMakeExchange,
+.h2BookMyExchangeWishes,
+.h2BookMyExchangeRequests,
+.h2BookIndex,
+.h2BookValidationConfirmExchange,
+.h2BookConfirmExchange,
 .h2ResetPasswordCheckEmail,
 .h2MainSearchBooks {
     font-size: 1.1em;
@@ -321,29 +321,29 @@ tbody>tr>td {
 }
 
 /* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
-.h2howItWorks,
-.h2frequentlyAskedQuestions,
-.h2stateOfBook,
+.h2MainHowItWorks,
+.h2MainFrequentlyAskedQuestions,
+.h2MainStateOfBook,
 .h2MainSearchBooks {
     color: #0854A2;
     text-align: center;
 }
 
-p>a.linkHowItWorks {
+p>a.linkMainHowItWorks {
     color: #000;
 }
 
 .h2UserData,
 .h3UserData,
 .h2UserIndex,
-.h2MyBooks,
-.h2Author,
-.h2HowMakeExchange,
-.h2MyExchangeWishes,
-.h2MyExchangeRequests,
-.h2ListOfBooks,
-.h2ValidationConfirmExchange,
-.h2ConfirmExchange,
+.h2BookMyBooks,
+.h2BookAuthor,
+.h2BookHowMakeExchange,
+.h2BookMyExchangeWishes,
+.h2BookMyExchangeRequests,
+.h2BookIndex,
+.h2BookValidationConfirmExchange,
+.h2BookConfirmExchange,
 .h2ResetPasswordCheckEmail {
     font-family: 'RobotoRegular', 'openSansRegular', Arial, sans-serif, serif;
     font-weight: 700;
@@ -355,15 +355,15 @@ p>a.linkHowItWorks {
 }
 
 .h2UserData,
-.h2MyBooks,
-.h2Author,
+.h2BookMyBooks,
+.h2BookAuthor,
 .h2UserIndex,
-.h2HowMakeExchange,
-.h2MyExchangeWishes,
-.h2MyExchangeRequests,
-.h2ListOfBooks,
-.h2ValidationConfirmExchange,
-.h2ConfirmExchange,
+.h2BookHowMakeExchange,
+.h2BookMyExchangeWishes,
+.h2BookMyExchangeRequests,
+.h2BookIndex,
+.h2BookValidationConfirmExchange,
+.h2BookConfirmExchange,
 .h2ResetPasswordCheckEmail {
     border: 0.04em solid #186135;
 }
@@ -372,32 +372,30 @@ p>a.linkHowItWorks {
     padding: 10px 20px;
 }
 
-/* Test code selectors css : Responsive Mobile */
-section.container.main-index>p.pIntroductoryContent {
+section.container.mainIndex>p.pIntroductoryContent {
     font-size: 0.83em;
     font-weight: bold;
     line-height: 1.6em;
     margin-left: 2%;
 }
 
-/* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
-.divParagraphsHowItWorks p,
-.divParagraphsFrequentlyAskedQuestions p,
-.divParagraphsFrequentlyAskedQuestions dl,
-.divParagraphsFrequentlyAskedQuestions dd,
-.divParagraphsStateOfBook p,
-.divParagraphsStateOfBook dl,
-.divParagraphsStateOfBook dd {
+/* templates/main/how_it_works.html.twig, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
+.divMainHowItWorks p,
+.divMainFrequentlyAskedQuestions p,
+.divMainFrequentlyAskedQuestions dl,
+.divMainFrequentlyAskedQuestions dd,
+.divMainStateOfBook p,
+.divMainStateOfBook dl,
+.divMainStateOfBook dd {
     font-family: 'MerriweatherRegular', 'openSansRegular', Arial, sans-serif, serif;
     color: #000;
 }
 
-.divParagraphsFrequentlyAskedQuestions dd,
-.divParagraphsStateOfBook dd {
+.divMainFrequentlyAskedQuestions dd,
+.divMainStateOfBook dd {
     margin-right: 5%;
 }
 
-/* Test code selectors css : Responsive Mobile */
 .h3InstructionsForUse {
     color: #CD4109;
     font-size: 1em;
@@ -405,14 +403,13 @@ section.container.main-index>p.pIntroductoryContent {
     margin-top: 0.5rem;
 }
 
-/* Test code selectors css : Responsive Mobile */
 .instructionsForUse p {
     font-size: 0.9em;
     margin-left: 2%;
 }
 
-.divValidationConfirmExchange,
-.divConfirmExchange {
+.divBookValidationConfirmExchange,
+.divBookConfirmExchange {
     margin: 0 auto;
     border: 0.1em solid #186135;
     border-radius: 0.5rem;
@@ -421,18 +418,18 @@ section.container.main-index>p.pIntroductoryContent {
     padding: 10px;
 }
 
-.divValidationConfirmExchange {
+.divBookValidationConfirmExchange {
     width: 100%;
     text-align: center;
 }
 
-div.divValidationConfirmExchange>p>span {
+div.divBookValidationConfirmExchange>p>span {
     font-weight: bold
 }
 
 .divBookMyBooksEmptyLibrary,
-.divTheBooksIRequestedToExchange,
-.divMyBooksRequestedForExchange,
+.divBookMyExchangeWishes,
+.divBookMyExchangeRequests,
 .divResetPasswordCheckEmail {
     margin: 1.5rem auto;
     border-radius: 0.5rem;
@@ -449,39 +446,37 @@ div.divValidationConfirmExchange>p>span {
     width: 63.8%;
 }
 
-.divTheBooksIRequestedToExchange,
-.divMyBooksRequestedForExchange {
+.divBookMyExchangeWishes,
+.divBookMyExchangeRequests {
     width: 52.8%;
 }
 
 .divBookMyBooksEmptyLibrary p,
-.divTheBooksIRequestedToExchange p,
-.divMyBooksRequestedForExchange p,
-.divHowMakeExchange p,
-.divConfirmExchange p {
+.divBookMyExchangeWishes p,
+.divBookMyExchangeRequests p,
+.divBookHowMakeExchange p,
+.divBookConfirmExchange p {
     font-family: 'openSansRegular', Arial, sans-serif, serif;
     color: #000;
 }
 
 .divBookMyBooksEmptyLibrary p,
-.divTheBooksIRequestedToExchange p,
-.divMyBooksRequestedForExchange p,
-.divHowMakeExchange p {
+.divBookMyExchangeWishes p,
+.divBookMyExchangeRequests p,
+.divBookHowMakeExchange p {
     color: #FFF;
 }
 
-.divTheBooksIRequestedToExchange p,
-.divMyBooksRequestedForExchange p {
+.divBookMyExchangeWishes p,
+.divBookMyExchangeRequests p {
     margin: .5rem auto;
 }
 
-/* Test code selectors css : Responsive Mobile */
 .imageForTheInstructionManualBlock {
     width: 100%;
     height: 144.1px;
 }
 
-/* Test code selectors css : Responsive Mobile */
 .linkOnHowTheWebsiteWorks {
     display: inline-block;
     color: #000000;
@@ -490,7 +485,6 @@ div.divValidationConfirmExchange>p>span {
     margin-top: 1rem;
 }
 
-/* Test code selectors css : Responsive Mobile */
 .h2TitleSelectionOfBooks {
     text-align: center;
     background-color: #F7F7F7;
@@ -499,14 +493,13 @@ div.divValidationConfirmExchange>p>span {
     font-size: 1.1em;
 }
 
-/* Test code selectors css : Responsive Mobile */
 div#content.row.blockCard>div.card {
     flex: 0 0 auto;
     width: 100%;
     justify-content: center;
 }
 
-.divConfirmExchange span {
+.divBookConfirmExchange span {
     font-weight: bold;
 }
 
@@ -528,14 +521,14 @@ div#content.row.blockCard>div.card {
 }
 
 /* templates/book/validation_confirm_exchange.html.twig and templates/book/my_books.html.twig */
-.div-validation-confirm-exchange-button,
+.divButtonBookValidationConfirmExchange,
 .divButtonBookMyBooks {
     display: flex;
     justify-content: center;
 }
 
 /* templates/book/validation_confirm_exchange.html.twig */
-a.btn-success.validation-confirm-exchange-button {
+a.btn-success.buttonBookValidationConfirmExchange {
     font-family: 'openSansRegular';
     color: #fff;
     background-color: #196216;
@@ -543,13 +536,13 @@ a.btn-success.validation-confirm-exchange-button {
     width: min-content;
 }
 
-a.btn-success.validation-confirm-exchange-button:hover {
+a.btn-success.buttonBookValidationConfirmExchange:hover {
     color: #fff;
     background-color: #186135;
     border-color: #15572F;
 }
 
-.divHowMakeExchange {
+.divBookHowMakeExchange {
     display: flex;
     flex-direction: column;
     margin: 1.5rem auto;
@@ -562,7 +555,7 @@ a.btn-success.validation-confirm-exchange-button:hover {
     text-align: left;
 }
 
-div.div-user-index-buttons {
+div.divButtonsUserIndex {
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
@@ -577,23 +570,21 @@ div#content.row.blockCard {
     margin-bottom: 2rem;
 }
 
-/* test for section container with min-width:240px */
-main.container>section.container.main-index,
-main.container>section.container.list-of-books,
-main.container>section.container.how-make-exchange,
-main.container>section.container.user-index,
-main.container>section.container.book-author,
-main.container>section.container.user-data,
-main.container>section.container.book-my-books {
+main.container>section.container.mainIndex,
+main.container>section.container.bookIndex,
+main.container>section.container.bookHowMakeExchange,
+main.container>section.container.userIndex,
+main.container>section.container.bookAuthor,
+main.container>section.container.userData,
+main.container>section.container.bookMyBooks,
+main.container>section.container.bookShow {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 1.5rem;
 }
 
-/* Above test for section container */
-
-div.div-user-index-buttons>a.btn.btn-primary.user-index-button {
+div.divButtonsUserIndex>a.btn.btn-primary.buttonUserIndex {
     margin-bottom: 1.5rem;
 }
 
@@ -787,7 +778,6 @@ div.form-control>input#inputPassword.form-control:focus {
     border-color: #0a53be;
 }
 
-/* template/registration/register.html.twig */
 .div-registration-register-button,
 .div-security-login-button,
 .div-reset-password-request-button,
@@ -862,6 +852,7 @@ div.card-picture {
 
 div.card-picture>img {
     width: 95%;
+    border-radius: .25rem;
 }
 
 h5.card-title,
@@ -897,30 +888,30 @@ div.card-body {
 
 /* templates/user/data.html.twig */
 /* templates/book/my_books.html.twig */
-.btn.user-data-button,
-.btn.book-my-books-add-book-button,
-.btn.book-my-books-button {
+.btn.buttonUserData,
+.btn.buttonBookMyBooksButtonAddBook,
+.btn.buttonBookMyBooks {
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd;
 }
 
-.btn.user-data-button:hover,
-.btn.book-my-books-add-book-button:hover,
-.btn.book-my-books-button:hover {
+.btn.buttonUserData:hover,
+.btn.buttonBookMyBooksButtonAddBook:hover,
+.btn.buttonBookMyBooks:hover {
     color: #fff;
     background-color: #0b5ed7;
     border-color: #0a58ca;
 }
 
-.btn.user-data-button,
-.btn.book-my-books-add-book-button {
+.btn.buttonUserData,
+.btn.buttonBookMyBooksButtonAddBook {
     flex: 0 0 auto;
     margin: 1.5rem;
     width: max-content;
 }
 
-.btn.book-my-books-button {
+.btn.buttonBookMyBooks {
     margin: .5rem;
 }
 
@@ -930,8 +921,8 @@ div.card-body {
 }
 
 /* Test templates/user/index.html.twig, templates/user/data.html.twig */
-.div-user-index-row,
-.div-user-data-row {
+.divRowUserIndex,
+.divRowUserData {
     flex: 0 0 auto;
     width: 100%;
     flex-shrink: 0;
@@ -940,25 +931,23 @@ div.card-body {
     margin-top: 1.5rem;
 }
 
-.div-user-index-name,
-.div-user-data-name {
+.divNameUserIndex,
+.divNameUserData {
     font-weight: bold;
 }
 
-.div-user-index-name,
-.div-user-index-value,
-.div-user-data-name,
-.div-user-data-value {
+.divNameUserIndex,
+.divValueUserIndex,
+.divNameUserData,
+.divValueUserData {
     margin-bottom: 1rem;
 }
 
-/* Template book/validation/confirm/exchange.html.twig */
-main.container>section.container.validation-confirm-exchange,
-main.container>section.container.confirm-exchange {
+main.container>section.container.bookValidationConfirmExchange,
+main.container>section.container.bookConfirmExchange {
     margin-bottom: 1.5rem;
 }
 
-/* Test code selectors css : Responsive Mobile */
 nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     padding: .2rem .12rem;
     font-size: .875rem;
@@ -1096,21 +1085,21 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     .h2IntroductoryContent,
-    .h2howItWorks,
-    .h2frequentlyAskedQuestions,
-    .h2stateOfBook,
+    .h2MainHowItWorks,
+    .h2MainFrequentlyAskedQuestions,
+    .h2MainStateOfBook,
     .formHeader h2,
     .h2OfWelcomeOfFirstName,
     .h2UserData,
-    .h2MyBooks,
-    .h2Author,
+    .h2BookMyBooks,
+    .h2BookAuthor,
     .h2UserIndex,
-    .h2HowMakeExchange,
-    .h2MyExchangeWishes,
-    .h2MyExchangeRequests,
-    .h2ListOfBooks,
-    .h2ValidationConfirmExchange,
-    .h2ConfirmExchange,
+    .h2BookHowMakeExchange,
+    .h2BookMyExchangeWishes,
+    .h2BookMyExchangeRequests,
+    .h2BookIndex,
+    .h2BookValidationConfirmExchange,
+    .h2BookConfirmExchange,
     .h2ResetPasswordCheckEmail,
     .h2MainSearchBooks {
         font-size: 1.325rem;
@@ -1128,32 +1117,33 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 90%;
     }
 
-    main.container>section.container.user-index,
-    main.container>section.container.book-author,
-    main.container>section.container.user-data {
+    main.container>section.container.userIndex,
+    main.container>section.container.bookAuthor,
+    main.container>section.container.bookShow,
+    main.container>section.container.userData {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .div-user-index-row,
-    .div-user-data-row {
+    .divRowUserIndex,
+    .divRowUserData {
         display: flex;
         flex-wrap: inherit;
     }
 
-    .div-user-index-name,
-    .div-user-index-value,
-    .div-user-data-name,
-    .div-user-data-value {
+    .divNameUserIndex,
+    .divValueUserIndex,
+    .divNameUserData,
+    .divValueUserData {
         width: 50%;
     }
 
-    .divValidationConfirmExchange,
-    .divConfirmExchange {
+    .divBookValidationConfirmExchange,
+    .divBookConfirmExchange {
         padding: 20px;
     }
 
-    a.btn-success.validation-confirm-exchange-button {
+    a.btn-success.buttonBookValidationConfirmExchange {
         width: initial;
     }
 
@@ -1188,21 +1178,21 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     .h2IntroductoryContent,
-    .h2howItWorks,
-    .h2frequentlyAskedQuestions,
-    .h2stateOfBook,
+    .h2MainHowItWorks,
+    .h2MainFrequentlyAskedQuestions,
+    .h2MainStateOfBook,
     .formHeader h2,
     .h2OfWelcomeOfFirstName,
     .h2UserData,
-    .h2MyBooks,
-    .h2Author,
+    .h2BookMyBooks,
+    .h2BookAuthor,
     .h2UserIndex,
-    .h2HowMakeExchange,
-    .h2MyExchangeWishes,
-    .h2MyExchangeRequests,
-    .h2ListOfBooks,
-    .h2ValidationConfirmExchange,
-    .h2ConfirmExchange,
+    .h2BookHowMakeExchange,
+    .h2BookMyExchangeWishes,
+    .h2BookMyExchangeRequests,
+    .h2BookIndex,
+    .h2BookValidationConfirmExchange,
+    .h2BookConfirmExchange,
     .h2ResetPasswordCheckEmail,
     .h2MainSearchBooks {
         font-size: calc(1.325rem + .9vw);
@@ -1272,7 +1262,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 90%;
     }
 
-    div.div-user-index-buttons {
+    div.divButtonsUserIndex {
         width: min-content;
     }
 
@@ -1292,8 +1282,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 50%;
     }
 
-    .divValidationConfirmExchange,
-    .divConfirmExchange {
+    .divBookValidationConfirmExchange,
+    .divBookConfirmExchange {
         padding: 20px 40px;
     }
 
@@ -1327,8 +1317,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 70%;
     }
 
-    .divValidationConfirmExchange,
-    .divConfirmExchange {
+    .divBookValidationConfirmExchange,
+    .divBookConfirmExchange {
         width: 80%;
     }
 
@@ -1393,21 +1383,22 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
     main.container>div.container,
     main.container>section.container,
-    main.container>section.container.main-index,
-    main.container>section.container.list-of-books,
-    main.container>section.container.main-how-it-works,
-    main.container>section.container.main-faq,
-    main.container>section.container.main-state-of-book,
-    main.container>section.container.how-make-exchange,
-    main.container>section.container.user-index,
-    main.container>section.container.book-author,
-    main.container>section.container.user-data,
-    main.container>section.container.book-my-books,
-    main.container>section.container.book-my-exhange-wishes,
-    main.container>section.container.container.book-my-exhange-requests,
-    main.container>section.container.main-search-books,
-    main.container>section.container.validation-confirm-exchange,
-    main.container>section.container.confirm-exchange {
+    main.container>section.container.mainIndex,
+    main.container>section.container.book-index,
+    main.container>section.container.mainHowItWorks,
+    main.container>section.container.mainFrequentlyAskedQuestions,
+    main.container>section.container.mainStateOfBook,
+    main.container>section.container.bookHowMakeExchange,
+    main.container>section.container.userIndex,
+    main.container>section.container.bookAuthor,
+    main.container>section.container.userData,
+    main.container>section.container.bookMyBooks,
+    main.container>section.container.bookShow,
+    main.container>section.container.bookMyExhangeWishes,
+    main.container>section.container.container.bookMyExchangeRequests,
+    main.container>section.container.mainSearchBooks,
+    main.container>section.container.bookValidationConfirmExchange,
+    main.container>section.container.bookConfirmExchange {
         display: flex;
         flex-direction: column;
         width: 66.6666666667%;
@@ -1436,24 +1427,26 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     /* Template book/show.html.twig */
     div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
         width: 60%;
+        border-radius: .25rem;
     }
 
-    main.container>section.container.user-index,
-    main.container>section.container.book-author {
+    main.container>section.container.userIndex,
+    main.container>section.container.bookAuthor,
+    main.container>section.container.bookShow {
         display: flex;
         flex: 0 0 auto;
         margin-top: 1.5rem;
     }
 
-    .divParagraphsHowItWorks,
-    .divParagraphsFrequentlyAskedQuestions,
-    .div-user-index-row,
-    .div-user-data-row {
+    .divMainHowItWorks,
+    .divMainFrequentlyAskedQuestions,
+    .divRowUserIndex,
+    .divRowUserData {
         padding-left: 1.5rem;
     }
 
-    div.row.row-cols-2.g-4>div.div-user-index-name,
-    div.row.row-cols-2.g-4>div.div-user-data-name {
+    div.row.row-cols-2.g-4>div.divNameUserIndex,
+    div.row.row-cols-2.g-4>div.divNameUserData {
         flex: 0 0 auto;
         width: 33.3333333333%;
         margin-left: 1.5rem;
@@ -1461,15 +1454,15 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         border: 1px solid #dee2e6;
     }
 
-    div.row.row-cols-2.g-4>div.div-user-index-value,
-    div.row.row-cols-2.g-4>div.div-user-data-value {
+    div.row.row-cols-2.g-4>div.divValueUserIndex,
+    div.row.row-cols-2.g-4>div.divValueUserData {
         flex: 0 0 auto;
         width: 41.6666666667%;
         padding: .5rem;
         border: 1px solid #dee2e6;
     }
 
-    div.div-user-index-buttons>a.btn.btn-primary.user-index-button {
+    div.divButtonsUserIndex>a.btn.btn-primary.buttonUserIndex {
         margin-right: .5rem;
         margin-left: .5rem;
     }
@@ -1477,16 +1470,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding: .50rem .50rem;
         font-size: 1.2em;
-    }
-
-}
-
-/*	iPhone X */
-@media only screen and (min-width: 812px) and (min-resolution: 3dppx) {
-
-    /* Templates/book/show.html.twig */
-    main.container>div.container {
-        width: 90%;
     }
 
 }
@@ -1509,8 +1492,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-bottom: 1.5rem;
     }
 
-    .div-user-index-row,
-    .div-user-data-row {
+    .divRowUserIndex,
+    .divRowUserData {
         padding-left: 1.5rem;
     }
 
@@ -1549,7 +1532,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-bottom: 2.5rem;
     }
 
-    section.container.main-index>p.pIntroductoryContent {
+    section.container.mainIndex>p.pIntroductoryContent {
         font-size: 0.83em;
         font-weight: bold;
         line-height: 1.6em;
@@ -1599,14 +1582,14 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .h2UserData,
     .h3UserData,
     .h2UserIndex,
-    .h2MyBooks,
-    .h2Author,
-    .h2HowMakeExchange,
-    .h2MyExchangeWishes,
-    .h2MyExchangeRequests,
-    .h2ListOfBooks,
-    .h2ValidationConfirmExchange,
-    .h2ConfirmExchange,
+    .h2BookMyBooks,
+    .h2BookAuthor,
+    .h2BookHowMakeExchange,
+    .h2BookMyExchangeWishes,
+    .h2BookMyExchangeRequests,
+    .h2BookIndex,
+    .h2BookValidationConfirmExchange,
+    .h2BookConfirmExchange,
     .h2ResetPasswordCheckEmail {
         width: 72.5%;
         margin-left: 5rem;
@@ -1614,22 +1597,22 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     .h2UserData,
-    .h2MyBooks,
-    .h2Author,
+    .h2BookMyBooks,
+    .h2BookAuthor,
     .h2UserIndex,
-    .h2HowMakeExchange,
-    .h2MyExchangeWishes,
-    .h2MyExchangeRequests,
-    .h2ListOfBooks,
-    .h2ValidationConfirmExchange,
-    .h2ConfirmExchange,
+    .h2BookHowMakeExchange,
+    .h2BookMyExchangeWishes,
+    .h2BookMyExchangeRequests,
+    .h2BookIndex,
+    .h2BookValidationConfirmExchange,
+    .h2BookConfirmExchange,
     .h2ResetPasswordCheckEmail {
         margin-top: 2.5rem;
         margin-bottom: 2.5rem;
     }
 
-    .divValidationConfirmExchange,
-    .divConfirmExchange {
+    .divBookValidationConfirmExchange,
+    .divBookConfirmExchange {
         width: 65%;
     }
 
@@ -1637,13 +1620,13 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 100%;
     }
 
-    .btn.user-data-button,
-    .btn.book-my-books-add-book-button {
+    .btn.buttonUserData,
+    .btn.buttonBookMyBooksButtonAddBook {
         margin-left: 6.5rem;
     }
 
-    .div-user-index-row,
-    .div-user-data-row {
+    .divRowUserIndex,
+    .divRowUserData {
         padding-left: 6.5rem;
     }
 
@@ -1667,6 +1650,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
     div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
         width: 100%;
+        border-radius: .25rem;
     }
 
     div.card-picture.show {

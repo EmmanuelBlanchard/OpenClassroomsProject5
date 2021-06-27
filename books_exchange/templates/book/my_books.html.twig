@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container book-my-books">
+	<section class="container bookMyBooks">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2MyBooks">Mes livres
+		<h2 class="h2BookMyBooks">Mes livres
 			{% if books|length == "0" %}
 				(0 livre)
 			{% else %}
@@ -32,7 +32,7 @@
 		</h2>
 		{% if books|length > "0" %}
 
-			<a class="btn book-my-books-add-book-button" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
+			<a class="btn buttonBookMyBooksButtonAddBook" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
 
 			<table class="table responsive-table-line table-hover">
 				<thead>
@@ -61,11 +61,11 @@
 							<td data-label="État">{{ book.state }}</td>
 							<td data-label="Actions">
 								{% if book.active %}
-									<a class="btn book-my-books-button" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
+									<a class="btn buttonBookMyBooks" href="{{ path('book_remove_exchanges', {'id': book.id }) }}" role="button">Retirer des échanges</a>
 								{% else %}
-									<a class="btn book-my-books-button" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
+									<a class="btn buttonBookMyBooks" href="{{ path('book_add_exchanges', {'id': book.id }) }}" role="button">Ajouter aux échanges</a>
 								{% endif %}
-								<a class="btn book-my-books-button" href="{{ path('book_remove', {'id': book.id }) }}" role="button">Supprimer</a>
+								<a class="btn buttonBookMyBooks" href="{{ path('book_remove', {'id': book.id }) }}" role="button">Supprimer</a>
 							</td>
 						</tr>
 					{% endfor %}

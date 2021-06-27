@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container confirm-exchange">
+	<section class="container bookConfirmExchange">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -22,8 +22,8 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2ConfirmExchange">Échange de livres</h2>
-		<div class="divConfirmExchange">
+		<h2 class="h2BookConfirmExchange">Échange de livres</h2>
+		<div class="divBookConfirmExchange">
 			<p>La demande d'échange du livre
 				<span>{{ book.title }}</span>
 			</p>

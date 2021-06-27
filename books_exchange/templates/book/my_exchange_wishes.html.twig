@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container book-my-exhange-wishes">
+	<section class="container bookMyExhangeWishes">
 		{% for message in app.flashes('message') %}
 			<div class="divAlert col-12">
 				<div class="alert alert-success" role="alert">
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		{% endfor %}
-		<h2 class="h2MyExchangeWishes">Mes souhaits d'échange
+		<h2 class="h2BookMyExchangeWishes">Mes souhaits d'échange
 			{% if theBooksIRequestedToExchange|length == "0" %}
 				(0 livre)
 			{% else %}
@@ -31,7 +31,7 @@
 			{% endif %}
 		</h2>
 		{% if theBooksIRequestedToExchange|length == "0" %}
-			<div class="divTheBooksIRequestedToExchange">
+			<div class="divBookMyExchangeWishes">
 				<p>Vous n'avez effectué aucune demande d'échange de livres actuellement</p>
 			</div>
 		{% else %}
