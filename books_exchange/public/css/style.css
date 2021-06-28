@@ -53,8 +53,31 @@ body {
     padding: 0;
 }
 
-.bg-gray97 {
+body.container {
+    background-color: #f8f9fa;
+}
+
+body.container>nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    color: #F7F7F7;
     background-color: #F7F7F7;
+}
+
+body.container>nav>.container {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
 }
 
 ul {
@@ -81,9 +104,22 @@ a:focus {
     outline-offset: .15em;
 }
 
-.aDivNavLogo {
+/* before .aDivNavLogo  after .navbarBrand */
+.navbarBrand {
     display: flex;
     align-items: center;
+    /* .navbar-brand */
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* before .navbar-light .navbar-toggler-icon after .mainNavigation .navbar-toggler-icon */
+.mainNavigation .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .imgLogo {
@@ -97,7 +133,16 @@ a:focus {
     font-size: calc(1.275rem);
 }
 
+/*
 .navbar-brand .brandNameExchange {
+    display: flex;
+    align-items: center;
+    color: #0854A2;
+    margin-left: 1%;
+}
+*/
+/* Test replace .navbar-brand .brandNameExchange */
+nav.mainNavigation>div.container>a.aDivNavLogo>h1 {
     display: flex;
     align-items: center;
     color: #0854A2;
@@ -113,6 +158,11 @@ nav {
     display: flex;
     color: #F7F7F7;
     align-items: center;
+}
+
+a {
+    color: #0d6efd;
+    text-decoration: underline;
 }
 
 /* Test code selectors css : Responsive Mobile */
@@ -132,7 +182,33 @@ div.container>nav.page-navigation {
     align-items: inherit;
 }
 
-/* Test code selectors css : Responsive Mobile */
+/* after .navbar-nav, before div#navbarDefault>ul */
+div#navbarDefault>ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    /*div#navbarDefault.navbar-collapse.offcanvas-collapse.open > ul.navbar-nav.mb-lg-0, div#navbarDefault.navbar-collapse.offcanvas-collapse > ul.navbar-nav.mb-lg-0 */
+    align-items: center;
+    margin-bottom: .5rem;
+    margin-right: auto;
+}
+
+/* before .nav-link, after div#navbarDefault>ul>li>a */
+div#navbarDefault>ul>li>a {
+    display: block;
+    padding: .5rem 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+/* .nav-link:focus, .nav-link:hover */
+div#navbarDefault>ul>li>a {
+    color: #0a58ca;
+}
+
 nav.nav.nav-underline {
     display: flex;
     justify-content: center;
@@ -162,13 +238,6 @@ nav a:link {
 ul.navbar-nav.me-auto.mb-2.mb-lg-0>li.nav-item {
     padding-left: 1rem;
     padding-right: 1rem;
-}
-
-div#navbarDefault.navbar-collapse.offcanvas-collapse.open>ul.navbar-nav.mb-lg-0,
-div#navbarDefault.navbar-collapse.offcanvas-collapse>ul.navbar-nav.mb-lg-0 {
-    align-items: center;
-    margin-bottom: .5rem;
-    margin-right: auto;
 }
 
 .menu {
@@ -1173,10 +1242,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 }
 
-/* iPhone 5 , iPhone SE 
-@media only screen and (min-width: 320px) and (min-resolution: 2dppx) {}
-*/
-
 @media only screen and (min-width: 375px) and (min-resolution: 1dppx) {
 
     .imgLogo {
@@ -1293,9 +1358,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 }
 
-/* 	iPhone 6 to X 
-@media only screen and (min-width: 375px) and (min-resolution: 2dppx) {}*/
-
 @media only screen and (min-width: 400px) and (min-resolution: 1dppx) {
 
     /* Templates/book/show.html.twig */
@@ -1350,10 +1412,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 }
 
-/* iPhone SE 
-@media only screen and (min-width: 568px) and (min-resolution: 2dppx) {}
-*/
-
 @media only screen and (min-width: 600px) and (min-resolution: 1dppx) {
 
     /* templates/book/index.html.twig , Templates/book/show.html.twig*/
@@ -1372,14 +1430,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
 }
-
-/*	iPhone 6 to 8 
-@media only screen and (min-width: 667px) and (min-resolution: 2dppx) {}
-*/
-
-/*	iPhone 8 Plus 
-@media only screen and (min-width: 736px) and (min-resolution: 2dppx) {}
-*/
 
 /* iPad Air, iPad Mini, iPad Pro 9″ */
 @media only screen and (min-width: 768px) and (min-resolution: 1dppx) {
@@ -1501,6 +1551,40 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .imgLogo {
         width: 64px;
         height: 64px;
+    }
+
+    /* .navbar-expand-lg */
+    body.container>nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+    }
+
+    /* .navbar-expand-lg .navbar-toggler */
+    body.container>nav .navbar-toggler {
+        display: none;
+    }
+
+    /* .navbar-expand-lg .navbar-collapse */
+    /* body.container>nav .navbar-collapse */
+    body.container>nav div#navbarDefault {
+        display: flex !important;
+        flex-basis: 100%;
+        flex-grow: 1;
+        align-items: center;
+
+    }
+
+    /* .navbar-expand-lg .navbar-nav .nav-link */
+    div#navbarDefault>ul>li>a {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+
+    /* .navbar-expand-lg .navbar-nav */
+    div#navbarDefault>ul {
+        flex-direction: row;
+        margin-bottom: 0 !important;
     }
 
     .nav-item {
