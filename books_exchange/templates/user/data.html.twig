@@ -7,26 +7,12 @@
 
 {% block body %}
 	<section class="container userData">
-		{% for message in app.flashes('message') %}
-			<div class="divAlert col-sm-12">
-				<div class="alert alert-success" role="alert">
-					{{message}}
-				</div>
-			</div>
-		{% endfor %}
-		{% for message in app.flashes('error') %}
-			<div class="divAlert col-sm-12">
-				<div class="alert alert-danger" role="alert">
-					{{ message }}
-				</div>
-			</div>
-		{% endfor %}
 		<h2 class="h2UserData">Données personnelles de
 			{{ app.user.firstname }}
 			{{ app.user.lastname }}
 		</h2>
 
-		<a class="btn buttonUserData" href="{{ path('user_data_download') }}" role="button">Téléchager les données</a>
+		<a class="buttonUserData" href="{{ path('user_data_download') }}" role="button">Télécharger les données</a>
 
 		<div class="divRowUserData"> 
 			<div class="divNameUserData">Pseudo :</div>
