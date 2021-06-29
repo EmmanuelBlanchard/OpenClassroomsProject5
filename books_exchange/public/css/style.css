@@ -734,8 +734,9 @@ div.form-control:read-only {
     opacity: 1;
 }
 
-.divAlert.col-12 {
-    margin-top: 2.5rem;
+.divAlert {
+    flex: 0 0 auto;
+    width: 100%;
 }
 
 .formHeader {
@@ -1741,8 +1742,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 100%;
     }
 
-    .btn.buttonUserData,
-    .btn.buttonBookMyBooksButtonAddBook {
+    .buttonUserData,
+    .buttonBookMyBooksButtonAddBook {
         margin-left: 6.5rem;
     }
 

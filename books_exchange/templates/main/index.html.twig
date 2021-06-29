@@ -6,14 +6,14 @@
 {% block body %}
 	<section class="container mainIndex">
 		{% for message in app.flashes('success') %}
-			<div class="divAlert col-12">
+			<div class="divAlert">
 				<div class="alert alert-success" role="alert">
 					{{ message }}
 				</div>
 			</div>
 		{% endfor %}
 		{% for flashError in app.flashes('error') %}
-			<div class="divAlert col-12">
+			<div class="divAlert">
 				<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 			</div>
 		{% endfor %}
