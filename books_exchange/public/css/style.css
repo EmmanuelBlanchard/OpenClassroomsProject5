@@ -226,14 +226,20 @@ div#navbarDefault>ul>li>a:hover {
     color: #0a58ca;
 }
 
-nav.nav.nav-underline {
+/* nav.nav.nav-underline */
+nav.secondaryNavigation {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.nav-underline .nav-link {
+/* .nav-underline .nav-link */
+nav.secondaryNavigation>a {
+    display: block;
+    padding: .5rem 1rem;
     color: #F7F7F7;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
 nav li {
@@ -1570,29 +1576,23 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         height: 64px;
     }
 
-    /* .navbar-expand-lg */
     body.container>nav {
         flex-wrap: nowrap;
         justify-content: flex-start;
 
     }
 
-    /* .navbar-expand-lg .navbar-toggler */
-    body.container>nav .navbar-toggler {
+    body.container>nav.mainNavigation>div.container>button.toggleNavigation {
         display: none;
     }
 
-    /* .navbar-expand-lg .navbar-collapse */
-    /* body.container>nav .navbar-collapse */
-    body.container>nav div#navbarDefault {
+    div.container>div#navbarDefault.navbarDefault.offcanvas-collapse {
         display: flex;
         flex-basis: 100%;
         flex-grow: 1;
         align-items: center;
-
     }
 
-    /* .navbar-expand-lg .navbar-nav */
     div#navbarDefault>ul {
         flex-direction: row;
     }
@@ -1600,18 +1600,12 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     div#navbarDefault>ul>li {
         padding-left: 1rem;
         padding-right: 1rem;
+        margin-right: 1rem;
     }
 
-    /* .navbar-expand-lg .navbar-nav .nav-link */
     div#navbarDefault>ul>li>a {
         padding-right: .5rem;
         padding-left: .5rem;
-    }
-
-
-
-    .nav-item {
-        margin-right: 1rem;
     }
 
     .h2OfWelcomeOfFirstName {
@@ -1639,17 +1633,16 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin: 2rem;
     }
 
-    nav.nav.nav-underline {
-        display: flex;
-        justify-content: center;
+    /* nav.nav.nav-underline */
+    nav.secondaryNavigation {
         flex-direction: row;
     }
 
-    .nav-underline .nav-link {
+    /* .nav-underline .nav-link */
+    nav.secondaryNavigation>a {
         padding-top: .75rem;
         padding-bottom: .75rem;
         font-size: 1.55em;
-        color: #F7F7F7;
     }
 
     .h2IntroductoryContent {

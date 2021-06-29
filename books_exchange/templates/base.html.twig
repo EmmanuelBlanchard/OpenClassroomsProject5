@@ -28,41 +28,41 @@
 					<span class="navbarTogglerIcon"></span>
 				</button>
 
-				<div class="navbar-collapse offcanvas-collapse" id="navbarDefault">
-					<ul class="navbar-nav mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
+				<div class="navbarDefault offcanvas-collapse" id="navbarDefault">
+					<ul>
+						<li>
+							<a aria-current="page" href="{{ path('app_home') }}">Accueil</a>
 						</li>
 						{% if is_granted('ROLE_ADMIN') %}
-							<li class="nav-item">
-								<a class="nav-link nav-blue" href="{{ path('admin_home') }}">Tableau de bord</a>
+							<li>
+								<a href="{{ path('admin_home') }}">Tableau de bord</a>
 							</li>
 						{% endif %}
 						{% if is_granted('ROLE_USER') %}
-							<li class="nav-item">
-								<a class="nav-link nav-blue" href="{{ path('app_logout') }}">Se déconnecter</a>
+							<li>
+								<a href="{{ path('app_logout') }}">Se déconnecter</a>
 							</li>
 						{% else %}
-							<li class="nav-item">
-								<a class="nav-link nav-blue" href="{{ path('app_register') }}">Créer mon compte</a>
+							<li>
+								<a href="{{ path('app_register') }}">Créer mon compte</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link nav-blue" href="{{ path('app_login') }}">Connexion</a>
+							<li>
+								<a href="{{ path('app_login') }}">Connexion</a>
 							</li>
 						{% endif %}
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<div class="nav-scroller bg--body shadow-sm">
-			<nav class="nav nav-underline" aria-label="Secondary navigation">
-				<a class="nav-link" href="{{ path('app_how_it_works') }}">Comment ça marche</a>
-				<a class="nav-link" href="{{ path('app_faq') }}">Foire aux questions</a>
-				<a class="nav-link" href="{{ path('book_home') }}">Bibliothèque</a>
+		<div class="navScroller">
+			<nav class="secondaryNavigation" aria-label="Secondary navigation">
+				<a href="{{ path('app_how_it_works') }}">Comment ça marche</a>
+				<a href="{{ path('app_faq') }}">Foire aux questions</a>
+				<a href="{{ path('book_home') }}">Bibliothèque</a>
 			</nav>
 		</div>
 		<main class="container">
-			<aside class="hidden-print">
+			<aside>
 				<form action="{{ path('app_search') }}" id="search_form">
 					<input
 						class="form-control"

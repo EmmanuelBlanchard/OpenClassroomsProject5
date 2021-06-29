@@ -42,13 +42,13 @@ body {
   }
 }
 
-.nav-scroller {
+.navScroller {
   position: relative;
   z-index: 2;
   overflow-y: hidden;
 }
 
-.nav-scroller .nav {
+.navScroller nav.secondaryNavigation {
   display: flex;
   flex-wrap: nowrap;
   margin-top: -1px;
@@ -59,7 +59,8 @@ body {
   white-space: nowrap;
 }
 
-.nav-underline .nav-link:hover {
+/* .nav-underline .nav-link:hover */
+nav.secondaryNavigation>a:hover {
   /*color: #007bff;*/
   color: #000000;
 }
