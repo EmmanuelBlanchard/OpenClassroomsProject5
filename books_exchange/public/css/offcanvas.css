@@ -50,10 +50,12 @@ body {
 .navScroller nav.secondaryNavigation {
   display: flex;
   flex-wrap: nowrap;
-  margin-top: -1px;
+  margin-top: 5px;
   overflow-x: auto;
   color: rgba(255, 255, 255, .75);
   background-color: #CD4109;
+  border: 0.3em solid #913a17;
+  border-radius: 0.5rem;
   text-align: center;
   white-space: nowrap;
 }
