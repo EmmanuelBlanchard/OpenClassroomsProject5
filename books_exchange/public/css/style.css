@@ -1540,23 +1540,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding-left: 1.5rem;
     }
 
-    div.row.row-cols-2.g-4>div.divNameUserIndex,
-    div.row.row-cols-2.g-4>div.divNameUserData {
-        flex: 0 0 auto;
-        width: 33.3333333333%;
-        margin-left: 1.5rem;
-        padding: .5rem;
-        border: 1px solid #dee2e6;
-    }
-
-    div.row.row-cols-2.g-4>div.divValueUserIndex,
-    div.row.row-cols-2.g-4>div.divValueUserData {
-        flex: 0 0 auto;
-        width: 41.6666666667%;
-        padding: .5rem;
-        border: 1px solid #dee2e6;
-    }
-
     div.divButtonsUserIndex>a.btn.btn-primary.buttonUserIndex {
         margin-right: .5rem;
         margin-left: .5rem;
