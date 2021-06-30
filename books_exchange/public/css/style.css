@@ -294,13 +294,13 @@ main>aside {
     border-radius: 0.5rem;
 }
 
-#search_form {
+#searchForm {
     background-color: #FFF;
     border-radius: 0.5rem;
     padding: 5px;
 }
 
-#search_form button {
+#searchForm button {
     display: inline-block;
     font-weight: 400;
     line-height: 1.5;
@@ -319,7 +319,7 @@ main>aside {
     width: 100%;
 }
 
-#search_form button:hover {
+#searchForm button:hover {
     color: #fff;
     background-color: #CD4109;
     border-color: #CD4109;
@@ -1194,7 +1194,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         font-size: 1.375rem;
     }
 
-    #search_form {
+    #searchForm {
         padding: 20px;
     }
 

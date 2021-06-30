@@ -29,6 +29,12 @@ class SearchController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
         $books = $bookRepo->search($search);
+        
+        if ($request->query->get('ajax')) {
+            return $this->render('main/_search_content.html.twig', [
+                'books' => $books
+            ]);
+        }
 
         return $this->render('main/search_books.html.twig', [
             'books' => $books,
