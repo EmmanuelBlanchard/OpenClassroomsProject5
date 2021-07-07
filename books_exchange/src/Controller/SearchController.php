@@ -17,18 +17,15 @@ class SearchController extends AbstractController
      */
     public function index(Request $request, BookRepository $bookRepo): Response
     {
-        // We define the number of books per page
-        $limit = 5;
-        // We get the page number
-        $page = (int)$request->query->get("page", 1);
-
         $search = $request->get('search');
+        $books = null;
 
         $search = trim($search);
-        if ($search === null || $search === '') {
+        if (!($search === null || $search === '')) {
+            $books = $bookRepo->search($search);
+        } else {
             return $this->redirectToRoute('app_home');
         }
-        $books = $bookRepo->search($search);
         
         if ($request->query->get('ajax')) {
             return $this->render('main/_search_content.html.twig', [
@@ -40,7 +37,5 @@ class SearchController extends AbstractController
             'books' => $books,
             'search' => $search
         ]);
-        
-        //dd($search);
     }
 }
