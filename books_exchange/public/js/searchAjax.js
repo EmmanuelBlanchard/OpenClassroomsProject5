@@ -5,8 +5,31 @@ class SearchAjax {
         this.ajaxurl = searchFormInput.dataset.ajaxurl;
         searchFormInput.addEventListener('input', event => {
             const data = event.currentTarget.value;
-            console.log(data);
+            if (data.length > 3) {
+                this.getDatas(data);
+                this.divResultSearch.style.display = 'block';
+            }
         });
+    }
+
+    getDatas(searchParams) {
+        const queryString = new URLSearchParams({
+            search: searchParams,
+            ajax: 1
+        });
+
+        const url = `${this.ajaxurl}?${queryString.toString()}`;
+        console.log(url);
+
+        fetch(url).then((response) => {
+            const result = response.text();
+            result.then((item) => {
+                console.log(item)
+                this.divResultSearch.innerHtml = item;
+            });
+        }).catch((error) => {
+            console.log(error)
+        })
     }
 }
 const search = new SearchAjax();
