@@ -31,9 +31,7 @@
 			{% endif %}
 		</h2>
 		{% if books|length > "0" %}
-
 			<a class="buttonBookMyBooksButtonAddBook" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
-
 			<table class="table responsive-table-line table-hover">
 				<thead>
 					<tr>
@@ -71,20 +69,16 @@
 					{% endfor %}
 				</tbody>
 			</table>
-
 		{% else %}
 			<div class="divBookMyBooksEmptyLibrary">
 				<p>Votre bibliothèque est vide.</p>
 				<p>Complétez-là avec les livres que vous possédez</p>
 				<p>et que vous souhaitez échanger.</p>
 			</div>
-
 			<div class="divButtonBookMyBooks">
 				<a class="btn btn-primary m-2" href="{{ path('book_add') }}" role="button">Ajouter un livre</a>
 			</div>
-
 		{% endif %}
-
 		{% if pages > 1 %}
 			<nav class="page-navigation" aria-label="Page navigation">
 				<ul class="pagination">
@@ -128,6 +122,5 @@
 				</ul>
 			</nav>
 		{% endif %}
-		
 	</section>
 {% endblock %}

@@ -54,8 +54,8 @@
 							<td data-label="Auteur">{{book.author}}</td>
 							<td data-label="État du livre">{{book.state}}</td>
 							<td data-label="Propriétaire">{{book.user.pseudo}}</td>
-							<td data-label="Localisation">{{ book.user.zipCode }}
-								{{book.user.city}}</td>
+							<td data-label="Localisation">{{ book.user.zipCode }} {{book.user.city}}
+							</td>
 							<td data-label="Date">{{book.exchangeRequestAt|date('d/m/Y')}}</td>
 							<td data-label="Actions" class="text-center">
 								<a class="btn btn-primary" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
@@ -65,7 +65,6 @@
 				</tbody>
 			</table>
 		{% endif %}
-
 		{% if pages > 1 %}
 			<nav class="page-navigation" aria-label="Page navigation">
 				<ul class="pagination">
@@ -84,13 +83,11 @@
 							</svg>
 						</a>
 					</li>
-					
 					{% for item in 1..pages %}
 						<li class="page-item {{ (page == item) ? 'active' : '' }}">
 							<a class="page-link" href="?page={{ item }}">{{ item }}</a>
 						</li>
 					{% endfor %}
-					
 					<li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
 						<a class="page-link" href="{{ (page < pages) ? '?page=' ~ (page +1) : '' }}" aria-label="Page Suivante">
 							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
@@ -109,6 +106,5 @@
 				</ul>
 			</nav>
 		{% endif %}
-		
 	</section>
 {% endblock %}

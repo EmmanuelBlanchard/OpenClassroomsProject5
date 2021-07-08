@@ -13,7 +13,8 @@
 			<p>Ce lien expirera dans
 				{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 			<p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier de courrier indésirable ou
-				<a href="{{ path('app_forgot_password_request') }}">réessayer</a>.</p>
+				<a href="{{ path('app_forgot_password_request') }}">réessayer</a>.
+			</p>
 		</div>
 	</section>
 {% endblock %}

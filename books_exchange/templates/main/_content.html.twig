@@ -27,7 +27,8 @@
                             <span>{{ book.user.city }}</span>
                         </li>
                         <li class="list-group-item ownerBook">Propriétaire:
-                            {{ book.user.pseudo }}</li>
+                            {{ book.user.pseudo }}
+                        </li>
                     </ul>
                 </div>
                 <div class="divButtonExchangeCenter">
@@ -42,7 +43,6 @@
 		<p>Aucun livre n'est disponible...</p>
 	</div>
 {% endif %}
-
 {% if pages > 1 %}
     <nav class="page-navigation" aria-label="Page navigation">
         <ul class="pagination">
@@ -73,7 +73,6 @@
                     </svg>
                 </a>
             </li>
-
             <li class="page-item {{ (page == pages) ? 'disabled' : ''}}">
                 <a class="page-link" href="?page={{ pages }}"aria-label="Dernière Page">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewbox="0 0 16 16">
