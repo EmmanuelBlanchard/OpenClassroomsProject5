@@ -1,0 +1,42 @@
+{% if books|length > 0 %}
+	{% for book in books %}
+    <a href="{{path('book_show', {slug: book.slug}) }}">
+        <table class="table responsive-table-line table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Auteur</th>
+                    <th scope="col">Catégorie</th>
+                    <th scope="col">Language</th>
+                    <th scope="col">Format du livre</th>
+                    <th scope="col">Couverture du livre</th>
+                    <th scope="col">État du livre</th>
+                    <th scope="col">Localisation du livre</th>
+                    <th scope="col">Propriétaire du livre</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th data-label="Titre" scope="row">{{ book.title|u.truncate(18, '...') }}</th>
+                    <td data-label="Auteur">{{book.author}}</td>
+                    <td data-label="Catégorie">{{ book.category }}</td>
+                    <td data-label="Language">{{ book.language }}</td>
+                    <td data-label="Format">{{ book.format }}</td>
+                    <td data-label="Couverture"><img src="{{ uploaded_asset(book.imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="Couverture du livre {{book.title}}." class="card-img"></td>
+                    <td data-label="État du livre">{{book.state}}</td>
+                    <td data-label="Localisation">{{ book.user.zipCode }} {{book.user.city}}</td>
+                    <td data-label="Propriétaire">{{book.user.pseudo}}</td>
+                    <td data-label="Action" class="text-center">
+                        <a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
+    </a>
+	{% endfor %}
+{% else %}
+	<div class="text-center">
+		<p>Aucun livre n'a été trouvé...</p>
+	</div>
+{% endif %}

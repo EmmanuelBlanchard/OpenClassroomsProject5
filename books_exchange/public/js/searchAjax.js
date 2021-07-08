@@ -25,7 +25,7 @@ class SearchAjax {
             const result = response.text();
             result.then((item) => {
                 console.log(item)
-                this.divResultSearch.innerHtml = item;
+                this.divResultSearch.innerHTML = item;
             });
         }).catch((error) => {
             console.log(error)

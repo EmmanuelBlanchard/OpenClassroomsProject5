@@ -325,6 +325,14 @@ main>aside {
     border-color: #CD4109;
 }
 
+#resultSearch {
+    margin-top: 1rem;
+}
+
+div#resultSearch>a>table.table.responsive-table-line.table-hover {
+    margin: 0;
+}
+
 .informationAboutTheAccountTheLibraryTheExchanges {
     background-color: #FFF;
     padding: .5rem .5rem;

@@ -28,9 +28,15 @@ class SearchController extends AbstractController
         }
         
         if ($request->query->get('ajax')) {
+            return $this->render('main/_search_content_ajax.html.twig', [
+                'books' => $books
+            ]);
+            
+            /*
             return $this->render('main/_search_content.html.twig', [
                 'books' => $books
             ]);
+            */
         }
 
         return $this->render('main/search_books.html.twig', [

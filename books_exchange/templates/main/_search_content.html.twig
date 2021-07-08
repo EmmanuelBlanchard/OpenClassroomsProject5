@@ -3,7 +3,7 @@
     <a href="{{path('book_show', {slug: book.slug}) }}">
         <div class="d-flex align-items-center justify-content-between">
             <img src="{{ uploaded_asset(book.imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="Couverture du livre {{book.title}}." class="card-img">
-                <span class="px-1">{{ book.title|u.(truncate(18, '...') }}</span>
+            <span class="px-1">{{ book.title|u.truncate(18, '...') }}</span>
         </div>
     </a>
     {#
