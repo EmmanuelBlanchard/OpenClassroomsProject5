@@ -1,12 +1,5 @@
 {% if books|length > 0 %}
 	{% for book in books %}
-    <a href="{{path('book_show', {slug: book.slug}) }}">
-        <div class="d-flex align-items-center justify-content-between">
-            <img src="{{ uploaded_asset(book.imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="Couverture du livre {{book.title}}." class="card-img">
-            <span class="px-1">{{ book.title|u.truncate(18, '...') }}</span>
-        </div>
-    </a>
-    {#
     <div class="card col-md-5">
         <div class="row g-0">
             <div class="card-picture col-md-5">
@@ -34,7 +27,8 @@
                             <span>{{ book.user.city }}</span>
                         </li>
                         <li class="list-group-item ownerBook">Propriétaire:
-                            {{ book.user.pseudo }}</li>
+                            {{ book.user.pseudo }}
+                        </li>
                     </ul>
                 </div>
                 <div class="divButtonExchangeCenter">
@@ -42,7 +36,7 @@
                 </div>
             </div>
         </div>
-    </div>#}
+    </div>
 	{% endfor %}
 {% else %}
 	<div>
