@@ -8,36 +8,27 @@
 		<div class="formHeader">
 			<h2>Ajouter un format</h2>
 		</div>
-
 		{{ form_start(addFormatForm, {'attr': {'id': 'add_format_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(addFormatForm.name) }}
 			{{ form_widget(addFormatForm.name) }}
-
 			<small>{{ form_help(addFormatForm.name) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(addFormatForm.name) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(addFormatForm.parent) }}
 			{{ form_widget(addFormatForm.parent) }}
-
 			<small>{{ form_help(addFormatForm.parent) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(addFormatForm.parent) }}
 			</div>
 		</div>
-
 		{{ form_end(addFormatForm) }}
-
 	</div>
 {% endblock %}

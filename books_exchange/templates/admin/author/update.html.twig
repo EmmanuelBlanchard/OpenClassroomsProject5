@@ -8,36 +8,27 @@
 		<div class="formHeader">
 			<h2>Modifier un auteur</h2>
 		</div>
-
 		{{ form_start(updateAuthorForm, {'attr': {'id': 'update_author_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateAuthorForm.name) }}
 			{{ form_widget(updateAuthorForm.name) }}
-
 			<small>{{ form_help(updateAuthorForm.name) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateAuthorForm.name) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateAuthorForm.parent) }}
 			{{ form_widget(updateAuthorForm.parent) }}
-
 			<small>{{ form_help(updateAuthorForm.parent) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateAuthorForm.parent) }}
 			</div>
 		</div>
-
 		{{ form_end(updateAuthorForm) }}
-
 	</div>
 {% endblock %}

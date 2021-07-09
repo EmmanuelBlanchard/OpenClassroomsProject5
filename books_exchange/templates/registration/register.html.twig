@@ -13,135 +13,102 @@
 		<div class="formHeader">
 			<h2>Créer un nouveau compte</h2>
 		</div>
-
 		{{ form_start(registrationForm, {'attr': {'id': 'registration_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
-
 			{{ form_label(registrationForm.pseudo) }}
-
 			{{ form_widget(registrationForm.pseudo) }}
-
 			<small>{{ form_help(registrationForm.pseudo) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.pseudo) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.lastname) }}
 			{{ form_widget(registrationForm.lastname) }}
-
 			<small>{{ form_help(registrationForm.lastname) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.lastname) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.firstname) }}
 			{{ form_widget(registrationForm.firstname) }}
-
 			<small>{{ form_help(registrationForm.firstname) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.firstname) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.email) }}
 			{{ form_widget(registrationForm.email) }}
-
 			<small>{{ form_help(registrationForm.email) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.email) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.plainPassword.first) }}
 			{{ form_widget(registrationForm.plainPassword.first) }}
-
 			<small>{{ form_help(registrationForm.plainPassword.first) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.plainPassword.first) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.plainPassword.second) }}
 			{{ form_widget(registrationForm.plainPassword.second) }}
-
 			<small>{{ form_help(registrationForm.plainPassword.second) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.plainPassword.second) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.zipCode) }}
 			{{ form_widget(registrationForm.zipCode) }}
-
 			<small>{{ form_help(registrationForm.zipCode) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.zipCode) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.city) }}
 			{{ form_widget(registrationForm.city) }}
-
 			<small>{{ form_help(registrationForm.city) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.city) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(registrationForm.agreeTerms) }}
 			{{ form_widget(registrationForm.agreeTerms) }}
-
 			<small>{{ form_help(registrationForm.agreeTerms) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(registrationForm.agreeTerms) }}
 			</div>
 		</div>
-
 		<div class="div-registration-register-button">
 			{{ form_label(registrationForm.save) }}
 			{{ form_widget(registrationForm.save) }}
 		</div>
-
 		{{ form_end(registrationForm) }}
-
 	</div>
 {% endblock %}
 

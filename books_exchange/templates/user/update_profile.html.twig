@@ -12,82 +12,63 @@
 				{{ app.user.pseudo }}
 			</h2>
 		</div>
-
 		{{ form_start(updateProfileForm, {'attr': {'id': 'update_profile_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateProfileForm.pseudo) }}
 			{{ form_widget(updateProfileForm.pseudo) }}
-
 			<small>{{ form_help(updateProfileForm.pseudo) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateProfileForm.pseudo) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateProfileForm.lastname) }}
 			{{ form_widget(updateProfileForm.lastname) }}
-
 			<small>{{ form_help(updateProfileForm.lastname) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateProfileForm.lastname) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateProfileForm.firstname) }}
 			{{ form_widget(updateProfileForm.firstname) }}
-
 			<small>{{ form_help(updateProfileForm.firstname) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateProfileForm.firstname) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateProfileForm.zipCode) }}
 			{{ form_widget(updateProfileForm.zipCode) }}
-
 			<small>{{ form_help(updateProfileForm.zipCode) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateProfileForm.zipCode) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateProfileForm.city) }}
 			{{ form_widget(updateProfileForm.city) }}
-
 			<small>{{ form_help(updateProfileForm.city) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateProfileForm.city) }}
 			</div>
 		</div>
-
 		<div class="div-user-update-profile-button">
 			{{ form_label(updateProfileForm.validate) }}
 			{{ form_widget(updateProfileForm.validate) }}
 		</div>
-
 		{{ form_end(updateProfileForm) }}
 	</div>
-
 {% endblock %}
 
 {% block javascripts %}

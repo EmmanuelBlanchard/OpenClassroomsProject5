@@ -15,35 +15,27 @@
 		<div class="formHeader">
 			<h2>Réinitialiser votre mot de passe</h2>
 		</div>
-
 		{{ form_start(resetPasswordForm, {'attr': {'id': 'reset_password_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(resetPasswordForm.plainPassword.first) }}
 			{{ form_widget(resetPasswordForm.plainPassword.first) }}
-
 			<small>{{ form_help(resetPasswordForm.plainPassword.first) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(resetPasswordForm.plainPassword.first) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(resetPasswordForm.plainPassword.second) }}
 			{{ form_widget(resetPasswordForm.plainPassword.second) }}
-
 			<small>{{ form_help(resetPasswordForm.plainPassword.second) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(resetPasswordForm.plainPassword.second) }}
 			</div>
 		</div>
-
 		{{ form_end(resetPasswordForm) }}
 	</div>
 {% endblock %}

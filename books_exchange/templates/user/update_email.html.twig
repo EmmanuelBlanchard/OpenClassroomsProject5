@@ -20,38 +20,30 @@
 			</h2>
 		</div>
 		{{ form_start(updateEmailForm, {'attr': {'id': 'update_email_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateEmailForm.email.first) }}
 			{{ form_widget(updateEmailForm.email.first) }}
-
 			<small>{{ form_help(updateEmailForm.email.first) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateEmailForm.email.first) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateEmailForm.email.second) }}
 			{{ form_widget(updateEmailForm.email.second) }}
-
 			<small>{{ form_help(updateEmailForm.email.second) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateEmailForm.email.second) }}
 			</div>
 		</div>
-
 		<div class="div-user-update-email-button">
 			{{ form_label(updateEmailForm.validate) }}
 			{{ form_widget(updateEmailForm.validate) }}
 		</div>
-
 		{{ form_end(updateEmailForm) }}
 	</div>
 {% endblock %}

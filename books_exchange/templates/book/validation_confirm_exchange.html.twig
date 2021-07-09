@@ -26,8 +26,7 @@
 		<div class="divBookValidationConfirmExchange">
 			<p>Confirmer la demande d'échange du livre : </p>
 			<p>
-				<span>
-					{{ book.title }}</span>
+				<span>{{ book.title }}</span>
 				avec
 			</p>
 			<p class="paragraphBookValidationConfirmExchange">État:
@@ -37,8 +36,7 @@
 				<span>{{book.user.pseudo}}</span>
 			</p>
 			<p class="paragraphBookValidationConfirmExchange">Localisation:
-				<span>{{book.user.zipCode}}
-					{{book.user.city}}</span>
+				<span>{{book.user.zipCode}} {{book.user.city}}</span>
 			</p>
 			<div class="divButtonBookValidationConfirmExchange">
 				<a href="{{ path('book_confirm_exchange', {'id': book.id }) }}" class="btn btn-success buttonBookValidationConfirmExchange">Confirmer l'échange</a>

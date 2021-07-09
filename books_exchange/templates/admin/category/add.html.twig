@@ -8,36 +8,27 @@
 		<div class="formHeader">
 			<h2>Ajouter une catégorie</h2>
 		</div>
-
 		{{ form_start(addCategoryForm, {'attr': {'id': 'add_category_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(addCategoryForm.name) }}
 			{{ form_widget(addCategoryForm.name) }}
-
 			<small>{{ form_help(addCategoryForm.name) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(addCategoryForm.name) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(addCategoryForm.parent) }}
 			{{ form_widget(addCategoryForm.parent) }}
-
 			<small>{{ form_help(addCategoryForm.parent) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(addCategoryForm.parent) }}
 			</div>
 		</div>
-
 		{{ form_end(addCategoryForm) }}
-
 	</div>
 {% endblock %}

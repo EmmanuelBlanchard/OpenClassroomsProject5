@@ -8,36 +8,27 @@
 		<div class="formHeader">
 			<h2>Modifier un état du livre</h2>
 		</div>
-
 		{{ form_start(updateStateForm, {'attr': {'id': 'update_state_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateStateForm.name) }}
 			{{ form_widget(updateStateForm.name) }}
-
 			<small>{{ form_help(updateStateForm.name) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateStateForm.name) }}
 			</div>
 		</div>
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(updateStateForm.parent) }}
 			{{ form_widget(updateStateForm.parent) }}
-
 			<small>{{ form_help(updateStateForm.parent) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(updateStateForm.parent) }}
 			</div>
 		</div>
-
 		{{ form_end(updateStateForm) }}
-
 	</div>
 {% endblock %}

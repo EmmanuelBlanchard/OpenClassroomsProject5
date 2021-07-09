@@ -8,7 +8,6 @@
 		<div class="formHeader">
 			<h2>Connexion</h2>
 		</div>
-
 		<form id="login_form" class="form" name="login_form" method="post">
 			{% if error %}
 				<div class="divAlert">
@@ -20,40 +19,29 @@
 					<div class="alert alert-success" role="alert">{{ message }}</div>
 				</div>
 			{% endfor %}
-
 			<div class="form-control">
 				<i class="bi bi-check-circle"></i>
 				<i class="bi bi-exclamation-circle"></i>
-
 				<label for="inputEmail">E-mail</label>
 				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-
 				<small></small>
-
 				<div class="form-error"></div>
 			</div>
-
 			<div class="form-control">
 				<i class="bi bi-check-circle"></i>
 				<i class="bi bi-exclamation-circle"></i>
-
 				<label for="inputPassword">Mot de passe</label>
 				<input type="password" name="password" id="inputPassword" class="form-control" required>
-
 				<small></small>
-
 				<div class="form-error"></div>
 			</div>
-
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
 			<div class="div-security-login-button">
 				<button class="btn btn-success btn-lg" type="submit">
 					Se connecter
 				</button>
 			</div>
 		</form>
-
 		<div class="formFooterSecurityLogin">
 			<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
 		</div>

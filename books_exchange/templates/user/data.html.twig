@@ -11,9 +11,7 @@
 			{{ app.user.firstname }}
 			{{ app.user.lastname }}
 		</h2>
-
 		<a class="buttonUserData" href="{{ path('user_data_download') }}" role="button">Télécharger les données</a>
-
 		<div class="divRowUserData"> 
 			<div class="divNameUserData">Pseudo :</div>
 			<div class="divValueUserData">{{ app.user.pseudo }}</div>
@@ -28,13 +26,11 @@
 			<div class="divNameUserData">Ville :</div>
 			<div class="divValueUserData">{{ app.user.city }}</div>
 		</div>
-
 		<h3 class="h3UserData">Livres de
 			{{ app.user.firstname }}
 			{{ app.user.lastname }}
 			({{ app.user.books|length }})
 		</h3>
-		
 		<table class="table responsive-table-line table-hover">
 			<thead>
 				<tr>

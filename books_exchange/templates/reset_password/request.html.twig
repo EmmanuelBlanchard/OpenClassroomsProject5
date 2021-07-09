@@ -13,28 +13,21 @@
 		<div class="formHeader">
 			<h2>Réinitialiser votre mot de passe</h2>
 		</div>
-
 		{{ form_start(resetPasswordRequestForm, {'attr': {'id': 'reset_password_request_form', 'class': 'form'}}) }}
-
 		<div class="form-control">
 			<i class="bi bi-check-circle"></i>
 			<i class="bi bi-exclamation-circle"></i>
 			{{ form_label(resetPasswordRequestForm.email) }}
 			{{ form_widget(resetPasswordRequestForm.email) }}
-
 			<small>{{ form_help(resetPasswordRequestForm.email) }}</small>
-
 			<div class="form-error">
 				{{ form_errors(resetPasswordRequestForm.email) }}
 			</div>
 		</div>
-
 		<div class="div-reset-password-request-button">
 			<button type="submit" id="reset_password_request_form_validate" name="request_form[validate]" class="btn btn-success">Réinitialisation votre mot de passe</button>
 		</div>
-		
 		{{ form_end(resetPasswordRequestForm) }}
-
 	</div>
 {% endblock %}
 
