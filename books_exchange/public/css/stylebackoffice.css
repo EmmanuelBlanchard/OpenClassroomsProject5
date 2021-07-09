@@ -336,7 +336,7 @@ tbody>tr>td {
     color: #842029;
 }
 
-/* Style CSS For Validation FORM BOOTSTRAP */
+/* Style css for validation form bootstrap */
 #formContainer {
     background-color: #fff;
     font-family: sans-serif, 'openSansRegular';
@@ -352,10 +352,6 @@ tbody>tr>td {
 
 #formContainer .form-control {
     border: none;
-}
-
-.divAlert.col-sm-12 {
-    margin-top: 2.5rem;
 }
 
 .formHeader {
