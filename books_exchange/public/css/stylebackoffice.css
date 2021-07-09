@@ -531,3 +531,10 @@ input#book_form_image.form-control {
 }
 
 /* Above template admin/book/show.html.twig */
+
+.divAdminIndexDashboard {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
