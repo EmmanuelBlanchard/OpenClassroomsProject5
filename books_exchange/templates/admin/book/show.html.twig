@@ -4,6 +4,7 @@
 	{{ book.title }}
 {% endblock %}
 
+{#
 {% block body %}
 	<div class="container">
 		{% for message in app.flashes('success') %}
@@ -73,6 +74,88 @@
 				</div>
 				<div class="modal-footer">
 					<button class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au demandeur du livre" aria-controls="dialog">Envoyer</button>
+					<button type="button" class="btn btn-secondary modal-trigger" data-bs-target="#modal-contact" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
+				</div>
+				{{ form_end(contactBookForm) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/modalcontact.js')}}"></script>
+{% endblock %}
+#}
+
+{% block body %}
+	<div class="container bookShow">
+		{% for message in app.flashes('success') %}
+			<div class="divAlert">
+				<div class="alert alert-success" role="alert">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+		<div class="card show">
+			<div class="row g-0">
+				<div class="card-picture show col-xl-4">
+					<img src="{{ asset('/uploads/book_image/' ~ book.imageFilename)|imagine_filter('book') }}" alt="Couverture du livre {{book.title}}.">
+				</div>
+				<div class="card-body-exchange-contact-buttons col-xl-8">
+					<div class="card-body">
+						<h5 class="card-title">{{ book.title|u.truncate(60, '...') }}</h5>
+						<div class="card-header">
+							<a href="{{ path('book_author', {author: book.author}) }}">{{ book.author }}</a>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">{{ book.category }}</li>
+							<li class="list-group-item">{{ book.publisher }}</li>
+							<li class="list-group-item">{{ book.summary|striptags|raw }}</li>
+							<li class="list-group-item">Langue:
+								{{ book.language }}</li>
+							<li class="list-group-item">Format:
+								{{ book.format }}</li>
+							<li class="list-group-item stateBook">État:
+								{{ book.state }}</li>
+							<li class="list-group-item locationBook">
+								<img src="{{ asset('/img/locationIcon.svg') }}" class="locationIcon" alt="location Icon"/>
+								<span>{{ book.user.city }}</span>
+							</li>
+							<li class="list-group-item ownerBook">Propriétaire:
+								{{ book.user.pseudo }}
+							</li>
+						</ul>
+					</div>
+					<div class="divButtonsBookShowCenter">
+						<div class="align-self-center">
+							<a class="btn btn-outline-success exchangeButton" href="{{ path('book_validation_confirm_exchange', {'id': book.id}) }}" role="button">Échanger</a>
+						</div>
+						<div class="align-self-center">
+							<a class="btn btn-outline-primary m-2 modal-trigger" href="#" data-bs-toggle="modal" data-bs-target="#modal-contact" data-id="{{book.id}}" data-requester="{{book.user.pseudo}}" data-title="{{book.title}}" data-author="{{book.author}}" data-publisher="{{book.publisher}}" data-format="{{book.format}}" data-state="{{book.state}}" aria-haspopup="dialog" role="button">
+								Contacter
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modal-contact" tabindex="-1" aria-labelledby="dialog-title" aria-hidden="true">
+		<div role="document" class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="dialog-title">Contacter le demandeur du livre</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale"></button>
+				</div>
+				{{ form_start(contactBookForm) }}
+				<div class="modal-body">
+					{{ form_widget(contactBookForm.title) }}
+					{{ form_row(contactBookForm.email) }}
+					{{ form_row(contactBookForm.message) }}
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au demandeur du livre">Envoyer</button>
 					<button type="button" class="btn btn-secondary modal-trigger" data-bs-target="#modal-contact" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
 				</div>
 				{{ form_end(contactBookForm) }}

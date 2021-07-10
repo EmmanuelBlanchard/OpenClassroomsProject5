@@ -26,7 +26,6 @@ nav#sidebarMenu {
     background-color: #f8f9fa;
 }
 
-/* max-width 960px  rules before */
 .sidebar {
     padding: 0;
 }
@@ -34,8 +33,6 @@ nav#sidebarMenu {
 .sidebar-sticky {
     height: auto ! important;
 }
-
-/* Above rules before max-width 960px */
 
 th,
 td,
@@ -138,209 +135,67 @@ tbody>tr>td {
     box-shadow: 0 0 0 .25rem rgba(225, 83, 97, .5);
 }
 
-@media all and (min-width: 240px) and (max-width: 812px) and (min-resolution: 1dppx) {
-
-    /* Table responsive */
-    .responsiveTableLine td:before,
-    .responsiveTableLine th:before {
-        content: attr(data-label);
-    }
-
-    /* Force table to not be like tables anymore */
-    .responsiveTableLine table,
-    .responsiveTableLine thead,
-    .responsiveTableLine tbody,
-    .responsiveTableLine th,
-    .responsiveTableLine td,
-    .responsiveTableLine tr {
-        display: block;
-    }
-
-    /* Hide table headers (but not display: none;, for accessibility) */
-    .responsiveTableLine thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    .responsiveTableLine tr {
-        border: 1px solid #ccc;
-        border-radius: .25rem;
-        margin-bottom: 1rem;
-    }
-
-    .responsiveTableLine td,
-    .responsiveTableLine th {
-        position: relative;
-        border: 0px solid transparent;
-        padding-left: 50% !important;
-        white-space: normal;
-        overflow: hidden;
-        overflow-x: scroll;
-        text-align: left;
-    }
-
-    .responsiveTableLine td:before,
-    .responsiveTableLine th:before {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 46%;
-        padding-right: 15px;
-        height: 100%;
-        white-space: nowrap;
-        text-overflow: ellipsis !important;
-        overflow: hidden;
-        overflow-x: scroll;
-        text-align: left;
-        background-color: #f8f8f8;
-        padding: 10px;
-        font-weight: bold;
-    }
-
+/* Test templates/admin/book/show.html.twig */
+/* Test handling style css for the admin/book/show.html.twig */
+.card-picture {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
-@media all and (min-width: 340px) and (max-width: 1920px) and (min-resolution: 1dppx) {
-
-    .buttonPrimaryAdminIndex,
-    .buttonWarningAdminIndex,
-    .buttonDangerAdminIndex {
-        padding: .375rem .75rem;
-        font-size: 1rem;
-        border-radius: .25rem;
-    }
-
+.card.show {
+    margin: 0.5rem;
 }
 
-@media all and (min-width: 813px) and (max-width: 1225px) and (min-resolution: 1dppx) {
-
-    /* Table responsive */
-    .responsiveTableLine td:before,
-    .responsiveTableLine th:before {
-        content: attr(data-label);
-    }
-
-    /* Force table to not be like tables anymore */
-    .responsiveTableLine table,
-    .responsiveTableLine thead,
-    .responsiveTableLine tbody,
-    .responsiveTableLine th,
-    .responsiveTableLine td,
-    .responsiveTableLine tr {
-        display: block;
-    }
-
-    /* Hide table headers (but not display: none;, for accessibility) */
-    .responsiveTableLine thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    .responsiveTableLine tr {
-        border: 1px solid #ccc;
-        border-radius: .25rem;
-        margin-bottom: 1rem;
-    }
-
-    .responsiveTableLine td,
-    .responsiveTableLine th {
-        position: relative;
-        border: 0px solid transparent;
-        padding-left: 50% !important;
-        white-space: normal;
-        text-align: left;
-    }
-
-    .responsiveTableLine td:before,
-    .responsiveTableLine th:before {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 46%;
-        padding-right: 15px;
-        height: 100%;
-        white-space: nowrap;
-        text-overflow: ellipsis !important;
-        overflow: hidden !important;
-        text-align: left;
-        background-color: #f8f8f8;
-        padding: 10px;
-        font-weight: bold;
-    }
+div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+    width: 90%;
+    border-radius: .25rem;
 }
 
-@media only screen and (min-width: 540px) and (min-resolution: 1dppx) {
-
-    body {
-        font-size: 0.875rem;
-    }
-
-    nav#sidebarMenu {
-        width: 25%;
-    }
-
-    main.mainAdminIndex {
-        width: 75%;
-    }
+div.card>div.row.g-0>div.col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 620px) and (min-resolution: 1dppx) {
-
-    body {
-        font-size: 1rem;
-    }
+div.card>div.row.g-0>div.col-md-4>img {
+    width: 260px;
+    height: 300px;
+    border-radius: .25rem;
 }
 
-@media only screen and (min-width: 768px) and (min-resolution: 1dppx) {
-
-    nav#sidebarMenu {
-        display: block !important;
-    }
+.card-title {
+    font-weight: bold;
 }
 
-@media only screen and (min-width: 846px) and (min-resolution: 1dppx) {
-
-    nav#sidebarMenu {
-        width: 20%;
-    }
-
-    main.mainAdminIndex {
-        width: 80%;
-    }
-
+.card-title>a,
+.card-header>a,
+.stateBook,
+.locationBook,
+.ownerBook {
+    font-weight: bold;
+    color: #000;
 }
 
-@media only screen and (min-width: 960px) and (min-resolution: 1dppx) {
-
-    body {
-        font-size: 1rem;
-    }
+.card-title>a,
+.card-header>a {
+    text-decoration: none;
 }
 
-@media only screen and (min-width: 992px) and (min-resolution: 1dppx) {
+li.list-group-item>img.locationIcon {
+    width: 2rem;
+    height: 2rem;
+}
 
-    nav#sidebarMenu {
-        flex: 0 0 auto;
-        width: 16.66666667%;
-    }
-
-    main.mainAdminIndex {
-        flex: 0 0 auto;
-        width: 83.33333333%;
-        margin-left: 16.66666667%;
-    }
-
-    nav#sidebarMenu {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 100;
-        padding: 48px 0 0;
-        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    }
-
+.divButtonsBookShowCenter {
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-sticky {
@@ -398,6 +253,7 @@ tbody>tr>td {
     font-size: 1rem;
     background-color: rgba(0, 0, 0, .25);
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+    margin-right: 0;
 }
 
 .navbar .navbar-toggler {
@@ -466,30 +322,7 @@ tbody>tr>td {
     padding: .75rem;
 }
 
-/* Sort out the useful or not useful selections  */
-
-/* Styles css Bootstrap */
-.alert {
-    position: relative;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-}
-
-.alert-success {
-    color: #0f5132;
-    background-color: #d1e7dd;
-    border-color: #badbcc;
-}
-
-.alert-danger {
-    color: #842029;
-    background-color: #f8d7da;
-    border-color: #f5c2c7;
-}
-
-/* classes for validation form */
+/* Classes for the validation form */
 .valid {
     color: #0f5132;
 }
@@ -498,7 +331,7 @@ tbody>tr>td {
     color: #842029;
 }
 
-/* Style css for validation form bootstrap */
+/* Style css for the validation form bootstrap */
 #formContainer {
     background-color: #fff;
     font-family: sans-serif, 'openSansRegular';
@@ -633,56 +466,25 @@ tbody>tr>td {
     text-align: center;
 }
 
-/* Test Bootstrap Card */
-/* In template admin/book/show.html.twig */
-.card {
-    margin: 3rem;
-}
-
-div.card>div.row.g-0>div.col-md-4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-div.card>div.row.g-0>div.col-md-4>img {
-    width: 260px;
-    height: 300px;
+/* Styles css Bootstrap */
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
     border-radius: .25rem;
 }
 
-.card-title {
-    font-weight: bold;
-    font-size: 1.5rem;
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
 }
 
-.card-title>a,
-.card-header>a,
-.stateBook,
-.locationBook,
-.ownerBook {
-    font-weight: bold;
-    color: #000;
-}
-
-.card-title>a,
-.card-header>a {
-    text-decoration: none;
-}
-
-.card-header>a {
-    font-size: 1.2rem;
-}
-
-li.list-group-item>img.locationIcon {
-    width: 2rem;
-    height: 2rem;
-}
-
-.divButtonsBookShowCenter {
-    display: flex;
-    flex-direction: column;
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
 }
 
 /* For better design input file */
@@ -692,8 +494,6 @@ input#book_form_image.form-control {
     /*border: 1px solid #ced4da;*/
 }
 
-/* Above template admin/book/show.html.twig */
-
 .divAdminIndexDashboard {
     padding-top: 1rem;
     padding-bottom: .5rem;
@@ -701,7 +501,245 @@ input#book_form_image.form-control {
     border-bottom: 1px solid #dee2e6;
 }
 
-/* templates/admin/author/index.html.twig */
+@media all and (min-width: 240px) and (max-width: 812px) and (min-resolution: 1dppx) {
+
+    /* Table responsive */
+    .responsiveTableLine td:before,
+    .responsiveTableLine th:before {
+        content: attr(data-label);
+    }
+
+    /* Force table to not be like tables anymore */
+    .responsiveTableLine table,
+    .responsiveTableLine thead,
+    .responsiveTableLine tbody,
+    .responsiveTableLine th,
+    .responsiveTableLine td,
+    .responsiveTableLine tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .responsiveTableLine thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .responsiveTableLine tr {
+        border: 1px solid #ccc;
+        border-radius: .25rem;
+        margin-bottom: 1rem;
+    }
+
+    .responsiveTableLine td,
+    .responsiveTableLine th {
+        position: relative;
+        border: 0px solid transparent;
+        padding-left: 50% !important;
+        white-space: normal;
+        overflow: hidden;
+        overflow-x: scroll;
+        text-align: left;
+    }
+
+    .responsiveTableLine td:before,
+    .responsiveTableLine th:before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 46%;
+        padding-right: 15px;
+        height: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis !important;
+        overflow: hidden;
+        overflow-x: scroll;
+        text-align: left;
+        background-color: #f8f8f8;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+}
+
+@media all and (min-width: 340px) and (max-width: 1920px) and (min-resolution: 1dppx) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    .buttonPrimaryAdminIndex,
+    .buttonWarningAdminIndex,
+    .buttonDangerAdminIndex {
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        border-radius: .25rem;
+    }
+
+}
+
+@media all and (min-width: 813px) and (max-width: 3840px) and (min-resolution: 1dppx) {
+
+    /* Table responsive */
+    .responsiveTableLine td:before,
+    .responsiveTableLine th:before {
+        content: attr(data-label);
+    }
+
+    /* Force table to not be like tables anymore */
+    .responsiveTableLine table,
+    .responsiveTableLine thead,
+    .responsiveTableLine tbody,
+    .responsiveTableLine th,
+    .responsiveTableLine td,
+    .responsiveTableLine tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .responsiveTableLine thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .responsiveTableLine tr {
+        border: 1px solid #ccc;
+        border-radius: .25rem;
+        margin-bottom: 1rem;
+    }
+
+    .responsiveTableLine td,
+    .responsiveTableLine th {
+        position: relative;
+        border: 0px solid transparent;
+        padding-left: 50% !important;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .responsiveTableLine td:before,
+    .responsiveTableLine th:before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 46%;
+        padding-right: 15px;
+        height: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis !important;
+        overflow: hidden;
+        overflow-x: scroll;
+        text-align: left;
+        background-color: #f8f8f8;
+        padding: 10px;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 540px) and (min-resolution: 1dppx) {
+
+    nav#sidebarMenu {
+        width: 25%;
+    }
+
+    main.mainAdminIndex {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 640px) and (min-resolution: 1dppx) {
+
+    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+        width: 50%;
+        border-radius: .25rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (min-resolution: 1dppx) {
+
+    nav#sidebarMenu {
+        display: block !important;
+    }
+
+    .card-picture {
+        width: 40%;
+    }
+
+    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+        width: 90%;
+        border-radius: .25rem;
+    }
+
+    div.card-body-exchange-contact-buttons.col-xl-8 {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (min-width: 846px) and (min-resolution: 1dppx) {
+
+    nav#sidebarMenu {
+        width: 20%;
+    }
+
+    main.mainAdminIndex {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 960px) and (min-resolution: 1dppx) {}
+
+@media only screen and (min-width: 992px) and (min-resolution: 1dppx) {
+
+    nav#sidebarMenu {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+
+    main.mainAdminIndex {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+        margin-left: 16.66666667%;
+    }
+
+    nav#sidebarMenu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        padding: 48px 0 0;
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    }
+
+}
+
+@media only screen and (min-width: 1280px) and (min-resolution: 1dppx) {
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-header>a {
+        font-size: 1.2rem;
+    }
+
+    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1920px) and (min-resolution: 1dppx) {
+
+    div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
+        width: 70%;
+    }
+
+}
 
 @media only screen and (min-width: 2160px) and (min-resolution: 1dppx) {
 
@@ -728,14 +766,11 @@ input#book_form_image.form-control {
     }
 
     .navbar-brand {
-        padding-left: 2rem !important;
-        padding-top: .75rem;
-        padding-right: 2rem !important;
-        padding-bottom: .75rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
         font-size: 4rem;
         flex: 0 0 auto;
         width: 29%;
-        margin-right: 0 !important;
     }
 
     .navbar .form-control {
@@ -766,80 +801,75 @@ input#book_form_image.form-control {
     }
 
     /* Enlarged image of the svg tag */
+    a.buttonPrimaryAdminIndex>svg,
     a.buttonWarningAdminIndex>svg,
     a.buttonDangerAdminIndex>svg {
-        width: 70px;
-        height: 70px;
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    /* Test admin/book/show.html.twig */
+    .card.show {
+        border: 3px solid rgba(0, 0, 0, .125);
+        border-radius: 0.5rem;
+    }
+
+    .card-title {
+        font-size: 4.5rem;
+    }
+
+    .card-header>a {
+        font-size: 4.2rem;
+    }
+
+    .card-picture {
+        width: 100%;
+    }
+
+    .list-group-flush>.list-group-item {
+        border: 3px solid rgba(0, 0, 0, .125);
+        border-width: 0 0 3px;
+    }
+
+    li.list-group-item>img.locationIcon {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    div.align-self-center {
+        margin: 1rem;
+    }
+
+    a.btn.btn-outline-success.exchangeButton,
+    a.btn.btn-outline-primary.m-2.modal-trigger {
+        font-size: 4rem;
+        border: 5px solid;
+        border-radius: .5rem;
+    }
+
+    div.card-body-exchange-contact-buttons.col-xl-8 {
+        width: 100%;
     }
 
 }
 
 @media only screen and (min-width: 3840px) and (min-resolution: 1dppx) {
 
-    body {
-        font-size: 4rem;
-    }
-
-    .h1,
-    h1 {
-        font-size: 5rem;
-    }
-
-    .h2,
-    h2 {
-        font-size: 3.5rem;
-    }
-
-    .divAdminIndexDashboard {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        margin-left: 4rem;
-        margin-bottom: 2rem;
-        border-bottom: 3px solid #dee2e6;
-    }
-
     .navbar-brand {
-        padding-left: 2rem !important;
-        padding-top: .75rem;
-        padding-right: 2rem !important;
-        padding-bottom: .75rem;
-        font-size: 4rem;
-
-        flex: 0 0 auto;
         width: 16.66666667%;
     }
 
     .navbar .form-control {
-        padding: .75rem 1rem;
-        border-width: 0;
-        border-radius: 0;
-        font-size: 3.75rem;
         width: 100%;
     }
 
     nav#sidebarMenu {
-        padding: 120px 50px 0;
         width: 16.66666667%;
     }
 
     main.mainAdminIndex {
-        flex: 0 0 auto;
         width: 83.33333333%;
         margin-left: 16.66666667%;
     }
 
-    .buttonPrimaryAdminIndex,
-    .buttonWarningAdminIndex,
-    .buttonDangerAdminIndex {
-        padding: .50rem 1rem;
-        font-size: 3rem;
-        border-radius: 0.6rem;
-    }
-
-    /* Enlarged image of the svg tag */
-    a.buttonWarningAdminIndex>svg,
-    a.buttonDangerAdminIndex>svg {
-        width: 70px;
-        height: 70px;
-    }
 }
