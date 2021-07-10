@@ -21,9 +21,9 @@
 		{% endfor %}
 		<div class="py-3">
 			<h1>Gérer les formats</h1>
-			<a class="btn btn-primary m-2" href="{{ path("admin_format_add") }}" role="button">Ajouter</a>
+			<a class="buttonPrimaryAdminIndex" href="{{ path("admin_format_add") }}" role="button">Ajouter</a>
 		</div>
-		<table class="table table-responsive table-hover">
+		<table class="table responsiveTableLine table-hover">
 			<thead>
 				<tr>
 					<th scope="col">ID</th>
@@ -35,12 +35,16 @@
 			<tbody>
 				{% for item in format %}
 					<tr>
-						<th scope="row">{{item.id}}</th>
-						<td>{{item.name}}</td>
-						<td>{{item.parent}}</td>
-						<td>
-							<a class="btn btn-warning m-2" href="{{ path("admin_format_update", {id: item.id}) }}" role="button">Modifier</a>
-							<a class="btn btn-danger m-2" href="{{ path("admin_format_delete", {id: item.id}) }}" role="button">Supprimer</a>
+						<th data-label="ID" scope="row">{{item.id}}</th>
+						<td data-label="Nom">{{item.name}}</td>
+						<td data-label="Parent">{{item.parent}}</td>
+						<td data-label="Actions">
+							<a class="buttonWarningAdminIndex" href="{{ path("admin_format_update", {id: item.id}) }}" role="button">
+								<svg aria-hidden="true" width="32" height="32" viewBox="0 0 8.467 8.467" xmlns="http://www.w3.org/2000/svg"><path d="M-.006 4.241L4.234.006" fill="none"/><path d="M-.271 2.816v-.553l-.052-.001-.038.037v.517z" fill="none" stroke="#000" stroke-width=".024" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M1.529 4.332V2.308l.15-.12.149-.119.167.003c.092 0 .168.002.169.003L2.16 4.216l-.005 2.14H1.53z" paint-order="markers fill stroke"/><path d="M-.327 2.816h.372s.085 0 .085-.05v-.441s.01-.063-.109-.063h-.344s-.04 0-.04.04l.004.47s-.003.044.025.044h.007" fill="none" stroke="#000" stroke-width=".026" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M-.385 2.42s-.001-.029.002-.061c.004-.034.006-.074.045-.095a.134.134 0 01.07-.017l.313-.003s.11-.004.14.034c.019.023.011.2.013.27.003.15-.004.335-.004.335s-.002.034-.073.04a.242.242 0 01-.013 0l-.204-.002h-.223s-.06.016-.06-.089c0-.104-.006-.413-.006-.413z" fill="none" stroke="#000" stroke-width=".021" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M-.271 2.816v-.553l-.052-.001-.038.037v.517z" fill="none" stroke="#000" stroke-width=".024" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M1.529 4.332V2.308l.15-.12.149-.119.167.003c.092 0 .168.002.169.003L2.16 4.216l-.005 2.14H1.53z" paint-order="markers fill stroke"/><path d="M-.327 2.816h.372s.085 0 .085-.05v-.441s.01-.063-.109-.063h-.344s-.04 0-.04.04l.004.47s-.003.044.025.044h.007" fill="none" stroke="#000" stroke-width=".026" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M.07 2.247v0s.124-.01.124.097v.54c-.004.017-.033.032-.033.032-.25.007-.205.004-.502.004h.377s.158.012.158-.035v-.537s0-.028-.006-.05c-.015-.05-.119-.051-.119-.051z" fill="none" stroke="#000" stroke-width=".013" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M1.492 6.988c-.021-.007-.02-.008.004-.008.003 0-.003.005-.004.008z" fill="none" paint-order="markers fill stroke"/><path d="M1.661 7.39a.662.662 0 01-.132-.037c-.217-.087-.346-.298-.372-.612a28.746 28.746 0 01-.02-.845c-.011-.742-.017-1.01-.046-2.096-.018-.648-.015-.859.01-1.07.03-.242.06-.364.115-.476.028-.058.117-.186.167-.241a.64.64 0 01.25-.13l.17-.054c.14-.044.233-.054.602-.062.662-.014 3.19-.027 3.335-.017.512.035.84.126 1 .275.086.08.118.189.15.508.012.127.03 2.418.024 2.92-.007.46-.023 1.054-.035 1.348-.01.246-.017.27-.087.347-.1.112-.302.193-.567.23-.098.014-.168.016-.62.015a651.798 651.798 0 00-3.84 0 .607.607 0 01-.104-.004zm.022-5.203c.081-.066.14-.117.131-.113-.009.004-.077.057-.152.118l-.136.111.003.525.002.525.002-.523.003-.523z" fill="none" paint-order="markers fill stroke"/><path d="M-.327 2.816s-.054.052-.005.104M-.352 2.797s-.053.052-.004.105M-.382 2.48v-.107" fill="none" stroke="#000" stroke-width=".026" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M-.284 2.804v-.538h-.031l-.051.05v.486h.084" fill="none" stroke="#000" stroke-width=".026" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M-.337 2.87v0h.444s.09-.016.09-.072" fill="none" stroke="#000" stroke-width=".026" stroke-linecap="round" stroke-linejoin="round" paint-order="markers fill stroke" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><path d="M-.374 2.864l.013-.048-.015.025z" fill="none" stroke="#000" stroke-width=".026" transform="matrix(9.66223 0 0 8.0958 4.897 -16.345)"/><g><g stroke-linecap="round" stroke-linejoin="round"><path d="M2.073 1.789l-.19.528.432-.295z" stroke="#000" stroke-width=".015" transform="matrix(2.94178 0 0 2.87042 -1.257 -2.332)"/><path d="M2.086 2.136l-.073-.076.074-.206.166.163z" fill="#fff" stroke="#fff" stroke-width=".001" transform="matrix(2.94178 0 0 2.87042 -1.257 -2.332)"/></g><g stroke-linecap="round" stroke-linejoin="round"><path d="M2.34 1.998l.562-.546-.226-.218-.576.532z" stroke="#000" stroke-width=".006" transform="matrix(2.94178 0 0 2.87042 -1.257 -2.332)"/><path d="M2.218 1.72l.436-.393" fill="#fff" stroke="#fff" stroke-width=".036" transform="matrix(2.94178 0 0 2.87042 -1.257 -2.332)"/></g><g fill="none" stroke="#000" stroke-width=".013"><path d="M2.7 1.201l.106.106.124.123" transform="matrix(2.94178 0 0 2.87042 -1.257 -2.332)"/><path d="M2.676 1.234s.045-.073.08-.04l.085.088M2.841 1.282l.105.104s.003.032-.043.068" transform="matrix(2.94178 0 0 2.87042 -1.257 -2.332)"/></g></g></svg>
+							</a>
+							<a class="buttonDangerAdminIndex" href="{{ path("admin_format_delete", {id: item.id}) }}" role="button">
+								<svg aria-hidden="true" width="32" height="32" viewBox="0 0 8.467 8.467" xmlns="http://www.w3.org/2000/svg"><path d="M-.006 8.467L8.47.007" fill="none"/><g transform="matrix(1.9992 0 0 1.99775 .006 .184)"><rect width="2.636" height="2.968" x=".794" y=".854" ry=".112" paint-order="stroke markers fill"/><rect width=".345" height="2.38" x="1.167" y="1.168" ry=".086" rx=".139" fill="#f9f9f9" paint-order="stroke fill markers"/><rect width=".345" height="2.38" x="1.959" y="1.168" ry=".086" rx=".139" fill="#f9f9f9" paint-order="stroke fill markers"/><rect width=".345" height="2.38" x="2.735" y="1.168" ry=".086" rx=".139" fill="#f9f9f9" paint-order="stroke fill markers"/></g><g transform="matrix(1.9992 0 0 1.99775 .006 -.006)"><rect width="2.646" height=".26" x=".794" y=".523" ry=".129" paint-order="stroke markers fill"/><g fill="none" stroke="#000" stroke-width=".172" stroke-linecap="round"><path d="M1.327.532s-.064-.267.268-.267h.521"/><path d="M2.906.532S2.97.265 2.638.265h-.522"/></g></g></svg>
+							</a>
 						</td>
 					</tr>
 				{% endfor %}

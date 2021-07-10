@@ -49,9 +49,9 @@ tbody>tr>td {
 * Buttons
 */
 
-.buttonPrimaryAdminAuthorIndex,
-.buttonWarningAdminAuthorIndex,
-.buttonDangerAdminAuthorIndex {
+.buttonPrimaryAdminIndex,
+.buttonWarningAdminIndex,
+.buttonDangerAdminIndex {
     display: inline-block;
     font-weight: 400;
     line-height: 1.5;
@@ -72,69 +72,69 @@ tbody>tr>td {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.buttonPrimaryAdminAuthorIndex {
+.buttonPrimaryAdminIndex {
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd;
 }
 
-.buttonPrimaryAdminAuthorIndex:hover {
+.buttonPrimaryAdminIndex:hover {
     color: #fff;
     background-color: #0b5ed7;
     border-color: #0a58ca;
 }
 
-.buttonPrimaryAdminAuthorIndex:active {
+.buttonPrimaryAdminIndex:active {
     color: #fff;
     background-color: #0a58ca;
     border-color: #0a53be;
 }
 
-.buttonPrimaryAdminAuthorIndex:focus {
+.buttonPrimaryAdminIndex:focus {
     box-shadow: 0 0 0 .25rem rgba(49, 132, 253, .5);
 }
 
-.buttonWarningAdminAuthorIndex {
+.buttonWarningAdminIndex {
     color: #000;
     background-color: #ffc107;
     border-color: #ffc107;
 }
 
-.buttonWarningAdminAuthorIndex:hover {
+.buttonWarningAdminIndex:hover {
     color: #000;
     background-color: #ffca2c;
     border-color: #ffc720;
 }
 
-.buttonWarningAdminAuthorIndex:active {
+.buttonWarningAdminIndex:active {
     color: #000;
     background-color: #ffcd39;
     border-color: #ffc720;
 }
 
-.buttonWarningAdminAuthorIndex:focus {
+.buttonWarningAdminIndex:focus {
     box-shadow: 0 0 0 .25rem rgba(217, 164, 6, .5);
 }
 
-.buttonDangerAdminAuthorIndex {
+.buttonDangerAdminIndex {
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
 }
 
-.buttonDangerAdminAuthorIndex:hover {
+.buttonDangerAdminIndex:hover {
     color: #fff;
     background-color: #bb2d3b;
     border-color: #b02a37;
 }
 
-.buttonDangerAdminAuthorIndex:active {
+.buttonDangerAdminIndex:active {
     color: #fff;
     background-color: #b02a37;
     border-color: #a52834;
 }
 
-.buttonDangerAdminAuthorIndex:focus {
+.buttonDangerAdminIndex:focus {
     box-shadow: 0 0 0 .25rem rgba(225, 83, 97, .5);
 }
 
@@ -204,9 +204,9 @@ tbody>tr>td {
 /* See from which min-width it is ok and from which max-width ok? */
 @media all and (min-width: 340px) and (max-width: 1920px) and (min-resolution: 1dppx) {
 
-    .buttonPrimaryAdminAuthorIndex,
-    .buttonWarningAdminAuthorIndex,
-    .buttonDangerAdminAuthorIndex {
+    .buttonPrimaryAdminIndex,
+    .buttonWarningAdminIndex,
+    .buttonDangerAdminIndex {
         padding: .375rem .75rem;
         font-size: 1rem;
         border-radius: .25rem;
@@ -764,17 +764,17 @@ input#book_form_image.form-control {
         margin-left: 28%;
     }
 
-    .buttonPrimaryAdminAuthorIndex,
-    .buttonWarningAdminAuthorIndex,
-    .buttonDangerAdminAuthorIndex {
+    .buttonPrimaryAdminIndex,
+    .buttonWarningAdminIndex,
+    .buttonDangerAdminIndex {
         padding: .50rem 1rem;
         font-size: 3rem;
         border-radius: 0.6rem;
     }
 
     /* Enlarged image of the svg tag */
-    a.buttonWarningAdminAuthorIndex>svg,
-    a.buttonDangerAdminAuthorIndex>svg {
+    a.buttonWarningAdminIndex>svg,
+    a.buttonDangerAdminIndex>svg {
         width: 70px;
         height: 70px;
     }
@@ -835,17 +835,17 @@ input#book_form_image.form-control {
         margin-left: 16.66666667%;
     }
 
-    .buttonPrimaryAdminAuthorIndex,
-    .buttonWarningAdminAuthorIndex,
-    .buttonDangerAdminAuthorIndex {
+    .buttonPrimaryAdminIndex,
+    .buttonWarningAdminIndex,
+    .buttonDangerAdminIndex {
         padding: .50rem 1rem;
         font-size: 3rem;
         border-radius: 0.6rem;
     }
 
     /* Enlarged image of the svg tag */
-    a.buttonWarningAdminAuthorIndex>svg,
-    a.buttonDangerAdminAuthorIndex>svg {
+    a.buttonWarningAdminIndex>svg,
+    a.buttonDangerAdminIndex>svg {
         width: 70px;
         height: 70px;
     }
