@@ -601,10 +601,6 @@ input#book_form_image.form-control {
 
 @media only screen and (min-width: 768px) and (min-resolution: 1dppx) {
 
-    nav#sidebarMenu {
-        display: block !important;
-    }
-
     .card-picture {
         width: 40%;
     }
@@ -620,19 +616,29 @@ input#book_form_image.form-control {
 
 }
 
+/* Galaxy Note 9 : 414px-846px DPR=3.5 */
 @media only screen and (min-width: 846px) and (min-resolution: 1dppx) {
-
     nav#sidebarMenu {
-        width: 20%;
+        display: block !important;
+        position: fixed;
+        padding: 48px 0 0;
+        width: 25%;
+
+        font-size: 0.95rem;
     }
 
     main.mainAdminIndex {
-        width: 80%;
+        width: 75%;
+        margin-left: 25%;
     }
-
 }
 
-@media only screen and (min-width: 960px) and (min-resolution: 1dppx) {}
+/* Iphone XR and Iphone XS : 414px-896px DPR=2 */
+@media only screen and (min-width: 896px) and (min-resolution: 1dppx) {
+    nav#sidebarMenu {
+        font-size: 0.95rem;
+    }
+}
 
 @media only screen and (min-width: 992px) and (min-resolution: 1dppx) {
 
