@@ -1095,7 +1095,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         padding-right: 15px;
         height: 100%;
         white-space: nowrap;
-        text-overflow: ellipsis !important;
         overflow: hidden;
         overflow-x: scroll;
         text-align: left;
@@ -1322,7 +1321,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 /* 	iPhone 8 Plus */
 @media only screen and (min-width: 414px) and (min-resolution: 1dppx) {
 
-    /* templates/main/index.html.twig */
     div#content.row.blockCard>div.card,
     main.container>div.container {
         width: 80%;
@@ -1332,7 +1330,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 @media only screen and (min-width: 568px) and (min-resolution: 1dppx) {
 
-    /* templates/book/index.html.twig, Templates/book/show.html.twig */
     div#content.row.blockCard>div.card,
     main.container>div.container {
         width: 70%;
@@ -1352,7 +1349,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 @media only screen and (min-width: 600px) and (min-resolution: 1dppx) {
 
-    /* templates/book/index.html.twig , Templates/book/show.html.twig*/
     div#content.row.blockCard>div.card,
     main.container>div.container {
         width: 80%;
@@ -1362,7 +1358,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 @media only screen and (min-width: 667px) and (min-resolution: 1dppx) {
 
-    /* templates/book/index.html.twig */
     div.card-picture>img {
         width: 60%;
     }
@@ -1372,7 +1367,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 /* iPad Air, iPad Mini, iPad Pro 9″ */
 @media only screen and (min-width: 768px) and (min-resolution: 1dppx) {
 
-    /* template book/index.html.twig */
     body>main.container {
         display: flex;
         flex-direction: row;
@@ -1414,26 +1408,24 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-top: 1.5rem;
     }
 
-    /* Template book/show.html.twig */
     .card.show {
         margin: 0.5rem;
     }
 
-    /* Template book/index.html.twig */
     div.card-picture {
         width: 41.6666666667%;
     }
 
-    /* Template book/show.html.twig */
     div.card-picture.show {
         width: 100%;
     }
 
+    /*
     div.card-picture>img {
         width: 100%;
     }
+*/
 
-    /* Template book/show.html.twig */
     div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
         width: 60%;
         border-radius: .25rem;

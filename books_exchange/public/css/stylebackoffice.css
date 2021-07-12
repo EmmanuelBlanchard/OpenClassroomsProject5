@@ -135,8 +135,6 @@ tbody>tr>td {
     box-shadow: 0 0 0 .25rem rgba(225, 83, 97, .5);
 }
 
-/* Test templates/admin/book/show.html.twig */
-/* Test handling style css for the admin/book/show.html.twig */
 .card-picture {
     display: flex;
     flex: 0 0 auto;
@@ -552,7 +550,6 @@ input#book_form_image.form-control {
         padding-right: 15px;
         height: 100%;
         white-space: nowrap;
-        text-overflow: ellipsis !important;
         overflow: hidden;
         overflow-x: scroll;
         text-align: left;
