@@ -1,7 +1,7 @@
 {% if books|length > 0 %}
 	{% for book in books %}
     <a href="{{path('book_show', {slug: book.slug}) }}">
-        <table class="table responsive-table-line table-hover">
+        <table class="table responsiveTableLine table-hover">
             <thead>
                 <tr>
                     <th scope="col">Titre</th>

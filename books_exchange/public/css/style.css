@@ -318,7 +318,7 @@ main>aside {
     margin-top: 1rem;
 }
 
-div#resultSearch>a>table.table.responsive-table-line.table-hover {
+div#resultSearch>a>table.table.responsiveTableLine.table-hover {
     margin: 0;
 }
 
@@ -1047,36 +1047,36 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 @media all and (min-width: 240px) and (max-width: 3840px) and (min-resolution: 1dppx) {
 
     /* Table responsive */
-    .responsive-table-line td:before,
-    .responsive-table-line th:before {
+    .responsiveTableLine td:before,
+    .responsiveTableLine th:before {
         content: attr(data-label);
     }
 
     /* Force table to not be like tables anymore */
-    .responsive-table-line table,
-    .responsive-table-line thead,
-    .responsive-table-line tbody,
-    .responsive-table-line th,
-    .responsive-table-line td,
-    .responsive-table-line tr {
+    .responsiveTableLine table,
+    .responsiveTableLine thead,
+    .responsiveTableLine tbody,
+    .responsiveTableLine th,
+    .responsiveTableLine td,
+    .responsiveTableLine tr {
         display: block;
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */
-    .responsive-table-line thead tr {
+    .responsiveTableLine thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
 
-    .responsive-table-line tr {
+    .responsiveTableLine tr {
         border: 1px solid #ccc;
         border-radius: .25rem;
         margin-bottom: 1rem;
     }
 
-    .responsive-table-line td,
-    .responsive-table-line th {
+    .responsiveTableLine td,
+    .responsiveTableLine th {
         position: relative;
         border: 0px solid transparent;
         padding-left: 50% !important;
@@ -1086,8 +1086,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         text-align: left;
     }
 
-    .responsive-table-line td:before,
-    .responsive-table-line th:before {
+    .responsiveTableLine td:before,
+    .responsiveTableLine th:before {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -1303,7 +1303,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 @media only screen and (min-width: 400px) and (min-resolution: 1dppx) {
 
-    /* Templates/book/show.html.twig */
     div.card-picture>img {
         width: 50%;
     }
@@ -1324,10 +1323,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 @media only screen and (min-width: 414px) and (min-resolution: 1dppx) {
 
     /* templates/main/index.html.twig */
-    div#content.row.blockCard>div.card {
-        width: 80%;
-    }
-
     div#content.row.blockCard>div.card,
     main.container>div.container {
         width: 80%;
