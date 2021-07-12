@@ -104,7 +104,6 @@ a:focus {
     outline-offset: .15em;
 }
 
-/* before .aDivNavLogo  after .navbarBrand */
 .navbarBrand {
     display: flex;
     align-items: center;
@@ -117,7 +116,6 @@ a:focus {
     white-space: nowrap;
 }
 
-/* button.navbar-toggler.p-0.border-0 */
 div.container>button.toggleNavigation {
     padding: 0;
     font-size: 1.25rem;
@@ -128,12 +126,10 @@ div.container>button.toggleNavigation {
     transition: box-shadow .15s ease-in-out;
 }
 
-/* .navbar-toggler:hover */
 div.container>button.toggleNavigation:hover {
     text-decoration: none;
 }
 
-/* Before .navbar-toggler-icon , After .mainNavigation .navbarTogglerIcon OR div.container>button.toggleNavigation>span.navbarTogglerIcon */
 .mainNavigation .navbarTogglerIcon {
     display: inline-block;
     width: 1.5em;
@@ -144,7 +140,6 @@ div.container>button.toggleNavigation:hover {
     background-size: 100%;
 }
 
-/* Before .navbar-light .navbar-toggler-icon , After .mainNavigation .navbarTogglerIcon */
 .mainNavigation .navbarTogglerIcon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -160,7 +155,6 @@ div.container>button.toggleNavigation:hover {
     font-size: calc(1.275rem);
 }
 
-/* Test replace .navbar-brand .brandNameExchange */
 nav.mainNavigation>div.container>a.navbarBrand>h1.brandNameExchange {
     display: flex;
     align-items: center;
@@ -200,7 +194,6 @@ div.container>nav.page-navigation {
     align-items: inherit;
 }
 
-/* after .navbar-nav, before div#navbarDefault>ul */
 div#navbarDefault>ul {
     display: flex;
     flex-direction: column;
@@ -211,7 +204,6 @@ div#navbarDefault>ul {
     list-style: none;
 }
 
-/* before .nav-link, after div#navbarDefault>ul>li>a */
 div#navbarDefault>ul>li>a {
     display: block;
     padding: .5rem 1rem;
@@ -220,20 +212,17 @@ div#navbarDefault>ul>li>a {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
-/* .nav-link:focus, .nav-link:hover */
 div#navbarDefault>ul>li>a:focus,
 div#navbarDefault>ul>li>a:hover {
     color: #0a58ca;
 }
 
-/* nav.nav.nav-underline */
 nav.secondaryNavigation {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-/* .nav-underline .nav-link */
 nav.secondaryNavigation>a {
     display: block;
     padding: .5rem 1rem;
@@ -415,12 +404,10 @@ tbody>tr>td {
     margin-bottom: 1rem;
 }
 
-/* Test code selectors css : Responsive Mobile */
 .h2IntroductoryContent {
     color: #000000;
 }
 
-/* Wireframe 1- How It Works, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
 .h2MainHowItWorks,
 .h2MainFrequentlyAskedQuestions,
 .h2MainStateOfBook,
@@ -479,7 +466,6 @@ section.container.mainIndex>p.pIntroductoryContent {
     margin-left: 2%;
 }
 
-/* templates/main/how_it_works.html.twig, templates/main/faq.html.twig, templates/main/state_of_book.html.twig */
 .divMainHowItWorks p,
 .divMainFrequentlyAskedQuestions p,
 .divMainFrequentlyAskedQuestions dl,
@@ -563,7 +549,8 @@ div.divBookValidationConfirmExchange>p>span {
 .divBookMyBooksEmptyLibrary p,
 .divBookMyExchangeWishes p,
 .divBookMyExchangeRequests p,
-.divBookHowMakeExchange p {
+.divBookHowMakeExchange p,
+p>a.linkBookHowMakeExchange {
     color: #FFF;
 }
 
@@ -608,7 +595,6 @@ div#content.row.blockCard>div.card {
     height: 2rem;
 }
 
-/* templates/book/_content.html.twig */
 .btn-outline-success.exchangeButton {
     color: #196216;
     border-color: #196216;
@@ -620,14 +606,12 @@ div#content.row.blockCard>div.card {
     border-color: #196216;
 }
 
-/* templates/book/validation_confirm_exchange.html.twig and templates/book/my_books.html.twig */
 .divButtonBookValidationConfirmExchange,
 .divButtonBookMyBooks {
     display: flex;
     justify-content: center;
 }
 
-/* templates/book/validation_confirm_exchange.html.twig */
 a.btn-success.buttonBookValidationConfirmExchange {
     font-family: 'openSansRegular';
     color: #fff;
@@ -709,7 +693,7 @@ div.divButtonsUserIndex>a.btn.btn-primary.buttonUserIndex {
     border-color: #f5c2c7;
 }
 
-/* classes for validation form */
+/* Classes for validation form */
 .valid {
     color: #0f5132;
 }
@@ -718,7 +702,7 @@ div.divButtonsUserIndex>a.btn.btn-primary.buttonUserIndex {
     color: #842029;
 }
 
-/* Style CSS For Validation FORM BOOTSTRAP */
+/* Style css for validation form Bootstrap */
 #formContainer {
     background-color: #fff;
     font-family: sans-serif, 'openSansRegular';
@@ -760,7 +744,6 @@ div.form-control:read-only {
     font-weight: 700;
 }
 
-/* Put the form id with #formContainer */
 #registration_form,
 #login_form,
 #update_profile_form,
@@ -914,15 +897,6 @@ div.form-control>input#inputPassword.form-control:focus {
     text-align: center;
 }
 
-/* Test temporary templates main/search_book_test.html.twig */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin: 1.5rem;
-}
-
-/* template search_books_test.html.twig , templates/book/show.html.twig */
 main.container>div.container {
     display: flex;
     flex-direction: column;
@@ -932,7 +906,6 @@ main.container>div.container {
     margin-bottom: 1.5rem;
 }
 
-/* Templates/book/show.html.twig */
 .card.show {
     margin: 0;
 }
@@ -987,9 +960,6 @@ div.card-body {
     justify-content: center;
 }
 
-/* templates/user/data.html.twig */
-/* templates/book/my_books.html.twig */
-/* Test without .btn bootstrap class */
 .buttonUserData,
 .buttonBookMyBooksButtonAddBook,
 .buttonBookMyBooks {
@@ -1042,7 +1012,6 @@ div.card-body {
     margin-bottom: 1.5rem;
 }
 
-/* Test templates/user/index.html.twig, templates/user/data.html.twig */
 .divRowUserIndex,
 .divRowUserData {
     flex: 0 0 auto;
@@ -1075,7 +1044,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     font-size: .875rem;
 }
 
-@media all and (min-width: 240px) and (max-width: 319px) and (min-resolution: 1dppx) {
+@media all and (min-width: 240px) and (max-width: 3840px) and (min-resolution: 1dppx) {
 
     /* Table responsive */
     .responsive-table-line td:before,
@@ -1129,64 +1098,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         text-overflow: ellipsis !important;
         overflow: hidden;
         overflow-x: scroll;
-        text-align: left;
-        background-color: #f8f8f8;
-        padding: 10px;
-        font-weight: bold;
-    }
-}
-
-@media all and (min-width: 320px) and (max-width: 3840px) and (min-resolution: 1dppx) {
-
-    /* Table responsive */
-    .responsive-table-line td:before,
-    .responsive-table-line th:before {
-        content: attr(data-label);
-    }
-
-    /* Force table to not be like tables anymore */
-    .responsive-table-line table,
-    .responsive-table-line thead,
-    .responsive-table-line tbody,
-    .responsive-table-line th,
-    .responsive-table-line td,
-    .responsive-table-line tr {
-        display: block;
-    }
-
-    /* Hide table headers (but not display: none;, for accessibility) */
-    .responsive-table-line thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    .responsive-table-line tr {
-        border: 1px solid #ccc;
-        border-radius: .25rem;
-        margin-bottom: 1rem;
-    }
-
-    .responsive-table-line td,
-    .responsive-table-line th {
-        position: relative;
-        border: 0px solid transparent;
-        padding-left: 50% !important;
-        white-space: normal;
-        text-align: left;
-    }
-
-    .responsive-table-line td:before,
-    .responsive-table-line th:before {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 46%;
-        padding-right: 15px;
-        height: 100%;
-        white-space: nowrap;
-        text-overflow: ellipsis !important;
-        overflow: hidden !important;
         text-align: left;
         background-color: #f8f8f8;
         padding: 10px;
