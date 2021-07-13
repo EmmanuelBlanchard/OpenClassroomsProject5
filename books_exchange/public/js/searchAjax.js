@@ -1,13 +1,13 @@
 class SearchAjax {
     constructor() {
-        this.divResultSearch = document.getElementById('resultSearch');
+        this.divResultSearchAjax = document.getElementById('resultSearchAjax');
         const searchFormInput = document.getElementById('searchFormInput');
         this.ajaxurl = searchFormInput.dataset.ajaxurl;
         searchFormInput.addEventListener('input', event => {
             const data = event.currentTarget.value;
             if (data.length > 3) {
                 this.getDatas(data);
-                this.divResultSearch.style.display = 'block';
+                this.divResultSearchAjax.style.display = 'block';
             }
         });
     }
@@ -25,7 +25,7 @@ class SearchAjax {
             const result = response.text();
             result.then((item) => {
                 console.log(item)
-                this.divResultSearch.innerHTML = item;
+                this.divResultSearchAjax.innerHTML = item;
             });
         }).catch((error) => {
             console.log(error)

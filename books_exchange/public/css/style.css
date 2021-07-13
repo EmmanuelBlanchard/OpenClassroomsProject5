@@ -314,11 +314,11 @@ main>aside {
     border-color: #CD4109;
 }
 
-#resultSearch {
+#resultSearchAjax {
     margin-top: 1rem;
 }
 
-div#resultSearch>a>table.table.responsiveTableLine.table-hover {
+div#resultSearchAjax>a>table.table.responsiveTableLine.table-hover {
     margin: 0;
 }
 
