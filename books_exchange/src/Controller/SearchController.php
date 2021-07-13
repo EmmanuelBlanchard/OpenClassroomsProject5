@@ -20,7 +20,9 @@ class SearchController extends AbstractController
 
         $search = trim($search);
         if (!($search === null || $search === '')) {
-            $books = $bookRepo->search($search);
+            $booksSearch = $bookRepo->search($search);
+            $booksSearchAuthor = $bookRepo->searchByAuthor($search);
+            $books = array_merge($booksSearch, $booksSearchAuthor);
         } else {
             return $this->redirectToRoute('app_home');
         }

@@ -236,6 +236,21 @@ class BookRepository extends ServiceEntityRepository
             ->execute();
     }
 
+    /**
+     * Search for books according to the form
+     * @return null|array
+     */
+    public function searchByAuthor(string $search, int $limit=5): ?array
+    {
+        return $this->createQueryBuilder('b')
+            ->innerJoin('b.author', 'a')
+            ->andWhere('a.name LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->execute();
+    }
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
