@@ -223,7 +223,7 @@ class BookRepository extends ServiceEntityRepository
     }
 
     /**
-     * Search for books according to the form
+     * Search for books by title entered in the search bar
      * @return null|array
      */
     public function search(string $search, int $limit=5): ?array
@@ -237,7 +237,7 @@ class BookRepository extends ServiceEntityRepository
     }
 
     /**
-     * Search for books according to the form
+     * Search for books by author entered in the search bar
      * @return null|array
      */
     public function searchByAuthor(string $search, int $limit=5): ?array
@@ -252,7 +252,7 @@ class BookRepository extends ServiceEntityRepository
     }
 
     /**
-     * Search for books according to the form
+     * Search for books by user entered in the search bar
      * @return null|array
      */
     public function searchByUser(string $search, int $limit=5): ?array
