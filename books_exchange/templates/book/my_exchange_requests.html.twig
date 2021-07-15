@@ -54,8 +54,8 @@
 							<td data-label="Auteur">{{book.author}}</td>
 							<td data-label="État du livre">{{book.state}}</td>
 							<td data-label="Demandeur">{{book.userexchange.pseudo}}</td>
-							<td data-label="Localisation">{{book.userexchange.zipCode}} {{book.userexchange.city}}
-							</td>
+							<td data-label="Localisation">{{book.userexchange.zipCode}} {{book.userexchange.city}}</td>
+							<td data-label="E-mail">{{book.userexchange.email}}</td> 
 							<td data-label="Date">{{book.exchangeRequestAt|date('d/m/Y')}}</td>
 							<td data-label="Actions" class="text-center">
 								<a class="btn btn-primary m-2" href="{{ path("book_cancel_exchange", {id: book.id}) }}" role="button">Annuler</a>
