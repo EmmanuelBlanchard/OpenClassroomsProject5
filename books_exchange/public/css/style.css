@@ -107,7 +107,6 @@ a:focus {
 .navbarBrand {
     display: flex;
     align-items: center;
-    /* .navbar-brand */
     padding-top: .3125rem;
     padding-bottom: .3125rem;
     margin-right: 1rem;
@@ -1240,7 +1239,15 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .25rem;
+        padding: .2rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 360px) and (min-resolution: 1dppx) {
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        font-size: 1.6rem;
     }
 }
 
@@ -1355,8 +1362,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .25rem .35rem;
-        font-size: 1rem;
+        padding: .25rem;
     }
 }
 
@@ -1372,8 +1378,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .30rem .40rem;
-        font-size: 1.15em;
+        padding: .25rem;
+        font-size: 1.7rem;
     }
 
 }
@@ -1388,6 +1394,15 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
 }
 
+/* Surface Duo */
+@media only screen and (min-width: 540px) and (min-resolution: 1dppx) {
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .45rem;
+    }
+
+}
+
 @media only screen and (min-width: 568px) and (min-resolution: 1dppx) {
 
     div#content.row.blockCard>div.card,
@@ -1398,11 +1413,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     .divBookValidationConfirmExchange,
     .divBookConfirmExchange {
         width: 80%;
-    }
-
-    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .45rem .45rem;
-        font-size: 1.40em;
     }
 
 }
@@ -1447,7 +1457,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     main.container>div.container,
     main.container>section.container,
     main.container>section.container.mainIndex,
-    main.container>section.container.book-index,
+    main.container>section.container.bookIndex,
     main.container>section.container.mainHowItWorks,
     main.container>section.container.mainFrequentlyAskedQuestions,
     main.container>section.container.mainStateOfBook,
@@ -1480,15 +1490,13 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 100%;
     }
 
-    /*
-    div.card-picture>img {
-        width: 100%;
-    }
-*/
-
     div.card.show>div.row.g-0>div.card-picture.col-xl-4>img {
         width: 60%;
         border-radius: .25rem;
+    }
+
+    div.card-picture>img {
+        width: 100%;
     }
 
     main.container>section.container.userIndex,
@@ -1511,14 +1519,9 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin-left: .5rem;
     }
 
-    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .50rem .50rem;
-        font-size: 1.2em;
-    }
-
 }
 
-/* support for screen sizes larger than mobile */
+/* Support for screen sizes larger than mobile */
 @media only screen and (min-width: 991.98px) and (min-resolution: 1dppx) {
 
     .imgLogo {
@@ -1570,25 +1573,21 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .50rem .50rem;
-        font-size: 1.40em;
+        padding: .50rem;
     }
 
 }
 
 @media only screen and (min-width: 1025px) and (min-resolution: 1dppx) {
 
-    /* Template book/show.html.twig */
     .card.show {
         margin: 2rem;
     }
 
-    /* nav.nav.nav-underline */
     nav.secondaryNavigation {
         flex-direction: row;
     }
 
-    /* .nav-underline .nav-link */
     nav.secondaryNavigation>a {
         padding-top: .75rem;
         padding-bottom: .75rem;
@@ -1687,10 +1686,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: 65%;
     }
 
-    div.card-picture>img {
-        width: 100%;
-    }
-
     .buttonUserData,
     .buttonBookMyBooksButtonAddBook {
         margin-left: 6.5rem;
@@ -1706,8 +1701,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .375rem .75rem;
-        font-size: 1.55em;
+        padding: .75rem;
     }
 
 }
