@@ -148,7 +148,7 @@ function checkInputCity() {
 function checkInputAgreeTerms() {
     const agreetermsValue = agreeterms.checked;
     if (agreetermsValue === false) {
-        setErrorFor(agreeterms, 'La case doit être coché pour s\'inscrire.');
+        setErrorFor(agreeterms, 'La case doit être cochée pour s\'inscrire.');
     } else {
         setSuccessFor(agreeterms);
     }

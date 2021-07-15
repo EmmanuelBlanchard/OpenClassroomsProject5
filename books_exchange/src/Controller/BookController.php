@@ -105,7 +105,7 @@ class BookController extends AbstractController
             $entityManager->persist($book);
             $entityManager->flush();
 
-            $this->addFlash('message', 'Le livre a été ajouté à votre stock !');
+            $this->addFlash('message', 'Le livre a été ajouté dans Mes livres !');
             return $this->redirectToRoute('book_my_books');
         }
 
