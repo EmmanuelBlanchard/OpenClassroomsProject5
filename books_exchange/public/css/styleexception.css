@@ -22,7 +22,7 @@ body {
     padding: 0;
 }
 
-.backgroundexception {
+.backgroundException {
     height: 100vh;
     min-height: 500px;
     background-image: url(../img/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg);
@@ -33,12 +33,12 @@ body {
     background-color: #1d3557;
 }
 
-#errorexception {
+#errorException {
     position: relative;
     height: 100vh;
 }
 
-#errorexception .errorexception {
+#errorException .errorException {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -47,21 +47,21 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.errorexception {
+.errorException {
     max-width: 520px;
     width: 100%;
     line-height: 1.4;
     text-align: center;
 }
 
-.errorexception .errorexception-code {
+.errorException .errorExceptionCode {
     position: relative;
     height: 200px;
     margin: 0 auto 20px;
     z-index: -1;
 }
 
-.errorexception .errorexception-code h1 {
+.errorException .errorExceptionCode h1 {
     font-family: 'openSansRegular', sans-serif;
     font-size: 236px;
     font-weight: 200;
@@ -76,8 +76,8 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.errorexception .errorexception-code h2,
-.errorexception .errorexception-code h3 {
+.errorException .errorExceptionCode h2,
+.errorException .errorExceptionCode h3 {
     font-family: 'openSansRegular', sans-serif;
     font-size: 28px;
     font-weight: 400;
@@ -95,11 +95,11 @@ body {
     border-radius: 25px;
 }
 
-.errorexception .errorexception-code h3 {
+.errorException .errorExceptionCode h3 {
     font-size: 24px;
 }
 
-.errorexception a {
+.errorException a {
     font-family: 'openSansRegular', sans-serif;
     display: inline-block;
     font-weight: 700;
@@ -115,7 +115,7 @@ body {
     border-radius: 25px;
 }
 
-.errorexception a:hover {
+.errorException a:hover {
     color: #CD4109;
     background-color: #FFF;
     border: 2px #CD4109 solid;
@@ -123,26 +123,26 @@ body {
 }
 
 @media only screen and (max-width:767px) {
-    .errorexception .errorexception-code h1 {
+    .errorException .errorExceptionCode h1 {
         font-size: 148px;
     }
 }
 
 @media only screen and (max-width:480px) {
-    .errorexception .errorexception-code {
+    .errorException .errorExceptionCode {
         height: 148px;
         margin: 0 auto 10px;
     }
 
-    .errorexception .errorexception-code h1 {
+    .errorException .errorExceptionCode h1 {
         font-size: 86px;
     }
 
-    .errorexception .errorexception-code h2 {
+    .errorException .errorExceptionCode h2 {
         font-size: 16px;
     }
 
-    .errorexception a {
+    .errorException a {
         padding: 7px 15px;
         font-size: 14px;
     }
