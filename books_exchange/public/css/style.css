@@ -1043,6 +1043,11 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     font-size: .875rem;
 }
 
+nav.page-navigation>ul.pagination>li.page-item>a.page-link>svg {
+    width: 16px;
+    height: 16px;
+}
+
 @media all and (min-width: 240px) and (max-width: 319px) and (min-resolution: 1dppx) {
 
     /* Table responsive */
@@ -1239,8 +1244,8 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .2rem;
-        font-size: 1.3rem;
+        padding: .15rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -1361,9 +1366,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         width: min-content;
     }
 
-    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .25rem;
-    }
 }
 
 @media only screen and (min-width: 400px) and (min-resolution: 1dppx) {
@@ -1378,8 +1380,13 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     }
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .25rem;
-        font-size: 1.7rem;
+        padding: .15rem;
+        font-size: 1.6rem;
+    }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link>svg {
+        width: 32px;
+        height: 32px;
     }
 
 }
@@ -1398,7 +1405,7 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 @media only screen and (min-width: 540px) and (min-resolution: 1dppx) {
 
     nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .45rem;
+        padding: .30rem;
     }
 
 }
@@ -1517,6 +1524,10 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
     div.divButtonsUserIndex>a.btn.btn-primary.buttonUserIndex {
         margin-right: .5rem;
         margin-left: .5rem;
+    }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .25rem;
     }
 
 }
@@ -1700,10 +1711,6 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
         margin: 1rem;
     }
 
-    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
-        padding: .75rem;
-    }
-
 }
 
 @media only screen and (min-width: 1200px) and (min-resolution: 1dppx) {
@@ -1720,6 +1727,10 @@ nav.page-navigation>ul.pagination>li.page-item>a.page-link {
 
     div.card-picture.show {
         width: 33.3333333333%;
+    }
+
+    nav.page-navigation>ul.pagination>li.page-item>a.page-link {
+        padding: .75rem;
     }
 
 }
