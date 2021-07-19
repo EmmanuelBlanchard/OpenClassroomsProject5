@@ -63,7 +63,7 @@
 		<div role="document" class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="dialog-title">Contacter le demandeur du livre</h5>
+					<h5 class="modal-title" id="dialog-title">Contacter le détenteur du livre</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale"></button>
 				</div>
 				{{ form_start(contactBookForm) }}
@@ -73,7 +73,7 @@
 					{{ form_row(contactBookForm.message) }}
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au demandeur du livre">Envoyer</button>
+					<button class="btn btn-primary" aria-label="Envoyer" title="Envoyer le message au détenteur du livre">Envoyer</button>
 					<button type="button" class="btn btn-secondary modal-trigger" data-bs-target="#modal-contact" data-bs-dismiss="modal" aria-label="Fermer" title="Fermer cette fenêtre modale">Fermer</button>
 				</div>
 				{{ form_end(contactBookForm) }}
